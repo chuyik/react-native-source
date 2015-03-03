@@ -1,37 +1,37 @@
-__d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*invariant/*n*/*/, requireLazy/*keyMirror/*r*/*/, module/*mixInEventEmitter/*i*/*/) {
+__d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*invariant/*n*/*/, requireLazy/*keyMirror/*r*/*/, module/*mixInEventEmitter/*i*/*/) {
-        var o = m[require/*exports/*t*/*/] = m[require/*exports/*t*/*/] || 0,
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+        var o = m[require/*t*/] = m[require/*t*/] || 0,
             s = {
                 type: global/*e*/,
-                name: o ? require/*exports/*t*/*/ + " " + o : require/*exports/*t*/*/,
+                name: o ? require/*t*/ + " " + o : require/*t*/,
                 depth: d,
-                startTime: requireDynamic/*invariant/*n*/*/,
-                endTime: requireLazy/*keyMirror/*r*/*/,
+                startTime: requireDynamic/*n*/,
+                endTime: requireLazy/*r*/,
                 insertOrder: h.length,
-                data: module/*mixInEventEmitter/*i*/*/ || {}
+                data: module/*i*/ || {}
             };
-        return d++, h.push(s), m[require/*exports/*t*/*/] ++, isNaN(s.endTime) || a(s), s
+        return d++, h.push(s), m[require/*t*/] ++, isNaN(s.endTime) || a(s), s
     }
 
     function a(global/*e*/) {
         f.push(global/*e*/), _.emitAndHold(_.Events.completedEvent, global/*e*/)
     }
 
-    function s(global/*e*/, require/*exports/*t*/*/) {
+    function s(global/*e*/, require/*t*/) {
         if (__DEV__)
-            for (var requireDynamic/*invariant/*n*/*/ = 0; requireDynamic/*invariant/*n*/*/ < g.length; requireDynamic/*invariant/*n*/*/++) {
-                var requireLazy/*keyMirror/*r*/*/ = g[requireDynamic/*invariant/*n*/*/];
-                if (-1 !== global/*e*/.indexOf(requireLazy/*keyMirror/*r*/*/)) {
-                    var module/*mixInEventEmitter/*i*/*/ = (require/*exports/*t*/*/ ? "Starting event " : "Ending event ") + '"' + global/*e*/ + '" matches breakpoint "' + requireLazy/*keyMirror/*r*/*/ + '"';
-                    return void console.log(module/*mixInEventEmitter/*i*/*/)
+            for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < g.length; requireDynamic/*n*/++) {
+                var requireLazy/*r*/ = g[requireDynamic/*n*/];
+                if (-1 !== global/*e*/.indexOf(requireLazy/*r*/)) {
+                    var module/*i*/ = (require/*t*/ ? "Starting event " : "Ending event ") + '"' + global/*e*/ + '" matches breakpoint "' + requireLazy/*r*/ + '"';
+                    return void console.log(module/*i*/)
                 }
             }
     }
-    var l = require/*exports/*t*/*/("invariant"),
-        u = require/*exports/*t*/*/("keyMirror"),
-        c = require/*exports/*t*/*/("mixInEventEmitter"),
+    var l = require/*t*/("invariant"),
+        u = require/*t*/("keyMirror"),
+        c = require/*t*/("mixInEventEmitter"),
         p = u({
             CLIENT: null,
             SERVER: null
@@ -45,17 +45,17 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
             Events: u({
                 completedEvent: null
             }),
-            logClientEventRetroactive: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*invariant/*n*/*/, requireLazy/*keyMirror/*r*/*/) {
+            logClientEventRetroactive: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
                 s(global/*e*/, !0), console.timeStamp && console.timeStamp(global/*e*/);
-                var module/*mixInEventEmitter/*i*/*/ = o(p.CLIENT, global/*e*/, require/*exports/*t*/*/, requireDynamic/*invariant/*n*/*/, requireLazy/*keyMirror/*r*/*/);
+                var module/*i*/ = o(p.CLIENT, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/);
                 return {
                     stop: function() {
-                        isNaN(module/*mixInEventEmitter/*i*/*/.endTime) || l(0, "Cannot end `%s` more than once.", global/*e*/), -1 !== h.indexOf(module/*mixInEventEmitter/*i*/*/) && d--, module/*mixInEventEmitter/*i*/*/.endTime = Date.now(), a(module/*mixInEventEmitter/*i*/*/), s(global/*e*/, !1)
+                        isNaN(module/*i*/.endTime) || l(0, "Cannot end `%s` more than once.", global/*e*/), -1 !== h.indexOf(module/*i*/) && d--, module/*i*/.endTime = Date.now(), a(module/*i*/), s(global/*e*/, !1)
                     }
                 }
             },
-            logClientEvent: function(global/*e*/, require/*exports/*t*/*/) {
-                return _.logClientEventRetroactive(global/*e*/, Date.now(), 0 / 0, require/*exports/*t*/*/)
+            logClientEvent: function(global/*e*/, require/*t*/) {
+                return _.logClientEventRetroactive(global/*e*/, Date.now(), 0 / 0, require/*t*/)
             },
             breakOnClientEvent: function(global/*e*/) {
                 g.push(global/*e*/)
@@ -69,5 +69,5 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
                 return d = 0, h = [], f = [], m = {}, global/*e*/
             }
         };
-    c(_, _.Events), module/*mixInEventEmitter/*i*/*/.exports = _
+    c(_, _.Events), module/*i*/.exports = _
 });

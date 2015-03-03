@@ -1,36 +1,36 @@
 __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPropType","TextStylePropTypes","Touchable","createReactIOSNativeComponentClass","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*t*/("React"),
-        NativeMethodsMixin/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*t*/("StyleSheetPropType"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("TextStylePropTypes"),
-        StyleSheetPropType/*c*/ = require/*t*/("Touchable"),
-        TextStylePropTypes/*p*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        Touchable/*d*/ = require/*t*/("merge"),
-        createReactIOSNativeComponentClass/*h*/ = React/*l*/(ReactIOSViewAttributes/*u*/),
-        merge/*f*/ = {
-            validAttributes: Touchable/*d*/(NativeMethodsMixin/*s*/.UIView, {
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("StyleSheetPropType"),
+        u = require/*t*/("TextStylePropTypes"),
+        c = require/*t*/("Touchable"),
+        p = require/*t*/("createReactIOSNativeComponentClass"),
+        d = require/*t*/("merge"),
+        h = l(u),
+        f = {
+            validAttributes: d(s.UIView, {
                 isHighlighted: !0,
                 numberOfLines: !0
             }),
             uiViewClassName: "RCTText"
         },
-        m = exports/*a*/.createClass({
+        m = a.createClass({
             displayName: "Text",
-            mixins: [StyleSheetPropType/*c*/.Mixin, o],
+            mixins: [c.Mixin, o],
             statics: {
-                stylePropType: createReactIOSNativeComponentClass/*h*/
+                stylePropType: h
             },
             propTypes: {
-                numberOfLines: exports/*a*/.PropTypes.number,
-                onPress: exports/*a*/.PropTypes.func,
-                suppressHighlighting: exports/*a*/.PropTypes.bool,
-                style: createReactIOSNativeComponentClass/*h*/
+                numberOfLines: a.PropTypes.number,
+                onPress: a.PropTypes.func,
+                suppressHighlighting: a.PropTypes.bool,
+                style: h
             },
-            viewConfig: merge/*f*/,
+            viewConfig: f,
             getInitialState: function() {
-                return Touchable/*d*/(this.touchableGetInitialState(), {
+                return d(this.touchableGetInitialState(), {
                     isHighlighted: !1
                 })
             },
@@ -73,7 +73,7 @@ __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPro
             render: function() {
                 var global/*e*/ = {};
                 for (var require/*t*/ in this.props) global/*e*/[require/*t*/] = this.props[require/*t*/];
-                return global/*e*/.ref = this.getNodeHandle(), global/*e*/.accessible !== !1 && (global/*e*/.accessible = !0), global/*e*/.isHighlighted = this.state.isHighlighted, global/*e*/.onStartShouldSetResponder = this.onStartShouldSetResponder, global/*e*/.onResponderTerminationRequest = this.handleResponderTerminationRequest, global/*e*/.onResponderGrant = this.handleResponderGrant, global/*e*/.onResponderMove = this.handleResponderMove, global/*e*/.onResponderRelease = this.handleResponderRelease, global/*e*/.onResponderTerminate = this.handleResponderTerminate, exports/*a*/.createElement(_, Object.assign({}, global/*e*/))
+                return global/*e*/.ref = this.getNodeHandle(), global/*e*/.accessible !== !1 && (global/*e*/.accessible = !0), global/*e*/.isHighlighted = this.state.isHighlighted, global/*e*/.onStartShouldSetResponder = this.onStartShouldSetResponder, global/*e*/.onResponderTerminationRequest = this.handleResponderTerminationRequest, global/*e*/.onResponderGrant = this.handleResponderGrant, global/*e*/.onResponderMove = this.handleResponderMove, global/*e*/.onResponderRelease = this.handleResponderRelease, global/*e*/.onResponderTerminate = this.handleResponderTerminate, a.createElement(_, Object.assign({}, global/*e*/))
             }
         }),
         g = {
@@ -82,6 +82,6 @@ __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPro
             right: 20,
             bottom: 30
         },
-        _ = TextStylePropTypes/*p*/(merge/*f*/);
+        _ = p(f);
     module/*i*/.exports = m
 });

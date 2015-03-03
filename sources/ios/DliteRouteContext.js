@@ -1,13 +1,13 @@
 __d("DliteRouteContext",["DliteRoute","React"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DliteRoute"),
-        exports/*a*/ = require/*t*/("React"),
-        DliteRoute/*s*/ = {
+        a = require/*t*/("React"),
+        s = {
             Mixin: {
                 contextTypes: {
-                    route: exports/*a*/.PropTypes.instanceOf(o).isRequired
+                    route: a.PropTypes.instanceOf(o).isRequired
                 }
             }
         };
-    module/*i*/.exports = DliteRoute/*s*/
+    module/*i*/.exports = s
 });

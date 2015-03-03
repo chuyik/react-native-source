@@ -1,18 +1,18 @@
 __d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FBTextWithEntities.react"),
-        exports/*a*/ = require/*t*/("React"),
-        FBTextWithEntities.react/*s*/ = require/*t*/("ReactGraphQL"),
-        React/*l*/ = 3,
-        ReactGraphQL/*u*/ = exports/*a*/.createClass({
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactGraphQL"),
+        l = 3,
+        u = a.createClass({
             displayName: "THLikeSentence",
             propTypes: {
-                feedback: exports/*a*/.PropTypes.object.isRequired
+                feedback: a.PropTypes.object.isRequired
             },
-            mixins: [FBTextWithEntities.react/*s*/.Mixin],
+            mixins: [s.Mixin],
             statics: {
                 queryParams: {
-                    likers_count: React/*l*/
+                    likers_count: l
                 },
                 queries: {
                     feedback: function(global/*e*/, require/*t*/) {
@@ -30,10 +30,10 @@ __d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],functio
             },
             render: function() {
                 var global/*e*/ = this.props.feedback.like_sentence;
-                return exports/*a*/.createElement(o, {
+                return a.createElement(o, {
                     text: global/*e*/
                 })
             }
         });
-    module/*i*/.exports = ReactGraphQL/*u*/
+    module/*i*/.exports = u
 });

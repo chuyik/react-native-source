@@ -1,36 +1,36 @@
 __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes","React","ReactChildren","ReactIOSViewAttributes","StyleSheet","Subscribable","Text","TextInputState","TimerMixin","TouchableWithoutFeedback","createReactIOSNativeComponentClass","emptyFunction","getObjectValues","invariant","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DocumentSelectionState"),
-        exports/*a*/ = require/*t*/("EventEmitter"),
-        DocumentSelectionState/*s*/ = require/*t*/("NativeMethodsMixin"),
-        EventEmitter/*l*/ = require/*t*/("NativeModulesDeprecated"),
-        NativeMethodsMixin/*u*/ = require/*t*/("ReactPropTypes"),
-        NativeModulesDeprecated/*c*/ = require/*t*/("React"),
-        ReactPropTypes/*p*/ = require/*t*/("ReactChildren"),
-        React/*d*/ = require/*t*/("ReactIOSViewAttributes"),
-        ReactChildren/*h*/ = require/*t*/("StyleSheet"),
-        ReactIOSViewAttributes/*f*/ = require/*t*/("Subscribable"),
-        StyleSheet/*m*/ = require/*t*/("Text"),
-        Subscribable/*g*/ = require/*t*/("TextInputState"),
-        Text/*_*/ = require/*t*/("TimerMixin"),
-        TextInputState/*y*/ = require/*t*/("TouchableWithoutFeedback"),
-        TimerMixin/*v*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        TouchableWithoutFeedback/*S*/ = require/*t*/("emptyFunction"),
-        createReactIOSNativeComponentClass/*b*/ = require/*t*/("getObjectValues"),
-        emptyFunction/*R*/ = require/*t*/("invariant"),
-        getObjectValues/*w*/ = require/*t*/("merge"),
-        invariant/*C*/ = EventEmitter/*l*/.RKUIManager.UIText.AutocapitalizationType,
-        merge/*E*/ = {
-            none: invariant/*C*/.None,
-            sentences: invariant/*C*/.Sentences,
-            words: invariant/*C*/.Words,
-            characters: invariant/*C*/.AllCharacters
+        a = require/*t*/("EventEmitter"),
+        s = require/*t*/("NativeMethodsMixin"),
+        l = require/*t*/("NativeModulesDeprecated"),
+        u = require/*t*/("ReactPropTypes"),
+        c = require/*t*/("React"),
+        p = require/*t*/("ReactChildren"),
+        d = require/*t*/("ReactIOSViewAttributes"),
+        h = require/*t*/("StyleSheet"),
+        f = require/*t*/("Subscribable"),
+        m = require/*t*/("Text"),
+        g = require/*t*/("TextInputState"),
+        _ = require/*t*/("TimerMixin"),
+        y = require/*t*/("TouchableWithoutFeedback"),
+        v = require/*t*/("createReactIOSNativeComponentClass"),
+        S = require/*t*/("emptyFunction"),
+        b = require/*t*/("getObjectValues"),
+        R = require/*t*/("invariant"),
+        w = require/*t*/("merge"),
+        C = l.RKUIManager.UIText.AutocapitalizationType,
+        E = {
+            none: C.None,
+            sentences: C.Sentences,
+            words: C.Words,
+            characters: C.AllCharacters
         },
         D = {
             "default": "default",
             numeric: "numeric"
         },
-        T = getObjectValues/*w*/(React/*d*/.UIView, {
+        T = w(d.UIView, {
             autoCorrect: !0,
             autoCapitalize: !0,
             color: !0,
@@ -43,7 +43,7 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
             placeholderTextColor: !0,
             text: !0
         }),
-        x = getObjectValues/*w*/(T, {
+        x = w(T, {
             caretHidden: !0,
             enabled: !0
         }),
@@ -55,39 +55,39 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
         I = {
             onSubmitEditing: !0
         },
-        F = NativeModulesDeprecated/*c*/.createClass({
+        F = c.createClass({
             displayName: "TextInput",
             statics: {
-                autoCapitalizeMode: merge/*E*/,
+                autoCapitalizeMode: E,
                 keyboardType: D
             },
             propTypes: {
-                autoCapitalize: NativeMethodsMixin/*u*/.oneOf(createReactIOSNativeComponentClass/*b*/(merge/*E*/)),
-                autoCorrect: NativeMethodsMixin/*u*/.bool,
-                autoFocus: NativeMethodsMixin/*u*/.bool,
-                editable: NativeMethodsMixin/*u*/.bool,
-                keyboardType: NativeMethodsMixin/*u*/.oneOf(createReactIOSNativeComponentClass/*b*/(D)),
-                multiline: NativeMethodsMixin/*u*/.bool,
-                onBlur: NativeMethodsMixin/*u*/.func,
-                onFocus: NativeMethodsMixin/*u*/.func,
-                onChangeText: NativeMethodsMixin/*u*/.func,
-                onEndEditing: NativeMethodsMixin/*u*/.func,
-                onSubmitEditing: NativeMethodsMixin/*u*/.func,
-                placeholder: NativeMethodsMixin/*u*/.string,
-                placeholderTextColor: NativeMethodsMixin/*u*/.string,
-                selectionState: NativeMethodsMixin/*u*/.instanceOf(o),
-                value: NativeMethodsMixin/*u*/.string,
-                bufferDelay: NativeMethodsMixin/*u*/.number,
-                controlled: NativeMethodsMixin/*u*/.bool,
-                style: StyleSheet/*m*/.stylePropType
+                autoCapitalize: u.oneOf(b(E)),
+                autoCorrect: u.bool,
+                autoFocus: u.bool,
+                editable: u.bool,
+                keyboardType: u.oneOf(b(D)),
+                multiline: u.bool,
+                onBlur: u.func,
+                onFocus: u.func,
+                onChangeText: u.func,
+                onEndEditing: u.func,
+                onSubmitEditing: u.func,
+                placeholder: u.string,
+                placeholderTextColor: u.string,
+                selectionState: u.instanceOf(o),
+                value: u.string,
+                bufferDelay: u.number,
+                controlled: u.bool,
+                style: m.stylePropType
             },
-            mixins: [DocumentSelectionState/*s*/, Text/*_*/, ReactIOSViewAttributes/*f*/.Mixin],
+            mixins: [s, _, f.Mixin],
             viewConfig: {
                 uiViewClassName: "RCTTextField",
                 validAttributes: x
             },
             isFocused: function() {
-                return Subscribable/*g*/.currentlyFocusedField() === this.refs.input.getNativeNode()
+                return g.currentlyFocusedField() === this.refs.input.getNativeNode()
             },
             getDefaultProps: function() {
                 return {
@@ -101,8 +101,8 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                 }
             },
             contextTypes: {
-                onFocusRequested: NativeModulesDeprecated/*c*/.PropTypes.func,
-                focusEmitter: NativeModulesDeprecated/*c*/.PropTypes.instanceOf(exports/*a*/)
+                onFocusRequested: c.PropTypes.func,
+                focusEmitter: c.PropTypes.instanceOf(a)
             },
             componentDidMount: function() {
                 return this.context.focusEmitter ? (this.addListenerOn(this.context.focusEmitter, "focus", function(global/*e*/) {
@@ -125,9 +125,9 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                         if (this.props[require/*t*/]) throw new Error("TextInput prop `" + require/*t*/ + "` cannot be used with multiline.");
                     var requireDynamic/*n*/ = this.props.children,
                         requireLazy/*r*/ = 0;
-                    ReactPropTypes/*p*/.forEach(requireDynamic/*n*/, function() {
+                    p.forEach(requireDynamic/*n*/, function() {
                         return ++requireLazy/*r*/
-                    }), this.props.value && requireLazy/*r*/ && emptyFunction/*R*/(0, "Cannot specify both value and children."), requireLazy/*r*/ > 1 && (requireDynamic/*n*/ = NativeModulesDeprecated/*c*/.createElement(StyleSheet/*m*/, null, requireDynamic/*n*/)), this.props.inputView && (requireDynamic/*n*/ = [requireDynamic/*n*/, this.props.inputView]), global/*e*/ = NativeModulesDeprecated/*c*/.createElement(M, {
+                    }), this.props.value && requireLazy/*r*/ && R(0, "Cannot specify both value and children."), requireLazy/*r*/ > 1 && (requireDynamic/*n*/ = c.createElement(m, null, requireDynamic/*n*/)), this.props.inputView && (requireDynamic/*n*/ = [requireDynamic/*n*/, this.props.inputView]), global/*e*/ = c.createElement(M, {
                         ref: "input",
                         style: [L.input, this.props.style],
                         children: requireDynamic/*n*/,
@@ -139,7 +139,7 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                         onEndEditing: this.props.onEndEditing,
                         onSelectionChange: this._onSelectionChange,
                         onTextInput: this._onTextInput,
-                        onSelectionChangeShouldSetResponder: TouchableWithoutFeedback/*S*/.thatReturnsTrue,
+                        onSelectionChangeShouldSetResponder: S.thatReturnsTrue,
                         placeholder: this.props.placeholder,
                         placeholderTextColor: this.props.placeholderTextColor,
                         text: this.state.bufferedValue,
@@ -149,7 +149,7 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                 } else {
                     for (var require/*t*/ in P)
                         if (this.props[require/*t*/]) throw new Error("TextInput prop `" + require/*t*/ + "` is only supported with multiline.");
-                    global/*e*/ = NativeModulesDeprecated/*c*/.createElement(Q, {
+                    global/*e*/ = c.createElement(Q, {
                         ref: "input",
                         style: [L.input, this.props.style],
                         enabled: this.props.editable,
@@ -168,7 +168,7 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                         autoCorrect: this.props.autoCorrect
                     })
                 }
-                return NativeModulesDeprecated/*c*/.createElement(TextInputState/*y*/, {
+                return c.createElement(y, {
                     onPress: this._onPress,
                     rejectResponderTermination: !0
                 }, global/*e*/)
@@ -202,16 +202,16 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                 })
             }
         }),
-        L = ReactChildren/*h*/.create({
+        L = h.create({
             input: {
                 alignSelf: "stretch"
             }
         }),
-        M = TimerMixin/*v*/({
+        M = v({
             validAttributes: T,
             uiViewClassName: "RCTTextView"
         }),
-        Q = TimerMixin/*v*/({
+        Q = v({
             validAttributes: x,
             uiViewClassName: "RCTTextField"
         });

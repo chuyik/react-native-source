@@ -1,33 +1,33 @@
 __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","ReactGraphQL","NativeModules","RouteHandler","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FBActorSubtitle"),
-        exports/*a*/ = require/*t*/("FIGColors"),
-        FBActorSubtitle/*s*/ = require/*t*/("Image"),
-        FIGColors/*l*/ = require/*t*/("PixelRatio"),
-        Image/*u*/ = require/*t*/("React"),
-        PixelRatio/*c*/ = require/*t*/("ReactGraphQL"),
-        React/*p*/ = require/*t*/("NativeModules").RKCurrentViewer,
-        ReactGraphQL/*d*/ = require/*t*/("RouteHandler"),
-        NativeModules/*h*/ = require/*t*/("StyleSheet"),
-        RouteHandler/*f*/ = require/*t*/("Text"),
-        StyleSheet/*m*/ = require/*t*/("TouchableBounce"),
-        Text/*g*/ = require/*t*/("View"),
-        TouchableBounce/*_*/ = require/*t*/("fbt"),
-        View/*y*/ = require/*t*/("ix"),
-        fbt/*v*/ = FIGColors/*l*/.get(),
-        ix/*S*/ = 40 * fbt/*v*/,
-        b = Image/*u*/.createClass({
+        a = require/*t*/("FIGColors"),
+        s = require/*t*/("Image"),
+        l = require/*t*/("PixelRatio"),
+        u = require/*t*/("React"),
+        c = require/*t*/("ReactGraphQL"),
+        p = require/*t*/("NativeModules").RKCurrentViewer,
+        d = require/*t*/("RouteHandler"),
+        h = require/*t*/("StyleSheet"),
+        f = require/*t*/("Text"),
+        m = require/*t*/("TouchableBounce"),
+        g = require/*t*/("View"),
+        _ = require/*t*/("fbt"),
+        y = require/*t*/("ix"),
+        v = l.get(),
+        S = 40 * v,
+        b = u.createClass({
             displayName: "FBActorRow",
             propTypes: {
-                circularProfilePicture: Image/*u*/.PropTypes.bool,
-                onPressWithCompletion: Image/*u*/.PropTypes.func
+                circularProfilePicture: u.PropTypes.bool,
+                onPressWithCompletion: u.PropTypes.func
             },
             getDefaultProps: function() {
                 return {
                     circularProfilePicture: !1
                 }
             },
-            mixins: [PixelRatio/*c*/.Mixin],
+            mixins: [c.Mixin],
             statics: {
                 rowHeight: 60,
                 queries: {
@@ -45,48 +45,48 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                             }), new module/*i*/.Field("is_viewer_friend")], [require/*t*/.__frag(requireLazy/*r*/)], {
                                 scope: "FBActorRow_actor"
                             })
-                        }(ix/*S*/, ix/*S*/, o.getQuery("actor"))
+                        }(S, S, o.getQuery("actor"))
                     }
                 }
             },
             renderSubtitle: function() {
                 var global/*e*/ = this.props.actor.mutual_friends.count;
-                if (global/*e*/ && React/*p*/.userFBID !== this.props.actor.id) {
-                    var require/*t*/ = 1 === global/*e*/ ? TouchableBounce/*_*/({
+                if (global/*e*/ && p.userFBID !== this.props.actor.id) {
+                    var require/*t*/ = 1 === global/*e*/ ? _({
                         type: "text",
                         texts: ["1 Mutual Friend"],
                         desc: "Singular mutual friend count"
-                    }) : TouchableBounce/*_*/({
+                    }) : _({
                         type: "text",
                         texts: ["{mutual_friend_count} Mutual Friends"],
                         desc: "Mutual friend count"
-                    }, [TouchableBounce/*_*/.param("mutual_friend_count", global/*e*/)]);
-                    return Image/*u*/.createElement(RouteHandler/*f*/, {
+                    }, [_.param("mutual_friend_count", global/*e*/)]);
+                    return u.createElement(f, {
                         style: R.subtitle
                     }, require/*t*/)
                 }
-                return Image/*u*/.createElement(o, {
+                return u.createElement(o, {
                     actor: this.props.actor,
                     textStyle: R.subtitle
                 })
             },
             renderText: function() {
-                return Image/*u*/.createElement(Text/*g*/, null, Image/*u*/.createElement(RouteHandler/*f*/, {
+                return u.createElement(g, null, u.createElement(f, {
                     style: R.name
                 }, this.props.actor.name), this.renderSubtitle())
             },
             renderIsFriendIcon: function() {
-                return this.props.actor.is_viewer_friend ? Image/*u*/.createElement(FBActorSubtitle/*s*/, {
+                return this.props.actor.is_viewer_friend ? u.createElement(s, {
                     style: R.icon,
-                    source: View/*y*/("pymkFriendsIcon")
-                }) : Image/*u*/.createElement(Text/*g*/, null)
+                    source: y("pymkFriendsIcon")
+                }) : u.createElement(g, null)
             },
             handlePress: function() {
                 this.props.onPressWithCompletion ? this.props.onPressWithCompletion(this.handlePressComplete) : this.handlePressComplete()
             },
             handlePressComplete: function() {
                 var global/*e*/ = this.props.actor;
-                ReactGraphQL/*d*/.getCallback({
+                d.getCallback({
                     typeList: [global/*e*/.__type__.name],
                     params: {
                         id: global/*e*/.id
@@ -96,19 +96,19 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
             render: function() {
                 var global/*e*/ = this.props.actor,
                     require/*t*/ = this.props.circularProfilePicture ? [R.profilePicture, R.circularProfilePicture] : R.profilePicture;
-                return Image/*u*/.createElement(Text/*g*/, {
+                return u.createElement(g, {
                     style: [R.container, R.row]
-                }, Image/*u*/.createElement(StyleSheet/*m*/, {
+                }, u.createElement(m, {
                     onPress: this.handlePress.bind(this, global/*e*/)
-                }, Image/*u*/.createElement(Text/*g*/, {
+                }, u.createElement(g, {
                     style: R.row
-                }, Image/*u*/.createElement(FBActorSubtitle/*s*/, {
+                }, u.createElement(s, {
                     source: global/*e*/.profile_picture,
                     style: require/*t*/
                 }), this.renderText())), this.renderIsFriendIcon())
             }
         }),
-        R = NativeModules/*h*/.create({
+        R = h.create({
             container: {
                 justifyContent: "space-between"
             },
@@ -118,12 +118,12 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                 flexDirection: "row"
             },
             name: {
-                color: exports/*a*/.darkText,
+                color: a.darkText,
                 fontSize: 15,
                 fontWeight: "bold"
             },
             subtitle: {
-                color: exports/*a*/.lightText,
+                color: a.lightText,
                 fontSize: 13
             },
             icon: {
@@ -131,12 +131,12 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                 height: 40
             },
             profilePicture: {
-                width: ix/*S*/ / fbt/*v*/,
-                height: ix/*S*/ / fbt/*v*/,
+                width: S / v,
+                height: S / v,
                 marginRight: 10
             },
             circularProfilePicture: {
-                borderRadius: ix/*S*/ / fbt/*v*/ / 2
+                borderRadius: S / v / 2
             }
         });
     module/*i*/.exports = b

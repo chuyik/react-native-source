@@ -1,7 +1,7 @@
 __d("Keys",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     module/*i*/.exports = {
         BACKSPACE: 8,
-        exports/*TAB*/: 9,
+        TAB: 9,
         RETURN: 13,
         ALT: 18,
         ESC: 27,

@@ -1,67 +1,67 @@
 __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleSheetPropType","TimerMixin","View","emptyFunction","keyMirror","merge","performanceNow"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("Dlite"),
-        exports/*a*/ = require/*t*/("FBSpinner"),
-        Dlite/*s*/ = require/*t*/("React"),
-        FBSpinner/*l*/ = require/*t*/("StyleSheet"),
-        React/*u*/ = require/*t*/("StyleSheetPropType"),
-        StyleSheet/*c*/ = require/*t*/("TimerMixin"),
-        StyleSheetPropType/*p*/ = require/*t*/("View"),
-        TimerMixin/*d*/ = require/*t*/("emptyFunction"),
-        View/*merge/*h*/*/ = require/*t*/("keyMirror"),
-        emptyFunction/*f*/ = require/*t*/("merge"),
-        keyMirror/*m*/ = (require/*t*/("performanceNow"), View/*merge/*h*/*/({
+        a = require/*t*/("FBSpinner"),
+        s = require/*t*/("React"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("StyleSheetPropType"),
+        c = require/*t*/("TimerMixin"),
+        p = require/*t*/("View"),
+        d = require/*t*/("emptyFunction"),
+        h = require/*t*/("keyMirror"),
+        f = require/*t*/("merge"),
+        m = (require/*t*/("performanceNow"), h({
             LOADING: null,
-            performanceNow/*READY*/: null,
+            READY: null,
             ERROR: null
         })),
-        g = FBSpinner/*l*/.create({
+        g = l.create({
             spinner: {
                 alignItems: "center",
                 paddingTop: 200
             }
         }),
-        _ = Dlite/*s*/.createClass({
+        _ = s.createClass({
             displayName: "DliteLoadingComponent",
-            mixins: [StyleSheet/*c*/],
+            mixins: [c],
             propTypes: {
-                loadingView: Dlite/*s*/.PropTypes.component,
-                failedView: Dlite/*s*/.PropTypes.component,
-                refetchRoute: Dlite/*s*/.PropTypes.bool,
-                onComponentRef: Dlite/*s*/.PropTypes.func,
-                onFailure: Dlite/*s*/.PropTypes.func,
-                onResolvable: Dlite/*s*/.PropTypes.func,
-                onBlockingRequest: Dlite/*s*/.PropTypes.func,
-                onSuccess: Dlite/*s*/.PropTypes.func,
-                passProps: Dlite/*s*/.PropTypes.object,
-                style: React/*u*/,
-                navigator: Dlite/*s*/.PropTypes.object,
-                navigationOperations: Dlite/*s*/.PropTypes.object
+                loadingView: s.PropTypes.component,
+                failedView: s.PropTypes.component,
+                refetchRoute: s.PropTypes.bool,
+                onComponentRef: s.PropTypes.func,
+                onFailure: s.PropTypes.func,
+                onResolvable: s.PropTypes.func,
+                onBlockingRequest: s.PropTypes.func,
+                onSuccess: s.PropTypes.func,
+                passProps: s.PropTypes.object,
+                style: u,
+                navigator: s.PropTypes.object,
+                navigationOperations: s.PropTypes.object
             },
             getComponent: function() {
                 return this._component
             },
             reload: function() {
                 this.setState({
-                    loadingState: keyMirror/*m*/.LOADING
+                    loadingState: m.LOADING
                 }), this._runQueries(this.props)
             },
             getInitialState: function() {
                 return {
-                    loadingState: keyMirror/*m*/.LOADING
+                    loadingState: m.LOADING
                 }
             },
             getDefaultProps: function() {
                 return {
-                    loadingView: Dlite/*s*/.createElement(StyleSheetPropType/*p*/, {
+                    loadingView: s.createElement(p, {
                         style: g.spinner
-                    }, Dlite/*s*/.createElement(exports/*a*/, null)),
+                    }, s.createElement(a, null)),
                     refetchRoute: !1,
-                    onComponentRef: TimerMixin/*d*/,
-                    onFailure: TimerMixin/*d*/,
-                    onResolvable: TimerMixin/*d*/,
-                    onBlockingRequest: TimerMixin/*d*/,
-                    onSuccess: TimerMixin/*d*/
+                    onComponentRef: d,
+                    onFailure: d,
+                    onResolvable: d,
+                    onBlockingRequest: d,
+                    onSuccess: d
                 }
             },
             shouldComponentUpdate: function(global/*e*/, require/*t*/) {
@@ -69,7 +69,7 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             },
             componentWillReceiveProps: function(global/*e*/) {
                 this.props.route !== global/*e*/.route && (this.setState({
-                    loadingState: keyMirror/*m*/.LOADING
+                    loadingState: m.LOADING
                 }), this._runQueries(global/*e*/))
             },
             componentWillMount: function() {
@@ -97,21 +97,21 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             _onResolvable: function(global/*e*/) {
                 var require/*t*/ = global/*e*/.route;
                 this.isMounted() && require/*t*/ === this.props.route && (this.props.onResolvable(), this.setState({
-                    loadingState: keyMirror/*m*/.performanceNow/*READY*/
+                    loadingState: m.READY
                 }))
             },
             _onSuccess: function(global/*e*/) {
                 this.pendingQuery = null;
                 var require/*t*/ = global/*e*/.route;
                 this.isMounted() && require/*t*/ === this.props.route && (this.props.onSuccess(), this.setState({
-                    loadingState: keyMirror/*m*/.performanceNow/*READY*/
+                    loadingState: m.READY
                 }))
             },
             _onFailure: function(global/*e*/, require/*t*/) {
                 this.pendingQuery = null;
                 var requireDynamic/*n*/ = global/*e*/.route;
                 this.isMounted() && requireDynamic/*n*/ === this.props.route && (this.props.onFailure(require/*t*/), this.setState({
-                    loadingState: keyMirror/*m*/.ERROR
+                    loadingState: m.ERROR
                 }))
             },
             _reloadDataForChild: function(global/*e*/) {
@@ -124,12 +124,12 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             },
             render: function() {
                 var global/*e*/, require/*t*/ = this.props.component,
-                    requireDynamic/*n*/ = emptyFunction/*f*/({
+                    requireDynamic/*n*/ = f({
                         navigator: this.props.navigationOperations || this.props.navigator,
                         forceUpdate: this._reloadDataForChild
                     }, this.props.passProps),
                     requireLazy/*r*/ = this._onComponentRef;
-                return global/*e*/ = this.state.loadingState === keyMirror/*m*/.LOADING ? this.props.loadingView : this.state.loadingState === keyMirror/*m*/.ERROR ? this.props.failedView : o.createComponent(require/*t*/, this.props.route, requireDynamic/*n*/, requireLazy/*r*/), Dlite/*s*/.createElement(StyleSheetPropType/*p*/, {
+                return global/*e*/ = this.state.loadingState === m.LOADING ? this.props.loadingView : this.state.loadingState === m.ERROR ? this.props.failedView : o.createComponent(require/*t*/, this.props.route, requireDynamic/*n*/, requireLazy/*r*/), s.createElement(p, {
                     style: this.props.style
                 }, global/*e*/)
             }

@@ -1,9 +1,9 @@
 __d("TextInputState",["NativeModulesDeprecated"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeModulesDeprecated").RKUIManager,
-        exports/*a*/ = {
+        a = {
             _currentlyFocusedID: null,
-            NativeModulesDeprecated/*currentlyFocusedField*/: function() {
+            currentlyFocusedField: function() {
                 return this._currentlyFocusedID
             },
             focusTextInput: function(global/*e*/) {
@@ -13,5 +13,5 @@ __d("TextInputState",["NativeModulesDeprecated"],function (global/*e*/, require/
                 this._currentlyFocusedID == global/*e*/ && null != global/*e*/ && (this._currentlyFocusedID = null, o.blur(global/*e*/))
             }
         };
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

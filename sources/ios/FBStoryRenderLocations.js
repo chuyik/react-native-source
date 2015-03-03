@@ -2,7 +2,7 @@ __d("FBStoryRenderLocations",[],function (global/*e*/, require/*t*/, requireDyna
     "use strict";
     var o = {
         feedMobile: "feed_mobile",
-        exports/*group*/: "exports/*group*/",
+        group: "group",
         permalink: "permalink"
     };
     module/*i*/.exports = o

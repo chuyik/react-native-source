@@ -4,11 +4,11 @@ __d("getDefaultKeyBinding",["DocumentCommands","Keys","UserAgent"],function (glo
     }
 
     function a(global/*e*/) {
-        return Keys/*m*/ ? global/*e*/.metaKey && !global/*e*/.altKey : o(global/*e*/)
+        return m ? global/*e*/.metaKey && !global/*e*/.altKey : o(global/*e*/)
     }
 
     function s(global/*e*/) {
-        return Keys/*m*/ ? global/*e*/.altKey : o(global/*e*/)
+        return m ? global/*e*/.altKey : o(global/*e*/)
     }
 
     function l(global/*e*/) {
@@ -16,11 +16,11 @@ __d("getDefaultKeyBinding",["DocumentCommands","Keys","UserAgent"],function (glo
     }
 
     function u(global/*e*/) {
-        return UserAgent/*g*/ && global/*e*/.shiftKey ? null : s(global/*e*/) ? d.DELETE_WORD : d.DELETE
+        return g && global/*e*/.shiftKey ? null : s(global/*e*/) ? d.DELETE_WORD : d.DELETE
     }
 
     function c(global/*e*/) {
-        return a(global/*e*/) && Keys/*m*/ ? d.BACKSPACE_TO_END_OF_BLOCK : s(global/*e*/) ? d.BACKSPACE_WORD : d.BACKSPACE
+        return a(global/*e*/) && m ? d.BACKSPACE_TO_END_OF_BLOCK : s(global/*e*/) ? d.BACKSPACE_WORD : d.BACKSPACE
     }
 
     function p(global/*e*/) {
@@ -45,24 +45,24 @@ __d("getDefaultKeyBinding",["DocumentCommands","Keys","UserAgent"],function (glo
                 return a(global/*e*/) ? d.UNDERLINE : null;
             case 90:
                 return l(global/*e*/) || null;
-            case exports/*h*/.DELETE:
+            case h.DELETE:
                 return u(global/*e*/);
-            case exports/*h*/.BACKSPACE:
+            case h.BACKSPACE:
                 return c(global/*e*/);
-            case exports/*h*/.LEFT:
+            case h.LEFT:
                 return y && a(global/*e*/) ? d.MOVE_SELECTION_TO_START_OF_BLOCK : null;
-            case exports/*h*/.RIGHT:
+            case h.RIGHT:
                 return y && a(global/*e*/) ? d.MOVE_SELECTION_TO_END_OF_BLOCK : null;
             default:
                 return null
         }
     }
     var d = require/*t*/("DocumentCommands"),
-        exports/*h*/ = require/*t*/("Keys"),
-        DocumentCommands/*f*/ = require/*t*/("UserAgent"),
-        Keys/*m*/ = DocumentCommands/*f*/.osx(),
-        UserAgent/*g*/ = DocumentCommands/*f*/.windows(),
-        _ = DocumentCommands/*f*/.firefox(),
-        y = Keys/*m*/ && _ && 29 > _;
+        h = require/*t*/("Keys"),
+        f = require/*t*/("UserAgent"),
+        m = f.osx(),
+        g = f.windows(),
+        _ = f.firefox(),
+        y = m && _ && 29 > _;
     module/*i*/.exports = p
 });

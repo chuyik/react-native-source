@@ -1,12 +1,12 @@
-__d("DocumentRemovableWord",["TokenizeUtil"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*exports/*t*/*/) {
-        var requireDynamic/*n*/ = require/*exports/*t*/*/ ? d.exec(global/*e*/) : c.exec(global/*e*/);
+__d("DocumentRemovableWord",["TokenizeUtil"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/) {
+        var requireDynamic/*n*/ = require/*t*/ ? d.exec(global/*e*/) : c.exec(global/*e*/);
         return requireDynamic/*n*/ ? requireDynamic/*n*/[0] : null
     }
-    var a = require/*exports/*t*/*/("TokenizeUtil"),
-        TokenizeUtil/*s*/ = a.getPunctuation();
-    TokenizeUtil/*s*/ = TokenizeUtil/*s*/.replace("'", "").slice(1, -1);
-    var l = "\\TokenizeUtil/*s*/" + TokenizeUtil/*s*/,
+    var a = require/*t*/("TokenizeUtil"),
+        s = a.getPunctuation();
+    s = s.replace("'", "").slice(1, -1);
+    var l = "\\s" + s,
         u = "^([" + l + "]*[^" + l + "]+|[" + l + "]+)",
         c = new RegExp(u),
         p = "([^" + l + "]+[" + l + "]*|[" + l + "]+)$",

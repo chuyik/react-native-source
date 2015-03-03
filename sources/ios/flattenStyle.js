@@ -1,4 +1,4 @@
-__d("flattenStyle",["StyleSheetRegistry","mergeIntoFast"],function (global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*/, requireLazy/*StyleSheetRegistry/*r*/*/, module/*i*/) {
+__d("flattenStyle",["StyleSheetRegistry","mergeIntoFast"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o(global/*e*/) {
@@ -8,13 +8,13 @@ __d("flattenStyle",["StyleSheetRegistry","mergeIntoFast"],function (global/*e*/,
     function a(global/*e*/) {
         if (!global/*e*/) return void 0;
         if (!Array.isArray(global/*e*/)) return o(global/*e*/);
-        for (var require/*t*/ = {}, requireDynamic/*exports/*n*/*/ = 0; requireDynamic/*exports/*n*/*/ < global/*e*/.length; ++requireDynamic/*exports/*n*/*/) {
-            var requireLazy/*StyleSheetRegistry/*r*/*/ = a(global/*e*/[requireDynamic/*exports/*n*/*/]);
-            requireLazy/*StyleSheetRegistry/*r*/*/ && mergeIntoFast/*l*/(require/*t*/, requireLazy/*StyleSheetRegistry/*r*/*/)
+        for (var require/*t*/ = {}, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; ++requireDynamic/*n*/) {
+            var requireLazy/*r*/ = a(global/*e*/[requireDynamic/*n*/]);
+            requireLazy/*r*/ && l(require/*t*/, requireLazy/*r*/)
         }
         return require/*t*/
     }
     var s = require/*t*/("StyleSheetRegistry"),
-        mergeIntoFast/*l*/ = require/*t*/("mergeIntoFast");
+        l = require/*t*/("mergeIntoFast");
     module/*i*/.exports = a
 });

@@ -1,4 +1,4 @@
-__d("GraphQLMutatorHub",["GraphQLMutatorConstants","invariant"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*GraphQLMutatorConstants/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLMutatorHub",["GraphQLMutatorConstants","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o(global/*e*/) {
@@ -13,24 +13,24 @@ __d("GraphQLMutatorHub",["GraphQLMutatorConstants","invariant"],function (global
         Array.isArray(global/*e*/.pathToConnection) && global/*e*/.pathToConnection.length >= 2 && "string" == typeof global/*e*/.deletedIDFieldName || c(0, "Range delete mutation config must have valid types on register")
     }
 
-    function l(global/*e*/, require/*exports/*t*/*/, requireDynamic/*GraphQLMutatorConstants/*n*/*/) {
-        require/*exports/*t*/*/ in u.HANDLER_TYPES || c(0, "Cannot register invalid handler type"), invariant/*void*/ 0 === p[global/*e*/] && (p[global/*e*/] = []), p[global/*e*/].push({
-            handlerType: require/*exports/*t*/*/,
-            config: requireDynamic/*GraphQLMutatorConstants/*n*/*/
+    function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        require/*t*/ in u.HANDLER_TYPES || c(0, "Cannot register invalid handler type"), void 0 === p[global/*e*/] && (p[global/*e*/] = []), p[global/*e*/].push({
+            handlerType: require/*t*/,
+            config: requireDynamic/*n*/
         })
     }
-    var u = require/*exports/*t*/*/("GraphQLMutatorConstants"),
-        c = require/*exports/*t*/*/("invariant"),
+    var u = require/*t*/("GraphQLMutatorConstants"),
+        c = require/*t*/("invariant"),
         p = {},
         d = {
-            registerForRangeAddMutationType: function(global/*e*/, require/*exports/*t*/*/) {
-                a(require/*exports/*t*/*/), l(global/*e*/, u.RANGE_ADD_HANDLER, require/*exports/*t*/*/)
+            registerForRangeAddMutationType: function(global/*e*/, require/*t*/) {
+                a(require/*t*/), l(global/*e*/, u.RANGE_ADD_HANDLER, require/*t*/)
             },
-            registerForRangeDeleteMutationType: function(global/*e*/, require/*exports/*t*/*/) {
-                s(require/*exports/*t*/*/), l(global/*e*/, u.RANGE_DELETE_HANDLER, require/*exports/*t*/*/)
+            registerForRangeDeleteMutationType: function(global/*e*/, require/*t*/) {
+                s(require/*t*/), l(global/*e*/, u.RANGE_DELETE_HANDLER, require/*t*/)
             },
-            registerForNodeDeleteMutationType: function(global/*e*/, require/*exports/*t*/*/) {
-                o(require/*exports/*t*/*/), l(global/*e*/, u.NODE_DELETE_HANDLER, require/*exports/*t*/*/)
+            registerForNodeDeleteMutationType: function(global/*e*/, require/*t*/) {
+                o(require/*t*/), l(global/*e*/, u.NODE_DELETE_HANDLER, require/*t*/)
             },
             getConfigs: function(global/*e*/) {
                 return p[global/*e*/] ? p[global/*e*/] : []

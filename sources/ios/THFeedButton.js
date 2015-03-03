@@ -1,39 +1,39 @@
 __d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("React"),
-        exports/*a*/ = require/*t*/("StyleSheet"),
-        React/*s*/ = require/*t*/("Text"),
-        StyleSheet/*l*/ = require/*t*/("THColors"),
-        Text/*u*/ = require/*t*/("TouchableBounce"),
-        THColors/*c*/ = require/*t*/("View"),
-        TouchableBounce/*p*/ = o.createClass({
+        a = require/*t*/("StyleSheet"),
+        s = require/*t*/("Text"),
+        l = require/*t*/("THColors"),
+        u = require/*t*/("TouchableBounce"),
+        c = require/*t*/("View"),
+        p = o.createClass({
             displayName: "THFeedButton",
-            View/*propTypes*/: {
+            propTypes: {
                 onPress: o.PropTypes.func,
                 isPositive: o.PropTypes.bool,
                 text: o.PropTypes.string
             },
             render: function() {
                 var global/*e*/ = this.props.isPositive ? d.positiveText : d.negativeText,
-                    require/*t*/ = this.props.isPositive ? StyleSheet/*l*/.lightBlue : StyleSheet/*l*/.buttonColor;
-                return o.createElement(Text/*u*/, {
+                    require/*t*/ = this.props.isPositive ? l.lightBlue : l.buttonColor;
+                return o.createElement(u, {
                     onPress: this.props.onPress
-                }, o.createElement(THColors/*c*/, {
+                }, o.createElement(c, {
                     style: [d.button, {
                         backgroundColor: require/*t*/
                     }]
-                }, o.createElement(React/*s*/, {
+                }, o.createElement(s, {
                     style: global/*e*/
                 }, this.props.text)))
             }
         }),
-        d = exports/*a*/.create({
+        d = a.create({
             positiveText: {
-                color: StyleSheet/*l*/.backgroundColor,
+                color: l.backgroundColor,
                 fontWeight: "bold"
             },
             negativeText: {
-                color: StyleSheet/*l*/.mediumGray,
+                color: l.mediumGray,
                 fontWeight: "bold"
             },
             button: {
@@ -45,5 +45,5 @@ __d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","Vi
                 marginRight: 10
             }
         });
-    module/*i*/.exports = TouchableBounce/*p*/
+    module/*i*/.exports = p
 });

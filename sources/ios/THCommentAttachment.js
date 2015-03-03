@@ -1,15 +1,15 @@
 __d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FBCommentAttachment"),
-        exports/*a*/ = require/*t*/("React"),
-        FBCommentAttachment/*s*/ = require/*t*/("ReactGraphQL"),
-        React/*l*/ = 160,
-        ReactGraphQL/*u*/ = exports/*a*/.createClass({
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactGraphQL"),
+        l = 160,
+        u = a.createClass({
             displayName: "THCommentAttachment",
             propTypes: {
-                attachment: exports/*a*/.PropTypes.object.isRequired
+                attachment: a.PropTypes.object.isRequired
             },
-            mixins: [FBCommentAttachment/*s*/.Mixin],
+            mixins: [s.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -23,12 +23,12 @@ __d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],functio
                 }
             },
             render: function() {
-                return exports/*a*/.createElement(o, {
+                return a.createElement(o, {
                     attachment: this.props.attachment,
                     backgroundColor: "#ffffff",
-                    maxPhotoWidth: React/*l*/
+                    maxPhotoWidth: l
                 })
             }
         });
-    module/*i*/.exports = ReactGraphQL/*u*/
+    module/*i*/.exports = u
 });

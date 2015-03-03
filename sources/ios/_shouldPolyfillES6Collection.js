@@ -9,7 +9,7 @@ __d("_shouldPolyfillES6Collection",[],function (global/*e*/, require/*t*/, requi
     function a(global/*e*/) {
         function require/*t*/() {
             "use strict";
-            null !== global/*e*/ && global/*e*/.apply(this, exports/*arguments*/)
+            null !== global/*e*/ && global/*e*/.apply(this, arguments)
         }
         for (var requireDynamic/*n*/ in global/*e*/) global/*e*/.hasOwnProperty(requireDynamic/*n*/) && (require/*t*/[requireDynamic/*n*/] = global/*e*/[requireDynamic/*n*/]);
         var requireLazy/*r*/ = null === global/*e*/ ? null : global/*e*/.prototype;

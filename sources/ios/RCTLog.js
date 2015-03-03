@@ -3,9 +3,9 @@ __d("RCTLog",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*
 
     function o() {}
     var a = require/*t*/("invariant"),
-        exports/*s*/ = {
+        s = {
             log: "log",
-            invariant/*info*/: "invariant/*info*/",
+            info: "info",
             warn: "warn",
             error: "error",
             mustfix: "error"
@@ -13,7 +13,7 @@ __d("RCTLog",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*
     o.logIfNoNativeHook = function() {
         var global/*e*/ = Array.prototype.slice.call(arguments),
             require/*t*/ = global/*e*/.shift(),
-            requireDynamic/*n*/ = exports/*s*/[require/*t*/];
-        return requireDynamic/*n*/ || a(0, 'Level "' + require/*t*/ + '" not one of ' + Object.keys(exports/*s*/)), "undefined" == typeof nativeLoggingHook && console[requireDynamic/*n*/].apply(console, global/*e*/), !0
+            requireDynamic/*n*/ = s[require/*t*/];
+        return requireDynamic/*n*/ || a(0, 'Level "' + require/*t*/ + '" not one of ' + Object.keys(s)), "undefined" == typeof nativeLoggingHook && console[requireDynamic/*n*/].apply(console, global/*e*/), !0
     }, module/*i*/.exports = o
 });

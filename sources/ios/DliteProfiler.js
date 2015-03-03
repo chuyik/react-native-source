@@ -1,16 +1,16 @@
 __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("emptyFunction"),
-        exports/*a*/ = require/*t*/("forEachObject"),
-        emptyFunction/*s*/ = require/*t*/("invariant"),
-        forEachObject/*l*/ = {},
-        invariant/*u*/ = {},
+        a = require/*t*/("forEachObject"),
+        s = require/*t*/("invariant"),
+        l = {},
+        u = {},
         c = {
             stop: o
         },
         p = {
             instrumentMethods: function(global/*e*/, require/*t*/) {
-                exports/*a*/(require/*t*/, function(require/*t*/, requireDynamic/*n*/) {
+                a(require/*t*/, function(require/*t*/, requireDynamic/*n*/) {
                     global/*e*/[requireDynamic/*n*/] = p.instrument(require/*t*/, global/*e*/[requireDynamic/*n*/])
                 })
             },
@@ -18,14 +18,14 @@ __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (glob
                 if (__DEV__) {
                     var requireDynamic/*n*/ = [],
                         requireLazy/*r*/ = function() {
-                            var requireLazy/*r*/ = forEachObject/*l*/,
+                            var requireLazy/*r*/ = l,
                                 module/*i*/ = arguments,
                                 o = function() {
                                     requireLazy/*r*/ = require/*t*/.apply(this, module/*i*/)
                                 }.bind(this);
                             if (requireDynamic/*n*/.forEach(function(require/*t*/) {
                                     o = require/*t*/.bind(this, global/*e*/, o)
-                                }, this), o(), requireLazy/*r*/ === forEachObject/*l*/) throw new Error("DliteProfiler: Handler did not invoke original function.");
+                                }, this), o(), requireLazy/*r*/ === l) throw new Error("DliteProfiler: Handler did not invoke original function.");
                             return requireLazy/*r*/
                         };
                     return requireLazy/*r*/.attachHandler = function(global/*e*/) {
@@ -38,17 +38,17 @@ __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (glob
                 return require/*t*/.attachHandler = o, require/*t*/.detachHandler = o, require/*t*/
             },
             instrumentAsync: function(global/*e*/) {
-                return __DEV__ ? (invariant/*u*/[global/*e*/] && invariant/*u*/[global/*e*/].onStart(), {
+                return __DEV__ ? (u[global/*e*/] && u[global/*e*/].onStart(), {
                     stop: function() {
-                        invariant/*u*/[global/*e*/] && invariant/*u*/[global/*e*/].onStop()
+                        u[global/*e*/] && u[global/*e*/].onStop()
                     }
                 }) : c
             },
             attachAsyncHandler: function(global/*e*/, require/*t*/) {
-                __DEV__ && (invariant/*u*/.hasOwnProperty(global/*e*/) && emptyFunction/*s*/(0, "DliteProfiler: Async handler with name `%emptyFunction/*s*/` already exists.", global/*e*/), invariant/*u*/[global/*e*/] = require/*t*/)
+                __DEV__ && (u.hasOwnProperty(global/*e*/) && s(0, "DliteProfiler: Async handler with name `%s` already exists.", global/*e*/), u[global/*e*/] = require/*t*/)
             },
             detachAsyncHandler: function(global/*e*/) {
-                __DEV__ && (invariant/*u*/.hasOwnProperty(global/*e*/) || emptyFunction/*s*/(0, "DliteProfiler: Async handler with name `%emptyFunction/*s*/` does not exist.", global/*e*/), delete invariant/*u*/[global/*e*/])
+                __DEV__ && (u.hasOwnProperty(global/*e*/) || s(0, "DliteProfiler: Async handler with name `%s` does not exist.", global/*e*/), delete u[global/*e*/])
             }
         };
     module/*i*/.exports = p

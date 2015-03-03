@@ -1,29 +1,29 @@
 __d("ActionQueue",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("invariant"),
-        exports/*a*/ = [],
-        invariant/*s*/ = {},
+        a = [],
+        s = {},
         l = {
             appendToQueue: function(global/*e*/) {
                 var require/*t*/ = global/*e*/.getClientMutationID();
-                require/*t*/ in invariant/*s*/ && o(0, "Cannot add an action to the queue that was already added"), exports/*a*/.push(require/*t*/), invariant/*s*/[require/*t*/] = global/*e*/
+                require/*t*/ in s && o(0, "Cannot add an action to the queue that was already added"), a.push(require/*t*/), s[require/*t*/] = global/*e*/
             },
             removeFromQueue: function(global/*e*/) {
-                global/*e*/ in invariant/*s*/ || o(0, "Cannot remove something not in the queue from the queue"), delete invariant/*s*/[global/*e*/];
-                var require/*t*/ = exports/*a*/.indexOf(global/*e*/);
-                require/*t*/ >= 0 || o(0, "clientMutationID most occur somewhere in the queue"), exports/*a*/.splice(require/*t*/, 1)
+                global/*e*/ in s || o(0, "Cannot remove something not in the queue from the queue"), delete s[global/*e*/];
+                var require/*t*/ = a.indexOf(global/*e*/);
+                require/*t*/ >= 0 || o(0, "clientMutationID most occur somewhere in the queue"), a.splice(require/*t*/, 1)
             },
             iterateOverQueue: function(global/*e*/) {
-                for (var require/*t*/ = 0; require/*t*/ < exports/*a*/.length; require/*t*/++) {
-                    var requireDynamic/*n*/ = invariant/*s*/[exports/*a*/[require/*t*/]];
+                for (var require/*t*/ = 0; require/*t*/ < a.length; require/*t*/++) {
+                    var requireDynamic/*n*/ = s[a[require/*t*/]];
                     global/*e*/(requireDynamic/*n*/)
                 }
             },
             getQueueLength: function() {
-                return exports/*a*/.length
+                return a.length
             },
             getActionByID: function(global/*e*/) {
-                return invariant/*s*/[global/*e*/]
+                return s[global/*e*/]
             }
         };
     module/*i*/.exports = l

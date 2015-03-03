@@ -2,14 +2,14 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
     "use strict";
 
     function o(global/*e*/) {
-        this.$GraphQLSegment_indexToMetadataMap = {}, exports/*this.$GraphQLSegment_idToIndicesMap*/ = {}, GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/ = {}, GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/ = 0, this.$GraphQLSegment_minIndex = null, this.$GraphQLSegment_maxIndex = null, this.$GraphQLSegment_sessionID = global/*e*/
+        this.$GraphQLSegment_indexToMetadataMap = {}, this.$GraphQLSegment_idToIndicesMap = {}, this.$GraphQLSegment_cursorToIndexMap = {}, this.$GraphQLSegment_count = 0, this.$GraphQLSegment_minIndex = null, this.$GraphQLSegment_maxIndex = null, this.$GraphQLSegment_sessionID = global/*e*/
     }
     var a = require/*t*/("GraphQLConstants"),
         s = require/*t*/("GraphQLStoreDataHandler");
     o.prototype.$GraphQLSegment_getIndexForCursor = function(global/*e*/) {
-        return GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[global/*e*/]
+        return this.$GraphQLSegment_cursorToIndexMap[global/*e*/]
     }, o.prototype.$GraphQLSegment_getIndexForID = function(global/*e*/) {
-        var require/*t*/ = exports/*this.$GraphQLSegment_idToIndicesMap*/[global/*e*/];
+        var require/*t*/ = this.$GraphQLSegment_idToIndicesMap[global/*e*/];
         return require/*t*/ && require/*t*/[0]
     }, o.prototype.getFirstCursor = function(global/*e*/) {
         if (this.getLength())
@@ -105,7 +105,7 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
             cursor: module/*i*/,
             insertionTime: requireDynamic/*n*/ || null,
             removalTime: null
-        }, exports/*this.$GraphQLSegment_idToIndicesMap*/[requireLazy/*r*/] = exports/*this.$GraphQLSegment_idToIndicesMap*/[requireLazy/*r*/] || [], exports/*this.$GraphQLSegment_idToIndicesMap*/[requireLazy/*r*/].unshift(require/*t*/), GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/++, void(module/*i*/ && (GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[module/*i*/] = require/*t*/)))
+        }, this.$GraphQLSegment_idToIndicesMap[requireLazy/*r*/] = this.$GraphQLSegment_idToIndicesMap[requireLazy/*r*/] || [], this.$GraphQLSegment_idToIndicesMap[requireLazy/*r*/].unshift(require/*t*/), this.$GraphQLSegment_count++, void(module/*i*/ && (this.$GraphQLSegment_cursorToIndexMap[module/*i*/] = require/*t*/)))
     }, o.prototype.prependEdge = function(global/*e*/, require/*t*/) {
         this.$GraphQLSegment_addEdgeAtIndex(global/*e*/, null !== this.$GraphQLSegment_minIndex ? this.$GraphQLSegment_minIndex - 1 : 0, require/*t*/)
     }, o.prototype.appendEdge = function(global/*e*/, require/*t*/) {
@@ -114,13 +114,13 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
         var requireDynamic/*n*/ = this.$GraphQLSegment_getIndexForID(global/*e*/);
         if (void 0 === requireDynamic/*n*/) return void console.error("Attempted to remove edge with ID that was never in GraphQLSegment: " + global/*e*/);
         var requireLazy/*r*/ = this.$GraphQLSegment_indexToMetadataMap[requireDynamic/*n*/];
-        return requireLazy/*r*/.removalTime ? void console.error("Attempted to remove edge with ID that was already removed: " + global/*e*/) : (requireLazy/*r*/.removalTime = require/*t*/, void GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/--)
+        return requireLazy/*r*/.removalTime ? void console.error("Attempted to remove edge with ID that was already removed: " + global/*e*/) : (requireLazy/*r*/.removalTime = require/*t*/, void this.$GraphQLSegment_count--)
     }, o.prototype.removeAllEdges = function(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = exports/*this.$GraphQLSegment_idToIndicesMap*/[global/*e*/];
+        var requireDynamic/*n*/ = this.$GraphQLSegment_idToIndicesMap[global/*e*/];
         if (requireDynamic/*n*/)
             for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < requireDynamic/*n*/.length; requireLazy/*r*/++) {
                 var module/*i*/ = this.$GraphQLSegment_indexToMetadataMap[requireDynamic/*n*/[requireLazy/*r*/]];
-                module/*i*/.removalTime ? module/*i*/.removalTime > require/*t*/ && (module/*i*/.removalTime = require/*t*/) : (module/*i*/.removalTime = require/*t*/, GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/--)
+                module/*i*/.removalTime ? module/*i*/.removalTime > require/*t*/ && (module/*i*/.removalTime = require/*t*/) : (module/*i*/.removalTime = require/*t*/, this.$GraphQLSegment_count--)
             }
     }, o.prototype.addEdgesAfterCursor = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         var requireLazy/*r*/ = -1;
@@ -149,14 +149,14 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
     }, o.prototype.getLength = function() {
         return null === this.$GraphQLSegment_minIndex && null === this.$GraphQLSegment_maxIndex ? 0 : this.$GraphQLSegment_maxIndex - this.$GraphQLSegment_minIndex + 1
     }, o.prototype.getCount = function() {
-        return GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/
+        return this.$GraphQLSegment_count
     }, o.prototype.getSessionID = function() {
         return this.$GraphQLSegment_sessionID
     }, o.prototype.$GraphQLSegment_rollback = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        Object.assign(GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/, global/*e*/), Object.assign(exports/*this.$GraphQLSegment_idToIndicesMap*/, require/*t*/), GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/ = requireDynamic/*n*/.count, this.$GraphQLSegment_maxIndex = requireDynamic/*n*/.maxIndex, this.$GraphQLSegment_minIndex = requireDynamic/*n*/.minIndex
+        Object.assign(this.$GraphQLSegment_cursorToIndexMap, global/*e*/), Object.assign(this.$GraphQLSegment_idToIndicesMap, require/*t*/), this.$GraphQLSegment_count = requireDynamic/*n*/.count, this.$GraphQLSegment_maxIndex = requireDynamic/*n*/.maxIndex, this.$GraphQLSegment_minIndex = requireDynamic/*n*/.minIndex
     }, o.prototype.$GraphQLSegment_getCounterState = function() {
         return {
-            count: GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/,
+            count: this.$GraphQLSegment_count,
             maxIndex: this.$GraphQLSegment_maxIndex,
             minIndex: this.$GraphQLSegment_minIndex
         }
@@ -167,25 +167,25 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
             this.getLength() ? a = this.$GraphQLSegment_maxIndex + 1 : (a = 0, this.$GraphQLSegment_minIndex = 0), this.$GraphQLSegment_maxIndex = a;
             var s = module/*i*/[o],
                 l = this.$GraphQLSegment_getIndexForID(s.edgeID);
-            if (require/*t*/.hasOwnProperty(s.edgeID) || (require/*t*/[s.edgeID] = exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID] ? exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID].slice() : void 0), void 0 !== l) {
+            if (require/*t*/.hasOwnProperty(s.edgeID) || (require/*t*/[s.edgeID] = this.$GraphQLSegment_idToIndicesMap[s.edgeID] ? this.$GraphQLSegment_idToIndicesMap[s.edgeID].slice() : void 0), void 0 !== l) {
                 var u = this.$GraphQLSegment_indexToMetadataMap[l];
-                if (u.removalTime && (!s.removalTime || u.removalTime < s.removalTime)) exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID].unshift(a);
+                if (u.removalTime && (!s.removalTime || u.removalTime < s.removalTime)) this.$GraphQLSegment_idToIndicesMap[s.edgeID].unshift(a);
                 else {
                     if (!s.removalTime) return console.error("Attempt to concat an ID already in GraphQLSegment: %s", s.edgeID), this.$GraphQLSegment_rollback(requireDynamic/*n*/, require/*t*/, requireLazy/*r*/), !1;
-                    exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID] = exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID] || [], exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID].push(a)
+                    this.$GraphQLSegment_idToIndicesMap[s.edgeID] = this.$GraphQLSegment_idToIndicesMap[s.edgeID] || [], this.$GraphQLSegment_idToIndicesMap[s.edgeID].push(a)
                 }
-            } else exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID] = exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID] || [], exports/*this.$GraphQLSegment_idToIndicesMap*/[s.edgeID].unshift(a);
+            } else this.$GraphQLSegment_idToIndicesMap[s.edgeID] = this.$GraphQLSegment_idToIndicesMap[s.edgeID] || [], this.$GraphQLSegment_idToIndicesMap[s.edgeID].unshift(a);
             var c = this.$GraphQLSegment_getIndexForCursor(s.cursor);
             if (void 0 !== c) {
                 var p = this.$GraphQLSegment_indexToMetadataMap[c];
-                if (p.removalTime && (!s.removalTime || p.removalTime < s.removalTime)) requireDynamic/*n*/[s.cursor] = GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[s.cursor], GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[s.cursor] = a;
+                if (p.removalTime && (!s.removalTime || p.removalTime < s.removalTime)) requireDynamic/*n*/[s.cursor] = this.$GraphQLSegment_cursorToIndexMap[s.cursor], this.$GraphQLSegment_cursorToIndexMap[s.cursor] = a;
                 else if (!s.removalTime) return console.error("Attempt to concat a cursor already in GraphQLSegment: %s", s.cursor), this.$GraphQLSegment_rollback(requireDynamic/*n*/, require/*t*/, requireLazy/*r*/), !1
-            } else s.cursor && (requireDynamic/*n*/[s.cursor] = GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[s.cursor], GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/[s.cursor] = a);
-            s.removalTime || GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/++, this.$GraphQLSegment_indexToMetadataMap[a] = Object.assign({}, s)
+            } else s.cursor && (requireDynamic/*n*/[s.cursor] = this.$GraphQLSegment_cursorToIndexMap[s.cursor], this.$GraphQLSegment_cursorToIndexMap[s.cursor] = a);
+            s.removalTime || this.$GraphQLSegment_count++, this.$GraphQLSegment_indexToMetadataMap[a] = Object.assign({}, s)
         }
         return this.getSessionID() && (!global/*e*/.getSessionID() || global/*e*/.getSessionID() < this.getSessionID()) && (this.$GraphQLSegment_sessionID = global/*e*/.getSessionID()), !0
     }, o.prototype.toJSON = function() {
-        return [this.$GraphQLSegment_sessionID, this.$GraphQLSegment_indexToMetadataMap, exports/*this.$GraphQLSegment_idToIndicesMap*/, GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/, this.$GraphQLSegment_minIndex, this.$GraphQLSegment_maxIndex, GraphQLStoreDataHandler/*this.$GraphQLSegment_count*/]
+        return [this.$GraphQLSegment_sessionID, this.$GraphQLSegment_indexToMetadataMap, this.$GraphQLSegment_idToIndicesMap, this.$GraphQLSegment_cursorToIndexMap, this.$GraphQLSegment_minIndex, this.$GraphQLSegment_maxIndex, this.$GraphQLSegment_count]
     }, o.fromJSON = function(global/*e*/) {
         var require/*t*/ = global/*e*/,
             requireDynamic/*n*/ = require/*t*/[0],
@@ -200,8 +200,8 @@ __d("GraphQLSegment",["GraphQLConstants","GraphQLStoreDataHandler"],function (gl
     }, o.prototype.__debug = function() {
         return {
             metadata: this.$GraphQLSegment_indexToMetadataMap,
-            idToIndices: exports/*this.$GraphQLSegment_idToIndicesMap*/,
-            cursorToIndex: GraphQLConstants/*this.$GraphQLSegment_cursorToIndexMap*/
+            idToIndices: this.$GraphQLSegment_idToIndicesMap,
+            cursorToIndex: this.$GraphQLSegment_cursorToIndexMap
         }
     }, module/*i*/.exports = o
 });

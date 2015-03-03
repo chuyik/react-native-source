@@ -2,7 +2,7 @@ __d("THColors",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requ
     "use strict";
     var o = {
         backgroundColor: "#ffffff",
-        exports/*backgroundWash*/: "#f5f6f7",
+        backgroundWash: "#f5f6f7",
         borderColor: "#e4e7e7",
         buttonColor: "#eeeeee",
         darkerDivider: "#cacdce",

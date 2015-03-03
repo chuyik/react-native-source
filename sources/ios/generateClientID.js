@@ -2,11 +2,11 @@ __d("generateClientID",["crc32","performanceNow"],function (global/*e*/, require
     "use strict";
 
     function o() {
-        return performanceNow/*u*/ + crc32/*l*/++
+        return u + l++
     }
     var a = require/*t*/("crc32"),
-        exports/*s*/ = require/*t*/("performanceNow"),
-        crc32/*l*/ = 1,
-        performanceNow/*u*/ = "client:" + a("" + exports/*s*/());
+        s = require/*t*/("performanceNow"),
+        l = 1,
+        u = "client:" + a("" + s());
     module/*i*/.exports = o
 });

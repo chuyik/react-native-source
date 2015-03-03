@@ -1,7 +1,7 @@
 __d("GraphQLStoreDataHandler",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = {},
-        exports/*a*/ = {
+        a = {
             __dataID__: !0,
             __masked__: !0,
             __range__: !0,
@@ -29,7 +29,7 @@ __d("GraphQLStoreDataHandler",[],function (global/*e*/, require/*t*/, requireDyn
                 return o[global/*e*/] || null
             },
             isMetadataKey: function(global/*e*/) {
-                return exports/*a*/[global/*e*/] || !1
+                return a[global/*e*/] || !1
             }
         };
     module/*i*/.exports = s

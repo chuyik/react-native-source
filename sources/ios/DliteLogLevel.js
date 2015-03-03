@@ -2,7 +2,7 @@ __d("DliteLogLevel",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/,
     "use strict";
     var o = {
         MUSTFIX: "mustfix",
-        exports/*WARNING*/: "warn"
+        WARNING: "warn"
     };
     module/*i*/.exports = o
 });

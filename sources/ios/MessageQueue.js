@@ -1,16 +1,16 @@
 __d("MessageQueue",["ErrorUtils","invariant","warning","JSTimersExecution"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ErrorUtils"),
-        exports/*a*/ = require/*t*/("invariant"),
-        ErrorUtils/*s*/ = require/*t*/("warning"),
-        invariant/*l*/ = require/*t*/("JSTimersExecution"),
-        warning/*u*/ = "Error in MessageQueue implementation",
-        JSTimersExecution/*c*/ = require/*t*/,
+        a = require/*t*/("invariant"),
+        s = require/*t*/("warning"),
+        l = require/*t*/("JSTimersExecution"),
+        u = "Error in MessageQueue implementation",
+        c = require/*t*/,
         p = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
             return global/*e*/[require/*t*/].apply(global/*e*/, requireDynamic/*n*/)
         },
         d = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            this._requireFunc = requireDynamic/*n*/ || JSTimersExecution/*c*/, this._initBookeeping(), this._initNamingMap(global/*e*/, require/*t*/)
+            this._requireFunc = requireDynamic/*n*/ || c, this._initBookeeping(), this._initNamingMap(global/*e*/, require/*t*/)
         },
         h = 0,
         f = 1,
@@ -41,13 +41,13 @@ __d("MessageQueue",["ErrorUtils","invariant","warning","JSTimersExecution"],func
             _initNamingMap: function(global/*e*/, require/*t*/) {
                 function requireDynamic/*n*/(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
                     for (var o in global/*e*/) {
-                        var exports/*a*/ = global/*e*/[o],
-                            ErrorUtils/*s*/ = exports/*a*/.moduleID;
-                        require/*t*/[o] = ErrorUtils/*s*/, requireDynamic/*n*/[ErrorUtils/*s*/] = o, requireLazy/*r*/[o] = {}, module/*i*/[o] = {};
-                        var invariant/*l*/ = exports/*a*/.methods;
-                        for (var warning/*u*/ in invariant/*l*/) {
-                            var JSTimersExecution/*c*/ = invariant/*l*/[warning/*u*/].methodID;
-                            requireLazy/*r*/[o][warning/*u*/] = JSTimersExecution/*c*/, module/*i*/[o][JSTimersExecution/*c*/] = warning/*u*/
+                        var a = global/*e*/[o],
+                            s = a.moduleID;
+                        require/*t*/[o] = s, requireDynamic/*n*/[s] = o, requireLazy/*r*/[o] = {}, module/*i*/[o] = {};
+                        var l = a.methods;
+                        for (var u in l) {
+                            var c = l[u].methodID;
+                            requireLazy/*r*/[o][u] = c, module/*i*/[o][c] = u
                         }
                     }
                 }
@@ -78,7 +78,7 @@ __d("MessageQueue",["ErrorUtils","invariant","warning","JSTimersExecution"],func
                 try {
                     var requireDynamic/*n*/ = this._threadLocalCallbacksByID[global/*e*/],
                         requireLazy/*r*/ = this._threadLocalScopesByID[global/*e*/];
-                    ErrorUtils/*s*/(requireDynamic/*n*/, "Cannot find callback with CBID %ErrorUtils/*s*/. Native module may have invoked both the success callback and the error callback.", global/*e*/), requireDynamic/*n*/.apply(requireLazy/*r*/, require/*t*/)
+                    s(requireDynamic/*n*/, "Cannot find callback with CBID %s. Native module may have invoked both the success callback and the error callback.", global/*e*/), requireDynamic/*n*/.apply(requireLazy/*r*/, require/*t*/)
                 } catch (module/*i*/) {
                     throw module/*i*/
                 } finally {
@@ -134,7 +134,7 @@ __d("MessageQueue",["ErrorUtils","invariant","warning","JSTimersExecution"],func
                 this._threadLocalCallbacksByID[global/*e*/] = null, this._threadLocalScopesByID[global/*e*/] = null, this._threadLocalCallbacksByID[require/*t*/] && (this._threadLocalCallbacksByID[require/*t*/] = null, this._threadLocalScopesByID[require/*t*/] = null)
             },
             _storeCallbacksInCurrentThread: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                global/*e*/ || require/*t*/ || exports/*a*/(0, warning/*u*/), this._bookkeeping.allocateCallbackIDs(this._POOLED_CBIDS);
+                global/*e*/ || require/*t*/ || a(0, u), this._bookkeeping.allocateCallbackIDs(this._POOLED_CBIDS);
                 var requireLazy/*r*/ = this._POOLED_CBIDS.successCallbackID,
                     module/*i*/ = this._POOLED_CBIDS.errorCallbackID;
                 this._threadLocalCallbacksByID[module/*i*/] = global/*e*/, this._threadLocalCallbacksByID[requireLazy/*r*/] = require/*t*/, this._threadLocalScopesByID[module/*i*/] = requireDynamic/*n*/, this._threadLocalScopesByID[requireLazy/*r*/] = requireDynamic/*n*/
@@ -143,27 +143,27 @@ __d("MessageQueue",["ErrorUtils","invariant","warning","JSTimersExecution"],func
                 return y(null, null, this._flushedQueueUnguarded, this)
             },
             _flushedQueueUnguarded: function() {
-                invariant/*l*/.callImmediates();
+                l.callImmediates();
                 var global/*e*/ = this._outgoingItems;
                 this._swapAndReinitializeBuffer();
                 var require/*t*/ = global/*e*/[h].length || global/*e*/[_].length ? global/*e*/ : null;
                 return require/*t*/
             },
             callDeprecated: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                requireLazy/*r*/ && "function" != typeof requireLazy/*r*/ && exports/*a*/(0, "Last argument (callback) must be function"), requireLazy/*r*/ && (this._storeCallbacksInCurrentThread(null, requireLazy/*r*/, module/*i*/, this._POOLED_CBIDS), requireDynamic/*n*/.push(this._POOLED_CBIDS.successCallbackID));
+                requireLazy/*r*/ && "function" != typeof requireLazy/*r*/ && a(0, "Last argument (callback) must be function"), requireLazy/*r*/ && (this._storeCallbacksInCurrentThread(null, requireLazy/*r*/, module/*i*/, this._POOLED_CBIDS), requireDynamic/*n*/.push(this._POOLED_CBIDS.successCallbackID));
                 var o = this._remoteModuleNameToModuleID[global/*e*/];
                 if (void 0 === o || null === o) throw new Error("Unrecognized module name:" + global/*e*/);
-                var ErrorUtils/*s*/ = this._remoteModuleNameToMethodNameToID[global/*e*/][require/*t*/];
-                if (void 0 === ErrorUtils/*s*/ || null === o) throw new Error("Unrecognized method name:" + require/*t*/);
-                this._pushRequestToOutgoingItems(o, ErrorUtils/*s*/, requireDynamic/*n*/)
+                var s = this._remoteModuleNameToMethodNameToID[global/*e*/][require/*t*/];
+                if (void 0 === s || null === o) throw new Error("Unrecognized method name:" + require/*t*/);
+                this._pushRequestToOutgoingItems(o, s, requireDynamic/*n*/)
             },
             call: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-                (requireLazy/*r*/ && "function" != typeof requireLazy/*r*/ || module/*i*/ && "function" != typeof module/*i*/) && exports/*a*/(0, "Callbacks must be functions"), (requireLazy/*r*/ || module/*i*/) && (this._storeCallbacksInCurrentThread(requireLazy/*r*/, module/*i*/, o, this._POOLED_CBIDS), requireDynamic/*n*/.push(this._POOLED_CBIDS.errorCallbackID), requireDynamic/*n*/.push(this._POOLED_CBIDS.successCallbackID));
-                var ErrorUtils/*s*/ = this._remoteModuleNameToModuleID[global/*e*/];
-                if (void 0 === ErrorUtils/*s*/ || null === ErrorUtils/*s*/) throw new Error("Unrecognized module name:" + global/*e*/);
-                var invariant/*l*/ = this._remoteModuleNameToMethodNameToID[global/*e*/][require/*t*/];
-                if (void 0 === invariant/*l*/ || null === ErrorUtils/*s*/) throw new Error("Unrecognized method name:" + require/*t*/);
-                this._pushRequestToOutgoingItems(ErrorUtils/*s*/, invariant/*l*/, requireDynamic/*n*/)
+                (requireLazy/*r*/ && "function" != typeof requireLazy/*r*/ || module/*i*/ && "function" != typeof module/*i*/) && a(0, "Callbacks must be functions"), (requireLazy/*r*/ || module/*i*/) && (this._storeCallbacksInCurrentThread(requireLazy/*r*/, module/*i*/, o, this._POOLED_CBIDS), requireDynamic/*n*/.push(this._POOLED_CBIDS.errorCallbackID), requireDynamic/*n*/.push(this._POOLED_CBIDS.successCallbackID));
+                var s = this._remoteModuleNameToModuleID[global/*e*/];
+                if (void 0 === s || null === s) throw new Error("Unrecognized module name:" + global/*e*/);
+                var l = this._remoteModuleNameToMethodNameToID[global/*e*/][require/*t*/];
+                if (void 0 === l || null === s) throw new Error("Unrecognized method name:" + require/*t*/);
+                this._pushRequestToOutgoingItems(s, l, requireDynamic/*n*/)
             },
             __numPendingCallbacksOnlyUseMeInTestCases: function() {
                 for (var global/*e*/ = this._threadLocalCallbacksByID, require/*t*/ = 0, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) global/*e*/[requireDynamic/*n*/] && require/*t*/++;

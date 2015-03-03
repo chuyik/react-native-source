@@ -1,198 +1,198 @@
-__d("GraphQLQueryRunner",["DliteFetchModeConstants","DliteLog","DliteLogger","DliteProfiler","DliteTaskScheduler","GraphQL_EXPERIMENTAL","GraphQLDeferredQueryTracker","GraphQLStore","Promise","PromiseMap","containsQueryRootCall","extendArray","fetchRQL","forEachObject","generateForceIndex","mapObject","setImmediate","splitDeferredQueries","subtractQuery","throwImmediate"],function (global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/, requireLazy/*GraphQLDeferredQueryTracker/*r*/*/, module/*DliteLog/*i*/*/) {
+__d("GraphQLQueryRunner",["DliteFetchModeConstants","DliteLog","DliteLogger","DliteProfiler","DliteTaskScheduler","GraphQL_EXPERIMENTAL","GraphQLDeferredQueryTracker","GraphQLStore","Promise","PromiseMap","containsQueryRootCall","extendArray","fetchRQL","forEachObject","generateForceIndex","mapObject","setImmediate","splitDeferredQueries","subtractQuery","throwImmediate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function GraphQLStore/*o*/(global/*DliteLogger/*e*/*/) {
-        return !!global/*DliteLogger/*e*/*/
+    function o(global/*e*/) {
+        return !!global/*e*/
     }
 
-    function a(global/*DliteLogger/*e*/*/) {
-        var require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/ = [],
-            requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = global/*DliteLogger/*e*/*/.getQuery().rootCall();
-        return F.every(function(requireLazy/*GraphQLDeferredQueryTracker/*r*/*/) {
-            var module/*DliteLog/*i*/*/ = requireLazy/*GraphQLDeferredQueryTracker/*r*/*/.query;
-            if (b(module/*DliteLog/*i*/*/.getQuery().rootCall(), requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/)) {
-                var GraphQLStore/*o*/ = P(global/*DliteLogger/*e*/*/, module/*DliteLog/*i*/*/);
-                GraphQLStore/*o*/ !== global/*DliteLogger/*e*/*/ && (require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.push(requireLazy/*GraphQLDeferredQueryTracker/*r*/*/.promise), global/*DliteLogger/*e*/*/ = GraphQLStore/*o*/)
+    function a(global/*e*/) {
+        var require/*t*/ = [],
+            requireDynamic/*n*/ = global/*e*/.getQuery().rootCall();
+        return F.every(function(requireLazy/*r*/) {
+            var module/*i*/ = requireLazy/*r*/.query;
+            if (b(module/*i*/.getQuery().rootCall(), requireDynamic/*n*/)) {
+                var o = P(global/*e*/, module/*i*/);
+                o !== global/*e*/ && (require/*t*/.push(requireLazy/*r*/.promise), global/*e*/ = o)
             }
-            return null !== global/*DliteLogger/*e*/*/
+            return null !== global/*e*/
         }), {
-            query: global/*DliteLogger/*e*/*/,
-            DliteProfiler/*dependencies*/: require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/
+            query: global/*e*/,
+            dependencies: require/*t*/
         }
     }
 
-    function Promise/*s*/(global/*DliteLogger/*e*/*/) {
-        var require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/ = global/*DliteLogger/*e*/*/.getOwnFields();
-        return 1 !== require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.length || "id" !== require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/[0].getFieldName() ? !0 : global/*DliteLogger/*e*/*/.getFragments().some(Promise/*s*/)
+    function s(global/*e*/) {
+        var require/*t*/ = global/*e*/.getOwnFields();
+        return 1 !== require/*t*/.length || "id" !== require/*t*/[0].getFieldName() ? !0 : global/*e*/.getFragments().some(s)
     }
 
-    function l(global/*DliteLogger/*e*/*/) {
-        var require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/ = global/*DliteLogger/*e*/*/.getQuery();
-        return "node" === require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.rootCall().getName() && !Promise/*s*/(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/)
+    function l(global/*e*/) {
+        var require/*t*/ = global/*e*/.getQuery();
+        return "node" === require/*t*/.rootCall().getName() && !s(require/*t*/)
     }
 
-    function u(global/*DliteLogger/*e*/*/) {
-        return global/*DliteLogger/*e*/*/.getQuery().isDeferred()
+    function u(global/*e*/) {
+        return global/*e*/.getQuery().isDeferred()
     }
 
-    function PromiseMap/*c*/(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/, requireLazy/*GraphQLDeferredQueryTracker/*r*/*/) {
-        var module/*DliteLog/*i*/*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.onBlockingRequest,
-            GraphQLStore/*o*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.onResolvable,
-            Promise/*s*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.onSuccess,
-            PromiseMap/*c*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.onFailure,
-            containsQueryRootCall/*p*/ = 0;
-        forEachObject/*g*/.await(function() {
-            var require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/ = [];
-            global/*DliteLogger/*e*/*/.forEach(function(global/*DliteLogger/*e*/*/) {
-                x(global/*DliteLogger/*e*/*/).forEach(function(global/*DliteLogger/*e*/*/) {
-                    l(global/*DliteLogger/*e*/*/) || (u(global/*DliteLogger/*e*/*/) || containsQueryRootCall/*p*/++, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.push(global/*DliteLogger/*e*/*/))
+    function c(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+        var module/*i*/ = require/*t*/.onBlockingRequest,
+            o = require/*t*/.onResolvable,
+            s = require/*t*/.onSuccess,
+            c = require/*t*/.onFailure,
+            p = 0;
+        g.await(function() {
+            var require/*t*/ = [];
+            global/*e*/.forEach(function(global/*e*/) {
+                x(global/*e*/).forEach(function(global/*e*/) {
+                    l(global/*e*/) || (u(global/*e*/) || p++, require/*t*/.push(global/*e*/))
                 })
             });
-            var splitDeferredQueries/*f*/ = requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ === d.FETCH_MODE_REFETCH ? E() : null,
-                fetchRQL/*m*/ = function(global/*DliteLogger/*e*/*/) {
-                    if (u(global/*DliteLogger/*e*/*/) || containsQueryRootCall/*p*/--, !containsQueryRootCall/*p*/) try {
-                        GraphQLStore/*o*/()
-                    } catch (require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                        I(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/)
+            var f = requireLazy/*r*/ === d.FETCH_MODE_REFETCH ? E() : null,
+                m = function(global/*e*/) {
+                    if (u(global/*e*/) || p--, !p) try {
+                        o()
+                    } catch (require/*t*/) {
+                        I(require/*t*/)
                     }
                 },
-                forEachObject/*g*/ = function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                    return global/*DliteLogger/*e*/*/.map(requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ === d.FETCH_MODE_CLIENT || requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ === d.FETCH_MODE_REFETCH ? function(global/*DliteLogger/*e*/*/) {
-                        var requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = a(global/*DliteLogger/*e*/*/);
-                        return requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.query && requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.DliteProfiler/*dependencies*/.push(M.add(requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.query, mapObject/*w*/(requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.query), require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, splitDeferredQueries/*f*/)), subtractQuery/*v.all*/(requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.DliteProfiler/*dependencies*/).then(function() {
-                            return fetchRQL/*m*/(global/*DliteLogger/*e*/*/)
+                g = function(global/*e*/, require/*t*/) {
+                    return global/*e*/.map(requireLazy/*r*/ === d.FETCH_MODE_CLIENT || requireLazy/*r*/ === d.FETCH_MODE_REFETCH ? function(global/*e*/) {
+                        var requireDynamic/*n*/ = a(global/*e*/);
+                        return requireDynamic/*n*/.query && requireDynamic/*n*/.dependencies.push(M.add(requireDynamic/*n*/.query, w(requireDynamic/*n*/.query), require/*t*/, f)), v.all(requireDynamic/*n*/.dependencies).then(function() {
+                            return m(global/*e*/)
                         })
-                    } : function(global/*DliteLogger/*e*/*/) {
-                        return M.add(global/*DliteLogger/*e*/*/, throwImmediate/*L.get*/(global/*DliteLogger/*e*/*/.getQuery().getID()), require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, null).then(function() {
-                            return fetchRQL/*m*/(global/*DliteLogger/*e*/*/)
+                    } : function(global/*e*/) {
+                        return M.add(global/*e*/, L.get(global/*e*/.getQuery().getID()), require/*t*/, null).then(function() {
+                            return m(global/*e*/)
                         })
                     })
                 };
-            if (require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.length) {
-                var _ = u(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/[0]) ? [] : require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.splice(0, 1),
-                    y = forEachObject/*g*/(_, []),
-                    S = forEachObject/*g*/(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, y);
-                subtractQuery/*v.all*/(y.concat(S)).done(function() {
-                    requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.stop(), Promise/*s*/()
-                }, function(global/*DliteLogger/*e*/*/) {
-                    requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.stop(), PromiseMap/*c*/(global/*DliteLogger/*e*/*/), h.warn(global/*DliteLogger/*e*/*/.message)
-                }), T(containsQueryRootCall/*p*/ ? module/*DliteLog/*i*/*/ : GraphQLStore/*o*/)
-            } else T(GraphQLStore/*o*/), T(Promise/*s*/)
+            if (require/*t*/.length) {
+                var _ = u(require/*t*/[0]) ? [] : require/*t*/.splice(0, 1),
+                    y = g(_, []),
+                    S = g(require/*t*/, y);
+                v.all(y.concat(S)).done(function() {
+                    requireDynamic/*n*/.stop(), s()
+                }, function(global/*e*/) {
+                    requireDynamic/*n*/.stop(), c(global/*e*/), h.warn(global/*e*/.message)
+                }), T(p ? module/*i*/ : o)
+            } else T(o), T(s)
         })
     }
 
-    function containsQueryRootCall/*p*/(global/*DliteLogger/*e*/*/) {
-        var require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/ = global/*DliteLogger/*e*/*/.onBlockingRequest,
-            requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = global/*DliteLogger/*e*/*/.onResolvable,
-            requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ = global/*DliteLogger/*e*/*/.onSuccess,
-            module/*DliteLog/*i*/*/ = global/*DliteLogger/*e*/*/.onFailure,
-            GraphQLStore/*o*/ = !1;
+    function p(global/*e*/) {
+        var require/*t*/ = global/*e*/.onBlockingRequest,
+            requireDynamic/*n*/ = global/*e*/.onResolvable,
+            requireLazy/*r*/ = global/*e*/.onSuccess,
+            module/*i*/ = global/*e*/.onFailure,
+            o = !1;
         return {
             abort: function() {
-                GraphQLStore/*o*/ = !0
+                o = !0
             },
             abortableCallbacks: D({
-                onBlockingRequest: require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/,
-                onResolvable: requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/,
-                onSuccess: requireLazy/*GraphQLDeferredQueryTracker/*r*/*/,
-                onFailure: module/*DliteLog/*i*/*/
-            }, function(global/*DliteLogger/*e*/*/) {
+                onBlockingRequest: require/*t*/,
+                onResolvable: requireDynamic/*n*/,
+                onSuccess: requireLazy/*r*/,
+                onFailure: module/*i*/
+            }, function(global/*e*/) {
                 return function() {
-                    return global/*DliteLogger/*e*/*/ && !GraphQLStore/*o*/ ? global/*DliteLogger/*e*/*/.apply(null, arguments) : void 0
+                    return global/*e*/ && !o ? global/*e*/.apply(null, arguments) : void 0
                 }
             })
         }
     }
-    var d = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("DliteFetchModeConstants"),
-        h = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("DliteLog"),
-        splitDeferredQueries/*f*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("DliteLogger"),
-        fetchRQL/*m*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("DliteProfiler"),
-        forEachObject/*g*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("DliteTaskScheduler"),
-        _ = (require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("GraphQL_EXPERIMENTAL"), require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("GraphQLDeferredQueryTracker")),
-        y = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("GraphQLStore"),
-        v = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("Promise"),
-        S = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("PromiseMap"),
-        b = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("containsQueryRootCall"),
-        R = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("extendArray"),
-        mapObject/*w*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("fetchRQL"),
-        C = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("forEachObject"),
-        E = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("generateForceIndex"),
-        D = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("mapObject"),
-        T = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("setImmediate"),
-        x = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("splitDeferredQueries"),
-        P = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("subtractQuery"),
-        I = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/("throwImmediate"),
+    var d = require/*t*/("DliteFetchModeConstants"),
+        h = require/*t*/("DliteLog"),
+        f = require/*t*/("DliteLogger"),
+        m = require/*t*/("DliteProfiler"),
+        g = require/*t*/("DliteTaskScheduler"),
+        _ = (require/*t*/("GraphQL_EXPERIMENTAL"), require/*t*/("GraphQLDeferredQueryTracker")),
+        y = require/*t*/("GraphQLStore"),
+        v = require/*t*/("Promise"),
+        S = require/*t*/("PromiseMap"),
+        b = require/*t*/("containsQueryRootCall"),
+        R = require/*t*/("extendArray"),
+        w = require/*t*/("fetchRQL"),
+        C = require/*t*/("forEachObject"),
+        E = require/*t*/("generateForceIndex"),
+        D = require/*t*/("mapObject"),
+        T = require/*t*/("setImmediate"),
+        x = require/*t*/("splitDeferredQueries"),
+        P = require/*t*/("subtractQuery"),
+        I = require/*t*/("throwImmediate"),
         F = [],
         L = new S,
         M = {
-            run: function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/) {
-                var requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ = containsQueryRootCall/*p*/(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/),
-                    module/*DliteLog/*i*/*/ = requireLazy/*GraphQLDeferredQueryTracker/*r*/*/.abort,
-                    GraphQLStore/*o*/ = requireLazy/*GraphQLDeferredQueryTracker/*r*/*/.abortableCallbacks;
-                y.emit(y.Events.beginQuery, global/*DliteLogger/*e*/*/);
-                var a = splitDeferredQueries/*f*/.logClientEvent("GraphQLQueryRunner.run");
-                requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ || d.FETCH_MODE_CLIENT;
-                var Promise/*s*/ = [];
-                return requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ === d.FETCH_MODE_CLIENT ? C(global/*DliteLogger/*e*/*/, function(global/*DliteLogger/*e*/*/) {
-                    global/*DliteLogger/*e*/*/ && R(Promise/*s*/, y.getDiffQueries(global/*DliteLogger/*e*/*/))
-                }) : C(global/*DliteLogger/*e*/*/, function(global/*DliteLogger/*e*/*/) {
-                    global/*DliteLogger/*e*/*/ && Promise/*s*/.push(global/*DliteLogger/*e*/*/)
-                }), PromiseMap/*c*/(Promise/*s*/, GraphQLStore/*o*/, a, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/), y.emit(y.Events.endQuery), {
-                    abort: module/*DliteLog/*i*/*/
+            run: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                var requireLazy/*r*/ = p(require/*t*/),
+                    module/*i*/ = requireLazy/*r*/.abort,
+                    o = requireLazy/*r*/.abortableCallbacks;
+                y.emit(y.Events.beginQuery, global/*e*/);
+                var a = f.logClientEvent("GraphQLQueryRunner.run");
+                requireDynamic/*n*/ = requireDynamic/*n*/ || d.FETCH_MODE_CLIENT;
+                var s = [];
+                return requireDynamic/*n*/ === d.FETCH_MODE_CLIENT ? C(global/*e*/, function(global/*e*/) {
+                    global/*e*/ && R(s, y.getDiffQueries(global/*e*/))
+                }) : C(global/*e*/, function(global/*e*/) {
+                    global/*e*/ && s.push(global/*e*/)
+                }), c(s, o, a, requireDynamic/*n*/), y.emit(y.Events.endQuery), {
+                    abort: module/*i*/
                 }
             },
-            forceFetch: function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                var requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = containsQueryRootCall/*p*/(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/),
-                    requireLazy/*GraphQLDeferredQueryTracker/*r*/*/ = requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.abort,
-                    module/*DliteLog/*i*/*/ = requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/.abortableCallbacks;
-                y.emit(y.Events.beginQuery, global/*DliteLogger/*e*/*/);
-                var GraphQLStore/*o*/ = splitDeferredQueries/*f*/.logClientEvent("GraphQLQueryRunner.forceFetch"),
+            forceFetch: function(global/*e*/, require/*t*/) {
+                var requireDynamic/*n*/ = p(require/*t*/),
+                    requireLazy/*r*/ = requireDynamic/*n*/.abort,
+                    module/*i*/ = requireDynamic/*n*/.abortableCallbacks;
+                y.emit(y.Events.beginQuery, global/*e*/);
+                var o = f.logClientEvent("GraphQLQueryRunner.forceFetch"),
                     a = [];
-                C(global/*DliteLogger/*e*/*/, function(global/*DliteLogger/*e*/*/) {
-                    global/*DliteLogger/*e*/*/ && R(a, y.getDiffQueries(global/*DliteLogger/*e*/*/))
-                }), 0 === a.length && (T(module/*DliteLog/*i*/*/.onResolvable), module/*DliteLog/*i*/*/.onBlockingRequest = function() {});
-                var Promise/*s*/ = [];
-                return C(global/*DliteLogger/*e*/*/, function(global/*DliteLogger/*e*/*/) {
-                    global/*DliteLogger/*e*/*/ && Promise/*s*/.push(global/*DliteLogger/*e*/*/)
-                }), PromiseMap/*c*/(Promise/*s*/, module/*DliteLog/*i*/*/, GraphQLStore/*o*/, d.FETCH_MODE_REFETCH), y.emit(y.Events.endQuery), {
-                    abort: requireLazy/*GraphQLDeferredQueryTracker/*r*/*/
+                C(global/*e*/, function(global/*e*/) {
+                    global/*e*/ && R(a, y.getDiffQueries(global/*e*/))
+                }), 0 === a.length && (T(module/*i*/.onResolvable), module/*i*/.onBlockingRequest = function() {});
+                var s = [];
+                return C(global/*e*/, function(global/*e*/) {
+                    global/*e*/ && s.push(global/*e*/)
+                }), c(s, module/*i*/, o, d.FETCH_MODE_REFETCH), y.emit(y.Events.endQuery), {
+                    abort: requireLazy/*r*/
                 }
             },
-            add: function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/, requireLazy/*GraphQLDeferredQueryTracker/*r*/*/) {
-                _.recordQuery(global/*DliteLogger/*e*/*/);
-                var module/*DliteLog/*i*/*/ = F.length,
-                    GraphQLStore/*o*/ = subtractQuery/*v.all*/(requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/).finally(function() {
-                        return require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.then(function(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                            return forEachObject/*g*/.await(function() {
-                                var requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/ = require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.response;
-                                y.emit(y.Events.dataFromServer, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/), y.handleUpdate(requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/, global/*DliteLogger/*e*/*/, null, requireLazy/*GraphQLDeferredQueryTracker/*r*/*/), _.resolveQuery(global/*DliteLogger/*e*/*/, requireDynamic/*exports/*DliteFetchModeConstants/*GraphQL_EXPERIMENTAL/*n*/*/*/*/), delete F[module/*DliteLog/*i*/*/]
+            add: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                _.recordQuery(global/*e*/);
+                var module/*i*/ = F.length,
+                    o = v.all(requireDynamic/*n*/).finally(function() {
+                        return require/*t*/.then(function(require/*t*/) {
+                            return g.await(function() {
+                                var requireDynamic/*n*/ = require/*t*/.response;
+                                y.emit(y.Events.dataFromServer, requireDynamic/*n*/), y.handleUpdate(requireDynamic/*n*/, global/*e*/, null, requireLazy/*r*/), _.resolveQuery(global/*e*/, requireDynamic/*n*/), delete F[module/*i*/]
                             })
-                        }, function(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                            if (_.rejectQuery(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/), delete F[module/*DliteLog/*i*/*/], h.warn(require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/.message), !u(global/*DliteLogger/*e*/*/)) throw require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/
+                        }, function(require/*t*/) {
+                            if (_.rejectQuery(global/*e*/, require/*t*/), delete F[module/*i*/], h.warn(require/*t*/.message), !u(global/*e*/)) throw require/*t*/
                         })
                     });
-                return F[module/*DliteLog/*i*/*/] = {
-                    query: global/*DliteLogger/*e*/*/,
-                    promise: GraphQLStore/*o*/
-                }, GraphQLStore/*o*/
+                return F[module/*i*/] = {
+                    query: global/*e*/,
+                    promise: o
+                }, o
             },
             resetPending: function() {
                 F = [], _.reset()
             },
-            resolveQueryByID: function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                L.resolveKey(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/)
+            resolveQueryByID: function(global/*e*/, require/*t*/) {
+                L.resolveKey(global/*e*/, require/*t*/)
             },
-            rejectQueryByID: function(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/) {
-                L.rejectKey(global/*DliteLogger/*e*/*/, require/*DliteTaskScheduler/*generateForceIndex/*setImmediate/*t*/*/*/*/)
+            rejectQueryByID: function(global/*e*/, require/*t*/) {
+                L.rejectKey(global/*e*/, require/*t*/)
             },
             hasPendingQueries: function() {
-                return F.some(GraphQLStore/*o*/)
+                return F.some(o)
             },
-            hasPendingQuery: function(global/*DliteLogger/*e*/*/) {
-                return _.isQueryPending(global/*DliteLogger/*e*/*/)
+            hasPendingQuery: function(global/*e*/) {
+                return _.isQueryPending(global/*e*/)
             }
         };
-    fetchRQL/*m*/.instrumentMethods(M, {
+    m.instrumentMethods(M, {
         hasPendingQuery: "GraphQLQueryRunner.hasPendingQuery"
-    }), module/*DliteLog/*i*/*/.exports = M
+    }), module/*i*/.exports = M
 });

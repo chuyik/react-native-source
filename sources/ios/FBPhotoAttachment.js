@@ -1,25 +1,25 @@
 __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","ReactGraphQL","Dimensions","StyleSheet","TouchableWithoutFeedback","View","invariant","keyOf","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("GraphQLNodeStatus"),
-        exports/*a*/ = require/*t*/("Image"),
-        GraphQLNodeStatus/*s*/ = require/*t*/("PixelRatio"),
-        Image/*l*/ = require/*t*/("React"),
-        PixelRatio/*u*/ = require/*t*/("ReactGraphQL"),
-        React/*c*/ = require/*t*/("Dimensions"),
-        ReactGraphQL/*p*/ = require/*t*/("StyleSheet"),
-        Dimensions/*d*/ = require/*t*/("TouchableWithoutFeedback"),
-        StyleSheet/*h*/ = require/*t*/("View"),
-        TouchableWithoutFeedback/*f*/ = require/*t*/("invariant"),
-        View/*m*/ = require/*t*/("keyOf"),
-        invariant/*g*/ = require/*t*/("mergeInto"),
-        keyOf/*_*/ = View/*m*/({
+        a = require/*t*/("Image"),
+        s = require/*t*/("PixelRatio"),
+        l = require/*t*/("React"),
+        u = require/*t*/("ReactGraphQL"),
+        c = require/*t*/("Dimensions"),
+        p = require/*t*/("StyleSheet"),
+        d = require/*t*/("TouchableWithoutFeedback"),
+        h = require/*t*/("View"),
+        f = require/*t*/("invariant"),
+        m = require/*t*/("keyOf"),
+        g = require/*t*/("mergeInto"),
+        _ = m({
             modalRef: null
         }),
-        mergeInto/*y*/ = View/*m*/({
+        y = m({
             photoRef: null
         }),
-        v = React/*c*/.get("window"),
-        S = GraphQLNodeStatus/*s*/.get(),
+        v = c.get("window"),
+        S = s.get(),
         b = {
             zoomed: {
                 width: 2 * v.width,
@@ -30,16 +30,16 @@ __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","React
                 height: 200
             }
         },
-        R = Image/*l*/.createClass({
+        R = l.createClass({
             displayName: "FBPhotoAttachment",
             propTypes: {
-                attachment: Image/*l*/.PropTypes.object.isRequired,
-                modalViewer: Image/*l*/.PropTypes.func,
-                maxPhotoHeight: Image/*l*/.PropTypes.number,
-                maxPhotoWidth: Image/*l*/.PropTypes.number,
-                openedOverlayFactory: Image/*l*/.PropTypes.func
+                attachment: l.PropTypes.object.isRequired,
+                modalViewer: l.PropTypes.func,
+                maxPhotoHeight: l.PropTypes.number,
+                maxPhotoWidth: l.PropTypes.number,
+                openedOverlayFactory: l.PropTypes.func
             },
-            mixins: [PixelRatio/*u*/.Mixin],
+            mixins: [u.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -61,28 +61,28 @@ __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","React
                 }
             },
             close: function() {
-                this.refs[keyOf/*_*/].close()
+                this.refs[_].close()
             },
             handlePress: function() {
-                this.state.isClosed || TouchableWithoutFeedback/*f*/(0, "Must be closed to process exports/*a*/ tap."), this.refs[mergeInto/*y*/].measure(function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
+                this.state.isClosed || f(0, "Must be closed to process a tap."), this.refs[y].measure(function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
                     this.state.originalFrame = {
                         width: requireDynamic/*n*/,
                         height: requireLazy/*r*/,
                         left: module/*i*/,
                         top: o
-                    }, this.refs[keyOf/*_*/].open(0, this.state.originalFrame), invariant/*g*/(this.state, {
+                    }, this.refs[_].open(0, this.state.originalFrame), g(this.state, {
                         isClosed: !1
                     })
                 }.bind(this))
             },
             handleWillOpen: function() {
-                this.refs[mergeInto/*y*/].setNativeProps(E)
+                this.refs[y].setNativeProps(E)
             },
             handleMayClose: function(global/*e*/, require/*t*/) {
                 require/*t*/ && require/*t*/(this.state.originalFrame)
             },
             handleDidClose: function() {
-                this.refs[mergeInto/*y*/].setNativeProps(D), invariant/*g*/(this.state, {
+                this.refs[y].setNativeProps(D), g(this.state, {
                     isClosed: !0
                 })
             },
@@ -94,24 +94,24 @@ __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","React
                 requireDynamic/*n*/ /= requireLazy/*r*/;
                 var module/*i*/ = require/*t*/.height / requireLazy/*r*/;
                 this.props.maxPhotoHeight && module/*i*/ > this.props.maxPhotoHeight && (module/*i*/ = this.props.maxPhotoHeight);
-                var GraphQLNodeStatus/*s*/ = {
+                var s = {
                         width: requireDynamic/*n*/ + 2 / S,
                         height: module/*i*/ + 2 / S,
                         left: -1 / S
                     },
-                    PixelRatio/*u*/ = {
+                    u = {
                         width: requireDynamic/*n*/,
                         height: module/*i*/
                     },
-                    React/*c*/ = this.state.isClosed ? C.show : C.hide;
-                return Image/*l*/.createElement(Dimensions/*d*/, {
+                    c = this.state.isClosed ? C.show : C.hide;
+                return l.createElement(d, {
                     onPress: this.handlePress
-                }, Image/*l*/.createElement(StyleSheet/*h*/, {
-                    ref: mergeInto/*y*/,
-                    style: [React/*c*/, GraphQLNodeStatus/*s*/, w.shadow]
-                }, Image/*l*/.createElement(exports/*a*/, {
+                }, l.createElement(h, {
+                    ref: y,
+                    style: [c, s, w.shadow]
+                }, l.createElement(a, {
                     source: require/*t*/,
-                    style: [w.image, PixelRatio/*u*/]
+                    style: [w.image, u]
                 })))
             },
             render: function() {
@@ -120,8 +120,8 @@ __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","React
                 if (require/*t*/) {
                     var requireDynamic/*n*/ = [this.props.attachment.media.photo_large],
                         requireLazy/*r*/ = [this.props.attachment.media.photo_zoomed];
-                    o.isOptimistic(this.props.attachment) && (requireDynamic/*n*/ = [this.props.attachment.media.photo_local], requireLazy/*r*/ = [this.props.attachment.media.photo_local]), global/*e*/ = Image/*l*/.createElement(require/*t*/, {
-                        ref: keyOf/*_*/,
+                    o.isOptimistic(this.props.attachment) && (requireDynamic/*n*/ = [this.props.attachment.media.photo_local], requireLazy/*r*/ = [this.props.attachment.media.photo_local]), global/*e*/ = l.createElement(require/*t*/, {
+                        ref: _,
                         sources: requireDynamic/*n*/,
                         sourcesHiRes: requireLazy/*r*/,
                         onWillOpen: this.handleWillOpen,
@@ -131,10 +131,10 @@ __d("FBPhotoAttachment",["GraphQLNodeStatus","Image","PixelRatio","React","React
                         closedShadowStyle: w.shadow
                     })
                 }
-                return Image/*l*/.createElement(StyleSheet/*h*/, null, this.renderImage(), global/*e*/)
+                return l.createElement(h, null, this.renderImage(), global/*e*/)
             }
         }),
-        w = ReactGraphQL/*p*/.create({
+        w = p.create({
             imageWrapper: {
                 flex: 1
             },

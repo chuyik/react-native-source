@@ -1,4 +1,4 @@
-__d("StoryDeleteActions",["GraphQLMutationAction","GraphQLMutatorHub","rql"],function (global/*e*/, require/*GraphQLMutatorHub/*t*/*/, requireDynamic/*n*/, requireLazy/*rql/*r*/*/, module/*i*/) {
+__d("StoryDeleteActions",["GraphQLMutationAction","GraphQLMutatorHub","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o(global/*e*/) {
@@ -8,19 +8,19 @@ __d("StoryDeleteActions",["GraphQLMutationAction","GraphQLMutatorHub","rql"],fun
             }
         }
     }
-    var a = require/*GraphQLMutatorHub/*t*/*/("GraphQLMutationAction"),
-        exports/*s*/ = require/*GraphQLMutatorHub/*t*/*/("GraphQLMutatorHub"),
-        GraphQLMutationAction/*l*/ = require/*GraphQLMutatorHub/*t*/*/("rql");
-    exports/*s*/.registerForNodeDeleteMutationType("story_delete", {
+    var a = require/*t*/("GraphQLMutationAction"),
+        s = require/*t*/("GraphQLMutatorHub"),
+        l = require/*t*/("rql");
+    s.registerForNodeDeleteMutationType("story_delete", {
         deletedIDFieldName: "deleted_story_id"
     });
     var u = {
-        deleteStory: function(global/*e*/, require/*GraphQLMutatorHub/*t*/*/) {
+        deleteStory: function(global/*e*/, require/*t*/) {
             var requireDynamic/*n*/ = new a,
-                requireLazy/*rql/*r*/*/ = o(global/*e*/);
-            requireDynamic/*n*/.runOptimisticAction(requireLazy/*rql/*r*/*/);
+                requireLazy/*r*/ = o(global/*e*/);
+            requireDynamic/*n*/.runOptimisticAction(requireLazy/*r*/);
             var module/*i*/ = function() {
-                var global/*e*/ = GraphQLMutationAction/*l*/.__GraphQL;
+                var global/*e*/ = l.__GraphQL;
                 return new global/*e*/.Mutation("StoryDeleteActions_m0", "StoryDeleteResponsePayload", new global/*e*/.Callv("story_delete", [new global/*e*/.CallVariable("input")]), [new global/*e*/.Field("deleted_story_id"), new global/*e*/.Field("client_mutation_id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
@@ -28,7 +28,7 @@ __d("StoryDeleteActions",["GraphQLMutationAction","GraphQLMutatorHub","rql"],fun
             }();
             requireDynamic/*n*/.runServerAction(module/*i*/, {
                 story_id: global/*e*/,
-                story_location: require/*GraphQLMutatorHub/*t*/*/
+                story_location: require/*t*/
             })
         }
     };

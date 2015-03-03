@@ -1,51 +1,51 @@
-__d("PooledClass",["invariant"],function (global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("PooledClass",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("invariant"),
-        exports/*a*/ = function(global/*invariant/*e*/*/) {
+        a = function(global/*e*/) {
             var require/*t*/ = this;
             if (require/*t*/.instancePool.length) {
                 var requireDynamic/*n*/ = require/*t*/.instancePool.pop();
-                return require/*t*/.call(requireDynamic/*n*/, global/*invariant/*e*/*/), requireDynamic/*n*/
+                return require/*t*/.call(requireDynamic/*n*/, global/*e*/), requireDynamic/*n*/
             }
-            return new require/*t*/(global/*invariant/*e*/*/)
+            return new require/*t*/(global/*e*/)
         },
-        s = function(global/*invariant/*e*/*/, require/*t*/) {
+        s = function(global/*e*/, require/*t*/) {
             var requireDynamic/*n*/ = this;
             if (requireDynamic/*n*/.instancePool.length) {
                 var requireLazy/*r*/ = requireDynamic/*n*/.instancePool.pop();
-                return requireDynamic/*n*/.call(requireLazy/*r*/, global/*invariant/*e*/*/, require/*t*/), requireLazy/*r*/
+                return requireDynamic/*n*/.call(requireLazy/*r*/, global/*e*/, require/*t*/), requireLazy/*r*/
             }
-            return new requireDynamic/*n*/(global/*invariant/*e*/*/, require/*t*/)
+            return new requireDynamic/*n*/(global/*e*/, require/*t*/)
         },
-        l = function(global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/) {
+        l = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
             var requireLazy/*r*/ = this;
             if (requireLazy/*r*/.instancePool.length) {
                 var module/*i*/ = requireLazy/*r*/.instancePool.pop();
-                return requireLazy/*r*/.call(module/*i*/, global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/), module/*i*/
+                return requireLazy/*r*/.call(module/*i*/, global/*e*/, require/*t*/, requireDynamic/*n*/), module/*i*/
             }
-            return new requireLazy/*r*/(global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/)
+            return new requireLazy/*r*/(global/*e*/, require/*t*/, requireDynamic/*n*/)
         },
-        u = function(global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+        u = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
             var o = this;
             if (o.instancePool.length) {
-                var exports/*a*/ = o.instancePool.pop();
-                return o.call(exports/*a*/, global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), exports/*a*/
+                var a = o.instancePool.pop();
+                return o.call(a, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), a
             }
-            return new o(global/*invariant/*e*/*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
+            return new o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
         },
-        c = function(global/*invariant/*e*/*/) {
+        c = function(global/*e*/) {
             var require/*t*/ = this;
-            global/*invariant/*e*/*/ instanceof require/*t*/ || o(0, "Trying to release an instance into exports/*a*/ pool of exports/*a*/ different type."), global/*invariant/*e*/*/.destructor && global/*invariant/*e*/*/.destructor(), require/*t*/.instancePool.length < require/*t*/.poolSize && require/*t*/.instancePool.push(global/*invariant/*e*/*/)
+            global/*e*/ instanceof require/*t*/ || o(0, "Trying to release an instance into a pool of a different type."), global/*e*/.destructor && global/*e*/.destructor(), require/*t*/.instancePool.length < require/*t*/.poolSize && require/*t*/.instancePool.push(global/*e*/)
         },
         p = 10,
-        d = exports/*a*/,
-        h = function(global/*invariant/*e*/*/, require/*t*/) {
-            var requireDynamic/*n*/ = global/*invariant/*e*/*/;
+        d = a,
+        h = function(global/*e*/, require/*t*/) {
+            var requireDynamic/*n*/ = global/*e*/;
             return requireDynamic/*n*/.instancePool = [], requireDynamic/*n*/.getPooled = require/*t*/ || d, requireDynamic/*n*/.poolSize || (requireDynamic/*n*/.poolSize = p), requireDynamic/*n*/.release = c, requireDynamic/*n*/
         },
         f = {
             addPoolingTo: h,
-            oneArgumentPooler: exports/*a*/,
+            oneArgumentPooler: a,
             twoArgumentPooler: s,
             threeArgumentPooler: l,
             fiveArgumentPooler: u

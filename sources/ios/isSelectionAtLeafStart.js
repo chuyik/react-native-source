@@ -1,6 +1,6 @@
-__d("isSelectionAtLeafStart",[],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*exports/*t*/*/) {
-        var requireDynamic/*n*/ = require/*exports/*t*/*/.getStartOffset(),
+__d("isSelectionAtLeafStart",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/) {
+        var requireDynamic/*n*/ = require/*t*/.getStartOffset(),
             requireLazy/*r*/ = global/*e*/.getKey(requireDynamic/*n*/);
         return global/*e*/.getOffset(requireLazy/*r*/) === requireDynamic/*n*/
     }

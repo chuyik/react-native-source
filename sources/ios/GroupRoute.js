@@ -1,9 +1,9 @@
 __d("GroupRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DliteRoute"),
-        exports/*a*/ = o.create({
+        a = o.create({
             name: "GroupRoute",
-            DliteRoute/*path*/: "/{group}",
+            path: "/{group}",
             paramDefinitions: {
                 group: {
                     type: "String",
@@ -22,5 +22,5 @@ __d("GroupRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDyna
                 }
             }
         });
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

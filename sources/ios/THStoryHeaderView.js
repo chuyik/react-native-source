@@ -1,24 +1,24 @@
 __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","ReactGraphQL","StyleSheet","Text","THColors","THProfilePicture","TimeStamp","View","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FBTextEntity"),
-        exports/*a*/ = require/*t*/("FBTextWithEntities.react"),
-        FBTextEntity/*s*/ = require/*t*/("React"),
-        FBTextWithEntities.react/*l*/ = require/*t*/("ReactGraphQL"),
-        React/*u*/ = require/*t*/("StyleSheet"),
-        ReactGraphQL/*c*/ = require/*t*/("Text"),
-        StyleSheet/*p*/ = require/*t*/("THColors"),
-        Text/*d*/ = require/*t*/("THProfilePicture"),
-        THColors/*h*/ = require/*t*/("TimeStamp"),
-        THProfilePicture/*f*/ = require/*t*/("View"),
-        TimeStamp/*m*/ = require/*t*/("fbt"),
-        View/*g*/ = 36,
-        fbt/*_*/ = FBTextEntity/*s*/.createClass({
+        a = require/*t*/("FBTextWithEntities.react"),
+        s = require/*t*/("React"),
+        l = require/*t*/("ReactGraphQL"),
+        u = require/*t*/("StyleSheet"),
+        c = require/*t*/("Text"),
+        p = require/*t*/("THColors"),
+        d = require/*t*/("THProfilePicture"),
+        h = require/*t*/("TimeStamp"),
+        f = require/*t*/("View"),
+        m = require/*t*/("fbt"),
+        g = 36,
+        _ = s.createClass({
             displayName: "THStoryHeaderView",
             propTypes: {
-                story: FBTextEntity/*s*/.PropTypes.object.isRequired,
-                context: FBTextEntity/*s*/.PropTypes.object.isRequired
+                story: s.PropTypes.object.isRequired,
+                context: s.PropTypes.object.isRequired
             },
-            mixins: [FBTextWithEntities.react/*l*/.Mixin],
+            mixins: [l.Mixin],
             statics: {
                 queries: {
                     story: function(global/*e*/, require/*t*/) {
@@ -53,7 +53,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                             })], null, {
                                 scope: "THStoryHeaderView_story"
                             })
-                        }(exports/*a*/.getQuery("text"), Text/*d*/.getQuery("actor"))
+                        }(a.getQuery("text"), d.getQuery("actor"))
                     },
                     group: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/) {
@@ -64,7 +64,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THStoryHeaderView_group"
                             })
-                        }(Text/*d*/.getQuery("group"))
+                        }(d.getQuery("group"))
                     }
                 }
             },
@@ -72,7 +72,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 var global/*e*/ = this.getActor(),
                     require/*t*/ = this.props.story,
                     requireDynamic/*n*/ = null;
-                if (require/*t*/.title) requireDynamic/*n*/ = FBTextEntity/*s*/.createElement(exports/*a*/, {
+                if (require/*t*/.title) requireDynamic/*n*/ = s.createElement(a, {
                     shouldTruncate: !0,
                     key: "title",
                     text: this.props.story.title,
@@ -82,23 +82,23 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 });
                 else if (global/*e*/) {
                     var requireLazy/*r*/ = [];
-                    requireLazy/*r*/.push(FBTextEntity/*s*/.createElement(o, {
+                    requireLazy/*r*/.push(s.createElement(o, {
                         entity: global/*e*/,
                         key: "actor",
                         text: global/*e*/.name
                     }));
                     var module/*i*/ = this.props.context.isGroupStream && !this.props.context.isSubStory;
-                    !module/*i*/ && require/*t*/.to && (requireLazy/*r*/.push(FBTextEntity/*s*/.createElement(ReactGraphQL/*c*/, {
+                    !module/*i*/ && require/*t*/.to && (requireLazy/*r*/.push(s.createElement(c, {
                         key: ">"
-                    }, " ▸ ")), requireLazy/*r*/.push(FBTextEntity/*s*/.createElement(o, {
+                    }, " ▸ ")), requireLazy/*r*/.push(s.createElement(o, {
                         entity: require/*t*/.to,
                         key: "to",
                         text: require/*t*/.to.name
-                    }))), requireDynamic/*n*/ = FBTextEntity/*s*/.createElement(ReactGraphQL/*c*/, {
+                    }))), requireDynamic/*n*/ = s.createElement(c, {
                         style: y.text
                     }, requireLazy/*r*/)
                 }
-                return FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                return s.createElement(f, {
                     key: "title"
                 }, requireDynamic/*n*/)
             },
@@ -108,9 +108,9 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
             },
             getProfilePicture: function() {
                 var global/*e*/ = this.getActor();
-                return global/*e*/ ? FBTextEntity/*s*/.createElement(Text/*d*/, {
+                return global/*e*/ ? s.createElement(d, {
                     actor: this.getActor(),
-                    height: View/*g*/,
+                    height: g,
                     group: this.props.group
                 }) : null
             },
@@ -118,35 +118,35 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 var global/*e*/ = this.props.story;
                 if (!global/*e*/.creation_time) return null;
                 var require/*t*/ = [];
-                return require/*t*/.push(FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                return require/*t*/.push(s.createElement(f, {
                     style: y.timestampContainer
-                }, FBTextEntity/*s*/.createElement(THColors/*h*/, {
+                }, s.createElement(h, {
                     style: y.metadataText,
                     time: global/*e*/.creation_time,
                     shorten: !0
-                }))), this.props.story.edit_history && this.props.story.edit_history.count && (require/*t*/.push(FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                }))), this.props.story.edit_history && this.props.story.edit_history.count && (require/*t*/.push(s.createElement(f, {
                     style: y.middotContainer
-                }, FBTextEntity/*s*/.createElement(ReactGraphQL/*c*/, {
+                }, s.createElement(c, {
                     style: y.metadataText
-                }, "·"))), require/*t*/.push(FBTextEntity/*s*/.createElement(ReactGraphQL/*c*/, {
+                }, "·"))), require/*t*/.push(s.createElement(c, {
                     style: y.metadataText
-                }, TimeStamp/*m*/({
+                }, m({
                     type: "text",
                     texts: ["Edited"],
-                    desc: "Indicator that exports/*a*/ post has been edited"
-                })))), FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                    desc: "Indicator that a post has been edited"
+                })))), s.createElement(f, {
                     style: y.metadataContainer
                 }, require/*t*/)
             },
             render: function() {
-                return FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                return s.createElement(f, {
                     style: y.container
-                }, this.getProfilePicture(), FBTextEntity/*s*/.createElement(THProfilePicture/*f*/, {
+                }, this.getProfilePicture(), s.createElement(f, {
                     style: y.textContainer
                 }, this.getTitle(), this.getHeaderMetadata()))
             }
         }),
-        y = React/*u*/.create({
+        y = u.create({
             container: {
                 flexDirection: "row",
                 marginRight: 22
@@ -155,7 +155,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 flexDirection: "row"
             },
             metadataText: {
-                color: StyleSheet/*p*/.feedbackFadedText,
+                color: p.feedbackFadedText,
                 marginTop: 2,
                 fontSize: 12
             },
@@ -177,5 +177,5 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 marginRight: 2
             }
         });
-    module/*i*/.exports = fbt/*_*/
+    module/*i*/.exports = _
 });

@@ -4,10 +4,10 @@ __d("getUnboundedScrollPosition",[],function (global/*e*/, require/*t*/, require
     function o(global/*e*/) {
         return global/*e*/ === window ? {
             x: window.pageXOffset || document.documentElement.scrollLeft,
-            exports/*y*/: window.pageYOffset || document.documentElement.scrollTop
+            y: window.pageYOffset || document.documentElement.scrollTop
         } : {
             x: global/*e*/.scrollLeft,
-            exports/*y*/: global/*e*/.scrollTop
+            y: global/*e*/.scrollTop
         }
     }
     module/*i*/.exports = o

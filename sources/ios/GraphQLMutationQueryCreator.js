@@ -1,170 +1,170 @@
-__d("GraphQLMutationQueryCreator",["DliteLog","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutationProperties","GraphQLStore","GraphQLStoreDataHandler","invariant","isEmpty"],function (global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, requireLazy/*r*/, module/*GraphQL_EXPERIMENTAL/*i*/*/) {
+__d("GraphQLMutationQueryCreator",["DliteLog","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutationProperties","GraphQLStore","GraphQLStoreDataHandler","invariant","isEmpty"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/) {
-        if (require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = f(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/), !l(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/)) return global/*e*/;
-        for (var requireLazy/*r*/ = [], module/*GraphQL_EXPERIMENTAL/*i*/*/ = global/*e*/.getOwnFields(), GraphQLConstants/*s*/ = 0; GraphQLConstants/*s*/ < module/*GraphQL_EXPERIMENTAL/*i*/*/.length; GraphQLConstants/*s*/++) {
-            var u = a(module/*GraphQL_EXPERIMENTAL/*i*/*/[GraphQLConstants/*s*/], require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/);
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        if (require/*t*/ = f(require/*t*/), !l(require/*t*/)) return global/*e*/;
+        for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.getOwnFields(), s = 0; s < module/*i*/.length; s++) {
+            var u = a(module/*i*/[s], require/*t*/, requireDynamic/*n*/);
             u && requireLazy/*r*/.push(u)
         }
-        for (var c = [], GraphQLStoreDataHandler/*p*/ = global/*e*/.getFragments(), invariant/*d*/ = 0; invariant/*d*/ < GraphQLStoreDataHandler/*p*/.length; invariant/*d*/++) c.push(o(GraphQLStoreDataHandler/*p*/[invariant/*d*/], require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/));
+        for (var c = [], p = global/*e*/.getFragments(), d = 0; d < p.length; d++) c.push(o(p[d], require/*t*/, requireDynamic/*n*/));
         return global/*e*/.shallowClone(requireLazy/*r*/, c)
     }
 
-    function a(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/) {
+    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         var requireLazy/*r*/ = global/*e*/.getFieldName();
         if ("id" === requireLazy/*r*/) return global/*e*/;
-        var module/*GraphQL_EXPERIMENTAL/*i*/*/ = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/.getOwnField(requireLazy/*r*/);
-        if (!module/*GraphQL_EXPERIMENTAL/*i*/*/) return null;
-        if (l(module/*GraphQL_EXPERIMENTAL/*i*/*/)) {
-            var a = o(global/*e*/, module/*GraphQL_EXPERIMENTAL/*i*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/);
+        var module/*i*/ = require/*t*/.getOwnField(requireLazy/*r*/);
+        if (!module/*i*/) return null;
+        if (l(module/*i*/)) {
+            var a = o(global/*e*/, module/*i*/, requireDynamic/*n*/);
             return a.hasFields() ? a : null
         }
-        return global/*e*/.isConnection() ? requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ && requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/(global/*e*/) ? u(global/*e*/) : global/*e*/ : global/*e*/
+        return global/*e*/.isConnection() ? requireDynamic/*n*/ && requireDynamic/*n*/(global/*e*/) ? u(global/*e*/) : global/*e*/ : global/*e*/
     }
 
-    function GraphQLConstants/*s*/(global/*e*/) {
+    function s(global/*e*/) {
         return !global/*e*/.isGenerated()
     }
 
     function l(global/*e*/) {
-        return global/*e*/.getOwnFields().some(GraphQLConstants/*s*/)
+        return global/*e*/.getOwnFields().some(s)
     }
 
     function u(global/*e*/) {
-        for (var require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = null, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = null, requireLazy/*r*/ = global/*e*/.getOwnFields(), module/*GraphQL_EXPERIMENTAL/*i*/*/ = 0; module/*GraphQL_EXPERIMENTAL/*i*/*/ < requireLazy/*r*/.length; module/*GraphQL_EXPERIMENTAL/*i*/*/++) {
-            var o = requireLazy/*r*/[module/*GraphQL_EXPERIMENTAL/*i*/*/],
+        for (var require/*t*/ = null, requireDynamic/*n*/ = null, requireLazy/*r*/ = global/*e*/.getOwnFields(), module/*i*/ = 0; module/*i*/ < requireLazy/*r*/.length; module/*i*/++) {
+            var o = requireLazy/*r*/[module/*i*/],
                 a = o.getFieldName(),
-                GraphQLConstants/*s*/ = a === _.EDGES || a === _.PAGE_INFO;
-            GraphQLConstants/*s*/ || (require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ || [], require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/.push(o))
+                s = a === _.EDGES || a === _.PAGE_INFO;
+            s || (require/*t*/ = require/*t*/ || [], require/*t*/.push(o))
         }
         for (var l = global/*e*/.getFragments(), c = 0; c < l.length; c++) {
-            var GraphQLStoreDataHandler/*p*/ = u(l[c]);
-            GraphQLStoreDataHandler/*p*/ && (requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ || [], requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.push(GraphQLStoreDataHandler/*p*/))
+            var p = u(l[c]);
+            p && (requireDynamic/*n*/ = requireDynamic/*n*/ || [], requireDynamic/*n*/.push(p))
         }
-        return require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ || requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ ? global/*e*/.shallowClone(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/) : null
+        return require/*t*/ || requireDynamic/*n*/ ? global/*e*/.shallowClone(require/*t*/, requireDynamic/*n*/) : null
     }
 
     function c(global/*e*/) {
-        var require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = global/*e*/.getOwnFields().filter(function(global/*e*/) {
+        var require/*t*/ = global/*e*/.getOwnFields().filter(function(global/*e*/) {
                 return global/*e*/.getFieldName() !== _.NODE && global/*e*/.getFieldName() !== _.CURSOR
             }),
-            requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = global/*e*/.getFragments().map(c);
-        return new g.QueryFragment("MutationQueryCreatorEdge", "UnknownType", require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/)
+            requireDynamic/*n*/ = global/*e*/.getFragments().map(c);
+        return new g.QueryFragment("MutationQueryCreatorEdge", "UnknownType", require/*t*/, requireDynamic/*n*/)
     }
 
-    function GraphQLStoreDataHandler/*p*/(global/*e*/) {
+    function p(global/*e*/) {
         return Array.isArray(global/*e*/)
     }
 
-    function invariant/*d*/(global/*e*/) {
-        var require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = [];
+    function d(global/*e*/) {
+        var require/*t*/, requireDynamic/*n*/ = [];
         for (var requireLazy/*r*/ in global/*e*/)
             if (!S.isMetadataKey(requireLazy/*r*/)) {
-                if (require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = null, "object" == typeof global/*e*/[requireLazy/*r*/])
+                if (require/*t*/ = null, "object" == typeof global/*e*/[requireLazy/*r*/])
                     if (Array.isArray(global/*e*/[requireLazy/*r*/]))
-                        if (R(global/*e*/[requireLazy/*r*/])) require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = [];
+                        if (R(global/*e*/[requireLazy/*r*/])) require/*t*/ = [];
                         else {
-                            var module/*GraphQL_EXPERIMENTAL/*i*/*/ = global/*e*/[requireLazy/*r*/][0];
-                            require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = "object" == typeof module/*GraphQL_EXPERIMENTAL/*i*/*/ ? invariant/*d*/(module/*GraphQL_EXPERIMENTAL/*i*/*/) : []
-                        } else require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = invariant/*d*/(global/*e*/[requireLazy/*r*/]);
-                "node" === requireLazy/*r*/ && (require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/.push(new g.Field("id")), requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.push(new g.Field("cursor")));
-                var o = h(requireLazy/*r*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/);
-                requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.push(o)
+                            var module/*i*/ = global/*e*/[requireLazy/*r*/][0];
+                            require/*t*/ = "object" == typeof module/*i*/ ? d(module/*i*/) : []
+                        } else require/*t*/ = d(global/*e*/[requireLazy/*r*/]);
+                "node" === requireLazy/*r*/ && (require/*t*/.push(new g.Field("id")), requireDynamic/*n*/.push(new g.Field("cursor")));
+                var o = h(requireLazy/*r*/, require/*t*/);
+                requireDynamic/*n*/.push(o)
             }
-        return requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/
+        return requireDynamic/*n*/
     }
 
-    function h(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/) {
-        var requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = global/*e*/.indexOf(".");
-        if (-1 === requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/) return new g.Field(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/);
-        for (var requireLazy/*r*/ = [], module/*GraphQL_EXPERIMENTAL/*i*/*/ = global/*e*/.substring(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ + 1), o = global/*e*/.substring(0, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/), a = module/*GraphQL_EXPERIMENTAL/*i*/*/.split("."), GraphQLConstants/*s*/ = 0; GraphQLConstants/*s*/ < a.length; GraphQLConstants/*s*/++) {
-            var l = a[GraphQLConstants/*s*/],
+    function h(global/*e*/, require/*t*/) {
+        var requireDynamic/*n*/ = global/*e*/.indexOf(".");
+        if (-1 === requireDynamic/*n*/) return new g.Field(global/*e*/, require/*t*/);
+        for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.substring(requireDynamic/*n*/ + 1), o = global/*e*/.substring(0, requireDynamic/*n*/), a = module/*i*/.split("."), s = 0; s < a.length; s++) {
+            var l = a[s],
                 u = l.match(/^(\w+)\(([^()]*)\)$/);
-            u || b(0, "Malformed field name %GraphQLConstants/*s*/ provided in optimistic payload", global/*e*/), requireLazy/*r*/.push(new g.Callv(u[1], u[2].split(",")))
+            u || b(0, "Malformed field name %s provided in optimistic payload", global/*e*/), requireLazy/*r*/.push(new g.Callv(u[1], u[2].split(",")))
         }
-        return new g.Field(o, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, null, requireLazy/*r*/)
+        return new g.Field(o, require/*t*/, null, requireLazy/*r*/)
     }
 
     function f(global/*e*/) {
         return 0 !== global/*e*/.getFragments().length && b(0, "Fat queries do not support fragments yet"), global/*e*/
     }
-    var m = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("DliteLog"),
-        g = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("GraphQL_EXPERIMENTAL"),
-        _ = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("GraphQLConstants"),
-        y = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("GraphQLMutationProperties"),
-        v = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("GraphQLStore"),
-        S = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("GraphQLStoreDataHandler"),
-        b = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("invariant"),
-        R = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/("isEmpty"),
+    var m = require/*t*/("DliteLog"),
+        g = require/*t*/("GraphQL_EXPERIMENTAL"),
+        _ = require/*t*/("GraphQLConstants"),
+        y = require/*t*/("GraphQLMutationProperties"),
+        v = require/*t*/("GraphQLStore"),
+        S = require/*t*/("GraphQLStoreDataHandler"),
+        b = require/*t*/("invariant"),
+        R = require/*t*/("isEmpty"),
         w = {
-            createQuery: function(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/) {
-                var requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = f(y.getFatQueryForType(global/*e*/)),
+            createQuery: function(global/*e*/, require/*t*/) {
+                var requireDynamic/*n*/ = f(y.getFatQueryForType(global/*e*/)),
                     requireLazy/*r*/ = [];
-                for (var module/*GraphQL_EXPERIMENTAL/*i*/*/ in require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/)
-                    if (require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/.hasOwnProperty(module/*GraphQL_EXPERIMENTAL/*i*/*/)) {
-                        requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.hasOwnField(module/*GraphQL_EXPERIMENTAL/*i*/*/) || b(0, "Anything in the idMap for createQuery should be part of the relevant mutation'GraphQLConstants/*s*/ fat query.");
-                        var a = requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.getOwnField(module/*GraphQL_EXPERIMENTAL/*i*/*/),
-                            GraphQLConstants/*s*/ = require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/[module/*GraphQL_EXPERIMENTAL/*i*/*/],
-                            l = v.getTrackedQueryByID(GraphQLConstants/*s*/),
-                            u = new g.Field(module/*GraphQL_EXPERIMENTAL/*i*/*/, l.getOwnFields(), l.getFragments());
+                for (var module/*i*/ in require/*t*/)
+                    if (require/*t*/.hasOwnProperty(module/*i*/)) {
+                        requireDynamic/*n*/.hasOwnField(module/*i*/) || b(0, "Anything in the idMap for createQuery should be part of the relevant mutation's fat query.");
+                        var a = requireDynamic/*n*/.getOwnField(module/*i*/),
+                            s = require/*t*/[module/*i*/],
+                            l = v.getTrackedQueryByID(s),
+                            u = new g.Field(module/*i*/, l.getOwnFields(), l.getFragments());
                         requireLazy/*r*/.push(o(u, a))
                     }
-                return new g.QueryFragment("MutationQuery", requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.type(), requireLazy/*r*/)
+                return new g.QueryFragment("MutationQuery", requireDynamic/*n*/.type(), requireLazy/*r*/)
             },
-            createRangeDeleteQuery: function(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, requireLazy/*r*/) {
-                var module/*GraphQL_EXPERIMENTAL/*i*/*/ = f(y.getFatQueryForType(global/*e*/));
-                module/*GraphQL_EXPERIMENTAL/*i*/*/.hasOwnField(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/) || b(0, "The fatQuery must include the range field for a delete mutation");
-                var a = v.getTrackedQueryByID(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/),
-                    GraphQLConstants/*s*/ = new g.Field(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, a.getOwnFields(), a.getFragments()),
+            createRangeDeleteQuery: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                var module/*i*/ = f(y.getFatQueryForType(global/*e*/));
+                module/*i*/.hasOwnField(requireDynamic/*n*/) || b(0, "The fatQuery must include the range field for a delete mutation");
+                var a = v.getTrackedQueryByID(require/*t*/),
+                    s = new g.Field(requireDynamic/*n*/, a.getOwnFields(), a.getFragments()),
                     l = function(global/*e*/) {
                         return global/*e*/.getFieldName() === requireLazy/*r*/
                     },
-                    u = o(GraphQLConstants/*s*/, module/*GraphQL_EXPERIMENTAL/*i*/*/.getOwnField(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/), l);
-                return new g.QueryFragment("MutationQuery", module/*GraphQL_EXPERIMENTAL/*i*/*/.type(), [u])
+                    u = o(s, module/*i*/.getOwnField(requireDynamic/*n*/), l);
+                return new g.QueryFragment("MutationQuery", module/*i*/.type(), [u])
             },
-            createRangeAddQuery: function(global/*e*/, require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/, requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, requireLazy/*r*/, module/*GraphQL_EXPERIMENTAL/*i*/*/) {
+            createRangeAddQuery: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
                 var a = f(y.getFatQueryForType(global/*e*/)),
-                    GraphQLConstants/*s*/ = y.getRangeConfigForType(global/*e*/),
+                    s = y.getRangeConfigForType(global/*e*/),
                     l = v.getTrackedQueryByID(requireLazy/*r*/),
-                    u = new g.Field(module/*GraphQL_EXPERIMENTAL/*i*/*/ ? module/*GraphQL_EXPERIMENTAL/*i*/*/ : "range_parent_field", l.getOwnFields(), l.getFragments()),
-                    GraphQLStoreDataHandler/*p*/ = u.getUnaliasedFields(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/),
-                    invariant/*d*/ = requireLazy/*r*/ === _.VIEWER_CLIENT_ID ? [E] : [C];
-                if (0 === GraphQLStoreDataHandler/*p*/.length) return m.warn("Did not find range as a child of the parent field"), invariant/*d*/.push(D), new g.QueryFragment("MutationQuery", a.type(), [new g.Field(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, null, invariant/*d*/)]);
-                for (var h = [], S = [], b = {}, R = 0; R < GraphQLStoreDataHandler/*p*/.length; R++) {
-                    var w = GraphQLStoreDataHandler/*p*/[R],
+                    u = new g.Field(module/*i*/ ? module/*i*/ : "range_parent_field", l.getOwnFields(), l.getFragments()),
+                    p = u.getUnaliasedFields(require/*t*/),
+                    d = requireLazy/*r*/ === _.VIEWER_CLIENT_ID ? [E] : [C];
+                if (0 === p.length) return m.warn("Did not find range as a child of the parent field"), d.push(D), new g.QueryFragment("MutationQuery", a.type(), [new g.Field(requireDynamic/*n*/, null, d)]);
+                for (var h = [], S = [], b = {}, R = 0; R < p.length; R++) {
+                    var w = p[R],
                         T = w.getUnaliasedFields(_.EDGES);
                     if (T.length) {
                         var x = w.getCalls().filter(function(global/*e*/) {
                             return !_.RANGE_CALLS[global/*e*/.getName()]
                         });
-                        if (x.join(".") in GraphQLConstants/*s*/)
+                        if (x.join(".") in s)
                             for (var P = 0; P < T.length; P++) {
                                 for (var I = T[P], F = I.getUnaliasedFields(_.NODE), L = 0; L < F.length; L++) S.push(new g.QueryFragment("MutationQueryCreatorEdge", "UnknownType", [F[L]]));
-                                invariant/*d*/.push(c(I))
+                                d.push(c(I))
                             } else b[w.getGeneratedAlias()] = !0
                     }
                 }
-                S.length ? h.push(new g.Field(requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/, null, S.concat(invariant/*d*/))) : __DEV__ && console.warn("Did you forget to update GraphQLMutationProperties.rangeConfigs for your mutation %GraphQLConstants/*s*/? No edge field could be added to the query.", global/*e*/);
+                S.length ? h.push(new g.Field(requireDynamic/*n*/, null, S.concat(d))) : __DEV__ && console.warn("Did you forget to update GraphQLMutationProperties.rangeConfigs for your mutation %s? No edge field could be added to the query.", global/*e*/);
                 var M = function(global/*e*/) {
                     return !(global/*e*/.getGeneratedAlias() in b)
                 };
-                if (module/*GraphQL_EXPERIMENTAL/*i*/*/ && a.hasOwnField(module/*GraphQL_EXPERIMENTAL/*i*/*/)) {
-                    var Q = o(u, a.getOwnField(module/*GraphQL_EXPERIMENTAL/*i*/*/), M);
+                if (module/*i*/ && a.hasOwnField(module/*i*/)) {
+                    var Q = o(u, a.getOwnField(module/*i*/), M);
                     Q.hasFields() && h.push(Q)
                 }
                 return new g.QueryFragment("MutationQuery", a.type(), h)
             },
             createQueryFromOptimisticPayload: function(global/*e*/) {
                 global/*e*/ && 1 === Object.keys(global/*e*/).length || b(0, "malformed optimistic payload received");
-                var require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/ = Object.keys(global/*e*/)[0],
-                    requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/ = f(y.getFatQueryForType(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/)),
-                    requireLazy/*r*/ = global/*e*/[require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/];
-                return new g.Mutation("OptimisticQuery", requireDynamic/*DliteLog/*GraphQLStore/*n*/*/*/.type(), new g.Call(require/*exports/*GraphQLMutationProperties/*isEmpty/*t*/*/*/*/), invariant/*d*/(GraphQLStoreDataHandler/*p*/(requireLazy/*r*/) ? requireLazy/*r*/[0] : requireLazy/*r*/))
+                var require/*t*/ = Object.keys(global/*e*/)[0],
+                    requireDynamic/*n*/ = f(y.getFatQueryForType(require/*t*/)),
+                    requireLazy/*r*/ = global/*e*/[require/*t*/];
+                return new g.Mutation("OptimisticQuery", requireDynamic/*n*/.type(), new g.Call(require/*t*/), d(p(requireLazy/*r*/) ? requireLazy/*r*/[0] : requireLazy/*r*/))
             }
         },
         C = new g.QueryFragment("MutationQueryCreatorEdgeMetadata", "UnknownType", [new g.Field("cursor"), new g.Field("source", [new g.Field("id")])]),
         E = new g.QueryFragment("MutationQueryCreatorEdgeMetadata", "UnknownType", [new g.Field("cursor")]),
         D = new g.QueryFragment("MutationQueryCreatorEdgeMetadata", "UnknownType", [new g.Field("node", [new g.Field("id")])]);
-    module/*GraphQL_EXPERIMENTAL/*i*/*/.exports = w
+    module/*i*/.exports = w
 });

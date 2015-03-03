@@ -1,39 +1,39 @@
-__d("FBStickerInputView",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass"],function (global/*e*/, require/*StyleSheet/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBStickerInputView",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*StyleSheet/*t*/*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*StyleSheet/*t*/*/("React"),
-        NativeMethodsMixin/*s*/ = require/*StyleSheet/*t*/*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*StyleSheet/*t*/*/("StyleSheet"),
-        ReactIOSViewAttributes/*u*/ = (require/*StyleSheet/*t*/*/("View"), require/*StyleSheet/*t*/*/("createReactIOSNativeComponentClass")),
-        View/*c*/ = exports/*a*/.createClass({
+    var o = require/*t*/("NativeMethodsMixin"),
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("StyleSheet"),
+        u = (require/*t*/("View"), require/*t*/("createReactIOSNativeComponentClass")),
+        c = a.createClass({
             displayName: "FBStickerInputView",
-            createReactIOSNativeComponentClass/*propTypes*/: {
-                onStickerSelect: exports/*a*/.PropTypes.func
+            propTypes: {
+                onStickerSelect: a.PropTypes.func
             },
             mixins: [o],
             viewConfig: {
                 uiViewClassName: "UIView",
-                validAttributes: NativeMethodsMixin/*s*/.UIView
+                validAttributes: s.UIView
             },
             onStickerSelect: function(global/*e*/) {
                 this.props.onStickerSelect && this.props.onStickerSelect(global/*e*/)
             },
             render: function() {
-                return exports/*a*/.createElement(d, {
+                return a.createElement(d, {
                     style: p.inputViewStyle,
                     onStickerSelect: this.onStickerSelect
                 })
             }
         }),
-        p = React/*l*/.create({
+        p = l.create({
             inputViewStyle: {
                 position: "absolute",
                 backgroundColor: "#f8f8f8"
             }
         }),
-        d = ReactIOSViewAttributes/*u*/({
-            validAttributes: NativeMethodsMixin/*s*/.UIView,
+        d = u({
+            validAttributes: s.UIView,
             uiViewClassName: "RCTStickerInputView"
         });
-    module/*i*/.exports = View/*c*/
+    module/*i*/.exports = c
 });

@@ -1,9 +1,9 @@
 __d("InfiniteScrollView",["React","ScrollView"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("React"),
-        exports/*a*/ = require/*t*/("ScrollView"),
-        React/*s*/ = 100,
-        ScrollView/*l*/ = "scroll_view",
+        a = require/*t*/("ScrollView"),
+        s = 100,
+        l = "scroll_view",
         u = {
             distanceToTriggerLoad: o.PropTypes.number,
             hasMoreToLoad: o.PropTypes.bool.isRequired,
@@ -21,7 +21,7 @@ __d("InfiniteScrollView",["React","ScrollView"],function (global/*e*/, require/*
                 }
             },
             getScrollRef: function() {
-                return this.props.ScrollViewComponent ? this.refs[ScrollView/*l*/].getScrollRef() : this.refs[ScrollView/*l*/]
+                return this.props.ScrollViewComponent ? this.refs[l].getScrollRef() : this.refs[l]
             },
             _onScroll: function(global/*e*/) {
                 if (this.props.onScroll && this.props.onScroll(global/*e*/), this.props.hasMoreToLoad && !this.props.isLoadingMore) {
@@ -35,12 +35,12 @@ __d("InfiniteScrollView",["React","ScrollView"],function (global/*e*/, require/*
             render: function() {
                 var global/*e*/ = {
                     onScroll: this._onScroll,
-                    throttleScrollCallbackMS: React/*s*/
+                    throttleScrollCallbackMS: s
                 };
                 for (var require/*t*/ in this.props) u[require/*t*/] || global/*e*/[require/*t*/] || (global/*e*/[require/*t*/] = this.props[require/*t*/]);
-                var requireDynamic/*n*/ = this.props.ScrollViewComponent || exports/*a*/;
+                var requireDynamic/*n*/ = this.props.ScrollViewComponent || a;
                 return o.createElement(requireDynamic/*n*/, Object.assign({
-                    ref: ScrollView/*l*/
+                    ref: l
                 }, global/*e*/), this.props.children, this.props.hasMoreToLoad && this.props.spinner)
             }
         });

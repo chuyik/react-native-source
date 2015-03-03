@@ -1,7 +1,7 @@
-__d("ES6StringUtils",[],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ES6StringUtils",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     var o = {
         fromCodePoint: function() {
-            for (var global/*e*/ = [], require/*exports/*t*/*/ = 0, requireDynamic/*n*/ = arguments.length; requireDynamic/*n*/ > require/*exports/*t*/*/; require/*exports/*t*/*/++) global/*e*/.push(arguments[require/*exports/*t*/*/]);
+            for (var global/*e*/ = [], require/*t*/ = 0, requireDynamic/*n*/ = arguments.length; requireDynamic/*n*/ > require/*t*/; require/*t*/++) global/*e*/.push(arguments[require/*t*/]);
             if (String.fromCodePoint) return String.fromCodePoint.apply(this, global/*e*/);
             for (var requireLazy/*r*/ = [], module/*i*/ = 0; module/*i*/ < global/*e*/.length; module/*i*/++) {
                 var o = Number(global/*e*/[module/*i*/]);
@@ -14,12 +14,12 @@ __d("ES6StringUtils",[],function (global/*e*/, require/*exports/*t*/*/, requireD
             "use strict";
             if (String.prototype.codePointAt) return String.prototype.codePointAt.call(this, global/*e*/);
             if (null === this || void 0 === this) throw TypeError("Invalid context: " + this);
-            var require/*exports/*t*/*/ = String(this),
-                requireDynamic/*n*/ = require/*exports/*t*/*/.length;
+            var require/*t*/ = String(this),
+                requireDynamic/*n*/ = require/*t*/.length;
             if (global/*e*/ = global/*e*/ ? Number(global/*e*/) : 0, global/*e*/ != global/*e*/ && (global/*e*/ = 0), 0 > global/*e*/ || global/*e*/ >= requireDynamic/*n*/) return void 0;
-            var requireLazy/*r*/ = require/*exports/*t*/*/.charCodeAt(global/*e*/);
+            var requireLazy/*r*/ = require/*t*/.charCodeAt(global/*e*/);
             if (requireLazy/*r*/ >= 55296 && 56319 >= requireLazy/*r*/ && requireDynamic/*n*/ > global/*e*/ + 1) {
-                var module/*i*/ = require/*exports/*t*/*/.charCodeAt(global/*e*/ + 1);
+                var module/*i*/ = require/*t*/.charCodeAt(global/*e*/ + 1);
                 if (module/*i*/ >= 56320 && 57343 >= module/*i*/) return 1024 * (requireLazy/*r*/ - 55296) + module/*i*/ - 56320 + 65536
             }
             return requireLazy/*r*/

@@ -1,34 +1,34 @@
 __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","POPAnimationMixin","React","ReactGraphQL","RCTNativeAppEventEmitter","NativeModules","ScrollView","StyleSheet","Subscribable","THColors","THFeedUnitView","THPermalinkInputBarView","THViewConstants","TimerMixin","View","isEmpty","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("CommentAddAction"),
-        exports/*a*/ = require/*t*/("DocumentContent"),
-        CommentAddAction/*s*/ = require/*t*/("FeedbackPoller"),
-        DocumentContent/*l*/ = require/*t*/("POPAnimationMixin"),
-        FeedbackPoller/*u*/ = require/*t*/("React"),
-        POPAnimationMixin/*c*/ = require/*t*/("ReactGraphQL"),
-        React/*p*/ = require/*t*/("RCTNativeAppEventEmitter"),
-        ReactGraphQL/*d*/ = require/*t*/("NativeModules").RKTreehouseManager,
-        RCTNativeAppEventEmitter/*h*/ = require/*t*/("ScrollView"),
-        NativeModules/*f*/ = require/*t*/("StyleSheet"),
-        ScrollView/*m*/ = require/*t*/("Subscribable"),
-        StyleSheet/*g*/ = require/*t*/("THColors"),
-        Subscribable/*_*/ = require/*t*/("THFeedUnitView"),
-        THColors/*y*/ = require/*t*/("THPermalinkInputBarView"),
-        THFeedUnitView/*v*/ = require/*t*/("THViewConstants"),
-        THPermalinkInputBarView/*S*/ = require/*t*/("TimerMixin"),
-        THViewConstants/*b*/ = require/*t*/("View"),
-        TimerMixin/*R*/ = require/*t*/("isEmpty"),
-        View/*w*/ = require/*t*/("keyOf"),
-        isEmpty/*C*/ = View/*w*/({
+        a = require/*t*/("DocumentContent"),
+        s = require/*t*/("FeedbackPoller"),
+        l = require/*t*/("POPAnimationMixin"),
+        u = require/*t*/("React"),
+        c = require/*t*/("ReactGraphQL"),
+        p = require/*t*/("RCTNativeAppEventEmitter"),
+        d = require/*t*/("NativeModules").RKTreehouseManager,
+        h = require/*t*/("ScrollView"),
+        f = require/*t*/("StyleSheet"),
+        m = require/*t*/("Subscribable"),
+        g = require/*t*/("THColors"),
+        _ = require/*t*/("THFeedUnitView"),
+        y = require/*t*/("THPermalinkInputBarView"),
+        v = require/*t*/("THViewConstants"),
+        S = require/*t*/("TimerMixin"),
+        b = require/*t*/("View"),
+        R = require/*t*/("isEmpty"),
+        w = require/*t*/("keyOf"),
+        C = w({
             permalinkInputBar: null
         }),
-        keyOf/*E*/ = "gk_catalyst_th_live_update",
-        D = FeedbackPoller/*u*/.createClass({
+        E = "gk_catalyst_th_live_update",
+        D = u.createClass({
             displayName: "THPermalinkView",
             propTypes: {
-                story: FeedbackPoller/*u*/.PropTypes.object.isRequired,
-                topInset: FeedbackPoller/*u*/.PropTypes.number,
-                bottomInset: FeedbackPoller/*u*/.PropTypes.number
+                story: u.PropTypes.object.isRequired,
+                topInset: u.PropTypes.number,
+                bottomInset: u.PropTypes.number
             },
             getDefaultProps: function() {
                 return {
@@ -36,7 +36,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                     bottomInset: 0
                 }
             },
-            mixins: [DocumentContent/*l*/, POPAnimationMixin/*c*/.Mixin, ScrollView/*m*/.Mixin, THPermalinkInputBarView/*S*/],
+            mixins: [l, c.Mixin, m.Mixin, S],
             statics: {
                 queries: {
                     viewer: function(global/*e*/, require/*t*/) {
@@ -59,7 +59,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                             })], [require/*t*/.__frag(requireDynamic/*n*/)], {
                                 scope: "THPermalinkView_viewer"
                             })
-                        }(keyOf/*E*/, Subscribable/*_*/.getQuery("viewer"))
+                        }(E, _.getQuery("viewer"))
                     },
                     story: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/, requireDynamic/*n*/) {
@@ -80,7 +80,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THPermalinkView_story"
                             })
-                        }(Subscribable/*_*/.getQuery("story"), Subscribable/*_*/.getQuery("group"))
+                        }(_.getQuery("story"), _.getQuery("group"))
                     }
                 }
             },
@@ -88,33 +88,33 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 return {
                     commentEditAbortCallback: null,
                     commentEditSubmitCallback: null,
-                    initialText: new exports/*a*/
+                    initialText: new a
                 }
             },
             componentWillMount: function() {
-                this.addListenerOn(React/*p*/, "reloadFeedViewForGroup", this.reloadFeedViewForGroup)
+                this.addListenerOn(p, "reloadFeedViewForGroup", this.reloadFeedViewForGroup)
             },
             componentWillUnmount: function() {
-                this.props.story && this.props.story.feedback && CommentAddAction/*s*/.unregister(this.props.story.feedback.id)
+                this.props.story && this.props.story.feedback && s.unregister(this.props.story.feedback.id)
             },
             componentDidMount: function() {
-                this.enablePollerIfNeeded(this.props), this.props.story && this.props.story.feedback && CommentAddAction/*s*/.register(this.props.story.feedback.id), ReactGraphQL/*d*/ && (ReactGraphQL/*d*/.groupViewComponentDidUpdate && this.props.story && this.props.story.to && this.requestAnimationFrame(function() {
-                    return this.isMounted() && ReactGraphQL/*d*/.groupViewComponentDidUpdate(this.props.story.to.id)
-                }.bind(this)), ReactGraphQL/*d*/.logEventEnded && this.requestAnimationFrame(function() {
-                    ReactGraphQL/*d*/.logEventEnded(this.props.groupPostNotifTTI)
+                this.enablePollerIfNeeded(this.props), this.props.story && this.props.story.feedback && s.register(this.props.story.feedback.id), d && (d.groupViewComponentDidUpdate && this.props.story && this.props.story.to && this.requestAnimationFrame(function() {
+                    return this.isMounted() && d.groupViewComponentDidUpdate(this.props.story.to.id)
+                }.bind(this)), d.logEventEnded && this.requestAnimationFrame(function() {
+                    d.logEventEnded(this.props.groupPostNotifTTI)
                 }.bind(this)))
             },
             enablePollerIfNeeded: function(global/*e*/) {
                 var require/*t*/ = global/*e*/.viewer && global/*e*/.viewer.__configs__ && global/*e*/.viewer.__configs__.edges;
                 if (require/*t*/) {
                     var requireDynamic/*n*/ = require/*t*/.filter(function(global/*e*/) {
-                        return global/*e*/.node.name === keyOf/*E*/
+                        return global/*e*/.node.name === E
                     });
-                    TimerMixin/*R*/(requireDynamic/*n*/) || CommentAddAction/*s*/.enablePoller(requireDynamic/*n*/[0].node.enabled)
+                    R(requireDynamic/*n*/) || s.enablePoller(requireDynamic/*n*/[0].node.enabled)
                 }
             },
             onStoryDeleted: function() {
-                ReactGraphQL/*d*/ && ReactGraphQL/*d*/.closeModalWindow()
+                d && d.closeModalWindow()
             },
             reloadFeedViewForGroup: function(global/*e*/) {
                 this.props.story.to && this.props.story.to.id === global/*e*/ && this.props.forceUpdate({})
@@ -128,7 +128,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 this.state.commentEditSubmitCallback && this.state.commentEditSubmitCallback(global/*e*/), this.setState({
                     commentEditSubmitCallback: null,
                     commentEditAbortCallback: null,
-                    initialText: new exports/*a*/,
+                    initialText: new a,
                     isEditing: !1
                 })
             },
@@ -140,7 +140,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 })
             },
             handleCommentInputRequested: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                global/*e*/.isEditing ? this.handleCommentEditRequested(global/*e*/, require/*t*/, requireDynamic/*n*/) : this.refs[isEmpty/*C*/].focusInput()
+                global/*e*/.isEditing ? this.handleCommentEditRequested(global/*e*/, require/*t*/, requireDynamic/*n*/) : this.refs[C].focusInput()
             },
             handleCommentEditRequested: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 this.setState({
@@ -152,31 +152,31 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 })
             },
             render: function() {
-                if (!this.props.story) return FeedbackPoller/*u*/.createElement(THViewConstants/*b*/, null);
+                if (!this.props.story) return u.createElement(b, null);
                 var global/*e*/ = {
                         top: this.props.topInset,
                         bottom: this.props.bottomInset
                     },
                     require/*t*/ = this.props.story.to ? this.props.story.to.id : null,
-                    requireDynamic/*n*/ = FeedbackPoller/*u*/.createElement(Subscribable/*_*/, {
+                    requireDynamic/*n*/ = u.createElement(_, {
                         onInputRequested: this.handleCommentInputRequested,
                         onStoryDeleted: this.onStoryDeleted,
                         story: this.props.story,
                         group: this.props.story.to,
                         viewer: this.props.viewer,
-                        viewContext: THFeedUnitView/*v*/.PERMALINK
+                        viewContext: v.PERMALINK
                     }),
-                    requireLazy/*r*/ = FeedbackPoller/*u*/.createElement(RCTNativeAppEventEmitter/*h*/, {
+                    requireLazy/*r*/ = u.createElement(h, {
                         automaticallyAdjustContentInsets: !0,
                         contentInset: global/*e*/,
                         contentOffset: {
-                            THColors/*y*/: -global/*e*/.top
+                            y: -global/*e*/.top
                         },
                         style: T.scrollView,
                         showsVerticalScrollIndicator: !0
                     }, requireDynamic/*n*/);
-                return FeedbackPoller/*u*/.createElement(THColors/*y*/, {
-                    ref: isEmpty/*C*/,
+                return u.createElement(y, {
+                    ref: C,
                     groupID: require/*t*/,
                     dockParams: this.state.dockParams,
                     initialText: this.state.initialText,
@@ -188,9 +188,9 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 })
             }
         }),
-        T = NativeModules/*f*/.create({
+        T = f.create({
             scrollView: {
-                backgroundColor: StyleSheet/*g*/.backgroundColor
+                backgroundColor: g.backgroundColor
             }
         });
     module/*i*/.exports = D

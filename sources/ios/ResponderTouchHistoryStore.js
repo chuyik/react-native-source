@@ -1,9 +1,9 @@
 __d("ResponderTouchHistoryStore",["EventPluginUtils","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("EventPluginUtils"),
-        exports/*a*/ = require/*t*/("invariant"),
-        EventPluginUtils/*s*/ = o.isMoveish,
-        invariant/*l*/ = o.isStartish,
+        a = require/*t*/("invariant"),
+        s = o.isMoveish,
+        l = o.isStartish,
         u = o.isEndish,
         c = 20,
         p = {
@@ -31,7 +31,7 @@ __d("ResponderTouchHistoryStore",["EventPluginUtils","invariant"],function (glob
         },
         f = function(global/*e*/) {
             var require/*t*/ = global/*e*/.identifier;
-            null == require/*t*/ && exports/*a*/(0, "Touch object is missing identifier"), require/*t*/ > c && console.warn("Touch identifier " + require/*t*/ + " is greater than maximum supported " + c + " which causes performance issues backfilling array locations for all of the indices.")
+            null == require/*t*/ && a(0, "Touch object is missing identifier"), require/*t*/ > c && console.warn("Touch identifier " + require/*t*/ + " is greater than maximum supported " + c + " which causes performance issues backfilling array locations for all of the indices.")
         },
         m = function(global/*e*/) {
             var require/*t*/ = p.touchBank,
@@ -42,18 +42,18 @@ __d("ResponderTouchHistoryStore",["EventPluginUtils","invariant"],function (glob
         g = function(global/*e*/) {
             var require/*t*/ = p.touchBank,
                 requireDynamic/*n*/ = require/*t*/[global/*e*/.identifier];
-            __DEV__ && (f(global/*e*/), requireDynamic/*n*/ || exports/*a*/(0, "Touch data should have been recorded on start")), requireDynamic/*n*/.touchActive = !0, requireDynamic/*n*/.previousPageX = requireDynamic/*n*/.currentPageX, requireDynamic/*n*/.previousPageY = requireDynamic/*n*/.currentPageY, requireDynamic/*n*/.previousTimeStamp = requireDynamic/*n*/.currentTimeStamp, requireDynamic/*n*/.currentPageX = global/*e*/.pageX, requireDynamic/*n*/.currentPageY = global/*e*/.pageY, requireDynamic/*n*/.currentTimeStamp = global/*e*/.timeStamp, p.mostRecentTimeStamp = global/*e*/.timeStamp
+            __DEV__ && (f(global/*e*/), requireDynamic/*n*/ || a(0, "Touch data should have been recorded on start")), requireDynamic/*n*/.touchActive = !0, requireDynamic/*n*/.previousPageX = requireDynamic/*n*/.currentPageX, requireDynamic/*n*/.previousPageY = requireDynamic/*n*/.currentPageY, requireDynamic/*n*/.previousTimeStamp = requireDynamic/*n*/.currentTimeStamp, requireDynamic/*n*/.currentPageX = global/*e*/.pageX, requireDynamic/*n*/.currentPageY = global/*e*/.pageY, requireDynamic/*n*/.currentTimeStamp = global/*e*/.timeStamp, p.mostRecentTimeStamp = global/*e*/.timeStamp
         },
         _ = function(global/*e*/) {
             var require/*t*/ = p.touchBank,
                 requireDynamic/*n*/ = require/*t*/[global/*e*/.identifier];
-            __DEV__ && (f(global/*e*/), requireDynamic/*n*/ || exports/*a*/(0, "Touch data should have been recorded on start")), requireDynamic/*n*/.previousPageX = requireDynamic/*n*/.currentPageX, requireDynamic/*n*/.previousPageY = requireDynamic/*n*/.currentPageY, requireDynamic/*n*/.previousTimeStamp = requireDynamic/*n*/.currentTimeStamp, requireDynamic/*n*/.currentPageX = global/*e*/.pageX, requireDynamic/*n*/.currentPageY = global/*e*/.pageY, requireDynamic/*n*/.currentTimeStamp = global/*e*/.timeStamp, requireDynamic/*n*/.touchActive = !1, p.mostRecentTimeStamp = global/*e*/.timeStamp
+            __DEV__ && (f(global/*e*/), requireDynamic/*n*/ || a(0, "Touch data should have been recorded on start")), requireDynamic/*n*/.previousPageX = requireDynamic/*n*/.currentPageX, requireDynamic/*n*/.previousPageY = requireDynamic/*n*/.currentPageY, requireDynamic/*n*/.previousTimeStamp = requireDynamic/*n*/.currentTimeStamp, requireDynamic/*n*/.currentPageX = global/*e*/.pageX, requireDynamic/*n*/.currentPageY = global/*e*/.pageY, requireDynamic/*n*/.currentTimeStamp = global/*e*/.timeStamp, requireDynamic/*n*/.touchActive = !1, p.mostRecentTimeStamp = global/*e*/.timeStamp
         },
         y = {
             recordTouchTrack: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = p.touchBank;
-                if (EventPluginUtils/*s*/(global/*e*/)) require/*t*/.changedTouches.forEach(g);
-                else if (invariant/*l*/(global/*e*/)) require/*t*/.changedTouches.forEach(m), p.numberActiveTouches = require/*t*/.touches.length, 1 === p.numberActiveTouches && (p.indexOfSingleActiveTouch = require/*t*/.touches[0].identifier);
+                if (s(global/*e*/)) require/*t*/.changedTouches.forEach(g);
+                else if (l(global/*e*/)) require/*t*/.changedTouches.forEach(m), p.numberActiveTouches = require/*t*/.touches.length, 1 === p.numberActiveTouches && (p.indexOfSingleActiveTouch = require/*t*/.touches[0].identifier);
                 else if (u(global/*e*/) && (require/*t*/.changedTouches.forEach(_), p.numberActiveTouches = require/*t*/.touches.length, 1 === p.numberActiveTouches)) {
                     for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < requireDynamic/*n*/.length; requireLazy/*r*/++) {
                         var module/*i*/ = requireDynamic/*n*/[requireLazy/*r*/];
@@ -65,7 +65,7 @@ __d("ResponderTouchHistoryStore",["EventPluginUtils","invariant"],function (glob
                     if (__DEV__) {
                         var o = requireDynamic/*n*/[p.indexOfSingleActiveTouch],
                             c = null != o && !!o.touchActive;
-                        c || exports/*a*/(0, "Cannot find single active touch")
+                        c || a(0, "Cannot find single active touch")
                     }
                 }
             },

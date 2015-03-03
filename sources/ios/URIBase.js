@@ -1,41 +1,41 @@
-__d("URIBase",["URIRFC3986","URISchemes","copyProperties","ex","invariant"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*URIRFC3986/*n*/*/, requireLazy/*URISchemes/*r*/*/, module/*i*/) {
-    function o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*URIRFC3986/*n*/*/, requireLazy/*URISchemes/*r*/*/) {
-        if (!require/*exports/*t*/*/) return !0;
-        if (require/*exports/*t*/*/ instanceof a) return global/*e*/.setProtocol(require/*exports/*t*/*/.getProtocol()), global/*e*/.setDomain(require/*exports/*t*/*/.getDomain()), global/*e*/.setPort(require/*exports/*t*/*/.getPort()), global/*e*/.setPath(require/*exports/*t*/*/.getPath()), global/*e*/.setQueryData(requireLazy/*URISchemes/*r*/*/.deserialize(requireLazy/*URISchemes/*r*/*/.serialize(require/*exports/*t*/*/.getQueryData()))), global/*e*/.setFragment(require/*exports/*t*/*/.getFragment()), !0;
-        require/*exports/*t*/*/ = require/*exports/*t*/*/.toString().trim();
-        var module/*i*/ = s.parse(require/*exports/*t*/*/) || {};
-        if (!requireDynamic/*URIRFC3986/*n*/*/ && !l.isAllowed(module/*i*/.scheme)) return !1;
-        if (global/*e*/.setProtocol(module/*i*/.scheme || ""), !requireDynamic/*URIRFC3986/*n*/*/ && d.test(module/*i*/.host)) return !1;
-        if (global/*e*/.setDomain(module/*i*/.host || ""), global/*e*/.setPort(module/*i*/.port || ""), global/*e*/.setPath(module/*i*/.path || ""), requireDynamic/*URIRFC3986/*n*/*/) global/*e*/.setQueryData(requireLazy/*URISchemes/*r*/*/.deserialize(module/*i*/.query) || {});
+__d("URIBase",["URIRFC3986","URISchemes","copyProperties","ex","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+        if (!require/*t*/) return !0;
+        if (require/*t*/ instanceof a) return global/*e*/.setProtocol(require/*t*/.getProtocol()), global/*e*/.setDomain(require/*t*/.getDomain()), global/*e*/.setPort(require/*t*/.getPort()), global/*e*/.setPath(require/*t*/.getPath()), global/*e*/.setQueryData(requireLazy/*r*/.deserialize(requireLazy/*r*/.serialize(require/*t*/.getQueryData()))), global/*e*/.setFragment(require/*t*/.getFragment()), !0;
+        require/*t*/ = require/*t*/.toString().trim();
+        var module/*i*/ = s.parse(require/*t*/) || {};
+        if (!requireDynamic/*n*/ && !l.isAllowed(module/*i*/.scheme)) return !1;
+        if (global/*e*/.setProtocol(module/*i*/.scheme || ""), !requireDynamic/*n*/ && d.test(module/*i*/.host)) return !1;
+        if (global/*e*/.setDomain(module/*i*/.host || ""), global/*e*/.setPort(module/*i*/.port || ""), global/*e*/.setPath(module/*i*/.path || ""), requireDynamic/*n*/) global/*e*/.setQueryData(requireLazy/*r*/.deserialize(module/*i*/.query) || {});
         else try {
-            global/*e*/.setQueryData(requireLazy/*URISchemes/*r*/*/.deserialize(module/*i*/.query) || {})
+            global/*e*/.setQueryData(requireLazy/*r*/.deserialize(module/*i*/.query) || {})
         } catch (o) {
             return !1
         }
         if (global/*e*/.setFragment(module/*i*/.fragment || ""), null !== module/*i*/.userinfo) {
-            if (requireDynamic/*URIRFC3986/*n*/*/) throw new Error(c("URI.parse: invalid URI (userinfo is not allowed in a URI): %s", global/*e*/.toString()));
+            if (requireDynamic/*n*/) throw new Error(c("URI.parse: invalid URI (userinfo is not allowed in a URI): %s", global/*e*/.toString()));
             return !1
         }
         if (!global/*e*/.getDomain() && -1 !== global/*e*/.getPath().indexOf("\\")) {
-            if (requireDynamic/*URIRFC3986/*n*/*/) throw new Error(c("URI.parse: invalid URI (no domain but multiple back-slashes): %s", global/*e*/.toString()));
+            if (requireDynamic/*n*/) throw new Error(c("URI.parse: invalid URI (no domain but multiple back-slashes): %s", global/*e*/.toString()));
             return !1
         }
-        if (!global/*e*/.getProtocol() && h.test(require/*exports/*t*/*/)) {
-            if (requireDynamic/*URIRFC3986/*n*/*/) throw new Error(c("URI.parse: invalid URI (unsafe protocol-relative URLs): %s", global/*e*/.toString()));
+        if (!global/*e*/.getProtocol() && h.test(require/*t*/)) {
+            if (requireDynamic/*n*/) throw new Error(c("URI.parse: invalid URI (unsafe protocol-relative URLs): %s", global/*e*/.toString()));
             return !1
         }
         return !0
     }
 
-    function a(global/*e*/, require/*exports/*t*/*/) {
+    function a(global/*e*/, require/*t*/) {
         "use strict";
-        require/*exports/*t*/*/ || p(0, "no serializer set"), this.$URIBase_serializer = require/*exports/*t*/*/, this.$URIBase_protocol = "", this.$URIBase_domain = "", this.$URIBase_port = "", this.$URIBase_path = "", this.$URIBase_fragment = "", this.$URIBase_queryData = {}, o(this, global/*e*/, !0, require/*exports/*t*/*/)
+        require/*t*/ || p(0, "no serializer set"), this.$URIBase_serializer = require/*t*/, this.$URIBase_protocol = "", this.$URIBase_domain = "", this.$URIBase_port = "", this.$URIBase_path = "", this.$URIBase_fragment = "", this.$URIBase_queryData = {}, o(this, global/*e*/, !0, require/*t*/)
     }
-    var s = require/*exports/*t*/*/("URIRFC3986"),
-        l = require/*exports/*t*/*/("URISchemes"),
-        u = require/*exports/*t*/*/("copyProperties"),
-        c = require/*exports/*t*/*/("ex"),
-        p = require/*exports/*t*/*/("invariant"),
+    var s = require/*t*/("URIRFC3986"),
+        l = require/*t*/("URISchemes"),
+        u = require/*t*/("copyProperties"),
+        c = require/*t*/("ex"),
+        p = require/*t*/("invariant"),
         d = new RegExp("[\\x00-\\x2c\\x2f\\x3b-\\x40\\x5c\\x5e\\x60\\x7b-\\x7f\\uFDD0-\\uFDEF\\uFFF0-\\uFFFF\\u2047\\u2048\\uFE56\\uFE5F\\uFF03\\uFF0F\\uFF1F]"),
         h = new RegExp("^(?:[^/]*:|[\\x00-\\x1f]*/[\\x00-\\x1f]*/)");
     a.prototype.setProtocol = function(global/*e*/) {
@@ -69,9 +69,9 @@ __d("URIBase",["URIRFC3986","URISchemes","copyProperties","ex","invariant"],func
     }, a.prototype.getPath = function() {
         "use strict";
         return this.$URIBase_path
-    }, a.prototype.addQueryData = function(global/*e*/, require/*exports/*t*/*/) {
+    }, a.prototype.addQueryData = function(global/*e*/, require/*t*/) {
         "use strict";
-        return "[object Object]" === Object.prototype.toString.call(global/*e*/) ? u(this.$URIBase_queryData, global/*e*/) : this.$URIBase_queryData[global/*e*/] = require/*exports/*t*/*/, this
+        return "[object Object]" === Object.prototype.toString.call(global/*e*/) ? u(this.$URIBase_queryData, global/*e*/) : this.$URIBase_queryData[global/*e*/] = require/*t*/, this
     }, a.prototype.setQueryData = function(global/*e*/) {
         "use strict";
         return this.$URIBase_queryData = global/*e*/, this
@@ -81,7 +81,7 @@ __d("URIBase",["URIRFC3986","URISchemes","copyProperties","ex","invariant"],func
     }, a.prototype.removeQueryData = function(global/*e*/) {
         "use strict";
         Array.isArray(global/*e*/) || (global/*e*/ = [global/*e*/]);
-        for (var require/*exports/*t*/*/ = 0, requireDynamic/*URIRFC3986/*n*/*/ = global/*e*/.length; requireDynamic/*URIRFC3986/*n*/*/ > require/*exports/*t*/*/; ++require/*exports/*t*/*/) delete this.$URIBase_queryData[global/*e*/[require/*exports/*t*/*/]];
+        for (var require/*t*/ = 0, requireDynamic/*n*/ = global/*e*/.length; requireDynamic/*n*/ > require/*t*/; ++require/*t*/) delete this.$URIBase_queryData[global/*e*/[require/*t*/]];
         return this
     }, a.prototype.setFragment = function(global/*e*/) {
         "use strict";
@@ -96,12 +96,12 @@ __d("URIBase",["URIRFC3986","URISchemes","copyProperties","ex","invariant"],func
         "use strict";
         var global/*e*/ = "";
         this.$URIBase_protocol && (global/*e*/ += this.$URIBase_protocol + "://"), this.$URIBase_domain && (global/*e*/ += this.$URIBase_domain), this.$URIBase_port && (global/*e*/ += ":" + this.$URIBase_port), this.$URIBase_path ? global/*e*/ += this.$URIBase_path : global/*e*/ && (global/*e*/ += "/");
-        var require/*exports/*t*/*/ = this.$URIBase_serializer.serialize(this.$URIBase_queryData);
-        return require/*exports/*t*/*/ && (global/*e*/ += "?" + require/*exports/*t*/*/), this.$URIBase_fragment && (global/*e*/ += "#" + this.$URIBase_fragment), global/*e*/
+        var require/*t*/ = this.$URIBase_serializer.serialize(this.$URIBase_queryData);
+        return require/*t*/ && (global/*e*/ += "?" + require/*t*/), this.$URIBase_fragment && (global/*e*/ += "#" + this.$URIBase_fragment), global/*e*/
     }, a.prototype.getOrigin = function() {
         "use strict";
         return this.$URIBase_protocol + "://" + this.$URIBase_domain + (this.$URIBase_port ? ":" + this.$URIBase_port : "")
-    }, a.isValidURI = function(global/*e*/, require/*exports/*t*/*/) {
-        return o(new a(null, require/*exports/*t*/*/), global/*e*/, !1, require/*exports/*t*/*/)
+    }, a.isValidURI = function(global/*e*/, require/*t*/) {
+        return o(new a(null, require/*t*/), global/*e*/, !1, require/*t*/)
     }, module/*i*/.exports = a
 });

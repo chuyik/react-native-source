@@ -2,7 +2,7 @@ __d("RQLError",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requ
     "use strict";
 
     function o(global/*e*/) {
-        this.name = "RQLError", exports/*this.message*/ = global/*e*/, this.type = "mustfix", Error.captureStackTrace ? Error.captureStackTrace(this) : this.stack = (new Error).stack, __DEV__ && (exports/*this.message*/ += " -- Check your console.log or slog!")
+        this.name = "RQLError", this.message = global/*e*/, this.type = "mustfix", Error.captureStackTrace ? Error.captureStackTrace(this) : this.stack = (new Error).stack, __DEV__ && (this.message += " -- Check your console.log or slog!")
     }
     for (var a in Error) Error.hasOwnProperty(a) && (o[a] = Error[a]);
     var s = null === Error ? null : Error.prototype;

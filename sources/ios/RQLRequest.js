@@ -1,8 +1,8 @@
-__d("RQLRequest",[],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RQLRequest",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/) {
-        this.$RQLRequest_name = global/*e*/, this.$RQLRequest_query = require/*exports/*t*/*/, this.$RQLRequest_callback = requireDynamic/*n*/
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        this.$RQLRequest_name = global/*e*/, this.$RQLRequest_query = require/*t*/, this.$RQLRequest_callback = requireDynamic/*n*/
     }
     o.prototype.getName = function() {
         return this.$RQLRequest_name

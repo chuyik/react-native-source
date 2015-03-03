@@ -1,41 +1,41 @@
-__d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","View","merge","copyProperties","onlyChild"],function (global/*e*/, require/*Touchable/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","View","merge","copyProperties","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*Touchable/*t*/*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*Touchable/*t*/*/("React"),
-        NativeMethodsMixin/*s*/ = require/*Touchable/*t*/*/("POPAnimation"),
-        React/*l*/ = require/*Touchable/*t*/*/("Touchable"),
-        POPAnimation/*u*/ = (require/*Touchable/*t*/*/("View"), require/*Touchable/*t*/*/("merge")),
-        View/*c*/ = require/*Touchable/*t*/*/("copyProperties"),
-        merge/*p*/ = require/*Touchable/*t*/*/("onlyChild"),
-        copyProperties/*d*/ = {
+    var o = require/*t*/("NativeMethodsMixin"),
+        a = require/*t*/("React"),
+        s = require/*t*/("POPAnimation"),
+        l = require/*t*/("Touchable"),
+        u = (require/*t*/("View"), require/*t*/("merge")),
+        c = require/*t*/("copyProperties"),
+        p = require/*t*/("onlyChild"),
+        d = {
             top: 20,
-            onlyChild/*left*/: 20,
+            left: 20,
             right: 20,
             bottom: 30
         },
-        h = exports/*a*/.createClass({
+        h = a.createClass({
             displayName: "TouchableBounce",
-            mixins: [React/*l*/.Mixin, o],
+            mixins: [l.Mixin, o],
             propTypes: {
-                onPress: exports/*a*/.PropTypes.func,
-                onPressWithCompletion: exports/*a*/.PropTypes.func,
-                onPressAnimationComplete: exports/*a*/.PropTypes.func
+                onPress: a.PropTypes.func,
+                onPressWithCompletion: a.PropTypes.func,
+                onPressAnimationComplete: a.PropTypes.func
             },
             getInitialState: function() {
-                return POPAnimation/*u*/(this.touchableGetInitialState(), {
+                return u(this.touchableGetInitialState(), {
                     animationID: null
                 })
             },
-            bounceTo: function(global/*e*/, require/*Touchable/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+            bounceTo: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
                 this.state.animationID && this.removeAnimation(this.state.animationID);
                 var o = {
-                    property: NativeMethodsMixin/*s*/.Properties.scaleXY,
+                    property: s.Properties.scaleXY,
                     dynamicsTension: 0,
                     toValue: [global/*e*/, global/*e*/],
-                    velocity: [require/*Touchable/*t*/*/, require/*Touchable/*t*/*/],
+                    velocity: [require/*t*/, require/*t*/],
                     springBounciness: requireDynamic/*n*/
                 };
-                requireLazy/*r*/ && (o.fromValue = [requireLazy/*r*/, requireLazy/*r*/]), this.state.animationID = NativeMethodsMixin/*s*/.createSpringAnimation(o), this.addAnimation(this.state.animationID, module/*i*/)
+                requireLazy/*r*/ && (o.fromValue = [requireLazy/*r*/, requireLazy/*r*/]), this.state.animationID = s.createSpringAnimation(o), this.addAnimation(this.state.animationID, module/*i*/)
             },
             touchableHandleActivePressIn: function() {
                 this.bounceTo(.93, .1, 0)
@@ -47,14 +47,14 @@ __d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","
                 return this.props.onPressWithCompletion ? void this.props.onPressWithCompletion(this.bounceTo.bind(this, 1, 10, 10, .93, this.props.onPressAnimationComplete)) : (this.bounceTo(1, 10, 10, void 0, this.props.onPressAnimationComplete), void(this.props.onPress && this.props.onPress()))
             },
             touchableGetPressRectOffset: function() {
-                return copyProperties/*d*/
+                return d
             },
             touchableGetHighlightDelayMS: function() {
                 return 0
             },
             render: function() {
-                var global/*e*/ = merge/*p*/(this.props.children);
-                return View/*c*/(global/*e*/.props, {
+                var global/*e*/ = p(this.props.children);
+                return c(global/*e*/.props, {
                     accessible: !0,
                     testID: this.props.testID,
                     onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,

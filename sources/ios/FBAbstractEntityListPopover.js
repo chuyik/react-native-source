@@ -1,38 +1,38 @@
-__d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image","InfiniteScrollView","Popover","React","ReactGraphQL","StyleSheet","Text","TouchableBounce","View","clamp","fbt","keyOf"],function (global/*e*/, require/*FIGColors/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image","InfiniteScrollView","Popover","React","ReactGraphQL","StyleSheet","Text","TouchableBounce","View","clamp","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*FIGColors/*t*/*/("FBSpinner"),
-        exports/*a*/ = require/*FIGColors/*t*/*/("FBActorRow"),
-        FBSpinner/*s*/ = require/*FIGColors/*t*/*/("FIGColors"),
-        FBActorRow/*l*/ = (require/*FIGColors/*t*/*/("Image"), require/*FIGColors/*t*/*/("InfiniteScrollView")),
-        Image/*u*/ = require/*FIGColors/*t*/*/("Popover"),
-        InfiniteScrollView/*c*/ = require/*FIGColors/*t*/*/("React"),
-        Popover/*p*/ = require/*FIGColors/*t*/*/("ReactGraphQL"),
-        React/*d*/ = require/*FIGColors/*t*/*/("StyleSheet"),
-        ReactGraphQL/*h*/ = require/*FIGColors/*t*/*/("Text"),
-        StyleSheet/*f*/ = require/*FIGColors/*t*/*/("TouchableBounce"),
-        Text/*m*/ = require/*FIGColors/*t*/*/("View"),
-        TouchableBounce/*g*/ = require/*FIGColors/*t*/*/("clamp"),
-        View/*_*/ = require/*FIGColors/*t*/*/("fbt"),
-        clamp/*y*/ = require/*FIGColors/*t*/*/("keyOf"),
-        fbt/*v*/ = 40,
-        keyOf/*S*/ = 48,
+    var o = require/*t*/("FBSpinner"),
+        a = require/*t*/("FBActorRow"),
+        s = require/*t*/("FIGColors"),
+        l = (require/*t*/("Image"), require/*t*/("InfiniteScrollView")),
+        u = require/*t*/("Popover"),
+        c = require/*t*/("React"),
+        p = require/*t*/("ReactGraphQL"),
+        d = require/*t*/("StyleSheet"),
+        h = require/*t*/("Text"),
+        f = require/*t*/("TouchableBounce"),
+        m = require/*t*/("View"),
+        g = require/*t*/("clamp"),
+        _ = require/*t*/("fbt"),
+        y = require/*t*/("keyOf"),
+        v = 40,
+        S = 48,
         b = 16,
-        R = clamp/*y*/({
+        R = y({
             popRef: null
         }),
         w = 1,
-        C = InfiniteScrollView/*c*/.createClass({
+        C = c.createClass({
             displayName: "FBAbstractEntityListPopover",
             propTypes: {
-                circularProfilePictures: InfiniteScrollView/*c*/.PropTypes.bool,
-                closeTextColor: InfiniteScrollView/*c*/.PropTypes.string,
-                getEntityConnection: InfiniteScrollView/*c*/.PropTypes.func,
-                getEntityCount: InfiniteScrollView/*c*/.PropTypes.func,
-                getPopoverTitle: InfiniteScrollView/*c*/.PropTypes.func,
-                hasMoreToLoad: InfiniteScrollView/*c*/.PropTypes.func,
-                isLoadingMore: InfiniteScrollView/*c*/.PropTypes.func,
-                loadMore: InfiniteScrollView/*c*/.PropTypes.func,
-                onRowPressWithCompletion: InfiniteScrollView/*c*/.PropTypes.func
+                circularProfilePictures: c.PropTypes.bool,
+                closeTextColor: c.PropTypes.string,
+                getEntityConnection: c.PropTypes.func,
+                getEntityCount: c.PropTypes.func,
+                getPopoverTitle: c.PropTypes.func,
+                hasMoreToLoad: c.PropTypes.func,
+                isLoadingMore: c.PropTypes.func,
+                loadMore: c.PropTypes.func,
+                onRowPressWithCompletion: c.PropTypes.func
             },
             getInitialState: function() {
                 return {
@@ -44,19 +44,19 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                     circularProfilePictures: !1
                 }
             },
-            mixins: [Popover/*p*/.Mixin],
+            mixins: [p.Mixin],
             statics: {
                 queries: {
-                    actor: function(global/*e*/, require/*FIGColors/*t*/*/) {
+                    actor: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*FIGColors/*t*/*/.__GraphQL;
+                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
                             return new requireDynamic/*n*/.QueryFragment("FBAbstractEntityListPopover_actor", "Actor", [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*FIGColors/*t*/*/.__frag(global/*e*/)], {
+                            })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "FBAbstractEntityListPopover_actor"
                             })
-                        }(exports/*a*/.getQuery("actor"))
+                        }(a.getQuery("actor"))
                     }
                 }
             },
@@ -71,81 +71,81 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
             },
             renderList: function() {
                 var global/*e*/ = this.props.getEntityConnection(),
-                    require/*FIGColors/*t*/*/ = this.props.getEntityCount(),
-                    requireDynamic/*n*/ = TouchableBounce/*g*/(exports/*a*/.rowHeight, require/*FIGColors/*t*/*/ * (exports/*a*/.rowHeight + w), 400);
-                if (!global/*e*/ || !global/*e*/.edges) return InfiniteScrollView/*c*/.createElement(o, {
+                    require/*t*/ = this.props.getEntityCount(),
+                    requireDynamic/*n*/ = g(a.rowHeight, require/*t*/ * (a.rowHeight + w), 400);
+                if (!global/*e*/ || !global/*e*/.edges) return c.createElement(o, {
                     key: "spinner",
                     style: {
                         height: requireDynamic/*n*/
                     }
                 });
-                for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.edges, FBSpinner/*s*/ = 0; FBSpinner/*s*/ < module/*i*/.length; ++FBSpinner/*s*/) FBSpinner/*s*/ > 0 && requireLazy/*r*/.push(InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.edges, s = 0; s < module/*i*/.length; ++s) s > 0 && requireLazy/*r*/.push(c.createElement(m, {
                     style: E.rowSeparator,
-                    key: "FBSpinner/*s*/" + FBSpinner/*s*/
-                })), requireLazy/*r*/.push(InfiniteScrollView/*c*/.createElement(exports/*a*/, {
-                    actor: module/*i*/[FBSpinner/*s*/].node,
-                    key: "exports/*a*/" + FBSpinner/*s*/,
+                    key: "s" + s
+                })), requireLazy/*r*/.push(c.createElement(a, {
+                    actor: module/*i*/[s].node,
+                    key: "a" + s,
                     circularProfilePicture: this.props.circularProfilePictures,
                     onPressWithCompletion: this.props.onRowPressWithCompletion
                 }));
-                var Image/*u*/ = InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                var u = c.createElement(m, {
                     style: E.spinner
-                }, InfiniteScrollView/*c*/.createElement(o, null));
-                return InfiniteScrollView/*c*/.createElement(FBActorRow/*l*/, {
+                }, c.createElement(o, null));
+                return c.createElement(l, {
                     style: {
                         height: requireDynamic/*n*/
                     },
                     contentContainerStyle: E.contentContainer,
-                    distanceToTriggerLoad: 2 * exports/*a*/.rowHeight,
+                    distanceToTriggerLoad: 2 * a.rowHeight,
                     hasMoreToLoad: this.props.hasMoreToLoad(),
                     isLoadingMore: this.props.isLoadingMore(),
                     loadMore: this.loadMore,
-                    spinner: Image/*u*/
+                    spinner: u
                 }, requireLazy/*r*/)
             },
             renderContent: function() {
-                return [InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                return [c.createElement(m, {
                     key: "header",
                     style: E.header
-                }, InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                }, c.createElement(m, {
                     style: E.closeContainer
-                }), InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                }), c.createElement(m, {
                     style: E.titleContainer
-                }, InfiniteScrollView/*c*/.createElement(ReactGraphQL/*h*/, {
+                }, c.createElement(h, {
                     numberOfLines: 2,
                     style: [E.headerText, E.titleText]
-                }, this.props.getPopoverTitle())), InfiniteScrollView/*c*/.createElement(StyleSheet/*f*/, {
+                }, this.props.getPopoverTitle())), c.createElement(f, {
                     onPress: this.close
-                }, InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                }, c.createElement(m, {
                     style: E.closeContainer
-                }, InfiniteScrollView/*c*/.createElement(ReactGraphQL/*h*/, {
+                }, c.createElement(h, {
                     numberOfLines: 2,
                     style: [E.headerText, {
                         color: this.props.closeTextColor
                     }]
-                }, View/*_*/({
+                }, _({
                     type: "text",
                     texts: ["Close"],
                     desc: "Close button"
-                }))))), InfiniteScrollView/*c*/.createElement(Text/*m*/, {
+                }))))), c.createElement(m, {
                     key: "sep",
                     style: [E.rowSeparator, E.headerSeparator]
                 }), this.renderList()]
             },
             render: function() {
-                return InfiniteScrollView/*c*/.createElement(Image/*u*/, {
+                return c.createElement(u, {
                     ref: R,
                     contentFactory: this.renderContent
                 })
             }
         }),
-        E = React/*d*/.create({
+        E = d.create({
             contentContainer: {
                 paddingHorizontal: b
             },
             rowSeparator: {
                 height: w,
-                backgroundColor: FBSpinner/*s*/.separator
+                backgroundColor: s.separator
             },
             spinner: {
                 flex: 1,
@@ -156,7 +156,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
             },
             titleText: {
                 alignSelf: "stretch",
-                color: FBSpinner/*s*/.darkText,
+                color: s.darkText,
                 fontSize: 17,
                 fontWeight: "bold"
             },
@@ -175,14 +175,14 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                 marginHorizontal: b
             },
             seeMore: {
-                height: fbt/*v*/,
+                height: v,
                 justifyContent: "center",
                 alignItems: "center"
             },
             header: {
                 alignItems: "center",
                 flexDirection: "row",
-                height: keyOf/*S*/
+                height: S
             }
         });
     module/*i*/.exports = C

@@ -2,7 +2,7 @@ __d("RQLTransportError",["RQLError"],function (global/*e*/, require/*t*/, requir
     "use strict";
 
     function o(global/*e*/) {
-        this.name = "RQLTransportError", exports/*this.message*/ = global/*e*/, RQLError/*this.type*/ = "warn"
+        this.name = "RQLTransportError", this.message = global/*e*/, this.type = "warn"
     }
     var a = require/*t*/("RQLError");
     for (var s in a) a.hasOwnProperty(s) && (o[s] = a[s]);

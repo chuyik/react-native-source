@@ -1,21 +1,21 @@
 __d("THGroupReportedPostsView",["GraphQLConnectionView","NativeModules","React","ReactGraphQL","Dimensions","NativeModules","StyleSheet","THColors","THReportedPostUnitView","TimerMixin","View","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("GraphQLConnectionView"),
-        exports/*a*/ = require/*t*/("NativeModules"),
-        GraphQLConnectionView/*s*/ = require/*t*/("React"),
-        NativeModules/*l*/ = require/*t*/("ReactGraphQL"),
-        React/*u*/ = require/*t*/("Dimensions"),
-        ReactGraphQL/*View/*c*/*/ = require/*t*/("NativeModules").RKTreehouseManager,
-        Dimensions/*p*/ = require/*t*/("StyleSheet"),
-        NativeModules/*d*/ = require/*t*/("THColors"),
-        StyleSheet/*h*/ = require/*t*/("THReportedPostUnitView"),
-        THColors/*f*/ = require/*t*/("TimerMixin"),
-        THReportedPostUnitView/*m*/ = require/*t*/("View"),
-        TimerMixin/*g*/ = require/*t*/("merge"),
-        ReactGraphQL/*View/*c*/*/ = exports/*a*/.RKTreehouseManager,
-        merge/*_*/ = GraphQLConnectionView/*s*/.createClass({
+        a = require/*t*/("NativeModules"),
+        s = require/*t*/("React"),
+        l = require/*t*/("ReactGraphQL"),
+        u = require/*t*/("Dimensions"),
+        c = require/*t*/("NativeModules").RKTreehouseManager,
+        p = require/*t*/("StyleSheet"),
+        d = require/*t*/("THColors"),
+        h = require/*t*/("THReportedPostUnitView"),
+        f = require/*t*/("TimerMixin"),
+        m = require/*t*/("View"),
+        g = require/*t*/("merge"),
+        c = a.RKTreehouseManager,
+        _ = s.createClass({
             displayName: "THGroupReportedPostsView",
-            mixins: [NativeModules/*l*/.Mixin, THColors/*f*/],
+            mixins: [l.Mixin, f],
             statics: {
                 queryParams: {
                     count: 5
@@ -50,7 +50,7 @@ __d("THGroupReportedPostsView",["GraphQLConnectionView","NativeModules","React",
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THGroupReportedPostsView_group"
                             })
-                        }(StyleSheet/*h*/.getQuery("group"), requireDynamic/*n*/.count, StyleSheet/*h*/.getQuery("story"), o.getQuery("connection"))
+                        }(h.getQuery("group"), requireDynamic/*n*/.count, h.getQuery("story"), o.getQuery("connection"))
                     }
                 }
             },
@@ -60,33 +60,33 @@ __d("THGroupReportedPostsView",["GraphQLConnectionView","NativeModules","React",
                 }
             },
             componentDidMount: function() {
-                ReactGraphQL/*View/*c*/*/ && ReactGraphQL/*View/*c*/*/.groupViewComponentDidUpdate && this.requestAnimationFrame(function() {
-                    return this.isMounted() && ReactGraphQL/*View/*c*/*/.groupViewComponentDidUpdate(this.props.group.id)
+                c && c.groupViewComponentDidUpdate && this.requestAnimationFrame(function() {
+                    return this.isMounted() && c.groupViewComponentDidUpdate(this.props.group.id)
                 }.bind(this))
             },
             componentDidUpdate: function() {
                 this.updateNativeProperties()
             },
             updateNativeProperties: function() {
-                console.log(this.props.propertyToUpdate), ReactGraphQL/*View/*c*/*/ && this.props.group && this.props.group.group_reported_stories && ReactGraphQL/*View/*c*/*/.updateGroupInfoProperty(this.props.group.id, this.props.propertyToUpdate, this.props.group.group_reported_stories.count - this.state.numberOfStoriesModified)
+                console.log(this.props.propertyToUpdate), c && this.props.group && this.props.group.group_reported_stories && c.updateGroupInfoProperty(this.props.group.id, this.props.propertyToUpdate, this.props.group.group_reported_stories.count - this.state.numberOfStoriesModified)
             },
             nodeViewFactory: function(global/*e*/) {
-                return GraphQLConnectionView/*s*/.createElement(THReportedPostUnitView/*m*/, {
+                return s.createElement(m, {
                     style: y.cell
-                }, GraphQLConnectionView/*s*/.createElement(THReportedPostUnitView/*m*/, {
+                }, s.createElement(m, {
                     style: y.graySeparator
-                }), GraphQLConnectionView/*s*/.createElement(THReportedPostUnitView/*m*/, {
+                }), s.createElement(m, {
                     style: y.divider
-                }), GraphQLConnectionView/*s*/.createElement(StyleSheet/*h*/, {
+                }), s.createElement(h, {
                     group: this.props.group,
                     story: global/*e*/,
                     propertyToUpdate: this.props.propertyToUpdate,
                     navigator: {},
-                    context: TimerMixin/*g*/(this.props.context, {
+                    context: g(this.props.context, {
                         isEdgeStory: !!global/*e*/.attached_story
                     }),
                     updateChangedCount: this.updateChangedCount
-                }), GraphQLConnectionView/*s*/.createElement(THReportedPostUnitView/*m*/, {
+                }), s.createElement(m, {
                     style: y.divider
                 }))
             },
@@ -102,7 +102,7 @@ __d("THGroupReportedPostsView",["GraphQLConnectionView","NativeModules","React",
             },
             render: function() {
                 var global/*e*/ = this.props.group && this.props.group.group_reported_stories || {};
-                return GraphQLConnectionView/*s*/.createElement(o, {
+                return s.createElement(o, {
                     style: y.tableView,
                     nodeViewFactory: this.nodeViewFactory,
                     connection: global/*e*/,
@@ -111,23 +111,23 @@ __d("THGroupReportedPostsView",["GraphQLConnectionView","NativeModules","React",
                 })
             }
         }),
-        y = Dimensions/*p*/.create({
+        y = p.create({
             divider: {
                 height: .5,
-                backgroundColor: NativeModules/*d*/.borderColor
+                backgroundColor: d.borderColor
             },
             graySeparator: {
                 height: 5,
-                backgroundColor: NativeModules/*d*/.backgroundWash
+                backgroundColor: d.backgroundWash
             },
             tableView: {
-                backgroundColor: NativeModules/*d*/.backgroundWash,
-                height: React/*u*/.get("window").height,
-                width: React/*u*/.get("window").width
+                backgroundColor: d.backgroundWash,
+                height: u.get("window").height,
+                width: u.get("window").width
             },
             cell: {
                 backgroundColor: "white"
             }
         });
-    module/*i*/.exports = merge/*_*/
+    module/*i*/.exports = _
 });

@@ -1,16 +1,16 @@
 __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttributes","Dimensions","StyleSheet","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeModulesDeprecated"),
-        exports/*a*/ = require/*t*/("React"),
-        NativeModulesDeprecated/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*t*/("Dimensions"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("StyleSheet"),
-        Dimensions/*c*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        StyleSheet/*p*/ = Dimensions/*c*/({
-            validAttributes: NativeModulesDeprecated/*s*/.UIView,
-            createReactIOSNativeComponentClass/*uiViewClassName*/: "RCTModalFullscreenView"
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("Dimensions"),
+        u = require/*t*/("StyleSheet"),
+        c = require/*t*/("createReactIOSNativeComponentClass"),
+        p = c({
+            validAttributes: s.UIView,
+            uiViewClassName: "RCTModalFullscreenView"
         }),
-        d = ReactIOSViewAttributes/*u*/.create({
+        d = u.create({
             modalContainer: {
                 backgroundColor: "transparent",
                 position: "absolute",
@@ -20,11 +20,11 @@ __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttrib
                 bottom: 0
             }
         }),
-        h = exports/*a*/.createClass({
+        h = a.createClass({
             displayName: "ModalFullscreenView",
             statics: {
-                width: React/*l*/.get("modalFullscreenView").width,
-                height: React/*l*/.get("modalFullscreenView").height,
+                width: l.get("modalFullscreenView").width,
+                height: l.get("modalFullscreenView").height,
                 style: d.modalContainer
             },
             getInitialState: function() {
@@ -47,10 +47,10 @@ __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttrib
                     position: "absolute",
                     left: 0,
                     top: 0,
-                    width: React/*l*/.get("modalFullscreenView").width,
-                    height: React/*l*/.get("modalFullscreenView").height
+                    width: l.get("modalFullscreenView").width,
+                    height: l.get("modalFullscreenView").height
                 };
-                return exports/*a*/.createElement(StyleSheet/*p*/, {
+                return a.createElement(p, {
                     style: global/*e*/,
                     onStartShouldSetResponder: this._shouldSetResponder
                 }, this.props.children)

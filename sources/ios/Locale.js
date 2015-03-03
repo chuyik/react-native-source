@@ -1,14 +1,14 @@
 __d("Locale",["Style","ExecutionEnvironment","UnicodeBidiDirection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o() {
-        return ExecutionEnvironment/*u*/.canUseDOM ? void 0 === exports/*s*/ && (exports/*s*/ = "rtl" === Style/*l*/.get(document.body, "direction")) : exports/*s*/ = !1, exports/*s*/
+        return u.canUseDOM ? void 0 === s && (s = "rtl" === l.get(document.body, "direction")) : s = !1, s
     }
 
     function a() {
-        return o() ? UnicodeBidiDirection/*c*/.RTL : UnicodeBidiDirection/*c*/.LTR
+        return o() ? c.RTL : c.LTR
     }
-    var exports/*s*/, Style/*l*/ = require/*t*/("Style"),
-        ExecutionEnvironment/*u*/ = require/*t*/("ExecutionEnvironment"),
-        UnicodeBidiDirection/*c*/ = require/*t*/("UnicodeBidiDirection"),
+    var s, l = require/*t*/("Style"),
+        u = require/*t*/("ExecutionEnvironment"),
+        c = require/*t*/("UnicodeBidiDirection"),
         p = {
             isRTL: o,
             getDirection: a

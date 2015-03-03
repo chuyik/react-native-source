@@ -1,52 +1,52 @@
-__d("SpinnerIOS",["NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass","keyMirror","keyOf","merge"],function (global/*e*/, require/*keyMirror/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("SpinnerIOS",["NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass","keyMirror","keyOf","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*keyMirror/*t*/*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*keyMirror/*t*/*/("NativeModulesDeprecated"),
-        NativeMethodsMixin/*s*/ = require/*keyMirror/*t*/*/("ReactPropTypes"),
-        NativeModulesDeprecated/*l*/ = require/*keyMirror/*t*/*/("React"),
-        ReactPropTypes/*u*/ = require/*keyMirror/*t*/*/("ReactIOSViewAttributes"),
-        React/*c*/ = require/*keyMirror/*t*/*/("StyleSheet"),
-        ReactIOSViewAttributes/*p*/ = require/*keyMirror/*t*/*/("View"),
-        StyleSheet/*d*/ = require/*keyMirror/*t*/*/("createReactIOSNativeComponentClass"),
-        View/*h*/ = require/*keyMirror/*t*/*/("keyMirror"),
-        createReactIOSNativeComponentClass/*f*/ = (require/*keyMirror/*t*/*/("keyOf"), require/*keyMirror/*t*/*/("merge")),
-        keyOf/*m*/ = View/*h*/({
+    var o = require/*t*/("NativeMethodsMixin"),
+        a = require/*t*/("NativeModulesDeprecated"),
+        s = require/*t*/("ReactPropTypes"),
+        l = require/*t*/("React"),
+        u = require/*t*/("ReactIOSViewAttributes"),
+        c = require/*t*/("StyleSheet"),
+        p = require/*t*/("View"),
+        d = require/*t*/("createReactIOSNativeComponentClass"),
+        h = require/*t*/("keyMirror"),
+        f = (require/*t*/("keyOf"), require/*t*/("merge")),
+        m = h({
             large: null,
-            merge/*small*/: null
+            small: null
         }),
         g = "#999999",
-        _ = NativeModulesDeprecated/*l*/.createClass({
+        _ = l.createClass({
             displayName: "SpinnerIOS",
             mixins: [o],
             propTypes: {
-                animating: NativeMethodsMixin/*s*/.bool,
-                color: NativeMethodsMixin/*s*/.string,
-                size: NativeMethodsMixin/*s*/.oneOf([keyOf/*m*/.large, keyOf/*m*/.merge/*small*/])
+                animating: s.bool,
+                color: s.string,
+                size: s.oneOf([m.large, m.small])
             },
             getDefaultProps: function() {
                 return {
                     animating: !0,
-                    size: keyOf/*m*/.merge/*small*/,
+                    size: m.small,
                     color: g
                 }
             },
             statics: {
-                size: keyOf/*m*/
+                size: m
             },
             render: function() {
                 var global/*e*/ = y.sizeSmall,
-                    require/*keyMirror/*t*/*/ = exports/*a*/.RKUIManager.UIActivityIndicatorView.Constants,
-                    requireDynamic/*n*/ = require/*keyMirror/*t*/*/.StyleWhite;
-                return this.props.size == keyOf/*m*/.large && (global/*e*/ = y.sizeLarge, requireDynamic/*n*/ = require/*keyMirror/*t*/*/.StyleWhiteLarge), NativeModulesDeprecated/*l*/.createElement(ReactIOSViewAttributes/*p*/, {
+                    require/*t*/ = a.RKUIManager.UIActivityIndicatorView.Constants,
+                    requireDynamic/*n*/ = require/*t*/.StyleWhite;
+                return this.props.size == m.large && (global/*e*/ = y.sizeLarge, requireDynamic/*n*/ = require/*t*/.StyleWhiteLarge), l.createElement(p, {
                     style: [y.container, global/*e*/, this.props.style]
-                }, NativeModulesDeprecated/*l*/.createElement(v, {
+                }, l.createElement(v, {
                     activityIndicatorViewStyle: requireDynamic/*n*/,
                     animating: this.props.animating,
                     color: this.props.color
                 }))
             }
         }),
-        y = React/*c*/.create({
+        y = c.create({
             container: {
                 alignItems: "center",
                 justifyContent: "center"
@@ -58,8 +58,8 @@ __d("SpinnerIOS",["NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes
                 height: 36
             }
         }),
-        v = StyleSheet/*d*/({
-            validAttributes: createReactIOSNativeComponentClass/*f*/(ReactPropTypes/*u*/.UIView, {
+        v = d({
+            validAttributes: f(u.UIView, {
                 activityIndicatorViewStyle: !0,
                 animating: !0,
                 color: !0

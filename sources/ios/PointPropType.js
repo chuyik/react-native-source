@@ -1,11 +1,11 @@
 __d("PointPropType",["ReactPropTypes","createStrictShapeTypeChecker","pointsDiffer"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ReactPropTypes"),
-        exports/*a*/ = require/*t*/("createStrictShapeTypeChecker"),
-        ReactPropTypes/*s*/ = require/*t*/("pointsDiffer"),
-        createStrictShapeTypeChecker/*l*/ = exports/*a*/({
+        a = require/*t*/("createStrictShapeTypeChecker"),
+        s = require/*t*/("pointsDiffer"),
+        l = a({
             x: o.number,
-            pointsDiffer/*y*/: o.number
+            y: o.number
         });
-    createStrictShapeTypeChecker/*l*/.differ = ReactPropTypes/*s*/, module/*i*/.exports = createStrictShapeTypeChecker/*l*/
+    l.differ = s, module/*i*/.exports = l
 });

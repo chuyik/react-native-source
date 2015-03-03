@@ -12,8 +12,8 @@ __d("stableStringify",[],function (global/*e*/, require/*t*/, requireDynamic/*n*
             require/*t*/.sort();
             for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < require/*t*/.length; requireLazy/*r*/++) {
                 var module/*i*/ = require/*t*/[requireLazy/*r*/],
-                    exports/*s*/ = global/*e*/[module/*i*/];
-                exports/*s*/ = o(exports/*s*/) || Array.isArray(exports/*s*/) ? a(exports/*s*/) : JSON.stringify(exports/*s*/), requireDynamic/*n*/.push(module/*i*/ + ":" + exports/*s*/)
+                    s = global/*e*/[module/*i*/];
+                s = o(s) || Array.isArray(s) ? a(s) : JSON.stringify(s), requireDynamic/*n*/.push(module/*i*/ + ":" + s)
             }
             return Array.isArray(global/*e*/) ? "[" + requireDynamic/*n*/.join(",") + "]" : "{" + requireDynamic/*n*/.join(",") + "}"
         }

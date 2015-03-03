@@ -1,11 +1,11 @@
 __d("XHRRequest",["ErrorUtils","URI","XHRHttpError","getSameOriginTransport","invariant","xhrSimpleDataSerializer"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/) {
         "use strict";
-        this.setURI(global/*e*/), exports/*this.setMethod*/("POST"), ErrorUtils/*this.setIsAsynchronous*/(!0), URI/*this.setTransportBuilder*/(u), XHRHttpError/*this.setDataSerializer*/(p), getSameOriginTransport/*this.$XHRRequest_onreadystatechange*/ = getSameOriginTransport/*this.$XHRRequest_onreadystatechange*/.bind(this)
+        this.setURI(global/*e*/), this.setMethod("POST"), this.setIsAsynchronous(!0), this.setTransportBuilder(u), this.setDataSerializer(p), this.$XHRRequest_onreadystatechange = this.$XHRRequest_onreadystatechange.bind(this)
     }
     var a = require/*t*/("ErrorUtils"),
-        invariant/*s*/ = require/*t*/("URI"),
-        xhrSimpleDataSerializer/*l*/ = require/*t*/("XHRHttpError"),
+        s = require/*t*/("URI"),
+        l = require/*t*/("XHRHttpError"),
         u = require/*t*/("getSameOriginTransport"),
         c = require/*t*/("invariant"),
         p = require/*t*/("xhrSimpleDataSerializer"),
@@ -20,7 +20,7 @@ __d("XHRRequest",["ErrorUtils","URI","XHRHttpError","getSameOriginTransport","in
         };
     o.prototype.setURI = function(global/*e*/) {
         "use strict";
-        return this.$XHRRequest_uri = new invariant/*s*/(global/*e*/), this
+        return this.$XHRRequest_uri = new s(global/*e*/), this
     }, o.prototype.getURI = function() {
         "use strict";
         return this.$XHRRequest_uri
@@ -76,7 +76,7 @@ __d("XHRRequest",["ErrorUtils","URI","XHRHttpError","getSameOriginTransport","in
             requireDynamic/*n*/ = this.getURI();
         this.$XHRRequest_pendingTransport = require/*t*/;
         var requireLazy/*r*/;
-        if ("POST" !== this.$XHRRequest_method && this.$XHRRequest_rawData && c(0, "Must send raw data on post. Data: %invariant/*s*/ URI: %invariant/*s*/", this.$XHRRequest_rawData, requireDynamic/*n*/), "GET" === this.$XHRRequest_method || this.$XHRRequest_rawData ? (requireDynamic/*n*/.addQueryData(this.$XHRRequest_data), requireLazy/*r*/ = this.$XHRRequest_rawData) : requireLazy/*r*/ = this.$XHRRequest_dataSerializer(this.$XHRRequest_data), require/*t*/.onreadystatechange = getSameOriginTransport/*this.$XHRRequest_onreadystatechange*/, require/*t*/.upload && this.$XHRRequest_uploadProgressHandler && (require/*t*/.upload.onprogress = this.$XHRRequest_onuploadprogress.bind(this)), global/*e*/ && (this.$XHRRequest_timeoutTimer = setTimeout(this.$XHRRequest_ontimeout.bind(this), global/*e*/)), require/*t*/.open(this.$XHRRequest_method, requireDynamic/*n*/.toString(), this.$XHRRequest_isAsynchronous), this.$XHRRequest_headers)
+        if ("POST" !== this.$XHRRequest_method && this.$XHRRequest_rawData && c(0, "Must send raw data on post. Data: %s URI: %s", this.$XHRRequest_rawData, requireDynamic/*n*/), "GET" === this.$XHRRequest_method || this.$XHRRequest_rawData ? (requireDynamic/*n*/.addQueryData(this.$XHRRequest_data), requireLazy/*r*/ = this.$XHRRequest_rawData) : requireLazy/*r*/ = this.$XHRRequest_dataSerializer(this.$XHRRequest_data), require/*t*/.onreadystatechange = this.$XHRRequest_onreadystatechange, require/*t*/.upload && this.$XHRRequest_uploadProgressHandler && (require/*t*/.upload.onprogress = this.$XHRRequest_onuploadprogress.bind(this)), global/*e*/ && (this.$XHRRequest_timeoutTimer = setTimeout(this.$XHRRequest_ontimeout.bind(this), global/*e*/)), require/*t*/.open(this.$XHRRequest_method, requireDynamic/*n*/.toString(), this.$XHRRequest_isAsynchronous), this.$XHRRequest_headers)
             for (var module/*i*/ in this.$XHRRequest_headers) require/*t*/.setRequestHeader(module/*i*/, this.$XHRRequest_headers[module/*i*/]);
         require/*t*/.send(requireLazy/*r*/), this.$XHRRequest_isAsynchronous || require/*t*/.onreadystatechange(null, !0)
     }, o.prototype.abort = function() {
@@ -97,8 +97,8 @@ __d("XHRRequest",["ErrorUtils","URI","XHRHttpError","getSameOriginTransport","in
                 module/*i*/ = requireLazy/*r*/.readyState;
             if (module/*i*/ >= 2) {
                 var o = 4 === module/*i*/,
-                    invariant/*s*/ = this.getURI(),
-                    u = xhrSimpleDataSerializer/*l*/.getErrorCode(invariant/*s*/, requireDynamic/*n*/.status),
+                    s = this.getURI(),
+                    u = l.getErrorCode(s, requireDynamic/*n*/.status),
                     c = this.$XHRRequest_responseHandler;
                 if (null !== u) o && (d.errorCode = u, d.errorMsg = requireDynamic/*n*/.responseText, d.errorType = "HTTP", this.$XHRRequest_errorHandler && a.applyWithGuard(this.$XHRRequest_errorHandler, null, [d], null, "XHRRequest:_errorHandler"));
                 else if (c) {

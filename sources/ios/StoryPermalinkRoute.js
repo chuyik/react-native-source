@@ -1,9 +1,9 @@
 __d("StoryPermalinkRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DliteRoute"),
-        exports/*a*/ = o.create({
+        a = o.create({
             name: "StoryPermalinkRoute",
-            DliteRoute/*path*/: "/{story}",
+            path: "/{story}",
             paramDefinitions: {
                 story: {
                     type: "String",
@@ -28,5 +28,5 @@ __d("StoryPermalinkRoute",["DliteRoute"],function (global/*e*/, require/*t*/, re
                 }
             }
         });
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

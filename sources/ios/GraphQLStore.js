@@ -1,95 +1,95 @@
-__d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","DliteLogger","DliteProfiler","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutationDataHandler","GraphQLMutationProperties","GraphQLMutatorConstants","GraphQLMutatorHub","GraphQLQueryTracker","GraphQLStatusConstants","GraphQLStoreChangeEmitter","GraphQLStoreDataHandler","GraphQLStoreNodeRangeTracker","GraphQLStoreQueryPath","GraphQLStoreReader","GraphQLStoreWriter","generateClientID","generateForceIndex","invariant","isEmpty","keyMirror","mapObject","mixInEventEmitter"],function (global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, requireLazy/*generateForceIndex/*r*/*/, module/*i*/) {
+__d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","DliteLogger","DliteProfiler","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutationDataHandler","GraphQLMutationProperties","GraphQLMutatorConstants","GraphQLMutatorHub","GraphQLQueryTracker","GraphQLStatusConstants","GraphQLStoreChangeEmitter","GraphQLStoreDataHandler","GraphQLStoreNodeRangeTracker","GraphQLStoreQueryPath","GraphQLStoreReader","GraphQLStoreWriter","generateClientID","generateForceIndex","invariant","isEmpty","keyMirror","mapObject","mixInEventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) {
-        return new I(H, ActionCollisionMap/*V*/, ActionQueue/*U*/, DiffQueryBuilder/*j*/, DliteLogger/*N*/, global/*DliteProfiler/*e*/*/, GraphQL_EXPERIMENTAL/*E.broadcastChangeForID*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/)
+    function o(global/*e*/, require/*t*/) {
+        return new I(H, V, U, j, N, global/*e*/, E.broadcastChangeForID, require/*t*/)
     }
 
-    function GraphQLMutatorHub/*a*/(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/) {
-        var requireLazy/*generateForceIndex/*r*/*/ = v.getMutationType(global/*DliteProfiler/*e*/*/);
-        global/*DliteProfiler/*e*/*/ = global/*DliteProfiler/*e*/*/[requireLazy/*generateForceIndex/*r*/*/], require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ instanceof _.Mutation || M(0, "must pass GraphQLMutatorHub/*a*/ mutation into handleMutationResult");
-        for (var module/*i*/ = R.getConfigs(requireLazy/*generateForceIndex/*r*/*/), GraphQLMutatorHub/*a*/ = o(requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, GraphQLQueryTracker/*L*/()), GraphQLStatusConstants/*s*/ = 0; GraphQLStatusConstants/*s*/ < module/*i*/.length; GraphQLStatusConstants/*s*/++) {
-            var l = module/*i*/[GraphQLStatusConstants/*s*/];
-            switch (GraphQLStoreWriter/*l.handlerType*/) {
+    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        var requireLazy/*r*/ = v.getMutationType(global/*e*/);
+        global/*e*/ = global/*e*/[requireLazy/*r*/], require/*t*/ instanceof _.Mutation || M(0, "must pass a mutation into handleMutationResult");
+        for (var module/*i*/ = R.getConfigs(requireLazy/*r*/), a = o(requireDynamic/*n*/, L()), s = 0; s < module/*i*/.length; s++) {
+            var l = module/*i*/[s];
+            switch (l.handlerType) {
                 case b.NODE_DELETE_HANDLER:
-                    GraphQLMutatorHub/*a*/.handleNodeDeleteMutation(global/*DliteProfiler/*e*/*/, GraphQLStoreChangeEmitter/*GraphQLStoreNodeRangeTracker/*GraphQLStoreReader/*l.config*/*/*/);
+                    a.handleNodeDeleteMutation(global/*e*/, l.config);
                     break;
                 case b.RANGE_ADD_HANDLER:
-                    GraphQLMutatorHub/*a*/.handleRangeAddMutation(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, GraphQLStoreChangeEmitter/*GraphQLStoreNodeRangeTracker/*GraphQLStoreReader/*l.config*/*/*/, GraphQLStoreQueryPath/*S.getRangeConfigForType*/(requireLazy/*generateForceIndex/*r*/*/));
+                    a.handleRangeAddMutation(global/*e*/, require/*t*/, l.config, S.getRangeConfigForType(requireLazy/*r*/));
                     break;
                 case b.RANGE_DELETE_HANDLER:
-                    GraphQLMutatorHub/*a*/.handleRangeDeleteMutation(global/*DliteProfiler/*e*/*/, GraphQLStoreChangeEmitter/*GraphQLStoreNodeRangeTracker/*GraphQLStoreReader/*l.config*/*/*/);
+                    a.handleRangeDeleteMutation(global/*e*/, l.config);
                     break;
                 default:
-                    console.error('"%GraphQLStatusConstants/*s*/" is not mapped to GraphQLMutatorHub/*a*/ mutation handler', GraphQLStoreWriter/*l.handlerType*/)
+                    console.error('"%s" is not mapped to a mutation handler', l.handlerType)
             }
         }
-        GraphQLMutatorHub/*a*/.handleMergeMutation(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireLazy/*generateForceIndex/*r*/*/)
+        a.handleMergeMutation(global/*e*/, require/*t*/, requireLazy/*r*/)
     }
 
-    function GraphQLStatusConstants/*s*/(global/*DliteProfiler/*e*/*/) {
-        GraphQLMutatorHub/*a*/(global/*DliteProfiler/*e*/*/.getOptimisticPayload(), global/*DliteProfiler/*e*/*/.getOptimisticPayloadQuery(), isEmpty/*b.OPTIMISTIC_UPDATE*/);
-        var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = global/*DliteProfiler/*e*/*/.getClientMutationID(),
-            requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = G[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/];
-        requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ && l(requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, mapObject/*C.ERROR*/)
+    function s(global/*e*/) {
+        a(global/*e*/.getOptimisticPayload(), global/*e*/.getOptimisticPayloadQuery(), b.OPTIMISTIC_UPDATE);
+        var require/*t*/ = global/*e*/.getClientMutationID(),
+            requireDynamic/*n*/ = G[require/*t*/];
+        requireDynamic/*n*/ && l(requireDynamic/*n*/, C.ERROR)
     }
 
-    function l(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) {
-        require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ in C || M(0, '"%GraphQLStatusConstants/*s*/" is not GraphQLMutatorHub/*a*/ valid GraphQLStatusConstant.', require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/);
-        var requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = ActionCollisionMap/*V*/[global/*DliteProfiler/*e*/*/];
-        requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ || M(0, "Invalid dataID %GraphQLStatusConstants/*s*/ was passed to `setStatusForID`. Can only set status for queued node.", global/*DliteProfiler/*e*/*/), requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.__status__ = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, GraphQL_EXPERIMENTAL/*E.broadcastChangeForID*/(global/*DliteProfiler/*e*/*/)
+    function l(global/*e*/, require/*t*/) {
+        require/*t*/ in C || M(0, '"%s" is not a valid GraphQLStatusConstant.', require/*t*/);
+        var requireDynamic/*n*/ = V[global/*e*/];
+        requireDynamic/*n*/ || M(0, "Invalid dataID %s was passed to `setStatusForID`. Can only set status for queued node.", global/*e*/), requireDynamic/*n*/.__status__ = require/*t*/, E.broadcastChangeForID(global/*e*/)
     }
 
-    function u(global/*DliteProfiler/*e*/*/) {
-        var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = ActionCollisionMap/*V*/[global/*DliteProfiler/*e*/*/];
-        require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ || M(0, "Invalid dataID %GraphQLStatusConstants/*s*/ was passed to `clearStatusForID`. Can only set status for queued node.", global/*DliteProfiler/*e*/*/), delete require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.__status__, GraphQL_EXPERIMENTAL/*E.broadcastChangeForID*/(global/*DliteProfiler/*e*/*/)
+    function u(global/*e*/) {
+        var require/*t*/ = V[global/*e*/];
+        require/*t*/ || M(0, "Invalid dataID %s was passed to `clearStatusForID`. Can only set status for queued node.", global/*e*/), delete require/*t*/.__status__, E.broadcastChangeForID(global/*e*/)
     }
 
-    function c(global/*DliteProfiler/*e*/*/) {
-        for (var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ in ActionCollisionMap/*V*/) ActionCollisionMap/*V*/.hasOwnProperty(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) && (delete ActionCollisionMap/*V*/[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/], global/*DliteProfiler/*e*/*/ && global/*DliteProfiler/*e*/*/(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/))
+    function c(global/*e*/) {
+        for (var require/*t*/ in V) V.hasOwnProperty(require/*t*/) && (delete V[require/*t*/], global/*e*/ && global/*e*/(require/*t*/))
     }
 
-    function p(global/*DliteProfiler/*e*/*/) {
-        var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = d.getKeyForClientMutationID(global/*DliteProfiler/*e*/*/);
-        require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ && (d.shiftActionForKey(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/), d.iterateOverActionsForKey(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, function(global/*DliteProfiler/*e*/*/) {
-            h.removeFromQueue(global/*DliteProfiler/*e*/*/.getClientMutationID())
-        }), d.clearActionsForKey(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/))
+    function p(global/*e*/) {
+        var require/*t*/ = d.getKeyForClientMutationID(global/*e*/);
+        require/*t*/ && (d.shiftActionForKey(require/*t*/), d.iterateOverActionsForKey(require/*t*/, function(global/*e*/) {
+            h.removeFromQueue(global/*e*/.getClientMutationID())
+        }), d.clearActionsForKey(require/*t*/))
     }
-    var d = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("ActionCollisionMap"),
-        h = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("ActionQueue"),
-        f = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("DiffQueryBuilder"),
-        m = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("DliteLogger"),
-        g = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("DliteProfiler"),
-        _ = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQL_EXPERIMENTAL"),
-        y = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLConstants"),
-        v = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLMutationDataHandler"),
-        S = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLMutationProperties"),
-        b = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLMutatorConstants"),
-        R = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLMutatorHub"),
-        w = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLQueryTracker"),
-        C = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStatusConstants"),
-        E = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreChangeEmitter"),
-        D = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreDataHandler"),
-        T = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreNodeRangeTracker"),
-        x = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreQueryPath"),
-        P = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreReader"),
-        I = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("GraphQLStoreWriter"),
-        F = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("generateClientID"),
-        GraphQLQueryTracker/*L*/ = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("generateForceIndex"),
-        M = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("invariant"),
-        Q = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("isEmpty"),
-        A = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("keyMirror"),
-        k = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("mapObject"),
-        O = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/("mixInEventEmitter"),
-        DliteLogger/*N*/ = {},
+    var d = require/*t*/("ActionCollisionMap"),
+        h = require/*t*/("ActionQueue"),
+        f = require/*t*/("DiffQueryBuilder"),
+        m = require/*t*/("DliteLogger"),
+        g = require/*t*/("DliteProfiler"),
+        _ = require/*t*/("GraphQL_EXPERIMENTAL"),
+        y = require/*t*/("GraphQLConstants"),
+        v = require/*t*/("GraphQLMutationDataHandler"),
+        S = require/*t*/("GraphQLMutationProperties"),
+        b = require/*t*/("GraphQLMutatorConstants"),
+        R = require/*t*/("GraphQLMutatorHub"),
+        w = require/*t*/("GraphQLQueryTracker"),
+        C = require/*t*/("GraphQLStatusConstants"),
+        E = require/*t*/("GraphQLStoreChangeEmitter"),
+        D = require/*t*/("GraphQLStoreDataHandler"),
+        T = require/*t*/("GraphQLStoreNodeRangeTracker"),
+        x = require/*t*/("GraphQLStoreQueryPath"),
+        P = require/*t*/("GraphQLStoreReader"),
+        I = require/*t*/("GraphQLStoreWriter"),
+        F = require/*t*/("generateClientID"),
+        L = require/*t*/("generateForceIndex"),
+        M = require/*t*/("invariant"),
+        Q = require/*t*/("isEmpty"),
+        A = require/*t*/("keyMirror"),
+        k = require/*t*/("mapObject"),
+        O = require/*t*/("mixInEventEmitter"),
+        N = {},
         G = {},
         $ = {},
         B = {},
         H = {},
-        ActionCollisionMap/*V*/ = {},
+        V = {},
         q = {},
-        ActionQueue/*U*/ = new w,
-        DiffQueryBuilder/*j*/ = new T,
+        U = new w,
+        j = new T,
         W = y.NODE,
         K = y.NODES,
         z = y.VIEWER,
@@ -101,139 +101,139 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
                 dataFromServer: !0,
                 endQuery: !0
             }),
-            handleOptimisticMutation: function(global/*DliteProfiler/*e*/*/) {
-                h.appendToQueue(global/*DliteProfiler/*e*/*/), GraphQLStatusConstants/*s*/(global/*DliteProfiler/*e*/*/)
+            handleOptimisticMutation: function(global/*e*/) {
+                h.appendToQueue(global/*e*/), s(global/*e*/)
             },
-            handleServerMutation: function(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) {
-                var requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = v.getMutationType(global/*DliteProfiler/*e*/*/),
-                    requireLazy/*generateForceIndex/*r*/*/ = global/*DliteProfiler/*e*/*/[requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/].client_mutation_id,
-                    module/*i*/ = d.getKeyForClientMutationID(requireLazy/*generateForceIndex/*r*/*/);
+            handleServerMutation: function(global/*e*/, require/*t*/) {
+                var requireDynamic/*n*/ = v.getMutationType(global/*e*/),
+                    requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/].client_mutation_id,
+                    module/*i*/ = d.getKeyForClientMutationID(requireLazy/*r*/);
                 if (module/*i*/) {
                     var o = d.shiftActionForKey(module/*i*/);
-                    o.getClientMutationID() !== requireLazy/*generateForceIndex/*r*/*/ && M(0, "action sent to server must be first in the list for its key");
+                    o.getClientMutationID() !== requireLazy/*r*/ && M(0, "action sent to server must be first in the list for its key");
                     var l = d.getFirstActionForKey(module/*i*/);
                     l && l.rerunServerAction()
                 }
-                var u = h.getActionByID(requireLazy/*generateForceIndex/*r*/*/);
-                u && (h.removeFromQueue(requireLazy/*generateForceIndex/*r*/*/), c(), h.iterateOverQueue(GraphQLStatusConstants/*s*/)), GraphQLMutatorHub/*a*/(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, b.SERVER_UPDATE), delete G[requireLazy/*generateForceIndex/*r*/*/]
+                var u = h.getActionByID(requireLazy/*r*/);
+                u && (h.removeFromQueue(requireLazy/*r*/), c(), h.iterateOverQueue(s)), a(global/*e*/, require/*t*/, b.SERVER_UPDATE), delete G[requireLazy/*r*/]
             },
-            handleMutationRollback: function(global/*DliteProfiler/*e*/*/) {
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = h.getActionByID(global/*DliteProfiler/*e*/*/);
-                require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ && h.removeFromQueue(global/*DliteProfiler/*e*/*/), p(global/*DliteProfiler/*e*/*/), c(GraphQL_EXPERIMENTAL/*E.broadcastChangeForID*/), h.iterateOverQueue(GraphQLStatusConstants/*s*/)
+            handleMutationRollback: function(global/*e*/) {
+                var require/*t*/ = h.getActionByID(global/*e*/);
+                require/*t*/ && h.removeFromQueue(global/*e*/), p(global/*e*/), c(E.broadcastChangeForID), h.iterateOverQueue(s)
             },
-            handleMutationError: function(global/*DliteProfiler/*e*/*/) {
-                p(global/*DliteProfiler/*e*/*/), c(), h.iterateOverQueue(GraphQLStatusConstants/*s*/)
+            handleMutationError: function(global/*e*/) {
+                p(global/*e*/), c(), h.iterateOverQueue(s)
             },
-            setRangeAddErrorStatus: function(global/*DliteProfiler/*e*/*/) {
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = v.getMutationType(global/*DliteProfiler/*e*/*/);
-                global/*DliteProfiler/*e*/*/ = global/*DliteProfiler/*e*/*/[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/];
-                var requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = R.getConfigs(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/);
-                requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.some(function(global/*DliteProfiler/*e*/*/) {
-                    return global/*DliteProfiler/*e*/*/.handlerType === b.RANGE_ADD_HANDLER
-                }) || M(0, "GraphQLStore.setRangeAddErrorStatus expects GraphQLMutatorHub/*a*/ range-add payload");
-                var requireLazy/*generateForceIndex/*r*/*/ = global/*DliteProfiler/*e*/*/.client_mutation_id,
-                    module/*i*/ = DliteLogger/*N*/[requireLazy/*generateForceIndex/*r*/*/];
-                l(module/*i*/, mapObject/*C.ERROR*/), $[module/*i*/] = requireLazy/*generateForceIndex/*r*/*/, G[requireLazy/*generateForceIndex/*r*/*/] = module/*i*/
+            setRangeAddErrorStatus: function(global/*e*/) {
+                var require/*t*/ = v.getMutationType(global/*e*/);
+                global/*e*/ = global/*e*/[require/*t*/];
+                var requireDynamic/*n*/ = R.getConfigs(require/*t*/);
+                requireDynamic/*n*/.some(function(global/*e*/) {
+                    return global/*e*/.handlerType === b.RANGE_ADD_HANDLER
+                }) || M(0, "GraphQLStore.setRangeAddErrorStatus expects a range-add payload");
+                var requireLazy/*r*/ = global/*e*/.client_mutation_id,
+                    module/*i*/ = N[requireLazy/*r*/];
+                l(module/*i*/, C.ERROR), $[module/*i*/] = requireLazy/*r*/, G[requireLazy/*r*/] = module/*i*/
             },
-            handleMutationRetry: function(global/*DliteProfiler/*e*/*/) {
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = $[global/*DliteProfiler/*e*/*/];
-                require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ || M(0, "Can only retry mutations that encountered errors");
-                var requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = h.getActionByID(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/);
-                requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ || M(0, "Cannot retry GraphQLMutatorHub/*a*/ mutation that has not previously been tried"), delete $[global/*DliteProfiler/*e*/*/], u(global/*DliteProfiler/*e*/*/), requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.rerunServerAction()
+            handleMutationRetry: function(global/*e*/) {
+                var require/*t*/ = $[global/*e*/];
+                require/*t*/ || M(0, "Can only retry mutations that encountered errors");
+                var requireDynamic/*n*/ = h.getActionByID(require/*t*/);
+                requireDynamic/*n*/ || M(0, "Cannot retry a mutation that has not previously been tried"), delete $[global/*e*/], u(global/*e*/), requireDynamic/*n*/.rerunServerAction()
             },
-            handleUpdate: function(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, requireLazy/*generateForceIndex/*r*/*/) {
-                require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.getQuery();
-                var module/*i*/, GraphQLMutatorHub/*a*/ = m.logClientEvent("GraphQLStore.handleUpdate:" + require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.getDescription()),
-                    GraphQLStatusConstants/*s*/ = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.rootCall().getName();
-                if (GraphQLStatusConstants/*s*/ === z) module/*i*/ = o(requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, requireLazy/*generateForceIndex/*r*/*/), module/*i*/.storeNodeWithID(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, global/*DliteProfiler/*e*/*/.viewer, y.VIEWER_CLIENT_ID, new x(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/));
+            handleUpdate: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                require/*t*/ = require/*t*/.getQuery();
+                var module/*i*/, a = m.logClientEvent("GraphQLStore.handleUpdate:" + require/*t*/.getDescription()),
+                    s = require/*t*/.rootCall().getName();
+                if (s === z) module/*i*/ = o(requireDynamic/*n*/, requireLazy/*r*/), module/*i*/.storeNodeWithID(require/*t*/, global/*e*/.viewer, y.VIEWER_CLIENT_ID, new x(require/*t*/));
                 else {
-                    if (!(GraphQLStatusConstants/*s*/ === W || GraphQLStatusConstants/*s*/ === K || GraphQLStatusConstants/*s*/ in X)) throw new Error("Unsupported graphQL root call: use viewer, username, group, node, or nodes");
-                    for (var l in global/*DliteProfiler/*e*/*/) {
-                        module/*i*/ = o(requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, requireLazy/*generateForceIndex/*r*/*/);
-                        var u = global/*DliteProfiler/*e*/*/[l];
+                    if (!(s === W || s === K || s in X)) throw new Error("Unsupported graphQL root call: use viewer, username, group, node, or nodes");
+                    for (var l in global/*e*/) {
+                        module/*i*/ = o(requireDynamic/*n*/, requireLazy/*r*/);
+                        var u = global/*e*/[l];
                         if (null === u) module/*i*/.deleteNodeWithID(l);
                         else {
                             var c = l;
-                            if (GraphQLStatusConstants/*s*/ !== K && GraphQLStatusConstants/*s*/ !== W) {
-                                var p = require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.rootCall().getArgs();
+                            if (s !== K && s !== W) {
+                                var p = require/*t*/.rootCall().getArgs();
                                 if (1 !== p.length) throw new Error("Custom root calls must request with only one argument");
                                 var d = p[0].getCallValue();
-                                if (q[GraphQLStatusConstants/*s*/] = q[GraphQLStatusConstants/*s*/] || {}, c = q[GraphQLStatusConstants/*s*/][d], !c) {
-                                    if (c = GraphQLStatusConstants/*s*/ in Y ? F() : u.id, !c) throw new Error("Root calls that has an id field must request for id");
-                                    q[GraphQLStatusConstants/*s*/][d] = c
+                                if (q[s] = q[s] || {}, c = q[s][d], !c) {
+                                    if (c = s in Y ? F() : u.id, !c) throw new Error("Root calls that has an id field must request for id");
+                                    q[s][d] = c
                                 }
                             }
-                            var h = new x(GraphQLStatusConstants/*s*/ === K ? new _.Query("node", [c]) : require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/);
-                            module/*i*/.storeNodeWithID(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, u, c, h)
+                            var h = new x(s === K ? new _.Query("node", [c]) : require/*t*/);
+                            module/*i*/.storeNodeWithID(require/*t*/, u, c, h)
                         }
                     }
                 }
-                GraphQLMutatorHub/*a*/.stop()
+                a.stop()
             },
-            buildFragmentQueryForDataID: function(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) {
-                if (D.isClientID(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/)) {
-                    var requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = H[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/] || ActionCollisionMap/*V*/[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/];
-                    return requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.__path__.getQueryForFragment(global/*DliteProfiler/*e*/*/)
+            buildFragmentQueryForDataID: function(global/*e*/, require/*t*/) {
+                if (D.isClientID(require/*t*/)) {
+                    var requireDynamic/*n*/ = H[require/*t*/] || V[require/*t*/];
+                    return requireDynamic/*n*/.__path__.getQueryForFragment(global/*e*/)
                 }
-                return new x(new _.Query("node", [require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/])).getQueryForFragment(global/*DliteProfiler/*e*/*/)
+                return new x(new _.Query("node", [require/*t*/])).getQueryForFragment(global/*e*/)
             },
-            resolveQueryFromStore: function(global/*DliteProfiler/*e*/*/) {
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = J.getIDsFromQuery(global/*DliteProfiler/*e*/*/),
-                    requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = {};
-                for (var requireLazy/*generateForceIndex/*r*/*/ in require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) {
-                    var module/*i*/ = J.getDeepNodeByID(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/[requireLazy/*generateForceIndex/*r*/*/], global/*DliteProfiler/*e*/*/.getQuery());
-                    void 0 !== module/*i*/ && (requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/[requireLazy/*generateForceIndex/*r*/*/] = module/*i*/)
+            resolveQueryFromStore: function(global/*e*/) {
+                var require/*t*/ = J.getIDsFromQuery(global/*e*/),
+                    requireDynamic/*n*/ = {};
+                for (var requireLazy/*r*/ in require/*t*/) {
+                    var module/*i*/ = J.getDeepNodeByID(require/*t*/[requireLazy/*r*/], global/*e*/.getQuery());
+                    void 0 !== module/*i*/ && (requireDynamic/*n*/[requireLazy/*r*/] = module/*i*/)
                 }
-                return requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/
+                return requireDynamic/*n*/
             },
-            canResolveQueriesFromStore: function(global/*DliteProfiler/*e*/*/) {
-                for (var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ in global/*DliteProfiler/*e*/*/)
-                    if (global/*DliteProfiler/*e*/*/.hasOwnProperty(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) && global/*DliteProfiler/*e*/*/[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/] && J.getDiffQueries(global/*DliteProfiler/*e*/*/[require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/]).length) return !1;
+            canResolveQueriesFromStore: function(global/*e*/) {
+                for (var require/*t*/ in global/*e*/)
+                    if (global/*e*/.hasOwnProperty(require/*t*/) && global/*e*/[require/*t*/] && J.getDiffQueries(global/*e*/[require/*t*/]).length) return !1;
                 return !0
             },
-            getDiffQueries: function(global/*DliteProfiler/*e*/*/) {
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = new f(H, ActionQueue/*U*/);
-                return require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.getDiffQueries(global/*DliteProfiler/*e*/*/, J.getIDsFromQuery(global/*DliteProfiler/*e*/*/))
+            getDiffQueries: function(global/*e*/) {
+                var require/*t*/ = new f(H, U);
+                return require/*t*/.getDiffQueries(global/*e*/, J.getIDsFromQuery(global/*e*/))
             },
-            resolvePointersForQuery: function(global/*DliteProfiler/*e*/*/) {
-                return k(J.getIDsFromQuery(global/*DliteProfiler/*e*/*/), D.createPointerWithID)
+            resolvePointersForQuery: function(global/*e*/) {
+                return k(J.getIDsFromQuery(global/*e*/), D.createPointerWithID)
             },
-            injectCachingConfig: function(global/*DliteProfiler/*e*/*/) {
-                B = global/*DliteProfiler/*e*/*/
+            injectCachingConfig: function(global/*e*/) {
+                B = global/*e*/
             },
-            isValidNodeID: function(global/*DliteProfiler/*e*/*/) {
-                return H.hasOwnProperty(global/*DliteProfiler/*e*/*/) || ActionCollisionMap/*V*/.hasOwnProperty(global/*DliteProfiler/*e*/*/)
+            isValidNodeID: function(global/*e*/) {
+                return H.hasOwnProperty(global/*e*/) || V.hasOwnProperty(global/*e*/)
             },
-            isQueuedNodeID: function(global/*DliteProfiler/*e*/*/) {
-                return ActionCollisionMap/*V*/.hasOwnProperty(global/*DliteProfiler/*e*/*/)
+            isQueuedNodeID: function(global/*e*/) {
+                return V.hasOwnProperty(global/*e*/)
             },
-            getDeepNodeFromData: function(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/, requireLazy/*generateForceIndex/*r*/*/) {
-                var module/*i*/ = new P(H, ActionCollisionMap/*V*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/);
-                return module/*i*/.retrieveData(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireLazy/*generateForceIndex/*r*/*/)
+            getDeepNodeFromData: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                var module/*i*/ = new P(H, V, requireDynamic/*n*/);
+                return module/*i*/.retrieveData(global/*e*/, require/*t*/, requireLazy/*r*/)
             },
-            getDeepNodeByID: function(global/*DliteProfiler/*e*/*/, require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/) {
-                return J.getDeepNodeFromData(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/, D.createPointerWithID(global/*DliteProfiler/*e*/*/), requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/)
+            getDeepNodeByID: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                return J.getDeepNodeFromData(require/*t*/, D.createPointerWithID(global/*e*/), requireDynamic/*n*/)
             },
             __debug: {
                 nodeData: H,
-                queuedData: ActionCollisionMap/*V*/
+                queuedData: V
             },
-            getTrackedQueryByID: function(global/*DliteProfiler/*e*/*/) {
-                return Array.isArray(global/*DliteProfiler/*e*/*/) || (global/*DliteProfiler/*e*/*/ = [global/*DliteProfiler/*e*/*/]), ActionQueue/*U*/.getQueryForIDs(global/*DliteProfiler/*e*/*/)
+            getTrackedQueryByID: function(global/*e*/) {
+                return Array.isArray(global/*e*/) || (global/*e*/ = [global/*e*/]), U.getQueryForIDs(global/*e*/)
             },
-            getIDsFromQuery: function(global/*DliteProfiler/*e*/*/) {
-                global/*DliteProfiler/*e*/*/ = global/*DliteProfiler/*e*/*/.getQuery();
-                var require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/ = {},
-                    requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/ = global/*DliteProfiler/*e*/*/.rootCall(),
-                    requireLazy/*generateForceIndex/*r*/*/ = requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.getName();
-                if (requireLazy/*generateForceIndex/*r*/*/ === z) require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/.viewer = y.VIEWER_CLIENT_ID;
-                else if (requireLazy/*generateForceIndex/*r*/*/ === W || requireLazy/*generateForceIndex/*r*/*/ === K || requireLazy/*generateForceIndex/*r*/*/ in X)
-                    for (var module/*i*/ = requireDynamic/*GraphQLMutationProperties/*keyMirror/*n*/*/*/.getArgs(), o = 0; o < module/*i*/.length; o++)
+            getIDsFromQuery: function(global/*e*/) {
+                global/*e*/ = global/*e*/.getQuery();
+                var require/*t*/ = {},
+                    requireDynamic/*n*/ = global/*e*/.rootCall(),
+                    requireLazy/*r*/ = requireDynamic/*n*/.getName();
+                if (requireLazy/*r*/ === z) require/*t*/.viewer = y.VIEWER_CLIENT_ID;
+                else if (requireLazy/*r*/ === W || requireLazy/*r*/ === K || requireLazy/*r*/ in X)
+                    for (var module/*i*/ = requireDynamic/*n*/.getArgs(), o = 0; o < module/*i*/.length; o++)
                         if (!(module/*i*/[o] instanceof _.BatchCallVariable)) {
-                            var GraphQLMutatorHub/*a*/ = module/*i*/[o].getCallValue();
-                            q[requireLazy/*generateForceIndex/*r*/*/] && q[requireLazy/*generateForceIndex/*r*/*/][GraphQLMutatorHub/*a*/] && (GraphQLMutatorHub/*a*/ = q[requireLazy/*generateForceIndex/*r*/*/][GraphQLMutatorHub/*a*/]), require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/[module/*i*/[o].getCallValue()] = GraphQLMutatorHub/*a*/
+                            var a = module/*i*/[o].getCallValue();
+                            q[requireLazy/*r*/] && q[requireLazy/*r*/][a] && (a = q[requireLazy/*r*/][a]), require/*t*/[module/*i*/[o].getCallValue()] = a
                         }
-                return Q(require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/) && M(0, "Unsupported graphQL root call: use viewer, username, group, node, or nodes"), require/*exports/*GraphQLConstants/*GraphQLMutationDataHandler/*GraphQLMutatorConstants/*GraphQLStoreDataHandler/*generateClientID/*mixInEventEmitter/*t*/*/*/*/*/*/*/*/
+                return Q(require/*t*/) && M(0, "Unsupported graphQL root call: use viewer, username, group, node, or nodes"), require/*t*/
             }
         };
     g.instrumentMethods(J, {

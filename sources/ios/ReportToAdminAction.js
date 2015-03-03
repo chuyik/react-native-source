@@ -1,19 +1,19 @@
-__d("ReportToAdminAction",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (global/*e*/, require/*GraphQLMutationAction/*t*/*/, requireDynamic/*rql/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("ReportToAdminAction",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*GraphQLMutationAction/*t*/*/("GraphQLMutationAction"),
-        exports/*a*/ = (require/*GraphQLMutationAction/*t*/*/("GraphQLMutatorHub"), require/*GraphQLMutationAction/*t*/*/("GraphQLStore")),
-        GraphQLMutatorHub/*s*/ = require/*GraphQLMutationAction/*t*/*/("defaultRQLMutationCallback"),
-        GraphQLStore/*l*/ = require/*GraphQLMutationAction/*t*/*/("invariant"),
-        defaultRQLMutationCallback/*u*/ = require/*GraphQLMutationAction/*t*/*/("rql"),
-        invariant/*c*/ = {
+    var o = require/*t*/("GraphQLMutationAction"),
+        a = (require/*t*/("GraphQLMutatorHub"), require/*t*/("GraphQLStore")),
+        s = require/*t*/("defaultRQLMutationCallback"),
+        l = require/*t*/("invariant"),
+        u = require/*t*/("rql"),
+        c = {
             reportStoryToAdmin: function(global/*e*/) {
-                var require/*GraphQLMutationAction/*t*/*/ = global/*e*/.groupID,
-                    requireDynamic/*rql/*n*/*/ = global/*e*/.storyID,
+                var require/*t*/ = global/*e*/.groupID,
+                    requireDynamic/*n*/ = global/*e*/.storyID,
                     requireLazy/*r*/ = global/*e*/.onSuccess,
                     module/*i*/ = global/*e*/.onFailure;
-                require/*GraphQLMutationAction/*t*/*/ && requireDynamic/*rql/*n*/*/ || GraphQLStore/*l*/(0, "Invalid parameters for reportStoryToAdmin"), exports/*a*/.isValidNodeID(requireDynamic/*rql/*n*/*/) || GraphQLStore/*l*/(0, "Action taken on unknown story " + requireDynamic/*rql/*n*/*/);
-                var invariant/*c*/ = function() {
-                        var global/*e*/ = defaultRQLMutationCallback/*u*/.__GraphQL;
+                require/*t*/ && requireDynamic/*n*/ || l(0, "Invalid parameters for reportStoryToAdmin"), a.isValidNodeID(requireDynamic/*n*/) || l(0, "Action taken on unknown story " + requireDynamic/*n*/);
+                var c = function() {
+                        var global/*e*/ = u.__GraphQL;
                         return new global/*e*/.Mutation("UnknownFile_m0", "GroupReportStoryToAdminResponsePayload", new global/*e*/.Callv("group_report_story_to_admin", [new global/*e*/.CallVariable("input")]), [new global/*e*/.Field("story", [new global/*e*/.Field("id", null, null, null, null, null, {
                             requisite: !0
                         })], null, null, null, null, {
@@ -25,14 +25,14 @@ __d("ReportToAdminAction",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLS
                         })])
                     }(),
                     p = new o;
-                p.runServerAction(invariant/*c*/, {
-                    group_id: require/*GraphQLMutationAction/*t*/*/,
-                    story_id: requireDynamic/*rql/*n*/*/,
+                p.runServerAction(c, {
+                    group_id: require/*t*/,
+                    story_id: requireDynamic/*n*/,
                     source: "unknown"
-                }, function(global/*e*/, require/*GraphQLMutationAction/*t*/*/) {
-                    global/*e*/ ? module/*i*/ && module/*i*/(global/*e*/) : requireLazy/*r*/ && requireLazy/*r*/(), GraphQLMutatorHub/*s*/(global/*e*/, require/*GraphQLMutationAction/*t*/*/, invariant/*c*/)
+                }, function(global/*e*/, require/*t*/) {
+                    global/*e*/ ? module/*i*/ && module/*i*/(global/*e*/) : requireLazy/*r*/ && requireLazy/*r*/(), s(global/*e*/, require/*t*/, c)
                 })
             }
         };
-    module/*i*/.exports = invariant/*c*/
+    module/*i*/.exports = c
 });

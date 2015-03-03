@@ -1,49 +1,49 @@
-__d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChildren","instantiateReactComponent","shouldUpdateReactComponent"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*ReactComponent/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChildren","instantiateReactComponent","shouldUpdateReactComponent"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*ReactComponent/*n*/*/) {
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         _.push({
             parentID: global/*e*/,
-            ReactMultiChildUpdateTypes/*parentNode*/: null,
-            flattenChildren/*type*/: d.INSERT_MARKUP,
-            instantiateReactComponent/*markupIndex*/: y.push(require/*exports/*t*/*/) - 1,
-            shouldUpdateReactComponent/*textContent*/: null,
+            parentNode: null,
+            type: d.INSERT_MARKUP,
+            markupIndex: y.push(require/*t*/) - 1,
+            textContent: null,
             fromIndex: null,
-            toIndex: requireDynamic/*ReactComponent/*n*/*/
+            toIndex: requireDynamic/*n*/
         })
     }
 
-    function a(global/*e*/, require/*exports/*t*/*/, requireDynamic/*ReactComponent/*n*/*/) {
+    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         _.push({
             parentID: global/*e*/,
-            ReactMultiChildUpdateTypes/*parentNode*/: null,
-            flattenChildren/*type*/: d.MOVE_EXISTING,
-            instantiateReactComponent/*markupIndex*/: null,
-            shouldUpdateReactComponent/*textContent*/: null,
-            fromIndex: require/*exports/*t*/*/,
-            toIndex: requireDynamic/*ReactComponent/*n*/*/
+            parentNode: null,
+            type: d.MOVE_EXISTING,
+            markupIndex: null,
+            textContent: null,
+            fromIndex: require/*t*/,
+            toIndex: requireDynamic/*n*/
         })
     }
 
-    function s(global/*e*/, require/*exports/*t*/*/) {
+    function s(global/*e*/, require/*t*/) {
         _.push({
             parentID: global/*e*/,
-            ReactMultiChildUpdateTypes/*parentNode*/: null,
-            flattenChildren/*type*/: d.REMOVE_NODE,
-            instantiateReactComponent/*markupIndex*/: null,
-            shouldUpdateReactComponent/*textContent*/: null,
-            fromIndex: require/*exports/*t*/*/,
+            parentNode: null,
+            type: d.REMOVE_NODE,
+            markupIndex: null,
+            textContent: null,
+            fromIndex: require/*t*/,
             toIndex: null
         })
     }
 
-    function l(global/*e*/, require/*exports/*t*/*/) {
+    function l(global/*e*/, require/*t*/) {
         _.push({
             parentID: global/*e*/,
-            ReactMultiChildUpdateTypes/*parentNode*/: null,
-            flattenChildren/*type*/: d.TEXT_CONTENT,
-            instantiateReactComponent/*markupIndex*/: null,
-            shouldUpdateReactComponent/*textContent*/: require/*exports/*t*/*/,
+            parentNode: null,
+            type: d.TEXT_CONTENT,
+            markupIndex: null,
+            textContent: require/*t*/,
             fromIndex: null,
             toIndex: null
         })
@@ -56,28 +56,28 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
     function c() {
         _.length = 0, y.length = 0
     }
-    var p = require/*exports/*t*/*/("ReactComponent"),
-        d = require/*exports/*t*/*/("ReactMultiChildUpdateTypes"),
-        h = require/*exports/*t*/*/("flattenChildren"),
-        f = require/*exports/*t*/*/("instantiateReactComponent"),
-        m = require/*exports/*t*/*/("shouldUpdateReactComponent"),
+    var p = require/*t*/("ReactComponent"),
+        d = require/*t*/("ReactMultiChildUpdateTypes"),
+        h = require/*t*/("flattenChildren"),
+        f = require/*t*/("instantiateReactComponent"),
+        m = require/*t*/("shouldUpdateReactComponent"),
         g = 0,
         _ = [],
         y = [],
         v = {
             Mixin: {
-                mountChildren: function(global/*e*/, require/*exports/*t*/*/) {
-                    var requireDynamic/*ReactComponent/*n*/*/ = h(global/*e*/),
+                mountChildren: function(global/*e*/, require/*t*/) {
+                    var requireDynamic/*n*/ = h(global/*e*/),
                         requireLazy/*r*/ = [],
                         module/*i*/ = 0;
-                    this._renderedChildren = requireDynamic/*ReactComponent/*n*/*/;
-                    for (var o in requireDynamic/*ReactComponent/*n*/*/) {
-                        var a = requireDynamic/*ReactComponent/*n*/*/[o];
-                        if (requireDynamic/*ReactComponent/*n*/*/.hasOwnProperty(o)) {
+                    this._renderedChildren = requireDynamic/*n*/;
+                    for (var o in requireDynamic/*n*/) {
+                        var a = requireDynamic/*n*/[o];
+                        if (requireDynamic/*n*/.hasOwnProperty(o)) {
                             var s = f(a, null);
-                            requireDynamic/*ReactComponent/*n*/*/[o] = s;
+                            requireDynamic/*n*/[o] = s;
                             var l = this._rootNodeID + o,
-                                u = s.mountComponent(l, require/*exports/*t*/*/, this._mountDepth + 1);
+                                u = s.mountComponent(l, require/*t*/, this._mountDepth + 1);
                             s._mountIndex = module/*i*/, requireLazy/*r*/.push(u), module/*i*/++
                         }
                     }
@@ -85,59 +85,59 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
                 },
                 updateTextContent: function(global/*e*/) {
                     g++;
-                    var require/*exports/*t*/*/ = !0;
+                    var require/*t*/ = !0;
                     try {
-                        var requireDynamic/*ReactComponent/*n*/*/ = this._renderedChildren;
-                        for (var requireLazy/*r*/ in requireDynamic/*ReactComponent/*n*/*/) requireDynamic/*ReactComponent/*n*/*/.hasOwnProperty(requireLazy/*r*/) && this._unmountChildByName(requireDynamic/*ReactComponent/*n*/*/[requireLazy/*r*/], requireLazy/*r*/);
-                        this.setTextContent(global/*e*/), require/*exports/*t*/*/ = !1
+                        var requireDynamic/*n*/ = this._renderedChildren;
+                        for (var requireLazy/*r*/ in requireDynamic/*n*/) requireDynamic/*n*/.hasOwnProperty(requireLazy/*r*/) && this._unmountChildByName(requireDynamic/*n*/[requireLazy/*r*/], requireLazy/*r*/);
+                        this.setTextContent(global/*e*/), require/*t*/ = !1
                     } finally {
-                        g--, g || (require/*exports/*t*/*/ ? c() : u())
+                        g--, g || (require/*t*/ ? c() : u())
                     }
                 },
-                updateChildren: function(global/*e*/, require/*exports/*t*/*/) {
+                updateChildren: function(global/*e*/, require/*t*/) {
                     g++;
-                    var requireDynamic/*ReactComponent/*n*/*/ = !0;
+                    var requireDynamic/*n*/ = !0;
                     try {
-                        this._updateChildren(global/*e*/, require/*exports/*t*/*/), requireDynamic/*ReactComponent/*n*/*/ = !1
+                        this._updateChildren(global/*e*/, require/*t*/), requireDynamic/*n*/ = !1
                     } finally {
-                        g--, g || (requireDynamic/*ReactComponent/*n*/*/ ? c() : u())
+                        g--, g || (requireDynamic/*n*/ ? c() : u())
                     }
                 },
-                _updateChildren: function(global/*e*/, require/*exports/*t*/*/) {
-                    var requireDynamic/*ReactComponent/*n*/*/ = h(global/*e*/),
+                _updateChildren: function(global/*e*/, require/*t*/) {
+                    var requireDynamic/*n*/ = h(global/*e*/),
                         requireLazy/*r*/ = this._renderedChildren;
-                    if (requireDynamic/*ReactComponent/*n*/*/ || requireLazy/*r*/) {
+                    if (requireDynamic/*n*/ || requireLazy/*r*/) {
                         var module/*i*/, o = 0,
                             a = 0;
-                        for (module/*i*/ in requireDynamic/*ReactComponent/*n*/*/)
-                            if (requireDynamic/*ReactComponent/*n*/*/.hasOwnProperty(module/*i*/)) {
+                        for (module/*i*/ in requireDynamic/*n*/)
+                            if (requireDynamic/*n*/.hasOwnProperty(module/*i*/)) {
                                 var s = requireLazy/*r*/ && requireLazy/*r*/[module/*i*/],
                                     l = s && s._currentElement,
-                                    u = requireDynamic/*ReactComponent/*n*/*/[module/*i*/];
-                                if (m(l, u)) this.moveChild(s, a, o), o = Math.max(s._mountIndex, o), s.receiveComponent(u, require/*exports/*t*/*/), s._mountIndex = a;
+                                    u = requireDynamic/*n*/[module/*i*/];
+                                if (m(l, u)) this.moveChild(s, a, o), o = Math.max(s._mountIndex, o), s.receiveComponent(u, require/*t*/), s._mountIndex = a;
                                 else {
                                     s && (o = Math.max(s._mountIndex, o), this._unmountChildByName(s, module/*i*/));
                                     var c = f(u, null);
-                                    this._mountChildByNameAtIndex(c, module/*i*/, a, require/*exports/*t*/*/)
+                                    this._mountChildByNameAtIndex(c, module/*i*/, a, require/*t*/)
                                 }
                                 a++
                             }
-                        for (module/*i*/ in requireLazy/*r*/) !requireLazy/*r*/.hasOwnProperty(module/*i*/) || requireDynamic/*ReactComponent/*n*/*/ && requireDynamic/*ReactComponent/*n*/*/[module/*i*/] || this._unmountChildByName(requireLazy/*r*/[module/*i*/], module/*i*/)
+                        for (module/*i*/ in requireLazy/*r*/) !requireLazy/*r*/.hasOwnProperty(module/*i*/) || requireDynamic/*n*/ && requireDynamic/*n*/[module/*i*/] || this._unmountChildByName(requireLazy/*r*/[module/*i*/], module/*i*/)
                     }
                 },
                 unmountChildren: function() {
                     var global/*e*/ = this._renderedChildren;
-                    for (var require/*exports/*t*/*/ in global/*e*/) {
-                        var requireDynamic/*ReactComponent/*n*/*/ = global/*e*/[require/*exports/*t*/*/];
-                        requireDynamic/*ReactComponent/*n*/*/.unmountComponent && requireDynamic/*ReactComponent/*n*/*/.unmountComponent()
+                    for (var require/*t*/ in global/*e*/) {
+                        var requireDynamic/*n*/ = global/*e*/[require/*t*/];
+                        requireDynamic/*n*/.unmountComponent && requireDynamic/*n*/.unmountComponent()
                     }
                     this._renderedChildren = null
                 },
-                moveChild: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*ReactComponent/*n*/*/) {
-                    global/*e*/._mountIndex < requireDynamic/*ReactComponent/*n*/*/ && a(this._rootNodeID, global/*e*/._mountIndex, require/*exports/*t*/*/)
+                moveChild: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                    global/*e*/._mountIndex < requireDynamic/*n*/ && a(this._rootNodeID, global/*e*/._mountIndex, require/*t*/)
                 },
-                createChild: function(global/*e*/, require/*exports/*t*/*/) {
-                    o(this._rootNodeID, require/*exports/*t*/*/, global/*e*/._mountIndex)
+                createChild: function(global/*e*/, require/*t*/) {
+                    o(this._rootNodeID, require/*t*/, global/*e*/._mountIndex)
                 },
                 removeChild: function(global/*e*/) {
                     s(this._rootNodeID, global/*e*/._mountIndex)
@@ -145,13 +145,13 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
                 setTextContent: function(global/*e*/) {
                     l(this._rootNodeID, global/*e*/)
                 },
-                _mountChildByNameAtIndex: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*ReactComponent/*n*/*/, requireLazy/*r*/) {
-                    var module/*i*/ = this._rootNodeID + require/*exports/*t*/*/,
+                _mountChildByNameAtIndex: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                    var module/*i*/ = this._rootNodeID + require/*t*/,
                         o = global/*e*/.mountComponent(module/*i*/, requireLazy/*r*/, this._mountDepth + 1);
-                    global/*e*/._mountIndex = requireDynamic/*ReactComponent/*n*/*/, this.createChild(global/*e*/, o), this._renderedChildren = this._renderedChildren || {}, this._renderedChildren[require/*exports/*t*/*/] = global/*e*/
+                    global/*e*/._mountIndex = requireDynamic/*n*/, this.createChild(global/*e*/, o), this._renderedChildren = this._renderedChildren || {}, this._renderedChildren[require/*t*/] = global/*e*/
                 },
-                _unmountChildByName: function(global/*e*/, require/*exports/*t*/*/) {
-                    this.removeChild(global/*e*/), global/*e*/._mountIndex = null, global/*e*/.unmountComponent(), delete this._renderedChildren[require/*exports/*t*/*/]
+                _unmountChildByName: function(global/*e*/, require/*t*/) {
+                    this.removeChild(global/*e*/), global/*e*/._mountIndex = null, global/*e*/.unmountComponent(), delete this._renderedChildren[require/*t*/]
                 }
             }
         };

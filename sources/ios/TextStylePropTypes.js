@@ -1,11 +1,11 @@
 __d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ReactPropTypes"),
-        exports/*a*/ = require/*t*/("ViewStylePropTypes"),
-        ReactPropTypes/*s*/ = require/*t*/("merge"),
-        ViewStylePropTypes/*l*/ = ReactPropTypes/*s*/(exports/*a*/, {
+        a = require/*t*/("ViewStylePropTypes"),
+        s = require/*t*/("merge"),
+        l = s(a, {
             fontFamily: o.string,
-            merge/*fontSize*/: o.number,
+            fontSize: o.number,
             fontWeight: o.oneOf(["normal", "bold"]),
             lineHeight: o.number,
             color: o.string,
@@ -22,6 +22,6 @@ __d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],functio
             paddingVertical: null,
             paddingHorizontal: null
         });
-    for (var c in u) delete ViewStylePropTypes/*l*/[c];
-    module/*i*/.exports = ViewStylePropTypes/*l*/
+    for (var c in u) delete l[c];
+    module/*i*/.exports = l
 });

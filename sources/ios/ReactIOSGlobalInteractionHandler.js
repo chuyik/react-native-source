@@ -1,11 +1,11 @@
 __d("ReactIOSGlobalInteractionHandler",["InteractionManager"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("InteractionManager"),
-        exports/*a*/ = null,
-        InteractionManager/*s*/ = {
+        a = null,
+        s = {
             onChange: function(global/*e*/) {
-                0 === global/*e*/ ? exports/*a*/ && (o.clearInteractionHandle(exports/*a*/), exports/*a*/ = null) : exports/*a*/ || (exports/*a*/ = o.createInteractionHandle())
+                0 === global/*e*/ ? a && (o.clearInteractionHandle(a), a = null) : a || (a = o.createInteractionHandle())
             }
         };
-    module/*i*/.exports = InteractionManager/*s*/
+    module/*i*/.exports = s
 });

@@ -3,10 +3,10 @@ __d("StyleSheetRegistry",[],function (global/*e*/, require/*t*/, requireDynamic/
 
     function o() {}
     var a = {},
-        exports/*s*/ = 1,
+        s = 1,
         l = {};
     o.registerStyle = function(global/*e*/) {
-        var require/*t*/ = ++exports/*s*/;
+        var require/*t*/ = ++s;
         return __DEV__ && Object.freeze(global/*e*/), a[require/*t*/] = global/*e*/, require/*t*/
     }, o.getStyleByID = function(global/*e*/) {
         if (!global/*e*/) return l;

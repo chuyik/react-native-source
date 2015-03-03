@@ -1,16 +1,16 @@
-__d("isEventSupported",["ExecutionEnvironment"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*ExecutionEnvironment/*r*/*/, module/*i*/) {
+__d("isEventSupported",["ExecutionEnvironment"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*t*/*/) {
-        if (!s.canUseDOM || require/*exports/*t*/*/ && !("addEventListener" in document)) return !1;
+    function o(global/*e*/, require/*t*/) {
+        if (!s.canUseDOM || require/*t*/ && !("addEventListener" in document)) return !1;
         var requireDynamic/*n*/ = "on" + global/*e*/,
-            requireLazy/*ExecutionEnvironment/*r*/*/ = requireDynamic/*n*/ in document;
-        if (!requireLazy/*ExecutionEnvironment/*r*/*/) {
+            requireLazy/*r*/ = requireDynamic/*n*/ in document;
+        if (!requireLazy/*r*/) {
             var module/*i*/ = document.createElement("div");
-            module/*i*/.setAttribute(requireDynamic/*n*/, "return;"), requireLazy/*ExecutionEnvironment/*r*/*/ = "function" == typeof module/*i*/[requireDynamic/*n*/]
+            module/*i*/.setAttribute(requireDynamic/*n*/, "return;"), requireLazy/*r*/ = "function" == typeof module/*i*/[requireDynamic/*n*/]
         }
-        return !requireLazy/*ExecutionEnvironment/*r*/*/ && a && "wheel" === global/*e*/ && (requireLazy/*ExecutionEnvironment/*r*/*/ = document.implementation.hasFeature("Events.wheel", "3.0")), requireLazy/*ExecutionEnvironment/*r*/*/
+        return !requireLazy/*r*/ && a && "wheel" === global/*e*/ && (requireLazy/*r*/ = document.implementation.hasFeature("Events.wheel", "3.0")), requireLazy/*r*/
     }
-    var a, s = require/*exports/*t*/*/("ExecutionEnvironment");
+    var a, s = require/*t*/("ExecutionEnvironment");
     s.canUseDOM && (a = document.implementation && document.implementation.hasFeature && document.implementation.hasFeature("", "") !== !0), module/*i*/.exports = o
 });

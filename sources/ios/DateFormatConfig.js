@@ -1,9 +1,9 @@
 __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeModules").RKI18n,
-        exports/*a*/ = {
+        a = {
             numericDateOrder: ["m", "d", "y"],
-            NativeModules/*numericDateSeparator*/: "/",
+            numericDateSeparator: "/",
             shortDayNames: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             weekStart: 6,
             formats: {
@@ -14,7 +14,7 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "F d, Y": "F d, Y",
                 "F j, Y": "F j, Y",
                 "F j, Y @ g:module/*i*/ A": "F j, Y @ g:module/*i*/ A",
-                "F j, Y g:module/*i*/ exports/*a*/": "F j, Y g:module/*i*/ exports/*a*/",
+                "F j, Y g:module/*i*/ a": "F j, Y g:module/*i*/ a",
                 "F jS, g:ia": "F jS, g:ia",
                 "F jS, Y": "F jS, Y",
                 "F Y": "F Y",
@@ -57,11 +57,11 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "g A": "g A",
                 "g:module/*i*/": "g:module/*i*/",
                 "g:module/*i*/ A": "g:module/*i*/ A",
-                "g:module/*i*/ exports/*a*/": "g:module/*i*/ exports/*a*/",
+                "g:module/*i*/ a": "g:module/*i*/ a",
                 "g:iA": "g:iA",
                 "g:ia": "g:ia",
                 "g:sa": "g:sa",
-                "h:module/*i*/ exports/*a*/": "h:module/*i*/ exports/*a*/",
+                "h:module/*i*/ a": "h:module/*i*/ a",
                 "h:m:s m/d/Y": "h:m:s m/d/Y",
                 j: "j",
                 "m-d-y": "m-d-y",
@@ -115,5 +115,5 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 31: "st"
             }
         };
-    module/*i*/.exports = o.dateFormatConfig || exports/*a*/
+    module/*i*/.exports = o.dateFormatConfig || a
 });

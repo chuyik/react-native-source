@@ -2,7 +2,7 @@ __d("ReactEmptyComponent",["ReactElement","invariant"],function (global/*e*/, re
     "use strict";
 
     function o() {
-        return ReactElement/*u*/ || p(0, "Trying to return null from a render, exports/*but*/ no null placeholder component was injected."), ReactElement/*u*/()
+        return u || p(0, "Trying to return null from a render, but no null placeholder component was injected."), u()
     }
 
     function a(global/*e*/) {
@@ -16,12 +16,12 @@ __d("ReactEmptyComponent",["ReactElement","invariant"],function (global/*e*/, re
     function l(global/*e*/) {
         return d[global/*e*/]
     }
-    var ReactElement/*u*/, invariant/*c*/ = require/*t*/("ReactElement"),
+    var u, c = require/*t*/("ReactElement"),
         p = require/*t*/("invariant"),
         d = {},
         h = {
             injectEmptyComponent: function(global/*e*/) {
-                ReactElement/*u*/ = invariant/*c*/.createFactory(global/*e*/)
+                u = c.createFactory(global/*e*/)
             }
         },
         f = {

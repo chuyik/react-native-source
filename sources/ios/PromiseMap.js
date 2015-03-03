@@ -1,22 +1,22 @@
-__d("PromiseMap",["PublicPromise","invariant"],function (global/*PublicPromise/*e*/*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("PromiseMap",["PublicPromise","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o() {
         this.$PromiseMap_deferred = {}
     }
 
-    function a(global/*PublicPromise/*e*/*/, require/*exports/*t*/*/) {
-        return global/*PublicPromise/*e*/*/.hasOwnProperty(require/*exports/*t*/*/) || (global/*PublicPromise/*e*/*/[require/*exports/*t*/*/] = new s), global/*PublicPromise/*e*/*/[require/*exports/*t*/*/]
+    function a(global/*e*/, require/*t*/) {
+        return global/*e*/.hasOwnProperty(require/*t*/) || (global/*e*/[require/*t*/] = new s), global/*e*/[require/*t*/]
     }
-    var s = require/*exports/*t*/*/("PublicPromise"),
-        invariant/*l*/ = require/*exports/*t*/*/("invariant");
-    o.prototype.get = function(global/*PublicPromise/*e*/*/) {
-        return a(this.$PromiseMap_deferred, global/*PublicPromise/*e*/*/).getPromise()
-    }, o.prototype.resolveKey = function(global/*PublicPromise/*e*/*/, require/*exports/*t*/*/) {
-        var requireDynamic/*n*/ = a(this.$PromiseMap_deferred, global/*PublicPromise/*e*/*/);
-        requireDynamic/*n*/.isSettled() && invariant/*l*/(0, "PromiseMap: Already settled `%s`.", global/*PublicPromise/*e*/*/), requireDynamic/*n*/.resolve(require/*exports/*t*/*/)
-    }, o.prototype.rejectKey = function(global/*PublicPromise/*e*/*/, require/*exports/*t*/*/) {
-        var requireDynamic/*n*/ = a(this.$PromiseMap_deferred, global/*PublicPromise/*e*/*/);
-        requireDynamic/*n*/.isSettled() && invariant/*l*/(0, "PromiseMap: Already settled `%s`.", global/*PublicPromise/*e*/*/), requireDynamic/*n*/.reject(require/*exports/*t*/*/)
+    var s = require/*t*/("PublicPromise"),
+        l = require/*t*/("invariant");
+    o.prototype.get = function(global/*e*/) {
+        return a(this.$PromiseMap_deferred, global/*e*/).getPromise()
+    }, o.prototype.resolveKey = function(global/*e*/, require/*t*/) {
+        var requireDynamic/*n*/ = a(this.$PromiseMap_deferred, global/*e*/);
+        requireDynamic/*n*/.isSettled() && l(0, "PromiseMap: Already settled `%s`.", global/*e*/), requireDynamic/*n*/.resolve(require/*t*/)
+    }, o.prototype.rejectKey = function(global/*e*/, require/*t*/) {
+        var requireDynamic/*n*/ = a(this.$PromiseMap_deferred, global/*e*/);
+        requireDynamic/*n*/.isSettled() && l(0, "PromiseMap: Already settled `%s`.", global/*e*/), requireDynamic/*n*/.reject(require/*t*/)
     }, module/*i*/.exports = o
 });

@@ -1,55 +1,55 @@
 __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","getObjectValues","invariant","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ReactPropTypes"),
-        exports/*a*/ = require/*t*/("NativeModules").RKPOPAnimationManager,
-        ReactPropTypes/*s*/ = require/*t*/("createStrictShapeTypeChecker"),
-        NativeModules/*l*/ = require/*t*/("getObjectValues"),
-        createStrictShapeTypeChecker/*u*/ = require/*t*/("invariant"),
-        getObjectValues/*c*/ = require/*t*/("merge"),
-        invariant/*p*/ = exports/*a*/.Types,
-        merge/*d*/ = exports/*a*/.Properties,
+        a = require/*t*/("NativeModules").RKPOPAnimationManager,
+        s = require/*t*/("createStrictShapeTypeChecker"),
+        l = require/*t*/("getObjectValues"),
+        u = require/*t*/("invariant"),
+        c = require/*t*/("merge"),
+        p = a.Types,
+        d = a.Properties,
         h = {
-            bounds: merge/*d*/.bounds,
-            opacity: merge/*d*/.opacity,
-            position: merge/*d*/.position,
-            positionX: merge/*d*/.positionX,
-            positionY: merge/*d*/.positionY,
-            zPosition: merge/*d*/.zPosition,
-            rotation: merge/*d*/.rotation,
-            rotationX: merge/*d*/.rotationX,
-            rotationY: merge/*d*/.rotationY,
-            scaleX: merge/*d*/.scaleX,
-            scaleXY: merge/*d*/.scaleXY,
-            scaleY: merge/*d*/.scaleY,
-            shadowColor: merge/*d*/.shadowColor,
-            shadowOffset: merge/*d*/.shadowOffset,
-            shadowOpacity: merge/*d*/.shadowOpacity,
-            shadowRadius: merge/*d*/.shadowRadius,
-            size: merge/*d*/.size,
-            subscaleXY: merge/*d*/.subscaleXY,
-            subtranslationX: merge/*d*/.subtranslationX,
-            subtranslationXY: merge/*d*/.subtranslationXY,
-            subtranslationY: merge/*d*/.subtranslationY,
-            subtranslationZ: merge/*d*/.subtranslationZ,
-            translationX: merge/*d*/.translationX,
-            translationXY: merge/*d*/.translationXY,
-            translationY: merge/*d*/.translationY,
-            translationZ: merge/*d*/.translationZ
+            bounds: d.bounds,
+            opacity: d.opacity,
+            position: d.position,
+            positionX: d.positionX,
+            positionY: d.positionY,
+            zPosition: d.zPosition,
+            rotation: d.rotation,
+            rotationX: d.rotationX,
+            rotationY: d.rotationY,
+            scaleX: d.scaleX,
+            scaleXY: d.scaleXY,
+            scaleY: d.scaleY,
+            shadowColor: d.shadowColor,
+            shadowOffset: d.shadowOffset,
+            shadowOpacity: d.shadowOpacity,
+            shadowRadius: d.shadowRadius,
+            size: d.size,
+            subscaleXY: d.subscaleXY,
+            subtranslationX: d.subtranslationX,
+            subtranslationXY: d.subtranslationXY,
+            subtranslationY: d.subtranslationY,
+            subtranslationZ: d.subtranslationZ,
+            translationX: d.translationX,
+            translationXY: d.translationXY,
+            translationY: d.translationY,
+            translationZ: d.translationZ
         },
         f = {
-            decay: invariant/*p*/.decay,
-            easeIn: invariant/*p*/.easeIn,
-            easeInEaseOut: invariant/*p*/.easeInEaseOut,
-            easeOut: invariant/*p*/.easeOut,
-            linear: invariant/*p*/.linear,
-            spring: invariant/*p*/.spring
+            decay: p.decay,
+            easeIn: p.easeIn,
+            easeInEaseOut: p.easeInEaseOut,
+            easeOut: p.easeOut,
+            linear: p.linear,
+            spring: p.spring
         },
         m = {
             Types: f,
             Properties: h,
-            attributeChecker: ReactPropTypes/*s*/({
-                type: o.oneOf(NativeModules/*l*/(f)),
-                property: o.oneOf(NativeModules/*l*/(h)),
+            attributeChecker: s({
+                type: o.oneOf(l(f)),
+                property: o.oneOf(l(h)),
                 fromValue: o.any,
                 toValue: o.any,
                 duration: o.any,
@@ -72,7 +72,7 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
                     attrs: {
                         type: global/*e*/
                     }
-                }, "attrs", "POPAnimation.createAnimation")), exports/*a*/.createAnimationInternal(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
+                }, "attrs", "POPAnimation.createAnimation")), a.createAnimationInternal(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
             },
             createSpringAnimation: function(global/*e*/) {
                 return this.createAnimation(this.Types.spring, global/*e*/)
@@ -94,10 +94,10 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
             }
         };
     if (__DEV__) {
-        var g = getObjectValues/*c*/(exports/*a*/.Properties, exports/*a*/.Properties);
-        for (var _ in g) m.Properties[_] !== exports/*a*/.Properties[_] && createStrictShapeTypeChecker/*u*/(0, "POPAnimation doesn'require/*t*/ copy property " + _ + " correctly");
-        var y = getObjectValues/*c*/(exports/*a*/.Types, exports/*a*/.Types);
-        for (var _ in y) m.Types[_] !== exports/*a*/.Types[_] && createStrictShapeTypeChecker/*u*/(0, "POPAnimation doesn'require/*t*/ copy type " + _ + " correctly")
+        var g = c(a.Properties, a.Properties);
+        for (var _ in g) m.Properties[_] !== a.Properties[_] && u(0, "POPAnimation doesn'require/*t*/ copy property " + _ + " correctly");
+        var y = c(a.Types, a.Types);
+        for (var _ in y) m.Types[_] !== a.Types[_] && u(0, "POPAnimation doesn'require/*t*/ copy type " + _ + " correctly")
     }
     module/*i*/.exports = m
 });

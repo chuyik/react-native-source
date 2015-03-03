@@ -1,4 +1,4 @@
-__d("Intl",[],function (global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("Intl",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/) {
         return "string" != typeof global/*e*/ ? !1 : global/*e*/.match(new RegExp(o.punct_char_class + "[)\"'»༻༽’”›〉》」』】〕〗〙〛〞〟﴿＇）］\\s]*$"))
     }
@@ -6,7 +6,7 @@ __d("Intl",[],function (global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*
     function a(global/*e*/) {
         if (s) {
             var require/*t*/ = [],
-                requireDynamic/*exports/*n*/*/ = [];
+                requireDynamic/*n*/ = [];
             for (var requireLazy/*r*/ in s.patterns) {
                 var module/*i*/ = s.patterns[requireLazy/*r*/];
                 for (var o in s.meta) {
@@ -14,13 +14,13 @@ __d("Intl",[],function (global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*
                         l = s.meta[o];
                     requireLazy/*r*/ = requireLazy/*r*/.replace(a, l), module/*i*/ = module/*i*/.replace(a, l)
                 }
-                require/*t*/.push(requireLazy/*r*/), requireDynamic/*exports/*n*/*/.push(module/*i*/)
+                require/*t*/.push(requireLazy/*r*/), requireDynamic/*n*/.push(module/*i*/)
             }
             for (var u = 0; u < require/*t*/.length; u++) {
                 var c = new RegExp(require/*t*/[u].slice(1, -1), "g");
-                "javascript" == requireDynamic/*exports/*n*/*/[u] ? global/*e*/.replace(c, function(global/*e*/) {
+                "javascript" == requireDynamic/*n*/[u] ? global/*e*/.replace(c, function(global/*e*/) {
                     return global/*e*/.slice(1).toLowerCase()
-                }) : global/*e*/ = global/*e*/.replace(c, requireDynamic/*exports/*n*/*/[u])
+                }) : global/*e*/ = global/*e*/.replace(c, requireDynamic/*n*/[u])
             }
         }
         return global/*e*/.replace(/\x01/g, "")

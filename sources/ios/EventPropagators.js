@@ -1,16 +1,16 @@
-__d("EventPropagators",["EventConstants","EventPluginHub","accumulateInto","forEachAccumulated"],function (global/*e*/, require/*exports/*accumulateInto/*t*/*/*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/, requireLazy/*EventPluginHub/*r*/*/, module/*i*/) {
+__d("EventPropagators",["EventConstants","EventPluginHub","accumulateInto","forEachAccumulated"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*accumulateInto/*t*/*/*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/) {
-        var requireLazy/*EventPluginHub/*r*/*/ = require/*exports/*accumulateInto/*t*/*/*/.dispatchConfig.phasedRegistrationNames[requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/];
-        return S(global/*e*/, requireLazy/*EventPluginHub/*r*/*/)
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        var requireLazy/*r*/ = require/*t*/.dispatchConfig.phasedRegistrationNames[requireDynamic/*n*/];
+        return S(global/*e*/, requireLazy/*r*/)
     }
 
-    function a(global/*e*/, require/*exports/*accumulateInto/*t*/*/*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/) {
+    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         if (__DEV__ && !global/*e*/) throw new Error("Dispatching id must not be null");
-        var requireLazy/*EventPluginHub/*r*/*/ = require/*exports/*accumulateInto/*t*/*/*/ ? v.bubbled : v.captured,
-            module/*i*/ = o(global/*e*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/, requireLazy/*EventPluginHub/*r*/*/);
-        module/*i*/ && (requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchListeners = _(requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchListeners, module/*i*/), requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchIDs = _(requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchIDs, global/*e*/))
+        var requireLazy/*r*/ = require/*t*/ ? v.bubbled : v.captured,
+            module/*i*/ = o(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/);
+        module/*i*/ && (requireDynamic/*n*/._dispatchListeners = _(requireDynamic/*n*/._dispatchListeners, module/*i*/), requireDynamic/*n*/._dispatchIDs = _(requireDynamic/*n*/._dispatchIDs, global/*e*/))
     }
 
     function s(global/*e*/) {
@@ -21,11 +21,11 @@ __d("EventPropagators",["EventConstants","EventPluginHub","accumulateInto","forE
         global/*e*/ && global/*e*/.dispatchConfig.phasedRegistrationNames && g.injection.getInstanceHandle().traverseTwoPhaseSkipTarget(global/*e*/.dispatchMarker, a, global/*e*/)
     }
 
-    function u(global/*e*/, require/*exports/*accumulateInto/*t*/*/*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/) {
-        if (requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/ && requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/.dispatchConfig.registrationName) {
-            var requireLazy/*EventPluginHub/*r*/*/ = requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/.dispatchConfig.registrationName,
-                module/*i*/ = S(global/*e*/, requireLazy/*EventPluginHub/*r*/*/);
-            module/*i*/ && (requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchListeners = _(requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchListeners, module/*i*/), requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchIDs = _(requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/._dispatchIDs, global/*e*/))
+    function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        if (requireDynamic/*n*/ && requireDynamic/*n*/.dispatchConfig.registrationName) {
+            var requireLazy/*r*/ = requireDynamic/*n*/.dispatchConfig.registrationName,
+                module/*i*/ = S(global/*e*/, requireLazy/*r*/);
+            module/*i*/ && (requireDynamic/*n*/._dispatchListeners = _(requireDynamic/*n*/._dispatchListeners, module/*i*/), requireDynamic/*n*/._dispatchIDs = _(requireDynamic/*n*/._dispatchIDs, global/*e*/))
         }
     }
 
@@ -41,17 +41,17 @@ __d("EventPropagators",["EventConstants","EventPluginHub","accumulateInto","forE
         y(global/*e*/, l)
     }
 
-    function h(global/*e*/, require/*exports/*accumulateInto/*t*/*/*/, requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/, requireLazy/*EventPluginHub/*r*/*/) {
-        g.injection.getInstanceHandle().traverseEnterLeave(requireDynamic/*EventConstants/*forEachAccumulated/*n*/*/*/, requireLazy/*EventPluginHub/*r*/*/, u, global/*e*/, require/*exports/*accumulateInto/*t*/*/*/)
+    function h(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+        g.injection.getInstanceHandle().traverseEnterLeave(requireDynamic/*n*/, requireLazy/*r*/, u, global/*e*/, require/*t*/)
     }
 
     function f(global/*e*/) {
         y(global/*e*/, c)
     }
-    var m = require/*exports/*accumulateInto/*t*/*/*/("EventConstants"),
-        g = require/*exports/*accumulateInto/*t*/*/*/("EventPluginHub"),
-        _ = require/*exports/*accumulateInto/*t*/*/*/("accumulateInto"),
-        y = require/*exports/*accumulateInto/*t*/*/*/("forEachAccumulated"),
+    var m = require/*t*/("EventConstants"),
+        g = require/*t*/("EventPluginHub"),
+        _ = require/*t*/("accumulateInto"),
+        y = require/*t*/("forEachAccumulated"),
         v = m.PropagationPhases,
         S = g.getListener,
         b = {

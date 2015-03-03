@@ -1,53 +1,53 @@
 __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTagHandles","NativeModules","NativeModulesDeprecated","ScrollResponder","ScrollViewPropTypes","StyleSheetPropType","StyleSheet","View","ViewStylePropTypes","createReactIOSNativeComponentClass","flattenStyle","invariant","merge","nativePropType","validAttributesFromPropTypes","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ArrayOfPropType"),
-        exports/*a*/ = require/*t*/("React"),
-        ArrayOfPropType/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*t*/("ReactIOSTagHandles"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("NativeModules").RKUIManager.RCTScrollView,
-        ReactIOSTagHandles/*c*/ = ReactIOSViewAttributes/*u*/.Constants,
-        NativeModules/*p*/ = require/*t*/("NativeModulesDeprecated").RKUIManager,
-        NativeModulesDeprecated/*d*/ = require/*t*/("ScrollResponder"),
-        ScrollResponder/*h*/ = require/*t*/("ScrollViewPropTypes"),
-        ScrollViewPropTypes/*f*/ = require/*t*/("StyleSheetPropType"),
-        StyleSheetPropType/*m*/ = require/*t*/("StyleSheet"),
-        StyleSheet/*g*/ = require/*t*/("View"),
-        View/*_*/ = require/*t*/("ViewStylePropTypes"),
-        ViewStylePropTypes/*y*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        createReactIOSNativeComponentClass/*v*/ = require/*t*/("flattenStyle"),
-        flattenStyle/*S*/ = require/*t*/("invariant"),
-        invariant/*b*/ = require/*t*/("merge"),
-        merge/*R*/ = require/*t*/("nativePropType"),
-        nativePropType/*w*/ = require/*t*/("validAttributesFromPropTypes"),
-        validAttributesFromPropTypes/*C*/ = require/*t*/("warning"),
-        warning/*E*/ = exports/*a*/.PropTypes,
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("ReactIOSTagHandles"),
+        u = require/*t*/("NativeModules").RKUIManager.RCTScrollView,
+        c = u.Constants,
+        p = require/*t*/("NativeModulesDeprecated").RKUIManager,
+        d = require/*t*/("ScrollResponder"),
+        h = require/*t*/("ScrollViewPropTypes"),
+        f = require/*t*/("StyleSheetPropType"),
+        m = require/*t*/("StyleSheet"),
+        g = require/*t*/("View"),
+        _ = require/*t*/("ViewStylePropTypes"),
+        y = require/*t*/("createReactIOSNativeComponentClass"),
+        v = require/*t*/("flattenStyle"),
+        S = require/*t*/("invariant"),
+        b = require/*t*/("merge"),
+        R = require/*t*/("nativePropType"),
+        w = require/*t*/("validAttributesFromPropTypes"),
+        C = require/*t*/("warning"),
+        E = a.PropTypes,
         D = "ScrollView",
         T = "InnerScrollView",
-        x = invariant/*b*/(ScrollResponder/*h*/, {
-            alwaysBounceHorizontal: merge/*R*/(warning/*E*/.bool),
-            alwaysBounceVertical: merge/*R*/(warning/*E*/.bool),
-            centerContent: merge/*R*/(warning/*E*/.bool),
-            contentContainerStyle: ScrollViewPropTypes/*f*/(View/*_*/),
-            decelerationRate: merge/*R*/(warning/*E*/.number),
-            horizontal: warning/*E*/.bool,
-            keyboardDismissMode: merge/*R*/(warning/*E*/.oneOf([ReactIOSTagHandles/*c*/.KeyboardDismissMode.None, ReactIOSTagHandles/*c*/.KeyboardDismissMode.Interactive, ReactIOSTagHandles/*c*/.KeyboardDismissMode.OnDrag])),
-            keyboardShouldPersistTaps: merge/*R*/(warning/*E*/.bool),
-            maximumZoomScale: merge/*R*/(warning/*E*/.number),
-            minimumZoomScale: merge/*R*/(warning/*E*/.number),
-            pagingEnabled: merge/*R*/(warning/*E*/.bool),
-            scrollsToTop: merge/*R*/(warning/*E*/.bool),
-            stickyHeaderIndices: merge/*R*/(o(warning/*E*/.number)),
-            removeClippedSubviews: warning/*E*/.bool,
-            zoomScale: merge/*R*/(warning/*E*/.number)
+        x = b(h, {
+            alwaysBounceHorizontal: R(E.bool),
+            alwaysBounceVertical: R(E.bool),
+            centerContent: R(E.bool),
+            contentContainerStyle: f(_),
+            decelerationRate: R(E.number),
+            horizontal: E.bool,
+            keyboardDismissMode: R(E.oneOf([c.KeyboardDismissMode.None, c.KeyboardDismissMode.Interactive, c.KeyboardDismissMode.OnDrag])),
+            keyboardShouldPersistTaps: R(E.bool),
+            maximumZoomScale: R(E.number),
+            minimumZoomScale: R(E.number),
+            pagingEnabled: R(E.bool),
+            scrollsToTop: R(E.bool),
+            stickyHeaderIndices: R(o(E.number)),
+            removeClippedSubviews: E.bool,
+            zoomScale: R(E.number)
         }),
-        P = exports/*a*/.createClass({
+        P = a.createClass({
             displayName: "ScrollView",
             statics: {
                 PropTypes: x,
-                keyboardDismissMode: ReactIOSTagHandles/*c*/.KeyboardDismissMode
+                keyboardDismissMode: c.KeyboardDismissMode
             },
             propTypes: x,
-            mixins: [NativeModulesDeprecated/*d*/.Mixin],
+            mixins: [d.Mixin],
             getInitialState: function() {
                 return this.scrollResponderMixinGetInitialState()
             },
@@ -58,26 +58,26 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
                 return this.refs[T].getNodeHandle()
             },
             scrollTo: function(global/*e*/, require/*t*/) {
-                NativeModules/*p*/.scrollTo(React/*l*/.rootNodeIDToTag[this._rootNodeID], require/*t*/, global/*e*/)
+                p.scrollTo(l.rootNodeIDToTag[this._rootNodeID], require/*t*/, global/*e*/)
             },
             render: function() {
                 var global/*e*/ = [this.props.horizontal && I.contentContainerHorizontal, this.props.contentContainerStyle];
                 if (__DEV__ && this.props.style) {
-                    var require/*t*/ = createReactIOSNativeComponentClass/*v*/(this.props.style),
+                    var require/*t*/ = v(this.props.style),
                         requireDynamic/*n*/ = ["alignItems", "justifyContent"].filter(function(global/*e*/) {
                             return void 0 !== require/*t*/[global/*e*/]
                         });
-                    0 !== requireDynamic/*n*/.length && flattenStyle/*S*/(0, "ScrollView child layout (" + JSON.stringify(requireDynamic/*n*/) + ") must by applied through the contentContainerStyle prop.")
+                    0 !== requireDynamic/*n*/.length && S(0, "ScrollView child layout (" + JSON.stringify(requireDynamic/*n*/) + ") must by applied through the contentContainerStyle prop.")
                 }
-                __DEV__ && validAttributesFromPropTypes/*C*/(this.props.onScroll && !this.props.throttleScrollCallbackMS, "You specified `onScroll` on exports/*a*/ <ScrollView> but not `throttleScrollCallbackMS`. You will only receive one event. Using `16` you get all the events but be aware that it may cause frame drops, use exports/*a*/ bigger number if you don'require/*t*/ need as much precision.");
-                var requireLazy/*r*/ = exports/*a*/.createElement(StyleSheet/*g*/, {
+                __DEV__ && C(this.props.onScroll && !this.props.throttleScrollCallbackMS, "You specified `onScroll` on a <ScrollView> but not `throttleScrollCallbackMS`. You will only receive one event. Using `16` you get all the events but be aware that it may cause frame drops, use a bigger number if you don'require/*t*/ need as much precision.");
+                var requireLazy/*r*/ = a.createElement(g, {
                         ref: T,
                         style: global/*e*/,
                         removeClippedSubviews: this.props.removeClippedSubviews
                     }, this.props.children),
                     module/*i*/ = void 0 !== this.props.alwaysBounceHorizontal ? this.props.alwaysBounceHorizontal : this.props.horizontal,
                     o = void 0 !== this.props.alwaysBounceVertical ? this.props.alwaysBounceVertical : !this.props.horizontal,
-                    ArrayOfPropType/*s*/ = invariant/*b*/(this.props, {
+                    s = b(this.props, {
                         alwaysBounceHorizontal: module/*i*/,
                         alwaysBounceVertical: o,
                         style: [I.base, this.props.style],
@@ -98,12 +98,12 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
                         onResponderRelease: this.scrollResponderHandleResponderRelease,
                         onResponderReject: this.scrollResponderHandleResponderReject
                     });
-                return exports/*a*/.createElement(ReactIOSViewAttributes/*u*/, Object.assign({}, ArrayOfPropType/*s*/, {
+                return a.createElement(u, Object.assign({}, s, {
                     ref: D
                 }), requireLazy/*r*/)
             }
         }),
-        I = StyleSheetPropType/*m*/.create({
+        I = m.create({
             base: {
                 flex: 1
             },
@@ -112,8 +112,8 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
                 flexDirection: "row"
             }
         }),
-        ReactIOSViewAttributes/*u*/ = ViewStylePropTypes/*y*/({
-            validAttributes: invariant/*b*/(ArrayOfPropType/*s*/.UIView, nativePropType/*w*/(P.propTypes)),
+        u = y({
+            validAttributes: b(s.UIView, w(P.propTypes)),
             uiViewClassName: "RCTScrollView"
         });
     module/*i*/.exports = P

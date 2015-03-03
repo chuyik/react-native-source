@@ -1,24 +1,24 @@
 __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDeprecated","fbt","ix","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ActionRow"),
-        exports/*a*/ = require/*t*/("Popover"),
-        ActionRow/*s*/ = require/*t*/("React"),
-        Popover/*l*/ = require/*t*/("ReactGraphQL"),
-        React/*u*/ = require/*t*/("NativeModulesDeprecated").RKPasteboard,
-        ReactGraphQL/*c*/ = require/*t*/("fbt"),
-        NativeModulesDeprecated/*p*/ = require/*t*/("ix"),
-        fbt/*d*/ = require/*t*/("keyOf"),
-        ix/*h*/ = fbt/*d*/({
+        a = require/*t*/("Popover"),
+        s = require/*t*/("React"),
+        l = require/*t*/("ReactGraphQL"),
+        u = require/*t*/("NativeModulesDeprecated").RKPasteboard,
+        c = require/*t*/("fbt"),
+        p = require/*t*/("ix"),
+        d = require/*t*/("keyOf"),
+        h = d({
             popRef: null
         }),
-        keyOf/*f*/ = ActionRow/*s*/.createClass({
+        f = s.createClass({
             displayName: "CommentMenu",
             propTypes: {
-                comment: ActionRow/*s*/.PropTypes.object.isRequired,
-                onDelete: ActionRow/*s*/.PropTypes.func,
-                onEdit: ActionRow/*s*/.PropTypes.func
+                comment: s.PropTypes.object.isRequired,
+                onDelete: s.PropTypes.func,
+                onEdit: s.PropTypes.func
             },
-            mixins: [Popover/*l*/.Mixin],
+            mixins: [l.Mixin],
             statics: {
                 queries: {
                     comment: function(global/*e*/, require/*t*/) {
@@ -39,26 +39,26 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                 }
             },
             open: function() {
-                this.refs[ix/*h*/].open()
+                this.refs[h].open()
             },
             copyLink: function() {
                 var global/*e*/ = this.props.comment;
-                React/*u*/.setPasteboardString(global/*e*/.url), this.refs[ix/*h*/].close()
+                u.setPasteboardString(global/*e*/.url), this.refs[h].close()
             },
             openLink: function() {
                 this.state.openLink()
             },
             deleteComment: function() {
-                this.refs[ix/*h*/].close(this.props.onDelete)
+                this.refs[h].close(this.props.onDelete)
             },
             editComment: function() {
-                this.refs[ix/*h*/].close(this.props.onEdit)
+                this.refs[h].close(this.props.onEdit)
             },
             copyComment: function() {
                 var global/*e*/ = this.props.comment,
                     require/*t*/ = global/*e*/ && global/*e*/.attachments && global/*e*/.attachments[0],
                     requireDynamic/*n*/ = require/*t*/ && require/*t*/.media && require/*t*/.media.image_menu && require/*t*/.media.image_menu.uri;
-                React/*u*/.setPasteboardString(global/*e*/.body && global/*e*/.body.text || require/*t*/ && require/*t*/.url || requireDynamic/*n*/), this.refs[ix/*h*/].close()
+                u.setPasteboardString(global/*e*/.body && global/*e*/.body.text || require/*t*/ && require/*t*/.url || requireDynamic/*n*/), this.refs[h].close()
             },
             renderContent: function() {
                 var global/*e*/ = [],
@@ -66,29 +66,29 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                     requireDynamic/*n*/ = require/*t*/ && require/*t*/.attachments && require/*t*/.attachments[0];
                 if (require/*t*/.can_viewer_edit && this.props.onEdit) {
                     var requireLazy/*r*/ = requireDynamic/*n*/ && requireDynamic/*n*/.style_list && requireDynamic/*n*/.style_list[0];
-                    "sticker" !== requireLazy/*r*/ && (global/*e*/.push(ActionRow/*s*/.createElement(o, {
+                    "sticker" !== requireLazy/*r*/ && (global/*e*/.push(s.createElement(o, {
                         onPress: this.editComment,
-                        iconSource: NativeModulesDeprecated/*p*/("ActionSheetIconCompose"),
-                        title: ReactGraphQL/*c*/({
+                        iconSource: p("ActionSheetIconCompose"),
+                        title: c({
                             type: "text",
                             texts: ["Edit Comment"],
                             desc: "Button to edit comment"
                         })
-                    })), global/*e*/.push(exports/*a*/.renderSeparator()))
+                    })), global/*e*/.push(a.renderSeparator()))
                 }
-                return require/*t*/.can_viewer_delete && this.props.onDelete && (global/*e*/.push(ActionRow/*s*/.createElement(o, {
+                return require/*t*/.can_viewer_delete && this.props.onDelete && (global/*e*/.push(s.createElement(o, {
                     onPress: this.deleteComment,
-                    iconSource: NativeModulesDeprecated/*p*/("ActionSheetIconDelete"),
-                    title: ReactGraphQL/*c*/({
+                    iconSource: p("ActionSheetIconDelete"),
+                    title: c({
                         type: "text",
                         texts: ["Delete Comment"],
                         desc: "Button to delete comment"
                     })
-                })), global/*e*/.push(exports/*a*/.renderSeparator())), global/*e*/.push(ActionRow/*s*/.createElement(o, {
+                })), global/*e*/.push(a.renderSeparator())), global/*e*/.push(s.createElement(o, {
                     key: "copyComment",
                     onPress: this.copyComment,
-                    iconSource: NativeModulesDeprecated/*p*/("ActionSheetIconCopy"),
-                    title: ReactGraphQL/*c*/({
+                    iconSource: p("ActionSheetIconCopy"),
+                    title: c({
                         type: "text",
                         texts: ["Copy Comment"],
                         desc: "Button to copy comment text to pasteboard"
@@ -96,11 +96,11 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                 })), global/*e*/
             },
             render: function() {
-                return ActionRow/*s*/.createElement(exports/*a*/, {
-                    ref: ix/*h*/,
+                return s.createElement(a, {
+                    ref: h,
                     contentFactory: this.renderContent
                 })
             }
         });
-    module/*i*/.exports = keyOf/*f*/
+    module/*i*/.exports = f
 });

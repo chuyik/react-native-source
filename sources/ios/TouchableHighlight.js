@@ -1,32 +1,32 @@
 __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","TimerMixin","Touchable","View","cloneWithProps","ensureComponentIsNative","keyOf","merge","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*t*/("React"),
-        NativeMethodsMixin/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*t*/("StyleSheet"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("TimerMixin"),
-        StyleSheet/*c*/ = require/*t*/("Touchable"),
-        TimerMixin/*p*/ = require/*t*/("View"),
-        Touchable/*d*/ = require/*t*/("cloneWithProps"),
-        View/*h*/ = require/*t*/("ensureComponentIsNative"),
-        cloneWithProps/*f*/ = require/*t*/("keyOf"),
-        ensureComponentIsNative/*m*/ = require/*t*/("merge"),
-        keyOf/*g*/ = require/*t*/("onlyChild"),
-        merge/*_*/ = {
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("TimerMixin"),
+        c = require/*t*/("Touchable"),
+        p = require/*t*/("View"),
+        d = require/*t*/("cloneWithProps"),
+        h = require/*t*/("ensureComponentIsNative"),
+        f = require/*t*/("keyOf"),
+        m = require/*t*/("merge"),
+        g = require/*t*/("onlyChild"),
+        _ = {
             activeOpacity: .8,
-            onlyChild/*underlayColor*/: "black"
+            underlayColor: "black"
         },
-        y = exports/*a*/.createClass({
+        y = a.createClass({
             displayName: "TouchableHighlight",
             propTypes: {
-                onPress: exports/*a*/.PropTypes.func.isRequired,
-                activeOpacity: exports/*a*/.PropTypes.number,
-                onlyChild/*underlayColor*/: exports/*a*/.PropTypes.string,
-                style: TimerMixin/*p*/.stylePropType
+                onPress: a.PropTypes.func.isRequired,
+                activeOpacity: a.PropTypes.number,
+                underlayColor: a.PropTypes.string,
+                style: p.stylePropType
             },
-            mixins: [o, ReactIOSViewAttributes/*u*/, StyleSheet/*c*/.Mixin],
+            mixins: [o, u, c.Mixin],
             getDefaultProps: function() {
-                return merge/*_*/
+                return _
             },
             computeSyntheticState: function(global/*e*/) {
                 return {
@@ -37,27 +37,27 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                     },
                     activeUnderlayProps: {
                         style: {
-                            backgroundColor: global/*e*/.onlyChild/*underlayColor*/
+                            backgroundColor: global/*e*/.underlayColor
                         }
                     },
                     underlayStyle: [w.style, global/*e*/.style]
                 }
             },
             getInitialState: function() {
-                return ensureComponentIsNative/*m*/(this.touchableGetInitialState(), this.computeSyntheticState(this.props))
+                return m(this.touchableGetInitialState(), this.computeSyntheticState(this.props))
             },
             componentDidMount: function() {
-                View/*h*/(this.refs[S])
+                h(this.refs[S])
             },
             componentDidUpdate: function() {
-                View/*h*/(this.refs[S])
+                h(this.refs[S])
             },
             componentWillReceiveProps: function(global/*e*/) {
-                (global/*e*/.activeOpacity !== this.props.activeOpacity || global/*e*/.onlyChild/*underlayColor*/ !== this.props.onlyChild/*underlayColor*/ || global/*e*/.style !== this.props.style) && this.setState(this.computeSyntheticState(global/*e*/))
+                (global/*e*/.activeOpacity !== this.props.activeOpacity || global/*e*/.underlayColor !== this.props.underlayColor || global/*e*/.style !== this.props.style) && this.setState(this.computeSyntheticState(global/*e*/))
             },
             viewConfig: {
                 uiViewClassName: "RCTView",
-                validAttributes: NativeMethodsMixin/*s*/.RKView
+                validAttributes: s.RKView
             },
             touchableHandleActivePressIn: function() {
                 this.clearTimeout(this._hideTimeout), this._hideTimeout = null, this._showUnderlay()
@@ -78,7 +78,7 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                 this.clearTimeout(this._hideTimeout), this._hideTimeout = null, this.refs[b] && (this.refs[S].setNativeProps(R), this.refs[b].setNativeProps(w))
             },
             render: function() {
-                return exports/*a*/.createElement(TimerMixin/*p*/, {
+                return a.createElement(p, {
                     ref: b,
                     style: this.state.underlayStyle,
                     onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
@@ -87,7 +87,7 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                     onResponderMove: this.touchableHandleResponderMove,
                     onResponderRelease: this.touchableHandleResponderRelease,
                     onResponderTerminate: this.touchableHandleResponderTerminate
-                }, Touchable/*d*/(keyOf/*g*/(this.props.children), {
+                }, d(g(this.props.children), {
                     ref: S,
                     accessible: !0,
                     testID: this.props.testID
@@ -100,21 +100,21 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
             right: 20,
             bottom: 30
         },
-        S = cloneWithProps/*f*/({
+        S = f({
             childRef: null
         }),
-        b = cloneWithProps/*f*/({
+        b = f({
             underlayRef: null
         }),
         R = {
-            style: React/*l*/.create({
+            style: l.create({
                 x: {
                     opacity: 1
                 }
             }).x
         },
         w = {
-            style: React/*l*/.create({
+            style: l.create({
                 x: {
                     backgroundColor: "transparent"
                 }

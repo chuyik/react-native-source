@@ -1,44 +1,44 @@
 __d("FBSpinner",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("NativeMethodsMixin"),
-        exports/*a*/ = require/*t*/("React"),
-        NativeMethodsMixin/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        React/*l*/ = require/*t*/("StyleSheet"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("View"),
-        StyleSheet/*c*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        View/*p*/ = require/*t*/("keyMirror"),
-        createReactIOSNativeComponentClass/*d*/ = View/*p*/({
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactIOSViewAttributes"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("View"),
+        c = require/*t*/("createReactIOSNativeComponentClass"),
+        p = require/*t*/("keyMirror"),
+        d = p({
             large: null,
-            keyMirror/*small*/: null
+            small: null
         }),
-        h = exports/*a*/.createClass({
+        h = a.createClass({
             displayName: "FBSpinner",
             propTypes: {
-                size: exports/*a*/.PropTypes.oneOf(Object.keys(createReactIOSNativeComponentClass/*d*/))
+                size: a.PropTypes.oneOf(Object.keys(d))
             },
             statics: {
-                LARGE: createReactIOSNativeComponentClass/*d*/.large,
-                SMALL: createReactIOSNativeComponentClass/*d*/.keyMirror/*small*/
+                LARGE: d.large,
+                SMALL: d.small
             },
             mixins: [o],
             viewConfig: {
                 uiViewClassName: "FBActivityIndicatorView",
-                validAttributes: NativeMethodsMixin/*s*/.UIView
+                validAttributes: s.UIView
             },
             getDefaultProps: function() {
                 return {
-                    size: createReactIOSNativeComponentClass/*d*/.keyMirror/*small*/
+                    size: d.small
                 }
             },
             render: function() {
-                return exports/*a*/.createElement(ReactIOSViewAttributes/*u*/, {
+                return a.createElement(u, {
                     style: [f.container, this.props.style]
-                }, exports/*a*/.createElement(g, {
+                }, a.createElement(g, {
                     style: [m[this.props.size], f.transparent]
                 }))
             }
         }),
-        f = React/*l*/.create({
+        f = l.create({
             container: {
                 alignItems: "center",
                 justifyContent: "center"
@@ -56,9 +56,9 @@ __d("FBSpinner",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleShe
             }
         }),
         m = {};
-    m[createReactIOSNativeComponentClass/*d*/.large] = f.sizeLarge, m[createReactIOSNativeComponentClass/*d*/.keyMirror/*small*/] = f.sizeSmall;
-    var g = StyleSheet/*c*/({
-        validAttributes: NativeMethodsMixin/*s*/.UIView,
+    m[d.large] = f.sizeLarge, m[d.small] = f.sizeSmall;
+    var g = c({
+        validAttributes: s.UIView,
         uiViewClassName: "FBActivityIndicatorView"
     });
     module/*i*/.exports = h

@@ -1,36 +1,36 @@
-__d("StyleSheet",["ImageStylePropTypes","ReactPropTypeLocations","StyleSheetRegistry","TextStylePropTypes","ViewStylePropTypes","invariant"],function (global/*ViewStylePropTypes/*e*/*/, require/*invariant/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("StyleSheet",["ImageStylePropTypes","ReactPropTypeLocations","StyleSheetRegistry","TextStylePropTypes","ViewStylePropTypes","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o() {}
-    var a = require/*invariant/*t*/*/("ImageStylePropTypes"),
-        exports/*s*/ = require/*invariant/*t*/*/("ReactPropTypeLocations"),
-        ImageStylePropTypes/*l*/ = require/*invariant/*t*/*/("StyleSheetRegistry"),
-        ReactPropTypeLocations/*u*/ = require/*invariant/*t*/*/("TextStylePropTypes"),
-        StyleSheetRegistry/*c*/ = require/*invariant/*t*/*/("ViewStylePropTypes"),
-        TextStylePropTypes/*p*/ = require/*invariant/*t*/*/("invariant");
-    o.create = function(global/*ViewStylePropTypes/*e*/*/) {
-        var require/*invariant/*t*/*/ = {};
-        for (var requireDynamic/*n*/ in global/*ViewStylePropTypes/*e*/*/) o.validateStyle(requireDynamic/*n*/, global/*ViewStylePropTypes/*e*/*/), require/*invariant/*t*/*/[requireDynamic/*n*/] = ImageStylePropTypes/*l*/.registerStyle(global/*ViewStylePropTypes/*e*/*/[requireDynamic/*n*/]);
-        return require/*invariant/*t*/*/
-    }, o.validateStyleProp = function(global/*ViewStylePropTypes/*e*/*/, require/*invariant/*t*/*/, requireDynamic/*n*/) {
+    var a = require/*t*/("ImageStylePropTypes"),
+        s = require/*t*/("ReactPropTypeLocations"),
+        l = require/*t*/("StyleSheetRegistry"),
+        u = require/*t*/("TextStylePropTypes"),
+        c = require/*t*/("ViewStylePropTypes"),
+        p = require/*t*/("invariant");
+    o.create = function(global/*e*/) {
+        var require/*t*/ = {};
+        for (var requireDynamic/*n*/ in global/*e*/) o.validateStyle(requireDynamic/*n*/, global/*e*/), require/*t*/[requireDynamic/*n*/] = l.registerStyle(global/*e*/[requireDynamic/*n*/]);
+        return require/*t*/
+    }, o.validateStyleProp = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         if (__DEV__) {
-            if (void 0 === h[global/*ViewStylePropTypes/*e*/*/]) {
-                var requireLazy/*r*/ = '"' + global/*ViewStylePropTypes/*e*/*/ + '" is not a valid style property.',
+            if (void 0 === h[global/*e*/]) {
+                var requireLazy/*r*/ = '"' + global/*e*/ + '" is not a valid style property.',
                     module/*i*/ = "\nValid style props: " + JSON.stringify(Object.keys(h), null, "  ");
-                d(requireLazy/*r*/, require/*invariant/*t*/*/, requireDynamic/*n*/, module/*i*/)
+                d(requireLazy/*r*/, require/*t*/, requireDynamic/*n*/, module/*i*/)
             }
-            var o = h[global/*ViewStylePropTypes/*e*/*/](require/*invariant/*t*/*/, global/*ViewStylePropTypes/*e*/*/, requireDynamic/*n*/, exports/*s*/.prop);
-            o && d(o.message, require/*invariant/*t*/*/, requireDynamic/*n*/)
+            var o = h[global/*e*/](require/*t*/, global/*e*/, requireDynamic/*n*/, s.prop);
+            o && d(o.message, require/*t*/, requireDynamic/*n*/)
         }
-    }, o.validateStyle = function(global/*ViewStylePropTypes/*e*/*/, require/*invariant/*t*/*/) {
+    }, o.validateStyle = function(global/*e*/, require/*t*/) {
         if (__DEV__)
-            for (var requireDynamic/*n*/ in require/*invariant/*t*/*/[global/*ViewStylePropTypes/*e*/*/]) o.validateStyleProp(requireDynamic/*n*/, require/*invariant/*t*/*/[global/*ViewStylePropTypes/*e*/*/], "StyleSheet " + global/*ViewStylePropTypes/*e*/*/)
-    }, o.addValidStylePropTypes = function(global/*ViewStylePropTypes/*e*/*/) {
-        for (var require/*invariant/*t*/*/ in global/*ViewStylePropTypes/*e*/*/) void 0 !== h[require/*invariant/*t*/*/] && h[require/*invariant/*t*/*/] !== global/*ViewStylePropTypes/*e*/*/[require/*invariant/*t*/*/] && TextStylePropTypes/*p*/(0, 'Attemped to redefine existing style prop type "' + require/*invariant/*t*/*/ + '".'), h[require/*invariant/*t*/*/] = global/*ViewStylePropTypes/*e*/*/[require/*invariant/*t*/*/]
+            for (var requireDynamic/*n*/ in require/*t*/[global/*e*/]) o.validateStyleProp(requireDynamic/*n*/, require/*t*/[global/*e*/], "StyleSheet " + global/*e*/)
+    }, o.addValidStylePropTypes = function(global/*e*/) {
+        for (var require/*t*/ in global/*e*/) void 0 !== h[require/*t*/] && h[require/*t*/] !== global/*e*/[require/*t*/] && p(0, 'Attemped to redefine existing style prop type "' + require/*t*/ + '".'), h[require/*t*/] = global/*e*/[require/*t*/]
     };
-    var d = function(global/*ViewStylePropTypes/*e*/*/, require/*invariant/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            TextStylePropTypes/*p*/(0, global/*ViewStylePropTypes/*e*/*/ + "\requireDynamic/*n*/" + (requireDynamic/*n*/ || "<<unknown>>") + ": " + JSON.stringify(require/*invariant/*t*/*/, null, "  ") + (requireLazy/*r*/ || ""))
+    var d = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+            p(0, global/*e*/ + "\requireDynamic/*n*/" + (requireDynamic/*n*/ || "<<unknown>>") + ": " + JSON.stringify(require/*t*/, null, "  ") + (requireLazy/*r*/ || ""))
         },
         h = {};
-    o.addValidStylePropTypes(a), o.addValidStylePropTypes(ReactPropTypeLocations/*u*/), o.addValidStylePropTypes(StyleSheetRegistry/*c*/), module/*i*/.exports = o
+    o.addValidStylePropTypes(a), o.addValidStylePropTypes(u), o.addValidStylePropTypes(c), module/*i*/.exports = o
 });

@@ -1,19 +1,19 @@
 __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","ReactGraphQL","StyleSheet","THColors","THFeedUnitView","THGroupView","THViewConstants","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("Dimensions"),
-        exports/*a*/ = require/*t*/("GraphQLConnectionView"),
-        Dimensions/*s*/ = require/*t*/("React"),
-        GraphQLConnectionView/*l*/ = require/*t*/("ReactGraphQL"),
-        React/*u*/ = require/*t*/("StyleSheet"),
-        ReactGraphQL/*c*/ = require/*t*/("THColors"),
-        StyleSheet/*p*/ = require/*t*/("THFeedUnitView"),
-        THColors/*d*/ = require/*t*/("THGroupView"),
-        THFeedUnitView/*h*/ = require/*t*/("THViewConstants"),
-        THGroupView/*f*/ = require/*t*/("View"),
-        THViewConstants/*m*/ = -65,
-        View/*g*/ = Dimensions/*s*/.createClass({
+        a = require/*t*/("GraphQLConnectionView"),
+        s = require/*t*/("React"),
+        l = require/*t*/("ReactGraphQL"),
+        u = require/*t*/("StyleSheet"),
+        c = require/*t*/("THColors"),
+        p = require/*t*/("THFeedUnitView"),
+        d = require/*t*/("THGroupView"),
+        h = require/*t*/("THViewConstants"),
+        f = require/*t*/("View"),
+        m = -65,
+        g = s.createClass({
             displayName: "THGroupPostSearchView",
-            mixins: [GraphQLConnectionView/*l*/.Mixin],
+            mixins: [l.Mixin],
             statics: {
                 queryParams: {
                     count: 5
@@ -53,7 +53,7 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                             })], null, {
                                 scope: "THGroupPostSearchView_postsQuery"
                             })
-                        }(requireDynamic/*n*/.count, StyleSheet/*p*/.getQuery("story"), exports/*a*/.getQuery("connection"))
+                        }(requireDynamic/*n*/.count, p.getQuery("story"), a.getQuery("connection"))
                     },
                     viewer: function(global/*e*/, require/*t*/) {
                         return function() {
@@ -71,12 +71,12 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                 }
             },
             nodeViewFactory: function(global/*e*/, require/*t*/) {
-                return Dimensions/*s*/.createElement(THGroupView/*f*/, {
+                return s.createElement(f, {
                     style: _.feedStory
-                }, Dimensions/*s*/.createElement(StyleSheet/*p*/, {
+                }, s.createElement(p, {
                     story: global/*e*/,
                     navigator: require/*t*/,
-                    viewContext: THFeedUnitView/*h*/.SEARCH
+                    viewContext: h.SEARCH
                 }))
             },
             updateQueryCount: function(global/*e*/) {
@@ -85,13 +85,13 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                 })
             },
             getLoadingView: function() {
-                return Dimensions/*s*/.createElement(THGroupView/*f*/, {
+                return s.createElement(f, {
                     style: _.parentView
-                }, THColors/*d*/.getFakeStoryView())
+                }, d.getFakeStoryView())
             },
             render: function() {
                 var global/*e*/ = this.props.postsQuery && this.props.postsQuery.results ? this.props.postsQuery.results : {};
-                return Dimensions/*s*/.createElement(exports/*a*/, {
+                return s.createElement(a, {
                     nodeViewFactory: this.nodeViewFactory,
                     connection: global/*e*/,
                     navigator: {},
@@ -99,24 +99,24 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                     style: _.stream,
                     pageSize: 5,
                     contentInset: {
-                        top: THViewConstants/*m*/
+                        top: m
                     }
                 })
             }
         }),
-        _ = React/*u*/.create({
+        _ = u.create({
             feedStory: {
                 marginBottom: 11
             },
             parentView: {
-                backgroundColor: ReactGraphQL/*c*/.backgroundColor,
+                backgroundColor: c.backgroundColor,
                 height: 200
             },
             stream: {
-                backgroundColor: ReactGraphQL/*c*/.backgroundWash,
+                backgroundColor: c.backgroundWash,
                 height: o.get("window").height - 120,
                 width: o.get("window").width
             }
         });
-    module/*i*/.exports = View/*g*/
+    module/*i*/.exports = g
 });

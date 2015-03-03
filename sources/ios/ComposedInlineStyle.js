@@ -2,7 +2,7 @@ __d("ComposedInlineStyle",[],function (global/*e*/, require/*t*/, requireDynamic
     "use strict";
     var o = {
         NONE: 0,
-        exports/*BOLD*/: 1,
+        BOLD: 1,
         ITALIC: 2,
         UNDERLINE: 4,
         CODE: 8

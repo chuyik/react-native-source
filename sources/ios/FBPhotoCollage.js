@@ -1,24 +1,24 @@
 __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","StyleSheet","TouchableWithoutFeedback","View","flattenStyle","invariant","isEmpty","keyOf","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("Image"),
-        exports/*a*/ = require/*t*/("PixelRatio"),
-        Image/*s*/ = require/*t*/("React"),
-        PixelRatio/*l*/ = require/*t*/("ReactGraphQL"),
-        React/*u*/ = require/*t*/("Dimensions"),
-        ReactGraphQL/*c*/ = require/*t*/("StyleSheet"),
-        Dimensions/*p*/ = require/*t*/("TouchableWithoutFeedback"),
-        StyleSheet/*d*/ = require/*t*/("View"),
-        TouchableWithoutFeedback/*h*/ = require/*t*/("flattenStyle"),
-        View/*f*/ = require/*t*/("invariant"),
-        flattenStyle/*m*/ = require/*t*/("isEmpty"),
-        invariant/*g*/ = require/*t*/("keyOf"),
-        isEmpty/*_*/ = require/*t*/("mergeInto"),
-        keyOf/*y*/ = invariant/*g*/({
+        a = require/*t*/("PixelRatio"),
+        s = require/*t*/("React"),
+        l = require/*t*/("ReactGraphQL"),
+        u = require/*t*/("Dimensions"),
+        c = require/*t*/("StyleSheet"),
+        p = require/*t*/("TouchableWithoutFeedback"),
+        d = require/*t*/("View"),
+        h = require/*t*/("flattenStyle"),
+        f = require/*t*/("invariant"),
+        m = require/*t*/("isEmpty"),
+        g = require/*t*/("keyOf"),
+        _ = require/*t*/("mergeInto"),
+        y = g({
             modalRef: null
         }),
-        mergeInto/*v*/ = 5,
+        v = 5,
         S = 5,
-        b = React/*u*/.get("window"),
+        b = u.get("window"),
         R = {
             full: b,
             large: {
@@ -43,16 +43,16 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
             }
         },
         w = !1,
-        C = exports/*a*/.get(),
-        E = Image/*s*/.createClass({
+        C = a.get(),
+        E = s.createClass({
             displayName: "FBPhotoCollage",
             propTypes: {
-                attachment: Image/*s*/.PropTypes.object.isRequired,
-                maxPhotoWidth: Image/*s*/.PropTypes.number,
-                modalViewer: Image/*s*/.PropTypes.func,
-                openedOverlayFactory: Image/*s*/.PropTypes.func
+                attachment: s.PropTypes.object.isRequired,
+                maxPhotoWidth: s.PropTypes.number,
+                modalViewer: s.PropTypes.func,
+                openedOverlayFactory: s.PropTypes.func
             },
-            mixins: [PixelRatio/*l*/.Mixin],
+            mixins: [l.Mixin],
             statics: {
                 queryParams: {
                     count: 10
@@ -63,28 +63,28 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                         var requireLazy/*r*/ = [R.full.width * C, R.full.height * C],
                             module/*i*/ = [R.medium.width * C, R.medium.height * C],
                             o = [R.small.width * C, R.small.height * C];
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, exports/*a*/, Image/*s*/) {
-                            var PixelRatio/*l*/ = require/*t*/.__GraphQL;
-                            return new PixelRatio/*l*/.QueryFragment("FBPhotoCollage_attachment", "StoryAttachment", [new PixelRatio/*l*/.Field("target", [new PixelRatio/*l*/.Field("media", [new PixelRatio/*l*/.Field("edges", [new PixelRatio/*l*/.Field("node", [new PixelRatio/*l*/.Field("image", [new PixelRatio/*l*/.Field("width"), new PixelRatio/*l*/.Field("height"), new PixelRatio/*l*/.Field("uri")], null, [new PixelRatio/*l*/.Callv("size", [require/*t*/.__var(requireDynamic/*n*/), require/*t*/.__var(requireLazy/*r*/)]), new PixelRatio/*l*/.Callv("sizing", ["contain-fit"])], "image_full"), new PixelRatio/*l*/.Field("image", [new PixelRatio/*l*/.Field("width"), new PixelRatio/*l*/.Field("height"), new PixelRatio/*l*/.Field("uri")], null, [new PixelRatio/*l*/.Callv("size", [require/*t*/.__var(module/*i*/), require/*t*/.__var(o)]), new PixelRatio/*l*/.Callv("sizing", ["cover-fill"])], "image_medium"), new PixelRatio/*l*/.Field("image", [new PixelRatio/*l*/.Field("width"), new PixelRatio/*l*/.Field("height"), new PixelRatio/*l*/.Field("uri")], null, [new PixelRatio/*l*/.Callv("size", [require/*t*/.__var(exports/*a*/), require/*t*/.__var(Image/*s*/)]), new PixelRatio/*l*/.Callv("sizing", ["cover-fill"])], "image_small")], null, null, null, null, {
+                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a, s) {
+                            var l = require/*t*/.__GraphQL;
+                            return new l.QueryFragment("FBPhotoCollage_attachment", "StoryAttachment", [new l.Field("target", [new l.Field("media", [new l.Field("edges", [new l.Field("node", [new l.Field("image", [new l.Field("width"), new l.Field("height"), new l.Field("uri")], null, [new l.Callv("size", [require/*t*/.__var(requireDynamic/*n*/), require/*t*/.__var(requireLazy/*r*/)]), new l.Callv("sizing", ["contain-fit"])], "image_full"), new l.Field("image", [new l.Field("width"), new l.Field("height"), new l.Field("uri")], null, [new l.Callv("size", [require/*t*/.__var(module/*i*/), require/*t*/.__var(o)]), new l.Callv("sizing", ["cover-fill"])], "image_medium"), new l.Field("image", [new l.Field("width"), new l.Field("height"), new l.Field("uri")], null, [new l.Callv("size", [require/*t*/.__var(a), require/*t*/.__var(s)]), new l.Callv("sizing", ["cover-fill"])], "image_small")], null, null, null, null, {
                                 requisite: !0
-                            }), new PixelRatio/*l*/.Field("cursor", null, null, null, null, null, {
+                            }), new l.Field("cursor", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "FBPhotoCollage_attachment_1"
-                            }), new PixelRatio/*l*/.Field("page_info", [new PixelRatio/*l*/.Field("has_next_page", null, null, null, null, null, {
+                            }), new l.Field("page_info", [new l.Field("has_next_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            }), new PixelRatio/*l*/.Field("has_previous_page", null, null, null, null, null, {
+                            }), new l.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], null, [new PixelRatio/*l*/.Callv("first", [require/*t*/.__var(global/*e*/)])], null, null, {
+                            })], null, [new l.Callv("first", [require/*t*/.__var(global/*e*/)])], null, null, {
                                 connection: !0
-                            }), new PixelRatio/*l*/.Field("id", null, null, null, null, null, {
+                            }), new l.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -113,10 +113,10 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
             },
             numImagesInCollage: function() {
                 var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ && global/*e*/.media && global/*e*/.media.edges.length ? Math.min(global/*e*/.media.edges.length, mergeInto/*v*/) : 0
+                return global/*e*/ && global/*e*/.media && global/*e*/.media.edges.length ? Math.min(global/*e*/.media.edges.length, v) : 0
             },
             close: function() {
-                this.refs[keyOf/*y*/].close()
+                this.refs[y].close()
             },
             showImage: function(global/*e*/) {
                 global/*e*/ < this.numImagesInCollage() && this.refs[this.getKeyForIdx(global/*e*/)].setNativeProps(P)
@@ -125,24 +125,24 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                 global/*e*/ < this.numImagesInCollage() && this.refs[this.getKeyForIdx(global/*e*/)].setNativeProps(x)
             },
             handlePress: function(global/*e*/) {
-                this.state.isClosed || View/*f*/(0, "Must be closed to process exports/*a*/ tap.");
-                for (var require/*t*/ = 0, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < this.numImagesInCollage(); ++requireDynamic/*n*/) this.refs[this.getKeyForIdx(requireDynamic/*n*/)].measure(function(requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, exports/*a*/, Image/*s*/, PixelRatio/*l*/) {
+                this.state.isClosed || f(0, "Must be closed to process a tap.");
+                for (var require/*t*/ = 0, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < this.numImagesInCollage(); ++requireDynamic/*n*/) this.refs[this.getKeyForIdx(requireDynamic/*n*/)].measure(function(requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a, s, l) {
                     this.state.originalFrames[requireDynamic/*n*/] = {
                         width: o,
-                        height: exports/*a*/,
-                        left: Image/*s*/,
-                        top: PixelRatio/*l*/
-                    }, require/*t*/++, require/*t*/ === this.numImagesInCollage() && (isEmpty/*_*/(this.state, {
+                        height: a,
+                        left: s,
+                        top: l
+                    }, require/*t*/++, require/*t*/ === this.numImagesInCollage() && (_(this.state, {
                         isClosed: !1,
                         activeImgIdx: global/*e*/
-                    }), this.refs[keyOf/*y*/].open(global/*e*/, this.state.originalFrames[global/*e*/]))
+                    }), this.refs[y].open(global/*e*/, this.state.originalFrames[global/*e*/]))
                 }.bind(this, requireDynamic/*n*/))
             },
             handleWillOpen: function() {
                 this.hideImage(this.state.activeImgIdx)
             },
             handleMayClose: function(global/*e*/, require/*t*/) {
-                if (global/*e*/ !== this.state.activeImgIdx && (this.showImage(this.state.activeImgIdx), this.hideImage(global/*e*/), isEmpty/*_*/(this.state, {
+                if (global/*e*/ !== this.state.activeImgIdx && (this.showImage(this.state.activeImgIdx), this.hideImage(global/*e*/), _(this.state, {
                         activeImgIdx: global/*e*/
                     })), require/*t*/) {
                     var requireDynamic/*n*/ = global/*e*/ < this.numImagesInCollage() ? this.state.originalFrames[global/*e*/] : null;
@@ -150,7 +150,7 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                 }
             },
             handleDidClose: function(global/*e*/) {
-                global/*e*/ !== this.state.activeImgIdx && View/*f*/(0, "handleMayClose and handleDidClose should use the same image."), this.showImage(global/*e*/), isEmpty/*_*/(this.state, {
+                global/*e*/ !== this.state.activeImgIdx && f(0, "handleMayClose and handleDidClose should use the same image."), this.showImage(global/*e*/), _(this.state, {
                     isClosed: !0
                 })
             },
@@ -159,25 +159,25 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
             },
             getSource: function(global/*e*/, require/*t*/) {
                 if (this.state.sources[global/*e*/]) return this.state.sources[global/*e*/];
-                var requireDynamic/*n*/ = TouchableWithoutFeedback/*h*/(require/*t*/),
+                var requireDynamic/*n*/ = h(require/*t*/),
                     requireLazy/*r*/ = this.props.attachment.target.media,
                     module/*i*/ = requireLazy/*r*/.edges[global/*e*/].node.image_full,
                     o = "image_full",
-                    exports/*a*/ = {
+                    a = {
                         image_full: !0,
                         image_medium: !0,
                         image_small: !0
                     };
-                for (var Image/*s*/ in exports/*a*/) {
-                    var PixelRatio/*l*/ = requireLazy/*r*/.edges[global/*e*/].node[Image/*s*/];
-                    PixelRatio/*l*/.height >= (requireDynamic/*n*/.height || 0) * C && PixelRatio/*l*/.width >= (requireDynamic/*n*/.width || 0) * C && PixelRatio/*l*/.height < module/*i*/.height && (module/*i*/ = PixelRatio/*l*/, o = Image/*s*/)
+                for (var s in a) {
+                    var l = requireLazy/*r*/.edges[global/*e*/].node[s];
+                    l.height >= (requireDynamic/*n*/.height || 0) * C && l.width >= (requireDynamic/*n*/.width || 0) * C && l.height < module/*i*/.height && (module/*i*/ = l, o = s)
                 }
                 return w && console.log("Using " + o + " with size (scaled @" + C + "x) ", {
                     w: module/*i*/.width,
-                    TouchableWithoutFeedback/*h*/: module/*i*/.height
+                    h: module/*i*/.height
                 }, " for layout ", {
                     w: requireDynamic/*n*/.width * C,
-                    TouchableWithoutFeedback/*h*/: requireDynamic/*n*/.height * C
+                    h: requireDynamic/*n*/.height * C
                 }), this.state.sources[global/*e*/] = module/*i*/, module/*i*/
             },
             imageIdxChanged: function(global/*e*/) {
@@ -189,13 +189,13 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                 var requireDynamic/*n*/ = this.getSource(global/*e*/, require/*t*/),
                     requireLazy/*r*/ = this.getKeyForIdx(global/*e*/),
                     module/*i*/ = this.state.isClosed || this.state.activeImgIdx !== global/*e*/ ? T.show : T.hide;
-                return Image/*s*/.createElement(Dimensions/*p*/, {
+                return s.createElement(p, {
                     onPress: this.handlePress.bind(this, global/*e*/),
                     key: "image" + global/*e*/
-                }, Image/*s*/.createElement(StyleSheet/*d*/, {
+                }, s.createElement(d, {
                     ref: requireLazy/*r*/,
                     style: [module/*i*/, D.shadow]
-                }, Image/*s*/.createElement(o, {
+                }, s.createElement(o, {
                     source: requireDynamic/*n*/,
                     style: [D.imageBase, require/*t*/]
                 })))
@@ -203,68 +203,68 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
             renderInnerViews: function() {
                 switch (this.numImagesInCollage()) {
                     case 0:
-                        return Image/*s*/.createElement(StyleSheet/*d*/, null);
+                        return s.createElement(d, null);
                     case 1:
-                        return Image/*s*/.createElement(StyleSheet/*d*/, {
+                        return s.createElement(d, {
                             style: D.row
                         }, this.renderImage(0, [D.rowLarge, this.state.widthStyle]));
                     case 2:
                         var global/*e*/ = this.props.attachment.target.media.edges,
                             require/*t*/ = global/*e*/[0].node.image_full,
                             requireDynamic/*n*/ = global/*e*/[0].node.image_full;
-                        return require/*t*/.height > require/*t*/.width && requireDynamic/*n*/.height > requireDynamic/*n*/.width ? Image/*s*/.createElement(StyleSheet/*d*/, {
+                        return require/*t*/.height > require/*t*/.width && requireDynamic/*n*/.height > requireDynamic/*n*/.width ? s.createElement(d, {
                             style: D.row
-                        }, this.renderImage(0, D.rowLarge), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(0, D.rowLarge), s.createElement(d, {
                             style: D.spacer
-                        }), this.renderImage(1, D.rowLarge)) : [this.renderImage(0, [D.rowLarge, this.state.widthStyle]), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), this.renderImage(1, D.rowLarge)) : [this.renderImage(0, [D.rowLarge, this.state.widthStyle]), s.createElement(d, {
                             style: D.spacer,
                             key: "spacer"
                         }), this.renderImage(1, [D.rowLarge, this.state.widthStyle])];
                     case 3:
-                        return Image/*s*/.createElement(StyleSheet/*d*/, {
+                        return s.createElement(d, {
                             style: D.row
-                        }, this.renderImage(0, D.rowLarge), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(0, D.rowLarge), s.createElement(d, {
                             style: D.spacer
-                        }), Image/*s*/.createElement(StyleSheet/*d*/, null, this.renderImage(1, D.colSmall), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), s.createElement(d, null, this.renderImage(1, D.colSmall), s.createElement(d, {
                             style: D.spacer
                         }), this.renderImage(2, D.colSmall)));
                     case 4:
-                        return [Image/*s*/.createElement(StyleSheet/*d*/, {
+                        return [s.createElement(d, {
                             style: D.row,
                             key: "row1"
-                        }, this.renderImage(0, D.rowMedium), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(0, D.rowMedium), s.createElement(d, {
                             style: D.spacer
-                        }), this.renderImage(1, D.rowMedium)), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), this.renderImage(1, D.rowMedium)), s.createElement(d, {
                             style: D.spacer,
                             key: "spacer"
-                        }), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), s.createElement(d, {
                             style: D.row,
                             key: "row2"
-                        }, this.renderImage(2, D.rowMedium), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(2, D.rowMedium), s.createElement(d, {
                             style: D.spacer
                         }), this.renderImage(3, D.rowMedium))];
                     default:
-                        return [Image/*s*/.createElement(StyleSheet/*d*/, {
+                        return [s.createElement(d, {
                             style: D.row,
                             key: "row1"
-                        }, this.renderImage(0, D.rowSmall), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(0, D.rowSmall), s.createElement(d, {
                             style: D.spacerOdd
-                        }), this.renderImage(1, D.rowSmall), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), this.renderImage(1, D.rowSmall), s.createElement(d, {
                             style: D.spacerOdd
-                        }), this.renderImage(2, D.rowSmall)), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), this.renderImage(2, D.rowSmall)), s.createElement(d, {
                             style: D.spacer,
                             key: "spacer"
-                        }), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }), s.createElement(d, {
                             style: D.row,
                             key: "row2"
-                        }, this.renderImage(3, D.rowMedium), Image/*s*/.createElement(StyleSheet/*d*/, {
+                        }, this.renderImage(3, D.rowMedium), s.createElement(d, {
                             style: D.spacer
                         }), this.renderImage(4, D.rowMedium))]
                 }
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.target;
-                if (!global/*e*/ || !global/*e*/.media || flattenStyle/*m*/(global/*e*/.media.edges)) return console.error("Tried to render FBPhotoCollage with invalid media"), Image/*s*/.createElement(StyleSheet/*d*/, null);
+                if (!global/*e*/ || !global/*e*/.media || m(global/*e*/.media.edges)) return console.error("Tried to render FBPhotoCollage with invalid media"), s.createElement(d, null);
                 var require/*t*/ = global/*e*/.media.edges,
                     requireDynamic/*n*/ = null,
                     requireLazy/*r*/ = this.props.modalViewer;
@@ -275,8 +275,8 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                         o = require/*t*/.map(function(global/*e*/) {
                             return global/*e*/.node.image_full
                         });
-                    requireDynamic/*n*/ = Image/*s*/.createElement(requireLazy/*r*/, {
-                        ref: keyOf/*y*/,
+                    requireDynamic/*n*/ = s.createElement(requireLazy/*r*/, {
+                        ref: y,
                         sources: module/*i*/,
                         sourcesHiRes: o,
                         onWillOpen: this.handleWillOpen,
@@ -287,12 +287,12 @@ __d("FBPhotoCollage",["Image","PixelRatio","React","ReactGraphQL","Dimensions","
                         didImgIdxChange: this.imageIdxChanged
                     })
                 }
-                return Image/*s*/.createElement(StyleSheet/*d*/, {
+                return s.createElement(d, {
                     style: D.container
                 }, this.renderInnerViews(), requireDynamic/*n*/)
             }
         }),
-        D = ReactGraphQL/*c*/.create({
+        D = c.create({
             container: {
                 marginBottom: 3,
                 marginLeft: -1 / C,

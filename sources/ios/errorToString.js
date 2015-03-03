@@ -1,27 +1,27 @@
-__d("errorToString",["Platform","stacktrace-parser/index"],function (global/*e*/, require/*Platform/*t*/*/, requireDynamic/*exports/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("errorToString",["Platform","stacktrace-parser/index"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o(global/*e*/) {
-        var require/*Platform/*t*/*/ = global/*e*/.file.split("/"),
-            requireDynamic/*exports/*n*/*/ = require/*Platform/*t*/*/[require/*Platform/*t*/*/.length - 1];
-        return global/*e*/.methodName + "\requireDynamic/*exports/*n*/*/  in " + requireDynamic/*exports/*n*/*/ + ":" + global/*e*/.lineNumber + "\requireDynamic/*exports/*n*/*/"
+        var require/*t*/ = global/*e*/.file.split("/"),
+            requireDynamic/*n*/ = require/*t*/[require/*t*/.length - 1];
+        return global/*e*/.methodName + "\requireDynamic/*n*/  in " + requireDynamic/*n*/ + ":" + global/*e*/.lineNumber + "\requireDynamic/*n*/"
     }
 
-    function a(global/*e*/, require/*Platform/*t*/*/) {
+    function a(global/*e*/, require/*t*/) {
         try {
-            var requireDynamic/*exports/*n*/*/ = global/*e*/.originalPositionFor({
-                line: require/*Platform/*t*/*/.lineNumber,
-                stacktrace-parser/index/*column*/: require/*Platform/*t*/*/.stacktrace-parser/index/*column*/
+            var requireDynamic/*n*/ = global/*e*/.originalPositionFor({
+                line: require/*t*/.lineNumber,
+                column: require/*t*/.column
             });
-            requireDynamic/*exports/*n*/*/ && (require/*Platform/*t*/*/.file = requireDynamic/*exports/*n*/*/.source, require/*Platform/*t*/*/.lineNumber = requireDynamic/*exports/*n*/*/.line, require/*Platform/*t*/*/.stacktrace-parser/index/*column*/ = requireDynamic/*exports/*n*/*/.stacktrace-parser/index/*column*/)
+            requireDynamic/*n*/ && (require/*t*/.file = requireDynamic/*n*/.source, require/*t*/.lineNumber = requireDynamic/*n*/.line, require/*t*/.column = requireDynamic/*n*/.column)
         } catch (requireLazy/*r*/) {}
     }
 
-    function s(global/*e*/, require/*Platform/*t*/*/) {
-        for (var requireDynamic/*exports/*n*/*/ = u.parse(global/*e*/.stack), requireLazy/*r*/ = global/*e*/.framesToPop || 0; requireLazy/*r*/--;) requireDynamic/*exports/*n*/*/.shift();
-        return require/*Platform/*t*/*/ && requireDynamic/*exports/*n*/*/.forEach(a.bind(null, require/*Platform/*t*/*/)), "android" === l.OS ? requireDynamic/*exports/*n*/*/.map(o).join("\requireDynamic/*exports/*n*/*/") : requireDynamic/*exports/*n*/*/
+    function s(global/*e*/, require/*t*/) {
+        for (var requireDynamic/*n*/ = u.parse(global/*e*/.stack), requireLazy/*r*/ = global/*e*/.framesToPop || 0; requireLazy/*r*/--;) requireDynamic/*n*/.shift();
+        return require/*t*/ && requireDynamic/*n*/.forEach(a.bind(null, require/*t*/)), "android" === l.OS ? requireDynamic/*n*/.map(o).join("\requireDynamic/*n*/") : requireDynamic/*n*/
     }
-    var l = require/*Platform/*t*/*/("Platform"),
-        u = require/*Platform/*t*/*/("stacktrace-parser/index");
+    var l = require/*t*/("Platform"),
+        u = require/*t*/("stacktrace-parser/index");
     module/*i*/.exports = s
 });

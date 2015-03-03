@@ -2,32 +2,32 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
     function o() {
         return {
             text: "",
-            exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: [],
-            DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: []
+            inlines: [],
+            blocks: []
         }
     }
 
     function a() {
         return {
             text: y,
-            exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: [p.NONE],
-            DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: []
+            inlines: [p.NONE],
+            blocks: []
         }
     }
 
     function s() {
         return {
             text: _,
-            exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: [p.NONE],
-            DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: []
+            inlines: [p.NONE],
+            blocks: []
         }
     }
 
     function l(global/*e*/) {
         return {
             text: m,
-            exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: [p.NONE],
-            DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: [global/*e*/]
+            inlines: [p.NONE],
+            blocks: [global/*e*/]
         }
     }
     var u = require/*t*/("DocumentCharacters"),
@@ -70,10 +70,10 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
                 return requireDynamic/*n*/ && !requireLazy/*r*/ && (require/*t*/ += requireDynamic/*n*/), require/*t*/
             },
             joinChunks: function(global/*e*/, require/*t*/) {
-                return global/*e*/.text.slice(-1) === m && require/*t*/.text.slice(0, 1) === m && (global/*e*/.text = global/*e*/.text.slice(0, -1), global/*e*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/.pop(), global/*e*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.pop()), global/*e*/.text.slice(-1) !== m || require/*t*/.text !== y && require/*t*/.text !== _ ? {
+                return global/*e*/.text.slice(-1) === m && require/*t*/.text.slice(0, 1) === m && (global/*e*/.text = global/*e*/.text.slice(0, -1), global/*e*/.inlines.pop(), global/*e*/.blocks.pop()), global/*e*/.text.slice(-1) !== m || require/*t*/.text !== y && require/*t*/.text !== _ ? {
                     text: global/*e*/.text + require/*t*/.text,
-                    exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: global/*e*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/.concat(require/*t*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/),
-                    DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: global/*e*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.concat(require/*t*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/)
+                    inlines: global/*e*/.inlines.concat(require/*t*/.inlines),
+                    blocks: global/*e*/.blocks.concat(require/*t*/.blocks)
                 } : global/*e*/
             },
             genFragment: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
@@ -83,8 +83,8 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
                     var p = global/*e*/.textContent;
                     return "" === p.trim() ? a() : {
                         text: p,
-                        exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: h(p.length, require/*t*/),
-                        DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: []
+                        inlines: h(p.length, require/*t*/),
+                        blocks: []
                     }
                 }
                 if ("br" === u) return s();
@@ -105,15 +105,15 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
                     requireLazy/*r*/ = this.genFragment(require/*t*/, 0, "ul", !1, requireDynamic/*n*/);
                 return 0 === requireLazy/*r*/.text.indexOf(m) && (requireLazy/*r*/ = {
                     text: requireLazy/*r*/.text.slice(1),
-                    exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: requireLazy/*r*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/.slice(1),
-                    DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/
-                }), requireLazy/*r*/.text.slice(-1) === m && (requireLazy/*r*/.text = requireLazy/*r*/.text.slice(0, -1), requireLazy/*r*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/ = requireLazy/*r*/.exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/.slice(0, -1), requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.pop()), 0 === requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.length && requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.push(v), requireLazy/*r*/.text.split(m).length === requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.length + 1 && requireLazy/*r*/.DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/.unshift(v), requireLazy/*r*/
+                    inlines: requireLazy/*r*/.inlines.slice(1),
+                    blocks: requireLazy/*r*/.blocks
+                }), requireLazy/*r*/.text.slice(-1) === m && (requireLazy/*r*/.text = requireLazy/*r*/.text.slice(0, -1), requireLazy/*r*/.inlines = requireLazy/*r*/.inlines.slice(0, -1), requireLazy/*r*/.blocks.pop()), 0 === requireLazy/*r*/.blocks.length && requireLazy/*r*/.blocks.push(v), requireLazy/*r*/.text.split(m).length === requireLazy/*r*/.blocks.length + 1 && requireLazy/*r*/.blocks.unshift(v), requireLazy/*r*/
             },
             processText: function(global/*e*/) {
                 return {
                     text: global/*e*/,
-                    exports/*ComposedBlockType/*arrayContains/*getSafeBodyFromHTML/*inlines*/*/*/*/: h(global/*e*/.length, p.NONE),
-                    DocumentCharacters/*ComposedInlineStyle/*fillArray/*blocks*/*/*/: h(global/*e*/.split(m).length, v)
+                    inlines: h(global/*e*/.length, p.NONE),
+                    blocks: h(global/*e*/.split(m).length, v)
                 }
             }
         };

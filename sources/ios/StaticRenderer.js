@@ -1,9 +1,9 @@
 __d("StaticRenderer",["React"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("React"),
-        exports/*a*/ = o.createClass({
+        a = o.createClass({
             displayName: "StaticRenderer",
-            React/*propTypes*/: {
+            propTypes: {
                 shouldUpdate: o.PropTypes.bool.isRequired,
                 render: o.PropTypes.func.isRequired
             },
@@ -14,5 +14,5 @@ __d("StaticRenderer",["React"],function (global/*e*/, require/*t*/, requireDynam
                 return this.props.render()
             }
         });
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

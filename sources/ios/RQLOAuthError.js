@@ -2,7 +2,7 @@ __d("RQLOAuthError",["RQLError"],function (global/*e*/, require/*t*/, requireDyn
     "use strict";
 
     function o() {
-        this.message = "OAuth Exception", exports/*this.name*/ = "RQLOAuthError", RQLError/*this.type*/ = "mustfix"
+        this.message = "OAuth Exception", this.name = "RQLOAuthError", this.type = "mustfix"
     }
     var a = require/*t*/("RQLError");
     for (var s in a) a.hasOwnProperty(s) && (o[s] = a[s]);

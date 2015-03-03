@@ -3,7 +3,7 @@ __d("ReactPropTypeLocationNames",[],function (global/*e*/, require/*t*/, require
     var o = {};
     __DEV__ && (o = {
         prop: "prop",
-        exports/*context*/: "exports/*context*/",
-        childContext: "child exports/*context*/"
+        context: "context",
+        childContext: "child context"
     }), module/*i*/.exports = o
 });

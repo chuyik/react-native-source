@@ -1,36 +1,36 @@
-__d("GraphPhotoUpload",["Map","RCTDeviceEventEmitter","NativeModules","mapObject"],Map/*function*/ (global/*e*/, require/*t*/, requireDynamic/*RCTDeviceEventEmitter/*n*/*/, requireLazy/*NativeModules/*r*/*/, module/*i*/) {
+__d("GraphPhotoUpload",["Map","RCTDeviceEventEmitter","NativeModules","mapObject"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    Map/*function*/ mapObject/*o*/() {
-        c || (c = new a, exports/*s.addListener*/("GraphPhotoUploadDidProgress", Map/*function*/(global/*e*/) {
+    function o() {
+        c || (c = new a, s.addListener("GraphPhotoUploadDidProgress", function(global/*e*/) {
             var require/*t*/ = global/*e*/,
-                requireDynamic/*RCTDeviceEventEmitter/*n*/*/ = require/*t*/.id,
-                requireLazy/*NativeModules/*r*/*/ = require/*t*/.progress;
-            if (c.has(requireDynamic/*RCTDeviceEventEmitter/*n*/*/)) {
-                var module/*i*/ = c.get(requireDynamic/*RCTDeviceEventEmitter/*n*/*/),
-                    mapObject/*o*/ = module/*i*/.onProgress;
-                mapObject/*o*/ && mapObject/*o*/(requireLazy/*NativeModules/*r*/*/)
+                requireDynamic/*n*/ = require/*t*/.id,
+                requireLazy/*r*/ = require/*t*/.progress;
+            if (c.has(requireDynamic/*n*/)) {
+                var module/*i*/ = c.get(requireDynamic/*n*/),
+                    o = module/*i*/.onProgress;
+                o && o(requireLazy/*r*/)
             }
-        }), exports/*s.addListener*/("GraphPhotoUploadDidFail", Map/*function*/(global/*e*/) {
+        }), s.addListener("GraphPhotoUploadDidFail", function(global/*e*/) {
             var require/*t*/ = global/*e*/,
-                requireDynamic/*RCTDeviceEventEmitter/*n*/*/ = require/*t*/.id,
-                requireLazy/*NativeModules/*r*/*/ = require/*t*/.error;
-            if (c.has(requireDynamic/*RCTDeviceEventEmitter/*n*/*/)) {
-                var module/*i*/ = c.get(requireDynamic/*RCTDeviceEventEmitter/*n*/*/),
-                    mapObject/*o*/ = module/*i*/.onFailure;
-                mapObject/*o*/ && mapObject/*o*/(requireLazy/*NativeModules/*r*/*/)
+                requireDynamic/*n*/ = require/*t*/.id,
+                requireLazy/*r*/ = require/*t*/.error;
+            if (c.has(requireDynamic/*n*/)) {
+                var module/*i*/ = c.get(requireDynamic/*n*/),
+                    o = module/*i*/.onFailure;
+                o && o(requireLazy/*r*/)
             }
-            c.delete(requireDynamic/*RCTDeviceEventEmitter/*n*/*/)
-        }), exports/*s.addListener*/("GraphPhotoUploadDidSucceed", Map/*function*/(global/*e*/) {
+            c.delete(requireDynamic/*n*/)
+        }), s.addListener("GraphPhotoUploadDidSucceed", function(global/*e*/) {
             var require/*t*/ = global/*e*/,
-                requireDynamic/*RCTDeviceEventEmitter/*n*/*/ = require/*t*/.id,
-                requireLazy/*NativeModules/*r*/*/ = require/*t*/.response;
-            if (c.has(requireDynamic/*RCTDeviceEventEmitter/*n*/*/)) {
-                var module/*i*/ = c.get(requireDynamic/*RCTDeviceEventEmitter/*n*/*/),
-                    mapObject/*o*/ = module/*i*/.onSuccess;
-                mapObject/*o*/ && mapObject/*o*/(requireLazy/*NativeModules/*r*/*/)
+                requireDynamic/*n*/ = require/*t*/.id,
+                requireLazy/*r*/ = require/*t*/.response;
+            if (c.has(requireDynamic/*n*/)) {
+                var module/*i*/ = c.get(requireDynamic/*n*/),
+                    o = module/*i*/.onSuccess;
+                o && o(requireLazy/*r*/)
             }
-            c.delete(requireDynamic/*RCTDeviceEventEmitter/*n*/*/)
+            c.delete(requireDynamic/*n*/)
         }))
     }
     var a = require/*t*/("Map"),
@@ -39,21 +39,21 @@ __d("GraphPhotoUpload",["Map","RCTDeviceEventEmitter","NativeModules","mapObject
         u = require/*t*/("mapObject"),
         c = null,
         p = {
-            upload: Map/*function*/(global/*e*/, require/*t*/, requireDynamic/*RCTDeviceEventEmitter/*n*/*/) {
-                mapObject/*o*/();
-                var requireLazy/*NativeModules/*r*/*/ = !1,
-                    module/*i*/ = u(requireDynamic/*RCTDeviceEventEmitter/*n*/*/, Map/*function*/(global/*e*/) {
-                        return Map/*function*/() {
-                            return global/*e*/ && !requireLazy/*NativeModules/*r*/*/ ? global/*e*/.apply(null, arguments) : void 0
+            upload: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                o();
+                var requireLazy/*r*/ = !1,
+                    module/*i*/ = u(requireDynamic/*n*/, function(global/*e*/) {
+                        return function() {
+                            return global/*e*/ && !requireLazy/*r*/ ? global/*e*/.apply(null, arguments) : void 0
                         }
                     });
-                return l.upload(global/*e*/, require/*t*/, Map/*function*/(global/*e*/) {
+                return l.upload(global/*e*/, require/*t*/, function(global/*e*/) {
                     module/*i*/.onFailure(global/*e*/)
-                }, Map/*function*/(global/*e*/) {
-                    requireLazy/*NativeModules/*r*/*/ || c.set(global/*e*/.id, module/*i*/)
+                }, function(global/*e*/) {
+                    requireLazy/*r*/ || c.set(global/*e*/.id, module/*i*/)
                 }), {
-                    abort: Map/*function*/() {
-                        requireLazy/*NativeModules/*r*/*/ = !0
+                    abort: function() {
+                        requireLazy/*r*/ = !0
                     }
                 }
             }

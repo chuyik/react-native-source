@@ -1,38 +1,38 @@
 __d("THCommentPhotoAttachmentPreview",["Image","ImageStylePropTypes","React","StyleSheet","StyleSheetPropType","TouchableOpacity","View","ViewStylePropTypes","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("Image"),
-        exports/*a*/ = require/*t*/("ImageStylePropTypes"),
-        Image/*s*/ = require/*t*/("React"),
-        ImageStylePropTypes/*l*/ = require/*t*/("StyleSheet"),
-        React/*u*/ = require/*t*/("StyleSheetPropType"),
-        StyleSheet/*c*/ = require/*t*/("TouchableOpacity"),
-        StyleSheetPropType/*p*/ = require/*t*/("View"),
-        TouchableOpacity/*d*/ = require/*t*/("ViewStylePropTypes"),
-        View/*h*/ = require/*t*/("ix"),
-        ViewStylePropTypes/*f*/ = Image/*s*/.createClass({
+        a = require/*t*/("ImageStylePropTypes"),
+        s = require/*t*/("React"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("StyleSheetPropType"),
+        c = require/*t*/("TouchableOpacity"),
+        p = require/*t*/("View"),
+        d = require/*t*/("ViewStylePropTypes"),
+        h = require/*t*/("ix"),
+        f = s.createClass({
             displayName: "THCommentPhotoAttachmentPreview",
-            ix/*propTypes*/: {
-                photoSource: Image/*s*/.PropTypes.object,
-                onRemoveAttachment: Image/*s*/.PropTypes.func,
-                style: React/*u*/(exports/*a*/),
-                wrapperStyle: React/*u*/(TouchableOpacity/*d*/)
+            propTypes: {
+                photoSource: s.PropTypes.object,
+                onRemoveAttachment: s.PropTypes.func,
+                style: u(a),
+                wrapperStyle: u(d)
             },
             render: function() {
-                var global/*e*/ = this.props.onRemoveAttachment ? Image/*s*/.createElement(StyleSheet/*c*/, {
+                var global/*e*/ = this.props.onRemoveAttachment ? s.createElement(c, {
                     onPress: this.props.onRemoveAttachment
-                }, Image/*s*/.createElement(o, {
-                    source: View/*h*/("thAttachRemove"),
+                }, s.createElement(o, {
+                    source: h("thAttachRemove"),
                     style: m.xIcon
                 })) : null;
-                return Image/*s*/.createElement(StyleSheetPropType/*p*/, {
+                return s.createElement(p, {
                     style: this.props.wrapperStyle
-                }, Image/*s*/.createElement(o, {
+                }, s.createElement(o, {
                     source: this.props.photoSource,
                     style: this.props.style
                 }), global/*e*/)
             }
         }),
-        m = ImageStylePropTypes/*l*/.create({
+        m = l.create({
             xIcon: {
                 width: 20,
                 height: 20,
@@ -42,5 +42,5 @@ __d("THCommentPhotoAttachmentPreview",["Image","ImageStylePropTypes","React","St
                 backgroundColor: "transparent"
             }
         });
-    module/*i*/.exports = ViewStylePropTypes/*f*/
+    module/*i*/.exports = f
 });

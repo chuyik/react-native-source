@@ -1,30 +1,30 @@
-__d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendingPostsApp","GroupsPostSearchApp","GroupsReportedPostsApp","DliteCatalystProfiler"],function (global/*e*/, require/*GroupsPostSearchApp/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendingPostsApp","GroupsPostSearchApp","GroupsReportedPostsApp","DliteCatalystProfiler"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*GroupsPostSearchApp/*t*/*/("Bundler");
+    var o = require/*t*/("Bundler");
     o.registerConfig([{
         appKey: "GroupsFeedApp",
-        exports/*Bundler/*GroupsFeedApp/*GroupsPermalinkApp/*GroupsPendingPostsApp/*component*/*/*/*/*/: function() {
-            return require/*GroupsPostSearchApp/*t*/*/("GroupsFeedApp")
+        component: function() {
+            return require/*t*/("GroupsFeedApp")
         }
     }, {
         appKey: "GroupsPermalinkApp",
-        exports/*Bundler/*GroupsFeedApp/*GroupsPermalinkApp/*GroupsPendingPostsApp/*component*/*/*/*/*/: function() {
-            return require/*GroupsPostSearchApp/*t*/*/("GroupsPermalinkApp")
+        component: function() {
+            return require/*t*/("GroupsPermalinkApp")
         }
     }, {
         appKey: "GroupsPendingPostsApp",
-        exports/*Bundler/*GroupsFeedApp/*GroupsPermalinkApp/*GroupsPendingPostsApp/*component*/*/*/*/*/: function() {
-            return require/*GroupsPostSearchApp/*t*/*/("GroupsPendingPostsApp")
+        component: function() {
+            return require/*t*/("GroupsPendingPostsApp")
         }
     }, {
         appKey: "GroupsPostSearchApp",
-        exports/*Bundler/*GroupsFeedApp/*GroupsPermalinkApp/*GroupsPendingPostsApp/*component*/*/*/*/*/: function() {
-            return require/*GroupsPostSearchApp/*t*/*/("GroupsPostSearchApp")
+        component: function() {
+            return require/*t*/("GroupsPostSearchApp")
         }
     }, {
         appKey: "GroupsReportedPostsApp",
-        exports/*Bundler/*GroupsFeedApp/*GroupsPermalinkApp/*GroupsPendingPostsApp/*component*/*/*/*/*/: function() {
-            return require/*GroupsPostSearchApp/*t*/*/("GroupsReportedPostsApp")
+        component: function() {
+            return require/*t*/("GroupsReportedPostsApp")
         }
-    }]), require/*GroupsPostSearchApp/*t*/*/("DliteCatalystProfiler").install(), module/*i*/.exports = o
+    }]), require/*t*/("DliteCatalystProfiler").install(), module/*i*/.exports = o
 });

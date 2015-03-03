@@ -1,4 +1,4 @@
-__d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*/, requireLazy/*repeatString/*r*/*/, module/*i*/) {
+__d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o() {
         return "[.,+*?$|#{}()'\\^\\-\\[\\]\\\\\\/!@%\"~=<>_:;・、。〈-】〔-〟：-？！-／［-｀｛-･⸮؟٪-٬؛،؍﴾﴿᠁।၊။‐-‧‰-⁞¡-±´-¸º»¿]"
     }
@@ -9,24 +9,24 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
 
     function s(global/*e*/) {
         global/*e*/ = global/*e*/.toLowerCase();
-        for (var require/*t*/ = "", requireDynamic/*exports/*n*/*/ = "", requireLazy/*repeatString/*r*/*/ = global/*e*/.length; requireLazy/*repeatString/*r*/*/--;) requireDynamic/*exports/*n*/*/ = global/*e*/.charAt(requireLazy/*repeatString/*r*/*/), require/*t*/ = (m[requireDynamic/*exports/*n*/*/] || requireDynamic/*exports/*n*/*/) + require/*t*/;
+        for (var require/*t*/ = "", requireDynamic/*n*/ = "", requireLazy/*r*/ = global/*e*/.length; requireLazy/*r*/--;) requireDynamic/*n*/ = global/*e*/.charAt(requireLazy/*r*/), require/*t*/ = (m[requireDynamic/*n*/] || requireDynamic/*n*/) + require/*t*/;
         return require/*t*/.replace(d, " ")
     }
 
     function l(global/*e*/) {
-        for (var require/*t*/ = [], requireDynamic/*exports/*n*/*/ = h.exec(global/*e*/); requireDynamic/*exports/*n*/*/;) requireDynamic/*exports/*n*/*/ = requireDynamic/*exports/*n*/*/[0], require/*t*/.push(requireDynamic/*exports/*n*/*/), requireDynamic/*exports/*n*/*/ = h.exec(global/*e*/);
+        for (var require/*t*/ = [], requireDynamic/*n*/ = h.exec(global/*e*/); requireDynamic/*n*/;) requireDynamic/*n*/ = requireDynamic/*n*/[0], require/*t*/.push(requireDynamic/*n*/), requireDynamic/*n*/ = h.exec(global/*e*/);
         return require/*t*/
     }
 
     function u(global/*e*/, require/*t*/) {
         if (!S.hasOwnProperty(global/*e*/)) {
-            var requireDynamic/*exports/*n*/*/ = s(global/*e*/),
-                requireLazy/*repeatString/*r*/*/ = a(requireDynamic/*exports/*n*/*/);
+            var requireDynamic/*n*/ = s(global/*e*/),
+                requireLazy/*r*/ = a(requireDynamic/*n*/);
             S[global/*e*/] = {
                 value: global/*e*/,
-                flatValue: requireDynamic/*exports/*n*/*/,
-                tokens: l(requireLazy/*repeatString/*r*/*/),
-                isPrefixQuery: requireLazy/*repeatString/*r*/*/ && " " != requireLazy/*repeatString/*r*/*/[requireLazy/*repeatString/*r*/*/.length - 1]
+                flatValue: requireDynamic/*n*/,
+                tokens: l(requireLazy/*r*/),
+                isPrefixQuery: requireLazy/*r*/ && " " != requireLazy/*r*/[requireLazy/*r*/.length - 1]
             }
         }
         return require/*t*/ && "undefined" == typeof S[global/*e*/].sortedTokens && (S[global/*e*/].sortedTokens = S[global/*e*/].tokens.slice(), S[global/*e*/].sortedTokens.sort(function(global/*e*/, require/*t*/) {
@@ -34,16 +34,16 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
         })), S[global/*e*/]
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*exports/*n*/*/) {
-        var requireLazy/*repeatString/*r*/*/ = u(require/*t*/, "prefix" == global/*e*/),
-            module/*i*/ = "prefix" == global/*e*/ ? requireLazy/*repeatString/*r*/*/.sortedTokens : requireLazy/*repeatString/*r*/*/.tokens,
-            o = u(requireDynamic/*exports/*n*/*/).tokens,
+    function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        var requireLazy/*r*/ = u(require/*t*/, "prefix" == global/*e*/),
+            module/*i*/ = "prefix" == global/*e*/ ? requireLazy/*r*/.sortedTokens : requireLazy/*r*/.tokens,
+            o = u(requireDynamic/*n*/).tokens,
             a = {},
-            s = requireLazy/*repeatString/*r*/*/.isPrefixQuery && "query" == global/*e*/ ? module/*i*/.length - 1 : null,
-            l = function(require/*t*/, requireDynamic/*exports/*n*/*/) {
-                for (var requireLazy/*repeatString/*r*/*/ = 0; requireLazy/*repeatString/*r*/*/ < o.length; ++requireLazy/*repeatString/*r*/*/) {
-                    var module/*i*/ = o[requireLazy/*repeatString/*r*/*/];
-                    if (!a[requireLazy/*repeatString/*r*/*/] && (module/*i*/ == require/*t*/ || ("query" == global/*e*/ && requireDynamic/*exports/*n*/*/ === s || "prefix" == global/*e*/) && 0 === module/*i*/.indexOf(require/*t*/))) return a[requireLazy/*repeatString/*r*/*/] = !0
+            s = requireLazy/*r*/.isPrefixQuery && "query" == global/*e*/ ? module/*i*/.length - 1 : null,
+            l = function(require/*t*/, requireDynamic/*n*/) {
+                for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < o.length; ++requireLazy/*r*/) {
+                    var module/*i*/ = o[requireLazy/*r*/];
+                    if (!a[requireLazy/*r*/] && (module/*i*/ == require/*t*/ || ("query" == global/*e*/ && requireDynamic/*n*/ === s || "prefix" == global/*e*/) && 0 === module/*i*/.indexOf(require/*t*/))) return a[requireLazy/*r*/] = !0
                 }
                 return !1
             };
@@ -68,10 +68,10 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
             k: "к ĸ ķ",
             l: "л ľ ĺ ŀ ł ļ",
             m: "м",
-            requireDynamic/*exports/*n*/*/: "н ñ ň ŉ ŋ ņ",
+            requireDynamic/*n*/: "н ñ ň ŉ ŋ ņ",
             o: "о ø ö õ ô ó ò",
             p: "п",
-            requireLazy/*repeatString/*r*/*/: "р ř ŕ",
+            requireLazy/*r*/: "р ř ŕ",
             s: "с ş š ſ",
             require/*t*/: "т ť ŧ þ",
             u: "у ю ü û ú ù ů ū",
@@ -102,21 +102,21 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
     __DEV__ && (b.generateFlattenInfo = function() {
         var global/*e*/ = {},
             require/*t*/ = "",
-            requireDynamic/*exports/*n*/*/ = "";
-        for (var requireLazy/*repeatString/*r*/*/ in m) {
-            global/*e*/[requireLazy/*repeatString/*r*/*/] = m[requireLazy/*repeatString/*r*/*/];
-            var module/*i*/ = requireLazy/*repeatString/*r*/*/.toUpperCase();
-            /[A-Z]/.test(module/*i*/) || (global/*e*/[module/*i*/] = global/*e*/[requireLazy/*repeatString/*r*/*/])
+            requireDynamic/*n*/ = "";
+        for (var requireLazy/*r*/ in m) {
+            global/*e*/[requireLazy/*r*/] = m[requireLazy/*r*/];
+            var module/*i*/ = requireLazy/*r*/.toUpperCase();
+            /[A-Z]/.test(module/*i*/) || (global/*e*/[module/*i*/] = global/*e*/[requireLazy/*r*/])
         }
         for (var o in global/*e*/) {
             var a = o.charCodeAt(0).toString(16),
                 s = "\\u" + p("0", 4 - a.length) + a;
-            require/*t*/ += s, requireDynamic/*exports/*n*/*/ += global/*e*/[o]
+            require/*t*/ += s, requireDynamic/*n*/ += global/*e*/[o]
         }
         return {
             map: global/*e*/,
             input: require/*t*/,
-            output: requireDynamic/*exports/*n*/*/
+            output: requireDynamic/*n*/
         }
     }), module/*i*/.exports = b
 });

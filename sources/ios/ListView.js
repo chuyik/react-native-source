@@ -1,39 +1,39 @@
 __d("ListView",["ListViewDataSource","React","NativeModules","ScrollView","ScrollResponder","StaticRenderer","TimerMixin","logError","merge","isEmpty"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ListViewDataSource"),
-        exports/*a*/ = require/*t*/("React"),
-        ListViewDataSource/*s*/ = require/*t*/("NativeModules").RKUIManager,
-        React/*l*/ = require/*t*/("ScrollView"),
-        NativeModules/*u*/ = require/*t*/("ScrollResponder"),
-        ScrollView/*c*/ = require/*t*/("StaticRenderer"),
-        ScrollResponder/*p*/ = require/*t*/("TimerMixin"),
-        StaticRenderer/*d*/ = require/*t*/("logError"),
-        TimerMixin/*h*/ = require/*t*/("merge"),
-        logError/*f*/ = require/*t*/("isEmpty"),
-        merge/*m*/ = exports/*a*/.PropTypes,
-        isEmpty/*g*/ = 1,
+        a = require/*t*/("React"),
+        s = require/*t*/("NativeModules").RKUIManager,
+        l = require/*t*/("ScrollView"),
+        u = require/*t*/("ScrollResponder"),
+        c = require/*t*/("StaticRenderer"),
+        p = require/*t*/("TimerMixin"),
+        d = require/*t*/("logError"),
+        h = require/*t*/("merge"),
+        f = require/*t*/("isEmpty"),
+        m = a.PropTypes,
+        g = 1,
         _ = 10,
         y = 1e3,
         v = 1e3,
         S = 50,
         b = 20,
         R = "listviewscroll",
-        w = exports/*a*/.createClass({
+        w = a.createClass({
             displayName: "ListView",
-            mixins: [NativeModules/*u*/.Mixin, ScrollResponder/*p*/],
-            propTypes: TimerMixin/*h*/(React/*l*/.PropTypes, {
-                dataSource: merge/*m*/.instanceOf(o).isRequired,
-                renderRow: merge/*m*/.func.isRequired,
-                initialListSize: merge/*m*/.number,
-                onEndReached: merge/*m*/.func,
-                onEndReachedThreshold: merge/*m*/.number,
-                pageSize: merge/*m*/.number,
-                renderFooter: merge/*m*/.func,
-                renderHeader: merge/*m*/.func,
-                renderSectionHeader: merge/*m*/.func,
-                scrollRenderAheadDistance: exports/*a*/.PropTypes.number,
-                onChangeVisibleRows: exports/*a*/.PropTypes.func,
-                removeClippedSubviews: exports/*a*/.PropTypes.bool
+            mixins: [u.Mixin, p],
+            propTypes: h(l.PropTypes, {
+                dataSource: m.instanceOf(o).isRequired,
+                renderRow: m.func.isRequired,
+                initialListSize: m.number,
+                onEndReached: m.func,
+                onEndReachedThreshold: m.number,
+                pageSize: m.number,
+                renderFooter: m.func,
+                renderHeader: m.func,
+                renderSectionHeader: m.func,
+                scrollRenderAheadDistance: a.PropTypes.number,
+                onChangeVisibleRows: a.PropTypes.func,
+                removeClippedSubviews: a.PropTypes.bool
             }),
             getMetrics: function() {
                 return {
@@ -52,7 +52,7 @@ __d("ListView",["ListViewDataSource","React","NativeModules","ScrollView","Scrol
             getDefaultProps: function() {
                 return {
                     initialListSize: _,
-                    pageSize: isEmpty/*g*/,
+                    pageSize: g,
                     scrollRenderAheadDistance: y,
                     onEndReachedThreshold: v
                 }
@@ -81,42 +81,42 @@ __d("ListView",["ListViewDataSource","React","NativeModules","ScrollView","Scrol
                 })
             },
             render: function() {
-                for (var global/*e*/ = [], require/*t*/ = this.props.dataSource, requireDynamic/*n*/ = require/*t*/.rowIdentities, requireLazy/*r*/ = 0, module/*i*/ = [], o = this.props.renderHeader && this.props.renderHeader(), ListViewDataSource/*s*/ = this.props.renderFooter && this.props.renderFooter(), NativeModules/*u*/ = o ? 1 : 0, ScrollResponder/*p*/ = 0; ScrollResponder/*p*/ < requireDynamic/*n*/.length; ScrollResponder/*p*/++) {
-                    var StaticRenderer/*d*/ = require/*t*/.sectionIdentities[ScrollResponder/*p*/],
-                        logError/*f*/ = requireDynamic/*n*/[ScrollResponder/*p*/];
-                    if (0 !== logError/*f*/.length) {
+                for (var global/*e*/ = [], require/*t*/ = this.props.dataSource, requireDynamic/*n*/ = require/*t*/.rowIdentities, requireLazy/*r*/ = 0, module/*i*/ = [], o = this.props.renderHeader && this.props.renderHeader(), s = this.props.renderFooter && this.props.renderFooter(), u = o ? 1 : 0, p = 0; p < requireDynamic/*n*/.length; p++) {
+                    var d = require/*t*/.sectionIdentities[p],
+                        f = requireDynamic/*n*/[p];
+                    if (0 !== f.length) {
                         if (this.props.renderSectionHeader) {
-                            var merge/*m*/ = requireLazy/*r*/ >= this.state.prevRenderedRowsCount && require/*t*/.sectionHeaderShouldUpdate(ScrollResponder/*p*/);
-                            global/*e*/.push(exports/*a*/.createElement(ScrollView/*c*/, {
-                                key: "s_" + StaticRenderer/*d*/,
-                                shouldUpdate: !!merge/*m*/,
-                                render: this.props.renderSectionHeader.bind(null, require/*t*/.getSectionHeaderData(ScrollResponder/*p*/), StaticRenderer/*d*/)
-                            })), module/*i*/.push(NativeModules/*u*/++)
+                            var m = requireLazy/*r*/ >= this.state.prevRenderedRowsCount && require/*t*/.sectionHeaderShouldUpdate(p);
+                            global/*e*/.push(a.createElement(c, {
+                                key: "s_" + d,
+                                shouldUpdate: !!m,
+                                render: this.props.renderSectionHeader.bind(null, require/*t*/.getSectionHeaderData(p), d)
+                            })), module/*i*/.push(u++)
                         }
-                        for (var isEmpty/*g*/ = 0; isEmpty/*g*/ < logError/*f*/.length; isEmpty/*g*/++) {
-                            var _ = logError/*f*/[isEmpty/*g*/],
-                                y = StaticRenderer/*d*/ + _,
-                                v = requireLazy/*r*/ >= this.state.prevRenderedRowsCount && require/*t*/.rowShouldUpdate(ScrollResponder/*p*/, isEmpty/*g*/),
-                                b = exports/*a*/.createElement(ScrollView/*c*/, {
+                        for (var g = 0; g < f.length; g++) {
+                            var _ = f[g],
+                                y = d + _,
+                                v = requireLazy/*r*/ >= this.state.prevRenderedRowsCount && require/*t*/.rowShouldUpdate(p, g),
+                                b = a.createElement(c, {
                                     key: "r_" + y,
                                     shouldUpdate: !!v,
-                                    render: this.props.renderRow.bind(null, require/*t*/.getRowData(ScrollResponder/*p*/, isEmpty/*g*/), StaticRenderer/*d*/, _)
+                                    render: this.props.renderRow.bind(null, require/*t*/.getRowData(p, g), d, _)
                                 });
-                            if (global/*e*/.push(b), NativeModules/*u*/++, ++requireLazy/*r*/ === this.state.curRenderedRowsCount) break
+                            if (global/*e*/.push(b), u++, ++requireLazy/*r*/ === this.state.curRenderedRowsCount) break
                         }
                         if (requireLazy/*r*/ >= this.state.curRenderedRowsCount) break
                     }
                 }
-                var w = TimerMixin/*h*/(this.props, {
+                var w = h(this.props, {
                     onScroll: this._onScroll,
                     stickyHeaderIndices: module/*i*/
                 });
-                return w.throttleScrollCallbackMS || (w.throttleScrollCallbackMS = S), exports/*a*/.createElement(React/*l*/, Object.assign({}, w, {
+                return w.throttleScrollCallbackMS || (w.throttleScrollCallbackMS = S), a.createElement(l, Object.assign({}, w, {
                     ref: R
-                }), o, global/*e*/, ListViewDataSource/*s*/)
+                }), o, global/*e*/, s)
             },
             _measureAndUpdateScrollProps: function() {
-                ListViewDataSource/*s*/.measureLayout(this.refs[R].getInnerViewNode(), this.refs[R].getNodeHandle(), StaticRenderer/*d*/, this._setScrollContentHeight), ListViewDataSource/*s*/.measureLayoutRelativeToParent(this.refs[R].getNodeHandle(), StaticRenderer/*d*/, this._setScrollVisibleHeight)
+                s.measureLayout(this.refs[R].getInnerViewNode(), this.refs[R].getNodeHandle(), d, this._setScrollContentHeight), s.measureLayoutRelativeToParent(this.refs[R].getNodeHandle(), d, this._setScrollVisibleHeight)
             },
             _setScrollContentHeight: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
                 this.scrollProperties.contentHeight = requireLazy/*r*/
@@ -148,28 +148,28 @@ __d("ListView",["ListViewDataSource","React","NativeModules","ScrollView","Scrol
                 if (this.props.onChangeVisibleRows) {
                     var require/*t*/ = global/*e*/ && global/*e*/.nativeEvent.updatedChildFrames;
                     require/*t*/ && require/*t*/.forEach(function(global/*e*/) {
-                        this._childFrames[global/*e*/.index] = TimerMixin/*h*/(global/*e*/)
+                        this._childFrames[global/*e*/.index] = h(global/*e*/)
                     }.bind(this));
-                    for (var requireDynamic/*n*/ = this.props.dataSource, requireLazy/*r*/ = this.scrollProperties.offsetY, module/*i*/ = requireLazy/*r*/ + this.scrollProperties.visibleHeight, o = requireDynamic/*n*/.rowIdentities, exports/*a*/ = this.props.renderHeader && this.props.renderHeader(), ListViewDataSource/*s*/ = exports/*a*/ ? 1 : 0, React/*l*/ = !1, NativeModules/*u*/ = {}, ScrollView/*c*/ = 0; ScrollView/*c*/ < o.length; ScrollView/*c*/++) {
-                        var ScrollResponder/*p*/ = o[ScrollView/*c*/];
-                        if (0 !== ScrollResponder/*p*/.length) {
-                            var StaticRenderer/*d*/ = requireDynamic/*n*/.sectionIdentities[ScrollView/*c*/];
-                            this.props.renderSectionHeader && ListViewDataSource/*s*/++;
-                            var merge/*m*/ = this._visibleRows[StaticRenderer/*d*/];
-                            merge/*m*/ || (merge/*m*/ = {});
-                            for (var isEmpty/*g*/ = 0; isEmpty/*g*/ < ScrollResponder/*p*/.length; isEmpty/*g*/++) {
-                                var _ = ScrollResponder/*p*/[isEmpty/*g*/],
-                                    y = this._childFrames[ListViewDataSource/*s*/];
-                                if (ListViewDataSource/*s*/++, !y) break;
-                                var v = merge/*m*/[_],
+                    for (var requireDynamic/*n*/ = this.props.dataSource, requireLazy/*r*/ = this.scrollProperties.offsetY, module/*i*/ = requireLazy/*r*/ + this.scrollProperties.visibleHeight, o = requireDynamic/*n*/.rowIdentities, a = this.props.renderHeader && this.props.renderHeader(), s = a ? 1 : 0, l = !1, u = {}, c = 0; c < o.length; c++) {
+                        var p = o[c];
+                        if (0 !== p.length) {
+                            var d = requireDynamic/*n*/.sectionIdentities[c];
+                            this.props.renderSectionHeader && s++;
+                            var m = this._visibleRows[d];
+                            m || (m = {});
+                            for (var g = 0; g < p.length; g++) {
+                                var _ = p[g],
+                                    y = this._childFrames[s];
+                                if (s++, !y) break;
+                                var v = m[_],
                                     S = y.y,
                                     b = S + y.height;
-                                S > module/*i*/ || requireLazy/*r*/ > b ? v && (React/*l*/ = !0, delete merge/*m*/[_], NativeModules/*u*/[StaticRenderer/*d*/] || (NativeModules/*u*/[StaticRenderer/*d*/] = {}), NativeModules/*u*/[StaticRenderer/*d*/][_] = !1) : v || (React/*l*/ = !0, merge/*m*/[_] = !0, NativeModules/*u*/[StaticRenderer/*d*/] || (NativeModules/*u*/[StaticRenderer/*d*/] = {}), NativeModules/*u*/[StaticRenderer/*d*/][_] = !0)
+                                S > module/*i*/ || requireLazy/*r*/ > b ? v && (l = !0, delete m[_], u[d] || (u[d] = {}), u[d][_] = !1) : v || (l = !0, m[_] = !0, u[d] || (u[d] = {}), u[d][_] = !0)
                             }
-                            logError/*f*/(merge/*m*/) ? this._visibleRows[StaticRenderer/*d*/] && delete this._visibleRows[StaticRenderer/*d*/] : this._visibleRows[StaticRenderer/*d*/] = merge/*m*/
+                            f(m) ? this._visibleRows[d] && delete this._visibleRows[d] : this._visibleRows[d] = m
                         }
                     }
-                    React/*l*/ && this.props.onChangeVisibleRows(this._visibleRows, NativeModules/*u*/)
+                    l && this.props.onChangeVisibleRows(this._visibleRows, u)
                 }
             },
             _onScroll: function(global/*e*/) {

@@ -1,8 +1,8 @@
 __d("DocumentCommands",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     var o = require/*t*/("keyMirror"),
-        exports/*a*/ = o({
+        a = o({
             UNDO: !0,
-            keyMirror/*REDO*/: !0,
+            REDO: !0,
             DELETE: !0,
             DELETE_WORD: !0,
             DELETE_TO_END_OF_BLOCK: !0,
@@ -18,5 +18,5 @@ __d("DocumentCommands",["keyMirror"],function (global/*e*/, require/*t*/, requir
             MOVE_SELECTION_TO_START_OF_BLOCK: !0,
             MOVE_SELECTION_TO_END_OF_BLOCK: !0
         });
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

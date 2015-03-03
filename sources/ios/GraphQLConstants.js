@@ -2,7 +2,7 @@ __d("GraphQLConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n
     "use strict";
     var o = {
         CHECKIN_SEARCH_QUERY: "checkin_search_query",
-        exports/*CLIENT_SESSION*/: "client_session",
+        CLIENT_SESSION: "client_session",
         CLIENT_SESSION_ID: "client_session_id",
         CURSOR: "cursor",
         EDGES: "edges",

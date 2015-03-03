@@ -2,7 +2,7 @@ __d("GraphQLEntityType",[],function (global/*e*/, require/*t*/, requireDynamic/*
     "use strict";
     var o = {
         USER: "User",
-        exports/*PAGE*/: "Page"
+        PAGE: "Page"
     };
     module/*i*/.exports = o
 });

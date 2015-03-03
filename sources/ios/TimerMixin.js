@@ -1,17 +1,17 @@
-__d("TimerMixin",[],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TimerMixin",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/) {
+    var o = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
             return function(requireLazy/*r*/, module/*i*/) {
                 var o = global/*e*/(function() {
-                    require/*exports/*t*/*/.call(this, o), requireLazy/*r*/.apply(this, arguments)
+                    require/*t*/.call(this, o), requireLazy/*r*/.apply(this, arguments)
                 }.bind(this), module/*i*/);
                 return this[requireDynamic/*n*/] ? this[requireDynamic/*n*/].push(o) : this[requireDynamic/*n*/] = [o], o
             }
         },
-        a = function(global/*e*/, require/*exports/*t*/*/) {
+        a = function(global/*e*/, require/*t*/) {
             return function(requireDynamic/*n*/) {
-                if (this[require/*exports/*t*/*/]) {
-                    var requireLazy/*r*/ = this[require/*exports/*t*/*/].indexOf(requireDynamic/*n*/); - 1 !== requireLazy/*r*/ && this[require/*exports/*t*/*/].splice(requireLazy/*r*/, 1)
+                if (this[require/*t*/]) {
+                    var requireLazy/*r*/ = this[require/*t*/].indexOf(requireDynamic/*n*/); - 1 !== requireLazy/*r*/ && this[require/*t*/].splice(requireLazy/*r*/, 1)
                 }
                 global/*e*/(requireDynamic/*n*/)
             }

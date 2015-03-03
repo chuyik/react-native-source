@@ -2,7 +2,7 @@ __d("THViewConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n*
     "use strict";
     var o = {
         PERMALINK: "permalink",
-        exports/*SEARCH*/: "search"
+        SEARCH: "search"
     };
     module/*i*/.exports = o
 });

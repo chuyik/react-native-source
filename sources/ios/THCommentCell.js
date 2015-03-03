@@ -1,52 +1,52 @@
 __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FBAlertManager","FBTextEntity","FBTextWithEntities.react","GraphQLNodeStatus","POPAnimation","POPAnimationMixin","React","ReactGraphQL","StyleSheet","Text","THColors","THCommentAttachment","THCommentMetadata","THDockedInputContainer","THProfilePicture","THViewConstants","TouchableWithoutFeedback","UnicodeBidi","View","createDocumentFromTextWithEntities","documentContentsAreEqual","fbt","invariant","isEmpty","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("CommentDeleteAction"),
-        exports/*a*/ = require/*t*/("CommentEditAction"),
-        CommentDeleteAction/*s*/ = require/*t*/("CommentMenu"),
-        CommentEditAction/*l*/ = require/*t*/("FBAlertManager"),
-        CommentMenu/*u*/ = require/*t*/("FBTextEntity"),
-        FBAlertManager/*c*/ = require/*t*/("FBTextWithEntities.react"),
-        FBTextEntity/*p*/ = require/*t*/("GraphQLNodeStatus"),
-        FBTextWithEntities.react/*d*/ = require/*t*/("POPAnimation"),
-        GraphQLNodeStatus/*h*/ = require/*t*/("POPAnimationMixin"),
-        POPAnimation/*f*/ = require/*t*/("React"),
-        POPAnimationMixin/*m*/ = require/*t*/("ReactGraphQL"),
-        React/*g*/ = require/*t*/("StyleSheet"),
-        ReactGraphQL/*_*/ = require/*t*/("Text"),
-        StyleSheet/*y*/ = require/*t*/("THColors"),
-        Text/*v*/ = require/*t*/("THCommentAttachment"),
-        THColors/*S*/ = require/*t*/("THCommentMetadata"),
-        THCommentAttachment/*b*/ = require/*t*/("THDockedInputContainer"),
-        THCommentMetadata/*R*/ = require/*t*/("THProfilePicture"),
-        THDockedInputContainer/*w*/ = require/*t*/("THViewConstants"),
-        THProfilePicture/*C*/ = require/*t*/("TouchableWithoutFeedback"),
-        THViewConstants/*E*/ = require/*t*/("UnicodeBidi"),
-        TouchableWithoutFeedback/*D*/ = require/*t*/("View"),
-        UnicodeBidi/*T*/ = require/*t*/("createDocumentFromTextWithEntities"),
-        View/*x*/ = require/*t*/("documentContentsAreEqual"),
-        createDocumentFromTextWithEntities/*P*/ = require/*t*/("fbt"),
-        documentContentsAreEqual/*I*/ = require/*t*/("invariant"),
-        fbt/*F*/ = require/*t*/("isEmpty"),
-        invariant/*L*/ = require/*t*/("keyOf"),
-        isEmpty/*M*/ = 250,
-        keyOf/*Q*/ = 6,
+        a = require/*t*/("CommentEditAction"),
+        s = require/*t*/("CommentMenu"),
+        l = require/*t*/("FBAlertManager"),
+        u = require/*t*/("FBTextEntity"),
+        c = require/*t*/("FBTextWithEntities.react"),
+        p = require/*t*/("GraphQLNodeStatus"),
+        d = require/*t*/("POPAnimation"),
+        h = require/*t*/("POPAnimationMixin"),
+        f = require/*t*/("React"),
+        m = require/*t*/("ReactGraphQL"),
+        g = require/*t*/("StyleSheet"),
+        _ = require/*t*/("Text"),
+        y = require/*t*/("THColors"),
+        v = require/*t*/("THCommentAttachment"),
+        S = require/*t*/("THCommentMetadata"),
+        b = require/*t*/("THDockedInputContainer"),
+        R = require/*t*/("THProfilePicture"),
+        w = require/*t*/("THViewConstants"),
+        C = require/*t*/("TouchableWithoutFeedback"),
+        E = require/*t*/("UnicodeBidi"),
+        D = require/*t*/("View"),
+        T = require/*t*/("createDocumentFromTextWithEntities"),
+        x = require/*t*/("documentContentsAreEqual"),
+        P = require/*t*/("fbt"),
+        I = require/*t*/("invariant"),
+        F = require/*t*/("isEmpty"),
+        L = require/*t*/("keyOf"),
+        M = 250,
+        Q = 6,
         A = 24,
-        k = invariant/*L*/({
+        k = L({
             containerRef: null
         }),
-        O = invariant/*L*/({
+        O = L({
             menuRef: null
         }),
-        N = POPAnimation/*f*/.createClass({
+        N = f.createClass({
             displayName: "THCommentCell",
             propTypes: {
-                lastViewTime: POPAnimation/*f*/.PropTypes.number,
-                onInputRequested: POPAnimation/*f*/.PropTypes.func,
-                onDeleteSuccess: POPAnimation/*f*/.PropTypes.func,
-                showExpanded: POPAnimation/*f*/.PropTypes.bool,
-                viewContext: POPAnimation/*f*/.PropTypes.string
+                lastViewTime: f.PropTypes.number,
+                onInputRequested: f.PropTypes.func,
+                onDeleteSuccess: f.PropTypes.func,
+                showExpanded: f.PropTypes.bool,
+                viewContext: f.PropTypes.string
             },
-            mixins: [POPAnimationMixin/*m*/.Mixin, GraphQLNodeStatus/*h*/],
+            mixins: [m.Mixin, h],
             statics: {
                 queries: {
                     feedback: function(global/*e*/, require/*t*/) {
@@ -69,14 +69,14 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THCommentCell_authorOptimisticPrefetch"
                             })
-                        }(THCommentMetadata/*R*/.getQuery("actor"))
+                        }(R.getQuery("actor"))
                     },
                     comment: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-                            var exports/*a*/ = require/*t*/.__GraphQL;
-                            return new exports/*a*/.QueryFragment("THCommentCell_comment", "Comment", [new exports/*a*/.Field("id"), new exports/*a*/.Field("created_time"), new exports/*a*/.Field("body", [new exports/*a*/.Field("text"), new exports/*a*/.Field("ranges", [new exports/*a*/.Field("entity", [new exports/*a*/.Field("id", null, null, null, null, null, {
+                            var a = require/*t*/.__GraphQL;
+                            return new a.QueryFragment("THCommentCell_comment", "Comment", [new a.Field("id"), new a.Field("created_time"), new a.Field("body", [new a.Field("text"), new a.Field("ranges", [new a.Field("entity", [new a.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new exports/*a*/.Field("__type__", [new exports/*a*/.Field("name"), new exports/*a*/.Field("id", null, null, null, null, null, {
+                            }), new a.Field("__type__", [new a.Field("name"), new a.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -85,16 +85,16 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new exports/*a*/.Field("offset"), new exports/*a*/.Field("length")], null, null, null, null, {
+                            }), new a.Field("offset"), new a.Field("length")], null, null, null, null, {
                                 plural: !0
-                            })], [require/*t*/.__frag(requireLazy/*r*/)]), new exports/*a*/.Field("feedback", [new exports/*a*/.Field("id", null, null, null, null, null, {
+                            })], [require/*t*/.__frag(requireLazy/*r*/)]), new a.Field("feedback", [new a.Field("id", null, null, null, null, null, {
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new exports/*a*/.Field("author", [new exports/*a*/.Field("id", null, null, null, null, null, {
+                            }), new a.Field("author", [new a.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new exports/*a*/.Field("name"), new exports/*a*/.Field("__type__", [new exports/*a*/.Field("name"), new exports/*a*/.Field("id", null, null, null, null, null, {
+                            }), new a.Field("name"), new a.Field("__type__", [new a.Field("name"), new a.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -103,14 +103,14 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                             })], [require/*t*/.__frag(module/*i*/)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new exports/*a*/.Field("attachments", [new exports/*a*/.Field("style_list", null, null, null, null, null, {
+                            }), new a.Field("attachments", [new a.Field("style_list", null, null, null, null, null, {
                                 plural: !0
-                            }), new exports/*a*/.Field("media", [new exports/*a*/.Field("id"), new exports/*a*/.Field("width"), new exports/*a*/.Field("height"), new exports/*a*/.Field("image", [new exports/*a*/.Field("uri")])])], [require/*t*/.__frag(o)], null, null, null, {
+                            }), new a.Field("media", [new a.Field("id"), new a.Field("width"), new a.Field("height"), new a.Field("image", [new a.Field("uri")])])], [require/*t*/.__frag(o)], null, null, null, {
                                 plural: !0
                             })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(requireDynamic/*n*/)], {
                                 scope: "THCommentCell_comment"
                             })
-                        }(CommentDeleteAction/*s*/.getQuery("comment"), THColors/*S*/.getQuery("comment"), FBAlertManager/*c*/.getQuery("text"), THCommentMetadata/*R*/.getQuery("actor"), Text/*v*/.getQuery("attachment"))
+                        }(s.getQuery("comment"), S.getQuery("comment"), c.getQuery("text"), R.getQuery("actor"), v.getQuery("attachment"))
                     },
                     group: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/) {
@@ -121,7 +121,7 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THCommentCell_group"
                             })
-                        }(THCommentMetadata/*R*/.getQuery("group"))
+                        }(R.getQuery("group"))
                     }
                 }
             },
@@ -131,11 +131,11 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                 }
             },
             getPendingText: function() {
-                return this.state.pendingDelete ? createDocumentFromTextWithEntities/*P*/({
+                return this.state.pendingDelete ? P({
                     type: "text",
                     texts: ["Deleting..."],
-                    desc: "Indicator that exports/*a*/ comment is being deleted."
-                }) : FBTextEntity/*p*/.isOptimistic(this.props.comment) ? createDocumentFromTextWithEntities/*P*/({
+                    desc: "Indicator that a comment is being deleted."
+                }) : p.isOptimistic(this.props.comment) ? P({
                     type: "text",
                     texts: ["Posting..."],
                     desc: "Comment posting to server."
@@ -143,23 +143,23 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
             },
             handleEditBegin: function() {
                 var global/*e*/ = this.props.comment;
-                this.state.savedInitialText || (this.state.savedInitialText = UnicodeBidi/*T*/(global/*e*/.body)), this.handleCommentEditRequested(this.refs[k].getNativeNode, this.state.savedInitialText)
+                this.state.savedInitialText || (this.state.savedInitialText = T(global/*e*/.body)), this.handleCommentEditRequested(this.refs[k].getNativeNode, this.state.savedInitialText)
             },
             handleCommentEditRequested: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = this.props.comment,
                     requireLazy/*r*/ = requireDynamic/*n*/.attachments[0] && requireDynamic/*n*/.attachments[0].style_list && "photo" === requireDynamic/*n*/.attachments[0].style_list[0] && requireDynamic/*n*/.attachments[0].media && requireDynamic/*n*/.attachments[0].media.image;
                 this.props.onInputRequested && this.props.onInputRequested({
                     getTappedNodeHandle: global/*e*/,
-                    mode: THCommentAttachment/*b*/.Mode.partialWash,
+                    mode: b.Mode.partialWash,
                     initialText: require/*t*/,
                     comparisonTextForCanPost: this.state.savedInitialText,
                     photoSource: requireLazy/*r*/,
                     isEditing: !0
-                }, this.handleCommentEditSubmit, this.handleCommentEditWillAbort), this.startAnimation(k, FBTextWithEntities.react/*d*/.createLinearAnimation($.partialFadeOut))
+                }, this.handleCommentEditSubmit, this.handleCommentEditWillAbort), this.startAnimation(k, d.createLinearAnimation($.partialFadeOut))
             },
             handleCommentEditSubmit: function(global/*e*/) {
-                this.startAnimation(k, FBTextWithEntities.react/*d*/.createLinearAnimation($.fadeIn), function() {
-                    exports/*a*/.handleCommentEdit(this.props.comment.id, {
+                this.startAnimation(k, d.createLinearAnimation($.fadeIn), function() {
+                    a.handleCommentEdit(this.props.comment.id, {
                         text: global/*e*/
                     }), this.setState({
                         savedInitialText: null
@@ -167,28 +167,28 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                 }.bind(this))
             },
             handleCommentEditWillAbort: function(global/*e*/) {
-                this.state.savedInitialText || (this.state.savedInitialText = global/*e*/.initialText), this.startAnimation(k, FBTextWithEntities.react/*d*/.createLinearAnimation($.fadeIn)), View/*x*/(global/*e*/.text, this.state.savedInitialText) || CommentEditAction/*l*/.alertWithArgs({
-                    title: createDocumentFromTextWithEntities/*P*/({
+                this.state.savedInitialText || (this.state.savedInitialText = global/*e*/.initialText), this.startAnimation(k, d.createLinearAnimation($.fadeIn)), x(global/*e*/.text, this.state.savedInitialText) || l.alertWithArgs({
+                    title: P({
                         type: "text",
                         texts: ["Alert"],
-                        desc: "Title of confirmation message for aborting exports/*a*/ comment edit."
+                        desc: "Title of confirmation message for aborting a comment edit."
                     }),
-                    message: createDocumentFromTextWithEntities/*P*/({
+                    message: P({
                         type: "text",
                         texts: ["Are you sure you want to discard your changes to this comment?"],
-                        desc: "Confirmation message for aborting exports/*a*/ comment edit."
+                        desc: "Confirmation message for aborting a comment edit."
                     }),
                     buttons: [{
-                        discard: createDocumentFromTextWithEntities/*P*/({
+                        discard: P({
                             type: "text",
                             texts: ["Discard"],
-                            desc: "Confirmation button for discarding exports/*a*/ comment edit."
+                            desc: "Confirmation button for discarding a comment edit."
                         })
                     }, {
-                        cancel: createDocumentFromTextWithEntities/*P*/({
+                        cancel: P({
                             type: "text",
                             texts: ["Cancel"],
-                            desc: "Cancel button for discarding exports/*a*/ comment edit."
+                            desc: "Cancel button for discarding a comment edit."
                         })
                     }]
                 }, this.handleDiscardEditConfirmation.bind(this, global/*e*/))
@@ -196,37 +196,37 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
             handleDiscardEditConfirmation: function(global/*e*/, require/*t*/) {
                 return "discard" === require/*t*/ ? void this.setState({
                     savedInitialText: null
-                }) : "cancel" === require/*t*/ ? void this.handleCommentEditRequested(global/*e*/.getTappedNodeHandle, global/*e*/.text) : void documentContentsAreEqual/*I*/(0, "Unrecognized discard confirmation key: " + require/*t*/)
+                }) : "cancel" === require/*t*/ ? void this.handleCommentEditRequested(global/*e*/.getTappedNodeHandle, global/*e*/.text) : void I(0, "Unrecognized discard confirmation key: " + require/*t*/)
             },
             handleDelete: function() {
-                CommentEditAction/*l*/.alertWithArgs({
-                    title: createDocumentFromTextWithEntities/*P*/({
+                l.alertWithArgs({
+                    title: P({
                         type: "text",
                         texts: ["Delete Comment"],
-                        desc: "Title of confirmation message for deleting exports/*a*/ comment"
+                        desc: "Title of confirmation message for deleting a comment"
                     }),
-                    message: createDocumentFromTextWithEntities/*P*/({
+                    message: P({
                         type: "text",
                         texts: ["You're about to delete this comment."],
-                        desc: "Confirmation message for deleting exports/*a*/ comment."
+                        desc: "Confirmation message for deleting a comment."
                     }),
                     buttons: [{
-                        "delete": createDocumentFromTextWithEntities/*P*/({
+                        "delete": P({
                             type: "text",
                             texts: ["Delete"],
-                            desc: "Confirmation button for deleting exports/*a*/ comment."
+                            desc: "Confirmation button for deleting a comment."
                         })
                     }, {
-                        cancel: createDocumentFromTextWithEntities/*P*/({
+                        cancel: P({
                             type: "text",
                             texts: ["Cancel"],
-                            desc: "Cancel button for deleting exports/*a*/ comment."
+                            desc: "Cancel button for deleting a comment."
                         })
                     }]
                 }, this.handleDeleteConfirmation)
             },
             handleDeleteConfirmation: function(global/*e*/) {
-                "cancel" !== global/*e*/ && ("delete" !== global/*e*/ && documentContentsAreEqual/*I*/(0, "Unrecognized delete confirmation key: " + global/*e*/), this.setState({
+                "cancel" !== global/*e*/ && ("delete" !== global/*e*/ && I(0, "Unrecognized delete confirmation key: " + global/*e*/), this.setState({
                     pendingDelete: !0
                 }), this.startAnimation(k, {
                     type: this.AnimationTypes.linear,
@@ -245,29 +245,29 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                     duration: .2
                 }), this.setState({
                     pendingDelete: !1
-                }), CommentEditAction/*l*/.alert(createDocumentFromTextWithEntities/*P*/({
+                }), l.alert(P({
                     type: "text",
                     texts: ["Failed to delete comment."],
-                    desc: "Error message after exports/*a*/ failed delete"
+                    desc: "Error message after a failed delete"
                 }))
             },
             renderAttachment: function() {
                 var global/*e*/ = this.props.comment;
-                return fbt/*F*/(global/*e*/.attachments) ? null : POPAnimation/*f*/.createElement(TouchableWithoutFeedback/*D*/, {
+                return F(global/*e*/.attachments) ? null : f.createElement(D, {
                     style: G.attachmentContainer
-                }, POPAnimation/*f*/.createElement(Text/*v*/, {
+                }, f.createElement(v, {
                     attachment: global/*e*/.attachments[0]
                 }))
             },
             render: function() {
                 var global/*e*/ = this.props.comment,
                     require/*t*/ = [G.text];
-                this.props.viewContext !== THDockedInputContainer/*w*/.PERMALINK && this.props.lastViewTime && this.props.lastViewTime < global/*e*/.created_time && require/*t*/.push(G.newCommentTitle);
+                this.props.viewContext !== w.PERMALINK && this.props.lastViewTime && this.props.lastViewTime < global/*e*/.created_time && require/*t*/.push(G.newCommentTitle);
                 var requireDynamic/*n*/, requireLazy/*r*/;
                 if (global/*e*/.body) {
                     var module/*i*/ = null,
                         o = null;
-                    this.props.viewContext !== THDockedInputContainer/*w*/.PERMALINK && (module/*i*/ = isEmpty/*M*/, o = keyOf/*Q*/), requireLazy/*r*/ = THViewConstants/*E*/.isDirectionRTL(global/*e*/.body.text) ? "\requireDynamic/*n*/" : "  ", requireDynamic/*n*/ = POPAnimation/*f*/.createElement(FBAlertManager/*c*/, {
+                    this.props.viewContext !== w.PERMALINK && (module/*i*/ = M, o = Q), requireLazy/*r*/ = E.isDirectionRTL(global/*e*/.body.text) ? "\requireDynamic/*n*/" : "  ", requireDynamic/*n*/ = f.createElement(c, {
                         key: "commentBody",
                         text: global/*e*/.body,
                         textStyle: G.text,
@@ -276,32 +276,32 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                         maxLength: module/*i*/,
                         maxLines: o
                     })
-                } else requireDynamic/*n*/ = POPAnimation/*f*/.createElement(ReactGraphQL/*_*/, null);
-                var exports/*a*/ = FBTextEntity/*p*/.isOptimistic(global/*e*/) ? G.posting : null;
-                return POPAnimation/*f*/.createElement(THProfilePicture/*C*/, {
+                } else requireDynamic/*n*/ = f.createElement(_, null);
+                var a = p.isOptimistic(global/*e*/) ? G.posting : null;
+                return f.createElement(C, {
                     onPress: this.showMenu
-                }, POPAnimation/*f*/.createElement(TouchableWithoutFeedback/*D*/, {
+                }, f.createElement(D, {
                     ref: k,
-                    style: [G.container, exports/*a*/]
-                }, POPAnimation/*f*/.createElement(THCommentMetadata/*R*/, {
+                    style: [G.container, a]
+                }, f.createElement(R, {
                     actor: global/*e*/.author,
                     height: A,
                     group: this.props.group
-                }), POPAnimation/*f*/.createElement(TouchableWithoutFeedback/*D*/, {
+                }), f.createElement(D, {
                     style: G.textContainer
-                }, POPAnimation/*f*/.createElement(ReactGraphQL/*_*/, {
+                }, f.createElement(_, {
                     textStyle: G.text
-                }, POPAnimation/*f*/.createElement(CommentMenu/*u*/, {
+                }, f.createElement(u, {
                     entity: global/*e*/.author,
                     style: G.title,
                     textStyle: require/*t*/,
                     text: global/*e*/.author.name
-                }), requireLazy/*r*/, requireDynamic/*n*/), this.renderAttachment(), POPAnimation/*f*/.createElement(TouchableWithoutFeedback/*D*/, {
+                }), requireLazy/*r*/, requireDynamic/*n*/), this.renderAttachment(), f.createElement(D, {
                     style: G.metadataContainer
-                }, POPAnimation/*f*/.createElement(THColors/*S*/, {
+                }, f.createElement(S, {
                     comment: global/*e*/,
                     pendingText: this.getPendingText()
-                }))), POPAnimation/*f*/.createElement(CommentDeleteAction/*s*/, {
+                }))), f.createElement(s, {
                     ref: O,
                     comment: global/*e*/,
                     onDelete: this.handleDelete,
@@ -312,7 +312,7 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                 this.refs[O].open()
             }
         }),
-        G = React/*g*/.create({
+        G = g.create({
             attachmentContainer: {
                 marginTop: 10,
                 marginBottom: 4
@@ -330,13 +330,13 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
                 backgroundColor: "transparent"
             },
             newCommentTitle: {
-                color: StyleSheet/*y*/.groupsAccent
+                color: y.groupsAccent
             },
             posting: {
                 opacity: .4
             },
             seeMore: {
-                color: StyleSheet/*y*/.feedbackFadedText
+                color: y.feedbackFadedText
             },
             text: {
                 fontSize: 13,
@@ -353,12 +353,12 @@ __d("THCommentCell",["CommentDeleteAction","CommentEditAction","CommentMenu","FB
         }),
         $ = {
             fadeIn: {
-                property: FBTextWithEntities.react/*d*/.Properties.opacity,
+                property: d.Properties.opacity,
                 toValue: 1,
                 duration: .3
             },
             partialFadeOut: {
-                property: FBTextWithEntities.react/*d*/.Properties.opacity,
+                property: d.Properties.opacity,
                 toValue: .5,
                 duration: .3
             }

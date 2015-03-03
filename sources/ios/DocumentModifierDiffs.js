@@ -1,134 +1,134 @@
-__d("DocumentModifierDiffs",["fillArray","flattenArray","getDocumentEntityRemovalDiffs"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/, module/*getDocumentEntityRemovalDiffs/*i*/*/) {
-    function o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/) {
-        var requireLazy/*r*/ = global/*e*/.getEntities().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/),
-            module/*getDocumentEntityRemovalDiffs/*i*/*/ = {};
+__d("DocumentModifierDiffs",["fillArray","flattenArray","getDocumentEntityRemovalDiffs"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        var requireLazy/*r*/ = global/*e*/.getEntities().slice(require/*t*/, requireDynamic/*n*/),
+            module/*i*/ = {};
         return requireLazy/*r*/.forEach(function(global/*e*/) {
-            global/*e*/ && (module/*getDocumentEntityRemovalDiffs/*i*/*/[global/*e*/] = !0)
-        }), Object.keys(module/*getDocumentEntityRemovalDiffs/*i*/*/)
+            global/*e*/ && (module/*i*/[global/*e*/] = !0)
+        }), Object.keys(module/*i*/)
     }
-    var a = require/*exports/*t*/*/("fillArray"),
-        s = require/*exports/*t*/*/("flattenArray"),
-        l = require/*exports/*t*/*/("getDocumentEntityRemovalDiffs"),
+    var a = require/*t*/("fillArray"),
+        s = require/*t*/("flattenArray"),
+        l = require/*t*/("getDocumentEntityRemovalDiffs"),
         u = [],
         c = {
-            removeText: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/) {
-                if (require/*exports/*t*/*/ === requireDynamic/*fillArray/*flattenArray/*n*/*/*/) return null;
-                var requireLazy/*r*/ = global/*e*/.getBlockStylesAroundRange(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/);
+            removeText: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                if (require/*t*/ === requireDynamic/*n*/) return null;
+                var requireLazy/*r*/ = global/*e*/.getBlockStylesAroundRange(require/*t*/, requireDynamic/*n*/);
                 return {
                     from: {
-                        text: global/*e*/.getText().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/),
-                        entities: global/*e*/.getEntities().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/),
-                        inlines: global/*e*/.getInlineStyles().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/),
+                        text: global/*e*/.getText().slice(require/*t*/, requireDynamic/*n*/),
+                        entities: global/*e*/.getEntities().slice(require/*t*/, requireDynamic/*n*/),
+                        inlines: global/*e*/.getInlineStyles().slice(require/*t*/, requireDynamic/*n*/),
                         blocks: requireLazy/*r*/,
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     },
                     to: {
                         text: "",
                         inlines: u,
                         entities: u,
                         blocks: requireLazy/*r*/.slice(0, 1),
-                        start: require/*exports/*t*/*/,
-                        end: require/*exports/*t*/*/
+                        start: require/*t*/,
+                        end: require/*t*/
                     }
                 }
             },
-            insertText: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/, module/*getDocumentEntityRemovalDiffs/*i*/*/, o) {
-                if (0 === requireDynamic/*fillArray/*flattenArray/*n*/*/*/.length) return null;
-                var a = global/*e*/.getBlockStylesAroundRange(require/*exports/*t*/*/, require/*exports/*t*/*/);
+            insertText: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
+                if (0 === requireDynamic/*n*/.length) return null;
+                var a = global/*e*/.getBlockStylesAroundRange(require/*t*/, require/*t*/);
                 return {
                     from: {
                         text: "",
                         inlines: u,
                         entities: u,
                         blocks: a,
-                        start: require/*exports/*t*/*/,
-                        end: require/*exports/*t*/*/
+                        start: require/*t*/,
+                        end: require/*t*/
                     },
                     to: {
-                        text: requireDynamic/*fillArray/*flattenArray/*n*/*/*/,
+                        text: requireDynamic/*n*/,
                         inlines: requireLazy/*r*/,
-                        entities: module/*getDocumentEntityRemovalDiffs/*i*/*/,
+                        entities: module/*i*/,
                         blocks: a.concat(o.slice(1)),
-                        start: require/*exports/*t*/*/,
-                        end: require/*exports/*t*/*/ + requireDynamic/*fillArray/*flattenArray/*n*/*/*/.length
+                        start: require/*t*/,
+                        end: require/*t*/ + requireDynamic/*n*/.length
                     }
                 }
             },
-            removeEntities: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/) {
-                if (require/*exports/*t*/*/ === requireDynamic/*fillArray/*flattenArray/*n*/*/*/) {
+            removeEntities: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                if (require/*t*/ === requireDynamic/*n*/) {
                     var requireLazy/*r*/ = global/*e*/.getEntities(),
-                        module/*getDocumentEntityRemovalDiffs/*i*/*/ = requireLazy/*r*/[require/*exports/*t*/*/ - 1];
-                    module/*getDocumentEntityRemovalDiffs/*i*/*/ && module/*getDocumentEntityRemovalDiffs/*i*/*/ === requireLazy/*r*/[require/*exports/*t*/*/] && require/*exports/*t*/*/--
+                        module/*i*/ = requireLazy/*r*/[require/*t*/ - 1];
+                    module/*i*/ && module/*i*/ === requireLazy/*r*/[require/*t*/] && require/*t*/--
                 }
-                var a = o(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/);
+                var a = o(global/*e*/, require/*t*/, requireDynamic/*n*/);
                 return s(a.map(function(requireLazy/*r*/) {
-                    return l(global/*e*/, requireLazy/*r*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/)
+                    return l(global/*e*/, requireLazy/*r*/, require/*t*/, requireDynamic/*n*/)
                 }))
             },
-            setEntity: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/) {
-                for (var module/*getDocumentEntityRemovalDiffs/*i*/*/ = global/*e*/.getEntities().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/), o = !1, s = 0; s < module/*getDocumentEntityRemovalDiffs/*i*/*/.length; s++)
-                    if (module/*getDocumentEntityRemovalDiffs/*i*/*/[s] !== requireLazy/*r*/) {
+            setEntity: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                for (var module/*i*/ = global/*e*/.getEntities().slice(require/*t*/, requireDynamic/*n*/), o = !1, s = 0; s < module/*i*/.length; s++)
+                    if (module/*i*/[s] !== requireLazy/*r*/) {
                         o = !0;
                         break
                     }
                 return o ? {
                     from: {
-                        entities: module/*getDocumentEntityRemovalDiffs/*i*/*/,
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        entities: module/*i*/,
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     },
                     to: {
-                        entities: a(requireDynamic/*fillArray/*flattenArray/*n*/*/*/ - require/*exports/*t*/*/, requireLazy/*r*/),
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        entities: a(requireDynamic/*n*/ - require/*t*/, requireLazy/*r*/),
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     }
                 } : null
             },
-            setBlockStyle: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/) {
-                var module/*getDocumentEntityRemovalDiffs/*i*/*/ = global/*e*/.getBlockStylesAroundRange(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/);
+            setBlockStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                var module/*i*/ = global/*e*/.getBlockStylesAroundRange(require/*t*/, requireDynamic/*n*/);
                 return {
                     from: {
-                        blocks: module/*getDocumentEntityRemovalDiffs/*i*/*/,
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        blocks: module/*i*/,
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     },
                     to: {
-                        blocks: a(module/*getDocumentEntityRemovalDiffs/*i*/*/.length, requireLazy/*r*/),
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        blocks: a(module/*i*/.length, requireLazy/*r*/),
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     }
                 }
             },
-            removeInlineStyle: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/) {
-                return this._changeInlineStyle(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/, !1)
+            removeInlineStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                return this._changeInlineStyle(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, !1)
             },
-            addInlineStyle: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/) {
-                return this._changeInlineStyle(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/, !0)
+            addInlineStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                return this._changeInlineStyle(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, !0)
             },
-            _changeInlineStyle: function(global/*e*/, require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/, requireLazy/*r*/, module/*getDocumentEntityRemovalDiffs/*i*/*/) {
+            _changeInlineStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
                 var o = !1,
-                    a = global/*e*/.getInlineStyles().slice(require/*exports/*t*/*/, requireDynamic/*fillArray/*flattenArray/*n*/*/*/),
+                    a = global/*e*/.getInlineStyles().slice(require/*t*/, requireDynamic/*n*/),
                     s = a.map(function(global/*e*/) {
-                        var require/*exports/*t*/*/ = module/*getDocumentEntityRemovalDiffs/*i*/*/ ? global/*e*/ | requireLazy/*r*/ : global/*e*/ & ~requireLazy/*r*/;
-                        return o || require/*exports/*t*/*/ === global/*e*/ || (o = !0), require/*exports/*t*/*/
+                        var require/*t*/ = module/*i*/ ? global/*e*/ | requireLazy/*r*/ : global/*e*/ & ~requireLazy/*r*/;
+                        return o || require/*t*/ === global/*e*/ || (o = !0), require/*t*/
                     });
                 return o ? {
                     from: {
                         inlines: a,
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     },
                     to: {
                         inlines: s,
-                        start: require/*exports/*t*/*/,
-                        end: requireDynamic/*fillArray/*flattenArray/*n*/*/*/
+                        start: require/*t*/,
+                        end: requireDynamic/*n*/
                     }
                 } : void 0
             },
-            shiftDiff: function(global/*e*/, require/*exports/*t*/*/) {
-                global/*e*/.from.start += require/*exports/*t*/*/, global/*e*/.from.end += require/*exports/*t*/*/, global/*e*/.to.start += require/*exports/*t*/*/, global/*e*/.to.end += require/*exports/*t*/*/
+            shiftDiff: function(global/*e*/, require/*t*/) {
+                global/*e*/.from.start += require/*t*/, global/*e*/.from.end += require/*t*/, global/*e*/.to.start += require/*t*/, global/*e*/.to.end += require/*t*/
             }
         };
-    module/*getDocumentEntityRemovalDiffs/*i*/*/.exports = c
+    module/*i*/.exports = c
 });

@@ -1,20 +1,20 @@
 __d("FBLikersPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FBAbstractEntityListPopover"),
-        exports/*a*/ = require/*t*/("React"),
-        FBAbstractEntityListPopover/*s*/ = require/*t*/("ReactGraphQL"),
-        React/*l*/ = require/*t*/("fbt"),
-        ReactGraphQL/*u*/ = require/*t*/("keyOf"),
-        fbt/*c*/ = 10,
-        keyOf/*p*/ = ReactGraphQL/*u*/({
+        a = require/*t*/("React"),
+        s = require/*t*/("ReactGraphQL"),
+        l = require/*t*/("fbt"),
+        u = require/*t*/("keyOf"),
+        c = 10,
+        p = u({
             popRef: null
         }),
-        d = exports/*a*/.createClass({
+        d = a.createClass({
             displayName: "FBLikersPopover",
             propTypes: {
-                circularProfilePictures: exports/*a*/.PropTypes.bool,
-                closeOnRowPress: exports/*a*/.PropTypes.bool,
-                closeTextColor: exports/*a*/.PropTypes.string
+                circularProfilePictures: a.PropTypes.bool,
+                closeOnRowPress: a.PropTypes.bool,
+                closeTextColor: a.PropTypes.string
             },
             getInitialState: function() {
                 return {
@@ -27,7 +27,7 @@ __d("FBLikersPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
                     closeOnRowPress: !1
                 }
             },
-            mixins: [FBAbstractEntityListPopover/*s*/.Mixin],
+            mixins: [s.Mixin],
             statics: {
                 queryParams: {
                     count: 0,
@@ -85,18 +85,18 @@ __d("FBLikersPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
             },
             loadMore: function() {
                 this.setQueryParams({
-                    count: this.queryParams.count + fbt/*c*/,
+                    count: this.queryParams.count + c,
                     showLikers: "true"
                 })
             },
             open: function() {
-                this.refs[keyOf/*p*/].open()
+                this.refs[p].open()
             },
             close: function() {
                 this.setQueryParams({
                     count: 0,
                     showLikers: "false"
-                }), this.refs[keyOf/*p*/].close(), this.state.onDidCloseCallback && (this.state.onDidCloseCallback(), this.setState({
+                }), this.refs[p].close(), this.state.onDidCloseCallback && (this.state.onDidCloseCallback(), this.setState({
                     onDidCloseCallback: null
                 }))
             },
@@ -112,15 +112,15 @@ __d("FBLikersPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
                 return this.props.feedback.likers_with_count.count
             },
             getPopoverTitle: function() {
-                return React/*l*/({
+                return l({
                     type: "text",
                     texts: ["People Who Like This"],
                     desc: "Header of likers list"
                 })
             },
             render: function() {
-                return exports/*a*/.createElement(o, {
-                    ref: keyOf/*p*/,
+                return a.createElement(o, {
+                    ref: p,
                     circularProfilePictures: this.props.circularProfilePictures,
                     closeTextColor: this.props.closeTextColor,
                     getEntityConnection: this.getSeenByConnection,

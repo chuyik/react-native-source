@@ -1,59 +1,59 @@
-__d("Dlite",["DliteLogger","DliteRouter","DliteRoutingWrapper","GraphQLQueryRunner","GraphQLStore","React","extendArray","forEachObject","mapObject","splitDeferredQueries"],DliteLogger/*function*/ (global/*e*/, require/*exports/*t*/*/, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/, requireLazy/*r*/, module/*i*/) {
+__d("Dlite",["DliteLogger","DliteRouter","DliteRoutingWrapper","GraphQLQueryRunner","GraphQLStore","React","extendArray","forEachObject","mapObject","splitDeferredQueries"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    DliteLogger/*function*/ o(global/*e*/, require/*exports/*t*/*/) {
-        return f(require/*exports/*t*/*/, DliteLogger/*function*/(require/*exports/*t*/*/, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/) {
-            var requireLazy/*r*/ = global/*e*/ + "." + requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/;
-            return DliteLogger/*function*/() {
+    function o(global/*e*/, require/*t*/) {
+        return f(require/*t*/, function(require/*t*/, requireDynamic/*n*/) {
+            var requireLazy/*r*/ = global/*e*/ + "." + requireDynamic/*n*/;
+            return function() {
                 var global/*e*/ = a.logClientEvent(requireLazy/*r*/),
-                    requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/ = require/*exports/*t*/*/.apply(this, GraphQLQueryRunner/*arguments*/);
-                return global/*e*/.stop(), requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/
+                    requireDynamic/*n*/ = require/*t*/.apply(this, arguments);
+                return global/*e*/.stop(), requireDynamic/*n*/
             }
         })
     }
-    var a = require/*exports/*t*/*/("DliteLogger"),
-        React/*s*/ = require/*exports/*t*/*/("DliteRouter"),
-        extendArray/*l*/ = require/*exports/*t*/*/("DliteRoutingWrapper"),
-        forEachObject/*u*/ = require/*exports/*t*/*/("GraphQLQueryRunner"),
-        mapObject/*c*/ = require/*exports/*t*/*/("GraphQLStore"),
-        splitDeferredQueries/*p*/ = require/*exports/*t*/*/("React"),
-        d = require/*exports/*t*/*/("extendArray"),
-        h = require/*exports/*t*/*/("forEachObject"),
-        f = require/*exports/*t*/*/("mapObject"),
-        m = require/*exports/*t*/*/("splitDeferredQueries"),
+    var a = require/*t*/("DliteLogger"),
+        s = require/*t*/("DliteRouter"),
+        l = require/*t*/("DliteRoutingWrapper"),
+        u = require/*t*/("GraphQLQueryRunner"),
+        c = require/*t*/("GraphQLStore"),
+        p = require/*t*/("React"),
+        d = require/*t*/("extendArray"),
+        h = require/*t*/("forEachObject"),
+        f = require/*t*/("mapObject"),
+        m = require/*t*/("splitDeferredQueries"),
         g = {
-            createAndExecuteQueries: DliteLogger/*function*/(global/*e*/, require/*exports/*t*/*/, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/, requireLazy/*r*/) {
-                var module/*i*/ = g.createQueries(global/*e*/, require/*exports/*t*/*/);
-                return requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/.refetch ? forEachObject/*u*/.forceFetch(module/*i*/, requireLazy/*r*/) : forEachObject/*u*/.run(module/*i*/, requireLazy/*r*/)
+            createAndExecuteQueries: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                var module/*i*/ = g.createQueries(global/*e*/, require/*t*/);
+                return requireDynamic/*n*/.refetch ? u.forceFetch(module/*i*/, requireLazy/*r*/) : u.run(module/*i*/, requireLazy/*r*/)
             },
-            createQueries: DliteLogger/*function*/(global/*e*/, require/*exports/*t*/*/) {
-                return global/*e*/.getQueriesForRoute(require/*exports/*t*/*/)
+            createQueries: function(global/*e*/, require/*t*/) {
+                return global/*e*/.getQueriesForRoute(require/*t*/)
             },
-            createComponent: DliteLogger/*function*/(global/*e*/, require/*exports/*t*/*/, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/, requireLazy/*r*/) {
-                return React/*s*/.addRoute(require/*exports/*t*/*/.constructor), Object.assign(requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/, f(g.createQueries(global/*e*/, require/*exports/*t*/*/), DliteLogger/*function*/(global/*e*/) {
+            createComponent: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+                return s.addRoute(require/*t*/.constructor), Object.assign(requireDynamic/*n*/, f(g.createQueries(global/*e*/, require/*t*/), function(global/*e*/) {
                     if (global/*e*/) {
-                        var require/*exports/*t*/*/ = mapObject/*c*/.resolvePointersForQuery(global/*e*/),
-                            requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/ = Object.keys(require/*exports/*t*/*/)[0];
-                        return require/*exports/*t*/*/[requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/]
+                        var require/*t*/ = c.resolvePointersForQuery(global/*e*/),
+                            requireDynamic/*n*/ = Object.keys(require/*t*/)[0];
+                        return require/*t*/[requireDynamic/*n*/]
                     }
                     return null
-                })), splitDeferredQueries/*p*/.createElement(extendArray/*l*/, {
-                    childFactory: DliteLogger/*function*/() {
-                        return splitDeferredQueries/*p*/.createElement(global/*e*/, Object.assign({}, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/))
+                })), p.createElement(l, {
+                    childFactory: function() {
+                        return p.createElement(global/*e*/, Object.assign({}, requireDynamic/*n*/))
                     },
                     onRef: requireLazy/*r*/,
-                    route: require/*exports/*t*/*/
+                    route: require/*t*/
                 })
             },
-            createDeferredQueries: DliteLogger/*function*/(global/*e*/, require/*exports/*t*/*/) {
-                var requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/ = [];
-                return h(global/*e*/.getQueriesForRoute(require/*exports/*t*/*/), DliteLogger/*function*/(global/*e*/) {
-                    global/*e*/ && d(requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/, m(global/*e*/))
-                }), requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/
+            createDeferredQueries: function(global/*e*/, require/*t*/) {
+                var requireDynamic/*n*/ = [];
+                return h(global/*e*/.getQueriesForRoute(require/*t*/), function(global/*e*/) {
+                    global/*e*/ && d(requireDynamic/*n*/, m(global/*e*/))
+                }), requireDynamic/*n*/
             },
-            insertQueryResponses: DliteLogger/*function*/(global/*e*/, require/*exports/*t*/*/) {
-                h(global/*e*/, DliteLogger/*function*/(global/*e*/, requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/) {
-                    mapObject/*c*/.handleUpdate(require/*exports/*t*/*/[requireDynamic/*DliteRouter/*DliteRoutingWrapper/*GraphQLStore/*n*/*/*/*/], global/*e*/)
+            insertQueryResponses: function(global/*e*/, require/*t*/) {
+                h(global/*e*/, function(global/*e*/, requireDynamic/*n*/) {
+                    c.handleUpdate(require/*t*/[requireDynamic/*n*/], global/*e*/)
                 })
             }
         };

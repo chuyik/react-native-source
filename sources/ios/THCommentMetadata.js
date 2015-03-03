@@ -1,40 +1,40 @@
 __d("THCommentMetadata",["LayoutAnimation","FBEditHistoryPopover","FBLikersPopover","FeedbackLikeAction","Image","NativeModulesDeprecated","React","ReactGraphQL","StyleSheet","Text","THAnimations","THColors","THSounds","TimerMixin","TimeStamp","TouchableBounce","TouchableWithoutFeedback","View","fbt","ix","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("LayoutAnimation"),
-        exports/*a*/ = require/*t*/("FBEditHistoryPopover"),
-        LayoutAnimation/*s*/ = require/*t*/("FBLikersPopover"),
-        FBEditHistoryPopover/*l*/ = require/*t*/("FeedbackLikeAction"),
-        FBLikersPopover/*u*/ = require/*t*/("Image"),
-        FeedbackLikeAction/*c*/ = require/*t*/("NativeModulesDeprecated"),
-        Image/*p*/ = require/*t*/("React"),
-        NativeModulesDeprecated/*d*/ = require/*t*/("ReactGraphQL"),
-        React/*h*/ = require/*t*/("StyleSheet"),
-        ReactGraphQL/*f*/ = require/*t*/("Text"),
-        StyleSheet/*m*/ = require/*t*/("THAnimations"),
-        Text/*g*/ = require/*t*/("THColors"),
-        THAnimations/*_*/ = require/*t*/("THSounds"),
-        THColors/*y*/ = require/*t*/("TimerMixin"),
-        THSounds/*v*/ = require/*t*/("TimeStamp"),
-        TimerMixin/*S*/ = require/*t*/("TouchableBounce"),
-        TimeStamp/*b*/ = require/*t*/("TouchableWithoutFeedback"),
-        TouchableBounce/*R*/ = require/*t*/("View"),
-        TouchableWithoutFeedback/*w*/ = require/*t*/("fbt"),
-        View/*C*/ = require/*t*/("ix"),
-        fbt/*E*/ = require/*t*/("keyOf"),
-        ix/*D*/ = FeedbackLikeAction/*c*/.RKTreehouseManager,
-        keyOf/*T*/ = fbt/*E*/({
+        a = require/*t*/("FBEditHistoryPopover"),
+        s = require/*t*/("FBLikersPopover"),
+        l = require/*t*/("FeedbackLikeAction"),
+        u = require/*t*/("Image"),
+        c = require/*t*/("NativeModulesDeprecated"),
+        p = require/*t*/("React"),
+        d = require/*t*/("ReactGraphQL"),
+        h = require/*t*/("StyleSheet"),
+        f = require/*t*/("Text"),
+        m = require/*t*/("THAnimations"),
+        g = require/*t*/("THColors"),
+        _ = require/*t*/("THSounds"),
+        y = require/*t*/("TimerMixin"),
+        v = require/*t*/("TimeStamp"),
+        S = require/*t*/("TouchableBounce"),
+        b = require/*t*/("TouchableWithoutFeedback"),
+        R = require/*t*/("View"),
+        w = require/*t*/("fbt"),
+        C = require/*t*/("ix"),
+        E = require/*t*/("keyOf"),
+        D = c.RKTreehouseManager,
+        T = E({
             likersPopRef: null
         }),
-        x = fbt/*E*/({
+        x = E({
             editsPopRef: null
         }),
         P = "likeButton",
-        I = Image/*p*/.createClass({
+        I = p.createClass({
             displayName: "THCommentMetadata",
-            mixins: [NativeModulesDeprecated/*d*/.Mixin, THColors/*y*/],
+            mixins: [d.Mixin, y],
             propTypes: {
-                comment: Image/*p*/.PropTypes.object.isRequired,
-                pendingText: Image/*p*/.PropTypes.string
+                comment: p.PropTypes.object.isRequired,
+                pendingText: p.PropTypes.string
             },
             statics: {
                 queries: {
@@ -58,15 +58,15 @@ __d("THCommentMetadata",["LayoutAnimation","FBEditHistoryPopover","FBLikersPopov
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THCommentMetadata_comment"
                             })
-                        }(exports/*a*/.getQuery("comment"))
+                        }(a.getQuery("comment"))
                     }
                 }
             },
             onLikePress: function(global/*e*/) {
-                this.props.comment.feedback.does_viewer_like || ix/*D*/ && ix/*D*/.playSound(THAnimations/*_*/.likeComment), FBEditHistoryPopover/*l*/.handleLikeChange(this.props.comment.feedback.id, !this.props.comment.feedback.does_viewer_like), this.requestAnimationFrame(global/*e*/), o.configureNext(StyleSheet/*m*/.layout.like)
+                this.props.comment.feedback.does_viewer_like || D && D.playSound(_.likeComment), l.handleLikeChange(this.props.comment.feedback.id, !this.props.comment.feedback.does_viewer_like), this.requestAnimationFrame(global/*e*/), o.configureNext(m.layout.like)
             },
             showLikers: function() {
-                this.refs[keyOf/*T*/].open()
+                this.refs[T].open()
             },
             showEdits: function() {
                 this.refs[x].open()
@@ -81,86 +81,86 @@ __d("THCommentMetadata",["LayoutAnimation","FBEditHistoryPopover","FBLikersPopov
                 this.refs[P].touchableHandleActivePressOut()
             },
             render: function() {
-                if (this.props.pendingText) return Image/*p*/.createElement(TouchableBounce/*R*/, {
+                if (this.props.pendingText) return p.createElement(R, {
                     style: F.metadataContainer
-                }, Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                }, p.createElement(f, {
                     key: "pending",
                     style: F.text
                 }, this.props.pendingText));
                 var global/*e*/, require/*t*/ = this.props.comment,
                     requireDynamic/*n*/ = require/*t*/.feedback,
                     requireLazy/*r*/ = requireDynamic/*n*/.does_viewer_like;
-                global/*e*/ = View/*C*/(requireLazy/*r*/ ? "thCommentLikeIcon" : "thCommentLikeNormalIcon");
+                global/*e*/ = C(requireLazy/*r*/ ? "thCommentLikeIcon" : "thCommentLikeNormalIcon");
                 var module/*i*/;
-                requireDynamic/*n*/.likers.count > 0 && (module/*i*/ = [Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                requireDynamic/*n*/.likers.count > 0 && (module/*i*/ = [p.createElement(f, {
                     key: "middot",
                     style: F.text
-                }, "·"), Image/*p*/.createElement(TimerMixin/*S*/, {
+                }, "·"), p.createElement(S, {
                     key: "likeCount",
                     onPress: this.showLikers
-                }, Image/*p*/.createElement(TouchableBounce/*R*/, {
+                }, p.createElement(R, {
                     style: F.countContainer
-                }, Image/*p*/.createElement(FBLikersPopover/*u*/, {
+                }, p.createElement(u, {
                     source: global/*e*/,
                     style: F.icon
-                }), Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                }), p.createElement(f, {
                     style: [F.text, requireLazy/*r*/ && F.liked]
-                }, requireDynamic/*n*/.likers.count), Image/*p*/.createElement(LayoutAnimation/*s*/, {
-                    ref: keyOf/*T*/,
+                }, requireDynamic/*n*/.likers.count), p.createElement(s, {
+                    ref: T,
                     feedback: requireDynamic/*n*/,
                     circularProfilePictures: !0,
-                    closeOnRowPress: !ix/*D*/,
-                    closeTextColor: Text/*g*/.groupsAccent
+                    closeOnRowPress: !D,
+                    closeTextColor: g.groupsAccent
                 })))]);
                 var o;
-                require/*t*/.edit_history.count && (o = [Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                require/*t*/.edit_history.count && (o = [p.createElement(f, {
                     key: "middot",
                     style: F.text
-                }, "·"), Image/*p*/.createElement(TimerMixin/*S*/, {
+                }, "·"), p.createElement(S, {
                     key: "edited",
                     onPress: this.showEdits
-                }, Image/*p*/.createElement(TouchableBounce/*R*/, null, Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                }, p.createElement(R, null, p.createElement(f, {
                     style: F.text
-                }, TouchableWithoutFeedback/*w*/({
+                }, w({
                     type: "text",
                     texts: ["Edited"],
                     desc: "Comment was edited."
-                })), Image/*p*/.createElement(exports/*a*/, {
+                })), p.createElement(a, {
                     ref: x,
                     comment: require/*t*/
                 })))]);
-                var FBEditHistoryPopover/*l*/;
-                return requireDynamic/*n*/.can_viewer_like && (FBEditHistoryPopover/*l*/ = [Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                var l;
+                return requireDynamic/*n*/.can_viewer_like && (l = [p.createElement(f, {
                     key: "middot",
                     style: F.text
-                }, "·"), Image/*p*/.createElement(TimerMixin/*S*/, {
+                }, "·"), p.createElement(S, {
                     key: "like",
                     ref: P,
                     onPressWithCompletion: this.onLikePress
-                }, Image/*p*/.createElement(TouchableBounce/*R*/, null, Image/*p*/.createElement(ReactGraphQL/*f*/, {
+                }, p.createElement(R, null, p.createElement(f, {
                     style: F.text
-                }, TouchableWithoutFeedback/*w*/(requireDynamic/*n*/.does_viewer_like ? {
+                }, w(requireDynamic/*n*/.does_viewer_like ? {
                     type: "text",
                     texts: ["Unlike"],
-                    desc: "Unlike exports/*a*/ comment."
+                    desc: "Unlike a comment."
                 } : {
                     type: "text",
                     texts: ["Like"],
                     desc: "Like the comment."
-                }))))]), Image/*p*/.createElement(TimeStamp/*b*/, {
+                }))))]), p.createElement(b, {
                     onPress: this.onRowPress,
                     onPressIn: this.onRowPressIn,
                     onPressOut: this.onRowPressOut
-                }, Image/*p*/.createElement(TouchableBounce/*R*/, {
+                }, p.createElement(R, {
                     style: F.metadataContainer
-                }, Image/*p*/.createElement(THSounds/*v*/, {
+                }, p.createElement(v, {
                     style: F.text,
                     time: this.props.comment.created_time,
                     shorten: !0
-                }), o, FBEditHistoryPopover/*l*/, module/*i*/))
+                }), o, l, module/*i*/))
             }
         }),
-        F = React/*h*/.create({
+        F = h.create({
             countContainer: {
                 flexDirection: "row"
             },
@@ -171,7 +171,7 @@ __d("THCommentMetadata",["LayoutAnimation","FBEditHistoryPopover","FBLikersPopov
                 top: -1
             },
             liked: {
-                color: Text/*g*/.groupsAccent
+                color: g.groupsAccent
             },
             metadataContainer: {
                 flexWrap: "wrap",
@@ -182,7 +182,7 @@ __d("THCommentMetadata",["LayoutAnimation","FBEditHistoryPopover","FBLikersPopov
                 paddingBottom: 5
             },
             text: {
-                color: Text/*g*/.feedbackFadedText,
+                color: g.feedbackFadedText,
                 fontSize: 12,
                 paddingRight: 5,
                 height: 16

@@ -1,9 +1,9 @@
 __d("LayoutPropTypes",["ReactPropTypes"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("ReactPropTypes"),
-        exports/*a*/ = {
+        a = {
             width: o.number,
-            ReactPropTypes/*height*/: o.number,
+            height: o.number,
             top: o.number,
             left: o.number,
             right: o.number,
@@ -35,5 +35,5 @@ __d("LayoutPropTypes",["ReactPropTypes"],function (global/*e*/, require/*t*/, re
             alignSelf: o.oneOf(["auto", "flex-start", "flex-end", "center", "stretch"]),
             flex: o.number
         };
-    module/*i*/.exports = exports/*a*/
+    module/*i*/.exports = a
 });

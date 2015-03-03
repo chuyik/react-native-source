@@ -2,7 +2,7 @@ __d("FBGroupJoinState",[],function (global/*e*/, require/*t*/, requireDynamic/*n
     "use strict";
     var o = {
         canJoin: "CAN_JOIN",
-        exports/*canRequest*/: "CAN_REQUEST",
+        canRequest: "CAN_REQUEST",
         cannotJoinOrRequest: "CANNOT_JOIN_OR_REQUEST",
         member: "MEMBER",
         requested: "REQUESTED"

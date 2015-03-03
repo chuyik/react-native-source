@@ -1,10 +1,10 @@
 __d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("LayoutAnimation"),
-        exports/*a*/ = require/*t*/("mergeDeep"),
-        LayoutAnimation/*s*/ = {
+        a = require/*t*/("mergeDeep"),
+        s = {
             duration: .3,
-            mergeDeep/*create*/: {
+            create: {
                 type: o.Types.easeInEaseOut,
                 property: o.Properties.opacity
             },
@@ -14,25 +14,25 @@ __d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, requir
         },
         l = {
             layout: {
-                like: LayoutAnimation/*s*/,
-                likeWithComment: exports/*a*/(LayoutAnimation/*s*/, {
-                    mergeDeep/*create*/: {
+                like: s,
+                likeWithComment: a(s, {
+                    create: {
                         property: o.Properties.scaleXY
                     }
                 }),
-                likeWithNoComments: LayoutAnimation/*s*/,
-                moreComments: LayoutAnimation/*s*/,
-                openPinnedPost: LayoutAnimation/*s*/,
-                photoCommentPreview: exports/*a*/(LayoutAnimation/*s*/, {
+                likeWithNoComments: s,
+                moreComments: s,
+                openPinnedPost: s,
+                photoCommentPreview: a(s, {
                     duration: .25,
-                    mergeDeep/*create*/: {
+                    create: {
                         type: o.Types.easeOut,
                         property: o.Properties.scaleXY
                     }
                 }),
-                inputButtons: exports/*a*/(LayoutAnimation/*s*/, {
+                inputButtons: a(s, {
                     duration: .25,
-                    mergeDeep/*create*/: {
+                    create: {
                         type: o.Types.easeOut
                     },
                     update: {
@@ -41,6 +41,6 @@ __d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, requir
                 })
             }
         };
-    for (var u in l.layout) o.configChecker(l.layout, u, "Animation.mergeDeep/*create*/");
+    for (var u in l.layout) o.configChecker(l.layout, u, "Animation.create");
     module/*i*/.exports = l
 });

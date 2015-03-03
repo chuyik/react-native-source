@@ -1,26 +1,26 @@
 __d("GroupsPostSearchApp",["DliteLoadingComponent","GroupPostsSearchRoute","React","StyleSheet","TextInput","THColors","THGroupPostSearchView","THGroupView","View","fbt","keyOf","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DliteLoadingComponent"),
-        exports/*a*/ = require/*t*/("GroupPostsSearchRoute"),
-        DliteLoadingComponent/*s*/ = require/*t*/("React"),
-        GroupPostsSearchRoute/*l*/ = require/*t*/("StyleSheet"),
-        React/*u*/ = require/*t*/("TextInput"),
-        StyleSheet/*c*/ = require/*t*/("THColors"),
-        TextInput/*p*/ = require/*t*/("THGroupPostSearchView"),
-        THColors/*d*/ = require/*t*/("THGroupView"),
-        THGroupPostSearchView/*h*/ = require/*t*/("View"),
-        THGroupView/*f*/ = require/*t*/("fbt"),
-        View/*m*/ = require/*t*/("keyOf");
+        a = require/*t*/("GroupPostsSearchRoute"),
+        s = require/*t*/("React"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("TextInput"),
+        c = require/*t*/("THColors"),
+        p = require/*t*/("THGroupPostSearchView"),
+        d = require/*t*/("THGroupView"),
+        h = require/*t*/("View"),
+        f = require/*t*/("fbt"),
+        m = require/*t*/("keyOf");
     require/*t*/("THRoutingConfig").initialize();
-    var g = View/*m*/({
+    var g = m({
             textInputRef: null
         }),
-        fbt/*_*/ = DliteLoadingComponent/*s*/.createClass({
+        _ = s.createClass({
             displayName: "GroupsPostSearchApp",
-            keyOf/*getInitialState*/: function() {
+            getInitialState: function() {
                 return {
                     searchQuery: "",
-                    THRoutingConfig/*submittedQuery*/: ""
+                    submittedQuery: ""
                 }
             },
             onTextInputChanged: function(global/*e*/) {
@@ -29,19 +29,19 @@ __d("GroupsPostSearchApp",["DliteLoadingComponent","GroupPostsSearchRoute","Reac
                 })
             },
             onSearchSubmit: function() {
-                this.state.searchQuery !== this.state.THRoutingConfig/*submittedQuery*/ && this.setState({
-                    THRoutingConfig/*submittedQuery*/: this.state.searchQuery
+                this.state.searchQuery !== this.state.submittedQuery && this.setState({
+                    submittedQuery: this.state.searchQuery
                 })
             },
             getSearchResults: function() {
-                if (this.state.THRoutingConfig/*submittedQuery*/.trim().length > 0) {
-                    var global/*e*/ = new exports/*a*/(null, {
+                if (this.state.submittedQuery.trim().length > 0) {
+                    var global/*e*/ = new a(null, {
                         postsQuery: this.getQueryString()
                     });
-                    return DliteLoadingComponent/*s*/.createElement(o, {
-                        component: TextInput/*p*/,
+                    return s.createElement(o, {
+                        component: p,
                         route: global/*e*/,
-                        loadingView: THColors/*d*/.getFakeStoryView(),
+                        loadingView: d.getFakeStoryView(),
                         refetchRoute: !0,
                         passProps: this.props
                     })
@@ -49,17 +49,17 @@ __d("GroupsPostSearchApp",["DliteLoadingComponent","GroupPostsSearchRoute","Reac
                 return null
             },
             getQueryString: function() {
-                return "intersect(stories-in(" + this.props.group + "),union(stories-keyword(" + this.state.THRoutingConfig/*submittedQuery*/ + "),stories-by(users-named(" + this.state.THRoutingConfig/*submittedQuery*/ + "))))"
+                return "intersect(stories-in(" + this.props.group + "),union(stories-keyword(" + this.state.submittedQuery + "),stories-by(users-named(" + this.state.submittedQuery + "))))"
             },
             render: function() {
-                var global/*e*/ = THGroupView/*f*/({
+                var global/*e*/ = f({
                     type: "text",
                     texts: ["Search posts in this group..."],
                     desc: "Placeholder for group post search input"
                 });
-                return DliteLoadingComponent/*s*/.createElement(THGroupPostSearchView/*h*/, null, DliteLoadingComponent/*s*/.createElement(THGroupPostSearchView/*h*/, {
+                return s.createElement(h, null, s.createElement(h, {
                     style: y.parentView
-                }, DliteLoadingComponent/*s*/.createElement(React/*u*/, {
+                }, s.createElement(u, {
                     ref: g,
                     placeholder: global/*e*/,
                     style: y.textInput,
@@ -68,16 +68,16 @@ __d("GroupsPostSearchApp",["DliteLoadingComponent","GroupPostsSearchRoute","Reac
                 })), this.getSearchResults())
             }
         }),
-        y = GroupPostsSearchRoute/*l*/.create({
+        y = l.create({
             parentView: {
                 paddingTop: 60,
-                backgroundColor: StyleSheet/*c*/.lightBlue
+                backgroundColor: c.lightBlue
             },
             textInput: {
-                backgroundColor: StyleSheet/*c*/.backgroundWash,
+                backgroundColor: c.backgroundWash,
                 height: 50,
                 paddingHorizontal: 10
             }
         });
-    module/*i*/.exports = fbt/*_*/
+    module/*i*/.exports = _
 });

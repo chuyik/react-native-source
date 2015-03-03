@@ -8,7 +8,7 @@ __d("emptyFunction",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/,
     function a() {}
     Object.assign(a, {
         thatReturns: o,
-        exports/*thatReturnsFalse*/: o(!1),
+        thatReturnsFalse: o(!1),
         thatReturnsTrue: o(!0),
         thatReturnsNull: o(null),
         thatReturnsThis: function() {

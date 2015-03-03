@@ -1,25 +1,25 @@
-__d("getTextContentFromFiles",["DocumentCharacters"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*DocumentCharacters/*r*/*/, module/*i*/) {
-    function o(global/*e*/, require/*exports/*t*/*/) {
+__d("getTextContentFromFiles",["DocumentCharacters"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = 0,
-            requireLazy/*DocumentCharacters/*r*/*/ = [];
+            requireLazy/*r*/ = [];
         global/*e*/.forEach(function(module/*i*/) {
             a(module/*i*/, function(module/*i*/) {
-                requireDynamic/*n*/++, module/*i*/ && requireLazy/*DocumentCharacters/*r*/*/.push(module/*i*/), requireDynamic/*n*/ == global/*e*/.length && require/*exports/*t*/*/(requireLazy/*DocumentCharacters/*r*/*/.join(l))
+                requireDynamic/*n*/++, module/*i*/ && requireLazy/*r*/.push(module/*i*/), requireDynamic/*n*/ == global/*e*/.length && require/*t*/(requireLazy/*r*/.join(l))
             })
         })
     }
 
-    function a(require/*exports/*t*/*/, requireDynamic/*n*/) {
-        if (!global/*e*/.FileReader || require/*exports/*t*/*/.type && !(require/*exports/*t*/*/.type in c)) return void requireDynamic/*n*/("");
-        if ("" === require/*exports/*t*/*/.type && u.test(require/*exports/*t*/*/.name)) return void requireDynamic/*n*/(require/*exports/*t*/*/.name.replace(u, ""));
-        var requireLazy/*DocumentCharacters/*r*/*/ = new FileReader;
-        requireLazy/*DocumentCharacters/*r*/*/.onload = function() {
-            requireDynamic/*n*/(requireLazy/*DocumentCharacters/*r*/*/.result)
-        }, requireLazy/*DocumentCharacters/*r*/*/.onerror = function() {
+    function a(require/*t*/, requireDynamic/*n*/) {
+        if (!global/*e*/.FileReader || require/*t*/.type && !(require/*t*/.type in c)) return void requireDynamic/*n*/("");
+        if ("" === require/*t*/.type && u.test(require/*t*/.name)) return void requireDynamic/*n*/(require/*t*/.name.replace(u, ""));
+        var requireLazy/*r*/ = new FileReader;
+        requireLazy/*r*/.onload = function() {
+            requireDynamic/*n*/(requireLazy/*r*/.result)
+        }, requireLazy/*r*/.onerror = function() {
             requireDynamic/*n*/("")
-        }, requireLazy/*DocumentCharacters/*r*/*/.readAsText(require/*exports/*t*/*/)
+        }, requireLazy/*r*/.readAsText(require/*t*/)
     }
-    var s = require/*exports/*t*/*/("DocumentCharacters"),
+    var s = require/*t*/("DocumentCharacters"),
         l = s.BLOCK_DELIMITER,
         u = /\.textClipping$/,
         c = {

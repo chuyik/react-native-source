@@ -2,7 +2,7 @@ __d("ComposedBlockType",[],function (global/*e*/, require/*t*/, requireDynamic/*
     "use strict";
     var o = {
         UNSTYLED: 0,
-        exports/*PARAGRAPH*/: 1,
+        PARAGRAPH: 1,
         UNORDERED_LIST_ITEM: 2,
         ORDERED_LIST_ITEM: 3,
         BLOCKQUOTE: 4,

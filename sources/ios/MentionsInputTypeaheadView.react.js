@@ -1,55 +1,55 @@
 __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimensions","ScrollView","StyleSheet","TouchableHighlight","TypeaheadViewItem","View","Text","cssVar"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("Image"),
-        exports/*a*/ = require/*t*/("ReactPropTypes"),
-        Image/*s*/ = require/*t*/("React"),
-        ReactPropTypes/*l*/ = require/*t*/("Dimensions"),
-        React/*u*/ = require/*t*/("ScrollView"),
-        Dimensions/*c*/ = require/*t*/("StyleSheet"),
-        ScrollView/*p*/ = require/*t*/("TouchableHighlight"),
-        StyleSheet/*d*/ = require/*t*/("TypeaheadViewItem"),
-        TouchableHighlight/*h*/ = require/*t*/("View"),
-        TypeaheadViewItem/*f*/ = require/*t*/("Text"),
-        View/*m*/ = require/*t*/("cssVar"),
-        Text/*g*/ = ReactPropTypes/*l*/.get("window").height - 320,
-        cssVar/*_*/ = Text/*g*/ / 55,
+        a = require/*t*/("ReactPropTypes"),
+        s = require/*t*/("React"),
+        l = require/*t*/("Dimensions"),
+        u = require/*t*/("ScrollView"),
+        c = require/*t*/("StyleSheet"),
+        p = require/*t*/("TouchableHighlight"),
+        d = require/*t*/("TypeaheadViewItem"),
+        h = require/*t*/("View"),
+        f = require/*t*/("Text"),
+        m = require/*t*/("cssVar"),
+        g = l.get("window").height - 320,
+        _ = g / 55,
         y = 34,
-        v = Image/*s*/.createClass({
+        v = s.createClass({
             displayName: "MentionsInputTypeaheadViewItem",
-            mixins: [StyleSheet/*d*/.Mixin],
-            propTypes: StyleSheet/*d*/.propTypes,
+            mixins: [d.Mixin],
+            propTypes: d.propTypes,
             render: function() {
                 var global/*e*/ = this.props.entry,
-                    require/*t*/ = global/*e*/.getPhoto() ? Image/*s*/.createElement(o, {
+                    require/*t*/ = global/*e*/.getPhoto() ? s.createElement(o, {
                         style: w.profilePicture,
                         source: {
                             uri: global/*e*/.getPhoto()
                         }
                     }) : null,
                     requireDynamic/*n*/ = null;
-                return global/*e*/.getSubtitle() && (requireDynamic/*n*/ = Image/*s*/.createElement(TypeaheadViewItem/*f*/, null, global/*e*/.getSubtitle())), Image/*s*/.createElement(ScrollView/*p*/, {
+                return global/*e*/.getSubtitle() && (requireDynamic/*n*/ = s.createElement(f, null, global/*e*/.getSubtitle())), s.createElement(p, {
                     onPress: this._onSelect
-                }, Image/*s*/.createElement(TouchableHighlight/*h*/, {
+                }, s.createElement(h, {
                     style: w.row
-                }, require/*t*/, Image/*s*/.createElement(TouchableHighlight/*h*/, null, Image/*s*/.createElement(TypeaheadViewItem/*f*/, {
+                }, require/*t*/, s.createElement(h, null, s.createElement(f, {
                     style: w.titleText
                 }, global/*e*/.getTitle()), requireDynamic/*n*/)))
             }
         }),
-        S = Image/*s*/.createClass({
+        S = s.createClass({
             displayName: "MentionsInputTypeaheadView",
             propTypes: {
-                highlightedEntry: exports/*a*/.object,
-                entries: exports/*a*/.array.isRequired,
-                onSelect: exports/*a*/.func.isRequired,
-                onHighlight: exports/*a*/.func,
-                onRenderHighlight: exports/*a*/.func
+                highlightedEntry: a.object,
+                entries: a.array.isRequired,
+                onSelect: a.func.isRequired,
+                onHighlight: a.func,
+                onRenderHighlight: a.func
             },
             _renderItem: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = global/*e*/ === this.props.highlightedEntry;
-                return [0 !== require/*t*/ && Image/*s*/.createElement(TouchableHighlight/*h*/, {
+                return [0 !== require/*t*/ && s.createElement(h, {
                     style: w.divider
-                }), Image/*s*/.createElement(v, {
+                }), s.createElement(v, {
                     key: global/*e*/.getUniqueID(),
                     entry: global/*e*/,
                     highlighted: requireDynamic/*n*/,
@@ -59,10 +59,10 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
                 })]
             },
             _renderSectionHeader: function(global/*e*/) {
-                return Image/*s*/.createElement(TouchableHighlight/*h*/, {
+                return s.createElement(h, {
                     key: global/*e*/,
                     style: w.sectionHeader
-                }, Image/*s*/.createElement(TypeaheadViewItem/*f*/, {
+                }, s.createElement(f, {
                     style: w.sectionHeaderText
                 }, global/*e*/))
             },
@@ -73,27 +73,27 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
                     this.props.entries.forEach(function(requireDynamic/*n*/) {
                         requireDynamic/*n*/.getAuxiliaryData().isMemberOfGroup ? (0 === global/*e*/.length && global/*e*/.push(this._renderSectionHeader("Members")), global/*e*/.push(this._renderItem(requireDynamic/*n*/, global/*e*/.length - 1))) : (0 === require/*t*/.length && require/*t*/.push(this._renderSectionHeader("Others")), require/*t*/.push(this._renderItem(requireDynamic/*n*/, require/*t*/.length - 1)))
                     }.bind(this));
-                    var requireDynamic/*n*/ = this.props.entries.length > cssVar/*_*/ && {
-                        height: Text/*g*/
+                    var requireDynamic/*n*/ = this.props.entries.length > _ && {
+                        height: g
                     };
-                    return Image/*s*/.createElement(TouchableHighlight/*h*/, {
+                    return s.createElement(h, {
                         style: w.container,
-                        pointerEvents: TouchableHighlight/*h*/.pointerEvents.boxNone
-                    }, Image/*s*/.createElement(React/*u*/, {
+                        pointerEvents: h.pointerEvents.boxNone
+                    }, s.createElement(u, {
                         keyboardShouldPersistTaps: !0,
                         style: [w.content, requireDynamic/*n*/]
                     }, global/*e*/, require/*t*/), this._renderSectionHeader())
                 }
-                return Image/*s*/.createElement(TouchableHighlight/*h*/, {
+                return s.createElement(h, {
                     style: w.container
                 })
             }
         }),
-        b = View/*m*/("fbui-bluegray-5"),
-        R = View/*m*/("fbui-bluegray-10"),
-        w = Dimensions/*c*/.create({
+        b = m("fbui-bluegray-5"),
+        R = m("fbui-bluegray-10"),
+        w = c.create({
             container: {
-                width: ReactPropTypes/*l*/.get("window").width,
+                width: l.get("window").width,
                 top: 0,
                 left: 0
             },

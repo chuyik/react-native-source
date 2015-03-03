@@ -5,5 +5,5 @@ __d("PixelRatio",["Dimensions"],function (global/*e*/, require/*t*/, requireDyna
     var a = require/*t*/("Dimensions");
     o.get = function() {
         return a.get("window").scale
-    }, exports/*o.startDetecting*/ = function() {}, module/*i*/.exports = o
+    }, o.startDetecting = function() {}, module/*i*/.exports = o
 });

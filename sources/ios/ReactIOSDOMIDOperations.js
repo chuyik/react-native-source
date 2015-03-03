@@ -1,36 +1,36 @@
-__d("ReactIOSDOMIDOperations",["ReactIOSTagHandles","ReactMultiChildUpdateTypes","NativeModulesDeprecated","ReactPerf"],function (global/*e*/, require/*ReactPerf/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactIOSDOMIDOperations",["ReactIOSTagHandles","ReactMultiChildUpdateTypes","NativeModulesDeprecated","ReactPerf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*ReactPerf/*t*/*/("ReactIOSTagHandles"),
-        exports/*a*/ = require/*ReactPerf/*t*/*/("ReactMultiChildUpdateTypes"),
-        ReactIOSTagHandles/*s*/ = require/*ReactPerf/*t*/*/("NativeModulesDeprecated").RKUIManager,
-        ReactMultiChildUpdateTypes/*l*/ = require/*ReactPerf/*t*/*/("ReactPerf"),
-        NativeModulesDeprecated/*u*/ = function(global/*e*/, require/*ReactPerf/*t*/*/) {
+    var o = require/*t*/("ReactIOSTagHandles"),
+        a = require/*t*/("ReactMultiChildUpdateTypes"),
+        s = require/*t*/("NativeModulesDeprecated").RKUIManager,
+        l = require/*t*/("ReactPerf"),
+        u = function(global/*e*/, require/*t*/) {
             if (global/*e*/.length) {
                 for (var requireDynamic/*n*/ = {}, requireLazy/*r*/ = 0; requireLazy/*r*/ < global/*e*/.length; requireLazy/*r*/++) {
                     var module/*i*/ = global/*e*/[requireLazy/*r*/],
-                        ReactMultiChildUpdateTypes/*l*/ = o.mostRecentMountedNodeHandleForRootNodeID(module/*i*/.parentID),
-                        NativeModulesDeprecated/*u*/ = requireDynamic/*n*/[ReactMultiChildUpdateTypes/*l*/] || (requireDynamic/*n*/[ReactMultiChildUpdateTypes/*l*/] = {});
-                    if (module/*i*/.type === exports/*a*/.MOVE_EXISTING)(NativeModulesDeprecated/*u*/.moveFromIndices || (NativeModulesDeprecated/*u*/.moveFromIndices = [])).push(module/*i*/.fromIndex), (NativeModulesDeprecated/*u*/.moveToIndices || (NativeModulesDeprecated/*u*/.moveToIndices = [])).push(module/*i*/.toIndex);
-                    else if (module/*i*/.type === exports/*a*/.REMOVE_NODE)(NativeModulesDeprecated/*u*/.removeAtIndices || (NativeModulesDeprecated/*u*/.removeAtIndices = [])).push(module/*i*/.fromIndex);
-                    else if (module/*i*/.type === exports/*a*/.INSERT_MARKUP) {
-                        var c = require/*ReactPerf/*t*/*/[module/*i*/.markupIndex],
+                        l = o.mostRecentMountedNodeHandleForRootNodeID(module/*i*/.parentID),
+                        u = requireDynamic/*n*/[l] || (requireDynamic/*n*/[l] = {});
+                    if (module/*i*/.type === a.MOVE_EXISTING)(u.moveFromIndices || (u.moveFromIndices = [])).push(module/*i*/.fromIndex), (u.moveToIndices || (u.moveToIndices = [])).push(module/*i*/.toIndex);
+                    else if (module/*i*/.type === a.REMOVE_NODE)(u.removeAtIndices || (u.removeAtIndices = [])).push(module/*i*/.fromIndex);
+                    else if (module/*i*/.type === a.INSERT_MARKUP) {
+                        var c = require/*t*/[module/*i*/.markupIndex],
                             p = c.tag,
                             d = c.rootNodeID;
-                        o.associateRootNodeIDWithMountedNodeHandle(d, p), (NativeModulesDeprecated/*u*/.addAtIndices || (NativeModulesDeprecated/*u*/.addAtIndices = [])).push(module/*i*/.toIndex), (NativeModulesDeprecated/*u*/.addChildTags || (NativeModulesDeprecated/*u*/.addChildTags = [])).push(p)
+                        o.associateRootNodeIDWithMountedNodeHandle(d, p), (u.addAtIndices || (u.addAtIndices = [])).push(module/*i*/.toIndex), (u.addChildTags || (u.addChildTags = [])).push(p)
                     }
                 }
                 for (var h in requireDynamic/*n*/) {
                     var f = +h,
                         m = requireDynamic/*n*/[f];
-                    ReactIOSTagHandles/*s*/.manageChildren(f, m.moveFromIndices, m.moveToIndices, m.addChildTags, m.addAtIndices, m.removeAtIndices)
+                    s.manageChildren(f, m.moveFromIndices, m.moveToIndices, m.addChildTags, m.addAtIndices, m.removeAtIndices)
                 }
             }
         },
         c = {
-            dangerouslyProcessChildrenUpdates: ReactMultiChildUpdateTypes/*l*/.measure("ReactDOMIDOperations", "dangerouslyProcessChildrenUpdates", NativeModulesDeprecated/*u*/),
-            dangerouslyReplaceNodeWithMarkupByID: ReactMultiChildUpdateTypes/*l*/.measure("ReactDOMIDOperations", "dangerouslyReplaceNodeWithMarkupByID", function(global/*e*/, require/*ReactPerf/*t*/*/) {
+            dangerouslyProcessChildrenUpdates: l.measure("ReactDOMIDOperations", "dangerouslyProcessChildrenUpdates", u),
+            dangerouslyReplaceNodeWithMarkupByID: l.measure("ReactDOMIDOperations", "dangerouslyReplaceNodeWithMarkupByID", function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = o.mostRecentMountedNodeHandleForRootNodeID(global/*e*/);
-                ReactIOSTagHandles/*s*/.replaceExistingNonRootView(requireDynamic/*n*/, require/*ReactPerf/*t*/*/.tag), o.associateRootNodeIDWithMountedNodeHandle(global/*e*/, require/*ReactPerf/*t*/*/.tag)
+                s.replaceExistingNonRootView(requireDynamic/*n*/, require/*t*/.tag), o.associateRootNodeIDWithMountedNodeHandle(global/*e*/, require/*t*/.tag)
             })
         };
     module/*i*/.exports = c

@@ -2,30 +2,30 @@ __d("ReactIOSReconcileTransaction",["CallbackQueue","PooledClass","Transaction"]
     "use strict";
 
     function o() {
-        this.reinitializeTransaction(), exports/*this.reactMountReady*/ = a.getPooled(null)
+        this.reinitializeTransaction(), this.reactMountReady = a.getPooled(null)
     }
     var a = require/*t*/("CallbackQueue"),
-        CallbackQueue/*s*/ = require/*t*/("PooledClass"),
-        PooledClass/*l*/ = require/*t*/("Transaction"),
-        Transaction/*u*/ = {
+        s = require/*t*/("PooledClass"),
+        l = require/*t*/("Transaction"),
+        u = {
             initialize: function() {
-                exports/*this.reactMountReady*/.reset()
+                this.reactMountReady.reset()
             },
             close: function() {
-                exports/*this.reactMountReady*/.notifyAll()
+                this.reactMountReady.notifyAll()
             }
         },
-        c = [Transaction/*u*/],
+        c = [u],
         p = {
             getTransactionWrappers: function() {
                 return c
             },
             getReactMountReady: function() {
-                return exports/*this.reactMountReady*/
+                return this.reactMountReady
             },
             destructor: function() {
-                a.release(exports/*this.reactMountReady*/), exports/*this.reactMountReady*/ = null
+                a.release(this.reactMountReady), this.reactMountReady = null
             }
         };
-    Object.assign(o.prototype, PooledClass/*l*/.Mixin, o, p), CallbackQueue/*s*/.addPoolingTo(o), module/*i*/.exports = o
+    Object.assign(o.prototype, l.Mixin, o, p), s.addPoolingTo(o), module/*i*/.exports = o
 });

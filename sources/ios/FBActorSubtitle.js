@@ -1,25 +1,25 @@
 __d("FBActorSubtitle",["React","ReactGraphQL","StylePropType","Text","fbt","isEmpty","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("React"),
-        exports/*a*/ = require/*t*/("ReactGraphQL"),
-        React/*s*/ = require/*t*/("StylePropType"),
-        ReactGraphQL/*l*/ = require/*t*/("Text"),
-        StylePropType/*u*/ = require/*t*/("fbt"),
-        Text/*c*/ = require/*t*/("isEmpty"),
-        fbt/*p*/ = require/*t*/("truncate"),
-        isEmpty/*d*/ = o.createClass({
+        a = require/*t*/("ReactGraphQL"),
+        s = require/*t*/("StylePropType"),
+        l = require/*t*/("Text"),
+        u = require/*t*/("fbt"),
+        c = require/*t*/("isEmpty"),
+        p = require/*t*/("truncate"),
+        d = o.createClass({
             displayName: "FBActorSubtitle",
-            truncate/*propTypes*/: {
+            propTypes: {
                 actor: o.PropTypes.object.isRequired,
                 maxTextLength: o.PropTypes.number,
-                textStyle: React/*s*/
+                textStyle: s
             },
             getDefaultProps: function() {
                 return {
                     maxTextLength: 25
                 }
             },
-            mixins: [exports/*a*/.Mixin],
+            mixins: [a.Mixin],
             statics: {
                 queries: {
                     actor: function(global/*e*/, require/*t*/) {
@@ -115,32 +115,32 @@ __d("FBActorSubtitle",["React","ReactGraphQL","StylePropType","Text","fbt","isEm
                         var requireLazy/*r*/ = global/*e*/.work_experiences ? global/*e*/.work_experiences.edges : null;
                         if (requireLazy/*r*/ && requireLazy/*r*/[0] && requireLazy/*r*/[0].node && requireLazy/*r*/[0].node.employer) {
                             var module/*i*/ = requireLazy/*r*/[0].node;
-                            requireDynamic/*n*/ = module/*i*/.position ? StylePropType/*u*/({
+                            requireDynamic/*n*/ = module/*i*/.position ? u({
                                 type: "text",
                                 texts: ["{position} at {employer}"],
                                 desc: "Subtitle for user who works at given position for given employer"
-                            }, [StylePropType/*u*/.param("position", module/*i*/.position.name), StylePropType/*u*/.param("employer", module/*i*/.employer.name)]) : StylePropType/*u*/({
+                            }, [u.param("position", module/*i*/.position.name), u.param("employer", module/*i*/.employer.name)]) : u({
                                 type: "text",
                                 texts: ["{employer}"],
                                 desc: "Subtitle for user who works at unknown position for given employer"
-                            }, [StylePropType/*u*/.param("employer", module/*i*/.employer.name)]);
+                            }, [u.param("employer", module/*i*/.employer.name)]);
                             break
                         }
-                        var exports/*a*/ = global/*e*/.education_experiences ? global/*e*/.education_experiences.edges : null;
-                        exports/*a*/ && exports/*a*/[0] && exports/*a*/[0].node && exports/*a*/[0].node.school && (requireDynamic/*n*/ = exports/*a*/[0].node.school.name);
+                        var a = global/*e*/.education_experiences ? global/*e*/.education_experiences.edges : null;
+                        a && a[0] && a[0].node && a[0].node.school && (requireDynamic/*n*/ = a[0].node.school.name);
                         break;
                     case "Page":
-                        Text/*c*/(global/*e*/.category_names) || (requireDynamic/*n*/ = global/*e*/.category_names[0]);
+                        c(global/*e*/.category_names) || (requireDynamic/*n*/ = global/*e*/.category_names[0]);
                         break;
                     default:
                         console.warn("Unspecialized FBActor type: " + require/*t*/)
                 }
-                return o.createElement(ReactGraphQL/*l*/, {
+                return o.createElement(l, {
                     style: [this.props.style, this.props.textStyle]
-                }, fbt/*p*/(requireDynamic/*n*/, this.props.maxTextLength, {
+                }, p(requireDynamic/*n*/, this.props.maxTextLength, {
                     breakOnWords: !1
                 }))
             }
         });
-    module/*i*/.exports = isEmpty/*d*/
+    module/*i*/.exports = d
 });

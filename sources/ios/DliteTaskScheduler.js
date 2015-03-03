@@ -1,31 +1,31 @@
-__d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/*Promise/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o() {
-        d || (p.length ? (d = !0, exports/*u.resolve*/().done(function() {
+        d || (p.length ? (d = !0, u.resolve().done(function() {
             var global/*e*/ = a(p.shift());
             l ? l(global/*e*/) : global/*e*/()
         })) : d = !1)
     }
 
     function a(global/*e*/) {
-        var require/*Promise/*t*/*/ = !1;
+        var require/*t*/ = !1;
         return function() {
-            require/*Promise/*t*/*/ && c(0, "DliteTaskScheduler: Tasks can only be executed once."), require/*Promise/*t*/*/ = !0, invariant/*s*/(global/*e*/), d = !1, o()
+            require/*t*/ && c(0, "DliteTaskScheduler: Tasks can only be executed once."), require/*t*/ = !0, s(global/*e*/), d = !1, o()
         }
     }
 
-    function invariant/*s*/(global/*e*/) {
-        var require/*Promise/*t*/*/ = p;
+    function s(global/*e*/) {
+        var require/*t*/ = p;
         p = [];
         try {
             global/*e*/()
         } finally {
-            Array.prototype.unshift.apply(require/*Promise/*t*/*/, p), p = require/*Promise/*t*/*/
+            Array.prototype.unshift.apply(require/*t*/, p), p = require/*t*/
         }
     }
-    var l, u = require/*Promise/*t*/*/("Promise"),
-        c = require/*Promise/*t*/*/("invariant"),
+    var l, u = require/*t*/("Promise"),
+        c = require/*t*/("invariant"),
         p = [],
         d = !1,
         h = {
@@ -34,17 +34,17 @@ __d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/
             },
             await: function() {
                 var global/*e*/ = arguments,
-                    require/*Promise/*t*/*/ = new u(function(require/*Promise/*t*/*/) {
+                    require/*t*/ = new u(function(require/*t*/) {
                         function requireDynamic/*n*/(module/*i*/) {
                             p.push(function() {
                                 var o = global/*e*/[requireLazy/*r*/++](module/*i*/);
-                                requireLazy/*r*/ < global/*e*/.length ? requireDynamic/*n*/(o) : require/*Promise/*t*/*/(o)
+                                requireLazy/*r*/ < global/*e*/.length ? requireDynamic/*n*/(o) : require/*t*/(o)
                             })
                         }
                         var requireLazy/*r*/ = 0;
                         requireDynamic/*n*/()
                     });
-                return o(), require/*Promise/*t*/*/
+                return o(), require/*t*/
             }
         };
     module/*i*/.exports = h

@@ -1,14 +1,14 @@
-__d("Dimensions",["NativeModules","invariant","mergeInto"],function (global/*mergeInto/*e*/*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Dimensions",["NativeModules","invariant","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o() {}
     var a = require/*t*/("NativeModules"),
-        exports/*s*/ = require/*t*/("invariant"),
-        NativeModules/*l*/ = require/*t*/("mergeInto"),
-        invariant/*u*/ = a.RKUIManager.Dimensions;
-    o.set = function(global/*mergeInto/*e*/*/) {
-        return NativeModules/*l*/(invariant/*u*/, global/*mergeInto/*e*/*/), !0
-    }, o.get = function(global/*mergeInto/*e*/*/) {
-        return invariant/*u*/[global/*mergeInto/*e*/*/] || exports/*s*/(0, "No dimension set for key " + global/*mergeInto/*e*/*/), invariant/*u*/[global/*mergeInto/*e*/*/]
+        s = require/*t*/("invariant"),
+        l = require/*t*/("mergeInto"),
+        u = a.RKUIManager.Dimensions;
+    o.set = function(global/*e*/) {
+        return l(u, global/*e*/), !0
+    }, o.get = function(global/*e*/) {
+        return u[global/*e*/] || s(0, "No dimension set for key " + global/*e*/), u[global/*e*/]
     }, module/*i*/.exports = o
 });

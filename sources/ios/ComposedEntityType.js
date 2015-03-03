@@ -2,7 +2,7 @@ __d("ComposedEntityType",[],function (global/*e*/, require/*t*/, requireDynamic/
     "use strict";
     var o = {
         MENTION: 0,
-        exports/*LINK*/: 1,
+        LINK: 1,
         IMAGE: 2,
         VIDEO: 3
     };

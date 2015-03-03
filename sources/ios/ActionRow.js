@@ -1,41 +1,41 @@
 __d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("FIGColors"),
-        exports/*a*/ = require/*t*/("Image"),
-        FIGColors/*s*/ = require/*t*/("React"),
-        Image/*l*/ = require/*t*/("StyleSheet"),
-        React/*u*/ = require/*t*/("Text"),
-        StyleSheet/*c*/ = require/*t*/("TouchableBounce"),
-        Text/*p*/ = require/*t*/("View"),
-        TouchableBounce/*d*/ = FIGColors/*s*/.createClass({
+        a = require/*t*/("Image"),
+        s = require/*t*/("React"),
+        l = require/*t*/("StyleSheet"),
+        u = require/*t*/("Text"),
+        c = require/*t*/("TouchableBounce"),
+        p = require/*t*/("View"),
+        d = s.createClass({
             displayName: "ActionRow",
-            View/*propTypes*/: {
-                title: FIGColors/*s*/.PropTypes.string.isRequired,
-                iconSource: exports/*a*/.sourcePropType,
-                onPress: FIGColors/*s*/.PropTypes.func.isRequired,
-                subtitle: FIGColors/*s*/.PropTypes.string
+            propTypes: {
+                title: s.PropTypes.string.isRequired,
+                iconSource: a.sourcePropType,
+                onPress: s.PropTypes.func.isRequired,
+                subtitle: s.PropTypes.string
             },
             renderText: function() {
-                return FIGColors/*s*/.createElement(Text/*p*/, {
+                return s.createElement(p, {
                     style: h.textContainer
-                }, FIGColors/*s*/.createElement(React/*u*/, {
+                }, s.createElement(u, {
                     style: h.title
-                }, this.props.title), this.props.subtitle && FIGColors/*s*/.createElement(React/*u*/, {
+                }, this.props.title), this.props.subtitle && s.createElement(u, {
                     style: h.subtitle
                 }, this.props.subtitle))
             },
             render: function() {
-                return FIGColors/*s*/.createElement(StyleSheet/*c*/, {
+                return s.createElement(c, {
                     onPress: this.props.onPress
-                }, FIGColors/*s*/.createElement(Text/*p*/, {
+                }, s.createElement(p, {
                     style: h.row
-                }, FIGColors/*s*/.createElement(exports/*a*/, {
+                }, s.createElement(a, {
                     source: this.props.iconSource,
                     style: h.icon
                 }), this.renderText()))
             }
         }),
-        h = Image/*l*/.create({
+        h = l.create({
             row: {
                 flexDirection: "row",
                 alignItems: "center",
@@ -57,5 +57,5 @@ __d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounc
                 color: o.mediumText
             }
         });
-    module/*i*/.exports = TouchableBounce/*d*/
+    module/*i*/.exports = d
 });

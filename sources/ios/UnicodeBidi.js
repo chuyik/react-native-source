@@ -1,32 +1,32 @@
-__d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, require/*exports/*Locale/*t*/*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
     function o(global/*e*/) {
-        var require/*exports/*Locale/*t*/*/*/ = m.exec(global/*e*/);
-        if (!require/*exports/*Locale/*t*/*/*/) return p.NEUTRAL;
-        var requireDynamic/*n*/ = g.exec(require/*exports/*Locale/*t*/*/*/[0]);
+        var require/*t*/ = m.exec(global/*e*/);
+        if (!require/*t*/) return p.NEUTRAL;
+        var requireDynamic/*n*/ = g.exec(require/*t*/[0]);
         return requireDynamic/*n*/ ? p.RTL : p.LTR
     }
 
-    function UnicodeBidiDirection/*a*/(global/*e*/, require/*exports/*Locale/*t*/*/*/) {
-        if (require/*exports/*Locale/*t*/*/*/ = require/*exports/*Locale/*t*/*/*/ || p.NEUTRAL, !global/*e*/.length) return require/*exports/*Locale/*t*/*/*/;
+    function a(global/*e*/, require/*t*/) {
+        if (require/*t*/ = require/*t*/ || p.NEUTRAL, !global/*e*/.length) return require/*t*/;
         var requireDynamic/*n*/ = o(global/*e*/);
-        return requireDynamic/*n*/ === p.NEUTRAL ? require/*exports/*Locale/*t*/*/*/ : requireDynamic/*n*/
+        return requireDynamic/*n*/ === p.NEUTRAL ? require/*t*/ : requireDynamic/*n*/
     }
 
-    function s(global/*e*/, require/*exports/*Locale/*t*/*/*/) {
-        return require/*exports/*Locale/*t*/*/*/ && p.isStrong(require/*exports/*Locale/*t*/*/*/) || (require/*exports/*Locale/*t*/*/*/ = c.getDirection()), UnicodeBidiDirection/*a*/(global/*e*/, require/*exports/*Locale/*t*/*/*/)
+    function s(global/*e*/, require/*t*/) {
+        return require/*t*/ && p.isStrong(require/*t*/) || (require/*t*/ = c.getDirection()), a(global/*e*/, require/*t*/)
     }
 
-    function l(global/*e*/, require/*exports/*Locale/*t*/*/*/) {
-        return s(global/*e*/, require/*exports/*Locale/*t*/*/*/) === p.LTR
+    function l(global/*e*/, require/*t*/) {
+        return s(global/*e*/, require/*t*/) === p.LTR
     }
 
-    function u(global/*e*/, require/*exports/*Locale/*t*/*/*/) {
-        return s(global/*e*/, require/*exports/*Locale/*t*/*/*/) === p.RTL
+    function u(global/*e*/, require/*t*/) {
+        return s(global/*e*/, require/*t*/) === p.RTL
     }
-    var c = require/*exports/*Locale/*t*/*/*/("Locale"),
-        p = require/*exports/*Locale/*t*/*/*/("UnicodeBidiDirection"),
+    var c = require/*t*/("Locale"),
+        p = require/*t*/("UnicodeBidiDirection"),
         d = {
             L: "A-Za-zÀ-ÖØ-öø-ʸ̀-֐ࠀ-῿‎Ⰰ-퟿-﬜︀-﹯﻽-￿",
             R: "־׀׃׆א-תװ-ײ׳-״߀-߉ߊ-ߪߴ-ߵߺࠀ-ࠕࠚࠤࠨ࠰-࠾ࡀ-ࡘ࡞‏יִײַ-ﬨשׁ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﭏ",
@@ -38,7 +38,7 @@ __d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, requi
         g = new RegExp("[" + f + "]"),
         _ = {
             firstStrongCharDir: o,
-            resolveBlockDir: UnicodeBidiDirection/*a*/,
+            resolveBlockDir: a,
             getDirection: s,
             isDirectionLTR: l,
             isDirectionRTL: u

@@ -1,10 +1,10 @@
-__d("XHRHttpError",[],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*exports/*t*/*/) {
-        if (0 === require/*exports/*t*/*/) {
+__d("XHRHttpError",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+    function o(global/*e*/, require/*t*/) {
+        if (0 === require/*t*/) {
             var requireDynamic/*n*/ = global/*e*/.getProtocol();
             return "file" === requireDynamic/*n*/ || "ftp" === requireDynamic/*n*/ ? null : u
         }
-        return require/*exports/*t*/*/ >= 100 && 200 > require/*exports/*t*/*/ ? s : require/*exports/*t*/*/ >= 200 && 300 > require/*exports/*t*/*/ ? null : require/*exports/*t*/*/ >= 400 && 500 > require/*exports/*t*/*/ ? a : require/*exports/*t*/*/ >= 500 && 600 > require/*exports/*t*/*/ ? l : require/*exports/*t*/*/ >= 12001 && 12156 > require/*exports/*t*/*/ ? u : c
+        return require/*t*/ >= 100 && 200 > require/*t*/ ? s : require/*t*/ >= 200 && 300 > require/*t*/ ? null : require/*t*/ >= 400 && 500 > require/*t*/ ? a : require/*t*/ >= 500 && 600 > require/*t*/ ? l : require/*t*/ >= 12001 && 12156 > require/*t*/ ? u : c
     }
     var a = "HTTP_CLIENT_ERROR",
         s = "HTTP_PROXY_ERROR",

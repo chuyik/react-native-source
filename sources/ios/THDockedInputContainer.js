@@ -1,68 +1,68 @@
 __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModulesDeprecated","POPAnimation","POPAnimationMixin","React","Dimensions","StyleSheet","Subscribable","THAnimations","THColors","THInputBarView","View","cloneWithProps","keyMirror","logError"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("DocumentContent"),
-        exports/*a*/ = require/*t*/("LayoutAnimation"),
-        DocumentContent/*s*/ = require/*t*/("NativeModulesDeprecated"),
-        LayoutAnimation/*l*/ = require/*t*/("POPAnimation"),
-        NativeModulesDeprecated/*u*/ = require/*t*/("POPAnimationMixin"),
-        POPAnimation/*c*/ = require/*t*/("React"),
-        POPAnimationMixin/*p*/ = require/*t*/("Dimensions"),
-        React/*d*/ = require/*t*/("StyleSheet"),
-        Dimensions/*h*/ = require/*t*/("Subscribable"),
-        StyleSheet/*f*/ = require/*t*/("THAnimations"),
-        Subscribable/*m*/ = require/*t*/("THColors"),
-        THAnimations/*g*/ = require/*t*/("THInputBarView"),
-        THColors/*_*/ = require/*t*/("View"),
-        THInputBarView/*y*/ = require/*t*/("cloneWithProps"),
-        View/*v*/ = require/*t*/("keyMirror"),
-        cloneWithProps/*S*/ = require/*t*/("logError"),
-        keyMirror/*b*/ = "scroll_responder",
-        logError/*R*/ = "comment_input",
+        a = require/*t*/("LayoutAnimation"),
+        s = require/*t*/("NativeModulesDeprecated"),
+        l = require/*t*/("POPAnimation"),
+        u = require/*t*/("POPAnimationMixin"),
+        c = require/*t*/("React"),
+        p = require/*t*/("Dimensions"),
+        d = require/*t*/("StyleSheet"),
+        h = require/*t*/("Subscribable"),
+        f = require/*t*/("THAnimations"),
+        m = require/*t*/("THColors"),
+        g = require/*t*/("THInputBarView"),
+        _ = require/*t*/("View"),
+        y = require/*t*/("cloneWithProps"),
+        v = require/*t*/("keyMirror"),
+        S = require/*t*/("logError"),
+        b = "scroll_responder",
+        R = "comment_input",
         w = "comment_input_wash",
-        C = DocumentContent/*s*/.RKUIManager,
+        C = s.RKUIManager,
         E = {
-            property: LayoutAnimation/*l*/.Properties.translationY,
+            property: l.Properties.translationY,
             toValue: 280,
             velocity: 20
         },
         D = {
-            property: LayoutAnimation/*l*/.Properties.translationY,
+            property: l.Properties.translationY,
             dynamicsTension: 0,
             toValue: 0,
             velocity: 100
         },
         T = {
-            property: LayoutAnimation/*l*/.Properties.opacity,
+            property: l.Properties.opacity,
             toValue: 0,
             duration: .3
         },
         x = {
-            property: LayoutAnimation/*l*/.Properties.opacity,
+            property: l.Properties.opacity,
             toValue: .5,
             duration: .3
         },
         P = {
-            property: LayoutAnimation/*l*/.Properties.opacity,
+            property: l.Properties.opacity,
             toValue: 1,
             duration: .3
         },
-        I = POPAnimation/*c*/.createClass({
+        I = c.createClass({
             displayName: "THDockedInputContainer",
             propTypes: {
-                scrollResponder: POPAnimation/*c*/.PropTypes.object.isRequired,
-                onDockedCommentSubmit: POPAnimation/*c*/.PropTypes.func,
-                onDockedCommentAbort: POPAnimation/*c*/.PropTypes.func,
-                onDidDock: POPAnimation/*c*/.PropTypes.func,
-                groupID: POPAnimation/*c*/.PropTypes.string
+                scrollResponder: c.PropTypes.object.isRequired,
+                onDockedCommentSubmit: c.PropTypes.func,
+                onDockedCommentAbort: c.PropTypes.func,
+                onDidDock: c.PropTypes.func,
+                groupID: c.PropTypes.string
             },
             statics: {
-                Mode: View/*v*/({
+                Mode: v({
                     partialWash: !0,
                     fullHide: !0
                 }),
                 contentPaddingHorizontal: 16
             },
-            mixins: [Dimensions/*h*/.Mixin, NativeModulesDeprecated/*u*/],
+            mixins: [h.Mixin, u],
             getInitialState: function() {
                 return {
                     initialText: new o,
@@ -76,46 +76,46 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                     style: {
                         opacity: 0
                     }
-                }), this.startAnimation(w, LayoutAnimation/*l*/.createLinearAnimation(D))
+                }), this.startAnimation(w, l.createLinearAnimation(D))
             },
             handleKeyboardWillHide: function(global/*e*/) {
                 if (this.state.recentKeyboardMovement = global/*e*/, this.state.getTappedNodeHandle) {
                     var require/*t*/ = [{
                             ref: w,
-                            anim: LayoutAnimation/*l*/.createEaseOutAnimation(E)
+                            anim: l.createEaseOutAnimation(E)
                         }, {
                             ref: w,
-                            anim: LayoutAnimation/*l*/.createLinearAnimation(T)
+                            anim: l.createLinearAnimation(T)
                         }],
                         requireDynamic/*n*/ = this.state.getTappedNodeHandle();
-                    requireDynamic/*n*/ && (this.refs[keyMirror/*b*/].scrollResponderScrollNativeHandleToKeyboard(requireDynamic/*n*/, this.state.mode === I.Mode.partialWash ? this.refs[logError/*R*/].getBarHeight() : 0), require/*t*/.push({
+                    requireDynamic/*n*/ && (this.refs[b].scrollResponderScrollNativeHandleToKeyboard(requireDynamic/*n*/, this.state.mode === I.Mode.partialWash ? this.refs[R].getBarHeight() : 0), require/*t*/.push({
                         nodeHandle: requireDynamic/*n*/,
-                        anim: LayoutAnimation/*l*/.createLinearAnimation(P)
-                    })), this.startAnimations(require/*t*/, this.handleDockAnimateOutComplete, cloneWithProps/*S*/), this.state.getTappedNodeHandle = null, this.refs[logError/*R*/].blurInput()
+                        anim: l.createLinearAnimation(P)
+                    })), this.startAnimations(require/*t*/, this.handleDockAnimateOutComplete, S), this.state.getTappedNodeHandle = null, this.refs[R].blurInput()
                 }
             },
             handleKeyboardDidShow: function() {
-                this.state.getTappedNodeHandle && (this.refs[keyMirror/*b*/].setNativeProps({
+                this.state.getTappedNodeHandle && (this.refs[b].setNativeProps({
                     scrollEnabled: !0
                 }), this.props.onDidDock && this.props.onDidDock(), this.startAnimations([{
                     ref: w,
-                    anim: LayoutAnimation/*l*/.createLinearAnimation(P)
+                    anim: l.createLinearAnimation(P)
                 }, {
                     nodeHandle: this.state.getTappedNodeHandle(),
-                    anim: LayoutAnimation/*l*/.createLinearAnimation(this.state.mode === I.Mode.partialWash ? x : T)
+                    anim: l.createLinearAnimation(this.state.mode === I.Mode.partialWash ? x : T)
                 }]))
             },
             handleKeyboardWillShow: function(global/*e*/) {
                 if (this.state.getTappedNodeHandle) {
                     var require/*t*/ = this.getBarHeight();
-                    this.refs[keyMirror/*b*/].scrollResponderScrollNativeHandleToKeyboard(this.state.getTappedNodeHandle(), this.state.mode === I.Mode.partialWash ? require/*t*/ : 0), this.state.recentKeyboardMovement = global/*e*/, this.updateDockedInputLocation(require/*t*/)
+                    this.refs[b].scrollResponderScrollNativeHandleToKeyboard(this.state.getTappedNodeHandle(), this.state.mode === I.Mode.partialWash ? require/*t*/ : 0), this.state.recentKeyboardMovement = global/*e*/, this.updateDockedInputLocation(require/*t*/)
                 }
             },
             getInitialBarHeight: function() {
-                return this.refs[logError/*R*/].getInitialBarHeight()
+                return this.refs[R].getInitialBarHeight()
             },
             getBarHeight: function() {
-                return this.refs[logError/*R*/].getBarHeight()
+                return this.refs[R].getBarHeight()
             },
             handleInputBarHeightChange: function(global/*e*/) {
                 this.updateDockedInputLocation(global/*e*/), this.props.onHeightChange && this.props.onHeightChange(global/*e*/)
@@ -127,7 +127,7 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                 })
             },
             enableScrollResponderAutoInsets: function(global/*e*/) {
-                this.refs[keyMirror/*b*/].setNativeProps({
+                this.refs[b].setNativeProps({
                     automaticallyAdjustContentInsets: global/*e*/
                 })
             },
@@ -137,7 +137,7 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                     requireLazy/*r*/ = global/*e*/.initialText,
                     module/*i*/ = global/*e*/.comparisonTextForCanPost,
                     o = global/*e*/.photoSource,
-                    exports/*a*/ = global/*e*/.isEditing;
+                    a = global/*e*/.isEditing;
                 this.setState({
                     getTappedNodeHandle: require/*t*/,
                     mode: requireDynamic/*n*/,
@@ -145,19 +145,19 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                     text: requireLazy/*r*/,
                     comparisonTextForCanPost: module/*i*/,
                     photoSource: o,
-                    isEditing: exports/*a*/
-                }), this.refs[keyMirror/*b*/].setNativeProps({
+                    isEditing: a
+                }), this.refs[b].setNativeProps({
                     scrollEnabled: !1
-                }), this.refs[logError/*R*/].focusInput()
+                }), this.refs[R].focusInput()
             },
             componentDidMount: function() {
-                C.setMainScrollViewTag(this.refs[keyMirror/*b*/].getNodeHandle())
+                C.setMainScrollViewTag(this.refs[b].getNodeHandle())
             },
             componentDidUnmount: function() {
                 C.setMainScrollViewTag(0)
             },
             handleTextChange: function(global/*e*/) {
-                exports/*a*/.configureNext(StyleSheet/*f*/.layout.inputButtons), this.setState({
+                a.configureNext(f.layout.inputButtons), this.setState({
                     text: global/*e*/
                 })
             },
@@ -167,14 +167,14 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                 })
             },
             getScrollResponder: function() {
-                return this.refs[keyMirror/*b*/]
+                return this.refs[b]
             },
             cancelDockedInput: function() {
-                this.refs[logError/*R*/].blurInput()
+                this.refs[R].blurInput()
             },
             render: function() {
-                var global/*e*/ = THInputBarView/*y*/(this.props.scrollResponder, {
-                    ref: keyMirror/*b*/,
+                var global/*e*/ = y(this.props.scrollResponder, {
+                    ref: b,
                     onKeyboardWillShow: this.handleKeyboardWillShow,
                     onKeyboardDidShow: this.handleKeyboardDidShow,
                     onKeyboardWillHide: this.handleKeyboardWillHide,
@@ -185,19 +185,19 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                         photoSource: this.state.photoSource
                     })
                 });
-                return POPAnimation/*c*/.createElement(THColors/*_*/, {
+                return c.createElement(_, {
                     style: F.container
-                }, global/*e*/, POPAnimation/*c*/.createElement(THColors/*_*/, {
+                }, global/*e*/, c.createElement(_, {
                     style: [F.inputWash, {
                         top: this.state.inputWashTop
                     }],
                     ref: w
-                }, POPAnimation/*c*/.createElement(THAnimations/*g*/, {
+                }, c.createElement(g, {
                     canComment: !0,
                     canCommentInline: !0,
                     isEditing: this.state.isEditing,
                     photoSource: this.state.photoSource,
-                    ref: logError/*R*/,
+                    ref: R,
                     groupID: this.props.groupID,
                     initialText: this.state.initialText,
                     comparisonTextForCanPost: this.state.comparisonTextForCanPost,
@@ -209,17 +209,17 @@ __d("THDockedInputContainer",["DocumentContent","LayoutAnimation","NativeModules
                 })))
             }
         }),
-        F = React/*d*/.create({
+        F = d.create({
             container: {
-                height: POPAnimationMixin/*p*/.get("window").height,
-                width: POPAnimationMixin/*p*/.get("window").width,
-                backgroundColor: Subscribable/*m*/.backgroundWash
+                height: p.get("window").height,
+                width: p.get("window").width,
+                backgroundColor: m.backgroundWash
             },
             inputWash: {
                 height: 600,
                 opacity: 0,
                 position: "absolute",
-                backgroundColor: Subscribable/*m*/.backgroundColor,
+                backgroundColor: m.backgroundColor,
                 right: 0,
                 left: 0
             }

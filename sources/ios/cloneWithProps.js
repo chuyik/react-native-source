@@ -1,15 +1,15 @@
-__d("cloneWithProps",["ReactElement","ReactPropTransferer","keyOf","warning"],function (global/*e*/, require/*exports/*t*/*/, requireDynamic/*keyOf/*n*/*/, requireLazy/*r*/, module/*i*/) {
+__d("cloneWithProps",["ReactElement","ReactPropTransferer","keyOf","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
 
-    function o(global/*e*/, require/*exports/*t*/*/) {
+    function o(global/*e*/, require/*t*/) {
         __DEV__ && u(!global/*e*/.ref, "You are calling cloneWithProps() on a child with a ref. This is dangerous because you're creating a new child which will not be added as a ref to its parent.");
-        var requireDynamic/*keyOf/*n*/*/ = warning/*s*/.mergeProps(require/*exports/*t*/*/, global/*e*/.props);
-        return !requireDynamic/*keyOf/*n*/*/.hasOwnProperty(c) && global/*e*/.props.hasOwnProperty(c) && (requireDynamic/*keyOf/*n*/*/.children = global/*e*/.props.children), ReactPropTransferer/*a.createElement*/(global/*e*/.type, requireDynamic/*keyOf/*n*/*/)
+        var requireDynamic/*n*/ = s.mergeProps(require/*t*/, global/*e*/.props);
+        return !requireDynamic/*n*/.hasOwnProperty(c) && global/*e*/.props.hasOwnProperty(c) && (requireDynamic/*n*/.children = global/*e*/.props.children), a.createElement(global/*e*/.type, requireDynamic/*n*/)
     }
-    var a = require/*exports/*t*/*/("ReactElement"),
-        warning/*s*/ = require/*exports/*t*/*/("ReactPropTransferer"),
-        l = require/*exports/*t*/*/("keyOf"),
-        u = require/*exports/*t*/*/("warning"),
+    var a = require/*t*/("ReactElement"),
+        s = require/*t*/("ReactPropTransferer"),
+        l = require/*t*/("keyOf"),
+        u = require/*t*/("warning"),
         c = l({
             children: null
         });

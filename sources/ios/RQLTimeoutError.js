@@ -2,7 +2,7 @@ __d("RQLTimeoutError",["RQLError"],function (global/*e*/, require/*t*/, requireD
     "use strict";
 
     function o() {
-        this.name = "RQLTimeoutError", exports/*this.message*/ = "Request timed out", RQLError/*this.type*/ = "warn"
+        this.name = "RQLTimeoutError", this.message = "Request timed out", this.type = "warn"
     }
     var a = require/*t*/("RQLError");
     for (var s in a) a.hasOwnProperty(s) && (o[s] = a[s]);

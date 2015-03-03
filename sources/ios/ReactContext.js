@@ -2,7 +2,7 @@ __d("ReactContext",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, 
     "use strict";
     var o = {
         current: {},
-        exports/*withContext*/: function(global/*e*/, require/*t*/) {
+        withContext: function(global/*e*/, require/*t*/) {
             var requireDynamic/*n*/, requireLazy/*r*/ = o.current;
             o.current = Object.assign({}, requireLazy/*r*/, global/*e*/);
             try {
