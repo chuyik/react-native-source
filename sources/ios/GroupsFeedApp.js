@@ -1,22 +1,22 @@
 __d("GroupsFeedApp",["DliteLoadingComponent","GroupRoute","React","THGroupView","View","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("DliteLoadingComponent"),
-        a = require/*t*/("GroupRoute"),
-        s = require/*t*/("React"),
-        l = require/*t*/("THGroupView"),
-        u = require/*t*/("View");
+    var DliteLoadingComponent/*o*/ = require/*t*/("DliteLoadingComponent"),
+        GroupRoute/*a*/ = require/*t*/("GroupRoute"),
+        React/*s*/ = require/*t*/("React"),
+        THGroupView/*l*/ = require/*t*/("THGroupView"),
+        View/*u*/ = require/*t*/("View");
     require/*t*/("THRoutingConfig").initialize();
-    var c = s.createClass({
+    var c = React/*s*/.createClass({
         displayName: "GroupsFeedApp",
         render: function() {
-            var global/*e*/ = s.createElement(u, {
+            var global/*e*/ = React/*s*/.createElement(View/*u*/, {
                 style: {
                     paddingTop: this.props.topInset
                 }
-            }, l.getFakeStoryView());
-            return s.createElement(o, {
-                component: l,
-                route: new a(null, {
+            }, THGroupView/*l*/.getFakeStoryView());
+            return React/*s*/.createElement(DliteLoadingComponent/*o*/, {
+                component: THGroupView/*l*/,
+                route: new GroupRoute/*a*/(null, {
                     group: this.props.group
                 }),
                 loadingView: global/*e*/,

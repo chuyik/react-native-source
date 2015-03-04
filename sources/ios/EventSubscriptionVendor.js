@@ -4,9 +4,9 @@ __d("EventSubscriptionVendor",["invariant"],function (global/*e*/, require/*t*/,
     function o() {
         this.$EventSubscriptionVendor_subscriptionsForType = {}, this.$EventSubscriptionVendor_currentSubscription = null
     }
-    var a = require/*t*/("invariant");
+    var invariant/*a*/ = require/*t*/("invariant");
     o.prototype.addSubscription = function(global/*e*/, require/*t*/) {
-        require/*t*/.subscriber !== this && a(0, "The subscriber of the subscription is incorrectly set."), this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/] || (this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/] = []);
+        require/*t*/.subscriber !== this && invariant/*a*/(0, "The subscriber of the subscription is incorrectly set."), this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/] || (this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/] = []);
         var requireDynamic/*n*/ = this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/].length;
         return this.$EventSubscriptionVendor_subscriptionsForType[global/*e*/].push(require/*t*/), require/*t*/.eventType = global/*e*/, require/*t*/.key = requireDynamic/*n*/, require/*t*/
     }, o.prototype.removeAllSubscriptions = function(global/*e*/) {

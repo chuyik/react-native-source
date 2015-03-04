@@ -60,11 +60,21 @@ function replaceVar(str, from, to) {
     return str.replace(new RegExp("\\b" + from + "\\b", "g"), to);
 }
 
+function replaceRequire(str, arg) {
+    var output = str;
+    //console.log(str, arg);
+    //str.replace(new RegExp("\\s\\w+\\s*=" + arg + "\\s*([\"\']\\w+[\"\'])", "g"), function () {
+    str.replace(new RegExp("\\s(\\w+)\\s*=\\s*" + arg + "\\s*\\(([\"\'])(\\w+)\\2\\)", "g"), function ($0, varName, $2, modName) {
+        output = replaceVar(output, varName, modName + "/*" + varName + "*/");
+    });
+    return output;
+}
+
 var defaultDeps = ['global', 'require', 'requireDynamic', 'requireLazy', 'module', 'exports'];
 var output = [];
 
 function __d(name, deps, factory) {
-    var arg, i, count;
+    var arg, dep, i, count;
 
     factory = factory.toString();
     //console.log(factory);
@@ -74,12 +84,13 @@ function __d(name, deps, factory) {
     //console.log(allArgs);
     for (i = 0, count = allDeps.length; i < count; i++) {
         arg = allArgs[i];
+        dep = allDeps[i];
         if (arg) {
-            //console.log(arg + " -> " + allDeps[i]);
-            if (arg.length > 1) {
-                process.exit(-1);
+            if (dep === "require") {
+                factory = replaceRequire(factory, arg);
             }
-            factory = replaceVar(factory, arg, allDeps[i] + "/*" + arg + "*/");
+            //console.log(arg + " -> " + allDeps[i]);
+            factory = replaceVar(factory, arg, dep + "/*" + arg + "*/");
         } else {
             break;
         }

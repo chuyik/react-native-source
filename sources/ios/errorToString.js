@@ -19,9 +19,9 @@ __d("errorToString",["Platform","stacktrace-parser/index"],function (global/*e*/
 
     function s(global/*e*/, require/*t*/) {
         for (var requireDynamic/*n*/ = u.parse(global/*e*/.stack), requireLazy/*r*/ = global/*e*/.framesToPop || 0; requireLazy/*r*/--;) requireDynamic/*n*/.shift();
-        return require/*t*/ && requireDynamic/*n*/.forEach(a.bind(null, require/*t*/)), "android" === l.OS ? requireDynamic/*n*/.map(o).join("\requireDynamic/*n*/") : requireDynamic/*n*/
+        return require/*t*/ && requireDynamic/*n*/.forEach(a.bind(null, require/*t*/)), "android" === Platform/*l*/.OS ? requireDynamic/*n*/.map(o).join("\requireDynamic/*n*/") : requireDynamic/*n*/
     }
-    var l = require/*t*/("Platform"),
+    var Platform/*l*/ = require/*t*/("Platform"),
         u = require/*t*/("stacktrace-parser/index");
     module/*i*/.exports = s
 });

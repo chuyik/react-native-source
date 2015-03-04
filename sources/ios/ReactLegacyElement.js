@@ -3,9 +3,9 @@ __d("ReactLegacyElement",["ReactCurrentOwner","invariant","monitorCodeUse","warn
 
     function o() {
         if (g._isLegacyCallWarningEnabled) {
-            var global/*e*/ = u.current,
+            var global/*e*/ = ReactCurrentOwner/*u*/.current,
                 require/*t*/ = global/*e*/ && global/*e*/.constructor ? global/*e*/.constructor.displayName : "";
-            require/*t*/ || (require/*t*/ = "Something"), h.hasOwnProperty(require/*t*/) || (h[require/*t*/] = !0, d(!1, require/*t*/ + " is calling a React component directly. Use a factory or JSX instead. See: http://fb.me/react-legacyfactory"), p("react_legacy_factory_call", {
+            require/*t*/ || (require/*t*/ = "Something"), h.hasOwnProperty(require/*t*/) || (h[require/*t*/] = !0, warning/*d*/(!1, require/*t*/ + " is calling a React component directly. Use a factory or JSX instead. See: http://fb.me/react-legacyfactory"), monitorCodeUse/*p*/("react_legacy_factory_call", {
                 version: 3,
                 name: require/*t*/
             }))
@@ -14,23 +14,23 @@ __d("ReactLegacyElement",["ReactCurrentOwner","invariant","monitorCodeUse","warn
 
     function a(global/*e*/) {
         var require/*t*/ = global/*e*/.prototype && "function" == typeof global/*e*/.prototype.mountComponent && "function" == typeof global/*e*/.prototype.receiveComponent;
-        if (require/*t*/) d(!1, "Did not expect to get a React class here. Use `Component` instead of `Component.type` or `this.constructor`.");
+        if (require/*t*/) warning/*d*/(!1, "Did not expect to get a React class here. Use `Component` instead of `Component.type` or `this.constructor`.");
         else {
             if (!global/*e*/._reactWarnedForThisType) {
                 try {
                     global/*e*/._reactWarnedForThisType = !0
                 } catch (requireDynamic/*n*/) {}
-                p("react_non_component_in_jsx", {
+                monitorCodeUse/*p*/("react_non_component_in_jsx", {
                     version: 3,
                     name: global/*e*/.name
                 })
             }
-            d(!1, "This JSX uses a plain function. Only React components are valid in React's JSX transform.")
+            warning/*d*/(!1, "This JSX uses a plain function. Only React components are valid in React's JSX transform.")
         }
     }
 
     function s(global/*e*/) {
-        d(!1, "Do not pass React.DOM." + global/*e*/.type + ' to JSX or createFactory. Use the string "' + global/*e*/ + '" instead.')
+        warning/*d*/(!1, "Do not pass React.DOM." + global/*e*/.type + ' to JSX or createFactory. Use the string "' + global/*e*/ + '" instead.')
     }
 
     function l(global/*e*/, require/*t*/) {
@@ -45,10 +45,10 @@ __d("ReactLegacyElement",["ReactCurrentOwner","invariant","monitorCodeUse","warn
                     } else global/*e*/[requireDynamic/*n*/] = requireLazy/*r*/
                 }
     }
-    var u = require/*t*/("ReactCurrentOwner"),
-        c = require/*t*/("invariant"),
-        p = require/*t*/("monitorCodeUse"),
-        d = require/*t*/("warning"),
+    var ReactCurrentOwner/*u*/ = require/*t*/("ReactCurrentOwner"),
+        invariant/*c*/ = require/*t*/("invariant"),
+        monitorCodeUse/*p*/ = require/*t*/("monitorCodeUse"),
+        warning/*d*/ = require/*t*/("warning"),
         h = {},
         f = {},
         m = {},
@@ -66,7 +66,7 @@ __d("ReactLegacyElement",["ReactCurrentOwner","invariant","monitorCodeUse","warn
         };
         return require/*t*/
     }, g.wrapFactory = function(global/*e*/) {
-        "function" != typeof global/*e*/ && c(0, "This is suppose to accept a element factory");
+        "function" != typeof global/*e*/ && invariant/*c*/(0, "This is suppose to accept a element factory");
         var require/*t*/ = function() {
             return __DEV__ && o(), global/*e*/.apply(this, arguments)
         };

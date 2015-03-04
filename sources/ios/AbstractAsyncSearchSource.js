@@ -1,21 +1,21 @@
 __d("AbstractAsyncSearchSource",["AbstractSearchSource","SearchSourceCallbackManager","SearchableEntry","TokenizeUtil","copyProperties","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         "use strict";
-        this.$AbstractAsyncSearchSource_bootstrapRequests = global/*e*/.bootstrapRequests, this.$AbstractAsyncSearchSource_queryRequests = global/*e*/.queryRequests, this.$AbstractAsyncSearchSource_auxiliaryFields = global/*e*/.auxiliaryFields, this.$AbstractAsyncSearchSource_asyncErrorHandler = global/*e*/.asyncErrorHandler || p, this.$AbstractAsyncSearchSource_packageResult = global/*e*/.packageFn || this.$AbstractAsyncSearchSource_defaultPackageFn, this.$AbstractAsyncSearchSource_getAllForEmptyQuery = global/*e*/.getAllForEmptyQuery, this.$AbstractAsyncSearchSource_bootstrapEntries = [], this.$AbstractAsyncSearchSource_callbackManager = new s({
-            parseFn: u.parse,
-            matchFn: u.isQueryMatch,
+        this.$AbstractAsyncSearchSource_bootstrapRequests = global/*e*/.bootstrapRequests, this.$AbstractAsyncSearchSource_queryRequests = global/*e*/.queryRequests, this.$AbstractAsyncSearchSource_auxiliaryFields = global/*e*/.auxiliaryFields, this.$AbstractAsyncSearchSource_asyncErrorHandler = global/*e*/.asyncErrorHandler || emptyFunction/*p*/, this.$AbstractAsyncSearchSource_packageResult = global/*e*/.packageFn || this.$AbstractAsyncSearchSource_defaultPackageFn, this.$AbstractAsyncSearchSource_getAllForEmptyQuery = global/*e*/.getAllForEmptyQuery, this.$AbstractAsyncSearchSource_bootstrapEntries = [], this.$AbstractAsyncSearchSource_callbackManager = new SearchSourceCallbackManager/*s*/({
+            parseFn: TokenizeUtil/*u*/.parse,
+            matchFn: TokenizeUtil/*u*/.isQueryMatch,
             indexFn: global/*e*/.indexFn
         }), this.$AbstractAsyncSearchSource_sendRequestImpl = require/*t*/, this.$AbstractAsyncSearchSource_normalizeResponse = requireDynamic/*n*/
     }
-    var a = require/*t*/("AbstractSearchSource"),
-        s = require/*t*/("SearchSourceCallbackManager"),
-        l = require/*t*/("SearchableEntry"),
-        u = require/*t*/("TokenizeUtil"),
-        c = require/*t*/("copyProperties"),
-        p = require/*t*/("emptyFunction");
-    for (var d in a) a.hasOwnProperty(d) && (o[d] = a[d]);
-    var h = null === a ? null : a.prototype;
-    o.prototype = Object.create(h), o.prototype.constructor = o, o.__superConstructor__ = a, o.prototype.bootstrapImpl = function(global/*e*/) {
+    var AbstractSearchSource/*a*/ = require/*t*/("AbstractSearchSource"),
+        SearchSourceCallbackManager/*s*/ = require/*t*/("SearchSourceCallbackManager"),
+        SearchableEntry/*l*/ = require/*t*/("SearchableEntry"),
+        TokenizeUtil/*u*/ = require/*t*/("TokenizeUtil"),
+        copyProperties/*c*/ = require/*t*/("copyProperties"),
+        emptyFunction/*p*/ = require/*t*/("emptyFunction");
+    for (var d in AbstractSearchSource/*a*/) AbstractSearchSource/*a*/.hasOwnProperty(d) && (o[d] = AbstractSearchSource/*a*/[d]);
+    var h = null === AbstractSearchSource/*a*/ ? null : AbstractSearchSource/*a*/.prototype;
+    o.prototype = Object.create(h), o.prototype.constructor = o, o.__superConstructor__ = AbstractSearchSource/*a*/, o.prototype.bootstrapImpl = function(global/*e*/) {
         "use strict";
         if (!this.$AbstractAsyncSearchSource_bootstrapRequests || !this.$AbstractAsyncSearchSource_bootstrapRequests.length) return void global/*e*/();
         var require/*t*/ = this.$AbstractAsyncSearchSource_bootstrapRequests.length,
@@ -41,16 +41,16 @@ __d("AbstractAsyncSearchSource",["AbstractSearchSource","SearchSourceCallbackMan
                 })), require/*t*/(requireLazy/*r*/, global/*e*/)
             }, requireDynamic/*n*/);
         if (o && this.$AbstractAsyncSearchSource_queryRequests && this.$AbstractAsyncSearchSource_queryRequests.length) {
-            var a = {
+            var AbstractSearchSource/*a*/ = {
                     value: global/*e*/,
                     existing_ids: requireLazy/*r*/ && requireLazy/*r*/.map(function(global/*e*/) {
                         return global/*e*/.getUniqueID()
                     }).join(",")
                 },
-                s = this.$AbstractAsyncSearchSource_queryRequests.length;
+                SearchSourceCallbackManager/*s*/ = this.$AbstractAsyncSearchSource_queryRequests.length;
             this.$AbstractAsyncSearchSource_queryRequests.forEach(function(require/*t*/) {
-                this.$AbstractAsyncSearchSource_sendRequest(a, require/*t*/, function(require/*t*/) {
-                    this.$AbstractAsyncSearchSource_addQueryResults(require/*t*/, global/*e*/), s--, s || this.$AbstractAsyncSearchSource_callbackManager.setQueryStringAsExhausted(global/*e*/)
+                this.$AbstractAsyncSearchSource_sendRequest(AbstractSearchSource/*a*/, require/*t*/, function(require/*t*/) {
+                    this.$AbstractAsyncSearchSource_addQueryResults(require/*t*/, global/*e*/), SearchSourceCallbackManager/*s*/--, SearchSourceCallbackManager/*s*/ || this.$AbstractAsyncSearchSource_callbackManager.setQueryStringAsExhausted(global/*e*/)
                 }.bind(this))
             }, this)
         }
@@ -79,7 +79,7 @@ __d("AbstractAsyncSearchSource",["AbstractSearchSource","SearchSourceCallbackMan
         "use strict";
         var requireDynamic/*n*/ = global/*e*/.title || global/*e*/.text,
             requireLazy/*r*/ = global/*e*/.uniqueID || global/*e*/.uid;
-        return requireDynamic/*n*/ && requireLazy/*r*/ ? new l({
+        return requireDynamic/*n*/ && requireLazy/*r*/ ? new SearchableEntry/*l*/({
             uniqueID: requireLazy/*r*/,
             order: global/*e*/.order || global/*e*/.index || require/*t*/,
             title: requireDynamic/*n*/,
@@ -100,6 +100,6 @@ __d("AbstractAsyncSearchSource",["AbstractSearchSource","SearchSourceCallbackMan
                 require/*t*/[requireDynamic/*n*/] = global/*e*/[requireLazy/*r*/]
             }
         }
-        return global/*e*/.aux_data && (require/*t*/ = require/*t*/ || {}, c(require/*t*/, global/*e*/.aux_data)), require/*t*/
+        return global/*e*/.aux_data && (require/*t*/ = require/*t*/ || {}, copyProperties/*c*/(require/*t*/, global/*e*/.aux_data)), require/*t*/
     }, module/*i*/.exports = o
 });

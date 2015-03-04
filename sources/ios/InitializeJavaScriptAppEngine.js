@@ -1,16 +1,16 @@
 __d("InitializeJavaScriptAppEngine",["JSTimers","RCTDeviceEventEmitter","ErrorUtils","RKAlertManager","NativeModules","errorToString","loadSourceMap","Promise","XMLHttpRequest","fetch"],function (global/*e*/, require/*t*/) {
     function n(global/*e*/) {
-        if (GLOBAL.console.error("Error: \n stack: \n" + global/*e*/.stack + "\n URL: " + global/*e*/.sourceURL + "\n line: " + global/*e*/.line + "\n message: " + global/*e*/.message), d && (d.reportUnhandledException(global/*e*/.message, h(global/*e*/)), __DEV__)) try {
-            var require/*t*/ = f(),
-                n = h(global/*e*/, require/*t*/);
-            d.updateExceptionMessage(global/*e*/.message, n)
+        if (GLOBAL.console.error("Error: \n stack: \n" + global/*e*/.stack + "\n URL: " + global/*e*/.sourceURL + "\n line: " + global/*e*/.line + "\n message: " + global/*e*/.message), NativeModules/*d*/ && (NativeModules/*d*/.reportUnhandledException(global/*e*/.message, errorToString/*h*/(global/*e*/)), __DEV__)) try {
+            var require/*t*/ = loadSourceMap/*f*/(),
+                n = errorToString/*h*/(global/*e*/, require/*t*/);
+            NativeModules/*d*/.updateExceptionMessage(global/*e*/.message, n)
         } catch (r) {
             GLOBAL.console.error("#CLOWNTOWN (error while displaying error): " + r.message)
         }
     }
 
     function r() {
-        c.setGlobalHandler(n)
+        ErrorUtils/*c*/.setGlobalHandler(n)
     }
 
     function i() {
@@ -32,8 +32,8 @@ __d("InitializeJavaScriptAppEngine",["JSTimers","RCTDeviceEventEmitter","ErrorUt
     }
 
     function o() {
-        GLOBAL.setTimeout = u.setTimeout, GLOBAL.setInterval = u.setInterval, GLOBAL.setImmediate = u.setImmediate, GLOBAL.clearTimeout = u.clearTimeout, GLOBAL.clearInterval = u.clearInterval, GLOBAL.clearImmediate = u.clearImmediate, GLOBAL.cancelAnimationFrame = u.clearInterval, GLOBAL.requestAnimationFrame = function(global/*e*/) {
-            return u.requestAnimationFrame(global/*e*/)
+        GLOBAL.setTimeout = JSTimers/*u*/.setTimeout, GLOBAL.setInterval = JSTimers/*u*/.setInterval, GLOBAL.setImmediate = JSTimers/*u*/.setImmediate, GLOBAL.clearTimeout = JSTimers/*u*/.clearTimeout, GLOBAL.clearInterval = JSTimers/*u*/.clearInterval, GLOBAL.clearImmediate = JSTimers/*u*/.clearImmediate, GLOBAL.cancelAnimationFrame = JSTimers/*u*/.clearInterval, GLOBAL.requestAnimationFrame = function(global/*e*/) {
+            return JSTimers/*u*/.requestAnimationFrame(global/*e*/)
         }
     }
 
@@ -46,7 +46,7 @@ __d("InitializeJavaScriptAppEngine",["JSTimers","RCTDeviceEventEmitter","ErrorUt
                     cancel: "Okay"
                 }]
             };
-            p.alertWithArgs(require/*t*/, null)
+            RKAlertManager/*p*/.alertWithArgs(require/*t*/, null)
         })
     }
 
@@ -57,12 +57,12 @@ __d("InitializeJavaScriptAppEngine",["JSTimers","RCTDeviceEventEmitter","ErrorUt
     function l() {
         GLOBAL.XMLHttpRequest = require/*t*/("XMLHttpRequest"), GLOBAL.fetch = require/*t*/("fetch")
     }
-    var u = require/*t*/("JSTimers");
+    var JSTimers/*u*/ = require/*t*/("JSTimers");
     require/*t*/("RCTDeviceEventEmitter");
-    var c = require/*t*/("ErrorUtils"),
-        p = require/*t*/("RKAlertManager"),
-        d = require/*t*/("NativeModules").RKExceptionsManager,
-        h = require/*t*/("errorToString"),
-        f = require/*t*/("loadSourceMap");
+    var ErrorUtils/*c*/ = require/*t*/("ErrorUtils"),
+        RKAlertManager/*p*/ = require/*t*/("RKAlertManager"),
+        NativeModules/*d*/ = require/*t*/("NativeModules").RKExceptionsManager,
+        errorToString/*h*/ = require/*t*/("errorToString"),
+        loadSourceMap/*f*/ = require/*t*/("loadSourceMap");
     "undefined" == typeof GLOBAL && (GLOBAL = this), "undefined" == typeof window && (window = GLOBAL), r(), i(), o(), a(), s(), l()
 });

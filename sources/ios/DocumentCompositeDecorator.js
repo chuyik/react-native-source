@@ -13,17 +13,17 @@ __d("DocumentCompositeDecorator",["fillArray"],function (global/*e*/, require/*t
     function s(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
         for (var module/*i*/ = require/*t*/; requireDynamic/*n*/ > module/*i*/; module/*i*/++) global/*e*/[module/*i*/] = requireLazy/*r*/
     }
-    var l = require/*t*/("fillArray");
+    var fillArray/*l*/ = require/*t*/("fillArray");
     o.prototype.getDecorations = function(global/*e*/) {
         "use strict";
-        var require/*t*/ = l(global/*e*/.getText().length, null),
+        var require/*t*/ = fillArray/*l*/(global/*e*/.getText().length, null),
             requireDynamic/*n*/ = 0,
             requireLazy/*r*/ = this.$DocumentCompositeDecorator_componentMap;
         return this.$DocumentCompositeDecorator_decorators.forEach(function(module/*i*/) {
             var o = module/*i*/.getStrategy(),
-                l = module/*i*/.getComponent();
+                fillArray/*l*/ = module/*i*/.getComponent();
             o(global/*e*/, function(global/*e*/, module/*i*/) {
-                a(require/*t*/, global/*e*/, module/*i*/) && (requireLazy/*r*/[requireDynamic/*n*/] = l, s(require/*t*/, global/*e*/, module/*i*/, requireDynamic/*n*/), requireDynamic/*n*/++)
+                a(require/*t*/, global/*e*/, module/*i*/) && (requireLazy/*r*/[requireDynamic/*n*/] = fillArray/*l*/, s(require/*t*/, global/*e*/, module/*i*/, requireDynamic/*n*/), requireDynamic/*n*/++)
             })
         }), require/*t*/
     }, o.prototype.getComponentForKey = function(global/*e*/) {

@@ -1,25 +1,25 @@
 __d("FBActorSubtitle",["React","ReactGraphQL","StylePropType","Text","fbt","isEmpty","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
-        a = require/*t*/("ReactGraphQL"),
-        s = require/*t*/("StylePropType"),
-        l = require/*t*/("Text"),
-        u = require/*t*/("fbt"),
-        c = require/*t*/("isEmpty"),
-        p = require/*t*/("truncate"),
-        d = o.createClass({
+    var React/*o*/ = require/*t*/("React"),
+        ReactGraphQL/*a*/ = require/*t*/("ReactGraphQL"),
+        StylePropType/*s*/ = require/*t*/("StylePropType"),
+        Text/*l*/ = require/*t*/("Text"),
+        fbt/*u*/ = require/*t*/("fbt"),
+        isEmpty/*c*/ = require/*t*/("isEmpty"),
+        truncate/*p*/ = require/*t*/("truncate"),
+        d = React/*o*/.createClass({
             displayName: "FBActorSubtitle",
             propTypes: {
-                actor: o.PropTypes.object.isRequired,
-                maxTextLength: o.PropTypes.number,
-                textStyle: s
+                actor: React/*o*/.PropTypes.object.isRequired,
+                maxTextLength: React/*o*/.PropTypes.number,
+                textStyle: StylePropType/*s*/
             },
             getDefaultProps: function() {
                 return {
                     maxTextLength: 25
                 }
             },
-            mixins: [a.Mixin],
+            mixins: [ReactGraphQL/*a*/.Mixin],
             statics: {
                 queries: {
                     actor: function(global/*e*/, require/*t*/) {
@@ -115,29 +115,29 @@ __d("FBActorSubtitle",["React","ReactGraphQL","StylePropType","Text","fbt","isEm
                         var requireLazy/*r*/ = global/*e*/.work_experiences ? global/*e*/.work_experiences.edges : null;
                         if (requireLazy/*r*/ && requireLazy/*r*/[0] && requireLazy/*r*/[0].node && requireLazy/*r*/[0].node.employer) {
                             var module/*i*/ = requireLazy/*r*/[0].node;
-                            requireDynamic/*n*/ = module/*i*/.position ? u({
+                            requireDynamic/*n*/ = module/*i*/.position ? fbt/*u*/({
                                 type: "text",
                                 texts: ["{position} at {employer}"],
                                 desc: "Subtitle for user who works at given position for given employer"
-                            }, [u.param("position", module/*i*/.position.name), u.param("employer", module/*i*/.employer.name)]) : u({
+                            }, [fbt/*u*/.param("position", module/*i*/.position.name), fbt/*u*/.param("employer", module/*i*/.employer.name)]) : fbt/*u*/({
                                 type: "text",
                                 texts: ["{employer}"],
                                 desc: "Subtitle for user who works at unknown position for given employer"
-                            }, [u.param("employer", module/*i*/.employer.name)]);
+                            }, [fbt/*u*/.param("employer", module/*i*/.employer.name)]);
                             break
                         }
-                        var a = global/*e*/.education_experiences ? global/*e*/.education_experiences.edges : null;
-                        a && a[0] && a[0].node && a[0].node.school && (requireDynamic/*n*/ = a[0].node.school.name);
+                        var ReactGraphQL/*a*/ = global/*e*/.education_experiences ? global/*e*/.education_experiences.edges : null;
+                        ReactGraphQL/*a*/ && ReactGraphQL/*a*/[0] && ReactGraphQL/*a*/[0].node && ReactGraphQL/*a*/[0].node.school && (requireDynamic/*n*/ = ReactGraphQL/*a*/[0].node.school.name);
                         break;
                     case "Page":
-                        c(global/*e*/.category_names) || (requireDynamic/*n*/ = global/*e*/.category_names[0]);
+                        isEmpty/*c*/(global/*e*/.category_names) || (requireDynamic/*n*/ = global/*e*/.category_names[0]);
                         break;
                     default:
                         console.warn("Unspecialized FBActor type: " + require/*t*/)
                 }
-                return o.createElement(l, {
+                return React/*o*/.createElement(Text/*l*/, {
                     style: [this.props.style, this.props.textStyle]
-                }, p(requireDynamic/*n*/, this.props.maxTextLength, {
+                }, truncate/*p*/(requireDynamic/*n*/, this.props.maxTextLength, {
                     breakOnWords: !1
                 }))
             }

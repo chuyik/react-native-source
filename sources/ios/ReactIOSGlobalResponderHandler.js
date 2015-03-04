@@ -1,10 +1,10 @@
 __d("ReactIOSGlobalResponderHandler",["NativeModules","ReactIOSTagHandles"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeModules").RKUIManager,
-        a = require/*t*/("ReactIOSTagHandles"),
+    var NativeModules/*o*/ = require/*t*/("NativeModules").RKUIManager,
+        ReactIOSTagHandles/*a*/ = require/*t*/("ReactIOSTagHandles"),
         s = {
             onChange: function(global/*e*/, require/*t*/) {
-                null !== require/*t*/ ? o.setJSResponder(a.mostRecentMountedNodeHandleForRootNodeID(require/*t*/)) : o.clearJSResponder()
+                null !== require/*t*/ ? NativeModules/*o*/.setJSResponder(ReactIOSTagHandles/*a*/.mostRecentMountedNodeHandleForRootNodeID(require/*t*/)) : NativeModules/*o*/.clearJSResponder()
             }
         };
     module/*i*/.exports = s

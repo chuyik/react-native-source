@@ -3,19 +3,19 @@ __d("DliteDebugger",["GraphQL_EXPERIMENTAL","GraphQLStore","GraphQLStoreDataHand
 
     function o(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = global/*e*/.constructor.getQuery(require/*t*/).getQueryFragment(global/*e*/.context.route, global/*e*/.queryParams);
-        if (requireDynamic/*n*/ instanceof d.QueryFragment) {
-            var requireLazy/*r*/ = f.getID(global/*e*/.props[require/*t*/]);
-            requireDynamic/*n*/ = h.buildFragmentQueryForDataID(requireDynamic/*n*/, requireLazy/*r*/)
+        if (requireDynamic/*n*/ instanceof GraphQL_EXPERIMENTAL/*d*/.QueryFragment) {
+            var requireLazy/*r*/ = GraphQLStoreDataHandler/*f*/.getID(global/*e*/.props[require/*t*/]);
+            requireDynamic/*n*/ = GraphQLStore/*h*/.buildFragmentQueryForDataID(requireDynamic/*n*/, requireLazy/*r*/)
         }
         return requireDynamic/*n*/
     }
 
     function a(global/*e*/) {
         var require/*t*/ = global/*e*/.constructor,
-            requireDynamic/*n*/ = g(require/*t*/.queries, function(require/*t*/, requireDynamic/*n*/) {
+            requireDynamic/*n*/ = mapObject/*g*/(require/*t*/.queries, function(require/*t*/, requireDynamic/*n*/) {
                 return global/*e*/.props[requireDynamic/*n*/]
             });
-        return m(requireDynamic/*n*/, function(global/*e*/) {
+        return filterObject/*m*/(requireDynamic/*n*/, function(global/*e*/) {
             return global/*e*/ && Object.keys(global/*e*/).some(function(global/*e*/) {
                 return !global/*e*/.startsWith("__")
             })
@@ -35,7 +35,7 @@ __d("DliteDebugger",["GraphQL_EXPERIMENTAL","GraphQLStore","GraphQLStoreDataHand
 
     function l(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = global/*e*/.props[require/*t*/];
-        return !!(requireDynamic/*n*/ && "object" == typeof requireDynamic/*n*/ && !Array.isArray(requireDynamic/*n*/) && f.getID(requireDynamic/*n*/) && global/*e*/.constructor.getQuery && global/*e*/.constructor.getQuery(require/*t*/))
+        return !!(requireDynamic/*n*/ && "object" == typeof requireDynamic/*n*/ && !Array.isArray(requireDynamic/*n*/) && GraphQLStoreDataHandler/*f*/.getID(requireDynamic/*n*/) && global/*e*/.constructor.getQuery && global/*e*/.constructor.getQuery(require/*t*/))
     }
 
     function u(global/*e*/, require/*t*/) {
@@ -58,11 +58,11 @@ __d("DliteDebugger",["GraphQL_EXPERIMENTAL","GraphQLStore","GraphQLStoreDataHand
             get: requireDynamic/*n*/
         })
     }
-    var d = require/*t*/("GraphQL_EXPERIMENTAL"),
-        h = require/*t*/("GraphQLStore"),
-        f = require/*t*/("GraphQLStoreDataHandler"),
-        m = require/*t*/("filterObject"),
-        g = require/*t*/("mapObject"),
+    var GraphQL_EXPERIMENTAL/*d*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
+        GraphQLStore/*h*/ = require/*t*/("GraphQLStore"),
+        GraphQLStoreDataHandler/*f*/ = require/*t*/("GraphQLStoreDataHandler"),
+        filterObject/*m*/ = require/*t*/("filterObject"),
+        mapObject/*g*/ = require/*t*/("mapObject"),
         _ = "https://our.intern.facebook.com/intern/graphiql?query=",
         y = {
             getQueries: function(global/*e*/) {
@@ -80,11 +80,11 @@ __d("DliteDebugger",["GraphQL_EXPERIMENTAL","GraphQLStore","GraphQLStoreDataHand
             },
             installIntoComponent: function(global/*e*/) {
                 p(global/*e*/, "debugQueries", function() {
-                    return g(y.getQueries(global/*e*/), function(global/*e*/) {
+                    return mapObject/*g*/(y.getQueries(global/*e*/), function(global/*e*/) {
                         return global/*e*/.getQuery().toString()
                     })
                 }), p(global/*e*/, "debugProps", function() {
-                    return g(y.getProps(global/*e*/), function(global/*e*/) {
+                    return mapObject/*g*/(y.getProps(global/*e*/), function(global/*e*/) {
                         return JSON.stringify(global/*e*/, null, "	")
                     })
                 }), p(global/*e*/, "debugConsole", function() {

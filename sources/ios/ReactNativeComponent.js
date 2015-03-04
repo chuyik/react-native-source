@@ -3,9 +3,9 @@ __d("ReactNativeComponent",["invariant"],function (global/*e*/, require/*t*/, re
 
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         var requireLazy/*r*/ = l[global/*e*/];
-        return null == requireLazy/*r*/ ? (s || a(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : requireDynamic/*n*/ === global/*e*/ ? (s || a(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : new requireLazy/*r*/.type(require/*t*/)
+        return null == requireLazy/*r*/ ? (s || invariant/*a*/(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : requireDynamic/*n*/ === global/*e*/ ? (s || invariant/*a*/(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : new requireLazy/*r*/.type(require/*t*/)
     }
-    var a = require/*t*/("invariant"),
+    var invariant/*a*/ = require/*t*/("invariant"),
         s = null,
         l = {},
         u = {

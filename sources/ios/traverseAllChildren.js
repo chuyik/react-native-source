@@ -20,10 +20,10 @@ __d("traverseAllChildren",["ReactElement","ReactInstanceHandles","invariant"],fu
     function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         return null == global/*e*/ ? 0 : _(global/*e*/, "", 0, require/*t*/, requireDynamic/*n*/)
     }
-    var c = require/*t*/("ReactElement"),
-        p = require/*t*/("ReactInstanceHandles"),
-        d = require/*t*/("invariant"),
-        h = p.SEPARATOR,
+    var ReactElement/*c*/ = require/*t*/("ReactElement"),
+        ReactInstanceHandles/*p*/ = require/*t*/("ReactInstanceHandles"),
+        invariant/*d*/ = require/*t*/("invariant"),
+        h = ReactInstanceHandles/*p*/.SEPARATOR,
         f = ":",
         m = {
             "=": "=0",
@@ -34,17 +34,17 @@ __d("traverseAllChildren",["ReactElement","ReactInstanceHandles","invariant"],fu
         _ = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
             var o, s, u = 0;
             if (Array.isArray(global/*e*/))
-                for (var p = 0; p < global/*e*/.length; p++) {
-                    var m = global/*e*/[p];
-                    o = require/*t*/ + (require/*t*/ ? f : h) + a(m, p), s = requireDynamic/*n*/ + u, u += _(m, o, s, requireLazy/*r*/, module/*i*/)
+                for (var ReactInstanceHandles/*p*/ = 0; ReactInstanceHandles/*p*/ < global/*e*/.length; ReactInstanceHandles/*p*/++) {
+                    var m = global/*e*/[ReactInstanceHandles/*p*/];
+                    o = require/*t*/ + (require/*t*/ ? f : h) + a(m, ReactInstanceHandles/*p*/), s = requireDynamic/*n*/ + u, u += _(m, o, s, requireLazy/*r*/, module/*i*/)
                 } else {
                     var g = typeof global/*e*/,
                         y = "" === require/*t*/,
                         v = y ? h + a(global/*e*/, 0) : require/*t*/;
                     if (null == global/*e*/ || "boolean" === g) requireLazy/*r*/(module/*i*/, null, v, requireDynamic/*n*/), u = 1;
-                    else if ("string" === g || "number" === g || c.isValidElement(global/*e*/)) requireLazy/*r*/(module/*i*/, global/*e*/, v, requireDynamic/*n*/), u = 1;
+                    else if ("string" === g || "number" === g || ReactElement/*c*/.isValidElement(global/*e*/)) requireLazy/*r*/(module/*i*/, global/*e*/, v, requireDynamic/*n*/), u = 1;
                     else if ("object" === g) {
-                        global/*e*/ && 1 === global/*e*/.nodeType && d(0, "traverseAllChildren(...): Encountered an invalid child; DOM elements are not valid children of React components.");
+                        global/*e*/ && 1 === global/*e*/.nodeType && invariant/*d*/(0, "traverseAllChildren(...): Encountered an invalid child; DOM elements are not valid children of React components.");
                         for (var S in global/*e*/) global/*e*/.hasOwnProperty(S) && (o = require/*t*/ + (require/*t*/ ? f : h) + l(S) + f + a(global/*e*/[S], 0), s = requireDynamic/*n*/ + u, u += _(global/*e*/[S], o, s, requireLazy/*r*/, module/*i*/))
                     }
                 }

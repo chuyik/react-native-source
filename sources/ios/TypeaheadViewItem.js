@@ -1,13 +1,13 @@
 __d("TypeaheadViewItem",["React","SearchableEntry"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("React"),
-        a = require/*t*/("SearchableEntry"),
+    var React/*o*/ = require/*t*/("React"),
+        SearchableEntry/*a*/ = require/*t*/("SearchableEntry"),
         s = {
-            entry: o.PropTypes.instanceOf(a).isRequired,
-            highlighted: o.PropTypes.bool,
-            selected: o.PropTypes.bool,
-            onSelect: o.PropTypes.func.isRequired,
-            onHighlight: o.PropTypes.func,
-            onRenderHighlight: o.PropTypes.func
+            entry: React/*o*/.PropTypes.instanceOf(SearchableEntry/*a*/).isRequired,
+            highlighted: React/*o*/.PropTypes.bool,
+            selected: React/*o*/.PropTypes.bool,
+            onSelect: React/*o*/.PropTypes.func.isRequired,
+            onHighlight: React/*o*/.PropTypes.func,
+            onRenderHighlight: React/*o*/.PropTypes.func
         },
         l = {
             _onSelect: function(global/*e*/) {

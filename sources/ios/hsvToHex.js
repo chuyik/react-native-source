@@ -10,19 +10,19 @@ __d("hsvToHex",["rgbToHex"],function (global/*e*/, require/*t*/, requireDynamic/
             l = requireDynamic/*n*/ * (1 - (1 - module/*i*/) * require/*t*/);
         switch (requireDynamic/*n*/ *= 255, l *= 255, o *= 255, s *= 255, requireLazy/*r*/ % 6) {
             case 0:
-                return a(requireDynamic/*n*/, l, o);
+                return rgbToHex/*a*/(requireDynamic/*n*/, l, o);
             case 1:
-                return a(s, requireDynamic/*n*/, o);
+                return rgbToHex/*a*/(s, requireDynamic/*n*/, o);
             case 2:
-                return a(o, requireDynamic/*n*/, l);
+                return rgbToHex/*a*/(o, requireDynamic/*n*/, l);
             case 3:
-                return a(o, s, requireDynamic/*n*/);
+                return rgbToHex/*a*/(o, s, requireDynamic/*n*/);
             case 4:
-                return a(l, o, requireDynamic/*n*/);
+                return rgbToHex/*a*/(l, o, requireDynamic/*n*/);
             case 5:
-                return a(requireDynamic/*n*/, o, s)
+                return rgbToHex/*a*/(requireDynamic/*n*/, o, s)
         }
     }
-    var a = require/*t*/("rgbToHex");
+    var rgbToHex/*a*/ = require/*t*/("rgbToHex");
     module/*i*/.exports = o
 });

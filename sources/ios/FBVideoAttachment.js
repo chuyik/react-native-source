@@ -1,25 +1,25 @@
 __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","TouchableHighlight","View","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Image"),
-        a = require/*t*/("PixelRatio"),
-        s = require/*t*/("React"),
-        l = require/*t*/("ReactGraphQL"),
-        u = require/*t*/("Dimensions"),
-        c = require/*t*/("RouteHandler"),
-        p = require/*t*/("StyleSheet"),
-        d = require/*t*/("TouchableHighlight"),
-        h = require/*t*/("View"),
-        f = require/*t*/("ix"),
-        m = u.get("window").width * a.get(),
-        g = 130 * a.get(),
+    var Image/*o*/ = require/*t*/("Image"),
+        PixelRatio/*a*/ = require/*t*/("PixelRatio"),
+        React/*s*/ = require/*t*/("React"),
+        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
+        Dimensions/*u*/ = require/*t*/("Dimensions"),
+        RouteHandler/*c*/ = require/*t*/("RouteHandler"),
+        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
+        TouchableHighlight/*d*/ = require/*t*/("TouchableHighlight"),
+        View/*h*/ = require/*t*/("View"),
+        ix/*f*/ = require/*t*/("ix"),
+        m = Dimensions/*u*/.get("window").width * PixelRatio/*a*/.get(),
+        g = 130 * PixelRatio/*a*/.get(),
         _ = 48,
-        y = s.createClass({
+        y = React/*s*/.createClass({
             displayName: "FBVideoAttachment",
             propTypes: {
-                attachment: s.PropTypes.object.isRequired,
-                navigator: s.PropTypes.object
+                attachment: React/*s*/.PropTypes.object.isRequired,
+                navigator: React/*s*/.PropTypes.object
             },
-            mixins: [l.Mixin],
+            mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -40,13 +40,13 @@ __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.media;
-                if (!global/*e*/) return console.error("Tried to render an FBVideoAttachment without media!"), s.createElement(h, null);
+                if (!global/*e*/) return console.error("Tried to render an FBVideoAttachment without media!"), React/*s*/.createElement(View/*h*/, null);
                 var require/*t*/ = global/*e*/.video_still,
-                    requireDynamic/*n*/ = a.get(),
+                    requireDynamic/*n*/ = PixelRatio/*a*/.get(),
                     requireLazy/*r*/ = require/*t*/.height / requireDynamic/*n*/,
                     module/*i*/ = (requireLazy/*r*/ - _) / 2;
-                return s.createElement(d, {
-                    onPress: c.getCallback({
+                return React/*s*/.createElement(TouchableHighlight/*d*/, {
+                    onPress: RouteHandler/*c*/.getCallback({
                         typeList: [global/*e*/.__type__.name, "URL"],
                         params: {
                             url: global/*e*/.url,
@@ -54,22 +54,22 @@ __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions
                             id: global/*e*/.id
                         }
                     })
-                }, s.createElement(h, null, s.createElement(o, {
+                }, React/*s*/.createElement(View/*h*/, null, React/*s*/.createElement(Image/*o*/, {
                     style: [v.image, {
                         height: requireLazy/*r*/
                     }],
                     source: require/*t*/
-                }), s.createElement(h, {
+                }), React/*s*/.createElement(View/*h*/, {
                     style: v.playIconContainer
-                }, s.createElement(o, {
+                }, React/*s*/.createElement(Image/*o*/, {
                     style: [v.playIcon, {
                         top: module/*i*/
                     }],
-                    source: f("newsfeedVideoPlayIcon")
+                    source: ix/*f*/("newsfeedVideoPlayIcon")
                 }))))
             }
         }),
-        v = p.create({
+        v = StyleSheet/*p*/.create({
             image: {
                 backgroundColor: "#f0f0f0"
             },

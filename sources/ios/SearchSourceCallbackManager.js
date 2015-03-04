@@ -1,14 +1,14 @@
 __d("SearchSourceCallbackManager",["createObjectFrom","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/) {
         "use strict";
-        this.$SearchSourceCallbackManager_parseFn = global/*e*/.parseFn, "function" != typeof this.$SearchSourceCallbackManager_parseFn && l(0, "Your config must specify a parse function."), this.$SearchSourceCallbackManager_matchFn = global/*e*/.matchFn, "function" != typeof this.$SearchSourceCallbackManager_matchFn && l(0, "Your config must specify a match function."), this.$SearchSourceCallbackManager_alwaysPrefixMatch = global/*e*/.alwaysPrefixMatch || !1, this.$SearchSourceCallbackManager_indexFn = global/*e*/.indexFn || a, this.reset()
+        this.$SearchSourceCallbackManager_parseFn = global/*e*/.parseFn, "function" != typeof this.$SearchSourceCallbackManager_parseFn && invariant/*l*/(0, "Your config must specify a parse function."), this.$SearchSourceCallbackManager_matchFn = global/*e*/.matchFn, "function" != typeof this.$SearchSourceCallbackManager_matchFn && invariant/*l*/(0, "Your config must specify a match function."), this.$SearchSourceCallbackManager_alwaysPrefixMatch = global/*e*/.alwaysPrefixMatch || !1, this.$SearchSourceCallbackManager_indexFn = global/*e*/.indexFn || a, this.reset()
     }
 
     function a(global/*e*/) {
         return [global/*e*/.getTitle(), global/*e*/.getKeywordString()].join(" ")
     }
-    var s = require/*t*/("createObjectFrom"),
-        l = require/*t*/("invariant");
+    var createObjectFrom/*s*/ = require/*t*/("createObjectFrom"),
+        invariant/*l*/ = require/*t*/("invariant");
     o.prototype.search = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         "use strict";
         var requireLazy/*r*/ = this.$SearchSourceCallbackManager_executeCallback(global/*e*/, require/*t*/, requireDynamic/*n*/);
@@ -58,7 +58,7 @@ __d("SearchSourceCallbackManager",["createObjectFrom","invariant"],function (glo
         "use strict";
         var requireDynamic/*n*/ = this.$SearchSourceCallbackManager_getMatchingIDs(require/*t*/),
             requireLazy/*r*/ = this.$SearchSourceCallbackManager_parseFn(require/*t*/).flatValue;
-        this.$SearchSourceCallbackManager_queryCache[requireLazy/*r*/] = s(requireDynamic/*n*/, !0), global/*e*/.forEach(function(global/*e*/) {
+        this.$SearchSourceCallbackManager_queryCache[requireLazy/*r*/] = createObjectFrom/*s*/(requireDynamic/*n*/, !0), global/*e*/.forEach(function(global/*e*/) {
             var require/*t*/ = global/*e*/.getUniqueID();
             this.$SearchSourceCallbackManager_entriesMap[require/*t*/] = global/*e*/, this.$SearchSourceCallbackManager_textMap[require/*t*/] = this.$SearchSourceCallbackManager_indexFn(global/*e*/), this.$SearchSourceCallbackManager_queryCache[requireLazy/*r*/][require/*t*/] = !0
         }, this), this.$SearchSourceCallbackManager_runPendingCallbacks()
@@ -96,8 +96,8 @@ __d("SearchSourceCallbackManager",["createObjectFrom","invariant"],function (glo
                 o = module/*i*/[require/*t*/];
             if (requireDynamic/*n*/.getOrder() !== o.getOrder()) return requireDynamic/*n*/.getOrder() - o.getOrder();
             var a = requireDynamic/*n*/.getTitle().length,
-                s = o.getTitle().length;
-            return a !== s ? a - s : requireDynamic/*n*/.getUniqueID() - o.getUniqueID()
+                createObjectFrom/*s*/ = o.getTitle().length;
+            return a !== createObjectFrom/*s*/ ? a - createObjectFrom/*s*/ : requireDynamic/*n*/.getUniqueID() - o.getUniqueID()
         }
         var requireLazy/*r*/ = this.$SearchSourceCallbackManager_getExtendedMatchMap(global/*e*/, require/*t*/),
             module/*i*/ = this.$SearchSourceCallbackManager_entriesMap;
@@ -116,8 +116,8 @@ __d("SearchSourceCallbackManager",["createObjectFrom","invariant"],function (glo
             module/*i*/ = require/*t*/.isPrefixQuery ? requireLazy/*r*/ - 1 : null,
             o = {},
             a = {},
-            s = {},
-            l = !1,
+            createObjectFrom/*s*/ = {},
+            invariant/*l*/ = !1,
             u = {},
             c = 0;
         requireDynamic/*n*/.forEach(function(global/*e*/, require/*t*/) {
@@ -127,16 +127,16 @@ __d("SearchSourceCallbackManager",["createObjectFrom","invariant"],function (glo
                     var requireLazy/*r*/ = requireDynamic/*n*/ === global/*e*/ && !o.hasOwnProperty(requireDynamic/*n*/),
                         p = !1;
                     if (requireLazy/*r*/ || (p = (this.$SearchSourceCallbackManager_alwaysPrefixMatch || module/*i*/ === require/*t*/) && 0 === requireDynamic/*n*/.indexOf(global/*e*/)), requireLazy/*r*/ || p) {
-                        requireDynamic/*n*/ === global/*e*/ ? (a.hasOwnProperty(requireDynamic/*n*/) && (l = !0), o[requireDynamic/*n*/] = !0) : ((o.hasOwnProperty(requireDynamic/*n*/) || a.hasOwnProperty(requireDynamic/*n*/)) && (l = !0), a[requireDynamic/*n*/] = !0);
-                        for (var d in this.$SearchSourceCallbackManager_localCache[requireDynamic/*n*/])(0 === require/*t*/ || s.hasOwnProperty(d) && s[d] == c - 1) && (s[d] = c)
+                        requireDynamic/*n*/ === global/*e*/ ? (a.hasOwnProperty(requireDynamic/*n*/) && (invariant/*l*/ = !0), o[requireDynamic/*n*/] = !0) : ((o.hasOwnProperty(requireDynamic/*n*/) || a.hasOwnProperty(requireDynamic/*n*/)) && (invariant/*l*/ = !0), a[requireDynamic/*n*/] = !0);
+                        for (var d in this.$SearchSourceCallbackManager_localCache[requireDynamic/*n*/])(0 === require/*t*/ || createObjectFrom/*s*/.hasOwnProperty(d) && createObjectFrom/*s*/[d] == c - 1) && (createObjectFrom/*s*/[d] = c)
                     }
                 }
             }
         }, this);
-        var p = Object.keys(s).filter(function(global/*e*/) {
-            return s[global/*e*/] == c
+        var p = Object.keys(createObjectFrom/*s*/).filter(function(global/*e*/) {
+            return createObjectFrom/*s*/[global/*e*/] == c
         });
-        return (l || requireLazy/*r*/ > c) && (p = this.$SearchSourceCallbackManager_filterResultsUsingStringMatch(global/*e*/, p)), p
+        return (invariant/*l*/ || requireLazy/*r*/ > c) && (p = this.$SearchSourceCallbackManager_filterResultsUsingStringMatch(global/*e*/, p)), p
     }, o.prototype.$SearchSourceCallbackManager_findQueryMatches = function(global/*e*/) {
         "use strict";
         var require/*t*/ = this.$SearchSourceCallbackManager_parseFn(global/*e*/).flatValue,

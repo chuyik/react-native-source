@@ -1,21 +1,21 @@
 __d("TimeStamp",["React","Text","TimerMixin","fbt","formatDate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
-        a = require/*t*/("Text"),
-        s = require/*t*/("TimerMixin"),
-        l = require/*t*/("fbt"),
-        u = require/*t*/("formatDate"),
+    var React/*o*/ = require/*t*/("React"),
+        Text/*a*/ = require/*t*/("Text"),
+        TimerMixin/*s*/ = require/*t*/("TimerMixin"),
+        fbt/*l*/ = require/*t*/("fbt"),
+        formatDate/*u*/ = require/*t*/("formatDate"),
         c = 1e3,
         p = 60,
         d = 3600,
         h = 43200,
         f = 60,
-        m = o.createClass({
+        m = React/*o*/.createClass({
             displayName: "TimeStamp",
-            mixins: [s],
+            mixins: [TimerMixin/*s*/],
             propTypes: {
-                time: o.PropTypes.number.isRequired,
-                shorten: o.PropTypes.bool
+                time: React/*o*/.PropTypes.number.isRequired,
+                shorten: React/*o*/.PropTypes.bool
             },
             statics: {
                 ignoreTimezoneForTesting: !1
@@ -30,30 +30,30 @@ __d("TimeStamp",["React","Text","TimerMixin","fbt","formatDate"],function (globa
             },
             render: function() {
                 var global/*e*/ = this.getRelativeTime(Math.floor(Date.now() / c), this.props.time, this.props.shorten);
-                return this.nextUpdate = global/*e*/.next, o.createElement(a, Object.assign({}, this.props), global/*e*/.text)
+                return this.nextUpdate = global/*e*/.next, React/*o*/.createElement(Text/*a*/, Object.assign({}, this.props), global/*e*/.text)
             },
             getRelativeTime: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 if (global/*e*/ - require/*t*/ > h) {
                     var requireLazy/*r*/ = new Date(1e3 * require/*t*/),
                         module/*i*/ = new Date,
-                        o = void 0;
-                    m.ignoreTimezoneForTesting && (o = {
+                        React/*o*/ = void 0;
+                    m.ignoreTimezoneForTesting && (React/*o*/ = {
                         skipPatternLocalization: !0,
                         utc: !0
                     });
-                    var a;
-                    a = requireLazy/*r*/.getFullYear() == module/*i*/.getFullYear() ? u(requireLazy/*r*/, "F j", o) : u(requireLazy/*r*/, "F j, Y", o);
-                    var s, c = u(requireLazy/*r*/, "g:module/*i*/ A", o);
-                    return s = requireDynamic/*n*/ ? l({
+                    var Text/*a*/;
+                    Text/*a*/ = requireLazy/*r*/.getFullYear() == module/*i*/.getFullYear() ? formatDate/*u*/(requireLazy/*r*/, "F j", React/*o*/) : formatDate/*u*/(requireLazy/*r*/, "F j, Y", React/*o*/);
+                    var TimerMixin/*s*/, c = formatDate/*u*/(requireLazy/*r*/, "g:module/*i*/ A", React/*o*/);
+                    return TimerMixin/*s*/ = requireDynamic/*n*/ ? fbt/*l*/({
                         type: "text",
                         texts: ["{date}"],
-                        desc: "Date as a string"
-                    }, [l.param("date", a)]) : l({
+                        desc: "Date as Text/*a*/ string"
+                    }, [fbt/*l*/.param("date", Text/*a*/)]) : fbt/*l*/({
                         type: "text",
                         texts: ["{date} at {time}"],
-                        desc: "Date at time as a string"
-                    }, [l.param("date", a), l.param("time", c)]), {
-                        text: s,
+                        desc: "Date at time as Text/*a*/ string"
+                    }, [fbt/*l*/.param("date", Text/*a*/), fbt/*l*/.param("time", c)]), {
+                        text: TimerMixin/*s*/,
                         next: -1
                     }
                 }
@@ -64,47 +64,47 @@ __d("TimeStamp",["React","Text","TimerMixin","fbt","formatDate"],function (globa
                     _ = global/*e*/ - require/*t*/,
                     y = Math.floor(_ / p),
                     v = Math.floor(y / f);
-                return 1 > y ? (requireDynamic/*n*/ ? (g.text = l({
+                return 1 > y ? (requireDynamic/*n*/ ? (g.text = fbt/*l*/({
                     type: "text",
                     texts: ["Just now"],
-                    desc: "Timestamp for something posted less than a minute ago"
-                }), g.next = 20 - _ % 20) : (g.text = l({
+                    desc: "Timestamp for something posted less than Text/*a*/ minute ago"
+                }), g.next = 20 - _ % 20) : (g.text = fbt/*l*/({
                     type: "text",
                     texts: ["A few seconds ago"],
-                    desc: "Timestamp for something posted a few seconds ago"
-                }), g.next = p - _ % p), g) : 1 > v ? (requireDynamic/*n*/ && 1 == y ? g.text = l({
+                    desc: "Timestamp for something posted Text/*a*/ few seconds ago"
+                }), g.next = p - _ % p), g) : 1 > v ? (requireDynamic/*n*/ && 1 == y ? g.text = fbt/*l*/({
                     type: "text",
                     texts: ["1 min"],
-                    desc: "Shorthand timestamp for something posted a minute ago"
-                }) : requireDynamic/*n*/ ? g.text = l({
+                    desc: "Shorthand timestamp for something posted Text/*a*/ minute ago"
+                }) : requireDynamic/*n*/ ? g.text = fbt/*l*/({
                     type: "text",
                     texts: ["{num_minutes} mins"],
                     desc: "Shorthand timestamp for something posted num_minutes minutes ago"
-                }, [l.param("num_minutes", y)]) : (g.text = 1 === y ? "about a minute ago" : y + " minutes ago", g.text = 1 === y ? l({
+                }, [fbt/*l*/.param("num_minutes", y)]) : (g.text = 1 === y ? "about Text/*a*/ minute ago" : y + " minutes ago", g.text = 1 === y ? fbt/*l*/({
                     type: "text",
-                    texts: ["about a minute ago"],
-                    desc: "Timestamp for something posted a minute ago"
-                }) : l({
+                    texts: ["about Text/*a*/ minute ago"],
+                    desc: "Timestamp for something posted Text/*a*/ minute ago"
+                }) : fbt/*l*/({
                     type: "text",
                     texts: ["{num_minutes} minutes ago"],
                     desc: "Timestamp for something posted num_minutes minutes ago"
-                }, [l.param("num_minutes", y)])), g.next = p - _ % p, g) : (11 > v && (g.next = d - _ % d), requireDynamic/*n*/ && 1 === v ? g.text = l({
+                }, [fbt/*l*/.param("num_minutes", y)])), g.next = p - _ % p, g) : (11 > v && (g.next = d - _ % d), requireDynamic/*n*/ && 1 === v ? g.text = fbt/*l*/({
                     type: "text",
                     texts: ["1 hr"],
                     desc: "Shorthand timestamp for something posted an hour ago"
-                }) : requireDynamic/*n*/ ? g.text = l({
+                }) : requireDynamic/*n*/ ? g.text = fbt/*l*/({
                     type: "text",
                     texts: ["{num_hours} hrs"],
                     desc: "Shorthand timestamp for something posted num_hours hours ago"
-                }, [l.param("num_hours", v)]) : (g.text = 1 === v ? "about an hour ago" : v + " hours ago", g.text = 1 === v ? l({
+                }, [fbt/*l*/.param("num_hours", v)]) : (g.text = 1 === v ? "about an hour ago" : v + " hours ago", g.text = 1 === v ? fbt/*l*/({
                     type: "text",
                     texts: ["about an hour ago"],
                     desc: "Timestamp for something posted an hour ago"
-                }) : l({
+                }) : fbt/*l*/({
                     type: "text",
                     texts: ["{num_hours} hours ago"],
                     desc: "Timestamp for something posted num_hours hours ago"
-                }, [l.param("num_hours", v)])), g)
+                }, [fbt/*l*/.param("num_hours", v)])), g)
             }
         });
     module/*i*/.exports = m

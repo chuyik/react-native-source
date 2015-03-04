@@ -2,36 +2,36 @@ __d("ReactIOSDefaultInjection",["InitializeJavaScriptAppEngine","EventPluginHub"
     "use strict";
 
     function o() {
-        a.injection.injectEventPluginOrder(l), a.injection.injectInstanceHandle(m), w.injection.injectGlobalResponderHandler(v), w.injection.injectGlobalInteractionHandler(y), a.injection.injectEventPluginsByName({
-            ResponderEventPlugin: w,
-            IOSNativeBridgeEventPlugin: u
-        }), R.injection.injectReconcileTransaction(g.ReactReconcileTransaction), R.injection.injectBatchingStrategy(h), p.injection.injectEnvironment(g), s.injection.injectMount(S), d.injection.injectMixin(_), b.inject(function(global/*e*/) {
-            return new f(C.type, null, null, null, null, {
+        EventPluginHub/*a*/.injection.injectEventPluginOrder(IOSDefaultEventPluginOrder/*l*/), EventPluginHub/*a*/.injection.injectInstanceHandle(ReactInstanceHandles/*m*/), ResponderEventPlugin/*w*/.injection.injectGlobalResponderHandler(ReactIOSGlobalResponderHandler/*v*/), ResponderEventPlugin/*w*/.injection.injectGlobalInteractionHandler(ReactIOSGlobalInteractionHandler/*y*/), EventPluginHub/*a*/.injection.injectEventPluginsByName({
+            ResponderEventPlugin: ResponderEventPlugin/*w*/,
+            IOSNativeBridgeEventPlugin: IOSNativeBridgeEventPlugin/*u*/
+        }), ReactUpdates/*R*/.injection.injectReconcileTransaction(ReactIOSComponentEnvironment/*g*/.ReactReconcileTransaction), ReactUpdates/*R*/.injection.injectBatchingStrategy(ReactDefaultBatchingStrategy/*h*/), ReactComponent/*p*/.injection.injectEnvironment(ReactIOSComponentEnvironment/*g*/), EventPluginUtils/*s*/.injection.injectMount(ReactIOSMount/*S*/), ReactCompositeComponent/*d*/.injection.injectMixin(ReactIOSComponentMixin/*_*/), ReactTextComponent/*b*/.inject(function(global/*e*/) {
+            return new ReactElement/*f*/(RKRawText/*C*/.type, null, null, null, null, {
                 text: global/*e*/
             })
-        }), c.injection.injectImplementation(E)
+        }), NodeHandle/*c*/.injection.injectImplementation(UniversalWorkerNodeHandle/*E*/)
     }
     require/*t*/("InitializeJavaScriptAppEngine");
-    var a = require/*t*/("EventPluginHub"),
-        s = require/*t*/("EventPluginUtils"),
-        l = require/*t*/("IOSDefaultEventPluginOrder"),
-        u = require/*t*/("IOSNativeBridgeEventPlugin"),
-        c = require/*t*/("NodeHandle"),
-        p = require/*t*/("ReactComponent"),
-        d = require/*t*/("ReactCompositeComponent"),
-        h = require/*t*/("ReactDefaultBatchingStrategy"),
-        f = require/*t*/("ReactElement"),
-        m = require/*t*/("ReactInstanceHandles"),
-        g = require/*t*/("ReactIOSComponentEnvironment"),
-        _ = require/*t*/("ReactIOSComponentMixin"),
-        y = require/*t*/("ReactIOSGlobalInteractionHandler"),
-        v = require/*t*/("ReactIOSGlobalResponderHandler"),
-        S = require/*t*/("ReactIOSMount"),
-        b = require/*t*/("ReactTextComponent"),
-        R = require/*t*/("ReactUpdates"),
-        w = require/*t*/("ResponderEventPlugin"),
-        C = require/*t*/("RKRawText"),
-        E = require/*t*/("UniversalWorkerNodeHandle");
+    var EventPluginHub/*a*/ = require/*t*/("EventPluginHub"),
+        EventPluginUtils/*s*/ = require/*t*/("EventPluginUtils"),
+        IOSDefaultEventPluginOrder/*l*/ = require/*t*/("IOSDefaultEventPluginOrder"),
+        IOSNativeBridgeEventPlugin/*u*/ = require/*t*/("IOSNativeBridgeEventPlugin"),
+        NodeHandle/*c*/ = require/*t*/("NodeHandle"),
+        ReactComponent/*p*/ = require/*t*/("ReactComponent"),
+        ReactCompositeComponent/*d*/ = require/*t*/("ReactCompositeComponent"),
+        ReactDefaultBatchingStrategy/*h*/ = require/*t*/("ReactDefaultBatchingStrategy"),
+        ReactElement/*f*/ = require/*t*/("ReactElement"),
+        ReactInstanceHandles/*m*/ = require/*t*/("ReactInstanceHandles"),
+        ReactIOSComponentEnvironment/*g*/ = require/*t*/("ReactIOSComponentEnvironment"),
+        ReactIOSComponentMixin/*_*/ = require/*t*/("ReactIOSComponentMixin"),
+        ReactIOSGlobalInteractionHandler/*y*/ = require/*t*/("ReactIOSGlobalInteractionHandler"),
+        ReactIOSGlobalResponderHandler/*v*/ = require/*t*/("ReactIOSGlobalResponderHandler"),
+        ReactIOSMount/*S*/ = require/*t*/("ReactIOSMount"),
+        ReactTextComponent/*b*/ = require/*t*/("ReactTextComponent"),
+        ReactUpdates/*R*/ = require/*t*/("ReactUpdates"),
+        ResponderEventPlugin/*w*/ = require/*t*/("ResponderEventPlugin"),
+        RKRawText/*C*/ = require/*t*/("RKRawText"),
+        UniversalWorkerNodeHandle/*E*/ = require/*t*/("UniversalWorkerNodeHandle");
     require/*t*/("RCTEventEmitter"), require/*t*/("RCTLog"), require/*t*/("RCTJSTimers"), module/*i*/.exports = {
         inject: o
     }

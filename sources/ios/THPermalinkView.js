@@ -1,34 +1,34 @@
 __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","POPAnimationMixin","React","ReactGraphQL","RCTNativeAppEventEmitter","NativeModules","ScrollView","StyleSheet","Subscribable","THColors","THFeedUnitView","THPermalinkInputBarView","THViewConstants","TimerMixin","View","isEmpty","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("CommentAddAction"),
-        a = require/*t*/("DocumentContent"),
-        s = require/*t*/("FeedbackPoller"),
-        l = require/*t*/("POPAnimationMixin"),
-        u = require/*t*/("React"),
-        c = require/*t*/("ReactGraphQL"),
-        p = require/*t*/("RCTNativeAppEventEmitter"),
-        d = require/*t*/("NativeModules").RKTreehouseManager,
-        h = require/*t*/("ScrollView"),
-        f = require/*t*/("StyleSheet"),
-        m = require/*t*/("Subscribable"),
-        g = require/*t*/("THColors"),
-        _ = require/*t*/("THFeedUnitView"),
-        y = require/*t*/("THPermalinkInputBarView"),
-        v = require/*t*/("THViewConstants"),
-        S = require/*t*/("TimerMixin"),
-        b = require/*t*/("View"),
-        R = require/*t*/("isEmpty"),
-        w = require/*t*/("keyOf"),
-        C = w({
+    var CommentAddAction/*o*/ = require/*t*/("CommentAddAction"),
+        DocumentContent/*a*/ = require/*t*/("DocumentContent"),
+        FeedbackPoller/*s*/ = require/*t*/("FeedbackPoller"),
+        POPAnimationMixin/*l*/ = require/*t*/("POPAnimationMixin"),
+        React/*u*/ = require/*t*/("React"),
+        ReactGraphQL/*c*/ = require/*t*/("ReactGraphQL"),
+        RCTNativeAppEventEmitter/*p*/ = require/*t*/("RCTNativeAppEventEmitter"),
+        NativeModules/*d*/ = require/*t*/("NativeModules").RKTreehouseManager,
+        ScrollView/*h*/ = require/*t*/("ScrollView"),
+        StyleSheet/*f*/ = require/*t*/("StyleSheet"),
+        Subscribable/*m*/ = require/*t*/("Subscribable"),
+        THColors/*g*/ = require/*t*/("THColors"),
+        THFeedUnitView/*_*/ = require/*t*/("THFeedUnitView"),
+        THPermalinkInputBarView/*y*/ = require/*t*/("THPermalinkInputBarView"),
+        THViewConstants/*v*/ = require/*t*/("THViewConstants"),
+        TimerMixin/*S*/ = require/*t*/("TimerMixin"),
+        View/*b*/ = require/*t*/("View"),
+        isEmpty/*R*/ = require/*t*/("isEmpty"),
+        keyOf/*w*/ = require/*t*/("keyOf"),
+        C = keyOf/*w*/({
             permalinkInputBar: null
         }),
         E = "gk_catalyst_th_live_update",
-        D = u.createClass({
+        D = React/*u*/.createClass({
             displayName: "THPermalinkView",
             propTypes: {
-                story: u.PropTypes.object.isRequired,
-                topInset: u.PropTypes.number,
-                bottomInset: u.PropTypes.number
+                story: React/*u*/.PropTypes.object.isRequired,
+                topInset: React/*u*/.PropTypes.number,
+                bottomInset: React/*u*/.PropTypes.number
             },
             getDefaultProps: function() {
                 return {
@@ -36,7 +36,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                     bottomInset: 0
                 }
             },
-            mixins: [l, c.Mixin, m.Mixin, S],
+            mixins: [POPAnimationMixin/*l*/, ReactGraphQL/*c*/.Mixin, Subscribable/*m*/.Mixin, TimerMixin/*S*/],
             statics: {
                 queries: {
                     viewer: function(global/*e*/, require/*t*/) {
@@ -59,7 +59,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                             })], [require/*t*/.__frag(requireDynamic/*n*/)], {
                                 scope: "THPermalinkView_viewer"
                             })
-                        }(E, _.getQuery("viewer"))
+                        }(E, THFeedUnitView/*_*/.getQuery("viewer"))
                     },
                     story: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/, requireDynamic/*n*/) {
@@ -80,7 +80,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THPermalinkView_story"
                             })
-                        }(_.getQuery("story"), _.getQuery("group"))
+                        }(THFeedUnitView/*_*/.getQuery("story"), THFeedUnitView/*_*/.getQuery("group"))
                     }
                 }
             },
@@ -88,20 +88,20 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 return {
                     commentEditAbortCallback: null,
                     commentEditSubmitCallback: null,
-                    initialText: new a
+                    initialText: new DocumentContent/*a*/
                 }
             },
             componentWillMount: function() {
-                this.addListenerOn(p, "reloadFeedViewForGroup", this.reloadFeedViewForGroup)
+                this.addListenerOn(RCTNativeAppEventEmitter/*p*/, "reloadFeedViewForGroup", this.reloadFeedViewForGroup)
             },
             componentWillUnmount: function() {
-                this.props.story && this.props.story.feedback && s.unregister(this.props.story.feedback.id)
+                this.props.story && this.props.story.feedback && FeedbackPoller/*s*/.unregister(this.props.story.feedback.id)
             },
             componentDidMount: function() {
-                this.enablePollerIfNeeded(this.props), this.props.story && this.props.story.feedback && s.register(this.props.story.feedback.id), d && (d.groupViewComponentDidUpdate && this.props.story && this.props.story.to && this.requestAnimationFrame(function() {
-                    return this.isMounted() && d.groupViewComponentDidUpdate(this.props.story.to.id)
-                }.bind(this)), d.logEventEnded && this.requestAnimationFrame(function() {
-                    d.logEventEnded(this.props.groupPostNotifTTI)
+                this.enablePollerIfNeeded(this.props), this.props.story && this.props.story.feedback && FeedbackPoller/*s*/.register(this.props.story.feedback.id), NativeModules/*d*/ && (NativeModules/*d*/.groupViewComponentDidUpdate && this.props.story && this.props.story.to && this.requestAnimationFrame(function() {
+                    return this.isMounted() && NativeModules/*d*/.groupViewComponentDidUpdate(this.props.story.to.id)
+                }.bind(this)), NativeModules/*d*/.logEventEnded && this.requestAnimationFrame(function() {
+                    NativeModules/*d*/.logEventEnded(this.props.groupPostNotifTTI)
                 }.bind(this)))
             },
             enablePollerIfNeeded: function(global/*e*/) {
@@ -110,17 +110,17 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                     var requireDynamic/*n*/ = require/*t*/.filter(function(global/*e*/) {
                         return global/*e*/.node.name === E
                     });
-                    R(requireDynamic/*n*/) || s.enablePoller(requireDynamic/*n*/[0].node.enabled)
+                    isEmpty/*R*/(requireDynamic/*n*/) || FeedbackPoller/*s*/.enablePoller(requireDynamic/*n*/[0].node.enabled)
                 }
             },
             onStoryDeleted: function() {
-                d && d.closeModalWindow()
+                NativeModules/*d*/ && NativeModules/*d*/.closeModalWindow()
             },
             reloadFeedViewForGroup: function(global/*e*/) {
                 this.props.story.to && this.props.story.to.id === global/*e*/ && this.props.forceUpdate({})
             },
             handleCommentSubmit: function(global/*e*/, require/*t*/) {
-                require/*t*/ && require/*t*/.style_list && "photo" === require/*t*/.style_list[0] ? o.handleAddPhotoComment(this.props.viewer.actor.id, this.props.story.feedback.id, global/*e*/, require/*t*/) : o.handleAddComment(this.props.viewer.actor.id, this.props.story.feedback.id, global/*e*/, require/*t*/), this.setState({
+                require/*t*/ && require/*t*/.style_list && "photo" === require/*t*/.style_list[0] ? CommentAddAction/*o*/.handleAddPhotoComment(this.props.viewer.actor.id, this.props.story.feedback.id, global/*e*/, require/*t*/) : CommentAddAction/*o*/.handleAddComment(this.props.viewer.actor.id, this.props.story.feedback.id, global/*e*/, require/*t*/), this.setState({
                     dockParams: null
                 })
             },
@@ -128,7 +128,7 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 this.state.commentEditSubmitCallback && this.state.commentEditSubmitCallback(global/*e*/), this.setState({
                     commentEditSubmitCallback: null,
                     commentEditAbortCallback: null,
-                    initialText: new a,
+                    initialText: new DocumentContent/*a*/,
                     isEditing: !1
                 })
             },
@@ -152,30 +152,30 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 })
             },
             render: function() {
-                if (!this.props.story) return u.createElement(b, null);
+                if (!this.props.story) return React/*u*/.createElement(View/*b*/, null);
                 var global/*e*/ = {
                         top: this.props.topInset,
                         bottom: this.props.bottomInset
                     },
                     require/*t*/ = this.props.story.to ? this.props.story.to.id : null,
-                    requireDynamic/*n*/ = u.createElement(_, {
+                    requireDynamic/*n*/ = React/*u*/.createElement(THFeedUnitView/*_*/, {
                         onInputRequested: this.handleCommentInputRequested,
                         onStoryDeleted: this.onStoryDeleted,
                         story: this.props.story,
                         group: this.props.story.to,
                         viewer: this.props.viewer,
-                        viewContext: v.PERMALINK
+                        viewContext: THViewConstants/*v*/.PERMALINK
                     }),
-                    requireLazy/*r*/ = u.createElement(h, {
+                    requireLazy/*r*/ = React/*u*/.createElement(ScrollView/*h*/, {
                         automaticallyAdjustContentInsets: !0,
                         contentInset: global/*e*/,
                         contentOffset: {
-                            y: -global/*e*/.top
+                            THPermalinkInputBarView/*y*/: -global/*e*/.top
                         },
                         style: T.scrollView,
                         showsVerticalScrollIndicator: !0
                     }, requireDynamic/*n*/);
-                return u.createElement(y, {
+                return React/*u*/.createElement(THPermalinkInputBarView/*y*/, {
                     ref: C,
                     groupID: require/*t*/,
                     dockParams: this.state.dockParams,
@@ -188,9 +188,9 @@ __d("THPermalinkView",["CommentAddAction","DocumentContent","FeedbackPoller","PO
                 })
             }
         }),
-        T = f.create({
+        T = StyleSheet/*f*/.create({
             scrollView: {
-                backgroundColor: g.backgroundColor
+                backgroundColor: THColors/*g*/.backgroundColor
             }
         });
     module/*i*/.exports = D

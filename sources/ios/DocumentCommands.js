@@ -1,6 +1,6 @@
 __d("DocumentCommands",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("keyMirror"),
-        a = o({
+    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+        a = keyMirror/*o*/({
             UNDO: !0,
             REDO: !0,
             DELETE: !0,

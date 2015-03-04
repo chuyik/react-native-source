@@ -4,8 +4,8 @@ __d("createArrayFrom",["toArray"],function (global/*e*/, require/*t*/, requireDy
     }
 
     function a(global/*e*/) {
-        return o(global/*e*/) ? Array.isArray(global/*e*/) ? global/*e*/.slice() : s(global/*e*/) : [global/*e*/]
+        return o(global/*e*/) ? Array.isArray(global/*e*/) ? global/*e*/.slice() : toArray/*s*/(global/*e*/) : [global/*e*/]
     }
-    var s = require/*t*/("toArray");
+    var toArray/*s*/ = require/*t*/("toArray");
     module/*i*/.exports = a
 });

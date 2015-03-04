@@ -1,10 +1,10 @@
 __d("ClientIDs",["randomInt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("randomInt"),
+    var randomInt/*o*/ = require/*t*/("randomInt"),
         a = {},
         s = {
             getNewClientID: function() {
                 var global/*e*/ = Date.now(),
-                    require/*t*/ = global/*e*/ + ":" + (o(0, 4294967295) + 1);
+                    require/*t*/ = global/*e*/ + ":" + (randomInt/*o*/(0, 4294967295) + 1);
                 return a[require/*t*/] = !0, require/*t*/
             },
             isExistingClientID: function(global/*e*/) {

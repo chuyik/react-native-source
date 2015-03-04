@@ -1,14 +1,14 @@
 __d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlockType","ComposedInlineStyle"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/, require/*t*/) {
-        return require/*t*/.length !== l(global/*e*/) && d(0, "Length of block array must match number of blocks in text."), require/*t*/
+        return require/*t*/.length !== l(global/*e*/) && invariant/*d*/(0, "Length of block array must match number of blocks in text."), require/*t*/
     }
 
     function a(global/*e*/, require/*t*/) {
-        return require/*t*/.length != global/*e*/.length && d(0, "Length of inline style array must match text length."), require/*t*/
+        return require/*t*/.length != global/*e*/.length && invariant/*d*/(0, "Length of inline style array must match text length."), require/*t*/
     }
 
     function s(global/*e*/, require/*t*/) {
-        return require/*t*/.length !== global/*e*/.length && d(0, "Length of entity array must match text length."), require/*t*/
+        return require/*t*/.length !== global/*e*/.length && invariant/*d*/(0, "Length of entity array must match text length."), require/*t*/
     }
 
     function l(global/*e*/, require/*t*/) {
@@ -17,14 +17,14 @@ __d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlo
 
     function u(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
         "use strict";
-        this.$DocumentContent_version = 1, this.$DocumentContent_text = global/*e*/ || "", this.$DocumentContent_inlines = require/*t*/ ? a(this.$DocumentContent_text, require/*t*/) : p(this.$DocumentContent_text.length, m.NONE), this.$DocumentContent_blocks = requireDynamic/*n*/ ? o(this.$DocumentContent_text, requireDynamic/*n*/) : p(l(this.$DocumentContent_text), f.UNSTYLED), this.$DocumentContent_entities = requireLazy/*r*/ ? s(this.$DocumentContent_text, requireLazy/*r*/) : p(this.$DocumentContent_text.length, null), this.$DocumentContent_undoStack = [], this.$DocumentContent_redoStack = []
+        this.$DocumentContent_version = 1, this.$DocumentContent_text = global/*e*/ || "", this.$DocumentContent_inlines = require/*t*/ ? a(this.$DocumentContent_text, require/*t*/) : fillArray/*p*/(this.$DocumentContent_text.length, ComposedInlineStyle/*m*/.NONE), this.$DocumentContent_blocks = requireDynamic/*n*/ ? o(this.$DocumentContent_text, requireDynamic/*n*/) : fillArray/*p*/(l(this.$DocumentContent_text), ComposedBlockType/*f*/.UNSTYLED), this.$DocumentContent_entities = requireLazy/*r*/ ? s(this.$DocumentContent_text, requireLazy/*r*/) : fillArray/*p*/(this.$DocumentContent_text.length, null), this.$DocumentContent_undoStack = [], this.$DocumentContent_redoStack = []
     }
-    var c = require/*t*/("DocumentCharacters"),
-        p = require/*t*/("fillArray"),
-        d = require/*t*/("invariant"),
-        h = c.BLOCK_DELIMITER,
-        f = require/*t*/("ComposedBlockType"),
-        m = require/*t*/("ComposedInlineStyle");
+    var DocumentCharacters/*c*/ = require/*t*/("DocumentCharacters"),
+        fillArray/*p*/ = require/*t*/("fillArray"),
+        invariant/*d*/ = require/*t*/("invariant"),
+        h = DocumentCharacters/*c*/.BLOCK_DELIMITER,
+        ComposedBlockType/*f*/ = require/*t*/("ComposedBlockType"),
+        ComposedInlineStyle/*m*/ = require/*t*/("ComposedInlineStyle");
     u.prototype.bumpVersion = function() {
         "use strict";
         this.$DocumentContent_version++

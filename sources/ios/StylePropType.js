@@ -1,6 +1,6 @@
 __d("StylePropType",["ReactPropTypes"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ReactPropTypes"),
-        a = o.oneOfType([o.number, o.object, o.array]);
+    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
+        a = ReactPropTypes/*o*/.oneOfType([ReactPropTypes/*o*/.number, ReactPropTypes/*o*/.object, ReactPropTypes/*o*/.array]);
     module/*i*/.exports = a
 });

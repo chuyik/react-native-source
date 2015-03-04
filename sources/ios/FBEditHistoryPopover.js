@@ -1,26 +1,26 @@
 __d("FBEditHistoryPopover",["FIGColors","Popover","React","ReactGraphQL","ScrollView","SpinnerIOS","StyleSheet","Text","TimeStamp","TouchableBounce","View","clamp","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FIGColors"),
-        a = require/*t*/("Popover"),
-        s = require/*t*/("React"),
-        l = require/*t*/("ReactGraphQL"),
-        u = require/*t*/("ScrollView"),
-        c = require/*t*/("SpinnerIOS"),
-        p = require/*t*/("StyleSheet"),
-        d = require/*t*/("Text"),
-        h = require/*t*/("TimeStamp"),
-        f = require/*t*/("TouchableBounce"),
-        m = require/*t*/("View"),
-        g = require/*t*/("clamp"),
-        _ = require/*t*/("fbt"),
-        y = require/*t*/("keyOf"),
+    var FIGColors/*o*/ = require/*t*/("FIGColors"),
+        Popover/*a*/ = require/*t*/("Popover"),
+        React/*s*/ = require/*t*/("React"),
+        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
+        ScrollView/*u*/ = require/*t*/("ScrollView"),
+        SpinnerIOS/*c*/ = require/*t*/("SpinnerIOS"),
+        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
+        Text/*d*/ = require/*t*/("Text"),
+        TimeStamp/*h*/ = require/*t*/("TimeStamp"),
+        TouchableBounce/*f*/ = require/*t*/("TouchableBounce"),
+        View/*m*/ = require/*t*/("View"),
+        clamp/*g*/ = require/*t*/("clamp"),
+        fbt/*_*/ = require/*t*/("fbt"),
+        keyOf/*y*/ = require/*t*/("keyOf"),
         v = 6,
-        S = y({
+        S = keyOf/*y*/({
             popRef: null
         }),
-        b = s.createClass({
+        b = React/*s*/.createClass({
             displayName: "FBEditHistoryPopover",
-            mixins: [l.Mixin],
+            mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queryParams: {
                     count: 0,
@@ -87,48 +87,48 @@ __d("FBEditHistoryPopover",["FIGColors","Popover","React","ReactGraphQL","Scroll
                 var global/*e*/ = this.props.comment.edit_history_popover,
                     require/*t*/ = this.props.comment.edit_history.count;
                 if (!global/*e*/.page_info || !global/*e*/.page_info.has_previous_page) return null;
-                if (this.queryParams.count > global/*e*/.edges.length) return s.createElement(m, {
+                if (this.queryParams.count > global/*e*/.edges.length) return React/*s*/.createElement(View/*m*/, {
                     style: R.seeMore
-                }, s.createElement(c, null));
+                }, React/*s*/.createElement(SpinnerIOS/*c*/, null));
                 var requireDynamic/*n*/ = require/*t*/ - global/*e*/.edges.length;
-                return s.createElement(f, {
+                return React/*s*/.createElement(TouchableBounce/*f*/, {
                     key: "more",
                     onPress: this.showMore
-                }, s.createElement(m, {
+                }, React/*s*/.createElement(View/*m*/, {
                     key: "more",
                     style: R.seeMore
-                }, s.createElement(d, {
+                }, React/*s*/.createElement(Text/*d*/, {
                     style: R.seeMoreText
-                }, _({
+                }, fbt/*_*/({
                     type: "text",
                     texts: ["See {more_count} more"],
                     desc: "Button to see more edits"
-                }, [_.param("more_count", requireDynamic/*n*/)]))))
+                }, [fbt/*_*/.param("more_count", requireDynamic/*n*/)]))))
             },
             renderList: function() {
                 var global/*e*/ = this.props.comment.edit_history_popover,
                     require/*t*/ = this.props.comment.edit_history.count,
-                    requireDynamic/*n*/ = g(150, 70 * require/*t*/, 400);
-                if (!global/*e*/ || !global/*e*/.edges) return s.createElement(c, {
+                    requireDynamic/*n*/ = clamp/*g*/(150, 70 * require/*t*/, 400);
+                if (!global/*e*/ || !global/*e*/.edges) return React/*s*/.createElement(SpinnerIOS/*c*/, {
                     style: {
                         height: requireDynamic/*n*/
                     }
                 });
                 var requireLazy/*r*/ = [this.renderPaginator()];
                 global/*e*/ = global/*e*/.edges;
-                for (var module/*i*/ = 0; module/*i*/ < global/*e*/.length; ++module/*i*/) requireLazy/*r*/.push(s.createElement(m, {
-                    key: "c" + module/*i*/,
+                for (var module/*i*/ = 0; module/*i*/ < global/*e*/.length; ++module/*i*/) requireLazy/*r*/.push(React/*s*/.createElement(View/*m*/, {
+                    key: "SpinnerIOS/*c*/" + module/*i*/,
                     style: R.cell
-                }, s.createElement(h, {
+                }, React/*s*/.createElement(TimeStamp/*h*/, {
                     style: R.timestamp,
                     time: global/*e*/[module/*i*/].node.time
-                }), s.createElement(d, {
+                }), React/*s*/.createElement(Text/*d*/, {
                     style: R.bodyText
-                }, global/*e*/[module/*i*/].node.message && global/*e*/[module/*i*/].node.message.text || " "))), requireLazy/*r*/.push(s.createElement(m, {
+                }, global/*e*/[module/*i*/].node.message && global/*e*/[module/*i*/].node.message.text || " "))), requireLazy/*r*/.push(React/*s*/.createElement(View/*m*/, {
                     style: R.rowSeparator,
-                    key: "s" + module/*i*/
+                    key: "React/*s*/" + module/*i*/
                 }));
-                return s.createElement(u, {
+                return React/*s*/.createElement(ScrollView/*u*/, {
                     style: {
                         height: requireDynamic/*n*/
                     },
@@ -136,44 +136,44 @@ __d("FBEditHistoryPopover",["FIGColors","Popover","React","ReactGraphQL","Scroll
                 }, requireLazy/*r*/)
             },
             renderContent: function() {
-                return [s.createElement(m, {
+                return [React/*s*/.createElement(View/*m*/, {
                     key: "header",
                     style: R.header
-                }, s.createElement(d, {
+                }, React/*s*/.createElement(Text/*d*/, {
                     style: R.headerText
-                }, _({
+                }, fbt/*_*/({
                     type: "text",
                     texts: ["{edit_count} Edits"],
                     desc: "Header of edit history view."
-                }, [_.param("edit_count", this.props.comment.edit_history.count)])), s.createElement(f, {
+                }, [fbt/*_*/.param("edit_count", this.props.comment.edit_history.count)])), React/*s*/.createElement(TouchableBounce/*f*/, {
                     onPress: this.close
-                }, s.createElement(m, null, s.createElement(d, {
+                }, React/*s*/.createElement(View/*m*/, null, React/*s*/.createElement(Text/*d*/, {
                     style: R.headerText
-                }, _({
+                }, fbt/*_*/({
                     type: "text",
                     texts: ["Close"],
                     desc: "Close button"
-                }))))), s.createElement(m, {
+                }))))), React/*s*/.createElement(View/*m*/, {
                     key: "sep",
                     style: R.rowSeparator
                 }), this.renderList()]
             },
             render: function() {
-                return s.createElement(a, {
+                return React/*s*/.createElement(Popover/*a*/, {
                     ref: S,
                     onDidClose: this.handleDidClose,
                     contentFactory: this.renderContent
                 })
             }
         }),
-        R = p.create({
+        R = StyleSheet/*p*/.create({
             contentContainer: {
                 margin: 10
             },
             rowSeparator: {
                 height: 1,
                 marginHorizontal: 30,
-                backgroundColor: o.separator
+                backgroundColor: FIGColors/*o*/.separator
             },
             headerText: {
                 margin: 10,
@@ -183,7 +183,7 @@ __d("FBEditHistoryPopover",["FIGColors","Popover","React","ReactGraphQL","Scroll
                 margin: 5
             },
             timestamp: {
-                color: o.mediumText,
+                color: FIGColors/*o*/.mediumText,
                 fontSize: 13
             },
             bodyText: {

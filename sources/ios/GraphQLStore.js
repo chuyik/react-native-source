@@ -2,22 +2,22 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
     "use strict";
 
     function o(global/*e*/, require/*t*/) {
-        return new I(H, V, U, j, N, global/*e*/, E.broadcastChangeForID, require/*t*/)
+        return new GraphQLStoreWriter/*I*/(H, V, U, j, N, global/*e*/, GraphQLStoreChangeEmitter/*E*/.broadcastChangeForID, require/*t*/)
     }
 
     function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = v.getMutationType(global/*e*/);
-        global/*e*/ = global/*e*/[requireLazy/*r*/], require/*t*/ instanceof _.Mutation || M(0, "must pass a mutation into handleMutationResult");
-        for (var module/*i*/ = R.getConfigs(requireLazy/*r*/), a = o(requireDynamic/*n*/, L()), s = 0; s < module/*i*/.length; s++) {
+        var requireLazy/*r*/ = GraphQLMutationDataHandler/*v*/.getMutationType(global/*e*/);
+        global/*e*/ = global/*e*/[requireLazy/*r*/], require/*t*/ instanceof GraphQL_EXPERIMENTAL/*_*/.Mutation || invariant/*M*/(0, "must pass a mutation into handleMutationResult");
+        for (var module/*i*/ = GraphQLMutatorHub/*R*/.getConfigs(requireLazy/*r*/), a = o(requireDynamic/*n*/, generateForceIndex/*L*/()), s = 0; s < module/*i*/.length; s++) {
             var l = module/*i*/[s];
             switch (l.handlerType) {
-                case b.NODE_DELETE_HANDLER:
+                case GraphQLMutatorConstants/*b*/.NODE_DELETE_HANDLER:
                     a.handleNodeDeleteMutation(global/*e*/, l.config);
                     break;
-                case b.RANGE_ADD_HANDLER:
-                    a.handleRangeAddMutation(global/*e*/, require/*t*/, l.config, S.getRangeConfigForType(requireLazy/*r*/));
+                case GraphQLMutatorConstants/*b*/.RANGE_ADD_HANDLER:
+                    a.handleRangeAddMutation(global/*e*/, require/*t*/, l.config, GraphQLMutationProperties/*S*/.getRangeConfigForType(requireLazy/*r*/));
                     break;
-                case b.RANGE_DELETE_HANDLER:
+                case GraphQLMutatorConstants/*b*/.RANGE_DELETE_HANDLER:
                     a.handleRangeDeleteMutation(global/*e*/, l.config);
                     break;
                 default:
@@ -28,21 +28,21 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
     }
 
     function s(global/*e*/) {
-        a(global/*e*/.getOptimisticPayload(), global/*e*/.getOptimisticPayloadQuery(), b.OPTIMISTIC_UPDATE);
+        a(global/*e*/.getOptimisticPayload(), global/*e*/.getOptimisticPayloadQuery(), GraphQLMutatorConstants/*b*/.OPTIMISTIC_UPDATE);
         var require/*t*/ = global/*e*/.getClientMutationID(),
             requireDynamic/*n*/ = G[require/*t*/];
-        requireDynamic/*n*/ && l(requireDynamic/*n*/, C.ERROR)
+        requireDynamic/*n*/ && l(requireDynamic/*n*/, GraphQLStatusConstants/*C*/.ERROR)
     }
 
     function l(global/*e*/, require/*t*/) {
-        require/*t*/ in C || M(0, '"%s" is not a valid GraphQLStatusConstant.', require/*t*/);
+        require/*t*/ in GraphQLStatusConstants/*C*/ || invariant/*M*/(0, '"%s" is not a valid GraphQLStatusConstant.', require/*t*/);
         var requireDynamic/*n*/ = V[global/*e*/];
-        requireDynamic/*n*/ || M(0, "Invalid dataID %s was passed to `setStatusForID`. Can only set status for queued node.", global/*e*/), requireDynamic/*n*/.__status__ = require/*t*/, E.broadcastChangeForID(global/*e*/)
+        requireDynamic/*n*/ || invariant/*M*/(0, "Invalid dataID %s was passed to `setStatusForID`. Can only set status for queued node.", global/*e*/), requireDynamic/*n*/.__status__ = require/*t*/, GraphQLStoreChangeEmitter/*E*/.broadcastChangeForID(global/*e*/)
     }
 
     function u(global/*e*/) {
         var require/*t*/ = V[global/*e*/];
-        require/*t*/ || M(0, "Invalid dataID %s was passed to `clearStatusForID`. Can only set status for queued node.", global/*e*/), delete require/*t*/.__status__, E.broadcastChangeForID(global/*e*/)
+        require/*t*/ || invariant/*M*/(0, "Invalid dataID %s was passed to `clearStatusForID`. Can only set status for queued node.", global/*e*/), delete require/*t*/.__status__, GraphQLStoreChangeEmitter/*E*/.broadcastChangeForID(global/*e*/)
     }
 
     function c(global/*e*/) {
@@ -50,37 +50,37 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
     }
 
     function p(global/*e*/) {
-        var require/*t*/ = d.getKeyForClientMutationID(global/*e*/);
-        require/*t*/ && (d.shiftActionForKey(require/*t*/), d.iterateOverActionsForKey(require/*t*/, function(global/*e*/) {
-            h.removeFromQueue(global/*e*/.getClientMutationID())
-        }), d.clearActionsForKey(require/*t*/))
+        var require/*t*/ = ActionCollisionMap/*d*/.getKeyForClientMutationID(global/*e*/);
+        require/*t*/ && (ActionCollisionMap/*d*/.shiftActionForKey(require/*t*/), ActionCollisionMap/*d*/.iterateOverActionsForKey(require/*t*/, function(global/*e*/) {
+            ActionQueue/*h*/.removeFromQueue(global/*e*/.getClientMutationID())
+        }), ActionCollisionMap/*d*/.clearActionsForKey(require/*t*/))
     }
-    var d = require/*t*/("ActionCollisionMap"),
-        h = require/*t*/("ActionQueue"),
-        f = require/*t*/("DiffQueryBuilder"),
-        m = require/*t*/("DliteLogger"),
-        g = require/*t*/("DliteProfiler"),
-        _ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        y = require/*t*/("GraphQLConstants"),
-        v = require/*t*/("GraphQLMutationDataHandler"),
-        S = require/*t*/("GraphQLMutationProperties"),
-        b = require/*t*/("GraphQLMutatorConstants"),
-        R = require/*t*/("GraphQLMutatorHub"),
-        w = require/*t*/("GraphQLQueryTracker"),
-        C = require/*t*/("GraphQLStatusConstants"),
-        E = require/*t*/("GraphQLStoreChangeEmitter"),
-        D = require/*t*/("GraphQLStoreDataHandler"),
-        T = require/*t*/("GraphQLStoreNodeRangeTracker"),
-        x = require/*t*/("GraphQLStoreQueryPath"),
-        P = require/*t*/("GraphQLStoreReader"),
-        I = require/*t*/("GraphQLStoreWriter"),
-        F = require/*t*/("generateClientID"),
-        L = require/*t*/("generateForceIndex"),
-        M = require/*t*/("invariant"),
-        Q = require/*t*/("isEmpty"),
-        A = require/*t*/("keyMirror"),
-        k = require/*t*/("mapObject"),
-        O = require/*t*/("mixInEventEmitter"),
+    var ActionCollisionMap/*d*/ = require/*t*/("ActionCollisionMap"),
+        ActionQueue/*h*/ = require/*t*/("ActionQueue"),
+        DiffQueryBuilder/*f*/ = require/*t*/("DiffQueryBuilder"),
+        DliteLogger/*m*/ = require/*t*/("DliteLogger"),
+        DliteProfiler/*g*/ = require/*t*/("DliteProfiler"),
+        GraphQL_EXPERIMENTAL/*_*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*y*/ = require/*t*/("GraphQLConstants"),
+        GraphQLMutationDataHandler/*v*/ = require/*t*/("GraphQLMutationDataHandler"),
+        GraphQLMutationProperties/*S*/ = require/*t*/("GraphQLMutationProperties"),
+        GraphQLMutatorConstants/*b*/ = require/*t*/("GraphQLMutatorConstants"),
+        GraphQLMutatorHub/*R*/ = require/*t*/("GraphQLMutatorHub"),
+        GraphQLQueryTracker/*w*/ = require/*t*/("GraphQLQueryTracker"),
+        GraphQLStatusConstants/*C*/ = require/*t*/("GraphQLStatusConstants"),
+        GraphQLStoreChangeEmitter/*E*/ = require/*t*/("GraphQLStoreChangeEmitter"),
+        GraphQLStoreDataHandler/*D*/ = require/*t*/("GraphQLStoreDataHandler"),
+        GraphQLStoreNodeRangeTracker/*T*/ = require/*t*/("GraphQLStoreNodeRangeTracker"),
+        GraphQLStoreQueryPath/*x*/ = require/*t*/("GraphQLStoreQueryPath"),
+        GraphQLStoreReader/*P*/ = require/*t*/("GraphQLStoreReader"),
+        GraphQLStoreWriter/*I*/ = require/*t*/("GraphQLStoreWriter"),
+        generateClientID/*F*/ = require/*t*/("generateClientID"),
+        generateForceIndex/*L*/ = require/*t*/("generateForceIndex"),
+        invariant/*M*/ = require/*t*/("invariant"),
+        isEmpty/*Q*/ = require/*t*/("isEmpty"),
+        keyMirror/*A*/ = require/*t*/("keyMirror"),
+        mapObject/*k*/ = require/*t*/("mapObject"),
+        mixInEventEmitter/*O*/ = require/*t*/("mixInEventEmitter"),
         N = {},
         G = {},
         $ = {},
@@ -88,64 +88,64 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
         H = {},
         V = {},
         q = {},
-        U = new w,
-        j = new T,
-        W = y.NODE,
-        K = y.NODES,
-        z = y.VIEWER,
-        X = y.CUSTOM_ROOTCALLS,
-        Y = y.IDLESS_ROOTCALLS,
+        U = new GraphQLQueryTracker/*w*/,
+        j = new GraphQLStoreNodeRangeTracker/*T*/,
+        W = GraphQLConstants/*y*/.NODE,
+        K = GraphQLConstants/*y*/.NODES,
+        z = GraphQLConstants/*y*/.VIEWER,
+        X = GraphQLConstants/*y*/.CUSTOM_ROOTCALLS,
+        Y = GraphQLConstants/*y*/.IDLESS_ROOTCALLS,
         J = {
-            Events: A({
+            Events: keyMirror/*A*/({
                 beginQuery: !0,
                 dataFromServer: !0,
                 endQuery: !0
             }),
             handleOptimisticMutation: function(global/*e*/) {
-                h.appendToQueue(global/*e*/), s(global/*e*/)
+                ActionQueue/*h*/.appendToQueue(global/*e*/), s(global/*e*/)
             },
             handleServerMutation: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = v.getMutationType(global/*e*/),
+                var requireDynamic/*n*/ = GraphQLMutationDataHandler/*v*/.getMutationType(global/*e*/),
                     requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/].client_mutation_id,
-                    module/*i*/ = d.getKeyForClientMutationID(requireLazy/*r*/);
+                    module/*i*/ = ActionCollisionMap/*d*/.getKeyForClientMutationID(requireLazy/*r*/);
                 if (module/*i*/) {
-                    var o = d.shiftActionForKey(module/*i*/);
-                    o.getClientMutationID() !== requireLazy/*r*/ && M(0, "action sent to server must be first in the list for its key");
-                    var l = d.getFirstActionForKey(module/*i*/);
+                    var o = ActionCollisionMap/*d*/.shiftActionForKey(module/*i*/);
+                    o.getClientMutationID() !== requireLazy/*r*/ && invariant/*M*/(0, "action sent to server must be first in the list for its key");
+                    var l = ActionCollisionMap/*d*/.getFirstActionForKey(module/*i*/);
                     l && l.rerunServerAction()
                 }
-                var u = h.getActionByID(requireLazy/*r*/);
-                u && (h.removeFromQueue(requireLazy/*r*/), c(), h.iterateOverQueue(s)), a(global/*e*/, require/*t*/, b.SERVER_UPDATE), delete G[requireLazy/*r*/]
+                var u = ActionQueue/*h*/.getActionByID(requireLazy/*r*/);
+                u && (ActionQueue/*h*/.removeFromQueue(requireLazy/*r*/), c(), ActionQueue/*h*/.iterateOverQueue(s)), a(global/*e*/, require/*t*/, GraphQLMutatorConstants/*b*/.SERVER_UPDATE), delete G[requireLazy/*r*/]
             },
             handleMutationRollback: function(global/*e*/) {
-                var require/*t*/ = h.getActionByID(global/*e*/);
-                require/*t*/ && h.removeFromQueue(global/*e*/), p(global/*e*/), c(E.broadcastChangeForID), h.iterateOverQueue(s)
+                var require/*t*/ = ActionQueue/*h*/.getActionByID(global/*e*/);
+                require/*t*/ && ActionQueue/*h*/.removeFromQueue(global/*e*/), p(global/*e*/), c(GraphQLStoreChangeEmitter/*E*/.broadcastChangeForID), ActionQueue/*h*/.iterateOverQueue(s)
             },
             handleMutationError: function(global/*e*/) {
-                p(global/*e*/), c(), h.iterateOverQueue(s)
+                p(global/*e*/), c(), ActionQueue/*h*/.iterateOverQueue(s)
             },
             setRangeAddErrorStatus: function(global/*e*/) {
-                var require/*t*/ = v.getMutationType(global/*e*/);
+                var require/*t*/ = GraphQLMutationDataHandler/*v*/.getMutationType(global/*e*/);
                 global/*e*/ = global/*e*/[require/*t*/];
-                var requireDynamic/*n*/ = R.getConfigs(require/*t*/);
+                var requireDynamic/*n*/ = GraphQLMutatorHub/*R*/.getConfigs(require/*t*/);
                 requireDynamic/*n*/.some(function(global/*e*/) {
-                    return global/*e*/.handlerType === b.RANGE_ADD_HANDLER
-                }) || M(0, "GraphQLStore.setRangeAddErrorStatus expects a range-add payload");
+                    return global/*e*/.handlerType === GraphQLMutatorConstants/*b*/.RANGE_ADD_HANDLER
+                }) || invariant/*M*/(0, "GraphQLStore.setRangeAddErrorStatus expects a range-add payload");
                 var requireLazy/*r*/ = global/*e*/.client_mutation_id,
                     module/*i*/ = N[requireLazy/*r*/];
-                l(module/*i*/, C.ERROR), $[module/*i*/] = requireLazy/*r*/, G[requireLazy/*r*/] = module/*i*/
+                l(module/*i*/, GraphQLStatusConstants/*C*/.ERROR), $[module/*i*/] = requireLazy/*r*/, G[requireLazy/*r*/] = module/*i*/
             },
             handleMutationRetry: function(global/*e*/) {
                 var require/*t*/ = $[global/*e*/];
-                require/*t*/ || M(0, "Can only retry mutations that encountered errors");
-                var requireDynamic/*n*/ = h.getActionByID(require/*t*/);
-                requireDynamic/*n*/ || M(0, "Cannot retry a mutation that has not previously been tried"), delete $[global/*e*/], u(global/*e*/), requireDynamic/*n*/.rerunServerAction()
+                require/*t*/ || invariant/*M*/(0, "Can only retry mutations that encountered errors");
+                var requireDynamic/*n*/ = ActionQueue/*h*/.getActionByID(require/*t*/);
+                requireDynamic/*n*/ || invariant/*M*/(0, "Cannot retry a mutation that has not previously been tried"), delete $[global/*e*/], u(global/*e*/), requireDynamic/*n*/.rerunServerAction()
             },
             handleUpdate: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
                 require/*t*/ = require/*t*/.getQuery();
-                var module/*i*/, a = m.logClientEvent("GraphQLStore.handleUpdate:" + require/*t*/.getDescription()),
+                var module/*i*/, a = DliteLogger/*m*/.logClientEvent("GraphQLStore.handleUpdate:" + require/*t*/.getDescription()),
                     s = require/*t*/.rootCall().getName();
-                if (s === z) module/*i*/ = o(requireDynamic/*n*/, requireLazy/*r*/), module/*i*/.storeNodeWithID(require/*t*/, global/*e*/.viewer, y.VIEWER_CLIENT_ID, new x(require/*t*/));
+                if (s === z) module/*i*/ = o(requireDynamic/*n*/, requireLazy/*r*/), module/*i*/.storeNodeWithID(require/*t*/, global/*e*/.viewer, GraphQLConstants/*y*/.VIEWER_CLIENT_ID, new GraphQLStoreQueryPath/*x*/(require/*t*/));
                 else {
                     if (!(s === W || s === K || s in X)) throw new Error("Unsupported graphQL root call: use viewer, username, group, node, or nodes");
                     for (var l in global/*e*/) {
@@ -157,25 +157,25 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
                             if (s !== K && s !== W) {
                                 var p = require/*t*/.rootCall().getArgs();
                                 if (1 !== p.length) throw new Error("Custom root calls must request with only one argument");
-                                var d = p[0].getCallValue();
-                                if (q[s] = q[s] || {}, c = q[s][d], !c) {
-                                    if (c = s in Y ? F() : u.id, !c) throw new Error("Root calls that has an id field must request for id");
-                                    q[s][d] = c
+                                var ActionCollisionMap/*d*/ = p[0].getCallValue();
+                                if (q[s] = q[s] || {}, c = q[s][ActionCollisionMap/*d*/], !c) {
+                                    if (c = s in Y ? generateClientID/*F*/() : u.id, !c) throw new Error("Root calls that has an id field must request for id");
+                                    q[s][ActionCollisionMap/*d*/] = c
                                 }
                             }
-                            var h = new x(s === K ? new _.Query("node", [c]) : require/*t*/);
-                            module/*i*/.storeNodeWithID(require/*t*/, u, c, h)
+                            var ActionQueue/*h*/ = new GraphQLStoreQueryPath/*x*/(s === K ? new GraphQL_EXPERIMENTAL/*_*/.Query("node", [c]) : require/*t*/);
+                            module/*i*/.storeNodeWithID(require/*t*/, u, c, ActionQueue/*h*/)
                         }
                     }
                 }
                 a.stop()
             },
             buildFragmentQueryForDataID: function(global/*e*/, require/*t*/) {
-                if (D.isClientID(require/*t*/)) {
+                if (GraphQLStoreDataHandler/*D*/.isClientID(require/*t*/)) {
                     var requireDynamic/*n*/ = H[require/*t*/] || V[require/*t*/];
                     return requireDynamic/*n*/.__path__.getQueryForFragment(global/*e*/)
                 }
-                return new x(new _.Query("node", [require/*t*/])).getQueryForFragment(global/*e*/)
+                return new GraphQLStoreQueryPath/*x*/(new GraphQL_EXPERIMENTAL/*_*/.Query("node", [require/*t*/])).getQueryForFragment(global/*e*/)
             },
             resolveQueryFromStore: function(global/*e*/) {
                 var require/*t*/ = J.getIDsFromQuery(global/*e*/),
@@ -192,11 +192,11 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
                 return !0
             },
             getDiffQueries: function(global/*e*/) {
-                var require/*t*/ = new f(H, U);
+                var require/*t*/ = new DiffQueryBuilder/*f*/(H, U);
                 return require/*t*/.getDiffQueries(global/*e*/, J.getIDsFromQuery(global/*e*/))
             },
             resolvePointersForQuery: function(global/*e*/) {
-                return k(J.getIDsFromQuery(global/*e*/), D.createPointerWithID)
+                return mapObject/*k*/(J.getIDsFromQuery(global/*e*/), GraphQLStoreDataHandler/*D*/.createPointerWithID)
             },
             injectCachingConfig: function(global/*e*/) {
                 B = global/*e*/
@@ -208,11 +208,11 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
                 return V.hasOwnProperty(global/*e*/)
             },
             getDeepNodeFromData: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                var module/*i*/ = new P(H, V, requireDynamic/*n*/);
+                var module/*i*/ = new GraphQLStoreReader/*P*/(H, V, requireDynamic/*n*/);
                 return module/*i*/.retrieveData(global/*e*/, require/*t*/, requireLazy/*r*/)
             },
             getDeepNodeByID: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                return J.getDeepNodeFromData(require/*t*/, D.createPointerWithID(global/*e*/), requireDynamic/*n*/)
+                return J.getDeepNodeFromData(require/*t*/, GraphQLStoreDataHandler/*D*/.createPointerWithID(global/*e*/), requireDynamic/*n*/)
             },
             __debug: {
                 nodeData: H,
@@ -226,19 +226,19 @@ __d("GraphQLStore",["ActionCollisionMap","ActionQueue","DiffQueryBuilder","Dlite
                 var require/*t*/ = {},
                     requireDynamic/*n*/ = global/*e*/.rootCall(),
                     requireLazy/*r*/ = requireDynamic/*n*/.getName();
-                if (requireLazy/*r*/ === z) require/*t*/.viewer = y.VIEWER_CLIENT_ID;
+                if (requireLazy/*r*/ === z) require/*t*/.viewer = GraphQLConstants/*y*/.VIEWER_CLIENT_ID;
                 else if (requireLazy/*r*/ === W || requireLazy/*r*/ === K || requireLazy/*r*/ in X)
                     for (var module/*i*/ = requireDynamic/*n*/.getArgs(), o = 0; o < module/*i*/.length; o++)
-                        if (!(module/*i*/[o] instanceof _.BatchCallVariable)) {
+                        if (!(module/*i*/[o] instanceof GraphQL_EXPERIMENTAL/*_*/.BatchCallVariable)) {
                             var a = module/*i*/[o].getCallValue();
                             q[requireLazy/*r*/] && q[requireLazy/*r*/][a] && (a = q[requireLazy/*r*/][a]), require/*t*/[module/*i*/[o].getCallValue()] = a
                         }
-                return Q(require/*t*/) && M(0, "Unsupported graphQL root call: use viewer, username, group, node, or nodes"), require/*t*/
+                return isEmpty/*Q*/(require/*t*/) && invariant/*M*/(0, "Unsupported graphQL root call: use viewer, username, group, node, or nodes"), require/*t*/
             }
         };
-    g.instrumentMethods(J, {
+    DliteProfiler/*g*/.instrumentMethods(J, {
         handleUpdate: "GraphQLStore.handleUpdate",
         getDiffQueries: "GraphQLStore.getDiffQueries",
         resolveQueryFromStore: "GraphQLStore.resolveQueryFromStore"
-    }), O(J, J.Events), module/*i*/.exports = J
+    }), mixInEventEmitter/*O*/(J, J.Events), module/*i*/.exports = J
 });

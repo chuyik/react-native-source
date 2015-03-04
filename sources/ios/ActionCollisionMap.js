@@ -1,6 +1,6 @@
 __d("ActionCollisionMap",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("invariant"),
+    var invariant/*o*/ = require/*t*/("invariant"),
         a = {},
         s = {},
         l = {
@@ -9,7 +9,7 @@ __d("ActionCollisionMap",["invariant"],function (global/*e*/, require/*t*/, requ
             },
             appendActionForKey: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = require/*t*/.getClientMutationID();
-                l.existsInMap(requireDynamic/*n*/) && o(0, "Cannot append an action that's already in the map"), s[requireDynamic/*n*/] = global/*e*/;
+                l.existsInMap(requireDynamic/*n*/) && invariant/*o*/(0, "Cannot append an action that's already in the map"), s[requireDynamic/*n*/] = global/*e*/;
                 var requireLazy/*r*/ = a[global/*e*/] || [];
                 requireLazy/*r*/.push(require/*t*/), a[global/*e*/] = requireLazy/*r*/
             },
@@ -19,7 +19,7 @@ __d("ActionCollisionMap",["invariant"],function (global/*e*/, require/*t*/, requ
             },
             shiftActionForKey: function(global/*e*/) {
                 var require/*t*/ = a[global/*e*/];
-                require/*t*/ && require/*t*/.length || o(0, "Cannot shift unless there are actions");
+                require/*t*/ && require/*t*/.length || invariant/*o*/(0, "Cannot shift unless there are actions");
                 var requireDynamic/*n*/ = require/*t*/.shift();
                 return 0 === require/*t*/.length && delete a[global/*e*/], delete s[requireDynamic/*n*/.getClientMutationID()], requireDynamic/*n*/
             },

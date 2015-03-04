@@ -50,7 +50,7 @@ __d("EventPluginUtils",["EventConstants","invariant"],function (global/*e*/, req
         __DEV__ && m(global/*e*/);
         var require/*t*/ = global/*e*/._dispatchListeners,
             requireDynamic/*n*/ = global/*e*/._dispatchIDs;
-        Array.isArray(require/*t*/) && _(0, "executeDirectDispatch(...): Invalid `event`.");
+        Array.isArray(require/*t*/) && invariant/*_*/(0, "executeDirectDispatch(...): Invalid `event`.");
         var requireLazy/*r*/ = require/*t*/ ? require/*t*/(global/*e*/, requireDynamic/*n*/) : null;
         return global/*e*/._dispatchListeners = null, global/*e*/._dispatchIDs = null, requireLazy/*r*/
     }
@@ -58,15 +58,15 @@ __d("EventPluginUtils",["EventConstants","invariant"],function (global/*e*/, req
     function f(global/*e*/) {
         return !!global/*e*/._dispatchListeners
     }
-    var m, g = require/*t*/("EventConstants"),
-        _ = require/*t*/("invariant"),
+    var m, EventConstants/*g*/ = require/*t*/("EventConstants"),
+        invariant/*_*/ = require/*t*/("invariant"),
         y = {
             Mount: null,
             injectMount: function(global/*e*/) {
-                y.Mount = global/*e*/, __DEV__ && (global/*e*/ && global/*e*/.getNode || _(0, "EventPluginUtils.injection.injectMount(...): Injected Mount module is missing getNode."))
+                y.Mount = global/*e*/, __DEV__ && (global/*e*/ && global/*e*/.getNode || invariant/*_*/(0, "EventPluginUtils.injection.injectMount(...): Injected Mount module is missing getNode."))
             }
         },
-        v = g.topLevelTypes;
+        v = EventConstants/*g*/.topLevelTypes;
     __DEV__ && (m = function(global/*e*/) {
         var require/*t*/ = global/*e*/._dispatchListeners,
             requireDynamic/*n*/ = global/*e*/._dispatchIDs,
@@ -74,7 +74,7 @@ __d("EventPluginUtils",["EventConstants","invariant"],function (global/*e*/, req
             module/*i*/ = Array.isArray(requireDynamic/*n*/),
             o = module/*i*/ ? requireDynamic/*n*/.length : requireDynamic/*n*/ ? 1 : 0,
             a = requireLazy/*r*/ ? require/*t*/.length : require/*t*/ ? 1 : 0;
-        (module/*i*/ !== requireLazy/*r*/ || o !== a) && _(0, "EventPluginUtils: Invalid `event`.")
+        (module/*i*/ !== requireLazy/*r*/ || o !== a) && invariant/*_*/(0, "EventPluginUtils: Invalid `event`.")
     });
     var S = {
         isEndish: o,

@@ -3,12 +3,12 @@ __d("createDocumentEntityFromGraphQLEntity",["ComposedEntityMutability","Compose
 
     function o(global/*e*/) {
         var require/*t*/ = global/*e*/.__type__.name,
-            requireDynamic/*n*/ = require/*t*/ === u.USER ? a.SEGMENTED : require/*t*/ === u.PAGE ? a.IMMUTABLE : a.MUTABLE;
-        return l.create(s.MENTION, requireDynamic/*n*/, global/*e*/)
+            requireDynamic/*n*/ = require/*t*/ === GraphQLEntityType/*u*/.USER ? ComposedEntityMutability/*a*/.SEGMENTED : require/*t*/ === GraphQLEntityType/*u*/.PAGE ? ComposedEntityMutability/*a*/.IMMUTABLE : ComposedEntityMutability/*a*/.MUTABLE;
+        return DocumentEntity/*l*/.create(ComposedEntityType/*s*/.MENTION, requireDynamic/*n*/, global/*e*/)
     }
-    var a = require/*t*/("ComposedEntityMutability"),
-        s = require/*t*/("ComposedEntityType"),
-        l = require/*t*/("DocumentEntity"),
-        u = require/*t*/("GraphQLEntityType");
+    var ComposedEntityMutability/*a*/ = require/*t*/("ComposedEntityMutability"),
+        ComposedEntityType/*s*/ = require/*t*/("ComposedEntityType"),
+        DocumentEntity/*l*/ = require/*t*/("DocumentEntity"),
+        GraphQLEntityType/*u*/ = require/*t*/("GraphQLEntityType");
     module/*i*/.exports = o
 });

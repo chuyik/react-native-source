@@ -2,13 +2,13 @@ __d("Dimensions",["NativeModules","invariant","mergeInto"],function (global/*e*/
     "use strict";
 
     function o() {}
-    var a = require/*t*/("NativeModules"),
-        s = require/*t*/("invariant"),
-        l = require/*t*/("mergeInto"),
-        u = a.RKUIManager.Dimensions;
+    var NativeModules/*a*/ = require/*t*/("NativeModules"),
+        invariant/*s*/ = require/*t*/("invariant"),
+        mergeInto/*l*/ = require/*t*/("mergeInto"),
+        u = NativeModules/*a*/.RKUIManager.Dimensions;
     o.set = function(global/*e*/) {
-        return l(u, global/*e*/), !0
+        return mergeInto/*l*/(u, global/*e*/), !0
     }, o.get = function(global/*e*/) {
-        return u[global/*e*/] || s(0, "No dimension set for key " + global/*e*/), u[global/*e*/]
+        return u[global/*e*/] || invariant/*s*/(0, "No dimension set for key " + global/*e*/), u[global/*e*/]
     }, module/*i*/.exports = o
 });

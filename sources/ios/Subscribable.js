@@ -2,20 +2,20 @@ __d("Subscribable",["EventEmitter","invariant","logError"],function (global/*e*/
     "use strict";
 
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        this.$Subscribable_internalEmitter = new a, this.$Subscribable_eventMapping = requireDynamic/*n*/ || function(global/*e*/) {
+        this.$Subscribable_internalEmitter = new EventEmitter/*a*/, this.$Subscribable_eventMapping = requireDynamic/*n*/ || function(global/*e*/) {
             return global/*e*/
-        }, this.$Subscribable_upstreamSubscription = global/*e*/.addListener(require/*t*/, this.$Subscribable_handleEmit, this), requireLazy/*r*/ && requireLazy/*r*/(this.$Subscribable_handleInitData.bind(this), l)
+        }, this.$Subscribable_upstreamSubscription = global/*e*/.addListener(require/*t*/, this.$Subscribable_handleEmit, this), requireLazy/*r*/ && requireLazy/*r*/(this.$Subscribable_handleInitData.bind(this), logError/*l*/)
     }
-    var a = require/*t*/("EventEmitter"),
-        s = require/*t*/("invariant"),
-        l = require/*t*/("logError"),
+    var EventEmitter/*a*/ = require/*t*/("EventEmitter"),
+        invariant/*s*/ = require/*t*/("invariant"),
+        logError/*l*/ = require/*t*/("logError"),
         u = "subscriptionEvent";
     o.prototype.get = function() {
         return this.$Subscribable_lastData
     }, o.prototype.cleanup = function() {
         this.$Subscribable_upstreamSubscription && this.$Subscribable_upstreamSubscription.remove()
     }, o.prototype.subscribe = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        "function" != typeof global/*e*/.addUnmountCallback && s(0, "Must provide a valid lifespan, which provides a way to add a callback for when subscription can be cleaned up. This is used automatically by Subscribable.Mixin"), "function" != typeof require/*t*/ && s(0, "Must provide a valid subscription handler.");
+        "function" != typeof global/*e*/.addUnmountCallback && invariant/*s*/(0, "Must provide EventEmitter/*a*/ valid lifespan, which provides EventEmitter/*a*/ way to add EventEmitter/*a*/ callback for when subscription can be cleaned up. This is used automatically by Subscribable.Mixin"), "function" != typeof require/*t*/ && invariant/*s*/(0, "Must provide EventEmitter/*a*/ valid subscription handler.");
         var requireLazy/*r*/ = this.$Subscribable_internalEmitter.addListener(u, require/*t*/, requireDynamic/*n*/);
         return global/*e*/.addUnmountCallback(function() {
             requireLazy/*r*/.remove()
@@ -40,7 +40,7 @@ __d("Subscribable",["EventEmitter","invariant","logError"],function (global/*e*/
             })
         },
         subscribeTo: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            return global/*e*/ instanceof o || s(0, "Must provide a Subscribable"), global/*e*/.subscribe(this._getSubscribableLifespan(), require/*t*/, requireDynamic/*n*/)
+            return global/*e*/ instanceof o || invariant/*s*/(0, "Must provide EventEmitter/*a*/ Subscribable"), global/*e*/.subscribe(this._getSubscribableLifespan(), require/*t*/, requireDynamic/*n*/)
         },
         provideSubscribable: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
             return this._localSubscribables = this._localSubscribables || {}, this._localSubscribables[global/*e*/] = this._localSubscribables[global/*e*/] || {}, this._localSubscribables[global/*e*/][require/*t*/] || (this._localSubscribables[global/*e*/][require/*t*/] = new o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/)), this._localSubscribables[global/*e*/][require/*t*/]

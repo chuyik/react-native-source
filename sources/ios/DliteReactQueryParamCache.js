@@ -1,8 +1,8 @@
 __d("DliteReactQueryParamCache",["createComponentCacheKey","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("createComponentCacheKey"),
-        a = require/*t*/("emptyFunction"),
-        s = a,
+    var createComponentCacheKey/*o*/ = require/*t*/("createComponentCacheKey"),
+        emptyFunction/*a*/ = require/*t*/("emptyFunction"),
+        s = emptyFunction/*a*/,
         l = {
             injectStorageStrategy: function(global/*e*/) {
                 s = global/*e*/
@@ -10,7 +10,7 @@ __d("DliteReactQueryParamCache",["createComponentCacheKey","emptyFunction"],func
             set: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = s();
                 if (requireDynamic/*n*/) {
-                    var requireLazy/*r*/ = o(global/*e*/);
+                    var requireLazy/*r*/ = createComponentCacheKey/*o*/(global/*e*/);
                     requireDynamic/*n*/.addQueryParams(require/*t*/, requireLazy/*r*/)
                 }
             },
@@ -18,7 +18,7 @@ __d("DliteReactQueryParamCache",["createComponentCacheKey","emptyFunction"],func
                 var require/*t*/ = s(),
                     requireDynamic/*n*/ = null;
                 if (require/*t*/ && require/*t*/.hasQueryParams()) {
-                    var requireLazy/*r*/ = o(global/*e*/);
+                    var requireLazy/*r*/ = createComponentCacheKey/*o*/(global/*e*/);
                     requireDynamic/*n*/ = require/*t*/.copyQueryParams(requireLazy/*r*/)
                 }
                 return requireDynamic/*n*/

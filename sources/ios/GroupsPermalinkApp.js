@@ -1,39 +1,39 @@
 __d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermalinkRoute","React","StoryPermalinkRoute","StyleSheet","THColors","THPermalinkView","View","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("DliteLoadingComponent"),
-        a = require/*t*/("FBSpinner"),
-        s = require/*t*/("LegacyStoryPermalinkRoute"),
-        l = require/*t*/("React"),
-        u = require/*t*/("StoryPermalinkRoute"),
-        c = require/*t*/("StyleSheet"),
-        p = require/*t*/("THColors"),
-        d = require/*t*/("THPermalinkView"),
-        h = require/*t*/("View");
+    var DliteLoadingComponent/*o*/ = require/*t*/("DliteLoadingComponent"),
+        FBSpinner/*a*/ = require/*t*/("FBSpinner"),
+        LegacyStoryPermalinkRoute/*s*/ = require/*t*/("LegacyStoryPermalinkRoute"),
+        React/*l*/ = require/*t*/("React"),
+        StoryPermalinkRoute/*u*/ = require/*t*/("StoryPermalinkRoute"),
+        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
+        THColors/*p*/ = require/*t*/("THColors"),
+        THPermalinkView/*d*/ = require/*t*/("THPermalinkView"),
+        View/*h*/ = require/*t*/("View");
     require/*t*/("THRoutingConfig").initialize();
     var f = 10,
-        m = l.createClass({
+        m = React/*l*/.createClass({
             displayName: "GroupsPermalinkApp",
             getContext: function() {
                 return this.props.story ? {
-                    route: new u(null, {
+                    route: new StoryPermalinkRoute/*u*/(null, {
                         story: this.props.story,
                         defaultCommentCount: f
                     })
                 } : this.props.legacystory ? {
-                    route: new s(null, {
+                    route: new LegacyStoryPermalinkRoute/*s*/(null, {
                         story: this.props.legacystory,
                         defaultCommentCount: f
                     })
-                } : void console.error("GroupsPermalinkApp must have either a story or legacystory prop")
+                } : void console.error("GroupsPermalinkApp must have either FBSpinner/*a*/ story or legacystory prop")
             },
             render: function() {
-                var global/*e*/ = l.createElement(h, {
+                var global/*e*/ = React/*l*/.createElement(View/*h*/, {
                     style: g.fullScreenLoadingIndicator
-                }, l.createElement(a, null));
-                return l.createElement(h, {
+                }, React/*l*/.createElement(FBSpinner/*a*/, null));
+                return React/*l*/.createElement(View/*h*/, {
                     style: g.container
-                }, l.createElement(o, {
-                    component: d,
+                }, React/*l*/.createElement(DliteLoadingComponent/*o*/, {
+                    component: THPermalinkView/*d*/,
                     route: this.getContext().route,
                     loadingView: global/*e*/,
                     refetchRoute: !0,
@@ -45,9 +45,9 @@ __d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermal
                 }))
             }
         }),
-        g = c.create({
+        g = StyleSheet/*c*/.create({
             container: {
-                backgroundColor: p.backgroundWash,
+                backgroundColor: THColors/*p*/.backgroundWash,
                 flex: 1
             },
             fullScreenLoadingIndicator: {

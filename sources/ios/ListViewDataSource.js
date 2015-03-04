@@ -10,7 +10,7 @@ __d("ListViewDataSource",["invariant","isEmpty","warning"],function (global/*e*/
     }
 
     function s(global/*e*/) {
-        global/*e*/ && "function" == typeof global/*e*/.rowHasChanged || c(0, "Must provide a rowHasChanged function."), this.$ListViewDataSource_rowHasChanged = global/*e*/.rowHasChanged, this.$ListViewDataSource_getRowData = global/*e*/.getRowData || o, this.$ListViewDataSource_sectionHeaderHasChanged = global/*e*/.sectionHeaderHasChanged, this.$ListViewDataSource_getSectionHeaderData = global/*e*/.getSectionHeaderData || a, this.$ListViewDataSource_dataBlob = null, this.$ListViewDataSource_dirtyRows = [], this.$ListViewDataSource_dirtySections = [], this.$ListViewDataSource_cachedRowCount = 0, this.rowIdentities = [], this.sectionIdentities = []
+        global/*e*/ && "function" == typeof global/*e*/.rowHasChanged || invariant/*c*/(0, "Must provide a rowHasChanged function."), this.$ListViewDataSource_rowHasChanged = global/*e*/.rowHasChanged, this.$ListViewDataSource_getRowData = global/*e*/.getRowData || o, this.$ListViewDataSource_sectionHeaderHasChanged = global/*e*/.sectionHeaderHasChanged, this.$ListViewDataSource_getSectionHeaderData = global/*e*/.getSectionHeaderData || a, this.$ListViewDataSource_dataBlob = null, this.$ListViewDataSource_dirtyRows = [], this.$ListViewDataSource_dirtySections = [], this.$ListViewDataSource_cachedRowCount = 0, this.rowIdentities = [], this.sectionIdentities = []
     }
 
     function l(global/*e*/) {
@@ -22,16 +22,16 @@ __d("ListViewDataSource",["invariant","isEmpty","warning"],function (global/*e*/
     }
 
     function u(global/*e*/) {
-        if (p(global/*e*/)) return {};
+        if (isEmpty/*p*/(global/*e*/)) return {};
         for (var require/*t*/ = {}, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) {
             var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/];
-            d(!require/*t*/[requireLazy/*r*/], "Value appears more than once in array: " + requireLazy/*r*/), require/*t*/[requireLazy/*r*/] = !0
+            warning/*d*/(!require/*t*/[requireLazy/*r*/], "Value appears more than once in array: " + requireLazy/*r*/), require/*t*/[requireLazy/*r*/] = !0
         }
         return require/*t*/
     }
-    var c = require/*t*/("invariant"),
-        p = require/*t*/("isEmpty"),
-        d = require/*t*/("warning");
+    var invariant/*c*/ = require/*t*/("invariant"),
+        isEmpty/*p*/ = require/*t*/("isEmpty"),
+        warning/*d*/ = require/*t*/("warning");
     s.prototype.cloneWithRows = function(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = require/*t*/ ? [require/*t*/] : null;
         return this.$ListViewDataSource_sectionHeaderHasChanged || (this.$ListViewDataSource_sectionHeaderHasChanged = function() {
@@ -40,7 +40,7 @@ __d("ListViewDataSource",["invariant","isEmpty","warning"],function (global/*e*/
             s1: global/*e*/
         }, ["s1"], requireDynamic/*n*/)
     }, s.prototype.cloneWithRowsAndSections = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        "function" != typeof this.$ListViewDataSource_sectionHeaderHasChanged && c(0, "Must provide a sectionHeaderHasChanged function with section data.");
+        "function" != typeof this.$ListViewDataSource_sectionHeaderHasChanged && invariant/*c*/(0, "Must provide a sectionHeaderHasChanged function with section data.");
         var requireLazy/*r*/ = new s({
             getRowData: this.$ListViewDataSource_getRowData,
             getSectionHeaderData: this.$ListViewDataSource_getSectionHeaderData,
@@ -54,11 +54,11 @@ __d("ListViewDataSource",["invariant","isEmpty","warning"],function (global/*e*/
         return this.$ListViewDataSource_cachedRowCount
     }, s.prototype.rowShouldUpdate = function(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = this.$ListViewDataSource_dirtyRows[global/*e*/][require/*t*/];
-        return d(void 0 !== requireDynamic/*n*/, "missing dirtyBit for section, row: " + global/*e*/ + ", " + require/*t*/), requireDynamic/*n*/
+        return warning/*d*/(void 0 !== requireDynamic/*n*/, "missing dirtyBit for section, row: " + global/*e*/ + ", " + require/*t*/), requireDynamic/*n*/
     }, s.prototype.getRowData = function(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = this.sectionIdentities[global/*e*/],
             requireLazy/*r*/ = this.rowIdentities[global/*e*/][require/*t*/];
-        return d(void 0 !== requireDynamic/*n*/ && void 0 !== requireLazy/*r*/, "rendering invalid section, row: " + global/*e*/ + ", " + require/*t*/), this.$ListViewDataSource_getRowData(this.$ListViewDataSource_dataBlob, requireDynamic/*n*/, requireLazy/*r*/)
+        return warning/*d*/(void 0 !== requireDynamic/*n*/ && void 0 !== requireLazy/*r*/, "rendering invalid section, row: " + global/*e*/ + ", " + require/*t*/), this.$ListViewDataSource_getRowData(this.$ListViewDataSource_dataBlob, requireDynamic/*n*/, requireLazy/*r*/)
     }, s.prototype.getRowIDForFlatIndex = function(global/*e*/) {
         for (var require/*t*/ = global/*e*/, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < this.sectionIdentities.length; requireDynamic/*n*/++) {
             if (!(require/*t*/ >= this.rowIdentities[requireDynamic/*n*/].length)) return this.rowIdentities[requireDynamic/*n*/][require/*t*/];
@@ -74,24 +74,24 @@ __d("ListViewDataSource",["invariant","isEmpty","warning"],function (global/*e*/
         return global/*e*/
     }, s.prototype.sectionHeaderShouldUpdate = function(global/*e*/) {
         var require/*t*/ = this.$ListViewDataSource_dirtySections[global/*e*/];
-        return d(void 0 !== require/*t*/, "missing dirtyBit for section: " + global/*e*/), require/*t*/
+        return warning/*d*/(void 0 !== require/*t*/, "missing dirtyBit for section: " + global/*e*/), require/*t*/
     }, s.prototype.getSectionHeaderData = function(global/*e*/) {
         if (!this.$ListViewDataSource_getSectionHeaderData) return null;
         var require/*t*/ = this.sectionIdentities[global/*e*/];
-        return d(void 0 !== require/*t*/, "renderSection called on invalid section: " + global/*e*/), this.$ListViewDataSource_getSectionHeaderData(this.$ListViewDataSource_dataBlob, require/*t*/)
+        return warning/*d*/(void 0 !== require/*t*/, "renderSection called on invalid section: " + global/*e*/), this.$ListViewDataSource_getSectionHeaderData(this.$ListViewDataSource_dataBlob, require/*t*/)
     }, s.prototype.$ListViewDataSource_calculateDirtyArrays = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         for (var requireLazy/*r*/ = u(require/*t*/), module/*i*/ = {}, o = 0; o < requireDynamic/*n*/.length; o++) {
             var a = require/*t*/[o];
-            d(!module/*i*/[a], "SectionID appears more than once: " + a), module/*i*/[a] = u(requireDynamic/*n*/[o])
+            warning/*d*/(!module/*i*/[a], "SectionID appears more than once: " + a), module/*i*/[a] = u(requireDynamic/*n*/[o])
         }
         this.$ListViewDataSource_dirtySections = [], this.$ListViewDataSource_dirtyRows = [];
         for (var s, l = 0; l < this.sectionIdentities.length; l++) {
             var a = this.sectionIdentities[l];
             s = !requireLazy/*r*/[a];
-            var c = this.$ListViewDataSource_sectionHeaderHasChanged;
-            !s && c && (s = c(this.$ListViewDataSource_getSectionHeaderData(global/*e*/, a), this.$ListViewDataSource_getSectionHeaderData(this.$ListViewDataSource_dataBlob, a))), this.$ListViewDataSource_dirtySections.push(!!s), this.$ListViewDataSource_dirtyRows[l] = [];
-            for (var p = 0; p < this.rowIdentities[l].length; p++) {
-                var h = this.rowIdentities[l][p];
+            var invariant/*c*/ = this.$ListViewDataSource_sectionHeaderHasChanged;
+            !s && invariant/*c*/ && (s = invariant/*c*/(this.$ListViewDataSource_getSectionHeaderData(global/*e*/, a), this.$ListViewDataSource_getSectionHeaderData(this.$ListViewDataSource_dataBlob, a))), this.$ListViewDataSource_dirtySections.push(!!s), this.$ListViewDataSource_dirtyRows[l] = [];
+            for (var isEmpty/*p*/ = 0; isEmpty/*p*/ < this.rowIdentities[l].length; isEmpty/*p*/++) {
+                var h = this.rowIdentities[l][isEmpty/*p*/];
                 s = !requireLazy/*r*/[a] || !module/*i*/[a][h] || this.$ListViewDataSource_rowHasChanged(this.$ListViewDataSource_getRowData(global/*e*/, a, h), this.$ListViewDataSource_getRowData(this.$ListViewDataSource_dataBlob, a, h)), this.$ListViewDataSource_dirtyRows[l].push(!!s)
             }
         }

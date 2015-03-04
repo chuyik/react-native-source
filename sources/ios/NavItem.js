@@ -1,24 +1,24 @@
 __d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","StyleSheet","createReactIOSNativeComponentClass","invariant","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
+    var React/*o*/ = require/*t*/("React"),
         a = (require/*t*/("ReactIOSViewAttributes"), require/*t*/("ReactChildren")),
-        s = require/*t*/("Dimensions"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("createReactIOSNativeComponentClass"),
-        c = require/*t*/("invariant"),
-        p = require/*t*/("fbt"),
-        d = p({
+        Dimensions/*s*/ = require/*t*/("Dimensions"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        createReactIOSNativeComponentClass/*u*/ = require/*t*/("createReactIOSNativeComponentClass"),
+        invariant/*c*/ = require/*t*/("invariant"),
+        fbt/*p*/ = require/*t*/("fbt"),
+        d = fbt/*p*/({
             type: "text",
             texts: ["Back"],
             desc: "button title for navigating to the previous view"
         }),
-        h = o.createClass({
+        h = React/*o*/.createClass({
             displayName: "NavItem",
             render: function() {
                 var global/*e*/ = [];
                 return a.map(this.props.children, function(require/*t*/) {
                     global/*e*/.push(require/*t*/), require/*t*/.props.navigator = this.props.navigator
-                }, this), 1 !== global/*e*/.length && c(0, "Nav Item expects only one child"), o.createElement(m, {
+                }, this), 1 !== global/*e*/.length && invariant/*c*/(0, "Nav Item expects only one child"), React/*o*/.createElement(m, {
                     rightButtonTitle: this.props.rightButtonTitle,
                     backButtonTitle: d,
                     tintColor: this.props.tintColor,
@@ -29,16 +29,16 @@ __d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","St
                 }, global/*e*/)
             }
         }),
-        f = l.create({
+        f = StyleSheet/*l*/.create({
             navItem: {
                 position: "absolute",
                 left: 0,
                 top: 0,
-                width: s.get("window").width,
-                height: s.get("window").height
+                width: Dimensions/*s*/.get("window").width,
+                height: Dimensions/*s*/.get("window").height
             }
         }),
-        m = u({
+        m = createReactIOSNativeComponentClass/*u*/({
             validAttributes: {
                 title: !0,
                 barTintColor: !0,

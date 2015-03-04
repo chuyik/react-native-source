@@ -3,7 +3,7 @@ __d("DocumentSelectionState",["mixInEventEmitter"],function (global/*e*/, requir
         "use strict";
         this.$DocumentSelectionState_anchorOffset = global/*e*/, this.$DocumentSelectionState_focusOffset = require/*t*/, this.$DocumentSelectionState_hasFocus = !1
     }
-    var a = require/*t*/("mixInEventEmitter");
+    var mixInEventEmitter/*a*/ = require/*t*/("mixInEventEmitter");
     o.prototype.update = function(global/*e*/, require/*t*/) {
         "use strict";
         (this.$DocumentSelectionState_anchorOffset !== global/*e*/ || this.$DocumentSelectionState_focusOffset !== require/*t*/) && (this.$DocumentSelectionState_anchorOffset = global/*e*/, this.$DocumentSelectionState_focusOffset = require/*t*/, this.emit("update"))
@@ -40,7 +40,7 @@ __d("DocumentSelectionState",["mixInEventEmitter"],function (global/*e*/, requir
     }, o.prototype.overlaps = function(global/*e*/, require/*t*/) {
         "use strict";
         return this.hasFocus() && this.getStartOffset() <= require/*t*/ && global/*e*/ <= this.getEndOffset()
-    }, a(o, {
+    }, mixInEventEmitter/*a*/(o, {
         blur: !0,
         focus: !0,
         update: !0

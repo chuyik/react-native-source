@@ -3,30 +3,30 @@ __d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, requi
 
     function o(global/*e*/) {
         var require/*t*/ = m.exec(global/*e*/);
-        if (!require/*t*/) return p.NEUTRAL;
+        if (!require/*t*/) return UnicodeBidiDirection/*p*/.NEUTRAL;
         var requireDynamic/*n*/ = g.exec(require/*t*/[0]);
-        return requireDynamic/*n*/ ? p.RTL : p.LTR
+        return requireDynamic/*n*/ ? UnicodeBidiDirection/*p*/.RTL : UnicodeBidiDirection/*p*/.LTR
     }
 
     function a(global/*e*/, require/*t*/) {
-        if (require/*t*/ = require/*t*/ || p.NEUTRAL, !global/*e*/.length) return require/*t*/;
+        if (require/*t*/ = require/*t*/ || UnicodeBidiDirection/*p*/.NEUTRAL, !global/*e*/.length) return require/*t*/;
         var requireDynamic/*n*/ = o(global/*e*/);
-        return requireDynamic/*n*/ === p.NEUTRAL ? require/*t*/ : requireDynamic/*n*/
+        return requireDynamic/*n*/ === UnicodeBidiDirection/*p*/.NEUTRAL ? require/*t*/ : requireDynamic/*n*/
     }
 
     function s(global/*e*/, require/*t*/) {
-        return require/*t*/ && p.isStrong(require/*t*/) || (require/*t*/ = c.getDirection()), a(global/*e*/, require/*t*/)
+        return require/*t*/ && UnicodeBidiDirection/*p*/.isStrong(require/*t*/) || (require/*t*/ = Locale/*c*/.getDirection()), a(global/*e*/, require/*t*/)
     }
 
     function l(global/*e*/, require/*t*/) {
-        return s(global/*e*/, require/*t*/) === p.LTR
+        return s(global/*e*/, require/*t*/) === UnicodeBidiDirection/*p*/.LTR
     }
 
     function u(global/*e*/, require/*t*/) {
-        return s(global/*e*/, require/*t*/) === p.RTL
+        return s(global/*e*/, require/*t*/) === UnicodeBidiDirection/*p*/.RTL
     }
-    var c = require/*t*/("Locale"),
-        p = require/*t*/("UnicodeBidiDirection"),
+    var Locale/*c*/ = require/*t*/("Locale"),
+        UnicodeBidiDirection/*p*/ = require/*t*/("UnicodeBidiDirection"),
         d = {
             L: "A-Za-zÀ-ÖØ-öø-ʸ̀-֐ࠀ-῿‎Ⰰ-퟿-﬜︀-﹯﻽-￿",
             R: "־׀׃׆א-תװ-ײ׳-״߀-߉ߊ-ߪߴ-ߵߺࠀ-ࠕࠚࠤࠨ࠰-࠾ࡀ-ࡘ࡞‏יִײַ-ﬨשׁ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﭏ",

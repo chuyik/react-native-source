@@ -1,20 +1,20 @@
 __d("TextEditorBlock.react",["UnicodeBidiDirection","ReactPropTypes","React","Text","cx","joinClasses","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("UnicodeBidiDirection"),
-        a = require/*t*/("ReactPropTypes"),
-        s = require/*t*/("React"),
-        l = require/*t*/("Text"),
+    var UnicodeBidiDirection/*o*/ = require/*t*/("UnicodeBidiDirection"),
+        ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
+        React/*s*/ = require/*t*/("React"),
+        Text/*l*/ = require/*t*/("Text"),
         u = (require/*t*/("cx"), require/*t*/("joinClasses"), require/*t*/("mergeInto")),
-        c = o.LTR,
-        p = o.RTL,
-        d = s.createClass({
+        c = UnicodeBidiDirection/*o*/.LTR,
+        p = UnicodeBidiDirection/*o*/.RTL,
+        d = React/*s*/.createClass({
             displayName: "TextEditorBlock",
             propTypes: {
-                offsetKey: a.string.isRequired,
-                text: a.string.isRequired,
-                blockProps: a.object,
-                blockStyleFn: a.func.isRequired,
-                style: a.number,
-                direction: a.string.isRequired
+                offsetKey: ReactPropTypes/*a*/.string.isRequired,
+                text: ReactPropTypes/*a*/.string.isRequired,
+                blockProps: ReactPropTypes/*a*/.object,
+                blockStyleFn: ReactPropTypes/*a*/.func.isRequired,
+                style: ReactPropTypes/*a*/.number,
+                direction: ReactPropTypes/*a*/.string.isRequired
             },
             render: function() {
                 var global/*e*/ = this.props.direction === p,
@@ -27,7 +27,7 @@ __d("TextEditorBlock.react",["UnicodeBidiDirection","ReactPropTypes","React","Te
                             textAlign: requireDynamic/*n*/
                         }]
                     };
-                return u(module/*i*/, this.props.blockProps), s.createElement(l, Object.assign({}, module/*i*/), this.props.children)
+                return u(module/*i*/, this.props.blockProps), React/*s*/.createElement(Text/*l*/, Object.assign({}, module/*i*/), this.props.children)
             }
         });
     module/*i*/.exports = d

@@ -6,10 +6,10 @@ __d("DocumentCompositeMentionsSource",["emptyFunction","invariant"],function (gl
 
     function a(global/*e*/) {
         "use strict";
-        global/*e*/.length > 0 || l(0, "Must provide at least one DocumentMentionsSource."), this.$DocumentCompositeMentionsSource_sources = global/*e*/, this.$DocumentCompositeMentionsSource_bootstrapped = !1, this.$DocumentCompositeMentionsSource_currentMatch = null
+        global/*e*/.length > 0 || invariant/*l*/(0, "Must provide at least one DocumentMentionsSource."), this.$DocumentCompositeMentionsSource_sources = global/*e*/, this.$DocumentCompositeMentionsSource_bootstrapped = !1, this.$DocumentCompositeMentionsSource_currentMatch = null
     }
-    var s = require/*t*/("emptyFunction"),
-        l = require/*t*/("invariant");
+    var emptyFunction/*s*/ = require/*t*/("emptyFunction"),
+        invariant/*l*/ = require/*t*/("invariant");
     a.prototype.bootstrap = function(global/*e*/) {
         "use strict";
 
@@ -17,7 +17,7 @@ __d("DocumentCompositeMentionsSource",["emptyFunction","invariant"],function (gl
             requireDynamic/*n*/--, requireDynamic/*n*/ || global/*e*/()
         }
         if (!this.$DocumentCompositeMentionsSource_bootstrapped) {
-            this.$DocumentCompositeMentionsSource_bootstrapped = !0, global/*e*/ = global/*e*/ || s;
+            this.$DocumentCompositeMentionsSource_bootstrapped = !0, global/*e*/ = global/*e*/ || emptyFunction/*s*/;
             var requireDynamic/*n*/ = this.$DocumentCompositeMentionsSource_sources.length;
             this.$DocumentCompositeMentionsSource_sources.forEach(function(global/*e*/) {
                 global/*e*/.bootstrap(require/*t*/)
@@ -25,8 +25,8 @@ __d("DocumentCompositeMentionsSource",["emptyFunction","invariant"],function (gl
         }
     }, a.prototype.search = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         "use strict";
-        for (var requireLazy/*r*/, module/*i*/, a = this.$DocumentCompositeMentionsSource_sources.length, s = o(global/*e*/, require/*t*/), l = 0; a > l; l++)
-            if (requireLazy/*r*/ = this.$DocumentCompositeMentionsSource_sources[l], module/*i*/ = requireLazy/*r*/.findMatch(s), null !== module/*i*/) {
+        for (var requireLazy/*r*/, module/*i*/, a = this.$DocumentCompositeMentionsSource_sources.length, emptyFunction/*s*/ = o(global/*e*/, require/*t*/), invariant/*l*/ = 0; a > invariant/*l*/; invariant/*l*/++)
+            if (requireLazy/*r*/ = this.$DocumentCompositeMentionsSource_sources[invariant/*l*/], module/*i*/ = requireLazy/*r*/.findMatch(emptyFunction/*s*/), null !== module/*i*/) {
                 var u = module/*i*/.matchingString;
                 return this.$DocumentCompositeMentionsSource_currentMatch = u, void requireLazy/*r*/.search(u, function(global/*e*/, require/*t*/) {
                     this.$DocumentCompositeMentionsSource_currentMatch === require/*t*/ && requireDynamic/*n*/(global/*e*/, module/*i*/.leadOffset)

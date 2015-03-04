@@ -2,8 +2,8 @@ __d("fetchRQL",["DliteProfiler","PublicPromise","RQLRequest","fetchBatchedRQL","
     "use strict";
 
     function o(global/*e*/) {
-        h.length || (h = [], d(a));
-        var require/*t*/ = new u;
+        h.length || (h = [], setImmediate/*d*/(a));
+        var require/*t*/ = new PublicPromise/*u*/;
         return h.push({
             query: global/*e*/,
             promise: require/*t*/
@@ -11,25 +11,25 @@ __d("fetchRQL",["DliteProfiler","PublicPromise","RQLRequest","fetchBatchedRQL","
     }
 
     function a() {
-        var global/*e*/ = l.instrumentAsync("fetchRQL.processPending");
-        p(h.map(s.bind(null, global/*e*/.stop))), h.length = 0
+        var global/*e*/ = DliteProfiler/*l*/.instrumentAsync("fetchRQL.processPending");
+        fetchBatchedRQL/*p*/(h.map(s.bind(null, global/*e*/.stop))), h.length = 0
     }
 
     function s(global/*e*/, require/*t*/) {
         var requireDynamic/*n*/ = require/*t*/.query,
             requireLazy/*r*/ = require/*t*/.promise;
-        return new c(requireDynamic/*n*/.getQuery().getID(), requireDynamic/*n*/, function(require/*t*/, requireDynamic/*n*/) {
+        return new RQLRequest/*c*/(requireDynamic/*n*/.getQuery().getID(), requireDynamic/*n*/, function(require/*t*/, requireDynamic/*n*/) {
             requireDynamic/*n*/ ? (global/*e*/(), requireLazy/*r*/.resolve({
                 error: require/*t*/,
                 response: requireDynamic/*n*/
             })) : requireLazy/*r*/.reject(require/*t*/)
         })
     }
-    var l = require/*t*/("DliteProfiler"),
-        u = require/*t*/("PublicPromise"),
-        c = require/*t*/("RQLRequest"),
-        p = require/*t*/("fetchBatchedRQL"),
-        d = require/*t*/("setImmediate"),
+    var DliteProfiler/*l*/ = require/*t*/("DliteProfiler"),
+        PublicPromise/*u*/ = require/*t*/("PublicPromise"),
+        RQLRequest/*c*/ = require/*t*/("RQLRequest"),
+        fetchBatchedRQL/*p*/ = require/*t*/("fetchBatchedRQL"),
+        setImmediate/*d*/ = require/*t*/("setImmediate"),
         h = [];
     module/*i*/.exports = o
 });

@@ -1,38 +1,38 @@
 __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image","InfiniteScrollView","Popover","React","ReactGraphQL","StyleSheet","Text","TouchableBounce","View","clamp","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBSpinner"),
-        a = require/*t*/("FBActorRow"),
-        s = require/*t*/("FIGColors"),
+    var FBSpinner/*o*/ = require/*t*/("FBSpinner"),
+        FBActorRow/*a*/ = require/*t*/("FBActorRow"),
+        FIGColors/*s*/ = require/*t*/("FIGColors"),
         l = (require/*t*/("Image"), require/*t*/("InfiniteScrollView")),
-        u = require/*t*/("Popover"),
-        c = require/*t*/("React"),
-        p = require/*t*/("ReactGraphQL"),
-        d = require/*t*/("StyleSheet"),
-        h = require/*t*/("Text"),
-        f = require/*t*/("TouchableBounce"),
-        m = require/*t*/("View"),
-        g = require/*t*/("clamp"),
-        _ = require/*t*/("fbt"),
-        y = require/*t*/("keyOf"),
+        Popover/*u*/ = require/*t*/("Popover"),
+        React/*c*/ = require/*t*/("React"),
+        ReactGraphQL/*p*/ = require/*t*/("ReactGraphQL"),
+        StyleSheet/*d*/ = require/*t*/("StyleSheet"),
+        Text/*h*/ = require/*t*/("Text"),
+        TouchableBounce/*f*/ = require/*t*/("TouchableBounce"),
+        View/*m*/ = require/*t*/("View"),
+        clamp/*g*/ = require/*t*/("clamp"),
+        fbt/*_*/ = require/*t*/("fbt"),
+        keyOf/*y*/ = require/*t*/("keyOf"),
         v = 40,
         S = 48,
         b = 16,
-        R = y({
+        R = keyOf/*y*/({
             popRef: null
         }),
         w = 1,
-        C = c.createClass({
+        C = React/*c*/.createClass({
             displayName: "FBAbstractEntityListPopover",
             propTypes: {
-                circularProfilePictures: c.PropTypes.bool,
-                closeTextColor: c.PropTypes.string,
-                getEntityConnection: c.PropTypes.func,
-                getEntityCount: c.PropTypes.func,
-                getPopoverTitle: c.PropTypes.func,
-                hasMoreToLoad: c.PropTypes.func,
-                isLoadingMore: c.PropTypes.func,
-                loadMore: c.PropTypes.func,
-                onRowPressWithCompletion: c.PropTypes.func
+                circularProfilePictures: React/*c*/.PropTypes.bool,
+                closeTextColor: React/*c*/.PropTypes.string,
+                getEntityConnection: React/*c*/.PropTypes.func,
+                getEntityCount: React/*c*/.PropTypes.func,
+                getPopoverTitle: React/*c*/.PropTypes.func,
+                hasMoreToLoad: React/*c*/.PropTypes.func,
+                isLoadingMore: React/*c*/.PropTypes.func,
+                loadMore: React/*c*/.PropTypes.func,
+                onRowPressWithCompletion: React/*c*/.PropTypes.func
             },
             getInitialState: function() {
                 return {
@@ -44,7 +44,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                     circularProfilePictures: !1
                 }
             },
-            mixins: [p.Mixin],
+            mixins: [ReactGraphQL/*p*/.Mixin],
             statics: {
                 queries: {
                     actor: function(global/*e*/, require/*t*/) {
@@ -56,7 +56,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "FBAbstractEntityListPopover_actor"
                             })
-                        }(a.getQuery("actor"))
+                        }(FBActorRow/*a*/.getQuery("actor"))
                     }
                 }
             },
@@ -72,80 +72,80 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
             renderList: function() {
                 var global/*e*/ = this.props.getEntityConnection(),
                     require/*t*/ = this.props.getEntityCount(),
-                    requireDynamic/*n*/ = g(a.rowHeight, require/*t*/ * (a.rowHeight + w), 400);
-                if (!global/*e*/ || !global/*e*/.edges) return c.createElement(o, {
+                    requireDynamic/*n*/ = clamp/*g*/(FBActorRow/*a*/.rowHeight, require/*t*/ * (FBActorRow/*a*/.rowHeight + w), 400);
+                if (!global/*e*/ || !global/*e*/.edges) return React/*c*/.createElement(FBSpinner/*o*/, {
                     key: "spinner",
                     style: {
                         height: requireDynamic/*n*/
                     }
                 });
-                for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.edges, s = 0; s < module/*i*/.length; ++s) s > 0 && requireLazy/*r*/.push(c.createElement(m, {
+                for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.edges, FIGColors/*s*/ = 0; FIGColors/*s*/ < module/*i*/.length; ++FIGColors/*s*/) FIGColors/*s*/ > 0 && requireLazy/*r*/.push(React/*c*/.createElement(View/*m*/, {
                     style: E.rowSeparator,
-                    key: "s" + s
-                })), requireLazy/*r*/.push(c.createElement(a, {
-                    actor: module/*i*/[s].node,
-                    key: "a" + s,
+                    key: "FIGColors/*s*/" + FIGColors/*s*/
+                })), requireLazy/*r*/.push(React/*c*/.createElement(FBActorRow/*a*/, {
+                    actor: module/*i*/[FIGColors/*s*/].node,
+                    key: "FBActorRow/*a*/" + FIGColors/*s*/,
                     circularProfilePicture: this.props.circularProfilePictures,
                     onPressWithCompletion: this.props.onRowPressWithCompletion
                 }));
-                var u = c.createElement(m, {
+                var Popover/*u*/ = React/*c*/.createElement(View/*m*/, {
                     style: E.spinner
-                }, c.createElement(o, null));
-                return c.createElement(l, {
+                }, React/*c*/.createElement(FBSpinner/*o*/, null));
+                return React/*c*/.createElement(l, {
                     style: {
                         height: requireDynamic/*n*/
                     },
                     contentContainerStyle: E.contentContainer,
-                    distanceToTriggerLoad: 2 * a.rowHeight,
+                    distanceToTriggerLoad: 2 * FBActorRow/*a*/.rowHeight,
                     hasMoreToLoad: this.props.hasMoreToLoad(),
                     isLoadingMore: this.props.isLoadingMore(),
                     loadMore: this.loadMore,
-                    spinner: u
+                    spinner: Popover/*u*/
                 }, requireLazy/*r*/)
             },
             renderContent: function() {
-                return [c.createElement(m, {
+                return [React/*c*/.createElement(View/*m*/, {
                     key: "header",
                     style: E.header
-                }, c.createElement(m, {
+                }, React/*c*/.createElement(View/*m*/, {
                     style: E.closeContainer
-                }), c.createElement(m, {
+                }), React/*c*/.createElement(View/*m*/, {
                     style: E.titleContainer
-                }, c.createElement(h, {
+                }, React/*c*/.createElement(Text/*h*/, {
                     numberOfLines: 2,
                     style: [E.headerText, E.titleText]
-                }, this.props.getPopoverTitle())), c.createElement(f, {
+                }, this.props.getPopoverTitle())), React/*c*/.createElement(TouchableBounce/*f*/, {
                     onPress: this.close
-                }, c.createElement(m, {
+                }, React/*c*/.createElement(View/*m*/, {
                     style: E.closeContainer
-                }, c.createElement(h, {
+                }, React/*c*/.createElement(Text/*h*/, {
                     numberOfLines: 2,
                     style: [E.headerText, {
                         color: this.props.closeTextColor
                     }]
-                }, _({
+                }, fbt/*_*/({
                     type: "text",
                     texts: ["Close"],
                     desc: "Close button"
-                }))))), c.createElement(m, {
+                }))))), React/*c*/.createElement(View/*m*/, {
                     key: "sep",
                     style: [E.rowSeparator, E.headerSeparator]
                 }), this.renderList()]
             },
             render: function() {
-                return c.createElement(u, {
+                return React/*c*/.createElement(Popover/*u*/, {
                     ref: R,
                     contentFactory: this.renderContent
                 })
             }
         }),
-        E = d.create({
+        E = StyleSheet/*d*/.create({
             contentContainer: {
                 paddingHorizontal: b
             },
             rowSeparator: {
                 height: w,
-                backgroundColor: s.separator
+                backgroundColor: FIGColors/*s*/.separator
             },
             spinner: {
                 flex: 1,
@@ -156,7 +156,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
             },
             titleText: {
                 alignSelf: "stretch",
-                color: s.darkText,
+                color: FIGColors/*s*/.darkText,
                 fontSize: 17,
                 fontWeight: "bold"
             },

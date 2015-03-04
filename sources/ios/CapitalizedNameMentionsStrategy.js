@@ -1,7 +1,7 @@
 __d("CapitalizedNameMentionsStrategy",["DocumentMentionsRegex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("DocumentMentionsRegex"),
+    var DocumentMentionsRegex/*o*/ = require/*t*/("DocumentMentionsRegex"),
         a = 2,
-        s = new RegExp("(?:" + o.NAME + "{" + a + ",})$"),
+        s = new RegExp("(?:" + DocumentMentionsRegex/*o*/.NAME + "{" + a + ",})$"),
         l = {
             findMentionableString: function(global/*e*/) {
                 var require/*t*/ = s.exec(global/*e*/);

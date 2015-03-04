@@ -1,12 +1,12 @@
 __d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JSTimers","JSTimers"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("invariant"),
-        a = require/*t*/("keyMirror"),
-        s = require/*t*/("performanceNow"),
-        l = require/*t*/("warning"),
+    var invariant/*o*/ = require/*t*/("invariant"),
+        keyMirror/*a*/ = require/*t*/("keyMirror"),
+        performanceNow/*s*/ = require/*t*/("performanceNow"),
+        warning/*l*/ = require/*t*/("warning"),
         u = {
             GUID: 1,
-            Type: a({
+            Type: keyMirror/*a*/({
                 setTimeout: null,
                 setInterval: null,
                 requestAnimationFrame: null,
@@ -17,7 +17,7 @@ __d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JST
             timerIDs: [],
             immediates: [],
             callTimer: function(global/*e*/) {
-                l(global/*e*/ <= u.GUID, "Tried to call timer with ID " + global/*e*/ + " but no such timer exists");
+                warning/*l*/(global/*e*/ <= u.GUID, "Tried to call timer with ID " + global/*e*/ + " but no such timer exists");
                 var require/*t*/ = u.timerIDs.indexOf(global/*e*/);
                 if (-1 !== require/*t*/) {
                     var requireDynamic/*n*/ = u.types[require/*t*/],
@@ -26,17 +26,17 @@ __d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JST
                     try {
                         if (requireDynamic/*n*/ === u.Type.setTimeout || requireDynamic/*n*/ === u.Type.setInterval || requireDynamic/*n*/ === u.Type.setImmediate) requireLazy/*r*/();
                         else {
-                            if (requireDynamic/*n*/ !== u.Type.requestAnimationFrame) return void console.error("Tried to call a callback with invalid type: " + requireDynamic/*n*/);
-                            var module/*i*/ = s();
+                            if (requireDynamic/*n*/ !== u.Type.requestAnimationFrame) return void console.error("Tried to call keyMirror/*a*/ callback with invalid type: " + requireDynamic/*n*/);
+                            var module/*i*/ = performanceNow/*s*/();
                             requireLazy/*r*/(module/*i*/)
                         }
-                    } catch (o) {
-                        u.errors = u.errors || [], u.errors.push(o)
+                    } catch (invariant/*o*/) {
+                        u.errors = u.errors || [], u.errors.push(invariant/*o*/)
                     }
                 }
             },
             callTimers: function(global/*e*/) {
-                0 === global/*e*/.length && o(0, 'Probably shouldn\'require/*t*/ call "callTimers" with no timerIDs'), u.errors = null, global/*e*/.forEach(u.callTimer);
+                0 === global/*e*/.length && invariant/*o*/(0, 'Probably shouldn\'require/*t*/ call "callTimers" with no timerIDs'), u.errors = null, global/*e*/.forEach(u.callTimer);
                 var requireDynamic/*n*/ = u.errors;
                 if (requireDynamic/*n*/) {
                     var requireLazy/*r*/ = requireDynamic/*n*/.length;

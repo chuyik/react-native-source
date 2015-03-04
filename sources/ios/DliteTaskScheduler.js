@@ -2,7 +2,7 @@ __d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/
     "use strict";
 
     function o() {
-        d || (p.length ? (d = !0, u.resolve().done(function() {
+        d || (p.length ? (d = !0, Promise/*u*/.resolve().done(function() {
             var global/*e*/ = a(p.shift());
             l ? l(global/*e*/) : global/*e*/()
         })) : d = !1)
@@ -11,7 +11,7 @@ __d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/
     function a(global/*e*/) {
         var require/*t*/ = !1;
         return function() {
-            require/*t*/ && c(0, "DliteTaskScheduler: Tasks can only be executed once."), require/*t*/ = !0, s(global/*e*/), d = !1, o()
+            require/*t*/ && invariant/*c*/(0, "DliteTaskScheduler: Tasks can only be executed once."), require/*t*/ = !0, s(global/*e*/), d = !1, o()
         }
     }
 
@@ -24,8 +24,8 @@ __d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/
             Array.prototype.unshift.apply(require/*t*/, p), p = require/*t*/
         }
     }
-    var l, u = require/*t*/("Promise"),
-        c = require/*t*/("invariant"),
+    var l, Promise/*u*/ = require/*t*/("Promise"),
+        invariant/*c*/ = require/*t*/("invariant"),
         p = [],
         d = !1,
         h = {
@@ -34,7 +34,7 @@ __d("DliteTaskScheduler",["Promise","invariant"],function (global/*e*/, require/
             },
             await: function() {
                 var global/*e*/ = arguments,
-                    require/*t*/ = new u(function(require/*t*/) {
+                    require/*t*/ = new Promise/*u*/(function(require/*t*/) {
                         function requireDynamic/*n*/(module/*i*/) {
                             p.push(function() {
                                 var o = global/*e*/[requireLazy/*r*/++](module/*i*/);

@@ -5,7 +5,7 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
         _.push({
             parentID: global/*e*/,
             parentNode: null,
-            type: d.INSERT_MARKUP,
+            type: ReactMultiChildUpdateTypes/*d*/.INSERT_MARKUP,
             markupIndex: y.push(require/*t*/) - 1,
             textContent: null,
             fromIndex: null,
@@ -17,7 +17,7 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
         _.push({
             parentID: global/*e*/,
             parentNode: null,
-            type: d.MOVE_EXISTING,
+            type: ReactMultiChildUpdateTypes/*d*/.MOVE_EXISTING,
             markupIndex: null,
             textContent: null,
             fromIndex: require/*t*/,
@@ -29,7 +29,7 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
         _.push({
             parentID: global/*e*/,
             parentNode: null,
-            type: d.REMOVE_NODE,
+            type: ReactMultiChildUpdateTypes/*d*/.REMOVE_NODE,
             markupIndex: null,
             textContent: null,
             fromIndex: require/*t*/,
@@ -41,7 +41,7 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
         _.push({
             parentID: global/*e*/,
             parentNode: null,
-            type: d.TEXT_CONTENT,
+            type: ReactMultiChildUpdateTypes/*d*/.TEXT_CONTENT,
             markupIndex: null,
             textContent: require/*t*/,
             fromIndex: null,
@@ -50,31 +50,31 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
     }
 
     function u() {
-        _.length && (p.BackendIDOperations.dangerouslyProcessChildrenUpdates(_, y), c())
+        _.length && (ReactComponent/*p*/.BackendIDOperations.dangerouslyProcessChildrenUpdates(_, y), c())
     }
 
     function c() {
         _.length = 0, y.length = 0
     }
-    var p = require/*t*/("ReactComponent"),
-        d = require/*t*/("ReactMultiChildUpdateTypes"),
-        h = require/*t*/("flattenChildren"),
-        f = require/*t*/("instantiateReactComponent"),
-        m = require/*t*/("shouldUpdateReactComponent"),
+    var ReactComponent/*p*/ = require/*t*/("ReactComponent"),
+        ReactMultiChildUpdateTypes/*d*/ = require/*t*/("ReactMultiChildUpdateTypes"),
+        flattenChildren/*h*/ = require/*t*/("flattenChildren"),
+        instantiateReactComponent/*f*/ = require/*t*/("instantiateReactComponent"),
+        shouldUpdateReactComponent/*m*/ = require/*t*/("shouldUpdateReactComponent"),
         g = 0,
         _ = [],
         y = [],
         v = {
             Mixin: {
                 mountChildren: function(global/*e*/, require/*t*/) {
-                    var requireDynamic/*n*/ = h(global/*e*/),
+                    var requireDynamic/*n*/ = flattenChildren/*h*/(global/*e*/),
                         requireLazy/*r*/ = [],
                         module/*i*/ = 0;
                     this._renderedChildren = requireDynamic/*n*/;
                     for (var o in requireDynamic/*n*/) {
                         var a = requireDynamic/*n*/[o];
                         if (requireDynamic/*n*/.hasOwnProperty(o)) {
-                            var s = f(a, null);
+                            var s = instantiateReactComponent/*f*/(a, null);
                             requireDynamic/*n*/[o] = s;
                             var l = this._rootNodeID + o,
                                 u = s.mountComponent(l, require/*t*/, this._mountDepth + 1);
@@ -104,7 +104,7 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
                     }
                 },
                 _updateChildren: function(global/*e*/, require/*t*/) {
-                    var requireDynamic/*n*/ = h(global/*e*/),
+                    var requireDynamic/*n*/ = flattenChildren/*h*/(global/*e*/),
                         requireLazy/*r*/ = this._renderedChildren;
                     if (requireDynamic/*n*/ || requireLazy/*r*/) {
                         var module/*i*/, o = 0,
@@ -114,10 +114,10 @@ __d("ReactMultiChild",["ReactComponent","ReactMultiChildUpdateTypes","flattenChi
                                 var s = requireLazy/*r*/ && requireLazy/*r*/[module/*i*/],
                                     l = s && s._currentElement,
                                     u = requireDynamic/*n*/[module/*i*/];
-                                if (m(l, u)) this.moveChild(s, a, o), o = Math.max(s._mountIndex, o), s.receiveComponent(u, require/*t*/), s._mountIndex = a;
+                                if (shouldUpdateReactComponent/*m*/(l, u)) this.moveChild(s, a, o), o = Math.max(s._mountIndex, o), s.receiveComponent(u, require/*t*/), s._mountIndex = a;
                                 else {
                                     s && (o = Math.max(s._mountIndex, o), this._unmountChildByName(s, module/*i*/));
-                                    var c = f(u, null);
+                                    var c = instantiateReactComponent/*f*/(u, null);
                                     this._mountChildByNameAtIndex(c, module/*i*/, a, require/*t*/)
                                 }
                                 a++

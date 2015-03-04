@@ -19,8 +19,8 @@ __d("getTextContentFromFiles",["DocumentCharacters"],function (global/*e*/, requ
             requireDynamic/*n*/("")
         }, requireLazy/*r*/.readAsText(require/*t*/)
     }
-    var s = require/*t*/("DocumentCharacters"),
-        l = s.BLOCK_DELIMITER,
+    var DocumentCharacters/*s*/ = require/*t*/("DocumentCharacters"),
+        l = DocumentCharacters/*s*/.BLOCK_DELIMITER,
         u = /\.textClipping$/,
         c = {
             "text/plain": !0,

@@ -4,12 +4,12 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
     function o(global/*e*/) {
         return Object.prototype.hasOwnProperty.call(global/*e*/, g) || (global/*e*/[g] = f++, d[global/*e*/[g]] = {}), d[global/*e*/[g]]
     }
-    var a = require/*t*/("EventConstants"),
-        s = require/*t*/("EventPluginHub"),
-        l = require/*t*/("EventPluginRegistry"),
-        u = require/*t*/("ReactEventEmitterMixin"),
-        c = require/*t*/("ViewportMetrics"),
-        p = require/*t*/("isEventSupported"),
+    var EventConstants/*a*/ = require/*t*/("EventConstants"),
+        EventPluginHub/*s*/ = require/*t*/("EventPluginHub"),
+        EventPluginRegistry/*l*/ = require/*t*/("EventPluginRegistry"),
+        ReactEventEmitterMixin/*u*/ = require/*t*/("ReactEventEmitterMixin"),
+        ViewportMetrics/*c*/ = require/*t*/("ViewportMetrics"),
+        isEventSupported/*p*/ = require/*t*/("isEventSupported"),
         d = {},
         h = !1,
         f = 0,
@@ -53,7 +53,7 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
             topWheel: "wheel"
         },
         g = "_reactListenersID" + String(Math.random()).slice(2),
-        _ = Object.assign({}, u, {
+        _ = Object.assign({}, ReactEventEmitterMixin/*u*/, {
             ReactEventListener: null,
             injection: {
                 injectReactEventListener: function(global/*e*/) {
@@ -67,9 +67,9 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
                 return !(!_.ReactEventListener || !_.ReactEventListener.isEnabled())
             },
             listenTo: function(global/*e*/, require/*t*/) {
-                for (var requireDynamic/*n*/ = require/*t*/, requireLazy/*r*/ = o(requireDynamic/*n*/), module/*i*/ = l.registrationNameDependencies[global/*e*/], s = a.topLevelTypes, u = 0, c = module/*i*/.length; c > u; u++) {
-                    var d = module/*i*/[u];
-                    requireLazy/*r*/.hasOwnProperty(d) && requireLazy/*r*/[d] || (d === s.topWheel ? p("wheel") ? _.ReactEventListener.trapBubbledEvent(s.topWheel, "wheel", requireDynamic/*n*/) : p("mousewheel") ? _.ReactEventListener.trapBubbledEvent(s.topWheel, "mousewheel", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(s.topWheel, "DOMMouseScroll", requireDynamic/*n*/) : d === s.topScroll ? p("scroll", !0) ? _.ReactEventListener.trapCapturedEvent(s.topScroll, "scroll", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(s.topScroll, "scroll", _.ReactEventListener.WINDOW_HANDLE) : d === s.topFocus || d === s.topBlur ? (p("focus", !0) ? (_.ReactEventListener.trapCapturedEvent(s.topFocus, "focus", requireDynamic/*n*/), _.ReactEventListener.trapCapturedEvent(s.topBlur, "blur", requireDynamic/*n*/)) : p("focusin") && (_.ReactEventListener.trapBubbledEvent(s.topFocus, "focusin", requireDynamic/*n*/), _.ReactEventListener.trapBubbledEvent(s.topBlur, "focusout", requireDynamic/*n*/)), requireLazy/*r*/[s.topBlur] = !0, requireLazy/*r*/[s.topFocus] = !0) : m.hasOwnProperty(d) && _.ReactEventListener.trapBubbledEvent(d, m[d], requireDynamic/*n*/), requireLazy/*r*/[d] = !0)
+                for (var requireDynamic/*n*/ = require/*t*/, requireLazy/*r*/ = o(requireDynamic/*n*/), module/*i*/ = EventPluginRegistry/*l*/.registrationNameDependencies[global/*e*/], EventPluginHub/*s*/ = EventConstants/*a*/.topLevelTypes, ReactEventEmitterMixin/*u*/ = 0, ViewportMetrics/*c*/ = module/*i*/.length; ViewportMetrics/*c*/ > ReactEventEmitterMixin/*u*/; ReactEventEmitterMixin/*u*/++) {
+                    var d = module/*i*/[ReactEventEmitterMixin/*u*/];
+                    requireLazy/*r*/.hasOwnProperty(d) && requireLazy/*r*/[d] || (d === EventPluginHub/*s*/.topWheel ? isEventSupported/*p*/("wheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "wheel", requireDynamic/*n*/) : isEventSupported/*p*/("mousewheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "mousewheel", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "DOMMouseScroll", requireDynamic/*n*/) : d === EventPluginHub/*s*/.topScroll ? isEventSupported/*p*/("scroll", !0) ? _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topScroll, "scroll", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topScroll, "scroll", _.ReactEventListener.WINDOW_HANDLE) : d === EventPluginHub/*s*/.topFocus || d === EventPluginHub/*s*/.topBlur ? (isEventSupported/*p*/("focus", !0) ? (_.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topFocus, "focus", requireDynamic/*n*/), _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topBlur, "blur", requireDynamic/*n*/)) : isEventSupported/*p*/("focusin") && (_.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topFocus, "focusin", requireDynamic/*n*/), _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topBlur, "focusout", requireDynamic/*n*/)), requireLazy/*r*/[EventPluginHub/*s*/.topBlur] = !0, requireLazy/*r*/[EventPluginHub/*s*/.topFocus] = !0) : m.hasOwnProperty(d) && _.ReactEventListener.trapBubbledEvent(d, m[d], requireDynamic/*n*/), requireLazy/*r*/[d] = !0)
                 }
             },
             trapBubbledEvent: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
@@ -80,16 +80,16 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
             },
             ensureScrollValueMonitoring: function() {
                 if (!h) {
-                    var global/*e*/ = c.refreshScrollValues;
+                    var global/*e*/ = ViewportMetrics/*c*/.refreshScrollValues;
                     _.ReactEventListener.monitorScrollValue(global/*e*/), h = !0
                 }
             },
-            eventNameDispatchConfigs: s.eventNameDispatchConfigs,
-            registrationNameModules: s.registrationNameModules,
-            putListener: s.putListener,
-            getListener: s.getListener,
-            deleteListener: s.deleteListener,
-            deleteAllListeners: s.deleteAllListeners
+            eventNameDispatchConfigs: EventPluginHub/*s*/.eventNameDispatchConfigs,
+            registrationNameModules: EventPluginHub/*s*/.registrationNameModules,
+            putListener: EventPluginHub/*s*/.putListener,
+            getListener: EventPluginHub/*s*/.getListener,
+            deleteListener: EventPluginHub/*s*/.deleteListener,
+            deleteAllListeners: EventPluginHub/*s*/.deleteAllListeners
         });
     module/*i*/.exports = _
 });

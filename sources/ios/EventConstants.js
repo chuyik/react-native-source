@@ -1,11 +1,11 @@
 __d("EventConstants",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("keyMirror"),
-        a = o({
+    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+        a = keyMirror/*o*/({
             bubbled: null,
             captured: null
         }),
-        s = o({
+        s = keyMirror/*o*/({
             topBlur: null,
             topChange: null,
             topClick: null,

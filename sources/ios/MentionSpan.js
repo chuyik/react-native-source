@@ -1,17 +1,17 @@
 __d("MentionSpan",["React","StyleSheet","Text"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
-        a = require/*t*/("StyleSheet"),
-        s = require/*t*/("Text"),
-        l = o.createClass({
+    var React/*o*/ = require/*t*/("React"),
+        StyleSheet/*a*/ = require/*t*/("StyleSheet"),
+        Text/*s*/ = require/*t*/("Text"),
+        l = React/*o*/.createClass({
             displayName: "MentionSpan",
             render: function() {
-                return o.createElement(s, {
+                return React/*o*/.createElement(Text/*s*/, {
                     style: u.text
                 }, this.props.children)
             }
         }),
-        u = a.create({
+        u = StyleSheet/*a*/.create({
             text: {
                 backgroundColor: "#ccddff"
             }

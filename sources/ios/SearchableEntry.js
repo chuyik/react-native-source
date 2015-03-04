@@ -12,9 +12,9 @@ __d("SearchableEntry",["invariant"],function (global/*e*/, require/*t*/, require
 
     function a(global/*e*/) {
         "use strict";
-        (!global/*e*/.uniqueID || "string" != typeof global/*e*/.uniqueID && "number" != typeof global/*e*/.uniqueID) && s(0, "SearchableEntry must include a valid unique ID value, %s provided.", global/*e*/.uniqueID), global/*e*/.title && "string" == typeof global/*e*/.title || s(0, "SearchableEntry must include a valid title string, %s provided.", global/*e*/.title), this.$SearchableEntry_uniqueID = global/*e*/.uniqueID + "", this.$SearchableEntry_title = global/*e*/.title, this.$SearchableEntry_order = global/*e*/.order || 0, this.$SearchableEntry_subtitle = o(global/*e*/.subtitle), this.$SearchableEntry_keywordString = global/*e*/.keywordString || "", this.$SearchableEntry_photo = global/*e*/.photo || "", this.$SearchableEntry_uri = global/*e*/.uri || "", this.$SearchableEntry_type = global/*e*/.type || "", this.$SearchableEntry_auxiliaryData = global/*e*/.auxiliaryData || null
+        (!global/*e*/.uniqueID || "string" != typeof global/*e*/.uniqueID && "number" != typeof global/*e*/.uniqueID) && invariant/*s*/(0, "SearchableEntry must include a valid unique ID value, %invariant/*s*/ provided.", global/*e*/.uniqueID), global/*e*/.title && "string" == typeof global/*e*/.title || invariant/*s*/(0, "SearchableEntry must include a valid title string, %invariant/*s*/ provided.", global/*e*/.title), this.$SearchableEntry_uniqueID = global/*e*/.uniqueID + "", this.$SearchableEntry_title = global/*e*/.title, this.$SearchableEntry_order = global/*e*/.order || 0, this.$SearchableEntry_subtitle = o(global/*e*/.subtitle), this.$SearchableEntry_keywordString = global/*e*/.keywordString || "", this.$SearchableEntry_photo = global/*e*/.photo || "", this.$SearchableEntry_uri = global/*e*/.uri || "", this.$SearchableEntry_type = global/*e*/.type || "", this.$SearchableEntry_auxiliaryData = global/*e*/.auxiliaryData || null
     }
-    var s = require/*t*/("invariant");
+    var invariant/*s*/ = require/*t*/("invariant");
     a.prototype.getUniqueID = function() {
         "use strict";
         return this.$SearchableEntry_uniqueID

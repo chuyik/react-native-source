@@ -18,20 +18,20 @@ __d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRange
                     var o = f[module/*i*/];
                     if (require/*t*/ > o) break;
                     if (requireDynamic/*n*/.indexOf(module/*i*/) >= 0) {
-                        c.applyWithGuard(requireLazy/*r*/, null, null, null, "GraphQLStoreChangeEmitter");
+                        ErrorUtils/*c*/.applyWithGuard(requireLazy/*r*/, null, null, null, "GraphQLStoreChangeEmitter");
                         break
                     }
                 }
     }
 
     function l(global/*e*/) {
-        var require/*t*/ = p.parseRangeClientID(global/*e*/);
+        var require/*t*/ = GraphQLStoreRangeUtils/*p*/.parseRangeClientID(global/*e*/);
         return require/*t*/ ? require/*t*/.dataID : global/*e*/
     }
-    var u = require/*t*/("DliteProfiler"),
-        c = require/*t*/("ErrorUtils"),
-        p = require/*t*/("GraphQLStoreRangeUtils"),
-        d = require/*t*/("setImmediate"),
+    var DliteProfiler/*u*/ = require/*t*/("DliteProfiler"),
+        ErrorUtils/*c*/ = require/*t*/("ErrorUtils"),
+        GraphQLStoreRangeUtils/*p*/ = require/*t*/("GraphQLStoreRangeUtils"),
+        setImmediate/*d*/ = require/*t*/("setImmediate"),
         h = [],
         f = null,
         m = function(global/*e*/) {
@@ -51,14 +51,14 @@ __d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRange
                 }
             },
             broadcastChangeForID: function(global/*e*/) {
-                null === f && (d(o), f = {}), f[l(global/*e*/)] = h.length - 1
+                null === f && (setImmediate/*d*/(o), f = {}), f[l(global/*e*/)] = h.length - 1
             },
             injectBatchingStrategy: function(global/*e*/) {
                 m = global/*e*/
             },
             _processSubscribers: a
         };
-    u.instrumentMethods(g, {
+    DliteProfiler/*u*/.instrumentMethods(g, {
         addListenerForIDs: "GraphQLStoreChangeEmitter.addListenerForIDs",
         broadcastChangeForID: "GraphQLStoreChangeEmitter.broadcastChangeForID",
         _processSubscribers: "GraphQLStoreChangeEmitter.processSubscribers"

@@ -4,19 +4,19 @@ __d("flattenChildren",["ReactTextComponent","traverseAllChildren","warning"],fun
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         var requireLazy/*r*/ = global/*e*/,
             module/*i*/ = !requireLazy/*r*/.hasOwnProperty(requireDynamic/*n*/);
-        if (u(module/*i*/, "flattenChildren(...): Encountered two children with the same key, `%s`. Child keys must be unique; when two children share a key, only the first child will be used.", requireDynamic/*n*/), module/*i*/ && null != require/*t*/) {
+        if (warning/*u*/(module/*i*/, "flattenChildren(...): Encountered two children with the same key, `%ReactTextComponent/*s*/`. Child keys must be unique; when two children share a key, only the first child will be used.", requireDynamic/*n*/), module/*i*/ && null != require/*t*/) {
             var o, a = typeof require/*t*/;
-            o = "string" === a ? s(require/*t*/) : "number" === a ? s("" + require/*t*/) : require/*t*/, requireLazy/*r*/[requireDynamic/*n*/] = o
+            o = "string" === a ? ReactTextComponent/*s*/(require/*t*/) : "number" === a ? ReactTextComponent/*s*/("" + require/*t*/) : require/*t*/, requireLazy/*r*/[requireDynamic/*n*/] = o
         }
     }
 
     function a(global/*e*/) {
         if (null == global/*e*/) return global/*e*/;
         var require/*t*/ = {};
-        return l(global/*e*/, o, require/*t*/), require/*t*/
+        return traverseAllChildren/*l*/(global/*e*/, o, require/*t*/), require/*t*/
     }
-    var s = require/*t*/("ReactTextComponent"),
-        l = require/*t*/("traverseAllChildren"),
-        u = require/*t*/("warning");
+    var ReactTextComponent/*s*/ = require/*t*/("ReactTextComponent"),
+        traverseAllChildren/*l*/ = require/*t*/("traverseAllChildren"),
+        warning/*u*/ = require/*t*/("warning");
     module/*i*/.exports = a
 });

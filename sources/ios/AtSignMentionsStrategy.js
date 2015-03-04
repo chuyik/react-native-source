@@ -1,6 +1,6 @@
 __d("AtSignMentionsStrategy",["DocumentMentionsRegex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("DocumentMentionsRegex"),
-        a = o.PUNCTUATION,
+    var DocumentMentionsRegex/*o*/ = require/*t*/("DocumentMentionsRegex"),
+        a = DocumentMentionsRegex/*o*/.PUNCTUATION,
         s = ["@", "\\uff20"].join(""),
         l = "[^" + s + a + "\\s]",
         u = "(?:\\.[ |$]| |[" + a + "]|)",

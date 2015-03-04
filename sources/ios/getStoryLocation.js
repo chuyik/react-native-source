@@ -2,21 +2,21 @@ __d("getStoryLocation",["FBStoryRenderLocations","invariant","matchRoute"],funct
     "use strict";
 
     function o(global/*e*/) {
-        var require/*t*/ = l(global/*e*/, {
+        var require/*t*/ = matchRoute/*l*/(global/*e*/, {
             GroupRoute: function() {
-                return a.group
+                return FBStoryRenderLocations/*a*/.group
             },
             SimpleDliteRoute: function() {
-                return a.feedMobile
+                return FBStoryRenderLocations/*a*/.feedMobile
             },
             StoryPermalinkRoute: function() {
-                return a.permalink
+                return FBStoryRenderLocations/*a*/.permalink
             }
         });
-        return require/*t*/ || s(0, "getStoryLocation() failed; route list in getStoryLocation() needs updating"), require/*t*/
+        return require/*t*/ || invariant/*s*/(0, "getStoryLocation() failed; route list in getStoryLocation() needs updating"), require/*t*/
     }
-    var a = require/*t*/("FBStoryRenderLocations"),
-        s = require/*t*/("invariant"),
-        l = require/*t*/("matchRoute");
+    var FBStoryRenderLocations/*a*/ = require/*t*/("FBStoryRenderLocations"),
+        invariant/*s*/ = require/*t*/("invariant"),
+        matchRoute/*l*/ = require/*t*/("matchRoute");
     module/*i*/.exports = o
 });

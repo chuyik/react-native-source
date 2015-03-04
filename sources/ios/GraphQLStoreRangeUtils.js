@@ -1,6 +1,6 @@
 __d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("GraphQL_EXPERIMENTAL"),
-        a = require/*t*/("GraphQLConstants"),
+    var GraphQL_EXPERIMENTAL/*o*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*a*/ = require/*t*/("GraphQLConstants"),
         s = {},
         l = {
             isRangeClientID: function(global/*e*/) {
@@ -11,8 +11,8 @@ __d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],functio
                         return global/*e*/.toString(require/*t*/)
                     }).join(","),
                     module/*i*/ = requireDynamic/*n*/ + "_" + requireLazy/*r*/,
-                    o = s[module/*i*/];
-                return o || (s[module/*i*/] = {
+                    GraphQL_EXPERIMENTAL/*o*/ = s[module/*i*/];
+                return GraphQL_EXPERIMENTAL/*o*/ || (s[module/*i*/] = {
                     dataID: requireDynamic/*n*/,
                     calls: global/*e*/.getCalls(),
                     callValues: require/*t*/
@@ -22,12 +22,12 @@ __d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],functio
                 return s[global/*e*/] || null
             },
             isRangeNode: function(global/*e*/) {
-                if (!(global/*e*/ instanceof o.Field && global/*e*/.isLimitable())) return !1;
-                if (global/*e*/.hasUnaliasedField(a.EDGES) || global/*e*/.hasUnaliasedField(a.PAGE_INFO)) return !0;
+                if (!(global/*e*/ instanceof GraphQL_EXPERIMENTAL/*o*/.Field && global/*e*/.isLimitable())) return !1;
+                if (global/*e*/.hasUnaliasedField(GraphQLConstants/*a*/.EDGES) || global/*e*/.hasUnaliasedField(GraphQLConstants/*a*/.PAGE_INFO)) return !0;
                 var require/*t*/ = global/*e*/.getCalls();
                 if (require/*t*/.length)
                     for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++)
-                        if (require/*t*/[requireDynamic/*n*/].getName() in a.RANGE_CALLS) return !0;
+                        if (require/*t*/[requireDynamic/*n*/].getName() in GraphQLConstants/*a*/.RANGE_CALLS) return !0;
                 return !1
             },
             getStorageKeyForField: function(global/*e*/, require/*t*/) {
@@ -38,7 +38,7 @@ __d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],functio
                 }).join("."))), requireDynamic/*n*/
             },
             getFilterCalls: function(global/*e*/) {
-                for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) a.RANGE_CALLS[global/*e*/[requireDynamic/*n*/].getName()] || require/*t*/.push(global/*e*/[requireDynamic/*n*/]);
+                for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) GraphQLConstants/*a*/.RANGE_CALLS[global/*e*/[requireDynamic/*n*/].getName()] || require/*t*/.push(global/*e*/[requireDynamic/*n*/]);
                 return require/*t*/
             }
         };

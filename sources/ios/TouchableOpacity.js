@@ -1,19 +1,19 @@
 __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Touchable","cloneWithProps","ensureComponentIsNative","keyOf","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("POPAnimationMixin"),
-        a = require/*t*/("NativeMethodsMixin"),
-        s = require/*t*/("React"),
-        l = require/*t*/("Touchable"),
-        u = require/*t*/("cloneWithProps"),
-        c = require/*t*/("ensureComponentIsNative"),
-        p = require/*t*/("keyOf"),
-        d = require/*t*/("onlyChild"),
-        h = s.createClass({
+    var POPAnimationMixin/*o*/ = require/*t*/("POPAnimationMixin"),
+        NativeMethodsMixin/*a*/ = require/*t*/("NativeMethodsMixin"),
+        React/*s*/ = require/*t*/("React"),
+        Touchable/*l*/ = require/*t*/("Touchable"),
+        cloneWithProps/*u*/ = require/*t*/("cloneWithProps"),
+        ensureComponentIsNative/*c*/ = require/*t*/("ensureComponentIsNative"),
+        keyOf/*p*/ = require/*t*/("keyOf"),
+        onlyChild/*d*/ = require/*t*/("onlyChild"),
+        h = React/*s*/.createClass({
             displayName: "TouchableOpacity",
-            mixins: [l.Mixin, a, o],
+            mixins: [Touchable/*l*/.Mixin, NativeMethodsMixin/*a*/, POPAnimationMixin/*o*/],
             propTypes: {
-                onPress: s.PropTypes.func,
-                activeOpacity: s.PropTypes.number
+                onPress: React/*s*/.PropTypes.func,
+                activeOpacity: React/*s*/.PropTypes.number
             },
             getDefaultProps: function() {
                 return {
@@ -24,10 +24,10 @@ __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Toucha
                 return this.touchableGetInitialState()
             },
             componentDidMount: function() {
-                c(this.refs[m])
+                ensureComponentIsNative/*c*/(this.refs[m])
             },
             componentDidUpdate: function() {
-                c(this.refs[m])
+                ensureComponentIsNative/*c*/(this.refs[m])
             },
             animateOpacityTo: function(global/*e*/) {
                 this.stopAllAnimations();
@@ -56,7 +56,7 @@ __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Toucha
                 return 0
             },
             render: function() {
-                return u(d(this.props.children), {
+                return cloneWithProps/*u*/(onlyChild/*d*/(this.props.children), {
                     ref: m,
                     accessible: !0,
                     testID: this.props.testID,
@@ -75,7 +75,7 @@ __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Toucha
             right: 20,
             bottom: 30
         },
-        m = p({
+        m = keyOf/*p*/({
             childRef: null
         });
     module/*i*/.exports = h

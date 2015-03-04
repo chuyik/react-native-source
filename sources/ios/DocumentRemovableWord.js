@@ -3,8 +3,8 @@ __d("DocumentRemovableWord",["TokenizeUtil"],function (global/*e*/, require/*t*/
         var requireDynamic/*n*/ = require/*t*/ ? d.exec(global/*e*/) : c.exec(global/*e*/);
         return requireDynamic/*n*/ ? requireDynamic/*n*/[0] : null
     }
-    var a = require/*t*/("TokenizeUtil"),
-        s = a.getPunctuation();
+    var TokenizeUtil/*a*/ = require/*t*/("TokenizeUtil"),
+        s = TokenizeUtil/*a*/.getPunctuation();
     s = s.replace("'", "").slice(1, -1);
     var l = "\\s" + s,
         u = "^([" + l + "]*[^" + l + "]+|[" + l + "]+)",

@@ -1,20 +1,20 @@
 __d("THProfilePicture",["Image","React","ReactGraphQL","RouteHandler","TouchableWithoutFeedback","View","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Image"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactGraphQL"),
-        l = require/*t*/("RouteHandler"),
-        u = require/*t*/("TouchableWithoutFeedback"),
-        c = require/*t*/("View"),
-        p = require/*t*/("ix"),
+    var Image/*o*/ = require/*t*/("Image"),
+        React/*a*/ = require/*t*/("React"),
+        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+        RouteHandler/*l*/ = require/*t*/("RouteHandler"),
+        TouchableWithoutFeedback/*u*/ = require/*t*/("TouchableWithoutFeedback"),
+        View/*c*/ = require/*t*/("View"),
+        ix/*p*/ = require/*t*/("ix"),
         d = 12,
-        h = a.createClass({
+        h = React/*a*/.createClass({
             displayName: "THProfilePicture",
             propTypes: {
-                actor: a.PropTypes.object.isRequired,
-                height: a.PropTypes.number.isRequired
+                actor: React/*a*/.PropTypes.object.isRequired,
+                height: React/*a*/.PropTypes.number.isRequired
             },
-            mixins: [s.Mixin],
+            mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
                     actor: function(global/*e*/, require/*t*/) {
@@ -59,7 +59,7 @@ __d("THProfilePicture",["Image","React","ReactGraphQL","RouteHandler","Touchable
                 }
             },
             onProfilePictureTapped: function(global/*e*/) {
-                l.getCallback({
+                RouteHandler/*l*/.getCallback({
                     typeList: [this.props.actor.__type__.name],
                     params: {
                         actor: global/*e*/,
@@ -70,13 +70,13 @@ __d("THProfilePicture",["Image","React","ReactGraphQL","RouteHandler","Touchable
             render: function() {
                 var global/*e*/ = this.props.actor,
                     require/*t*/ = null;
-                return global/*e*/.last_active_messages_status && global/*e*/.last_active_messages_status.is_currently_active && (require/*t*/ = a.createElement(o, {
-                    source: p("thPresenceBadge"),
+                return global/*e*/.last_active_messages_status && global/*e*/.last_active_messages_status.is_currently_active && (require/*t*/ = React/*a*/.createElement(Image/*o*/, {
+                    source: ix/*p*/("thPresenceBadge"),
                     style: this.state.greenDotStyle
-                })), a.createElement(u, {
+                })), React/*a*/.createElement(TouchableWithoutFeedback/*u*/, {
                     onPress: this.onProfilePictureTapped.bind(this, global/*e*/)
-                }, a.createElement(c, null, a.createElement(o, {
-                    source: global/*e*/.profile_picture || p("personSquare"),
+                }, React/*a*/.createElement(View/*c*/, null, React/*a*/.createElement(Image/*o*/, {
+                    source: global/*e*/.profile_picture || ix/*p*/("personSquare"),
                     style: this.state.imageStyle
                 }), require/*t*/))
             }

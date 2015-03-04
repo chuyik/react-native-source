@@ -1,16 +1,16 @@
 __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("emptyFunction"),
-        a = require/*t*/("forEachObject"),
-        s = require/*t*/("invariant"),
+    var emptyFunction/*o*/ = require/*t*/("emptyFunction"),
+        forEachObject/*a*/ = require/*t*/("forEachObject"),
+        invariant/*s*/ = require/*t*/("invariant"),
         l = {},
         u = {},
         c = {
-            stop: o
+            stop: emptyFunction/*o*/
         },
         p = {
             instrumentMethods: function(global/*e*/, require/*t*/) {
-                a(require/*t*/, function(require/*t*/, requireDynamic/*n*/) {
+                forEachObject/*a*/(require/*t*/, function(require/*t*/, requireDynamic/*n*/) {
                     global/*e*/[requireDynamic/*n*/] = p.instrument(require/*t*/, global/*e*/[requireDynamic/*n*/])
                 })
             },
@@ -20,12 +20,12 @@ __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (glob
                         requireLazy/*r*/ = function() {
                             var requireLazy/*r*/ = l,
                                 module/*i*/ = arguments,
-                                o = function() {
+                                emptyFunction/*o*/ = function() {
                                     requireLazy/*r*/ = require/*t*/.apply(this, module/*i*/)
                                 }.bind(this);
                             if (requireDynamic/*n*/.forEach(function(require/*t*/) {
-                                    o = require/*t*/.bind(this, global/*e*/, o)
-                                }, this), o(), requireLazy/*r*/ === l) throw new Error("DliteProfiler: Handler did not invoke original function.");
+                                    emptyFunction/*o*/ = require/*t*/.bind(this, global/*e*/, emptyFunction/*o*/)
+                                }, this), emptyFunction/*o*/(), requireLazy/*r*/ === l) throw new Error("DliteProfiler: Handler did not invoke original function.");
                             return requireLazy/*r*/
                         };
                     return requireLazy/*r*/.attachHandler = function(global/*e*/) {
@@ -35,7 +35,7 @@ __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (glob
                         require/*t*/ >= 0 && requireDynamic/*n*/.splice(require/*t*/, 1)
                     }, requireLazy/*r*/.displayName = "(instrumented " + global/*e*/ + ")", requireLazy/*r*/
                 }
-                return require/*t*/.attachHandler = o, require/*t*/.detachHandler = o, require/*t*/
+                return require/*t*/.attachHandler = emptyFunction/*o*/, require/*t*/.detachHandler = emptyFunction/*o*/, require/*t*/
             },
             instrumentAsync: function(global/*e*/) {
                 return __DEV__ ? (u[global/*e*/] && u[global/*e*/].onStart(), {
@@ -45,10 +45,10 @@ __d("DliteProfiler",["emptyFunction","forEachObject","invariant"],function (glob
                 }) : c
             },
             attachAsyncHandler: function(global/*e*/, require/*t*/) {
-                __DEV__ && (u.hasOwnProperty(global/*e*/) && s(0, "DliteProfiler: Async handler with name `%s` already exists.", global/*e*/), u[global/*e*/] = require/*t*/)
+                __DEV__ && (u.hasOwnProperty(global/*e*/) && invariant/*s*/(0, "DliteProfiler: Async handler with name `%invariant/*s*/` already exists.", global/*e*/), u[global/*e*/] = require/*t*/)
             },
             detachAsyncHandler: function(global/*e*/) {
-                __DEV__ && (u.hasOwnProperty(global/*e*/) || s(0, "DliteProfiler: Async handler with name `%s` does not exist.", global/*e*/), delete u[global/*e*/])
+                __DEV__ && (u.hasOwnProperty(global/*e*/) || invariant/*s*/(0, "DliteProfiler: Async handler with name `%invariant/*s*/` does not exist.", global/*e*/), delete u[global/*e*/])
             }
         };
     module/*i*/.exports = p

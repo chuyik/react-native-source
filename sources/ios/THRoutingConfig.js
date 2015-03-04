@@ -2,19 +2,19 @@ __d("THRoutingConfig",["NativeModulesDeprecated","RouteHandler"],function (globa
     "use strict";
 
     function o() {}
-    var a = require/*t*/("NativeModulesDeprecated").RKTreehouseManager,
-        s = require/*t*/("RouteHandler");
+    var NativeModulesDeprecated/*a*/ = require/*t*/("NativeModulesDeprecated").RKTreehouseManager,
+        RouteHandler/*s*/ = require/*t*/("RouteHandler");
     o.prototype.initialize = function() {
-        a && (s.registerCallbackForTypes(["URL"], function(global/*e*/) {
-            a && a.openURL ? "string" == typeof global/*e*/.url && global/*e*/.url.length > 3 ? a.openURL(global/*e*/.url) : console.error("URL must be a valid string: ", global/*e*/.url) : console.warn("No RKTreehouseManager available to handle URLs")
-        }), s.registerCallbackForTypes(["User"], function(global/*e*/) {
-            a && a.tappedActorProfileInGroup ? "object" == typeof global/*e*/.actor && global/*e*/.actor.id ? a.tappedActorProfileInGroup(global/*e*/.actor.id, global/*e*/.actor.name, global/*e*/.group.id) : global/*e*/.id ? a.tappedActorProfile(global/*e*/.id, global/*e*/.name) : console.error("Actor must have a valid ID: ", global/*e*/.actor) : console.warn("No RKTreehouseManager available to handle actors")
-        }), s.registerCallbackForTypes(["Group"], function(global/*e*/) {
-            a && a.openGroupProfile ? a.openGroupProfile(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle groups")
-        }), s.registerCallbackForTypes(["Story"], function(global/*e*/) {
-            a && a.openStoryPermalink ? a.openStoryPermalink(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle stories")
-        }), s.registerCallbackForTypes(["Video"], function(global/*e*/) {
-            a && a.openVideo ? a.openVideo(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle videos")
+        NativeModulesDeprecated/*a*/ && (RouteHandler/*s*/.registerCallbackForTypes(["URL"], function(global/*e*/) {
+            NativeModulesDeprecated/*a*/ && NativeModulesDeprecated/*a*/.openURL ? "string" == typeof global/*e*/.url && global/*e*/.url.length > 3 ? NativeModulesDeprecated/*a*/.openURL(global/*e*/.url) : console.error("URL must be NativeModulesDeprecated/*a*/ valid string: ", global/*e*/.url) : console.warn("No RKTreehouseManager available to handle URLs")
+        }), RouteHandler/*s*/.registerCallbackForTypes(["User"], function(global/*e*/) {
+            NativeModulesDeprecated/*a*/ && NativeModulesDeprecated/*a*/.tappedActorProfileInGroup ? "object" == typeof global/*e*/.actor && global/*e*/.actor.id ? NativeModulesDeprecated/*a*/.tappedActorProfileInGroup(global/*e*/.actor.id, global/*e*/.actor.name, global/*e*/.group.id) : global/*e*/.id ? NativeModulesDeprecated/*a*/.tappedActorProfile(global/*e*/.id, global/*e*/.name) : console.error("Actor must have NativeModulesDeprecated/*a*/ valid ID: ", global/*e*/.actor) : console.warn("No RKTreehouseManager available to handle actors")
+        }), RouteHandler/*s*/.registerCallbackForTypes(["Group"], function(global/*e*/) {
+            NativeModulesDeprecated/*a*/ && NativeModulesDeprecated/*a*/.openGroupProfile ? NativeModulesDeprecated/*a*/.openGroupProfile(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle groups")
+        }), RouteHandler/*s*/.registerCallbackForTypes(["Story"], function(global/*e*/) {
+            NativeModulesDeprecated/*a*/ && NativeModulesDeprecated/*a*/.openStoryPermalink ? NativeModulesDeprecated/*a*/.openStoryPermalink(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle stories")
+        }), RouteHandler/*s*/.registerCallbackForTypes(["Video"], function(global/*e*/) {
+            NativeModulesDeprecated/*a*/ && NativeModulesDeprecated/*a*/.openVideo ? NativeModulesDeprecated/*a*/.openVideo(global/*e*/.id) : console.warn("No RKTreehouseManager available to handle videos")
         }))
     }, module/*i*/.exports = new o
 });

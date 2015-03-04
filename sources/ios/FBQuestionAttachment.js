@@ -1,23 +1,23 @@
 __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FIGColors"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactGraphQL"),
-        l = require/*t*/("RouteHandler"),
-        u = require/*t*/("StyleSheet"),
-        c = require/*t*/("Text"),
-        p = require/*t*/("TouchableHighlight"),
-        d = require/*t*/("View"),
-        h = require/*t*/("fbt"),
-        f = require/*t*/("truncate"),
+    var FIGColors/*o*/ = require/*t*/("FIGColors"),
+        React/*a*/ = require/*t*/("React"),
+        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+        RouteHandler/*l*/ = require/*t*/("RouteHandler"),
+        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
+        Text/*c*/ = require/*t*/("Text"),
+        TouchableHighlight/*p*/ = require/*t*/("TouchableHighlight"),
+        View/*d*/ = require/*t*/("View"),
+        fbt/*h*/ = require/*t*/("fbt"),
+        truncate/*f*/ = require/*t*/("truncate"),
         m = 24,
-        g = a.createClass({
+        g = React/*a*/.createClass({
             displayName: "FBQuestionAttachment",
             propTypes: {
-                attachment: a.PropTypes.object.isRequired,
-                navigator: a.PropTypes.object
+                attachment: React/*a*/.PropTypes.object.isRequired,
+                navigator: React/*a*/.PropTypes.object
             },
-            mixins: [s.Mixin],
+            mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -64,26 +64,26 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
             renderOption: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 var requireLazy/*r*/ = 200,
                     module/*i*/ = global/*e*/.voters.count,
-                    o = f(global/*e*/.text, m, {
+                    FIGColors/*o*/ = truncate/*f*/(global/*e*/.text, m, {
                         breakOnWords: !1,
                         minDelta: 0
                     });
-                return a.createElement(d, {
+                return React/*a*/.createElement(View/*d*/, {
                     style: _.option,
                     key: "option" + requireDynamic/*n*/
-                }, a.createElement(d, {
+                }, React/*a*/.createElement(View/*d*/, {
                     style: [_.barContainer, {
                         width: requireLazy/*r*/
                     }]
-                }, a.createElement(d, {
+                }, React/*a*/.createElement(View/*d*/, {
                     style: [_.bar, {
                         width: .7 * requireLazy/*r*/ * module/*i*/ / require/*t*/
                     }]
-                }), a.createElement(c, {
+                }), React/*a*/.createElement(Text/*c*/, {
                     style: _.text
-                }, o)), a.createElement(d, {
+                }, FIGColors/*o*/)), React/*a*/.createElement(View/*d*/, {
                     style: [_.barContainer, _.countBox]
-                }, a.createElement(c, {
+                }, React/*a*/.createElement(Text/*c*/, {
                     style: _.countText
                 }, "+" + module/*i*/)))
             },
@@ -97,30 +97,30 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
                 }.bind(this))
             },
             renderViewMoreButton: function() {
-                return this.props.attachment.target.options.count > 5 ? a.createElement(d, {
+                return this.props.attachment.target.options.count > 5 ? React/*a*/.createElement(View/*d*/, {
                     style: _.viewMore
-                }, a.createElement(c, null, h({
+                }, React/*a*/.createElement(Text/*c*/, null, fbt/*h*/({
                     type: "text",
                     texts: ["View More..."],
-                    desc: "Button to view more options to a poll in a group"
+                    desc: "Button to view more options to React/*a*/ poll in React/*a*/ group"
                 }))) : null
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ && global/*e*/.options ? a.createElement(p, {
-                    onPress: l.getCallback({
+                return global/*e*/ && global/*e*/.options ? React/*a*/.createElement(TouchableHighlight/*p*/, {
+                    onPress: RouteHandler/*l*/.getCallback({
                         typeList: ["URL"],
                         params: {
                             url: global/*e*/.url,
                             navigator: this.props.navigator
                         }
                     })
-                }, a.createElement(d, {
+                }, React/*a*/.createElement(View/*d*/, {
                     style: _.container
-                }, this.renderOptions(), this.renderViewMoreButton())) : (console.error("Tried to render an FBQuestionAttachment without a target or options!"), a.createElement(d, null))
+                }, this.renderOptions(), this.renderViewMoreButton())) : (console.error("Tried to render an FBQuestionAttachment without React/*a*/ target or options!"), React/*a*/.createElement(View/*d*/, null))
             }
         }),
-        _ = u.create({
+        _ = StyleSheet/*u*/.create({
             container: {
                 backgroundColor: "#ffffff",
                 alignItems: "center"
@@ -159,7 +159,7 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
             },
             countText: {
                 fontSize: 13,
-                color: o.mediumText
+                color: FIGColors/*o*/.mediumText
             },
             viewMore: {
                 marginTop: 6

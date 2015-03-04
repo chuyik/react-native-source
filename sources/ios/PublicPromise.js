@@ -1,11 +1,11 @@
 __d("PublicPromise",["Promise"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o() {
         "use strict";
-        this.$PublicPromise_aborted = !1, this.$PublicPromise_settled = !1, this.$PublicPromise_promise = new a(function(global/*e*/, require/*t*/) {
+        this.$PublicPromise_aborted = !1, this.$PublicPromise_settled = !1, this.$PublicPromise_promise = new Promise/*a*/(function(global/*e*/, require/*t*/) {
             this.$PublicPromise_resolve = global/*e*/, this.$PublicPromise_reject = require/*t*/
         }.bind(this))
     }
-    var a = require/*t*/("Promise");
+    var Promise/*a*/ = require/*t*/("Promise");
     o.prototype.getPromise = function() {
         "use strict";
         return this.$PublicPromise_promise
@@ -17,10 +17,10 @@ __d("PublicPromise",["Promise"],function (global/*e*/, require/*t*/, requireDyna
         this.$PublicPromise_aborted || (this.$PublicPromise_settled = !0, this.$PublicPromise_reject(global/*e*/))
     }, o.prototype.then = function() {
         "use strict";
-        return a.prototype.then.apply(this.$PublicPromise_promise, arguments)
+        return Promise/*a*/.prototype.then.apply(this.$PublicPromise_promise, arguments)
     }, o.prototype.done = function() {
         "use strict";
-        return a.prototype.done.apply(this.$PublicPromise_promise, arguments)
+        return Promise/*a*/.prototype.done.apply(this.$PublicPromise_promise, arguments)
     }, o.prototype.abort = function() {
         "use strict";
         this.$PublicPromise_aborted = !0

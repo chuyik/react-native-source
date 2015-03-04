@@ -1,29 +1,29 @@
 __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView","React","POPAnimation","StyleSheet","TouchableWithoutFeedback","View","clamp","createStrictShapeTypeChecker","invariant","keyOf","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("POPAnimationMixin"),
-        a = require/*t*/("FIGColors"),
-        s = require/*t*/("MatrixMath"),
-        l = require/*t*/("ModalFullscreenView"),
-        u = require/*t*/("React"),
-        c = require/*t*/("POPAnimation"),
-        p = require/*t*/("StyleSheet"),
-        d = require/*t*/("TouchableWithoutFeedback"),
-        h = require/*t*/("View"),
-        f = require/*t*/("clamp"),
-        m = require/*t*/("createStrictShapeTypeChecker"),
-        g = require/*t*/("invariant"),
-        _ = require/*t*/("keyOf"),
-        y = require/*t*/("keyMirror"),
+    var POPAnimationMixin/*o*/ = require/*t*/("POPAnimationMixin"),
+        FIGColors/*a*/ = require/*t*/("FIGColors"),
+        MatrixMath/*s*/ = require/*t*/("MatrixMath"),
+        ModalFullscreenView/*l*/ = require/*t*/("ModalFullscreenView"),
+        React/*u*/ = require/*t*/("React"),
+        POPAnimation/*c*/ = require/*t*/("POPAnimation"),
+        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
+        TouchableWithoutFeedback/*d*/ = require/*t*/("TouchableWithoutFeedback"),
+        View/*h*/ = require/*t*/("View"),
+        clamp/*f*/ = require/*t*/("clamp"),
+        createStrictShapeTypeChecker/*m*/ = require/*t*/("createStrictShapeTypeChecker"),
+        invariant/*g*/ = require/*t*/("invariant"),
+        keyOf/*_*/ = require/*t*/("keyOf"),
+        keyMirror/*y*/ = require/*t*/("keyMirror"),
         v = {
             left: 20,
-            right: l.width - 20
+            right: ModalFullscreenView/*l*/.width - 20
         },
-        S = m({
-            top: u.PropTypes.number.isRequired,
-            left: u.PropTypes.number.isRequired,
-            height: u.PropTypes.number
+        S = createStrictShapeTypeChecker/*m*/({
+            top: React/*u*/.PropTypes.number.isRequired,
+            left: React/*u*/.PropTypes.number.isRequired,
+            height: React/*u*/.PropTypes.number
         }),
-        b = u.createClass({
+        b = React/*u*/.createClass({
             displayName: "Popover",
             getDefaultProps: function() {
                 return {
@@ -32,19 +32,19 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
                 }
             },
             propTypes: {
-                contentFactory: u.PropTypes.func.isRequired,
-                onDidClose: u.PropTypes.func,
-                onDidOpen: u.PropTypes.func,
-                fadeOut: u.PropTypes.bool,
-                modal: u.PropTypes.bool,
-                modalBackgroundColor: u.PropTypes.string,
-                style: h.stylePropType
+                contentFactory: React/*u*/.PropTypes.func.isRequired,
+                onDidClose: React/*u*/.PropTypes.func,
+                onDidOpen: React/*u*/.PropTypes.func,
+                fadeOut: React/*u*/.PropTypes.bool,
+                modal: React/*u*/.PropTypes.bool,
+                modalBackgroundColor: React/*u*/.PropTypes.string,
+                style: View/*h*/.stylePropType
             },
-            mixins: [o],
+            mixins: [POPAnimationMixin/*o*/],
             statics: {
                 renderSeparator: function() {
-                    return u.createElement(h, {
-                        key: "s" + N++,
+                    return React/*u*/.createElement(View/*h*/, {
+                        key: "MatrixMath/*s*/" + N++,
                         style: T.separator
                     })
                 }
@@ -73,7 +73,7 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
             openWithArrow: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 S({
                     coordinates: global/*e*/
-                }, "coordinates", "Popover.openWithArrow"), global/*e*/.left = f(v.left, global/*e*/.left, v.right), global/*e*/.top = f(0, global/*e*/.top, l.height), void 0 === global/*e*/.height && (global/*e*/.height = 0), this.setState({
+                }, "coordinates", "Popover.openWithArrow"), global/*e*/.left = clamp/*f*/(v.left, global/*e*/.left, v.right), global/*e*/.top = clamp/*f*/(0, global/*e*/.top, ModalFullscreenView/*l*/.height), void 0 === global/*e*/.height && (global/*e*/.height = 0), this.setState({
                     target: global/*e*/,
                     arrowColor: require/*t*/
                 }, this.open.bind(this, requireDynamic/*n*/))
@@ -82,8 +82,8 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
                 this.close()
             },
             _animateOpen: function() {
-                var global/*e*/ = c.createSpringAnimation(Q),
-                    require/*t*/ = c.createSpringAnimation(k),
+                var global/*e*/ = POPAnimation/*c*/.createSpringAnimation(Q),
+                    require/*t*/ = POPAnimation/*c*/.createSpringAnimation(k),
                     requireDynamic/*n*/ = [{
                         ref: L,
                         anim: require/*t*/
@@ -106,8 +106,8 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
                 })), this.props.onDidOpen && this.props.onDidOpen()
             },
             _animateClosed: function() {
-                var global/*e*/ = c.createSpringAnimation(A),
-                    require/*t*/ = c.createSpringAnimation(O),
+                var global/*e*/ = POPAnimation/*c*/.createSpringAnimation(A),
+                    require/*t*/ = POPAnimation/*c*/.createSpringAnimation(O),
                     requireDynamic/*n*/ = [{
                         ref: L,
                         anim: require/*t*/
@@ -134,68 +134,68 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
                 })
             },
             render: function() {
-                if (void 0 !== this.props.children && g(0, "Popover cannot have children - use contentFactory prop instead.  Check your usage in " + this._owner.type.displayName), this.state.modalState === F.closed) return u.createElement(l, null);
+                if (void 0 !== this.props.children && invariant/*g*/(0, "Popover cannot have children - use contentFactory prop instead.  Check your usage in " + this._owner.type.displayName), this.state.modalState === F.closed) return React/*u*/.createElement(ModalFullscreenView/*l*/, null);
                 var global/*e*/, require/*t*/, requireDynamic/*n*/;
                 if (this.state.target) {
-                    var requireLazy/*r*/ = l.height,
-                        module/*i*/ = l.width,
-                        o = this.state.target,
-                        a = o.top + o.height / 2 > requireLazy/*r*/ / 2,
-                        s = {
-                            x: o.left - module/*i*/ / 2,
-                            y: o.top - requireLazy/*r*/ / 2
+                    var requireLazy/*r*/ = ModalFullscreenView/*l*/.height,
+                        module/*i*/ = ModalFullscreenView/*l*/.width,
+                        POPAnimationMixin/*o*/ = this.state.target,
+                        FIGColors/*a*/ = POPAnimationMixin/*o*/.top + POPAnimationMixin/*o*/.height / 2 > requireLazy/*r*/ / 2,
+                        MatrixMath/*s*/ = {
+                            x: POPAnimationMixin/*o*/.left - module/*i*/ / 2,
+                            keyMirror/*y*/: POPAnimationMixin/*o*/.top - requireLazy/*r*/ / 2
                         };
                     requireDynamic/*n*/ = {
                         position: "relative",
-                        left: s.x
+                        left: MatrixMath/*s*/.x
                     }, require/*t*/ = {
                         position: "absolute",
                         width: module/*i*/,
-                        left: -s.x
+                        left: -MatrixMath/*s*/.x
                     };
-                    var c = {
+                    var POPAnimation/*c*/ = {
                             left: this.state.target.left - D / 2
                         },
-                        p = {
+                        StyleSheet/*p*/ = {
                             backgroundColor: this.state.arrowColor
                         };
-                    a ? (requireDynamic/*n*/.top = s.y - D / 2, require/*t*/.bottom = requireLazy/*r*/ / 2, c.bottom = -D / 2) : (requireDynamic/*n*/.top = s.y + o.height + D / 2, require/*t*/.top = requireLazy/*r*/ / 2, c.top = -D / 2), global/*e*/ = u.createElement(h, {
-                        style: [T.arrowContainer, c]
-                    }, u.createElement(h, {
-                        style: [T.arrow, p]
+                    FIGColors/*a*/ ? (requireDynamic/*n*/.top = MatrixMath/*s*/.keyMirror/*y*/ - D / 2, require/*t*/.bottom = requireLazy/*r*/ / 2, POPAnimation/*c*/.bottom = -D / 2) : (requireDynamic/*n*/.top = MatrixMath/*s*/.keyMirror/*y*/ + POPAnimationMixin/*o*/.height + D / 2, require/*t*/.top = requireLazy/*r*/ / 2, POPAnimation/*c*/.top = -D / 2), global/*e*/ = React/*u*/.createElement(View/*h*/, {
+                        style: [T.arrowContainer, POPAnimation/*c*/]
+                    }, React/*u*/.createElement(View/*h*/, {
+                        style: [T.arrow, StyleSheet/*p*/]
                     }))
                 }
-                var f = null,
-                    m = [T.content];
+                var clamp/*f*/ = null,
+                    createStrictShapeTypeChecker/*m*/ = [T.content];
                 if (this.props.modal) {
-                    var _ = [P[this.state.modalState]];
-                    this.props.modalBackgroundColor && _.push([{
+                    var keyOf/*_*/ = [P[this.state.modalState]];
+                    this.props.modalBackgroundColor && keyOf/*_*/.push([{
                         backgroundColor: this.props.modalBackgroundColor
-                    }]), f = u.createElement(d, {
+                    }]), clamp/*f*/ = React/*u*/.createElement(TouchableWithoutFeedback/*d*/, {
                         onPress: this.closeWithTouchEvent
-                    }, u.createElement(h, {
+                    }, React/*u*/.createElement(View/*h*/, {
                         ref: M,
-                        style: _
-                    })), m.push(T.contentBorder)
+                        style: keyOf/*_*/
+                    })), createStrictShapeTypeChecker/*m*/.push(T.contentBorder)
                 }
-                return u.createElement(l, null, f, u.createElement(h, {
+                return React/*u*/.createElement(ModalFullscreenView/*l*/, null, clamp/*f*/, React/*u*/.createElement(View/*h*/, {
                     ref: L,
-                    pointerEvents: h.pointerEvents.boxNone,
+                    pointerEvents: View/*h*/.pointerEvents.boxNone,
                     style: [I, requireDynamic/*n*/, this.props.style]
-                }, u.createElement(h, {
+                }, React/*u*/.createElement(View/*h*/, {
                     style: require/*t*/
-                }, global/*e*/, u.createElement(h, {
-                    style: m
+                }, global/*e*/, React/*u*/.createElement(View/*h*/, {
+                    style: createStrictShapeTypeChecker/*m*/
                 }, this.props.contentFactory()))))
             }
         }),
         R = 10,
-        w = s.createIdentityMatrix();
-    s.reuseRotateZCommand(w, Math.PI / 4);
+        w = MatrixMath/*s*/.createIdentityMatrix();
+    MatrixMath/*s*/.reuseRotateZCommand(w, Math.PI / 4);
     var C = "white",
         E = .6,
         D = Math.sqrt(2 * R * R),
-        T = p.create({
+        T = StyleSheet/*p*/.create({
             darkening: {
                 backgroundColor: "black",
                 opacity: 0,
@@ -224,7 +224,7 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
             separator: {
                 height: 1,
                 marginHorizontal: 20,
-                backgroundColor: a.separator
+                backgroundColor: FIGColors/*a*/.separator
             },
             content: {
                 backgroundColor: C,
@@ -234,43 +234,43 @@ __d("Popover",["POPAnimationMixin","FIGColors","MatrixMath","ModalFullscreenView
                 borderRadius: 6
             }
         }),
-        x = [l.style, T.darkening, T.darkeningOpen],
+        x = [ModalFullscreenView/*l*/.style, T.darkening, T.darkeningOpen],
         P = {
             open: x,
             closing: x,
             closed: T.darkening,
-            opening: [l.style, T.darkening]
+            opening: [ModalFullscreenView/*l*/.style, T.darkening]
         },
-        I = [l.style, T.modal],
-        F = y({
+        I = [ModalFullscreenView/*l*/.style, T.modal],
+        F = keyMirror/*y*/({
             closed: null,
             opening: null,
             open: null,
             closing: null
         }),
-        L = _({
+        L = keyOf/*_*/({
             animContainerRef: null
         }),
-        M = _({
+        M = keyOf/*_*/({
             darkRef: null
         }),
         Q = {
-            property: c.Properties.opacity,
+            property: POPAnimation/*c*/.Properties.opacity,
             toValue: E
         },
         A = {
-            property: c.Properties.opacity,
+            property: POPAnimation/*c*/.Properties.opacity,
             toValue: 0
         },
         k = {
-            property: c.Properties.scaleXY,
+            property: POPAnimation/*c*/.Properties.scaleXY,
             fromValue: [0, 0],
             toValue: [1, 1],
             velocity: [10, 10],
             springBounciness: 8
         },
         O = {
-            property: c.Properties.scaleXY,
+            property: POPAnimation/*c*/.Properties.scaleXY,
             toValue: [0, 0],
             velocity: [-20, -20],
             springBounciness: 0

@@ -1,17 +1,17 @@
 __d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ReactPropTypes"),
-        a = require/*t*/("ViewStylePropTypes"),
-        s = require/*t*/("merge"),
-        l = s(a, {
-            fontFamily: o.string,
-            fontSize: o.number,
-            fontWeight: o.oneOf(["normal", "bold"]),
-            lineHeight: o.number,
-            color: o.string,
-            containerBackgroundColor: o.string,
-            textAlign: o.oneOf(["auto", "left", "right", "center"]),
-            writingDirection: o.oneOf(["auto", "ltr", "rtl"])
+    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
+        ViewStylePropTypes/*a*/ = require/*t*/("ViewStylePropTypes"),
+        merge/*s*/ = require/*t*/("merge"),
+        l = merge/*s*/(ViewStylePropTypes/*a*/, {
+            fontFamily: ReactPropTypes/*o*/.string,
+            fontSize: ReactPropTypes/*o*/.number,
+            fontWeight: ReactPropTypes/*o*/.oneOf(["normal", "bold"]),
+            lineHeight: ReactPropTypes/*o*/.number,
+            color: ReactPropTypes/*o*/.string,
+            containerBackgroundColor: ReactPropTypes/*o*/.string,
+            textAlign: ReactPropTypes/*o*/.oneOf(["auto", "left", "right", "center"]),
+            writingDirection: ReactPropTypes/*o*/.oneOf(["auto", "ltr", "rtl"])
         }),
         u = Object.keys({
             padding: null,

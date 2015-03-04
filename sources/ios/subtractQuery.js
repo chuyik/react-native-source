@@ -7,7 +7,7 @@ __d("subtractQuery",["GraphQL_EXPERIMENTAL"],function (global/*e*/, require/*t*/
         if (!f(requireDynamic/*n*/, requireLazy/*r*/)) return global/*e*/;
         var module/*i*/ = requireDynamic/*n*/.isRefQueryDependency(),
             o = a(requireDynamic/*n*/, [requireLazy/*r*/], module/*i*/);
-        return o === requireDynamic/*n*/ ? global/*e*/ : o ? !module/*i*/ && l(o) ? null : new g.QueryWithValues(o) : null
+        return o === requireDynamic/*n*/ ? global/*e*/ : o ? !module/*i*/ && l(o) ? null : new GraphQL_EXPERIMENTAL/*g*/.QueryWithValues(o) : null
     }
 
     function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
@@ -103,7 +103,7 @@ __d("subtractQuery",["GraphQL_EXPERIMENTAL"],function (global/*e*/, require/*t*/
             o !== requireLazy/*r*/ && (requireDynamic/*n*/ = requireDynamic/*n*/ || global/*e*/.slice(0, module/*i*/)), null !== requireDynamic/*n*/ && null !== o && requireDynamic/*n*/.push(o)
         }), requireDynamic/*n*/ ? 0 === requireDynamic/*n*/.length ? null : requireDynamic/*n*/ : global/*e*/
     }
-    var g = require/*t*/("GraphQL_EXPERIMENTAL"),
+    var GraphQL_EXPERIMENTAL/*g*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
         _ = Array.prototype.push;
     module/*i*/.exports = o
 });

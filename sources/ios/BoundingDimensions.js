@@ -4,9 +4,9 @@ __d("BoundingDimensions",["PooledClass"],function (global/*e*/, require/*t*/, re
     function o(global/*e*/, require/*t*/) {
         this.width = global/*e*/, this.height = require/*t*/
     }
-    var a = require/*t*/("PooledClass"),
-        s = a.twoArgumentPooler;
+    var PooledClass/*a*/ = require/*t*/("PooledClass"),
+        s = PooledClass/*a*/.twoArgumentPooler;
     o.getPooledFromElement = function(global/*e*/) {
         return o.getPooled(global/*e*/.offsetWidth, global/*e*/.offsetHeight)
-    }, a.addPoolingTo(o, s), module/*i*/.exports = o
+    }, PooledClass/*a*/.addPoolingTo(o, s), module/*i*/.exports = o
 });

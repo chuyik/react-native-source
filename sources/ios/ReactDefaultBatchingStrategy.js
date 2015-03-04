@@ -4,21 +4,21 @@ __d("ReactDefaultBatchingStrategy",["ReactUpdates","Transaction","emptyFunction"
     function o() {
         this.reinitializeTransaction()
     }
-    var a = require/*t*/("ReactUpdates"),
-        s = require/*t*/("Transaction"),
-        l = require/*t*/("emptyFunction"),
+    var ReactUpdates/*a*/ = require/*t*/("ReactUpdates"),
+        Transaction/*s*/ = require/*t*/("Transaction"),
+        emptyFunction/*l*/ = require/*t*/("emptyFunction"),
         u = {
-            initialize: l,
+            initialize: emptyFunction/*l*/,
             close: function() {
                 h.isBatchingUpdates = !1
             }
         },
         c = {
-            initialize: l,
-            close: a.flushBatchedUpdates.bind(a)
+            initialize: emptyFunction/*l*/,
+            close: ReactUpdates/*a*/.flushBatchedUpdates.bind(ReactUpdates/*a*/)
         },
         p = [c, u];
-    Object.assign(o.prototype, s.Mixin, {
+    Object.assign(o.prototype, Transaction/*s*/.Mixin, {
         getTransactionWrappers: function() {
             return p
         }

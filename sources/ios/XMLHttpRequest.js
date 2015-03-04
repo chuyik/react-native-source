@@ -4,8 +4,8 @@ __d("XMLHttpRequest",["NativeModulesDeprecated","crc32"],function (global/*e*/, 
     function o() {
         this.UNSENT = 0, this.OPENED = 1, this.HEADERS_RECEIVED = 2, this.LOADING = 3, this.DONE = 4, this.onreadystatechange = void 0, this.upload = void 0, this.readyState = this.UNSENT, this.responseHeaders = void 0, this.responseText = void 0, this.status = void 0, this.$XMLHttpRequest_method = null, this.$XMLHttpRequest_url = null, this.$XMLHttpRequest_headers = {}, this.$XMLHttpRequest_sent = !1, this.$XMLHttpRequest_aborted = !1
     }
-    var a = require/*t*/("NativeModulesDeprecated").RKDataManager,
-        s = require/*t*/("crc32");
+    var NativeModulesDeprecated/*a*/ = require/*t*/("NativeModulesDeprecated").RKDataManager,
+        crc32/*s*/ = require/*t*/("crc32");
     o.prototype.getAllResponseHeaders = function() {
         return ""
     }, o.prototype.getResponseHeader = function() {
@@ -19,12 +19,12 @@ __d("XMLHttpRequest",["NativeModulesDeprecated","crc32"],function (global/*e*/, 
     }, o.prototype.send = function(global/*e*/) {
         if (this.readyState !== this.OPENED) throw new Error("Request has not been opened");
         if (this.$XMLHttpRequest_sent) throw new Error("Request has already been sent");
-        this.$XMLHttpRequest_sent = !0, a.queryData("http", JSON.stringify({
+        this.$XMLHttpRequest_sent = !0, NativeModulesDeprecated/*a*/.queryData("http", JSON.stringify({
             method: this.$XMLHttpRequest_method,
             url: this.$XMLHttpRequest_url,
             data: global/*e*/,
             headers: this.$XMLHttpRequest_headers
-        }), "h" + s(this.$XMLHttpRequest_method + "|" + this.$XMLHttpRequest_url + "|" + global/*e*/), function(global/*e*/) {
+        }), "h" + crc32/*s*/(this.$XMLHttpRequest_method + "|" + this.$XMLHttpRequest_url + "|" + global/*e*/), function(global/*e*/) {
             global/*e*/ = JSON.parse(global/*e*/), this.$XMLHttpRequest_callback(global/*e*/.status, global/*e*/.responseHeaders, global/*e*/.responseText)
         }.bind(this))
     }, o.prototype.abort = function() {

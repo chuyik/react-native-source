@@ -2,8 +2,8 @@ __d("Bundler",["invariant","renderApplication","RCTRenderingPerf"],function (glo
     "use strict";
 
     function o() {}
-    var a = require/*t*/("invariant"),
-        s = require/*t*/("renderApplication");
+    var invariant/*a*/ = require/*t*/("invariant"),
+        renderApplication/*s*/ = require/*t*/("renderApplication");
     __DEV__ && require/*t*/("RCTRenderingPerf");
     var l = {};
     o.registerConfig = function(global/*e*/) {
@@ -11,7 +11,7 @@ __d("Bundler",["invariant","renderApplication","RCTRenderingPerf"],function (glo
     }, o.registerComponent = function(global/*e*/, require/*t*/) {
         return l[global/*e*/] = {
             run: function(global/*e*/) {
-                return s(require/*t*/(), global/*e*/.initialProps, global/*e*/.rootTag)
+                return renderApplication/*s*/(require/*t*/(), global/*e*/.initialProps, global/*e*/.rootTag)
             }
         }, global/*e*/
     }, o.registerRunnable = function(global/*e*/, require/*t*/) {
@@ -19,6 +19,6 @@ __d("Bundler",["invariant","renderApplication","RCTRenderingPerf"],function (glo
             run: require/*t*/
         }, global/*e*/
     }, o.runApplication = function(global/*e*/, require/*t*/) {
-        console.log('Running application "' + global/*e*/ + '" with appParams: ', require/*t*/), l[global/*e*/] && l[global/*e*/].run || a(0, "Application " + global/*e*/ + " has not been registered."), l[global/*e*/].run(require/*t*/)
+        console.log('Running application "' + global/*e*/ + '" with appParams: ', require/*t*/), l[global/*e*/] && l[global/*e*/].run || invariant/*a*/(0, "Application " + global/*e*/ + " has not been registered."), l[global/*e*/].run(require/*t*/)
     }, module/*i*/.exports = o
 });

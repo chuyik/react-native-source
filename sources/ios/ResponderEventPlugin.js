@@ -2,32 +2,32 @@ __d("ResponderEventPlugin",["EventConstants","EventPluginUtils","EventPropagator
     "use strict";
 
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = y(global/*e*/) ? x.startShouldSetResponder : v(global/*e*/) ? x.moveShouldSetResponder : global/*e*/ === l.topLevelTypes.topSelectionChange ? x.selectionChangeShouldSetResponder : x.scrollShouldSetResponder,
-            module/*i*/ = C ? d._getFirstCommonAncestorID(C, require/*t*/) : require/*t*/,
+        var requireLazy/*r*/ = y(global/*e*/) ? x.startShouldSetResponder : v(global/*e*/) ? x.moveShouldSetResponder : global/*e*/ === EventConstants/*l*/.topLevelTypes.topSelectionChange ? x.selectionChangeShouldSetResponder : x.scrollShouldSetResponder,
+            module/*i*/ = C ? ReactInstanceHandles/*d*/._getFirstCommonAncestorID(C, require/*t*/) : require/*t*/,
             o = module/*i*/ === C,
-            a = h.getPooled(requireLazy/*r*/, module/*i*/, requireDynamic/*n*/);
-        a.touchHistory = f.touchHistory, o ? c.accumulateTwoPhaseDispatchesSkipTarget(a) : c.accumulateTwoPhaseDispatches(a);
+            a = ResponderSyntheticEvent/*h*/.getPooled(requireLazy/*r*/, module/*i*/, requireDynamic/*n*/);
+        a.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, o ? EventPropagators/*c*/.accumulateTwoPhaseDispatchesSkipTarget(a) : EventPropagators/*c*/.accumulateTwoPhaseDispatches(a);
         var s = w(a);
         if (a.isPersistent() || a.constructor.release(a), !s || s === C) return null;
-        var u, p = h.getPooled(x.responderGrant, s, requireDynamic/*n*/);
-        if (p.touchHistory = f.touchHistory, c.accumulateDirectDispatches(p), C) {
-            var g = h.getPooled(x.responderTerminationRequest, C, requireDynamic/*n*/);
-            g.touchHistory = f.touchHistory, c.accumulateDirectDispatches(g);
-            var _ = !R(g) || b(g);
-            if (g.isPersistent() || g.constructor.release(g), _) {
+        var EventPluginUtils/*u*/, NodeHandle/*p*/ = ResponderSyntheticEvent/*h*/.getPooled(x.responderGrant, s, requireDynamic/*n*/);
+        if (NodeHandle/*p*/.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(NodeHandle/*p*/), C) {
+            var invariant/*g*/ = ResponderSyntheticEvent/*h*/.getPooled(x.responderTerminationRequest, C, requireDynamic/*n*/);
+            invariant/*g*/.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(invariant/*g*/);
+            var keyOf/*_*/ = !R(invariant/*g*/) || b(invariant/*g*/);
+            if (invariant/*g*/.isPersistent() || invariant/*g*/.constructor.release(invariant/*g*/), keyOf/*_*/) {
                 var S = x.responderTerminate,
-                    E = h.getPooled(S, C, requireDynamic/*n*/);
-                E.touchHistory = f.touchHistory, c.accumulateDirectDispatches(E), u = m(u, [p, E]), T(s)
+                    E = ResponderSyntheticEvent/*h*/.getPooled(S, C, requireDynamic/*n*/);
+                E.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(E), EventPluginUtils/*u*/ = accumulate/*m*/(EventPluginUtils/*u*/, [NodeHandle/*p*/, E]), T(s)
             } else {
-                var D = h.getPooled(x.responderReject, s, requireDynamic/*n*/);
-                D.touchHistory = f.touchHistory, c.accumulateDirectDispatches(D), u = m(u, D)
+                var D = ResponderSyntheticEvent/*h*/.getPooled(x.responderReject, s, requireDynamic/*n*/);
+                D.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(D), EventPluginUtils/*u*/ = accumulate/*m*/(EventPluginUtils/*u*/, D)
             }
-        } else u = m(u, p), T(s);
-        return u
+        } else EventPluginUtils/*u*/ = accumulate/*m*/(EventPluginUtils/*u*/, NodeHandle/*p*/), T(s);
+        return EventPluginUtils/*u*/
     }
 
     function a(global/*e*/, require/*t*/) {
-        return require/*t*/ && (global/*e*/ === l.topLevelTypes.topScroll || E > 0 && global/*e*/ === l.topLevelTypes.topSelectionChange || y(global/*e*/) || v(global/*e*/))
+        return require/*t*/ && (global/*e*/ === EventConstants/*l*/.topLevelTypes.topScroll || E > 0 && global/*e*/ === EventConstants/*l*/.topLevelTypes.topSelectionChange || y(global/*e*/) || v(global/*e*/))
     }
 
     function s(global/*e*/) {
@@ -37,28 +37,28 @@ __d("ResponderEventPlugin",["EventConstants","EventPluginUtils","EventPropagator
             var requireLazy/*r*/ = require/*t*/[requireDynamic/*n*/],
                 module/*i*/ = requireLazy/*r*/.target;
             if (null !== module/*i*/ && void 0 !== module/*i*/ && 0 !== module/*i*/) {
-                var o = d._getFirstCommonAncestorID(C, p.getRootNodeID(module/*i*/));
+                var o = ReactInstanceHandles/*d*/._getFirstCommonAncestorID(C, NodeHandle/*p*/.getRootNodeID(module/*i*/));
                 if (o === C) return !1
             }
         }
         return !0
     }
-    var l = require/*t*/("EventConstants"),
-        u = require/*t*/("EventPluginUtils"),
-        c = require/*t*/("EventPropagators"),
-        p = require/*t*/("NodeHandle"),
-        d = require/*t*/("ReactInstanceHandles"),
-        h = require/*t*/("ResponderSyntheticEvent"),
-        f = require/*t*/("ResponderTouchHistoryStore"),
-        m = require/*t*/("accumulate"),
-        g = require/*t*/("invariant"),
-        _ = require/*t*/("keyOf"),
-        y = u.isStartish,
-        v = u.isMoveish,
-        S = u.isEndish,
-        b = u.executeDirectDispatch,
-        R = u.hasDispatches,
-        w = u.executeDispatchesInOrderStopAtTrue,
+    var EventConstants/*l*/ = require/*t*/("EventConstants"),
+        EventPluginUtils/*u*/ = require/*t*/("EventPluginUtils"),
+        EventPropagators/*c*/ = require/*t*/("EventPropagators"),
+        NodeHandle/*p*/ = require/*t*/("NodeHandle"),
+        ReactInstanceHandles/*d*/ = require/*t*/("ReactInstanceHandles"),
+        ResponderSyntheticEvent/*h*/ = require/*t*/("ResponderSyntheticEvent"),
+        ResponderTouchHistoryStore/*f*/ = require/*t*/("ResponderTouchHistoryStore"),
+        accumulate/*m*/ = require/*t*/("accumulate"),
+        invariant/*g*/ = require/*t*/("invariant"),
+        keyOf/*_*/ = require/*t*/("keyOf"),
+        y = EventPluginUtils/*u*/.isStartish,
+        v = EventPluginUtils/*u*/.isMoveish,
+        S = EventPluginUtils/*u*/.isEndish,
+        b = EventPluginUtils/*u*/.executeDirectDispatch,
+        R = EventPluginUtils/*u*/.hasDispatches,
+        w = EventPluginUtils/*u*/.executeDispatchesInOrderStopAtTrue,
         C = null,
         E = 0,
         D = 0,
@@ -69,81 +69,81 @@ __d("ResponderEventPlugin",["EventConstants","EventPluginUtils","EventPropagator
         x = {
             startShouldSetResponder: {
                 phasedRegistrationNames: {
-                    bubbled: _({
+                    bubbled: keyOf/*_*/({
                         onStartShouldSetResponder: null
                     }),
-                    captured: _({
+                    captured: keyOf/*_*/({
                         onStartShouldSetResponderCapture: null
                     })
                 }
             },
             scrollShouldSetResponder: {
                 phasedRegistrationNames: {
-                    bubbled: _({
+                    bubbled: keyOf/*_*/({
                         onScrollShouldSetResponder: null
                     }),
-                    captured: _({
+                    captured: keyOf/*_*/({
                         onScrollShouldSetResponderCapture: null
                     })
                 }
             },
             selectionChangeShouldSetResponder: {
                 phasedRegistrationNames: {
-                    bubbled: _({
+                    bubbled: keyOf/*_*/({
                         onSelectionChangeShouldSetResponder: null
                     }),
-                    captured: _({
+                    captured: keyOf/*_*/({
                         onSelectionChangeShouldSetResponderCapture: null
                     })
                 }
             },
             moveShouldSetResponder: {
                 phasedRegistrationNames: {
-                    bubbled: _({
+                    bubbled: keyOf/*_*/({
                         onMoveShouldSetResponder: null
                     }),
-                    captured: _({
+                    captured: keyOf/*_*/({
                         onMoveShouldSetResponderCapture: null
                     })
                 }
             },
             responderStart: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderStart: null
                 })
             },
             responderMove: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderMove: null
                 })
             },
             responderEnd: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderEnd: null
                 })
             },
             responderRelease: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderRelease: null
                 })
             },
             responderTerminationRequest: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderTerminationRequest: null
                 })
             },
             responderGrant: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderGrant: null
                 })
             },
             responderReject: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderReject: null
                 })
             },
             responderTerminate: {
-                registrationName: _({
+                registrationName: keyOf/*_*/({
                     onResponderTerminate: null
                 })
             }
@@ -154,24 +154,24 @@ __d("ResponderEventPlugin",["EventConstants","EventPluginUtils","EventPropagator
             },
             eventTypes: x,
             extractEvents: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                y(global/*e*/) ? E += 1 : S(global/*e*/) && (E -= 1, E >= 0 || g(0, "Ended a touch event which was not counted in trackedTouchCount.")), f.recordTouchTrack(global/*e*/, requireLazy/*r*/);
+                y(global/*e*/) ? E += 1 : S(global/*e*/) && (E -= 1, E >= 0 || invariant/*g*/(0, "Ended a touch event which was not counted in trackedTouchCount.")), ResponderTouchHistoryStore/*f*/.recordTouchTrack(global/*e*/, requireLazy/*r*/);
                 var module/*i*/ = a(global/*e*/, requireDynamic/*n*/) ? o(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) : null,
-                    u = C && y(global/*e*/),
-                    p = C && v(global/*e*/),
-                    d = C && S(global/*e*/),
-                    _ = u ? x.responderStart : p ? x.responderMove : d ? x.responderEnd : null;
-                if (_) {
-                    var b = h.getPooled(_, C, requireLazy/*r*/);
-                    b.touchHistory = f.touchHistory, c.accumulateDirectDispatches(b), module/*i*/ = m(module/*i*/, b)
+                    EventPluginUtils/*u*/ = C && y(global/*e*/),
+                    NodeHandle/*p*/ = C && v(global/*e*/),
+                    ReactInstanceHandles/*d*/ = C && S(global/*e*/),
+                    keyOf/*_*/ = EventPluginUtils/*u*/ ? x.responderStart : NodeHandle/*p*/ ? x.responderMove : ReactInstanceHandles/*d*/ ? x.responderEnd : null;
+                if (keyOf/*_*/) {
+                    var b = ResponderSyntheticEvent/*h*/.getPooled(keyOf/*_*/, C, requireLazy/*r*/);
+                    b.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(b), module/*i*/ = accumulate/*m*/(module/*i*/, b)
                 }
-                var R = C && global/*e*/ === l.topLevelTypes.topTouchCancel,
+                var R = C && global/*e*/ === EventConstants/*l*/.topLevelTypes.topTouchCancel,
                     w = C && !R && S(global/*e*/) && s(requireLazy/*r*/),
                     I = R ? x.responderTerminate : w ? x.responderRelease : null;
                 if (I) {
-                    var F = h.getPooled(I, C, requireLazy/*r*/);
-                    F.touchHistory = f.touchHistory, c.accumulateDirectDispatches(F), module/*i*/ = m(module/*i*/, F), T(null)
+                    var F = ResponderSyntheticEvent/*h*/.getPooled(I, C, requireLazy/*r*/);
+                    F.touchHistory = ResponderTouchHistoryStore/*f*/.touchHistory, EventPropagators/*c*/.accumulateDirectDispatches(F), module/*i*/ = accumulate/*m*/(module/*i*/, F), T(null)
                 }
-                var L = f.touchHistory.numberActiveTouches;
+                var L = ResponderTouchHistoryStore/*f*/.touchHistory.numberActiveTouches;
                 return P.GlobalInteractionHandler && L !== D && P.GlobalInteractionHandler.onChange(L), D = L, module/*i*/
             },
             GlobalResponderHandler: null,

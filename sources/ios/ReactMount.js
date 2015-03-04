@@ -2,7 +2,7 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
     "use strict";
 
     function o(global/*e*/) {
-        var require/*t*/ = w(global/*e*/);
+        var require/*t*/ = getReactRootElementInContainer/*w*/(global/*e*/);
         return require/*t*/ && G.getID(require/*t*/)
     }
 
@@ -11,7 +11,7 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
         if (require/*t*/)
             if (F.hasOwnProperty(require/*t*/)) {
                 var requireDynamic/*n*/ = F[require/*t*/];
-                requireDynamic/*n*/ !== global/*e*/ && (c(requireDynamic/*n*/, require/*t*/) && E(0, "ReactMount: Two valid but unequal nodes with the same `%s`: %s", I, require/*t*/), F[require/*t*/] = global/*e*/)
+                requireDynamic/*n*/ !== global/*e*/ && (c(requireDynamic/*n*/, require/*t*/) && invariant/*E*/(0, "ReactMount: Two valid but unequal nodes with the same `%s`: %s", I, require/*t*/), F[require/*t*/] = global/*e*/)
             } else F[require/*t*/] = global/*e*/;
         return require/*t*/
     }
@@ -31,9 +31,9 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
 
     function c(global/*e*/, require/*t*/) {
         if (global/*e*/) {
-            s(global/*e*/) !== require/*t*/ && E(0, "ReactMount: Unexpected modification of `%s`", I);
+            s(global/*e*/) !== require/*t*/ && invariant/*E*/(0, "ReactMount: Unexpected modification of `%s`", I);
             var requireDynamic/*n*/ = G.findReactContainerForID(require/*t*/);
-            if (requireDynamic/*n*/ && b(requireDynamic/*n*/, global/*e*/)) return !0
+            if (requireDynamic/*n*/ && containsNode/*b*/(requireDynamic/*n*/, global/*e*/)) return !0
         }
         return !1
     }
@@ -48,27 +48,27 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
     }
 
     function h(global/*e*/) {
-        N = null, v.traverseAncestors(global/*e*/, d);
+        N = null, ReactInstanceHandles/*v*/.traverseAncestors(global/*e*/, d);
         var require/*t*/ = N;
         return N = null, require/*t*/
     }
-    var f = require/*t*/("DOMProperty"),
-        m = require/*t*/("ReactBrowserEventEmitter"),
-        g = require/*t*/("ReactCurrentOwner"),
-        _ = require/*t*/("ReactElement"),
-        y = require/*t*/("ReactLegacyElement"),
-        v = require/*t*/("ReactInstanceHandles"),
-        S = require/*t*/("ReactPerf"),
-        b = require/*t*/("containsNode"),
-        R = require/*t*/("deprecated"),
-        w = require/*t*/("getReactRootElementInContainer"),
-        C = require/*t*/("instantiateReactComponent"),
-        E = require/*t*/("invariant"),
-        D = require/*t*/("shouldUpdateReactComponent"),
-        T = require/*t*/("warning"),
-        x = y.wrapCreateElement(_.createElement),
-        P = v.SEPARATOR,
-        I = f.ID_ATTRIBUTE_NAME,
+    var DOMProperty/*f*/ = require/*t*/("DOMProperty"),
+        ReactBrowserEventEmitter/*m*/ = require/*t*/("ReactBrowserEventEmitter"),
+        ReactCurrentOwner/*g*/ = require/*t*/("ReactCurrentOwner"),
+        ReactElement/*_*/ = require/*t*/("ReactElement"),
+        ReactLegacyElement/*y*/ = require/*t*/("ReactLegacyElement"),
+        ReactInstanceHandles/*v*/ = require/*t*/("ReactInstanceHandles"),
+        ReactPerf/*S*/ = require/*t*/("ReactPerf"),
+        containsNode/*b*/ = require/*t*/("containsNode"),
+        deprecated/*R*/ = require/*t*/("deprecated"),
+        getReactRootElementInContainer/*w*/ = require/*t*/("getReactRootElementInContainer"),
+        instantiateReactComponent/*C*/ = require/*t*/("instantiateReactComponent"),
+        invariant/*E*/ = require/*t*/("invariant"),
+        shouldUpdateReactComponent/*D*/ = require/*t*/("shouldUpdateReactComponent"),
+        warning/*T*/ = require/*t*/("warning"),
+        x = ReactLegacyElement/*y*/.wrapCreateElement(ReactElement/*_*/.createElement),
+        P = ReactInstanceHandles/*v*/.SEPARATOR,
+        I = DOMProperty/*f*/.ID_ATTRIBUTE_NAME,
         F = {},
         L = 1,
         M = 9,
@@ -86,28 +86,28 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
                 var module/*i*/ = require/*t*/.props;
                 return G.scrollMonitor(requireDynamic/*n*/, function() {
                     global/*e*/.replaceProps(module/*i*/, requireLazy/*r*/)
-                }), __DEV__ && (k[o(requireDynamic/*n*/)] = w(requireDynamic/*n*/)), global/*e*/
+                }), __DEV__ && (k[o(requireDynamic/*n*/)] = getReactRootElementInContainer/*w*/(requireDynamic/*n*/)), global/*e*/
             },
             _registerComponent: function(global/*e*/, require/*t*/) {
-                (!require/*t*/ || require/*t*/.nodeType !== L && require/*t*/.nodeType !== M) && E(0, "_registerComponent(...): Target container is not a DOM element."), m.ensureScrollValueMonitoring();
+                (!require/*t*/ || require/*t*/.nodeType !== L && require/*t*/.nodeType !== M) && invariant/*E*/(0, "_registerComponent(...): Target container is not a DOM element."), ReactBrowserEventEmitter/*m*/.ensureScrollValueMonitoring();
                 var requireDynamic/*n*/ = G.registerContainer(require/*t*/);
                 return Q[requireDynamic/*n*/] = global/*e*/, requireDynamic/*n*/
             },
-            _renderNewRootComponent: S.measure("ReactMount", "_renderNewRootComponent", function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                T(null == g.current, "_renderNewRootComponent(): Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.");
-                var requireLazy/*r*/ = C(global/*e*/, null),
+            _renderNewRootComponent: ReactPerf/*S*/.measure("ReactMount", "_renderNewRootComponent", function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                warning/*T*/(null == ReactCurrentOwner/*g*/.current, "_renderNewRootComponent(): Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.");
+                var requireLazy/*r*/ = instantiateReactComponent/*C*/(global/*e*/, null),
                     module/*i*/ = G._registerComponent(requireLazy/*r*/, require/*t*/);
-                return requireLazy/*r*/.mountComponentIntoNode(module/*i*/, require/*t*/, requireDynamic/*n*/), __DEV__ && (k[module/*i*/] = w(require/*t*/)), requireLazy/*r*/
+                return requireLazy/*r*/.mountComponentIntoNode(module/*i*/, require/*t*/, requireDynamic/*n*/), __DEV__ && (k[module/*i*/] = getReactRootElementInContainer/*w*/(require/*t*/)), requireLazy/*r*/
             }),
             render: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                _.isValidElement(global/*e*/) || E(0, "renderComponent(): Invalid component element.%s", "string" == typeof global/*e*/ ? " Instead of passing an element string, make sure to instantiate it by passing it to React.createElement." : y.isValidFactory(global/*e*/) ? " Instead of passing a component class, make sure to instantiate it by passing it to React.createElement." : "undefined" != typeof global/*e*/.props ? " This may be caused by unintentionally loading two independent copies of React." : "");
+                ReactElement/*_*/.isValidElement(global/*e*/) || invariant/*E*/(0, "renderComponent(): Invalid component element.%s", "string" == typeof global/*e*/ ? " Instead of passing an element string, make sure to instantiate it by passing it to React.createElement." : ReactLegacyElement/*y*/.isValidFactory(global/*e*/) ? " Instead of passing a component class, make sure to instantiate it by passing it to React.createElement." : "undefined" != typeof global/*e*/.props ? " This may be caused by unintentionally loading two independent copies of React." : "");
                 var requireLazy/*r*/ = Q[o(require/*t*/)];
                 if (requireLazy/*r*/) {
                     var module/*i*/ = requireLazy/*r*/._currentElement;
-                    if (D(module/*i*/, global/*e*/)) return G._updateRootComponent(requireLazy/*r*/, global/*e*/, require/*t*/, requireDynamic/*n*/);
+                    if (shouldUpdateReactComponent/*D*/(module/*i*/, global/*e*/)) return G._updateRootComponent(requireLazy/*r*/, global/*e*/, require/*t*/, requireDynamic/*n*/);
                     G.unmountComponentAtNode(require/*t*/)
                 }
-                var a = w(require/*t*/),
+                var a = getReactRootElementInContainer/*w*/(require/*t*/),
                     s = a && G.isRenderedByReact(a),
                     l = s && !requireLazy/*r*/,
                     u = G._renderNewRootComponent(global/*e*/, require/*t*/, l);
@@ -119,14 +119,14 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
             },
             constructAndRenderComponentByID: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 var requireLazy/*r*/ = document.getElementById(requireDynamic/*n*/);
-                return requireLazy/*r*/ || E(0, 'Tried to get element with id of "%s" but it is not present on the page.', requireDynamic/*n*/), G.constructAndRenderComponent(global/*e*/, require/*t*/, requireLazy/*r*/)
+                return requireLazy/*r*/ || invariant/*E*/(0, 'Tried to get element with id of "%s" but it is not present on the page.', requireDynamic/*n*/), G.constructAndRenderComponent(global/*e*/, require/*t*/, requireLazy/*r*/)
             },
             registerContainer: function(global/*e*/) {
                 var require/*t*/ = o(global/*e*/);
-                return require/*t*/ && (require/*t*/ = v.getReactRootIDFromNodeID(require/*t*/)), require/*t*/ || (require/*t*/ = v.createReactRootID()), A[require/*t*/] = global/*e*/, require/*t*/
+                return require/*t*/ && (require/*t*/ = ReactInstanceHandles/*v*/.getReactRootIDFromNodeID(require/*t*/)), require/*t*/ || (require/*t*/ = ReactInstanceHandles/*v*/.createReactRootID()), A[require/*t*/] = global/*e*/, require/*t*/
             },
             unmountComponentAtNode: function(global/*e*/) {
-                T(null == g.current, "unmountComponentAtNode(): Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.");
+                warning/*T*/(null == ReactCurrentOwner/*g*/.current, "unmountComponentAtNode(): Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.");
                 var require/*t*/ = o(global/*e*/),
                     requireDynamic/*n*/ = Q[require/*t*/];
                 return requireDynamic/*n*/ ? (G.unmountComponentFromNode(requireDynamic/*n*/, global/*e*/), delete Q[require/*t*/], delete A[require/*t*/], __DEV__ && delete k[require/*t*/], !0) : !1
@@ -135,12 +135,12 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
                 for (global/*e*/.unmountComponent(), require/*t*/.nodeType === M && (require/*t*/ = require/*t*/.documentElement); require/*t*/.lastChild;) require/*t*/.removeChild(require/*t*/.lastChild)
             },
             findReactContainerForID: function(global/*e*/) {
-                var require/*t*/ = v.getReactRootIDFromNodeID(global/*e*/),
+                var require/*t*/ = ReactInstanceHandles/*v*/.getReactRootIDFromNodeID(global/*e*/),
                     requireDynamic/*n*/ = A[require/*t*/];
                 if (__DEV__) {
                     var requireLazy/*r*/ = k[require/*t*/];
                     if (requireLazy/*r*/ && requireLazy/*r*/.parentNode !== requireDynamic/*n*/) {
-                        s(requireLazy/*r*/) !== require/*t*/ && E(0, "ReactMount: Root element ID differed from reactRootID.");
+                        s(requireLazy/*r*/) !== require/*t*/ && invariant/*E*/(0, "ReactMount: Root element ID differed from reactRootID.");
                         var module/*i*/ = requireDynamic/*n*/.firstChild;
                         module/*i*/ && require/*t*/ === s(module/*i*/) ? k[require/*t*/] = module/*i*/ : console.warn("ReactMount: Root element has been removed from its original container. New container:", requireLazy/*r*/.parentNode)
                     }
@@ -170,11 +170,11 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
                 for (requireDynamic/*n*/[0] = module/*i*/.firstChild, requireDynamic/*n*/.length = 1; requireLazy/*r*/ < requireDynamic/*n*/.length;) {
                     for (var o, a = requireDynamic/*n*/[requireLazy/*r*/++]; a;) {
                         var s = G.getID(a);
-                        s ? require/*t*/ === s ? o = a : v.isAncestorIDOf(s, require/*t*/) && (requireDynamic/*n*/.length = requireLazy/*r*/ = 0, requireDynamic/*n*/.push(a.firstChild)) : requireDynamic/*n*/.push(a.firstChild), a = a.nextSibling
+                        s ? require/*t*/ === s ? o = a : ReactInstanceHandles/*v*/.isAncestorIDOf(s, require/*t*/) && (requireDynamic/*n*/.length = requireLazy/*r*/ = 0, requireDynamic/*n*/.push(a.firstChild)) : requireDynamic/*n*/.push(a.firstChild), a = a.nextSibling
                     }
                     if (o) return requireDynamic/*n*/.length = 0, o
                 }
-                requireDynamic/*n*/.length = 0, E(0, "findComponentRoot(..., %s): Unable to find element. This probably means the DOM was unexpectedly mutated (global/*e*/.g., by the browser), usually due to forgetting a <tbody> when using tables, nesting tags like <form>, <p>, or <a>, or using non-SVG elements in an <svg> parent. Try inspecting the child nodes of the element with React ID `%s`.", require/*t*/, G.getID(global/*e*/))
+                requireDynamic/*n*/.length = 0, invariant/*E*/(0, "findComponentRoot(..., %s): Unable to find element. This probably means the DOM was unexpectedly mutated (global/*e*/.ReactCurrentOwner/*g*/., by the browser), usually due to forgetting a <tbody> when using tables, nesting tags like <form>, <p>, or <a>, or using non-SVG elements in an <svg> parent. Try inspecting the child nodes of the element with React ID `%s`.", require/*t*/, G.getID(global/*e*/))
             },
             getReactRootID: o,
             getID: a,
@@ -182,5 +182,5 @@ __d("ReactMount",["DOMProperty","ReactBrowserEventEmitter","ReactCurrentOwner","
             getNode: u,
             purgeID: p
         };
-    G.renderComponent = R("ReactMount", "renderComponent", "render", this, G.render), module/*i*/.exports = G
+    G.renderComponent = deprecated/*R*/("ReactMount", "renderComponent", "render", this, G.render), module/*i*/.exports = G
 });

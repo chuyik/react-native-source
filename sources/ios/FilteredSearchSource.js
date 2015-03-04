@@ -3,10 +3,10 @@ __d("FilteredSearchSource",["AbstractSearchSource"],function (global/*e*/, requi
         "use strict";
         this.$FilteredSearchSource_filterFunc = global/*e*/, this.$FilteredSearchSource_searchSource = require/*t*/
     }
-    var a = require/*t*/("AbstractSearchSource");
-    for (var s in a) a.hasOwnProperty(s) && (o[s] = a[s]);
-    var l = null === a ? null : a.prototype;
-    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = a, o.prototype.bootstrapImpl = function(global/*e*/) {
+    var AbstractSearchSource/*a*/ = require/*t*/("AbstractSearchSource");
+    for (var s in AbstractSearchSource/*a*/) AbstractSearchSource/*a*/.hasOwnProperty(s) && (o[s] = AbstractSearchSource/*a*/[s]);
+    var l = null === AbstractSearchSource/*a*/ ? null : AbstractSearchSource/*a*/.prototype;
+    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = AbstractSearchSource/*a*/, o.prototype.bootstrapImpl = function(global/*e*/) {
         "use strict";
         this.$FilteredSearchSource_searchSource.bootstrap(global/*e*/)
     }, o.prototype.searchImpl = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {

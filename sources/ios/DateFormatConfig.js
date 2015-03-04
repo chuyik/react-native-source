@@ -1,6 +1,6 @@
 __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeModules").RKI18n,
+    var NativeModules/*o*/ = require/*t*/("NativeModules").RKI18n,
         a = {
             numericDateOrder: ["m", "d", "y"],
             numericDateSeparator: "/",
@@ -115,5 +115,5 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 31: "st"
             }
         };
-    module/*i*/.exports = o.dateFormatConfig || a
+    module/*i*/.exports = NativeModules/*o*/.dateFormatConfig || a
 });

@@ -1,38 +1,38 @@
 __d("THCommentPhotoAttachmentPreview",["Image","ImageStylePropTypes","React","StyleSheet","StyleSheetPropType","TouchableOpacity","View","ViewStylePropTypes","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Image"),
-        a = require/*t*/("ImageStylePropTypes"),
-        s = require/*t*/("React"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("StyleSheetPropType"),
-        c = require/*t*/("TouchableOpacity"),
-        p = require/*t*/("View"),
-        d = require/*t*/("ViewStylePropTypes"),
-        h = require/*t*/("ix"),
-        f = s.createClass({
+    var Image/*o*/ = require/*t*/("Image"),
+        ImageStylePropTypes/*a*/ = require/*t*/("ImageStylePropTypes"),
+        React/*s*/ = require/*t*/("React"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        StyleSheetPropType/*u*/ = require/*t*/("StyleSheetPropType"),
+        TouchableOpacity/*c*/ = require/*t*/("TouchableOpacity"),
+        View/*p*/ = require/*t*/("View"),
+        ViewStylePropTypes/*d*/ = require/*t*/("ViewStylePropTypes"),
+        ix/*h*/ = require/*t*/("ix"),
+        f = React/*s*/.createClass({
             displayName: "THCommentPhotoAttachmentPreview",
             propTypes: {
-                photoSource: s.PropTypes.object,
-                onRemoveAttachment: s.PropTypes.func,
-                style: u(a),
-                wrapperStyle: u(d)
+                photoSource: React/*s*/.PropTypes.object,
+                onRemoveAttachment: React/*s*/.PropTypes.func,
+                style: StyleSheetPropType/*u*/(ImageStylePropTypes/*a*/),
+                wrapperStyle: StyleSheetPropType/*u*/(ViewStylePropTypes/*d*/)
             },
             render: function() {
-                var global/*e*/ = this.props.onRemoveAttachment ? s.createElement(c, {
+                var global/*e*/ = this.props.onRemoveAttachment ? React/*s*/.createElement(TouchableOpacity/*c*/, {
                     onPress: this.props.onRemoveAttachment
-                }, s.createElement(o, {
-                    source: h("thAttachRemove"),
+                }, React/*s*/.createElement(Image/*o*/, {
+                    source: ix/*h*/("thAttachRemove"),
                     style: m.xIcon
                 })) : null;
-                return s.createElement(p, {
+                return React/*s*/.createElement(View/*p*/, {
                     style: this.props.wrapperStyle
-                }, s.createElement(o, {
+                }, React/*s*/.createElement(Image/*o*/, {
                     source: this.props.photoSource,
                     style: this.props.style
                 }), global/*e*/)
             }
         }),
-        m = l.create({
+        m = StyleSheet/*l*/.create({
             xIcon: {
                 width: 20,
                 height: 20,

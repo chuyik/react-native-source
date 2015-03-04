@@ -1,11 +1,11 @@
 __d("Touchable",["BoundingDimensions","Position","TouchEventUtils","keyMirror","queryLayoutByID"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("BoundingDimensions"),
-        a = require/*t*/("Position"),
-        s = require/*t*/("TouchEventUtils"),
-        l = require/*t*/("keyMirror"),
-        u = require/*t*/("queryLayoutByID"),
-        c = l({
+    var BoundingDimensions/*o*/ = require/*t*/("BoundingDimensions"),
+        Position/*a*/ = require/*t*/("Position"),
+        TouchEventUtils/*s*/ = require/*t*/("TouchEventUtils"),
+        keyMirror/*l*/ = require/*t*/("keyMirror"),
+        queryLayoutByID/*u*/ = require/*t*/("queryLayoutByID"),
+        c = keyMirror/*l*/({
             NOT_RESPONDER: null,
             RESPONDER_INACTIVE_PRESS_IN: null,
             RESPONDER_INACTIVE_PRESS_OUT: null,
@@ -27,7 +27,7 @@ __d("Touchable",["BoundingDimensions","Position","TouchEventUtils","keyMirror","
         h = {
             RESPONDER_ACTIVE_LONG_PRESS_IN: !0
         },
-        f = l({
+        f = keyMirror/*l*/({
             DELAY: null,
             RESPONDER_GRANT: null,
             RESPONDER_RELEASE: null,
@@ -149,25 +149,25 @@ __d("Touchable",["BoundingDimensions","Position","TouchEventUtils","keyMirror","
                         requireDynamic/*n*/ = this.state.touchable.dimensionsOnActivate,
                         requireLazy/*r*/ = this.touchableGetPressRectOffset ? this.touchableGetPressRectOffset() : null,
                         module/*i*/ = null != requireLazy/*r*/.left ? requireLazy/*r*/.left : _,
-                        o = null != requireLazy/*r*/.top ? requireLazy/*r*/.top : _,
-                        a = null != requireLazy/*r*/.right ? requireLazy/*r*/.right : _,
-                        l = null != requireLazy/*r*/.bottom ? requireLazy/*r*/.bottom : _,
-                        u = s.extractSingleTouch(global/*e*/.nativeEvent),
-                        p = u && u.pageX,
-                        d = u && u.pageY;
+                        BoundingDimensions/*o*/ = null != requireLazy/*r*/.top ? requireLazy/*r*/.top : _,
+                        Position/*a*/ = null != requireLazy/*r*/.right ? requireLazy/*r*/.right : _,
+                        keyMirror/*l*/ = null != requireLazy/*r*/.bottom ? requireLazy/*r*/.bottom : _,
+                        queryLayoutByID/*u*/ = TouchEventUtils/*s*/.extractSingleTouch(global/*e*/.nativeEvent),
+                        p = queryLayoutByID/*u*/ && queryLayoutByID/*u*/.pageX,
+                        d = queryLayoutByID/*u*/ && queryLayoutByID/*u*/.pageY;
                     if (this.pressInLocation) {
                         var h = this._getDistanceBetweenPoints(p, d, this.pressInLocation.pageX, this.pressInLocation.pageY);
                         h > v && this._cancelLongPressDelayTimeout()
                     }
-                    var m = p > require/*t*/.left - module/*i*/ && d > require/*t*/.top - o && p < require/*t*/.left + requireDynamic/*n*/.width + a && d < require/*t*/.top + requireDynamic/*n*/.height + l;
+                    var m = p > require/*t*/.left - module/*i*/ && d > require/*t*/.top - BoundingDimensions/*o*/ && p < require/*t*/.left + requireDynamic/*n*/.width + Position/*a*/ && d < require/*t*/.top + requireDynamic/*n*/.height + keyMirror/*l*/;
                     m ? this._receiveSignal(f.ENTER_PRESS_RECT, global/*e*/) : this._receiveSignal(f.LEAVE_PRESS_RECT, global/*e*/)
                 }
             },
             _remeasureMetricsOnActivation: function() {
-                u(this.state.touchable.responderID, null, this._handleQueryLayout)
+                queryLayoutByID/*u*/(this.state.touchable.responderID, null, this._handleQueryLayout)
             },
-            _handleQueryLayout: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, s) {
-                this.state.touchable.positionOnActivate && a.release(this.state.touchable.positionOnActivate), this.state.touchable.dimensionsOnActivate && o.release(this.state.touchable.dimensionsOnActivate), this.state.touchable.positionOnActivate = a.getPooled(module/*i*/, s), this.state.touchable.dimensionsOnActivate = o.getPooled(requireDynamic/*n*/, requireLazy/*r*/)
+            _handleQueryLayout: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, TouchEventUtils/*s*/) {
+                this.state.touchable.positionOnActivate && Position/*a*/.release(this.state.touchable.positionOnActivate), this.state.touchable.dimensionsOnActivate && BoundingDimensions/*o*/.release(this.state.touchable.dimensionsOnActivate), this.state.touchable.positionOnActivate = Position/*a*/.getPooled(module/*i*/, TouchEventUtils/*s*/), this.state.touchable.dimensionsOnActivate = BoundingDimensions/*o*/.getPooled(requireDynamic/*n*/, requireLazy/*r*/)
             },
             _handleDelay: function(global/*e*/) {
                 this.touchableDelayTimeout = null, this._receiveSignal(f.DELAY, global/*e*/)
@@ -189,7 +189,7 @@ __d("Touchable",["BoundingDimensions","Position","TouchEventUtils","keyMirror","
                 return global/*e*/ === c.RESPONDER_ACTIVE_PRESS_IN || global/*e*/ === c.RESPONDER_ACTIVE_LONG_PRESS_IN
             },
             _savePressInLocation: function(global/*e*/) {
-                var require/*t*/ = s.extractSingleTouch(global/*e*/.nativeEvent),
+                var require/*t*/ = TouchEventUtils/*s*/.extractSingleTouch(global/*e*/.nativeEvent),
                     requireDynamic/*n*/ = require/*t*/ && require/*t*/.pageX,
                     requireLazy/*r*/ = require/*t*/ && require/*t*/.pageY;
                 this.pressInLocation = {
@@ -199,18 +199,18 @@ __d("Touchable",["BoundingDimensions","Position","TouchEventUtils","keyMirror","
             },
             _getDistanceBetweenPoints: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
                 var module/*i*/ = global/*e*/ - requireDynamic/*n*/,
-                    o = require/*t*/ - requireLazy/*r*/;
-                return Math.sqrt(module/*i*/ * module/*i*/ + o * o)
+                    BoundingDimensions/*o*/ = require/*t*/ - requireLazy/*r*/;
+                return Math.sqrt(module/*i*/ * module/*i*/ + BoundingDimensions/*o*/ * BoundingDimensions/*o*/)
             },
             _performSideEffectsForTransition: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
                 var module/*i*/ = this._isHighlight(global/*e*/),
-                    o = this._isHighlight(require/*t*/),
-                    a = requireDynamic/*n*/ === f.RESPONDER_TERMINATED || requireDynamic/*n*/ === f.RESPONDER_RELEASE;
-                if (a && this._cancelLongPressDelayTimeout(), !p[global/*e*/] && p[require/*t*/] && this._remeasureMetricsOnActivation(), d[global/*e*/] && requireDynamic/*n*/ === f.LONG_PRESS_DETECTED && this.touchableHandleLongPress && this.touchableHandleLongPress(), o && !module/*i*/ ? (this._savePressInLocation(requireLazy/*r*/), this.touchableHandleActivePressIn && this.touchableHandleActivePressIn()) : !o && module/*i*/ && this.touchableHandleActivePressOut && this.touchableHandleActivePressOut(), d[global/*e*/] && requireDynamic/*n*/ === f.RESPONDER_RELEASE) {
-                    var s = !!this.touchableHandleLongPress,
-                        l = h[global/*e*/] && (!s || !this.touchableLongPressCancelsPress()),
-                        u = !h[global/*e*/] || l;
-                    u && this.touchableHandlePress && this.touchableHandlePress(requireLazy/*r*/)
+                    BoundingDimensions/*o*/ = this._isHighlight(require/*t*/),
+                    Position/*a*/ = requireDynamic/*n*/ === f.RESPONDER_TERMINATED || requireDynamic/*n*/ === f.RESPONDER_RELEASE;
+                if (Position/*a*/ && this._cancelLongPressDelayTimeout(), !p[global/*e*/] && p[require/*t*/] && this._remeasureMetricsOnActivation(), d[global/*e*/] && requireDynamic/*n*/ === f.LONG_PRESS_DETECTED && this.touchableHandleLongPress && this.touchableHandleLongPress(), BoundingDimensions/*o*/ && !module/*i*/ ? (this._savePressInLocation(requireLazy/*r*/), this.touchableHandleActivePressIn && this.touchableHandleActivePressIn()) : !BoundingDimensions/*o*/ && module/*i*/ && this.touchableHandleActivePressOut && this.touchableHandleActivePressOut(), d[global/*e*/] && requireDynamic/*n*/ === f.RESPONDER_RELEASE) {
+                    var TouchEventUtils/*s*/ = !!this.touchableHandleLongPress,
+                        keyMirror/*l*/ = h[global/*e*/] && (!TouchEventUtils/*s*/ || !this.touchableLongPressCancelsPress()),
+                        queryLayoutByID/*u*/ = !h[global/*e*/] || keyMirror/*l*/;
+                    queryLayoutByID/*u*/ && this.touchableHandlePress && this.touchableHandlePress(requireLazy/*r*/)
                 }
                 this.touchableDelayTimeout && clearTimeout(this.touchableDelayTimeout), this.touchableDelayTimeout = null
             }

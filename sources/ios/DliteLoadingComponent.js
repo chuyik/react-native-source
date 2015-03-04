@@ -1,42 +1,42 @@
 __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleSheetPropType","TimerMixin","View","emptyFunction","keyMirror","merge","performanceNow"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Dlite"),
-        a = require/*t*/("FBSpinner"),
-        s = require/*t*/("React"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("StyleSheetPropType"),
-        c = require/*t*/("TimerMixin"),
-        p = require/*t*/("View"),
-        d = require/*t*/("emptyFunction"),
-        h = require/*t*/("keyMirror"),
-        f = require/*t*/("merge"),
-        m = (require/*t*/("performanceNow"), h({
+    var Dlite/*o*/ = require/*t*/("Dlite"),
+        FBSpinner/*a*/ = require/*t*/("FBSpinner"),
+        React/*s*/ = require/*t*/("React"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        StyleSheetPropType/*u*/ = require/*t*/("StyleSheetPropType"),
+        TimerMixin/*c*/ = require/*t*/("TimerMixin"),
+        View/*p*/ = require/*t*/("View"),
+        emptyFunction/*d*/ = require/*t*/("emptyFunction"),
+        keyMirror/*h*/ = require/*t*/("keyMirror"),
+        merge/*f*/ = require/*t*/("merge"),
+        m = (require/*t*/("performanceNow"), keyMirror/*h*/({
             LOADING: null,
             READY: null,
             ERROR: null
         })),
-        g = l.create({
+        g = StyleSheet/*l*/.create({
             spinner: {
                 alignItems: "center",
                 paddingTop: 200
             }
         }),
-        _ = s.createClass({
+        _ = React/*s*/.createClass({
             displayName: "DliteLoadingComponent",
-            mixins: [c],
+            mixins: [TimerMixin/*c*/],
             propTypes: {
-                loadingView: s.PropTypes.component,
-                failedView: s.PropTypes.component,
-                refetchRoute: s.PropTypes.bool,
-                onComponentRef: s.PropTypes.func,
-                onFailure: s.PropTypes.func,
-                onResolvable: s.PropTypes.func,
-                onBlockingRequest: s.PropTypes.func,
-                onSuccess: s.PropTypes.func,
-                passProps: s.PropTypes.object,
-                style: u,
-                navigator: s.PropTypes.object,
-                navigationOperations: s.PropTypes.object
+                loadingView: React/*s*/.PropTypes.component,
+                failedView: React/*s*/.PropTypes.component,
+                refetchRoute: React/*s*/.PropTypes.bool,
+                onComponentRef: React/*s*/.PropTypes.func,
+                onFailure: React/*s*/.PropTypes.func,
+                onResolvable: React/*s*/.PropTypes.func,
+                onBlockingRequest: React/*s*/.PropTypes.func,
+                onSuccess: React/*s*/.PropTypes.func,
+                passProps: React/*s*/.PropTypes.object,
+                style: StyleSheetPropType/*u*/,
+                navigator: React/*s*/.PropTypes.object,
+                navigationOperations: React/*s*/.PropTypes.object
             },
             getComponent: function() {
                 return this._component
@@ -53,15 +53,15 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             },
             getDefaultProps: function() {
                 return {
-                    loadingView: s.createElement(p, {
+                    loadingView: React/*s*/.createElement(View/*p*/, {
                         style: g.spinner
-                    }, s.createElement(a, null)),
+                    }, React/*s*/.createElement(FBSpinner/*a*/, null)),
                     refetchRoute: !1,
-                    onComponentRef: d,
-                    onFailure: d,
-                    onResolvable: d,
-                    onBlockingRequest: d,
-                    onSuccess: d
+                    onComponentRef: emptyFunction/*d*/,
+                    onFailure: emptyFunction/*d*/,
+                    onResolvable: emptyFunction/*d*/,
+                    onBlockingRequest: emptyFunction/*d*/,
+                    onSuccess: emptyFunction/*d*/
                 }
             },
             shouldComponentUpdate: function(global/*e*/, require/*t*/) {
@@ -83,7 +83,7 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
                     requireDynamic/*n*/ = {
                         refetch: global/*e*/.refetchRoute
                     };
-                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = o.createAndExecuteQueries(require/*t*/, global/*e*/.route, requireDynamic/*n*/, {
+                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = Dlite/*o*/.createAndExecuteQueries(require/*t*/, global/*e*/.route, requireDynamic/*n*/, {
                     onResolvable: this._onResolvable.bind(this, global/*e*/),
                     onSuccess: this._onSuccess.bind(this, global/*e*/),
                     onFailure: this._onFailure.bind(this, global/*e*/),
@@ -115,7 +115,7 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
                 }))
             },
             _reloadDataForChild: function(global/*e*/) {
-                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = o.createAndExecuteQueries(this.props.component, this.props.route, {
+                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = Dlite/*o*/.createAndExecuteQueries(this.props.component, this.props.route, {
                     refetch: !0
                 }, global/*e*/ || {})
             },
@@ -124,12 +124,12 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             },
             render: function() {
                 var global/*e*/, require/*t*/ = this.props.component,
-                    requireDynamic/*n*/ = f({
+                    requireDynamic/*n*/ = merge/*f*/({
                         navigator: this.props.navigationOperations || this.props.navigator,
                         forceUpdate: this._reloadDataForChild
                     }, this.props.passProps),
                     requireLazy/*r*/ = this._onComponentRef;
-                return global/*e*/ = this.state.loadingState === m.LOADING ? this.props.loadingView : this.state.loadingState === m.ERROR ? this.props.failedView : o.createComponent(require/*t*/, this.props.route, requireDynamic/*n*/, requireLazy/*r*/), s.createElement(p, {
+                return global/*e*/ = this.state.loadingState === m.LOADING ? this.props.loadingView : this.state.loadingState === m.ERROR ? this.props.failedView : Dlite/*o*/.createComponent(require/*t*/, this.props.route, requireDynamic/*n*/, requireLazy/*r*/), React/*s*/.createElement(View/*p*/, {
                     style: this.props.style
                 }, global/*e*/)
             }

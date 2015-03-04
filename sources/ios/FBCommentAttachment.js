@@ -1,21 +1,21 @@
 __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL","StyleSheet"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBAttachmentView"),
-        a = require/*t*/("FIGColors"),
-        s = require/*t*/("React"),
-        l = require/*t*/("ReactGraphQL"),
-        u = require/*t*/("StyleSheet"),
+    var FBAttachmentView/*o*/ = require/*t*/("FBAttachmentView"),
+        FIGColors/*a*/ = require/*t*/("FIGColors"),
+        React/*s*/ = require/*t*/("React"),
+        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
+        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
         c = 200,
         p = 240,
-        d = s.createClass({
+        d = React/*s*/.createClass({
             displayName: "FBCommentAttachment",
             propTypes: {
-                attachment: s.PropTypes.object.isRequired,
-                backgroundColor: s.PropTypes.string.isRequired,
-                maxPhotoHeight: s.PropTypes.number,
-                maxPhotoWidth: s.PropTypes.number
+                attachment: React/*s*/.PropTypes.object.isRequired,
+                backgroundColor: React/*s*/.PropTypes.string.isRequired,
+                maxPhotoHeight: React/*s*/.PropTypes.number,
+                maxPhotoWidth: React/*s*/.PropTypes.number
             },
-            mixins: [l.Mixin],
+            mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -24,7 +24,7 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
                             return new requireDynamic/*n*/.QueryFragment("FBCommentAttachment_attachment", "StoryAttachment", null, [require/*t*/.__frag(global/*e*/)], {
                                 scope: "FBCommentAttachment_attachment"
                             })
-                        }(o.getQuery("attachment"))
+                        }(FBAttachmentView/*o*/.getQuery("attachment"))
                     }
                 }
             },
@@ -35,7 +35,7 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
                 }
             },
             render: function() {
-                return s.createElement(o, {
+                return React/*s*/.createElement(FBAttachmentView/*o*/, {
                     attachment: this.props.attachment,
                     navigator: this.props.navigator,
                     titleMaxLines: 1,
@@ -56,7 +56,7 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
                 })
             }
         }),
-        h = u.create({
+        h = StyleSheet/*u*/.create({
             border: {
                 borderWidth: 0
             },
@@ -79,7 +79,7 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
             },
             description: {
                 fontSize: 13,
-                color: a.mediumText
+                color: FIGColors/*a*/.mediumText
             },
             containerStyle: {
                 borderRadius: 4,

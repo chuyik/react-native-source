@@ -2,13 +2,13 @@ __d("StyleSheetPropType",["createStrictShapeTypeChecker","flattenStyle"],functio
     "use strict";
 
     function o(global/*e*/) {
-        var require/*t*/ = a(global/*e*/);
+        var require/*t*/ = createStrictShapeTypeChecker/*a*/(global/*e*/);
         return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
             var o = global/*e*/;
-            return global/*e*/[requireDynamic/*n*/] && (o = {}, o[requireDynamic/*n*/] = s(global/*e*/[requireDynamic/*n*/])), require/*t*/(o, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
+            return global/*e*/[requireDynamic/*n*/] && (o = {}, o[requireDynamic/*n*/] = flattenStyle/*s*/(global/*e*/[requireDynamic/*n*/])), require/*t*/(o, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
         }
     }
-    var a = require/*t*/("createStrictShapeTypeChecker"),
-        s = require/*t*/("flattenStyle");
+    var createStrictShapeTypeChecker/*a*/ = require/*t*/("createStrictShapeTypeChecker"),
+        flattenStyle/*s*/ = require/*t*/("flattenStyle");
     module/*i*/.exports = o
 });

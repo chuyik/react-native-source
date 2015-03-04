@@ -2,8 +2,8 @@ __d("monitorCodeUse",["invariant"],function (global/*e*/, require/*t*/, requireD
     "use strict";
 
     function o(global/*e*/) {
-        (!global/*e*/ || /[^a-z0-9_]/.test(global/*e*/)) && a(0, "You must provide an eventName using only the characters [a-z0-9_]")
+        (!global/*e*/ || /[^invariant/*a*/-z0-9_]/.test(global/*e*/)) && invariant/*a*/(0, "You must provide an eventName using only the characters [invariant/*a*/-z0-9_]")
     }
-    var a = require/*t*/("invariant");
+    var invariant/*a*/ = require/*t*/("invariant");
     module/*i*/.exports = o
 });

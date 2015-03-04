@@ -6,8 +6,8 @@ __d("throwImmediate",["setImmediate"],function (global/*e*/, require/*t*/, requi
     }
 
     function a(global/*e*/) {
-        s(o, global/*e*/)
+        setImmediate/*s*/(o, global/*e*/)
     }
-    var s = require/*t*/("setImmediate");
+    var setImmediate/*s*/ = require/*t*/("setImmediate");
     module/*i*/.exports = a
 });

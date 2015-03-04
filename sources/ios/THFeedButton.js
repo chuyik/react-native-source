@@ -1,39 +1,39 @@
 __d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
-        a = require/*t*/("StyleSheet"),
-        s = require/*t*/("Text"),
-        l = require/*t*/("THColors"),
-        u = require/*t*/("TouchableBounce"),
-        c = require/*t*/("View"),
-        p = o.createClass({
+    var React/*o*/ = require/*t*/("React"),
+        StyleSheet/*a*/ = require/*t*/("StyleSheet"),
+        Text/*s*/ = require/*t*/("Text"),
+        THColors/*l*/ = require/*t*/("THColors"),
+        TouchableBounce/*u*/ = require/*t*/("TouchableBounce"),
+        View/*c*/ = require/*t*/("View"),
+        p = React/*o*/.createClass({
             displayName: "THFeedButton",
             propTypes: {
-                onPress: o.PropTypes.func,
-                isPositive: o.PropTypes.bool,
-                text: o.PropTypes.string
+                onPress: React/*o*/.PropTypes.func,
+                isPositive: React/*o*/.PropTypes.bool,
+                text: React/*o*/.PropTypes.string
             },
             render: function() {
                 var global/*e*/ = this.props.isPositive ? d.positiveText : d.negativeText,
-                    require/*t*/ = this.props.isPositive ? l.lightBlue : l.buttonColor;
-                return o.createElement(u, {
+                    require/*t*/ = this.props.isPositive ? THColors/*l*/.lightBlue : THColors/*l*/.buttonColor;
+                return React/*o*/.createElement(TouchableBounce/*u*/, {
                     onPress: this.props.onPress
-                }, o.createElement(c, {
+                }, React/*o*/.createElement(View/*c*/, {
                     style: [d.button, {
                         backgroundColor: require/*t*/
                     }]
-                }, o.createElement(s, {
+                }, React/*o*/.createElement(Text/*s*/, {
                     style: global/*e*/
                 }, this.props.text)))
             }
         }),
-        d = a.create({
+        d = StyleSheet/*a*/.create({
             positiveText: {
-                color: l.backgroundColor,
+                color: THColors/*l*/.backgroundColor,
                 fontWeight: "bold"
             },
             negativeText: {
-                color: l.mediumGray,
+                color: THColors/*l*/.mediumGray,
                 fontWeight: "bold"
             },
             button: {

@@ -9,7 +9,7 @@ __d("ReactElement",["ReactContext","ReactCurrentOwner","warning"],function (glob
                 return this._store ? this._store[require/*t*/] : null
             },
             set: function(global/*e*/) {
-                u(!1, "Don'require/*t*/ set the " + require/*t*/ + " property of the component. Mutate the existing props object instead."), this._store[require/*t*/] = global/*e*/
+                warning/*u*/(!1, "Don'require/*t*/ set the " + require/*t*/ + " property of the component. Mutate the existing props object instead."), this._store[require/*t*/] = global/*e*/
             }
         })
     }
@@ -23,9 +23,9 @@ __d("ReactElement",["ReactContext","ReactCurrentOwner","warning"],function (glob
             p = !0
         } catch (requireLazy/*r*/) {}
     }
-    var s = require/*t*/("ReactContext"),
-        l = require/*t*/("ReactCurrentOwner"),
-        u = require/*t*/("warning"),
+    var ReactContext/*s*/ = require/*t*/("ReactContext"),
+        ReactCurrentOwner/*l*/ = require/*t*/("ReactCurrentOwner"),
+        warning/*u*/ = require/*t*/("warning"),
         c = {
             key: !0,
             ref: !0
@@ -45,17 +45,17 @@ __d("ReactElement",["ReactContext","ReactCurrentOwner","warning"],function (glob
             a = void 0 === require/*t*/.ref ? null : require/*t*/.ref, o = void 0 === require/*t*/.key ? null : "" + require/*t*/.key;
             for (requireLazy/*r*/ in require/*t*/) require/*t*/.hasOwnProperty(requireLazy/*r*/) && !c.hasOwnProperty(requireLazy/*r*/) && (module/*i*/[requireLazy/*r*/] = require/*t*/[requireLazy/*r*/])
         }
-        var u = arguments.length - 2;
-        if (1 === u) module/*i*/.children = requireDynamic/*n*/;
-        else if (u > 1) {
-            for (var p = Array(u), h = 0; u > h; h++) p[h] = arguments[h + 2];
+        var warning/*u*/ = arguments.length - 2;
+        if (1 === warning/*u*/) module/*i*/.children = requireDynamic/*n*/;
+        else if (warning/*u*/ > 1) {
+            for (var p = Array(warning/*u*/), h = 0; warning/*u*/ > h; h++) p[h] = arguments[h + 2];
             module/*i*/.children = p
         }
         if (global/*e*/.defaultProps) {
             var f = global/*e*/.defaultProps;
             for (requireLazy/*r*/ in f) "undefined" == typeof module/*i*/[requireLazy/*r*/] && (module/*i*/[requireLazy/*r*/] = f[requireLazy/*r*/])
         }
-        return new d(global/*e*/, o, a, l.current, s.current, module/*i*/)
+        return new d(global/*e*/, o, a, ReactCurrentOwner/*l*/.current, ReactContext/*s*/.current, module/*i*/)
     }, d.createFactory = function(global/*e*/) {
         var require/*t*/ = d.createElement.bind(null, global/*e*/);
         return require/*t*/.type = global/*e*/, require/*t*/

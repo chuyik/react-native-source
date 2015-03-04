@@ -9,14 +9,14 @@ __d("EventValidator",["copyProperties"],function (global/*e*/, require/*t*/, req
         var requireDynamic/*n*/ = 'Unknown event type "' + global/*e*/ + '". ';
         return __DEV__ && (requireDynamic/*n*/ += u(global/*e*/, require/*t*/)), requireDynamic/*n*/ += "Known event types: " + require/*t*/.join(", ") + "."
     }
-    var s = require/*t*/("copyProperties"),
+    var copyProperties/*s*/ = require/*t*/("copyProperties"),
         l = {
             addValidation: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = Object.keys(require/*t*/),
                     requireLazy/*r*/ = Object.create(global/*e*/);
-                return s(requireLazy/*r*/, {
-                    emit: function(require/*t*/, requireLazy/*r*/, module/*i*/, a, s, l, u) {
-                        return o(require/*t*/, requireDynamic/*n*/), global/*e*/.emit.call(this, require/*t*/, requireLazy/*r*/, module/*i*/, a, s, l, u)
+                return copyProperties/*s*/(requireLazy/*r*/, {
+                    emit: function(require/*t*/, requireLazy/*r*/, module/*i*/, a, copyProperties/*s*/, l, u) {
+                        return o(require/*t*/, requireDynamic/*n*/), global/*e*/.emit.call(this, require/*t*/, requireLazy/*r*/, module/*i*/, a, copyProperties/*s*/, l, u)
                     }
                 }), requireLazy/*r*/
             }

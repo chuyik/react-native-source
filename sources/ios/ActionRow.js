@@ -1,41 +1,41 @@
 __d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FIGColors"),
-        a = require/*t*/("Image"),
-        s = require/*t*/("React"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("Text"),
-        c = require/*t*/("TouchableBounce"),
-        p = require/*t*/("View"),
-        d = s.createClass({
+    var FIGColors/*o*/ = require/*t*/("FIGColors"),
+        Image/*a*/ = require/*t*/("Image"),
+        React/*s*/ = require/*t*/("React"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        Text/*u*/ = require/*t*/("Text"),
+        TouchableBounce/*c*/ = require/*t*/("TouchableBounce"),
+        View/*p*/ = require/*t*/("View"),
+        d = React/*s*/.createClass({
             displayName: "ActionRow",
             propTypes: {
-                title: s.PropTypes.string.isRequired,
-                iconSource: a.sourcePropType,
-                onPress: s.PropTypes.func.isRequired,
-                subtitle: s.PropTypes.string
+                title: React/*s*/.PropTypes.string.isRequired,
+                iconSource: Image/*a*/.sourcePropType,
+                onPress: React/*s*/.PropTypes.func.isRequired,
+                subtitle: React/*s*/.PropTypes.string
             },
             renderText: function() {
-                return s.createElement(p, {
+                return React/*s*/.createElement(View/*p*/, {
                     style: h.textContainer
-                }, s.createElement(u, {
+                }, React/*s*/.createElement(Text/*u*/, {
                     style: h.title
-                }, this.props.title), this.props.subtitle && s.createElement(u, {
+                }, this.props.title), this.props.subtitle && React/*s*/.createElement(Text/*u*/, {
                     style: h.subtitle
                 }, this.props.subtitle))
             },
             render: function() {
-                return s.createElement(c, {
+                return React/*s*/.createElement(TouchableBounce/*c*/, {
                     onPress: this.props.onPress
-                }, s.createElement(p, {
+                }, React/*s*/.createElement(View/*p*/, {
                     style: h.row
-                }, s.createElement(a, {
+                }, React/*s*/.createElement(Image/*a*/, {
                     source: this.props.iconSource,
                     style: h.icon
                 }), this.renderText()))
             }
         }),
-        h = l.create({
+        h = StyleSheet/*l*/.create({
             row: {
                 flexDirection: "row",
                 alignItems: "center",
@@ -54,7 +54,7 @@ __d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounc
             },
             subtitle: {
                 fontSize: 12,
-                color: o.mediumText
+                color: FIGColors/*o*/.mediumText
             }
         });
     module/*i*/.exports = d

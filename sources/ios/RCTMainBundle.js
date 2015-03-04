@@ -1,7 +1,7 @@
 __d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendingPostsApp","GroupsPostSearchApp","GroupsReportedPostsApp","DliteCatalystProfiler"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Bundler");
-    o.registerConfig([{
+    var Bundler/*o*/ = require/*t*/("Bundler");
+    Bundler/*o*/.registerConfig([{
         appKey: "GroupsFeedApp",
         component: function() {
             return require/*t*/("GroupsFeedApp")
@@ -26,5 +26,5 @@ __d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendi
         component: function() {
             return require/*t*/("GroupsReportedPostsApp")
         }
-    }]), require/*t*/("DliteCatalystProfiler").install(), module/*i*/.exports = o
+    }]), require/*t*/("DliteCatalystProfiler").install(), module/*i*/.exports = Bundler/*o*/
 });

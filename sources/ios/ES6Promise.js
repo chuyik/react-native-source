@@ -60,7 +60,7 @@ __d("ES6Promise",["setImmediate"],function (global/*e*/, require/*t*/, requireDy
             var a;
             require/*t*/ === d ? a = o.fulfillReactions : require/*t*/ === h && (a = o.rejectReactions), o.result = module/*i*/, o.fulfillReactions = requireDynamic/*n*/, o.rejectReactions = requireDynamic/*n*/, o.state = require/*t*/;
             var s = a.length;
-            s && c(function() {
+            s && setImmediate/*c*/(function() {
                 for (var global/*e*/ = 0; s > global/*e*/; ++global/*e*/) a[global/*e*/](o.result)
             })
         }
@@ -76,7 +76,7 @@ __d("ES6Promise",["setImmediate"],function (global/*e*/, require/*t*/, requireDy
                 global/*e*/(o)
             }
         }
-        var c = require/*t*/("setImmediate"),
+        var setImmediate/*c*/ = require/*t*/("setImmediate"),
             p = "pending",
             d = "fulfilled",
             h = "rejected",
@@ -118,7 +118,7 @@ __d("ES6Promise",["setImmediate"],function (global/*e*/, require/*t*/, requireDy
             (global/*e*/ === requireDynamic/*n*/ || null === global/*e*/) && (global/*e*/ = module/*i*/), (require/*t*/ === requireDynamic/*n*/ || null === require/*t*/) && (require/*t*/ = o);
             var f = requireLazy/*r*/(this),
                 m = f.state;
-            return m === p ? (f.fulfillReactions.push(u(a, s, global/*e*/)), f.rejectReactions.push(u(a, s, require/*t*/))) : (m === d || m === h) && c(u(a, s, m === d ? global/*e*/ : require/*t*/, f.result)), l
+            return m === p ? (f.fulfillReactions.push(u(a, s, global/*e*/)), f.rejectReactions.push(u(a, s, require/*t*/))) : (m === d || m === h) && setImmediate/*c*/(u(a, s, m === d ? global/*e*/ : require/*t*/, f.result)), l
         }, m["catch"] = function(global/*e*/) {
             return this.then(requireDynamic/*n*/, global/*e*/)
         }, m.toString = function() {

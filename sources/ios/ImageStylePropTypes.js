@@ -1,17 +1,17 @@
 __d("ImageStylePropTypes",["ImageResizeMode","LayoutPropTypes","ReactPropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ImageResizeMode"),
-        a = require/*t*/("LayoutPropTypes"),
-        s = require/*t*/("ReactPropTypes"),
-        l = require/*t*/("merge"),
-        u = l(a, {
-            resizeMode: s.oneOf(Object.keys(o)),
-            backgroundColor: s.string,
-            borderColor: s.string,
-            borderWidth: s.number,
-            borderRadius: s.number,
-            tintColor: s.string,
-            opacity: s.number
+    var ImageResizeMode/*o*/ = require/*t*/("ImageResizeMode"),
+        LayoutPropTypes/*a*/ = require/*t*/("LayoutPropTypes"),
+        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
+        merge/*l*/ = require/*t*/("merge"),
+        u = merge/*l*/(LayoutPropTypes/*a*/, {
+            resizeMode: ReactPropTypes/*s*/.oneOf(Object.keys(ImageResizeMode/*o*/)),
+            backgroundColor: ReactPropTypes/*s*/.string,
+            borderColor: ReactPropTypes/*s*/.string,
+            borderWidth: ReactPropTypes/*s*/.number,
+            borderRadius: ReactPropTypes/*s*/.number,
+            tintColor: ReactPropTypes/*s*/.string,
+            opacity: ReactPropTypes/*s*/.number
         }),
         c = Object.keys({
             padding: null,

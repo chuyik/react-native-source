@@ -29,10 +29,10 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
                 }
             }
     }
-    var l = require/*t*/("invariant"),
-        u = require/*t*/("keyMirror"),
-        c = require/*t*/("mixInEventEmitter"),
-        p = u({
+    var invariant/*l*/ = require/*t*/("invariant"),
+        keyMirror/*u*/ = require/*t*/("keyMirror"),
+        mixInEventEmitter/*c*/ = require/*t*/("mixInEventEmitter"),
+        p = keyMirror/*u*/({
             CLIENT: null,
             SERVER: null
         }),
@@ -42,7 +42,7 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
         m = {},
         g = [],
         _ = {
-            Events: u({
+            Events: keyMirror/*u*/({
                 completedEvent: null
             }),
             logClientEventRetroactive: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
@@ -50,7 +50,7 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
                 var module/*i*/ = o(p.CLIENT, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/);
                 return {
                     stop: function() {
-                        isNaN(module/*i*/.endTime) || l(0, "Cannot end `%s` more than once.", global/*e*/), -1 !== h.indexOf(module/*i*/) && d--, module/*i*/.endTime = Date.now(), a(module/*i*/), s(global/*e*/, !1)
+                        isNaN(module/*i*/.endTime) || invariant/*l*/(0, "Cannot end `%s` more than once.", global/*e*/), -1 !== h.indexOf(module/*i*/) && d--, module/*i*/.endTime = Date.now(), a(module/*i*/), s(global/*e*/, !1)
                     }
                 }
             },
@@ -69,5 +69,5 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
                 return d = 0, h = [], f = [], m = {}, global/*e*/
             }
         };
-    c(_, _.Events), module/*i*/.exports = _
+    mixInEventEmitter/*c*/(_, _.Events), module/*i*/.exports = _
 });

@@ -1,33 +1,33 @@
 __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractTextEditorProps","ModalFullscreenView","getMentionableRect","Locale","ReactPropTypes","React","TimerMixin","TypeaheadNavigation","View","copyProperties"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o, a, s = require/*t*/("AbstractTextEditor.react"),
-        l = require/*t*/("AbstractTextEditorProps"),
-        u = require/*t*/("ModalFullscreenView"),
-        c = require/*t*/("getMentionableRect"),
-        p = require/*t*/("Locale"),
-        d = require/*t*/("ReactPropTypes"),
-        h = require/*t*/("React"),
-        f = require/*t*/("TimerMixin"),
-        m = require/*t*/("TypeaheadNavigation"),
-        g = require/*t*/("View"),
-        _ = require/*t*/("copyProperties"),
-        y = p.isRTL(),
+        AbstractTextEditorProps/*l*/ = require/*t*/("AbstractTextEditorProps"),
+        ModalFullscreenView/*u*/ = require/*t*/("ModalFullscreenView"),
+        getMentionableRect/*c*/ = require/*t*/("getMentionableRect"),
+        Locale/*p*/ = require/*t*/("Locale"),
+        ReactPropTypes/*d*/ = require/*t*/("ReactPropTypes"),
+        React/*h*/ = require/*t*/("React"),
+        TimerMixin/*f*/ = require/*t*/("TimerMixin"),
+        TypeaheadNavigation/*m*/ = require/*t*/("TypeaheadNavigation"),
+        View/*g*/ = require/*t*/("View"),
+        copyProperties/*_*/ = require/*t*/("copyProperties"),
+        y = Locale/*p*/.isRTL(),
         v = 20,
         S = 5,
-        b = h.createClass({
+        b = React/*h*/.createClass({
             displayName: "AbstractMentionsTextEditor",
-            mixins: [f],
-            propTypes: _({}, l.propTypes, {
-                autoflip: d.bool,
-                mentionsSource: d.object,
-                excludedEntries: d.object,
-                onShowMentions: d.func.isRequired,
-                onAddMention: d.func.isRequired,
-                typeaheadView: d.func.isRequired,
-                typeaheadViewProps: d.object,
-                inputView: d.renderable
+            mixins: [TimerMixin/*f*/],
+            propTypes: copyProperties/*_*/({}, AbstractTextEditorProps/*l*/.propTypes, {
+                autoflip: ReactPropTypes/*d*/.bool,
+                mentionsSource: ReactPropTypes/*d*/.object,
+                excludedEntries: ReactPropTypes/*d*/.object,
+                onShowMentions: ReactPropTypes/*d*/.func.isRequired,
+                onAddMention: ReactPropTypes/*d*/.func.isRequired,
+                typeaheadView: ReactPropTypes/*d*/.func.isRequired,
+                typeaheadViewProps: ReactPropTypes/*d*/.object,
+                inputView: ReactPropTypes/*d*/.renderable
             }),
-            getDefaultProps: l.getDefaultProps,
+            getDefaultProps: AbstractTextEditorProps/*l*/.getDefaultProps,
             componentWillMount: function() {
                 var global/*e*/ = function() {
                     this.setTimeout(this._searchIfCollapsed, 0)
@@ -55,7 +55,7 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                         module/*i*/ && module/*i*/.mentionSortFn && requireLazy/*r*/.sort(module/*i*/.mentionSortFn), this.props.onShowMentions(requireLazy/*r*/, require/*t*/)
                     }
                     this.setState({
-                        contextualBounds: requireDynamic/*n*/ ? c(require/*t*/, y) : null,
+                        contextualBounds: requireDynamic/*n*/ ? getMentionableRect/*c*/(require/*t*/, y) : null,
                         highlightedMentionable: requireDynamic/*n*/ ? global/*e*/[0] : null,
                         mentionableEntries: requireLazy/*r*/
                     })
@@ -77,10 +77,10 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                 this.state.highlightedMentionable ? this.setState(this.getInitialState()) : this.props.onEscape && this.props.onEscape(global/*e*/)
             },
             _onUpArrow: function(global/*e*/) {
-                this.state.mentionableEntries ? (global/*e*/.preventDefault(), m.moveUp(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onUpArrow && this.props.onUpArrow(global/*e*/)
+                this.state.mentionableEntries ? (global/*e*/.preventDefault(), TypeaheadNavigation/*m*/.moveUp(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onUpArrow && this.props.onUpArrow(global/*e*/)
             },
             _onDownArrow: function(global/*e*/) {
-                this.state.mentionableEntries ? (global/*e*/.preventDefault(), m.moveDown(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onDownArrow && this.props.onDownArrow(global/*e*/)
+                this.state.mentionableEntries ? (global/*e*/.preventDefault(), TypeaheadNavigation/*m*/.moveDown(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onDownArrow && this.props.onDownArrow(global/*e*/)
             },
             _onMentionHighlight: function(global/*e*/) {
                 this.setState({
@@ -107,14 +107,14 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                     requireLazy/*r*/ = require/*t*/.isCollapsed() && require/*t*/.hasFocus() && global/*e*/ && global/*e*/.length,
                     module/*i*/ = {};
                 return this.props.autoflip && (module/*i*/.ContextualLayerAutoFlip = o, module/*i*/.ContextualLayerUpdateOnScroll = a), {
-                    entries: h.createElement(u, {
+                    entries: React/*h*/.createElement(ModalFullscreenView/*u*/, {
                         shown: requireLazy/*r*/,
                         contextRef: "container",
                         contextBounds: this.state.contextualBounds,
                         offsetY: S,
                         position: "above",
                         behaviors: module/*i*/
-                    }, h.createElement(requireDynamic/*n*/, {
+                    }, React/*h*/.createElement(requireDynamic/*n*/, {
                         viewProps: this.props.typeaheadViewProps,
                         highlightedEntry: this.state.highlightedMentionable,
                         entries: global/*e*/ || [],
@@ -124,11 +124,11 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                 }
             },
             render: function() {
-                return h.createElement(g, {
+                return React/*h*/.createElement(View/*g*/, {
                     ref: "container",
                     className: this.props.className,
                     tabIndex: "-2"
-                }, this.transferPropsTo(h.createElement(s, {
+                }, this.transferPropsTo(React/*h*/.createElement(s, {
                     ref: "abstractTextEditor",
                     autoFocus: this.props.autoFocus,
                     inputView: this.props.inputView,

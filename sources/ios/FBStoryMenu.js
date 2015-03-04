@@ -1,50 +1,50 @@
 __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubscriptionActions","FeedbackPoller","GroupBlockUserAction","GroupRemoveUserAction","GroupPinPostAction","Image","NativeModules","Popover","ReactGraphQL","React","ReportToAdminAction","RouteHandler","StoryDeleteActions","StyleSheet","TouchableOpacity","View","fbt","getStoryLocation","isEmpty","ix","keyOf","logError"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ActionRow"),
-        a = require/*t*/("FBAlertManager"),
-        s = require/*t*/("FBGroupJoinState"),
-        l = require/*t*/("FeedbackSubscriptionActions"),
-        u = require/*t*/("FeedbackPoller"),
-        c = require/*t*/("GroupBlockUserAction"),
-        p = require/*t*/("GroupRemoveUserAction"),
-        d = require/*t*/("GroupPinPostAction"),
-        h = require/*t*/("Image"),
-        f = require/*t*/("NativeModules"),
-        m = require/*t*/("Popover"),
-        g = require/*t*/("ReactGraphQL"),
-        _ = require/*t*/("React"),
-        y = require/*t*/("ReportToAdminAction"),
-        v = f.RKCurrentViewer,
-        S = f.RKDeviceManager,
-        b = f.RKTreehouseManager,
-        R = f.RKPasteboard,
-        w = require/*t*/("RouteHandler"),
-        C = require/*t*/("StoryDeleteActions"),
-        E = require/*t*/("StyleSheet"),
-        D = require/*t*/("TouchableOpacity"),
-        T = require/*t*/("View"),
-        x = require/*t*/("fbt"),
-        P = require/*t*/("getStoryLocation"),
-        I = require/*t*/("isEmpty"),
-        F = require/*t*/("ix"),
-        L = require/*t*/("keyOf"),
-        M = require/*t*/("logError"),
-        Q = L({
+    var ActionRow/*o*/ = require/*t*/("ActionRow"),
+        FBAlertManager/*a*/ = require/*t*/("FBAlertManager"),
+        FBGroupJoinState/*s*/ = require/*t*/("FBGroupJoinState"),
+        FeedbackSubscriptionActions/*l*/ = require/*t*/("FeedbackSubscriptionActions"),
+        FeedbackPoller/*u*/ = require/*t*/("FeedbackPoller"),
+        GroupBlockUserAction/*c*/ = require/*t*/("GroupBlockUserAction"),
+        GroupRemoveUserAction/*p*/ = require/*t*/("GroupRemoveUserAction"),
+        GroupPinPostAction/*d*/ = require/*t*/("GroupPinPostAction"),
+        Image/*h*/ = require/*t*/("Image"),
+        NativeModules/*f*/ = require/*t*/("NativeModules"),
+        Popover/*m*/ = require/*t*/("Popover"),
+        ReactGraphQL/*g*/ = require/*t*/("ReactGraphQL"),
+        React/*_*/ = require/*t*/("React"),
+        ReportToAdminAction/*y*/ = require/*t*/("ReportToAdminAction"),
+        v = NativeModules/*f*/.RKCurrentViewer,
+        S = NativeModules/*f*/.RKDeviceManager,
+        b = NativeModules/*f*/.RKTreehouseManager,
+        R = NativeModules/*f*/.RKPasteboard,
+        RouteHandler/*w*/ = require/*t*/("RouteHandler"),
+        StoryDeleteActions/*C*/ = require/*t*/("StoryDeleteActions"),
+        StyleSheet/*E*/ = require/*t*/("StyleSheet"),
+        TouchableOpacity/*D*/ = require/*t*/("TouchableOpacity"),
+        View/*T*/ = require/*t*/("View"),
+        fbt/*x*/ = require/*t*/("fbt"),
+        getStoryLocation/*P*/ = require/*t*/("getStoryLocation"),
+        isEmpty/*I*/ = require/*t*/("isEmpty"),
+        ix/*F*/ = require/*t*/("ix"),
+        keyOf/*L*/ = require/*t*/("keyOf"),
+        logError/*M*/ = require/*t*/("logError"),
+        Q = keyOf/*L*/({
             chevronRef: null
         }),
-        A = L({
+        A = keyOf/*L*/({
             popRef: null
         }),
         k = "GroupDeletePostAndRemoveUserActionLink",
-        O = _.createClass({
+        O = React/*_*/.createClass({
             displayName: "FBStoryMenu",
             propTypes: {
-                onStoryReported: _.PropTypes.func,
-                editPostCallback: _.PropTypes.func,
-                onPinUnpinStory: _.PropTypes.func,
-                pinPostSource: _.PropTypes.string
+                onStoryReported: React/*_*/.PropTypes.func,
+                editPostCallback: React/*_*/.PropTypes.func,
+                onPinUnpinStory: React/*_*/.PropTypes.func,
+                pinPostSource: React/*_*/.PropTypes.string
             },
-            mixins: [g.Mixin],
+            mixins: [ReactGraphQL/*g*/.Mixin],
             statics: {
                 queries: {
                     story: function(global/*e*/, require/*t*/) {
@@ -135,10 +135,10 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
                 }
             },
             open: function() {
-                this.refs[Q].measure(function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
+                this.refs[Q].measure(function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, ActionRow/*o*/) {
                     this.refs[A].openWithArrow({
                         left: module/*i*/ + requireDynamic/*n*/ / 2,
-                        top: o,
+                        top: ActionRow/*o*/,
                         height: requireLazy/*r*/
                     })
                 }.bind(this))
@@ -160,102 +160,102 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
                 this.props.editPostCallback(), this.refs[A].close()
             },
             deleteStoryConfirm: function() {
-                this.refs[A].close(), a.alertWithArgs({
-                    title: x({
+                this.refs[A].close(), FBAlertManager/*a*/.alertWithArgs({
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete Post?"],
-                        desc: "Title of confirmation message for deleting a post"
+                        desc: "Title of confirmation message for deleting FBAlertManager/*a*/ post"
                     }),
-                    message: x({
+                    message: fbt/*x*/({
                         type: "text",
                         texts: ["You're about to delete this post."],
-                        desc: "Confirmation message for deleting a post."
+                        desc: "Confirmation message for deleting FBAlertManager/*a*/ post."
                     }),
                     buttons: [{
-                        "delete": x({
+                        "delete": fbt/*x*/({
                             type: "text",
                             texts: ["Delete"],
-                            desc: "Confirmation button for deleting a post."
+                            desc: "Confirmation button for deleting FBAlertManager/*a*/ post."
                         })
                     }, {
-                        cancel: x({
+                        cancel: fbt/*x*/({
                             type: "text",
                             texts: ["Cancel"],
-                            desc: "Cancel button for deleting a comment."
+                            desc: "Cancel button for deleting FBAlertManager/*a*/ comment."
                         })
                     }]
                 }, this.deleteStory)
             },
             deleteStory: function(global/*e*/) {
                 if ("cancel" != global/*e*/) {
-                    u.unregister(this.props.story.feedback.id), this.props.onStoryDeleted && this.props.onStoryDeleted();
+                    FeedbackPoller/*u*/.unregister(this.props.story.feedback.id), this.props.onStoryDeleted && this.props.onStoryDeleted();
                     var require/*t*/ = this.props.story,
-                        requireDynamic/*n*/ = P(this.context.route);
-                    C.deleteStory(require/*t*/.id, requireDynamic/*n*/)
+                        requireDynamic/*n*/ = getStoryLocation/*P*/(this.context.route);
+                    StoryDeleteActions/*C*/.deleteStory(require/*t*/.id, requireDynamic/*n*/)
                 }
             },
             deleteStoryAndRemoveUserConfirm: function() {
-                this.refs[A].close(), a.alertWithArgs({
-                    title: x({
+                this.refs[A].close(), FBAlertManager/*a*/.alertWithArgs({
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete Post and Remove User?"],
-                        desc: "Title of confirmation message for deleting a post and removing the user from the group"
+                        desc: "Title of confirmation message for deleting FBAlertManager/*a*/ post and removing the user from the group"
                     }),
-                    message: x({
+                    message: fbt/*x*/({
                         type: "text",
                         texts: ["You're about to delete this post and remove this user from the group."],
-                        desc: "Confirmation message for deleting a post and removing author from the group"
+                        desc: "Confirmation message for deleting FBAlertManager/*a*/ post and removing author from the group"
                     }),
                     buttons: [{
-                        "delete": x({
+                        "delete": fbt/*x*/({
                             type: "text",
                             texts: ["Confirm"],
-                            desc: "Confirmation button for deleting a post and removing the poster from the group"
+                            desc: "Confirmation button for deleting FBAlertManager/*a*/ post and removing the poster from the group"
                         })
                     }, {
-                        cancel: x({
+                        cancel: fbt/*x*/({
                             type: "text",
                             texts: ["Cancel"],
-                            desc: "Cancel button for deleting a post and removing the poster from the group"
+                            desc: "Cancel button for deleting FBAlertManager/*a*/ post and removing the poster from the group"
                         })
                     }]
                 }, this.deleteStoryAndRemoveUser)
             },
             deleteStoryAndRemoveUser: function(global/*e*/) {
-                "cancel" !== global/*e*/ && (this.deleteStory(global/*e*/), p.removeMemberFromGroup(this.props.story.actors[0].id, this.props.group.id, this.onRemoveMemberSuccess))
+                "cancel" !== global/*e*/ && (this.deleteStory(global/*e*/), GroupRemoveUserAction/*p*/.removeMemberFromGroup(this.props.story.actors[0].id, this.props.group.id, this.onRemoveMemberSuccess))
             },
             onRemoveMemberSuccess: function() {
                 b && b.didRemoveMember && b.didRemoveMember(this.props.story.actors[0].id)
             },
             deleteStoryAndBlockUserConfirm: function() {
-                this.refs[A].close(), a.alertWithArgs({
-                    title: x({
+                this.refs[A].close(), FBAlertManager/*a*/.alertWithArgs({
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete Post and Block User?"],
-                        desc: "Title of confirmation message for deleting a post and blocking the user from the group"
+                        desc: "Title of confirmation message for deleting FBAlertManager/*a*/ post and blocking the user from the group"
                     }),
-                    message: x({
+                    message: fbt/*x*/({
                         type: "text",
                         texts: ["You're about to delete this post and block this user from the group."],
-                        desc: "Confirmation message for deleting a post."
+                        desc: "Confirmation message for deleting FBAlertManager/*a*/ post."
                     }),
                     buttons: [{
-                        "delete": x({
+                        "delete": fbt/*x*/({
                             type: "text",
                             texts: ["Confirm"],
-                            desc: "Confirmation button for deleting a post and blocking the poster."
+                            desc: "Confirmation button for deleting FBAlertManager/*a*/ post and blocking the poster."
                         })
                     }, {
-                        cancel: x({
+                        cancel: fbt/*x*/({
                             type: "text",
                             texts: ["Cancel"],
-                            desc: "Cancel button for deleting a post and blocking the poster."
+                            desc: "Cancel button for deleting FBAlertManager/*a*/ post and blocking the poster."
                         })
                     }]
                 }, this.deleteStoryAndBlockUser)
             },
             deleteStoryAndBlockUser: function(global/*e*/) {
-                "cancel" !== global/*e*/ && (this.deleteStory(global/*e*/), c.blockUserFromGroup(this.props.story.actors[0].id, this.props.group.id, this.onBlockSuccess))
+                "cancel" !== global/*e*/ && (this.deleteStory(global/*e*/), GroupBlockUserAction/*c*/.blockUserFromGroup(this.props.story.actors[0].id, this.props.group.id, this.onBlockSuccess))
             },
             onBlockSuccess: function() {
                 b && b.didBlockMember && b.didBlockMember(this.props.story.actors[0].id)
@@ -265,30 +265,30 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
             },
             reportToAdmin: function() {
                 var global/*e*/ = this.refs[A];
-                y.reportStoryToAdmin({
+                ReportToAdminAction/*y*/.reportStoryToAdmin({
                     groupID: this.props.group.id,
                     storyID: this.props.story.id,
                     onFailure: function(require/*t*/) {
                         global/*e*/.close(function() {
-                            M(require/*t*/)
+                            logError/*M*/(require/*t*/)
                         })
                     },
                     onSuccess: function() {
                         global/*e*/.close(function() {
-                            a.alert(x({
+                            FBAlertManager/*a*/.alert(fbt/*x*/({
                                 type: "text",
                                 texts: ["Thank you. This post has been reported."],
-                                desc: "Message after the viewer has successfully reported a post to group admin"
+                                desc: "Message after the viewer has successfully reported FBAlertManager/*a*/ post to group admin"
                             }))
                         })
                     }
                 })
             },
             pinPost: function() {
-                d.updatePinnedPost(this.props.group.id, this.props.story.id, !0, this.props.pinPostSource, this.props.onPinUnpinStory), this.refs[A].close()
+                GroupPinPostAction/*d*/.updatePinnedPost(this.props.group.id, this.props.story.id, !0, this.props.pinPostSource, this.props.onPinUnpinStory), this.refs[A].close()
             },
             unpinPost: function() {
-                d.updatePinnedPost(this.props.group.id, this.props.story.id, !1, this.props.pinPostSource, this.props.onPinUnpinStory), this.refs[A].close()
+                GroupPinPostAction/*d*/.updatePinnedPost(this.props.group.id, this.props.story.id, !1, this.props.pinPostSource, this.props.onPinUnpinStory), this.refs[A].close()
             },
             reportStory: function() {
                 var global/*e*/ = this.props.story,
@@ -301,7 +301,7 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
                     storyRenderLocation: "group"
                 }, function(global/*e*/) {
                     require/*t*/.close(function() {
-                        this.props.onStoryReported && this.props.onStoryReported(), w.getCallback({
+                        this.props.onStoryReported && this.props.onStoryReported(), RouteHandler/*w*/.getCallback({
                             typeList: ["URL"],
                             params: {
                                 url: global/*e*/
@@ -310,143 +310,143 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
                     }.bind(this))
                 }.bind(this), function(global/*e*/) {
                     require/*t*/.close(function() {
-                        M(global/*e*/)
+                        logError/*M*/(global/*e*/)
                     })
                 })
             },
             changeSubscribeStatus: function(global/*e*/) {
                 var require/*t*/ = this.props.story.feedback;
-                global/*e*/ ? l.handleFeedbackSubscribe(require/*t*/.id) : l.handleFeedbackUnsubscribe(require/*t*/.id), this.refs[A].close()
+                global/*e*/ ? FeedbackSubscriptionActions/*l*/.handleFeedbackSubscribe(require/*t*/.id) : FeedbackSubscriptionActions/*l*/.handleFeedbackUnsubscribe(require/*t*/.id), this.refs[A].close()
             },
             renderPopoverContent: function() {
                 var global/*e*/ = [];
-                this.props.story.url && (global/*e*/.push(_.createElement(o, {
+                this.props.story.url && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "copyLink",
                     onPress: this.copyLink,
-                    iconSource: F("ActionSheetIconCopy"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconCopy"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Copy Link to Post"],
                         desc: "Button to copy link to post to paste board"
                     })
-                })), global/*e*/.push(m.renderSeparator())), this.props.group && this.props.group.admin_aware_group.is_viewer_admin && (0 === this.props.group.admin_aware_group.group_pinned_stories.count || I(this.props.group.admin_aware_group.group_pinned_stories.edges) ? global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())), this.props.group && this.props.group.admin_aware_group.is_viewer_admin && (0 === this.props.group.admin_aware_group.group_pinned_stories.count || isEmpty/*I*/(this.props.group.admin_aware_group.group_pinned_stories.edges) ? global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "pinPost",
                     onPress: this.pinPost,
-                    iconSource: F("ActionSheetIconSavePhoto"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconSavePhoto"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Pin Post"],
-                        desc: "Button to pin a post to the group"
+                        desc: "Button to pin FBAlertManager/*a*/ post to the group"
                     })
-                })) : this.props.story.id === this.props.group.admin_aware_group.group_pinned_stories.edges[0].node.id && global/*e*/.push(_.createElement(o, {
+                })) : this.props.story.id === this.props.group.admin_aware_group.group_pinned_stories.edges[0].node.id && global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "unpinPost",
                     onPress: this.unpinPost,
-                    iconSource: F("ActionSheetIconReport"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconReport"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Unpin Post"],
-                        desc: "Button to upin a post in a group"
+                        desc: "Button to upin FBAlertManager/*a*/ post in FBAlertManager/*a*/ group"
                     })
                 })));
                 var require/*t*/ = this.props.story.feedback.is_viewer_subscribed,
                     requireDynamic/*n*/ = this.changeSubscribeStatus.bind(this, !require/*t*/);
-                return require/*t*/ ? (global/*e*/.push(_.createElement(o, {
+                return require/*t*/ ? (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "unsubscribeToStory",
                     onPress: requireDynamic/*n*/,
-                    iconSource: F("ActionSheetIconGetNotifications"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconGetNotifications"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Stop Notifications"],
-                        desc: "Button to unsubscribe to comments on a post"
+                        desc: "Button to unsubscribe to comments on FBAlertManager/*a*/ post"
                     })
-                })), global/*e*/.push(m.renderSeparator())) : this.props.story.feedback.can_viewer_subscribe && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())) : this.props.story.feedback.can_viewer_subscribe && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "subscribeToStory",
                     onPress: requireDynamic/*n*/,
-                    iconSource: F("ActionSheetIconGetNotifications"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconGetNotifications"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Get Notifications"],
-                        desc: "Button to subscribe to comments on a post"
+                        desc: "Button to subscribe to comments on FBAlertManager/*a*/ post"
                     })
-                })), global/*e*/.push(m.renderSeparator())), this.props.editPostCallback && this.props.story.can_viewer_edit && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())), this.props.editPostCallback && this.props.story.can_viewer_edit && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "editPost",
                     onPress: this.editPost,
-                    iconSource: F("ActionSheetIconCompose"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconCompose"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Edit Post"],
                         desc: "Button to edit post"
                     })
-                })), global/*e*/.push(m.renderSeparator())), this.props.group && !this.props.group.admin_aware_group.is_viewer_admin && this.props.group.admin_aware_group.viewer_join_state === s.member && this.props.viewer.actor.id !== this.props.story.actors[0].id && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())), this.props.group && !this.props.group.admin_aware_group.is_viewer_admin && this.props.group.admin_aware_group.viewer_join_state === FBGroupJoinState/*s*/.member && this.props.viewer.actor.id !== this.props.story.actors[0].id && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "reportToAdmin",
                     onPress: this.reportToAdmin,
-                    iconSource: F("ActionSheetIconReport"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconReport"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Report to Admin"],
-                        desc: "Button to report story to a group admin"
+                        desc: "Button to report story to FBAlertManager/*a*/ group admin"
                     })
-                })), global/*e*/.push(m.renderSeparator())), this.props.group && this.props.viewer.actor.id !== this.props.story.actors[0].id && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())), this.props.group && this.props.viewer.actor.id !== this.props.story.actors[0].id && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "reportStory",
                     onPress: this.reportStory,
-                    iconSource: F("ActionSheetIconReport"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconReport"),
+                    title: fbt/*x*/({
                         type: "text",
-                        texts: ["I don'require/*t*/ like this post"],
+                        texts: ["isEmpty/*I*/ don'require/*t*/ like this post"],
                         desc: "Button to report story to FB as spam/etc"
                     })
-                })), global/*e*/.push(m.renderSeparator())), v.isEmployee && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator())), v.isEmployee && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "copyId",
                     onPress: this.copyStoryDebugData,
-                    iconSource: F("ActionSheetIconCopy"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconCopy"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["[fb] Copy Story Debug Data"],
                         desc: "fb-only option to copy story debug data to pasteboard"
                     })
-                })), global/*e*/.push(m.renderSeparator()), S.isSimulator && (global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator()), S.isSimulator && (global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "printInfo",
                     onPress: this.printStoryInfo,
-                    iconSource: F("ActionSheetIconSavePhoto"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconSavePhoto"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["[fb] Print Story Info"],
                         desc: "fb-only option to print story info"
                     })
-                })), global/*e*/.push(m.renderSeparator()))), global/*e*/.push(_.createElement(o, {
+                })), global/*e*/.push(Popover/*m*/.renderSeparator()))), global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "copyStory",
                     onPress: this.copyStory,
-                    iconSource: F("ActionSheetIconCopy"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconCopy"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Copy Story Text"],
                         desc: "Button to copy story text to paste board"
                     })
-                })), this.props.story.can_viewer_delete && (global/*e*/.push(m.renderSeparator()), global/*e*/.push(_.createElement(o, {
+                })), this.props.story.can_viewer_delete && (global/*e*/.push(Popover/*m*/.renderSeparator()), global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "deleteStoryConfirm",
                     onPress: this.deleteStoryConfirm,
-                    iconSource: F("ActionSheetIconDelete"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconDelete"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete"],
                         desc: "menu button to delete story if viewer is the author"
                     })
-                })), this.props.group && this.props.group.admin_aware_group.is_viewer_admin && this.props.story.actors[0].id != this.props.viewer.actor.id && (!I(this.props.story.action_links) && this.props.story.action_links.some(function(global/*e*/) {
+                })), this.props.group && this.props.group.admin_aware_group.is_viewer_admin && this.props.story.actors[0].id != this.props.viewer.actor.id && (!isEmpty/*I*/(this.props.story.action_links) && this.props.story.action_links.some(function(global/*e*/) {
                     global/*e*/.__type__ && global/*e*/.__type__.name === k
-                }) && (global/*e*/.push(m.renderSeparator()), global/*e*/.push(_.createElement(o, {
+                }) && (global/*e*/.push(Popover/*m*/.renderSeparator()), global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "deleteStoryAndRemoveUserConfirm",
                     onPress: this.deleteStoryAndRemoveUserConfirm,
-                    iconSource: F("ActionSheetIconReport"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconReport"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete and Remove User"],
                         desc: "menu button to delete story and remove poster from group"
                     })
-                }))), global/*e*/.push(m.renderSeparator()), global/*e*/.push(_.createElement(o, {
+                }))), global/*e*/.push(Popover/*m*/.renderSeparator()), global/*e*/.push(React/*_*/.createElement(ActionRow/*o*/, {
                     key: "deleteStoryAndBlockUserConfirm",
                     onPress: this.deleteStoryAndBlockUserConfirm,
-                    iconSource: F("ActionSheetIconReport"),
-                    title: x({
+                    iconSource: ix/*F*/("ActionSheetIconReport"),
+                    title: fbt/*x*/({
                         type: "text",
                         texts: ["Delete and Block User"],
                         desc: "menu button to delete story and ban poster from group"
@@ -454,21 +454,21 @@ __d("FBStoryMenu",["ActionRow","FBAlertManager","FBGroupJoinState","FeedbackSubs
                 })))), global/*e*/
             },
             render: function() {
-                return _.createElement(D, {
+                return React/*_*/.createElement(TouchableOpacity/*D*/, {
                     ref: Q,
                     onPress: this.open
-                }, _.createElement(T, {
+                }, React/*_*/.createElement(View/*T*/, {
                     style: N.button
-                }, _.createElement(h, {
-                    source: F("storyChevron"),
+                }, React/*_*/.createElement(Image/*h*/, {
+                    source: ix/*F*/("storyChevron"),
                     style: N.chevronIcon
-                }), _.createElement(m, {
+                }), React/*_*/.createElement(Popover/*m*/, {
                     ref: A,
                     contentFactory: this.renderPopoverContent
                 })))
             }
         }),
-        N = E.create({
+        N = StyleSheet/*E*/.create({
             button: {
                 width: 30,
                 height: 30,

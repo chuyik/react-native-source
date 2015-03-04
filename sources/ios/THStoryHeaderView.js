@@ -1,24 +1,24 @@
 __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","ReactGraphQL","StyleSheet","Text","THColors","THProfilePicture","TimeStamp","View","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBTextEntity"),
+    var FBTextEntity/*o*/ = require/*t*/("FBTextEntity"),
         a = require/*t*/("FBTextWithEntities.react"),
-        s = require/*t*/("React"),
-        l = require/*t*/("ReactGraphQL"),
-        u = require/*t*/("StyleSheet"),
-        c = require/*t*/("Text"),
-        p = require/*t*/("THColors"),
-        d = require/*t*/("THProfilePicture"),
-        h = require/*t*/("TimeStamp"),
-        f = require/*t*/("View"),
-        m = require/*t*/("fbt"),
+        React/*s*/ = require/*t*/("React"),
+        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
+        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
+        Text/*c*/ = require/*t*/("Text"),
+        THColors/*p*/ = require/*t*/("THColors"),
+        THProfilePicture/*d*/ = require/*t*/("THProfilePicture"),
+        TimeStamp/*h*/ = require/*t*/("TimeStamp"),
+        View/*f*/ = require/*t*/("View"),
+        fbt/*m*/ = require/*t*/("fbt"),
         g = 36,
-        _ = s.createClass({
+        _ = React/*s*/.createClass({
             displayName: "THStoryHeaderView",
             propTypes: {
-                story: s.PropTypes.object.isRequired,
-                context: s.PropTypes.object.isRequired
+                story: React/*s*/.PropTypes.object.isRequired,
+                context: React/*s*/.PropTypes.object.isRequired
             },
-            mixins: [l.Mixin],
+            mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
                     story: function(global/*e*/, require/*t*/) {
@@ -53,7 +53,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                             })], null, {
                                 scope: "THStoryHeaderView_story"
                             })
-                        }(a.getQuery("text"), d.getQuery("actor"))
+                        }(a.getQuery("text"), THProfilePicture/*d*/.getQuery("actor"))
                     },
                     group: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/) {
@@ -64,7 +64,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THStoryHeaderView_group"
                             })
-                        }(d.getQuery("group"))
+                        }(THProfilePicture/*d*/.getQuery("group"))
                     }
                 }
             },
@@ -72,7 +72,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 var global/*e*/ = this.getActor(),
                     require/*t*/ = this.props.story,
                     requireDynamic/*n*/ = null;
-                if (require/*t*/.title) requireDynamic/*n*/ = s.createElement(a, {
+                if (require/*t*/.title) requireDynamic/*n*/ = React/*s*/.createElement(a, {
                     shouldTruncate: !0,
                     key: "title",
                     text: this.props.story.title,
@@ -82,23 +82,23 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 });
                 else if (global/*e*/) {
                     var requireLazy/*r*/ = [];
-                    requireLazy/*r*/.push(s.createElement(o, {
+                    requireLazy/*r*/.push(React/*s*/.createElement(FBTextEntity/*o*/, {
                         entity: global/*e*/,
                         key: "actor",
                         text: global/*e*/.name
                     }));
                     var module/*i*/ = this.props.context.isGroupStream && !this.props.context.isSubStory;
-                    !module/*i*/ && require/*t*/.to && (requireLazy/*r*/.push(s.createElement(c, {
+                    !module/*i*/ && require/*t*/.to && (requireLazy/*r*/.push(React/*s*/.createElement(Text/*c*/, {
                         key: ">"
-                    }, " ▸ ")), requireLazy/*r*/.push(s.createElement(o, {
+                    }, " ▸ ")), requireLazy/*r*/.push(React/*s*/.createElement(FBTextEntity/*o*/, {
                         entity: require/*t*/.to,
                         key: "to",
                         text: require/*t*/.to.name
-                    }))), requireDynamic/*n*/ = s.createElement(c, {
+                    }))), requireDynamic/*n*/ = React/*s*/.createElement(Text/*c*/, {
                         style: y.text
                     }, requireLazy/*r*/)
                 }
-                return s.createElement(f, {
+                return React/*s*/.createElement(View/*f*/, {
                     key: "title"
                 }, requireDynamic/*n*/)
             },
@@ -108,7 +108,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
             },
             getProfilePicture: function() {
                 var global/*e*/ = this.getActor();
-                return global/*e*/ ? s.createElement(d, {
+                return global/*e*/ ? React/*s*/.createElement(THProfilePicture/*d*/, {
                     actor: this.getActor(),
                     height: g,
                     group: this.props.group
@@ -118,35 +118,35 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 var global/*e*/ = this.props.story;
                 if (!global/*e*/.creation_time) return null;
                 var require/*t*/ = [];
-                return require/*t*/.push(s.createElement(f, {
+                return require/*t*/.push(React/*s*/.createElement(View/*f*/, {
                     style: y.timestampContainer
-                }, s.createElement(h, {
+                }, React/*s*/.createElement(TimeStamp/*h*/, {
                     style: y.metadataText,
                     time: global/*e*/.creation_time,
                     shorten: !0
-                }))), this.props.story.edit_history && this.props.story.edit_history.count && (require/*t*/.push(s.createElement(f, {
+                }))), this.props.story.edit_history && this.props.story.edit_history.count && (require/*t*/.push(React/*s*/.createElement(View/*f*/, {
                     style: y.middotContainer
-                }, s.createElement(c, {
+                }, React/*s*/.createElement(Text/*c*/, {
                     style: y.metadataText
-                }, "·"))), require/*t*/.push(s.createElement(c, {
+                }, "·"))), require/*t*/.push(React/*s*/.createElement(Text/*c*/, {
                     style: y.metadataText
-                }, m({
+                }, fbt/*m*/({
                     type: "text",
                     texts: ["Edited"],
                     desc: "Indicator that a post has been edited"
-                })))), s.createElement(f, {
+                })))), React/*s*/.createElement(View/*f*/, {
                     style: y.metadataContainer
                 }, require/*t*/)
             },
             render: function() {
-                return s.createElement(f, {
+                return React/*s*/.createElement(View/*f*/, {
                     style: y.container
-                }, this.getProfilePicture(), s.createElement(f, {
+                }, this.getProfilePicture(), React/*s*/.createElement(View/*f*/, {
                     style: y.textContainer
                 }, this.getTitle(), this.getHeaderMetadata()))
             }
         }),
-        y = u.create({
+        y = StyleSheet/*u*/.create({
             container: {
                 flexDirection: "row",
                 marginRight: 22
@@ -155,7 +155,7 @@ __d("THStoryHeaderView",["FBTextEntity","FBTextWithEntities.react","React","Reac
                 flexDirection: "row"
             },
             metadataText: {
-                color: p.feedbackFadedText,
+                color: THColors/*p*/.feedbackFadedText,
                 marginTop: 2,
                 fontSize: 12
             },

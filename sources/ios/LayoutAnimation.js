@@ -1,30 +1,30 @@
 __d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ReactPropTypes"),
-        a = require/*t*/("NativeModules").RKUIManager,
-        s = require/*t*/("createStrictShapeTypeChecker"),
-        l = require/*t*/("keyMirror"),
-        u = l({
+    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
+        NativeModules/*a*/ = require/*t*/("NativeModules").RKUIManager,
+        createStrictShapeTypeChecker/*s*/ = require/*t*/("createStrictShapeTypeChecker"),
+        keyMirror/*l*/ = require/*t*/("keyMirror"),
+        u = keyMirror/*l*/({
             spring: !0,
             linear: !0,
             easeInEaseOut: !0,
             easeIn: !0,
             easeOut: !0
         }),
-        c = l({
+        c = keyMirror/*l*/({
             opacity: !0,
             scaleXY: !0
         }),
-        p = s({
-            duration: o.number,
-            delay: o.number,
-            springDamping: o.number,
-            initialVelocity: o.number,
-            type: o.oneOf(Object.keys(u)),
-            property: o.oneOf(Object.keys(c))
+        p = createStrictShapeTypeChecker/*s*/({
+            duration: ReactPropTypes/*o*/.number,
+            delay: ReactPropTypes/*o*/.number,
+            springDamping: ReactPropTypes/*o*/.number,
+            initialVelocity: ReactPropTypes/*o*/.number,
+            type: ReactPropTypes/*o*/.oneOf(Object.keys(u)),
+            property: ReactPropTypes/*o*/.oneOf(Object.keys(c))
         }),
-        d = s({
-            duration: o.number.isRequired,
+        d = createStrictShapeTypeChecker/*s*/({
+            duration: ReactPropTypes/*o*/.number.isRequired,
             create: p,
             update: p,
             "delete": p
@@ -33,7 +33,7 @@ __d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCh
             configureNext: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 d({
                     config: global/*e*/
-                }, "config", "LayoutAnimation.configureNext"), a.configureNextLayoutAnimation(global/*e*/, require/*t*/, requireDynamic/*n*/)
+                }, "config", "LayoutAnimation.configureNext"), NativeModules/*a*/.configureNextLayoutAnimation(global/*e*/, require/*t*/, requireDynamic/*n*/)
             },
             create: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 return {

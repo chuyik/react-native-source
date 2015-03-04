@@ -6,11 +6,11 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
             requireLazy/*r*/ = requireDynamic/*n*/.getDeferredFragmentNames();
         if (requireLazy/*r*/) {
             var module/*i*/ = requireDynamic/*n*/.rootCall().hasRefParam() ? D.get(requireDynamic/*n*/.getID()) || {} : g.getIDsFromQuery(global/*e*/);
-            y(module/*i*/, function(global/*e*/) {
+            forEachObject/*y*/(module/*i*/, function(global/*e*/) {
                 var requireDynamic/*n*/ = C.get(global/*e*/) || {};
-                y(requireLazy/*r*/, function(requireLazy/*r*/) {
+                forEachObject/*y*/(requireLazy/*r*/, function(requireLazy/*r*/) {
                     delete requireDynamic/*n*/[requireLazy/*r*/], require/*t*/(global/*e*/, requireLazy/*r*/)
-                }), S(requireDynamic/*n*/) ? C.delete(global/*e*/) : C.set(global/*e*/, requireDynamic/*n*/)
+                }), isEmpty/*S*/(requireDynamic/*n*/) ? C.delete(global/*e*/) : C.set(global/*e*/, requireDynamic/*n*/)
             })
         }
     }
@@ -29,7 +29,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
                 a = o.getQuery(),
                 s = a.getDeferredFragmentNames(),
                 l = d(require/*t*/, o);
-            D.set(a.getID(), l), y(l, function(global/*e*/) {
+            D.set(a.getID(), l), forEachObject/*y*/(l, function(global/*e*/) {
                 var require/*t*/ = C.get(global/*e*/) || {};
                 Object.assign(require/*t*/, s), C.set(global/*e*/, require/*t*/)
             })
@@ -42,7 +42,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
     }
 
     function u(global/*e*/, require/*t*/) {
-        w || (w = [], b(p)), w.push({
+        w || (w = [], setImmediate/*b*/(p)), w.push({
             dataID: global/*e*/,
             fragmentName: require/*t*/,
             error: null
@@ -50,7 +50,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
     }
 
     function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        w || (w = [], b(p)), w.push({
+        w || (w = [], setImmediate/*b*/(p)), w.push({
             dataID: global/*e*/,
             fragmentName: require/*t*/,
             error: requireDynamic/*n*/
@@ -65,7 +65,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
                         a = o.dataID,
                         s = o.error,
                         l = o.fragmentName;
-                    s ? (requireLazy/*r*/ = require/*t*/.callbacks.onFailure, module/*i*/ = [a, l, s]) : (requireLazy/*r*/ = require/*t*/.callbacks.onSuccess, module/*i*/ = [a, l]), m.applyWithGuard(requireLazy/*r*/, null, module/*i*/, null, "GraphQLDeferredQueryTracker")
+                    s ? (requireLazy/*r*/ = require/*t*/.callbacks.onFailure, module/*i*/ = [a, l, s]) : (requireLazy/*r*/ = require/*t*/.callbacks.onSuccess, module/*i*/ = [a, l]), ErrorUtils/*m*/.applyWithGuard(requireLazy/*r*/, null, module/*i*/, null, "GraphQLDeferredQueryTracker")
                 }
             w = null
         }
@@ -83,7 +83,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
         if (requireLazy/*r*/ === requireDynamic/*n*/.length && "string" == typeof require/*t*/) return void(global/*e*/[require/*t*/] = require/*t*/);
         if (!(requireLazy/*r*/ >= requireDynamic/*n*/.length || !require/*t*/ || "object" != typeof require/*t*/ || Array.isArray(require/*t*/))) {
             var module/*i*/ = requireDynamic/*n*/[requireLazy/*r*/];
-            "*" === module/*i*/ ? y(require/*t*/, function(require/*t*/) {
+            "*" === module/*i*/ ? forEachObject/*y*/(require/*t*/, function(require/*t*/) {
                 h(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/ + 1)
             }) : require/*t*/.hasOwnProperty(module/*i*/) && h(global/*e*/, require/*t*/[module/*i*/], requireDynamic/*n*/, requireLazy/*r*/ + 1)
         }
@@ -92,18 +92,18 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
     function f(global/*e*/) {
         return global/*e*/.getQuery().rootCall().getSourceQueryID()
     }
-    var m = require/*t*/("ErrorUtils"),
+    var ErrorUtils/*m*/ = require/*t*/("ErrorUtils"),
         g = (require/*t*/("GraphQL_EXPERIMENTAL"), require/*t*/("GraphQLCodedError"), require/*t*/("GraphQLStore")),
-        _ = require/*t*/("Map"),
-        y = require/*t*/("forEachObject"),
-        v = require/*t*/("invariant"),
-        S = require/*t*/("isEmpty"),
-        b = require/*t*/("setImmediate"),
+        Map/*_*/ = require/*t*/("Map"),
+        forEachObject/*y*/ = require/*t*/("forEachObject"),
+        invariant/*v*/ = require/*t*/("invariant"),
+        isEmpty/*S*/ = require/*t*/("isEmpty"),
+        setImmediate/*b*/ = require/*t*/("setImmediate"),
         R = [],
         w = null,
-        C = new _,
-        E = new _,
-        D = new _,
+        C = new Map/*_*/,
+        E = new Map/*_*/,
+        D = new Map/*_*/,
         T = {
             addListenerForFragment: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 var requireLazy/*r*/ = {
@@ -114,7 +114,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
                 return R.push(requireLazy/*r*/), {
                     remove: function() {
                         var global/*e*/ = R.indexOf(requireLazy/*r*/);
-                        global/*e*/ >= 0 || v(0, "remove() can only be called once"), R.splice(global/*e*/, 1)
+                        global/*e*/ >= 0 || invariant/*v*/(0, "remove() can only be called once"), R.splice(global/*e*/, 1)
                     }
                 }
             },
@@ -127,7 +127,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
                     var requireLazy/*r*/ = global/*e*/.getQuery().getDeferredFragmentNames();
                     if (requireLazy/*r*/) {
                         var module/*i*/ = g.getIDsFromQuery(global/*e*/);
-                        y(module/*i*/, function(global/*e*/) {
+                        forEachObject/*y*/(module/*i*/, function(global/*e*/) {
                             var require/*t*/ = C.get(global/*e*/) || {};
                             Object.assign(require/*t*/, requireLazy/*r*/), C.set(global/*e*/, require/*t*/)
                         })
@@ -156,7 +156,7 @@ __d("GraphQLDeferredQueryTracker",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLC
                 return !1
             },
             reset: function() {
-                C = new _, D = new _, E = new _, R = [], w = []
+                C = new Map/*_*/, D = new Map/*_*/, E = new Map/*_*/, R = [], w = []
             }
         };
     module/*i*/.exports = T

@@ -1,6 +1,6 @@
 __d("PooledClass",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("invariant"),
+    var invariant/*o*/ = require/*t*/("invariant"),
         a = function(global/*e*/) {
             var require/*t*/ = this;
             if (require/*t*/.instancePool.length) {
@@ -26,16 +26,16 @@ __d("PooledClass",["invariant"],function (global/*e*/, require/*t*/, requireDyna
             return new requireLazy/*r*/(global/*e*/, require/*t*/, requireDynamic/*n*/)
         },
         u = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            var o = this;
-            if (o.instancePool.length) {
-                var a = o.instancePool.pop();
-                return o.call(a, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), a
+            var invariant/*o*/ = this;
+            if (invariant/*o*/.instancePool.length) {
+                var a = invariant/*o*/.instancePool.pop();
+                return invariant/*o*/.call(a, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), a
             }
-            return new o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
+            return new invariant/*o*/(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)
         },
         c = function(global/*e*/) {
             var require/*t*/ = this;
-            global/*e*/ instanceof require/*t*/ || o(0, "Trying to release an instance into a pool of a different type."), global/*e*/.destructor && global/*e*/.destructor(), require/*t*/.instancePool.length < require/*t*/.poolSize && require/*t*/.instancePool.push(global/*e*/)
+            global/*e*/ instanceof require/*t*/ || invariant/*o*/(0, "Trying to release an instance into a pool of a different type."), global/*e*/.destructor && global/*e*/.destructor(), require/*t*/.instancePool.length < require/*t*/.poolSize && require/*t*/.instancePool.push(global/*e*/)
         },
         p = 10,
         d = a,

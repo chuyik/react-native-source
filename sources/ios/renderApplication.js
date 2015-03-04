@@ -2,9 +2,9 @@ __d("renderApplication",["React","invariant"],function (global/*e*/, require/*t*
     "use strict";
 
     function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        requireDynamic/*n*/ || s(0, "Expect to have a valid rootTag, instead got ", requireDynamic/*n*/), a.render(a.createElement(global/*e*/, Object.assign({}, require/*t*/)), requireDynamic/*n*/)
+        requireDynamic/*n*/ || invariant/*s*/(0, "Expect to have React/*a*/ valid rootTag, instead got ", requireDynamic/*n*/), React/*a*/.render(React/*a*/.createElement(global/*e*/, Object.assign({}, require/*t*/)), requireDynamic/*n*/)
     }
-    var a = require/*t*/("React"),
-        s = require/*t*/("invariant");
+    var React/*a*/ = require/*t*/("React"),
+        invariant/*s*/ = require/*t*/("invariant");
     module/*i*/.exports = o
 });

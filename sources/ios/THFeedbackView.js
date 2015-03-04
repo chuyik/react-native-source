@@ -1,51 +1,51 @@
 __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FBLikersPopover","FBSeenByPopover","FBSpinner","FeedbackLikeAction","GraphQLConstants","GraphQLStoreDataHandler","Image","NativeModulesDeprecated","React","ReactGraphQL","StyleSheet","Text","THAnimations","THColors","THSounds","THCommentCell","THDockedInputContainer","THInputBarView","THLikeSentence","THViewConstants","TimerMixin","TouchableBounce","TouchableWithoutFeedback","View","copyDocumentContent","fbt","invariant","ix","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("LayoutAnimation"),
-        a = require/*t*/("CommentAddAction"),
-        s = require/*t*/("DocumentContent"),
-        l = require/*t*/("FBLikersPopover"),
-        u = require/*t*/("FBSeenByPopover"),
-        c = require/*t*/("FBSpinner"),
-        p = require/*t*/("FeedbackLikeAction"),
-        d = require/*t*/("GraphQLConstants"),
-        h = require/*t*/("GraphQLStoreDataHandler"),
-        f = require/*t*/("Image"),
-        m = require/*t*/("NativeModulesDeprecated"),
-        g = require/*t*/("React"),
-        _ = require/*t*/("ReactGraphQL"),
-        y = require/*t*/("StyleSheet"),
-        v = require/*t*/("Text"),
-        S = require/*t*/("THAnimations"),
-        b = require/*t*/("THColors"),
-        R = require/*t*/("THSounds"),
-        w = require/*t*/("THCommentCell"),
-        C = require/*t*/("THDockedInputContainer"),
-        E = require/*t*/("THInputBarView"),
-        D = require/*t*/("THLikeSentence"),
-        T = require/*t*/("THViewConstants"),
-        x = require/*t*/("TimerMixin"),
-        P = require/*t*/("TouchableBounce"),
-        I = require/*t*/("TouchableWithoutFeedback"),
-        F = require/*t*/("View"),
-        L = require/*t*/("copyDocumentContent"),
-        M = require/*t*/("fbt"),
-        Q = require/*t*/("invariant"),
-        A = require/*t*/("ix"),
-        k = require/*t*/("keyOf"),
-        O = m.RKTreehouseManager,
+    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
+        CommentAddAction/*a*/ = require/*t*/("CommentAddAction"),
+        DocumentContent/*s*/ = require/*t*/("DocumentContent"),
+        FBLikersPopover/*l*/ = require/*t*/("FBLikersPopover"),
+        FBSeenByPopover/*u*/ = require/*t*/("FBSeenByPopover"),
+        FBSpinner/*c*/ = require/*t*/("FBSpinner"),
+        FeedbackLikeAction/*p*/ = require/*t*/("FeedbackLikeAction"),
+        GraphQLConstants/*d*/ = require/*t*/("GraphQLConstants"),
+        GraphQLStoreDataHandler/*h*/ = require/*t*/("GraphQLStoreDataHandler"),
+        Image/*f*/ = require/*t*/("Image"),
+        NativeModulesDeprecated/*m*/ = require/*t*/("NativeModulesDeprecated"),
+        React/*g*/ = require/*t*/("React"),
+        ReactGraphQL/*_*/ = require/*t*/("ReactGraphQL"),
+        StyleSheet/*y*/ = require/*t*/("StyleSheet"),
+        Text/*v*/ = require/*t*/("Text"),
+        THAnimations/*S*/ = require/*t*/("THAnimations"),
+        THColors/*b*/ = require/*t*/("THColors"),
+        THSounds/*R*/ = require/*t*/("THSounds"),
+        THCommentCell/*w*/ = require/*t*/("THCommentCell"),
+        THDockedInputContainer/*C*/ = require/*t*/("THDockedInputContainer"),
+        THInputBarView/*E*/ = require/*t*/("THInputBarView"),
+        THLikeSentence/*D*/ = require/*t*/("THLikeSentence"),
+        THViewConstants/*T*/ = require/*t*/("THViewConstants"),
+        TimerMixin/*x*/ = require/*t*/("TimerMixin"),
+        TouchableBounce/*P*/ = require/*t*/("TouchableBounce"),
+        TouchableWithoutFeedback/*I*/ = require/*t*/("TouchableWithoutFeedback"),
+        View/*F*/ = require/*t*/("View"),
+        copyDocumentContent/*L*/ = require/*t*/("copyDocumentContent"),
+        fbt/*M*/ = require/*t*/("fbt"),
+        invariant/*Q*/ = require/*t*/("invariant"),
+        ix/*A*/ = require/*t*/("ix"),
+        keyOf/*k*/ = require/*t*/("keyOf"),
+        O = NativeModulesDeprecated/*m*/.RKTreehouseManager,
         N = 10,
         G = 2,
-        $ = k({
+        $ = keyOf/*k*/({
             commentRef: null
         }),
-        B = k({
+        B = keyOf/*k*/({
             likeRef: null
         }),
-        H = k({
+        H = keyOf/*k*/({
             likersPopRef: null
         }),
         V = "replyBar",
-        q = k({
+        q = keyOf/*k*/({
             seenByPopRef: null
         }),
         U = function(global/*e*/) {
@@ -54,14 +54,14 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
         j = function(global/*e*/) {
             return global/*e*/.feedback && global/*e*/.feedback.likers && void 0 !== global/*e*/.feedback.likers.count ? global/*e*/.feedback.likers.count : null
         },
-        W = g.createClass({
+        W = React/*g*/.createClass({
             displayName: "THFeedbackView",
             propTypes: {
-                feedback: g.PropTypes.object.isRequired,
-                canCommentInline: g.PropTypes.bool,
-                onInputRequested: g.PropTypes.func
+                feedback: React/*g*/.PropTypes.object.isRequired,
+                canCommentInline: React/*g*/.PropTypes.bool,
+                onInputRequested: React/*g*/.PropTypes.func
             },
-            mixins: [_.Mixin, x],
+            mixins: [ReactGraphQL/*_*/.Mixin, TimerMixin/*x*/],
             statics: {
                 queryParams: {
                     comment_count: G
@@ -84,45 +84,45 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                             })], null, {
                                 scope: "THFeedbackView_viewer"
                             })
-                        }(w.getQuery("authorOptimisticPrefetch"))
+                        }(THCommentCell/*w*/.getQuery("authorOptimisticPrefetch"))
                     },
                     feedback: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-                            var a = require/*t*/.__GraphQL;
-                            return new a.QueryFragment("THFeedbackView_feedback", "Feedback", [new a.Field("id"), new a.Field("likers", [new a.Field("count")], null, null, null, null, {
+                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, LayoutAnimation/*o*/) {
+                            var CommentAddAction/*a*/ = require/*t*/.__GraphQL;
+                            return new CommentAddAction/*a*/.QueryFragment("THFeedbackView_feedback", "Feedback", [new CommentAddAction/*a*/.Field("id"), new CommentAddAction/*a*/.Field("likers", [new CommentAddAction/*a*/.Field("count")], null, null, null, null, {
                                 connection: !0,
                                 nonFindable: !0
-                            }), new a.Field("does_viewer_like"), new a.Field("can_viewer_comment"), new a.Field("can_viewer_like"), new a.Field("seen_by", [new a.Field("count")], null, null, null, null, {
+                            }), new CommentAddAction/*a*/.Field("does_viewer_like"), new CommentAddAction/*a*/.Field("can_viewer_comment"), new CommentAddAction/*a*/.Field("can_viewer_like"), new CommentAddAction/*a*/.Field("seen_by", [new CommentAddAction/*a*/.Field("count")], null, null, null, null, {
                                 connection: !0,
                                 nonFindable: !0
-                            }), new a.Field("top_level_comments", [new a.Field("count"), new a.Field("edges", [new a.Field("node", [new a.Field("id", null, null, null, null, null, {
+                            }), new CommentAddAction/*a*/.Field("top_level_comments", [new CommentAddAction/*a*/.Field("count"), new CommentAddAction/*a*/.Field("edges", [new CommentAddAction/*a*/.Field("node", [new CommentAddAction/*a*/.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            })], [require/*t*/.__frag(o)], null, null, null, {
+                            })], [require/*t*/.__frag(LayoutAnimation/*o*/)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id",
                                 requisite: !0
-                            }), new a.Field("cursor", null, null, null, null, null, {
+                            }), new CommentAddAction/*a*/.Field("cursor", null, null, null, null, null, {
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "THFeedbackView_feedback_1"
-                            }), new a.Field("last_view_time"), new a.Field("page_info", [new a.Field("has_next_page", null, null, null, null, null, {
+                            }), new CommentAddAction/*a*/.Field("last_view_time"), new CommentAddAction/*a*/.Field("page_info", [new CommentAddAction/*a*/.Field("has_next_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            }), new a.Field("has_previous_page", null, null, null, null, null, {
+                            }), new CommentAddAction/*a*/.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], null, [new a.Callv("first", [require/*t*/.__var(module/*i*/)])], null, null, {
+                            })], null, [new CommentAddAction/*a*/.Callv("first", [require/*t*/.__var(module/*i*/)])], null, null, {
                                 connection: !0
-                            }), new a.Field("top_level_comments", [new a.Field("unread_count")], null, null, "top_level_comment_counts", null, {
+                            }), new CommentAddAction/*a*/.Field("top_level_comments", [new CommentAddAction/*a*/.Field("unread_count")], null, null, "top_level_comment_counts", null, {
                                 connection: !0
                             })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(requireDynamic/*n*/), require/*t*/.__frag(requireLazy/*r*/)], {
                                 scope: "THFeedbackView_feedback"
                             })
-                        }(w.getQuery("feedback"), l.getQuery("feedback"), D.getQuery("feedback"), requireDynamic/*n*/.comment_count, w.getQuery("comment"))
+                        }(THCommentCell/*w*/.getQuery("feedback"), FBLikersPopover/*l*/.getQuery("feedback"), THLikeSentence/*D*/.getQuery("feedback"), requireDynamic/*n*/.comment_count, THCommentCell/*w*/.getQuery("comment"))
                     },
                     story: function(global/*e*/, require/*t*/) {
                         return function() {
@@ -141,7 +141,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THFeedbackView_group"
                             })
-                        }(w.getQuery("group"))
+                        }(THCommentCell/*w*/.getQuery("group"))
                     }
                 }
             },
@@ -165,57 +165,57 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
             },
             renderLikeButton: function() {
                 var global/*e*/, require/*t*/ = [K.feedbackButtonText];
-                this.state.optimisticLikeValue || null === this.state.optimisticLikeValue && this.props.feedback.does_viewer_like ? (global/*e*/ = A("thUFILikeSelectedIcon"), require/*t*/.push(K.likedStyling)) : this.props.feedback.can_viewer_like ? (global/*e*/ = A("thUFILikeIcon"), require/*t*/.push(K.feedbackTextStyling)) : (global/*e*/ = A("thUFILikeDisabledIcon"), require/*t*/.push(K.disabledFeedbackText));
-                var requireDynamic/*n*/ = g.createElement(F, {
+                this.state.optimisticLikeValue || null === this.state.optimisticLikeValue && this.props.feedback.does_viewer_like ? (global/*e*/ = ix/*A*/("thUFILikeSelectedIcon"), require/*t*/.push(K.likedStyling)) : this.props.feedback.can_viewer_like ? (global/*e*/ = ix/*A*/("thUFILikeIcon"), require/*t*/.push(K.feedbackTextStyling)) : (global/*e*/ = ix/*A*/("thUFILikeDisabledIcon"), require/*t*/.push(K.disabledFeedbackText));
+                var requireDynamic/*n*/ = React/*g*/.createElement(View/*F*/, {
                     style: [K.row, K.likeTextContainer]
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.likeButtonContainer
-                }, g.createElement(f, {
+                }, React/*g*/.createElement(Image/*f*/, {
                     source: global/*e*/,
                     style: K.icon,
                     ref: B
-                })), g.createElement(v, {
+                })), React/*g*/.createElement(Text/*v*/, {
                     style: require/*t*/
-                }, M({
+                }, fbt/*M*/({
                     type: "text",
                     texts: ["Like"],
-                    desc: "Like a post"
+                    desc: "Like CommentAddAction/*a*/ post"
                 })));
-                return this.props.feedback.can_viewer_like && (requireDynamic/*n*/ = g.createElement(P, {
+                return this.props.feedback.can_viewer_like && (requireDynamic/*n*/ = React/*g*/.createElement(TouchableBounce/*P*/, {
                     onPress: this.onLikeTap,
                     onPressAnimationComplete: this.onLikeTapped
                 }, requireDynamic/*n*/)), requireDynamic/*n*/
             },
             renderCommentButton: function() {
                 var global/*e*/, require/*t*/ = [K.feedbackButtonText];
-                this.props.feedback.can_viewer_comment && this.props.viewContext !== T.SEARCH ? (global/*e*/ = A("thCommentIcon"), require/*t*/.push(K.feedbackTextStyling)) : (global/*e*/ = A("thCommentDisabledIcon"), require/*t*/.push(K.disabledFeedbackText));
-                var requireDynamic/*n*/ = g.createElement(F, {
+                this.props.feedback.can_viewer_comment && this.props.viewContext !== THViewConstants/*T*/.SEARCH ? (global/*e*/ = ix/*A*/("thCommentIcon"), require/*t*/.push(K.feedbackTextStyling)) : (global/*e*/ = ix/*A*/("thCommentDisabledIcon"), require/*t*/.push(K.disabledFeedbackText));
+                var requireDynamic/*n*/ = React/*g*/.createElement(View/*F*/, {
                     style: [K.likeTextContainer, K.row]
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.likeButtonContainer
-                }, g.createElement(f, {
+                }, React/*g*/.createElement(Image/*f*/, {
                     source: global/*e*/,
                     style: K.icon,
                     ref: $
-                })), g.createElement(v, {
+                })), React/*g*/.createElement(Text/*v*/, {
                     style: require/*t*/
-                }, M({
+                }, fbt/*M*/({
                     type: "text",
                     texts: ["Comment"],
                     desc: "Comment on post"
                 })));
-                return this.props.feedback.can_viewer_comment && this.props.viewContext !== T.SEARCH && (requireDynamic/*n*/ = g.createElement(P, {
+                return this.props.feedback.can_viewer_comment && this.props.viewContext !== THViewConstants/*T*/.SEARCH && (requireDynamic/*n*/ = React/*g*/.createElement(TouchableBounce/*P*/, {
                     onPress: this.focusReplyInput
                 }, requireDynamic/*n*/)), requireDynamic/*n*/
             },
             onLikeTap: function() {
-                var global/*e*/ = this.props.feedback.top_level_comments.count > 0 ? S.layout.likeWithComment : S.layout.likeWithNoComments;
-                o.configureNext(global/*e*/), this.setState({
+                var global/*e*/ = this.props.feedback.top_level_comments.count > 0 ? THAnimations/*S*/.layout.likeWithComment : THAnimations/*S*/.layout.likeWithNoComments;
+                LayoutAnimation/*o*/.configureNext(global/*e*/), this.setState({
                     optimisticLikeValue: !this.props.feedback.does_viewer_like
-                }), this.props.feedback.does_viewer_like || O && O.playSound(R.likeMain)
+                }), this.props.feedback.does_viewer_like || O && O.playSound(THSounds/*R*/.likeMain)
             },
             onLikeTapped: function() {
-                p.handleLikeChange(this.props.feedback.id, !this.props.feedback.does_viewer_like), this.setState({
+                FeedbackLikeAction/*p*/.handleLikeChange(this.props.feedback.id, !this.props.feedback.does_viewer_like), this.setState({
                     optimisticLikeValue: null
                 })
             },
@@ -228,134 +228,134 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
             getFeedbackStats: function() {
                 var global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/ = this.props.feedback.top_level_comments.count,
                     module/*i*/ = j(this.props),
-                    o = this.props.feedback.seen_by.count;
-                if (null !== this.state.optimisticLikeValue && (this.state.optimisticLikeValue ? module/*i*/++ : module/*i*/--), !(module/*i*/ || requireLazy/*r*/ || o)) return g.createElement(F, {
+                    LayoutAnimation/*o*/ = this.props.feedback.seen_by.count;
+                if (null !== this.state.optimisticLikeValue && (this.state.optimisticLikeValue ? module/*i*/++ : module/*i*/--), !(module/*i*/ || requireLazy/*r*/ || LayoutAnimation/*o*/)) return React/*g*/.createElement(View/*F*/, {
                     style: K.fillerMetadata
                 });
                 if (module/*i*/) {
-                    var a = 1 === module/*i*/ ? M({
+                    var CommentAddAction/*a*/ = 1 === module/*i*/ ? fbt/*M*/({
                         type: "text",
                         texts: ["1 Like"],
                         desc: "Singular like count"
-                    }) : M({
+                    }) : fbt/*M*/({
                         type: "text",
                         texts: ["{like_count} Likes"],
                         desc: "Plural like count"
-                    }, [M.param("like_count", module/*i*/)]);
-                    global/*e*/ = g.createElement(F, {
+                    }, [fbt/*M*/.param("like_count", module/*i*/)]);
+                    global/*e*/ = React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackStatsContainer
-                    }, g.createElement(I, {
+                    }, React/*g*/.createElement(TouchableWithoutFeedback/*I*/, {
                         onPress: this.showLikers
-                    }, g.createElement(F, {
+                    }, React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackCountWrapper
-                    }, g.createElement(v, {
+                    }, React/*g*/.createElement(Text/*v*/, {
                         style: K.feedbackFadedText
-                    }, a))), g.createElement(F, {
+                    }, CommentAddAction/*a*/))), React/*g*/.createElement(View/*F*/, {
                         style: K.horizontalSpace
                     }))
                 }
                 if (requireLazy/*r*/) {
-                    var s = 1 === requireLazy/*r*/ ? M({
+                    var DocumentContent/*s*/ = 1 === requireLazy/*r*/ ? fbt/*M*/({
                         type: "text",
                         texts: ["1 Comment"],
                         desc: "Singular comment count"
-                    }) : M({
+                    }) : fbt/*M*/({
                         type: "text",
                         texts: ["{comment_count} Comments"],
                         desc: "Plural comment count"
-                    }, [M.param("comment_count", requireLazy/*r*/)]);
-                    require/*t*/ = g.createElement(F, {
+                    }, [fbt/*M*/.param("comment_count", requireLazy/*r*/)]);
+                    require/*t*/ = React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackStatsContainer
-                    }, g.createElement(I, {
+                    }, React/*g*/.createElement(TouchableWithoutFeedback/*I*/, {
                         key: "commentCountText",
                         onPress: this.showMoreComments
-                    }, g.createElement(F, {
+                    }, React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackCountWrapper
-                    }, g.createElement(v, {
+                    }, React/*g*/.createElement(Text/*v*/, {
                         style: K.feedbackFadedText
-                    }, s))), g.createElement(F, {
+                    }, DocumentContent/*s*/))), React/*g*/.createElement(View/*F*/, {
                         style: K.horizontalSpace
                     }))
                 }
-                if (o) {
-                    var c = M({
+                if (LayoutAnimation/*o*/) {
+                    var FBSpinner/*c*/ = fbt/*M*/({
                         type: "text",
                         texts: ["Seen by {seen_count}"],
                         desc: "Information for how many people have seen this story"
-                    }, [M.param("seen_count", o)]);
-                    requireDynamic/*n*/ = g.createElement(F, {
+                    }, [fbt/*M*/.param("seen_count", LayoutAnimation/*o*/)]);
+                    requireDynamic/*n*/ = React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackStatsContainer
-                    }, g.createElement(I, {
+                    }, React/*g*/.createElement(TouchableWithoutFeedback/*I*/, {
                         onPress: this.showSeenBy
-                    }, g.createElement(F, {
+                    }, React/*g*/.createElement(View/*F*/, {
                         style: K.feedbackCountWrapper
-                    }, g.createElement(v, {
+                    }, React/*g*/.createElement(Text/*v*/, {
                         style: K.feedbackFadedText
-                    }, c))), g.createElement(F, {
+                    }, FBSpinner/*c*/))), React/*g*/.createElement(View/*F*/, {
                         style: K.horizontalSpace
                     }))
                 }
-                return g.createElement(F, {
+                return React/*g*/.createElement(View/*F*/, {
                     key: "likesBar",
                     style: [K.likesBar, K.contentContainer]
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.feedbackStatsContainer
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.feedbackStatsContainer
-                }, global/*e*/, require/*t*/, requireDynamic/*n*/), g.createElement(l, {
+                }, global/*e*/, require/*t*/, requireDynamic/*n*/), React/*g*/.createElement(FBLikersPopover/*l*/, {
                     ref: H,
                     feedback: this.props.feedback,
                     circularProfilePictures: !0,
                     closeOnRowPress: !O,
-                    closeTextColor: b.groupsAccent
-                }), g.createElement(u, {
+                    closeTextColor: THColors/*b*/.groupsAccent
+                }), React/*g*/.createElement(FBSeenByPopover/*u*/, {
                     ref: q,
                     feedback: this.props.feedback,
                     circularProfilePictures: !0,
                     closeOnRowPress: !O,
-                    closeTextColor: b.groupsAccent
+                    closeTextColor: THColors/*b*/.groupsAccent
                 })))
             },
             renderFeedbackButtons: function() {
                 var global/*e*/, require/*t*/ = this.props.feedback.top_level_comments.count;
-                return require/*t*/ && (global/*e*/ = g.createElement(F, {
+                return require/*t*/ && (global/*e*/ = React/*g*/.createElement(View/*F*/, {
                     key: "divLikesBar",
                     style: [K.divider, K.row, K.contentContainer]
-                })), g.createElement(F, null, this.getFeedbackStats(), g.createElement(F, {
+                })), React/*g*/.createElement(View/*F*/, null, this.getFeedbackStats(), React/*g*/.createElement(View/*F*/, {
                     key: "divMetadataBar",
                     style: K.divider
-                }), g.createElement(F, {
+                }), React/*g*/.createElement(View/*F*/, {
                     style: K.contentContainer
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.feedbackButtonsContainer
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.buttonContainer
-                }, this.renderLikeButton()), g.createElement(F, {
+                }, this.renderLikeButton()), React/*g*/.createElement(View/*F*/, {
                     style: K.buttonContainer
                 }, this.renderCommentButton()))), global/*e*/)
             },
             componentWillReceiveProps: function(global/*e*/) {
                 var require/*t*/ = U(global/*e*/);
-                if (this.state.showMoreCommentsSpinner) require/*t*/.length > U(this.props).length && (o.configureNext(S.layout.moreComments), this.setState({
+                if (this.state.showMoreCommentsSpinner) require/*t*/.length > U(this.props).length && (LayoutAnimation/*o*/.configureNext(THAnimations/*S*/.layout.moreComments), this.setState({
                     showMoreCommentsSpinner: !1
                 }));
                 else {
                     var requireDynamic/*n*/ = require/*t*/.length > 0 && require/*t*/[0].cursor;
-                    if (requireDynamic/*n*/ && requireDynamic/*n*/ !== d.DUMMY_CURSOR_ID && requireDynamic/*n*/ !== this.state.firstCursor) {
+                    if (requireDynamic/*n*/ && requireDynamic/*n*/ !== GraphQLConstants/*d*/.DUMMY_CURSOR_ID && requireDynamic/*n*/ !== this.state.firstCursor) {
                         var requireLazy/*r*/ = U(this.props),
                             module/*i*/ = function(global/*e*/) {
-                                if (h.isClientID(global/*e*/.node.id)) {
-                                    var require/*t*/ = h.getServerIDForClientID(global/*e*/.node.id);
+                                if (GraphQLStoreDataHandler/*h*/.isClientID(global/*e*/.node.id)) {
+                                    var require/*t*/ = GraphQLStoreDataHandler/*h*/.getServerIDForClientID(global/*e*/.node.id);
                                     return require/*t*/ ? require/*t*/ : global/*e*/.node.id
                                 }
                                 return global/*e*/.node.id
                             },
-                            a = requireLazy/*r*/.map(module/*i*/),
-                            s = require/*t*/.filter(function(global/*e*/) {
-                                return -1 === a.indexOf(global/*e*/.node.id)
+                            CommentAddAction/*a*/ = requireLazy/*r*/.map(module/*i*/),
+                            DocumentContent/*s*/ = require/*t*/.filter(function(global/*e*/) {
+                                return -1 === CommentAddAction/*a*/.indexOf(global/*e*/.node.id)
                             }).length;
                         this.setQueryParams({
-                            comment_count: this.getCommentCountQueryParam() + s
+                            comment_count: this.getCommentCountQueryParam() + DocumentContent/*s*/
                         }), this.setState({
                             firstCursor: requireDynamic/*n*/
                         })
@@ -367,11 +367,11 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                     require/*t*/ = this.props.feedback.top_level_comments.count,
                     requireDynamic/*n*/ = global/*e*/.edges;
                 if (require/*t*/ <= (requireDynamic/*n*/ && requireDynamic/*n*/.length || 0)) return null;
-                if (this.state.showMoreCommentsSpinner) return g.createElement(F, {
+                if (this.state.showMoreCommentsSpinner) return React/*g*/.createElement(View/*F*/, {
                     style: K.showMoreContainer
-                }, g.createElement(c, null));
+                }, React/*g*/.createElement(FBSpinner/*c*/, null));
                 var requireLazy/*r*/, module/*i*/ = require/*t*/ - (requireDynamic/*n*/ && requireDynamic/*n*/.length || 0);
-                requireLazy/*r*/ = M(1 === module/*i*/ ? {
+                requireLazy/*r*/ = fbt/*M*/(1 === module/*i*/ ? {
                     type: "text",
                     texts: ["View previous comment"],
                     desc: "Singular text for affordance to show more comments."
@@ -380,18 +380,18 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                     texts: ["View previous comments"],
                     desc: "Plural text for affordance to show more comments."
                 });
-                var o = [K.feedbackFadedText];
-                if (this.props.viewContext !== T.PERMALINK) {
-                    var a = this.props.feedback.top_level_comment_counts.unread_count;
-                    a > (requireDynamic/*n*/ && requireDynamic/*n*/.length || 0) && o.push(K.previousNewComments)
+                var LayoutAnimation/*o*/ = [K.feedbackFadedText];
+                if (this.props.viewContext !== THViewConstants/*T*/.PERMALINK) {
+                    var CommentAddAction/*a*/ = this.props.feedback.top_level_comment_counts.unread_count;
+                    CommentAddAction/*a*/ > (requireDynamic/*n*/ && requireDynamic/*n*/.length || 0) && LayoutAnimation/*o*/.push(K.previousNewComments)
                 }
-                return g.createElement(I, {
+                return React/*g*/.createElement(TouchableWithoutFeedback/*I*/, {
                     key: "commentPager",
                     onPress: this.showMoreComments
-                }, g.createElement(F, {
+                }, React/*g*/.createElement(View/*F*/, {
                     style: K.showMoreContainer
-                }, g.createElement(v, {
-                    style: o
+                }, React/*g*/.createElement(Text/*v*/, {
+                    style: LayoutAnimation/*o*/
                 }, requireLazy/*r*/)))
             },
             renderComments: function() {
@@ -402,14 +402,14 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 for (var requireLazy/*r*/ = requireDynamic/*n*/.length - 1; requireLazy/*r*/ >= 0; requireLazy/*r*/--) {
                     var module/*i*/ = requireDynamic/*n*/[requireLazy/*r*/].node;
                     if (module/*i*/) {
-                        var o = this.state.hasExpanded && !this.state.collapsedComments[module/*i*/.id];
-                        global/*e*/.push(g.createElement(w, {
+                        var LayoutAnimation/*o*/ = this.state.hasExpanded && !this.state.collapsedComments[module/*i*/.id];
+                        global/*e*/.push(React/*g*/.createElement(THCommentCell/*w*/, {
                             ref: module/*i*/.id,
                             key: module/*i*/.id,
                             comment: module/*i*/,
                             feedback: this.props.feedback,
                             lastViewTime: require/*t*/.last_view_time,
-                            showExpanded: o,
+                            showExpanded: LayoutAnimation/*o*/,
                             onInputRequested: this.handleInputRequested,
                             onDeleteSuccess: this.handleDeleteSuccess,
                             group: this.props.group,
@@ -417,7 +417,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                         }))
                     } else console.warn("Unexpected falsey comment - #4643474")
                 }
-                return g.createElement(F, {
+                return React/*g*/.createElement(View/*F*/, {
                     style: [K.contentContainer, K.commentsContainer],
                     removeClippedSubviews: !0
                 }, global/*e*/)
@@ -446,7 +446,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
             },
             focusReplyInput: function() {
                 var global/*e*/ = this.props.feedback.top_level_comments.edges;
-                this._hasSavedInput() || this.props.viewContext === T.PERMALINK || global/*e*/ && 0 !== global/*e*/.length || this.setState({
+                this._hasSavedInput() || this.props.viewContext === THViewConstants/*T*/.PERMALINK || global/*e*/ && 0 !== global/*e*/.length || this.setState({
                     overrideShowReplyBar: !0
                 }), this.requestAnimationFrame(function() {
                     this.refs[V] ? this.refs[V].handleInactiveInputPress() : this.handleCommentInputRequested(null)
@@ -465,7 +465,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                     getTappedNodeHandle: global/*e*/,
                     tappedFeedUnitHandle: requireDynamic/*n*/,
                     tappedFeedUnitID: this.props.story.id,
-                    mode: C.Mode.fullhide,
+                    mode: THDockedInputContainer/*C*/.Mode.fullhide,
                     initialText: this.state.savedInput,
                     tappedTime: require/*t*/,
                     photoSource: requireLazy/*r*/
@@ -475,7 +475,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 global/*e*/.tappedFeedUnitHandle = this.props.getFeedUnitHandle(), global/*e*/.tappedFeedUnitID = this.props.story.id, this.props.onInputRequested && this.props.onInputRequested(global/*e*/, require/*t*/, requireDynamic/*n*/)
             },
             handleCommentSubmit: function(global/*e*/, require/*t*/) {
-                this.props.viewer && this.props.viewer.actor && this.props.viewer.actor.id || Q(0, "Attempting to submit a comment without an author. THFeedbackView might have been passed down a invalid viewer"), require/*t*/ && require/*t*/.style_list && "photo" === require/*t*/.style_list[0] ? a.handleAddPhotoComment(this.props.viewer.actor.id, this.props.feedback.id, global/*e*/, require/*t*/) : a.handleAddComment(this.props.viewer.actor.id, this.props.feedback.id, global/*e*/, require/*t*/), this.setQueryParams({
+                this.props.viewer && this.props.viewer.actor && this.props.viewer.actor.id || invariant/*Q*/(0, "Attempting to submit CommentAddAction/*a*/ comment without an author. THFeedbackView might have been passed down CommentAddAction/*a*/ invalid viewer"), require/*t*/ && require/*t*/.style_list && "photo" === require/*t*/.style_list[0] ? CommentAddAction/*a*/.handleAddPhotoComment(this.props.viewer.actor.id, this.props.feedback.id, global/*e*/, require/*t*/) : CommentAddAction/*a*/.handleAddComment(this.props.viewer.actor.id, this.props.feedback.id, global/*e*/, require/*t*/), this.setQueryParams({
                     comment_count: this.queryParams.comment_count + 1
                 }), this.setState({
                     photoSource: null,
@@ -486,18 +486,18 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
             handleCommentAbort: function(global/*e*/) {
                 this.setState({
                     overrideShowReplyBar: !1
-                }), global/*e*/.text && (global/*e*/.text instanceof s || Q(0, "THFeedbackView.handleCommentAbort expected argument shape {text: DocumentContent}, got " + JSON.stringify(global/*e*/, null, "  ")), this.setState({
-                    savedInput: L(global/*e*/.text),
+                }), global/*e*/.text && (global/*e*/.text instanceof DocumentContent/*s*/ || invariant/*Q*/(0, "THFeedbackView.handleCommentAbort expected argument shape {text: DocumentContent}, got " + JSON.stringify(global/*e*/, null, "  ")), this.setState({
+                    savedInput: copyDocumentContent/*L*/(global/*e*/.text),
                     photoSource: global/*e*/.photoSource
                 }))
             },
             renderReplyBar: function() {
-                if (!this.props.feedback.can_viewer_comment || this.props.viewContext === T.SEARCH || this.props.viewContext === T.PERMALINK) return null;
+                if (!this.props.feedback.can_viewer_comment || this.props.viewContext === THViewConstants/*T*/.SEARCH || this.props.viewContext === THViewConstants/*T*/.PERMALINK) return null;
                 var global/*e*/ = this._hasSavedInput(),
                     require/*t*/ = this.props.feedback.top_level_comments.edges;
-                return global/*e*/ || this.state.overrideShowReplyBar || this.props.viewContext === T.PERMALINK || require/*t*/ && 0 !== require/*t*/.length ? g.createElement(F, {
+                return global/*e*/ || this.state.overrideShowReplyBar || this.props.viewContext === THViewConstants/*T*/.PERMALINK || require/*t*/ && 0 !== require/*t*/.length ? React/*g*/.createElement(View/*F*/, {
                     style: K.contentContainer
-                }, g.createElement(E, {
+                }, React/*g*/.createElement(THInputBarView/*E*/, {
                     key: "replyBar",
                     ref: V,
                     initialText: this.state.savedInput,
@@ -509,17 +509,17 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 })) : null
             },
             render: function() {
-                return this.props.feedback ? U(this.props) ? g.createElement(F, null, this.renderFeedbackButtons(), this.renderComments(), this.renderReplyBar()) : g.createElement(F, {
+                return this.props.feedback ? U(this.props) ? React/*g*/.createElement(View/*F*/, null, this.renderFeedbackButtons(), this.renderComments(), this.renderReplyBar()) : React/*g*/.createElement(View/*F*/, {
                     key: "loading"
-                }, g.createElement(c, {
+                }, React/*g*/.createElement(FBSpinner/*c*/, {
                     style: K.row
-                })) : g.createElement(F, null)
+                })) : React/*g*/.createElement(View/*F*/, null)
             },
             _hasSavedInput: function() {
                 return this.state.savedInput && this.state.savedInput.getText().trim().length > 0
             }
         }),
-        K = y.create({
+        K = StyleSheet/*y*/.create({
             buttonContainer: {
                 flex: 1,
                 flexDirection: "row",
@@ -530,13 +530,13 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 marginBottom: 0
             },
             contentContainer: {
-                marginHorizontal: C.contentPaddingHorizontal
+                marginHorizontal: THDockedInputContainer/*C*/.contentPaddingHorizontal
             },
             disabledFeedbackText: {
-                color: b.fadedText
+                color: THColors/*b*/.fadedText
             },
             divider: {
-                backgroundColor: b.divider,
+                backgroundColor: THColors/*b*/.divider,
                 height: .5
             },
             feedbackButtonsContainer: {
@@ -554,7 +554,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 justifyContent: "center"
             },
             feedbackFadedText: {
-                color: b.feedbackFadedText,
+                color: THColors/*b*/.feedbackFadedText,
                 fontSize: 13
             },
             feedbackStatsContainer: {
@@ -566,7 +566,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 height: 20
             },
             feedbackTextStyling: {
-                color: b.feedbackText
+                color: THColors/*b*/.feedbackText
             },
             horizontalSpace: {
                 marginHorizontal: 4
@@ -581,7 +581,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 paddingRight: 5
             },
             likedStyling: {
-                color: b.groupsAccent
+                color: THColors/*b*/.groupsAccent
             },
             likesBar: {
                 height: 44,
@@ -594,7 +594,7 @@ __d("THFeedbackView",["LayoutAnimation","CommentAddAction","DocumentContent","FB
                 alignItems: "center"
             },
             previousNewComments: {
-                color: b.groupsAccent
+                color: THColors/*b*/.groupsAccent
             },
             row: {
                 marginBottom: 12

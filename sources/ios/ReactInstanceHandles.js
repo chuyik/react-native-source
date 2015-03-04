@@ -22,7 +22,7 @@ __d("ReactInstanceHandles",["ReactRootIndex","invariant"],function (global/*e*/,
     }
 
     function c(global/*e*/, require/*t*/) {
-        if (s(global/*e*/) && s(require/*t*/) || f(0, "getNextDescendantID(%s, %s): Received an invalid React DOM ID.", global/*e*/, require/*t*/), l(global/*e*/, require/*t*/) || f(0, "getNextDescendantID(...): React has made an invalid assumption about the DOM hierarchy. Expected `%s` to be an ancestor of `%s`.", global/*e*/, require/*t*/), global/*e*/ === require/*t*/) return global/*e*/;
+        if (s(global/*e*/) && s(require/*t*/) || invariant/*f*/(0, "getNextDescendantID(%s, %s): Received an invalid React DOM ID.", global/*e*/, require/*t*/), l(global/*e*/, require/*t*/) || invariant/*f*/(0, "getNextDescendantID(...): React has made an invalid assumption about the DOM hierarchy. Expected `%s` to be an ancestor of `%s`.", global/*e*/, require/*t*/), global/*e*/ === require/*t*/) return global/*e*/;
         for (var requireDynamic/*n*/ = global/*e*/.length + g, requireLazy/*r*/ = requireDynamic/*n*/; requireLazy/*r*/ < require/*t*/.length && !a(require/*t*/, requireLazy/*r*/); requireLazy/*r*/++);
         return require/*t*/.substr(0, requireLazy/*r*/)
     }
@@ -34,27 +34,27 @@ __d("ReactInstanceHandles",["ReactRootIndex","invariant"],function (global/*e*/,
             if (a(global/*e*/, module/*i*/) && a(require/*t*/, module/*i*/)) requireLazy/*r*/ = module/*i*/;
             else if (global/*e*/.charAt(module/*i*/) !== require/*t*/.charAt(module/*i*/)) break;
         var o = global/*e*/.substr(0, requireLazy/*r*/);
-        return s(o) || f(0, "getFirstCommonAncestorID(%s, %s): Expected a valid React DOM ID: %s", global/*e*/, require/*t*/, o), o
+        return s(o) || invariant/*f*/(0, "getFirstCommonAncestorID(%s, %s): Expected a valid React DOM ID: %s", global/*e*/, require/*t*/, o), o
     }
 
     function d(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-        global/*e*/ = global/*e*/ || "", require/*t*/ = require/*t*/ || "", global/*e*/ === require/*t*/ && f(0, "traverseParentPath(...): Cannot traverse from and to the same ID, `%s`.", global/*e*/);
+        global/*e*/ = global/*e*/ || "", require/*t*/ = require/*t*/ || "", global/*e*/ === require/*t*/ && invariant/*f*/(0, "traverseParentPath(...): Cannot traverse from and to the same ID, `%s`.", global/*e*/);
         var a = l(require/*t*/, global/*e*/);
-        a || l(global/*e*/, require/*t*/) || f(0, "traverseParentPath(%s, %s, ...): Cannot traverse from two IDs that do not have a parent path.", global/*e*/, require/*t*/);
+        a || l(global/*e*/, require/*t*/) || invariant/*f*/(0, "traverseParentPath(%s, %s, ...): Cannot traverse from two IDs that do not have a parent path.", global/*e*/, require/*t*/);
         for (var s = 0, p = a ? u : c, d = global/*e*/;; d = p(d, require/*t*/)) {
-            var h;
-            if (module/*i*/ && d === global/*e*/ || o && d === require/*t*/ || (h = requireDynamic/*n*/(d, a, requireLazy/*r*/)), h === !1 || d === require/*t*/) break;
-            s++ < _ || f(0, "traverseParentPath(%s, %s, ...): Detected an infinite loop while traversing the React DOM ID tree. This may be due to malformed IDs: %s", global/*e*/, require/*t*/)
+            var ReactRootIndex/*h*/;
+            if (module/*i*/ && d === global/*e*/ || o && d === require/*t*/ || (ReactRootIndex/*h*/ = requireDynamic/*n*/(d, a, requireLazy/*r*/)), ReactRootIndex/*h*/ === !1 || d === require/*t*/) break;
+            s++ < _ || invariant/*f*/(0, "traverseParentPath(%s, %s, ...): Detected an infinite loop while traversing the React DOM ID tree. This may be due to malformed IDs: %s", global/*e*/, require/*t*/)
         }
     }
-    var h = require/*t*/("ReactRootIndex"),
-        f = require/*t*/("invariant"),
+    var ReactRootIndex/*h*/ = require/*t*/("ReactRootIndex"),
+        invariant/*f*/ = require/*t*/("invariant"),
         m = ".",
         g = m.length,
         _ = 100,
         y = {
             createReactRootID: function() {
-                return o(h.createReactRootIndex())
+                return o(ReactRootIndex/*h*/.createReactRootIndex())
             },
             createReactID: function(global/*e*/, require/*t*/) {
                 return global/*e*/ + require/*t*/

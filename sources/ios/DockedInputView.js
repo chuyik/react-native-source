@@ -1,22 +1,22 @@
 __d("DockedInputView",["NativeMethodsMixin","React","ReactIOSViewAttributes","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeMethodsMixin"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactIOSViewAttributes"),
-        l = require/*t*/("createReactIOSNativeComponentClass"),
-        u = a.createClass({
+    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
+        React/*a*/ = require/*t*/("React"),
+        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
+        createReactIOSNativeComponentClass/*l*/ = require/*t*/("createReactIOSNativeComponentClass"),
+        u = React/*a*/.createClass({
             displayName: "DockedInputView",
-            mixins: [o],
+            mixins: [NativeMethodsMixin/*o*/],
             viewConfig: {
                 uiViewClassName: "UIView",
-                validAttributes: s.UIView
+                validAttributes: ReactIOSViewAttributes/*s*/.UIView
             },
             render: function() {
-                return a.createElement(c, Object.assign({}, this.props))
+                return React/*a*/.createElement(c, Object.assign({}, this.props))
             }
         }),
-        c = l({
-            validAttributes: s.UIView,
+        c = createReactIOSNativeComponentClass/*l*/({
+            validAttributes: ReactIOSViewAttributes/*s*/.UIView,
             uiViewClassName: "RCTDockedInputView"
         });
     module/*i*/.exports = u

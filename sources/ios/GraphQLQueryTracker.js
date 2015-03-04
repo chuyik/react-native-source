@@ -6,17 +6,17 @@ __d("GraphQLQueryTracker",["GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLSto
     }
 
     function a(global/*e*/, require/*t*/) {
-        return new l.Field("tracked_field", global/*e*/, require/*t*/)
+        return new GraphQL_EXPERIMENTAL/*l*/.Field("tracked_field", global/*e*/, require/*t*/)
     }
 
     function s(global/*e*/) {
-        return new l.QueryFragment("FakeTrackedFragment", "FakeNode", global/*e*/.getOwnFields(), global/*e*/.getFragments())
+        return new GraphQL_EXPERIMENTAL/*l*/.QueryFragment("FakeTrackedFragment", "FakeNode", global/*e*/.getOwnFields(), global/*e*/.getFragments())
     }
-    var l = require/*t*/("GraphQL_EXPERIMENTAL"),
-        u = require/*t*/("GraphQLConstants"),
-        c = require/*t*/("GraphQLStoreDataHandler");
+    var GraphQL_EXPERIMENTAL/*l*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*u*/ = require/*t*/("GraphQLConstants"),
+        GraphQLStoreDataHandler/*c*/ = require/*t*/("GraphQLStoreDataHandler");
     o.prototype.addQueryForID = function(global/*e*/, require/*t*/) {
-        if (global/*e*/ === u.VIEWER_CLIENT_ID || !c.isClientID(global/*e*/)) {
+        if (global/*e*/ === GraphQLConstants/*u*/.VIEWER_CLIENT_ID || !GraphQLStoreDataHandler/*c*/.isClientID(global/*e*/)) {
             var requireDynamic/*n*/ = this.$GraphQLQueryTracker_trackedQueriesByID;
             if (requireDynamic/*n*/.hasOwnProperty(global/*e*/)) {
                 if (require/*t*/.getFieldName && "__type__" === require/*t*/.getFieldName()) return
@@ -28,7 +28,7 @@ __d("GraphQLQueryTracker",["GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLSto
             var module/*i*/ = global/*e*/[requireLazy/*r*/];
             if (requireDynamic/*n*/.hasOwnProperty(module/*i*/)) {
                 require/*t*/ = require/*t*/ || [];
-                for (var o = requireDynamic/*n*/[module/*i*/], l = 0; l < o.length; l++) require/*t*/.push(s(o[l]))
+                for (var o = requireDynamic/*n*/[module/*i*/], GraphQL_EXPERIMENTAL/*l*/ = 0; GraphQL_EXPERIMENTAL/*l*/ < o.length; GraphQL_EXPERIMENTAL/*l*/++) require/*t*/.push(s(o[GraphQL_EXPERIMENTAL/*l*/]))
             }
         }
         return require/*t*/ ? a(null, require/*t*/) : null

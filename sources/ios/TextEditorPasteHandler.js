@@ -10,7 +10,7 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
     function a() {
         return {
             text: y,
-            inlines: [p.NONE],
+            inlines: [ComposedInlineStyle/*p*/.NONE],
             blocks: []
         }
     }
@@ -18,7 +18,7 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
     function s() {
         return {
             text: _,
-            inlines: [p.NONE],
+            inlines: [ComposedInlineStyle/*p*/.NONE],
             blocks: []
         }
     }
@@ -26,42 +26,42 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
     function l(global/*e*/) {
         return {
             text: m,
-            inlines: [p.NONE],
+            inlines: [ComposedInlineStyle/*p*/.NONE],
             blocks: [global/*e*/]
         }
     }
-    var u = require/*t*/("DocumentCharacters"),
-        c = require/*t*/("ComposedBlockType"),
-        p = require/*t*/("ComposedInlineStyle"),
-        d = require/*t*/("arrayContains"),
-        h = require/*t*/("fillArray"),
-        f = require/*t*/("getSafeBodyFromHTML"),
-        m = u.BLOCK_DELIMITER,
+    var DocumentCharacters/*u*/ = require/*t*/("DocumentCharacters"),
+        ComposedBlockType/*c*/ = require/*t*/("ComposedBlockType"),
+        ComposedInlineStyle/*p*/ = require/*t*/("ComposedInlineStyle"),
+        arrayContains/*d*/ = require/*t*/("arrayContains"),
+        fillArray/*h*/ = require/*t*/("fillArray"),
+        getSafeBodyFromHTML/*f*/ = require/*t*/("getSafeBodyFromHTML"),
+        m = DocumentCharacters/*u*/.BLOCK_DELIMITER,
         g = "&nbsp;",
-        _ = u.SOFT_NEWLINE,
+        _ = DocumentCharacters/*u*/.SOFT_NEWLINE,
         y = " ",
-        v = c.UNSTYLED,
-        S = ["p", "h1", "h2", "h3", "li", "blockquote"],
+        v = ComposedBlockType/*c*/.UNSTYLED,
+        S = ["ComposedInlineStyle/*p*/", "h1", "h2", "h3", "li", "blockquote"],
         b = {
-            strong: p.BOLD,
-            b: p.BOLD,
-            em: p.ITALIC,
-            module/*i*/: p.ITALIC,
-            u: p.UNDERLINE
+            strong: ComposedInlineStyle/*p*/.BOLD,
+            b: ComposedInlineStyle/*p*/.BOLD,
+            em: ComposedInlineStyle/*p*/.ITALIC,
+            module/*i*/: ComposedInlineStyle/*p*/.ITALIC,
+            DocumentCharacters/*u*/: ComposedInlineStyle/*p*/.UNDERLINE
         },
         R = {
             processBlockTag: function(global/*e*/, require/*t*/) {
                 switch (global/*e*/) {
                     case "h1":
-                        return c.HEADER_ONE;
+                        return ComposedBlockType/*c*/.HEADER_ONE;
                     case "h2":
-                        return c.HEADER_TWO;
+                        return ComposedBlockType/*c*/.HEADER_TWO;
                     case "li":
-                        return "ol" === require/*t*/ ? c.ORDERED_LIST_ITEM : c.UNORDERED_LIST_ITEM;
+                        return "ol" === require/*t*/ ? ComposedBlockType/*c*/.ORDERED_LIST_ITEM : ComposedBlockType/*c*/.UNORDERED_LIST_ITEM;
                     case "blockquote":
-                        return c.BLOCKQUOTE;
+                        return ComposedBlockType/*c*/.BLOCKQUOTE;
                     default:
-                        return c.UNSTYLED
+                        return ComposedBlockType/*c*/.UNSTYLED
                 }
             },
             processInlineTag: function(global/*e*/, require/*t*/) {
@@ -77,20 +77,20 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
                 } : global/*e*/
             },
             genFragment: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                var u = global/*e*/.nodeName.toLowerCase(),
-                    c = !1;
-                if ("#text" === u) {
-                    var p = global/*e*/.textContent;
-                    return "" === p.trim() ? a() : {
-                        text: p,
-                        inlines: h(p.length, require/*t*/),
+                var DocumentCharacters/*u*/ = global/*e*/.nodeName.toLowerCase(),
+                    ComposedBlockType/*c*/ = !1;
+                if ("#text" === DocumentCharacters/*u*/) {
+                    var ComposedInlineStyle/*p*/ = global/*e*/.textContent;
+                    return "" === ComposedInlineStyle/*p*/.trim() ? a() : {
+                        text: ComposedInlineStyle/*p*/,
+                        inlines: fillArray/*h*/(ComposedInlineStyle/*p*/.length, require/*t*/),
                         blocks: []
                     }
                 }
-                if ("br" === u) return s();
-                var f, m = o();
-                for (require/*t*/ = this.processInlineTag(u, require/*t*/), ("ul" === u || "ol" === u) && (requireDynamic/*n*/ = u), !requireLazy/*r*/ && d(module/*i*/, u) && (m = l(this.processBlockTag(u, requireDynamic/*n*/)), requireLazy/*r*/ = !0, c = !0), global/*e*/ = global/*e*/.firstChild; global/*e*/;) f = this.genFragment(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), m = this.joinChunks(m, f), global/*e*/ = global/*e*/.nextSibling;
-                return c && (m = this.joinChunks(m, l(v))), m
+                if ("br" === DocumentCharacters/*u*/) return s();
+                var getSafeBodyFromHTML/*f*/, m = o();
+                for (require/*t*/ = this.processInlineTag(DocumentCharacters/*u*/, require/*t*/), ("ul" === DocumentCharacters/*u*/ || "ol" === DocumentCharacters/*u*/) && (requireDynamic/*n*/ = DocumentCharacters/*u*/), !requireLazy/*r*/ && arrayContains/*d*/(module/*i*/, DocumentCharacters/*u*/) && (m = l(this.processBlockTag(DocumentCharacters/*u*/, requireDynamic/*n*/)), requireLazy/*r*/ = !0, ComposedBlockType/*c*/ = !0), global/*e*/ = global/*e*/.firstChild; global/*e*/;) getSafeBodyFromHTML/*f*/ = this.genFragment(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), m = this.joinChunks(m, getSafeBodyFromHTML/*f*/), global/*e*/ = global/*e*/.nextSibling;
+                return ComposedBlockType/*c*/ && (m = this.joinChunks(m, l(v))), m
             },
             containsSemanticBlockMarkup: function(global/*e*/) {
                 return S.some(function(require/*t*/) {
@@ -99,7 +99,7 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
             },
             processHTML: function(global/*e*/) {
                 global/*e*/ = global/*e*/.trim().split(m).join("").split(_).join(y).split(g).join(y);
-                var require/*t*/ = f(global/*e*/);
+                var require/*t*/ = getSafeBodyFromHTML/*f*/(global/*e*/);
                 if (!require/*t*/) return null;
                 var requireDynamic/*n*/ = this.containsSemanticBlockMarkup(global/*e*/) ? S : ["div"],
                     requireLazy/*r*/ = this.genFragment(require/*t*/, 0, "ul", !1, requireDynamic/*n*/);
@@ -112,8 +112,8 @@ __d("TextEditorPasteHandler",["DocumentCharacters","ComposedBlockType","Composed
             processText: function(global/*e*/) {
                 return {
                     text: global/*e*/,
-                    inlines: h(global/*e*/.length, p.NONE),
-                    blocks: h(global/*e*/.split(m).length, v)
+                    inlines: fillArray/*h*/(global/*e*/.length, ComposedInlineStyle/*p*/.NONE),
+                    blocks: fillArray/*h*/(global/*e*/.split(m).length, v)
                 }
             }
         };

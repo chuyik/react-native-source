@@ -8,7 +8,7 @@ __d("PHPQuerySerializer",["invariant"],function (global/*e*/, require/*t*/, requ
         var requireDynamic/*n*/ = [];
         if (null === global/*e*/ || void 0 === global/*e*/) requireDynamic/*n*/.push(s(require/*t*/));
         else if ("object" == typeof global/*e*/) {
-            ("nodeName" in global/*e*/ || "nodeType" in global/*e*/) && c(0, "PHPQuerySerializer serializing a DOM element, not good ...");
+            ("nodeName" in global/*e*/ || "nodeType" in global/*e*/) && invariant/*c*/(0, "PHPQuerySerializer serializing a DOM element, not good ...");
             for (var requireLazy/*r*/ in global/*e*/) global/*e*/.hasOwnProperty(requireLazy/*r*/) && void 0 !== global/*e*/[requireLazy/*r*/] && requireDynamic/*n*/.push(a(global/*e*/[requireLazy/*r*/], require/*t*/ ? require/*t*/ + "[" + requireLazy/*r*/ + "]" : requireLazy/*r*/))
         } else requireDynamic/*n*/.push(s(require/*t*/) + "=" + s(global/*e*/));
         return requireDynamic/*n*/.join("&")
@@ -29,15 +29,15 @@ __d("PHPQuerySerializer",["invariant"],function (global/*e*/, require/*t*/, requ
                     s = o[1],
                     l = u(o[3] || "");
                 a[0] = s;
-                for (var c = require/*t*/, d = 0; d < a.length - 1; d++)
+                for (var invariant/*c*/ = require/*t*/, d = 0; d < a.length - 1; d++)
                     if (a[d]) {
-                        if (!requireDynamic/*n*/.call(c, a[d])) {
+                        if (!requireDynamic/*n*/.call(invariant/*c*/, a[d])) {
                             var h = a[d + 1] && !a[d + 1].match(/^\d{1,3}$/) ? {} : [];
-                            if (c[a[d]] = h, c[a[d]] !== h) return require/*t*/
+                            if (invariant/*c*/[a[d]] = h, invariant/*c*/[a[d]] !== h) return require/*t*/
                         }
-                        c = c[a[d]]
-                    } else c.push(a[d + 1] && !a[d + 1].match(/^\d{1,3}$/) ? {} : []), c = c[c.length - 1];
-                c instanceof Array && "" === a[a.length - 1] ? c.push(l) : c[a[a.length - 1]] = l
+                        invariant/*c*/ = invariant/*c*/[a[d]]
+                    } else invariant/*c*/.push(a[d + 1] && !a[d + 1].match(/^\d{1,3}$/) ? {} : []), invariant/*c*/ = invariant/*c*/[invariant/*c*/.length - 1];
+                invariant/*c*/ instanceof Array && "" === a[a.length - 1] ? invariant/*c*/.push(l) : invariant/*c*/[a[a.length - 1]] = l
             } else {
                 var f = global/*e*/[requireLazy/*r*/].split("=");
                 require/*t*/[u(f[0])] = void 0 === f[1] ? null : u(f[1])
@@ -49,7 +49,7 @@ __d("PHPQuerySerializer",["invariant"],function (global/*e*/, require/*t*/, requ
     function u(global/*e*/) {
         return decodeURIComponent(global/*e*/.replace(/\+/g, " "))
     }
-    var c = require/*t*/("invariant"),
+    var invariant/*c*/ = require/*t*/("invariant"),
         p = /^([-_\w]+)((?:\[[-_\w]*\])+)=?(.*)/,
         d = {
             serialize: o,

@@ -10,9 +10,9 @@ __d("GraphQLRangeTracker",["DliteLog"],function (global/*e*/, require/*t*/, requ
     }
 
     function s(global/*e*/) {
-        l.warn("GraphQLRangeTracker can only track `edges` fields with `EdgesID` fieldName: %s inferredRootCallName: %s inferredPrimaryKey: %s isPlural: %s isConnection: %s isFindable: %s isLimitable: %s isGenerated: %s", global/*e*/.getFieldName(), global/*e*/.getInferredRootCallName(), global/*e*/.getInferredPrimaryKey(), global/*e*/.isPlural(), global/*e*/.isConnection(), global/*e*/.isFindable(), global/*e*/.isLimitable(), global/*e*/.isGenerated())
+        DliteLog/*l*/.warn("GraphQLRangeTracker can only track `edges` fields with `EdgesID` fieldName: %s inferredRootCallName: %s inferredPrimaryKey: %s isPlural: %s isConnection: %s isFindable: %s isLimitable: %s isGenerated: %s", global/*e*/.getFieldName(), global/*e*/.getInferredRootCallName(), global/*e*/.getInferredPrimaryKey(), global/*e*/.isPlural(), global/*e*/.isConnection(), global/*e*/.isFindable(), global/*e*/.isLimitable(), global/*e*/.isGenerated())
     }
-    var l = require/*t*/("DliteLog"),
+    var DliteLog/*l*/ = require/*t*/("DliteLog"),
         u = {},
         c = {},
         p = {
@@ -22,8 +22,8 @@ __d("GraphQLRangeTracker",["DliteLog"],function (global/*e*/, require/*t*/, requ
                 if (!requireLazy/*r*/) return void s(global/*e*/);
                 var module/*i*/ = a(requireLazy/*r*/, require/*t*/);
                 u[module/*i*/] = global/*e*/;
-                var l = o(requireLazy/*r*/, requireDynamic/*n*/);
-                c[l] = !0
+                var DliteLog/*l*/ = o(requireLazy/*r*/, requireDynamic/*n*/);
+                c[DliteLog/*l*/] = !0
             },
             hasEdge: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = global/*e*/.getEdgesID();

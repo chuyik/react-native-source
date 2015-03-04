@@ -3,8 +3,8 @@ __d("DocumentIterator",["DocumentCharacters"],function (global/*e*/, require/*t*
         "use strict";
         this.$DocumentIterator_content = global/*e*/, this.$DocumentIterator_decorator = require/*t*/
     }
-    var a = require/*t*/("DocumentCharacters"),
-        s = a.BLOCK_DELIMITER;
+    var DocumentCharacters/*a*/ = require/*t*/("DocumentCharacters"),
+        s = DocumentCharacters/*a*/.BLOCK_DELIMITER;
     o.prototype.process = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         "use strict";
         this.$DocumentIterator_blockFn = global/*e*/, this.$DocumentIterator_decorationFn = require/*t*/, this.$DocumentIterator_inlineFn = requireDynamic/*n*/, this.$DocumentIterator_text = this.$DocumentIterator_content.getText(), this.$DocumentIterator_inlines = this.$DocumentIterator_content.getInlineStyles(), this.$DocumentIterator_decorations = this.$DocumentIterator_decorator.getDecorations(this.$DocumentIterator_content), this.$DocumentIterator_processDocument()

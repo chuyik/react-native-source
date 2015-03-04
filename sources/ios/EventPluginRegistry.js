@@ -6,16 +6,16 @@ __d("EventPluginRegistry",["invariant"],function (global/*e*/, require/*t*/, req
             for (var global/*e*/ in c) {
                 var require/*t*/ = c[global/*e*/],
                     requireDynamic/*n*/ = u.indexOf(global/*e*/);
-                if (requireDynamic/*n*/ > -1 || l(0, "EventPluginRegistry: Cannot inject event plugins that do not exist in the plugin ordering, `%s`.", global/*e*/), !p.plugins[requireDynamic/*n*/]) {
-                    require/*t*/.extractEvents || l(0, "EventPluginRegistry: Event plugins must implement an `extractEvents` method, but `%s` does not.", global/*e*/), p.plugins[requireDynamic/*n*/] = require/*t*/;
+                if (requireDynamic/*n*/ > -1 || invariant/*l*/(0, "EventPluginRegistry: Cannot inject event plugins that do not exist in the plugin ordering, `%s`.", global/*e*/), !p.plugins[requireDynamic/*n*/]) {
+                    require/*t*/.extractEvents || invariant/*l*/(0, "EventPluginRegistry: Event plugins must implement an `extractEvents` method, but `%s` does not.", global/*e*/), p.plugins[requireDynamic/*n*/] = require/*t*/;
                     var requireLazy/*r*/ = require/*t*/.eventTypes;
-                    for (var module/*i*/ in requireLazy/*r*/) a(requireLazy/*r*/[module/*i*/], require/*t*/, module/*i*/) || l(0, "EventPluginRegistry: Failed to publish event `%s` for plugin `%s`.", module/*i*/, global/*e*/)
+                    for (var module/*i*/ in requireLazy/*r*/) a(requireLazy/*r*/[module/*i*/], require/*t*/, module/*i*/) || invariant/*l*/(0, "EventPluginRegistry: Failed to publish event `%s` for plugin `%s`.", module/*i*/, global/*e*/)
                 }
             }
     }
 
     function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        p.eventNameDispatchConfigs.hasOwnProperty(requireDynamic/*n*/) && l(0, "EventPluginHub: More than one plugin attempted to publish the same event name, `%s`.", requireDynamic/*n*/), p.eventNameDispatchConfigs[requireDynamic/*n*/] = global/*e*/;
+        p.eventNameDispatchConfigs.hasOwnProperty(requireDynamic/*n*/) && invariant/*l*/(0, "EventPluginHub: More than one plugin attempted to publish the same event name, `%s`.", requireDynamic/*n*/), p.eventNameDispatchConfigs[requireDynamic/*n*/] = global/*e*/;
         var requireLazy/*r*/ = global/*e*/.phasedRegistrationNames;
         if (requireLazy/*r*/) {
             for (var module/*i*/ in requireLazy/*r*/)
@@ -29,9 +29,9 @@ __d("EventPluginRegistry",["invariant"],function (global/*e*/, require/*t*/, req
     }
 
     function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        p.registrationNameModules[global/*e*/] && l(0, "EventPluginHub: More than one plugin attempted to publish the same registration name, `%s`.", global/*e*/), p.registrationNameModules[global/*e*/] = require/*t*/, p.registrationNameDependencies[global/*e*/] = require/*t*/.eventTypes[requireDynamic/*n*/].dependencies
+        p.registrationNameModules[global/*e*/] && invariant/*l*/(0, "EventPluginHub: More than one plugin attempted to publish the same registration name, `%s`.", global/*e*/), p.registrationNameModules[global/*e*/] = require/*t*/, p.registrationNameDependencies[global/*e*/] = require/*t*/.eventTypes[requireDynamic/*n*/].dependencies
     }
-    var l = require/*t*/("invariant"),
+    var invariant/*l*/ = require/*t*/("invariant"),
         u = null,
         c = {},
         p = {
@@ -40,14 +40,14 @@ __d("EventPluginRegistry",["invariant"],function (global/*e*/, require/*t*/, req
             registrationNameModules: {},
             registrationNameDependencies: {},
             injectEventPluginOrder: function(global/*e*/) {
-                u && l(0, "EventPluginRegistry: Cannot inject event plugin ordering more than once. You are likely trying to load more than one copy of React."), u = Array.prototype.slice.call(global/*e*/), o()
+                u && invariant/*l*/(0, "EventPluginRegistry: Cannot inject event plugin ordering more than once. You are likely trying to load more than one copy of React."), u = Array.prototype.slice.call(global/*e*/), o()
             },
             injectEventPluginsByName: function(global/*e*/) {
                 var require/*t*/ = !1;
                 for (var requireDynamic/*n*/ in global/*e*/)
                     if (global/*e*/.hasOwnProperty(requireDynamic/*n*/)) {
                         var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/];
-                        c.hasOwnProperty(requireDynamic/*n*/) && c[requireDynamic/*n*/] === requireLazy/*r*/ || (c[requireDynamic/*n*/] && l(0, "EventPluginRegistry: Cannot inject two different event plugins using the same name, `%s`.", requireDynamic/*n*/), c[requireDynamic/*n*/] = requireLazy/*r*/, require/*t*/ = !0)
+                        c.hasOwnProperty(requireDynamic/*n*/) && c[requireDynamic/*n*/] === requireLazy/*r*/ || (c[requireDynamic/*n*/] && invariant/*l*/(0, "EventPluginRegistry: Cannot inject two different event plugins using the same name, `%s`.", requireDynamic/*n*/), c[requireDynamic/*n*/] = requireLazy/*r*/, require/*t*/ = !0)
                     }
                 require/*t*/ && o()
             },

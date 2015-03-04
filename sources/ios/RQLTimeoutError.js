@@ -4,8 +4,8 @@ __d("RQLTimeoutError",["RQLError"],function (global/*e*/, require/*t*/, requireD
     function o() {
         this.name = "RQLTimeoutError", this.message = "Request timed out", this.type = "warn"
     }
-    var a = require/*t*/("RQLError");
-    for (var s in a) a.hasOwnProperty(s) && (o[s] = a[s]);
-    var l = null === a ? null : a.prototype;
-    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = a, module/*i*/.exports = o
+    var RQLError/*a*/ = require/*t*/("RQLError");
+    for (var s in RQLError/*a*/) RQLError/*a*/.hasOwnProperty(s) && (o[s] = RQLError/*a*/[s]);
+    var l = null === RQLError/*a*/ ? null : RQLError/*a*/.prototype;
+    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = RQLError/*a*/, module/*i*/.exports = o
 });

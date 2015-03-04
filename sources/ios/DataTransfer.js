@@ -5,11 +5,11 @@ __d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function
 
     function a(global/*e*/) {
         "use strict";
-        this.data = global/*e*/, this.types = global/*e*/.types ? l(global/*e*/.types) : []
+        this.data = global/*e*/, this.types = global/*e*/.types ? createArrayFrom/*l*/(global/*e*/.types) : []
     }
-    var s = require/*t*/("PhotosMimeType"),
-        l = require/*t*/("createArrayFrom"),
-        u = require/*t*/("emptyFunction"),
+    var PhotosMimeType/*s*/ = require/*t*/("PhotosMimeType"),
+        createArrayFrom/*l*/ = require/*t*/("createArrayFrom"),
+        emptyFunction/*u*/ = require/*t*/("emptyFunction"),
         c = new RegExp("\requireLazy/*r*/\requireDynamic/*n*/", "g"),
         p = "\requireDynamic/*n*/",
         d = {
@@ -39,7 +39,7 @@ __d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function
         if (global/*e*/) return !0;
         for (var require/*t*/ = this.getFiles(), requireDynamic/*n*/ = 0; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) {
             var requireLazy/*r*/ = require/*t*/[requireDynamic/*n*/].type;
-            if (!s(requireLazy/*r*/).isImage()) return !1
+            if (!PhotosMimeType/*s*/(requireLazy/*r*/).isImage()) return !1
         }
         return !0
     }, a.prototype.getCount = function() {
@@ -47,7 +47,7 @@ __d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function
         return this.data.hasOwnProperty("items") ? this.data.items.length : this.data.hasOwnProperty("mozItemCount") ? this.data.mozItemCount : this.data.files ? this.data.files.length : null
     }, a.prototype.getFiles = function() {
         "use strict";
-        return this.data.items ? Array.prototype.slice.call(this.data.items).map(o).filter(u.thatReturnsArgument) : this.data.files ? Array.prototype.slice.call(this.data.files) : []
+        return this.data.items ? Array.prototype.slice.call(this.data.items).map(o).filter(emptyFunction/*u*/.thatReturnsArgument) : this.data.files ? Array.prototype.slice.call(this.data.files) : []
     }, a.prototype.hasFiles = function() {
         "use strict";
         return this.getFiles().length > 0

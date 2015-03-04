@@ -1,8 +1,8 @@
 __d("RouteHandler",["NavItem","React","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o, a = require/*t*/("NavItem"),
-        s = require/*t*/("React"),
-        l = require/*t*/("invariant"),
+    var o, NavItem/*a*/ = require/*t*/("NavItem"),
+        React/*s*/ = require/*t*/("React"),
+        invariant/*l*/ = require/*t*/("invariant"),
         u = {
             setNavigator: function(global/*e*/) {
                 o = global/*e*/
@@ -28,10 +28,10 @@ __d("RouteHandler",["NavItem","React","invariant"],function (global/*e*/, requir
             },
             _pushView: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = global/*e*/(require/*t*/);
-                requireDynamic/*n*/.type || l(0, "viewCallback must generate a component instance."), requireDynamic/*n*/.type.navItemTitle || l(0, "View '" + (requireDynamic/*n*/.type.displayName || "<Unknown>") + "' must ' implement function navItemTitle.");
+                requireDynamic/*n*/.type || invariant/*l*/(0, "viewCallback must generate NavItem/*a*/ component instance."), requireDynamic/*n*/.type.navItemTitle || invariant/*l*/(0, "View '" + (requireDynamic/*n*/.type.displayName || "<Unknown>") + "' must ' implement function navItemTitle.");
                 var requireLazy/*r*/ = requireDynamic/*n*/.type.navItemTitle(),
                     module/*i*/ = require/*t*/.navigator || o;
-                module/*i*/ && module/*i*/.push ? module/*i*/.push(s.createElement(a, {
+                module/*i*/ && module/*i*/.push ? module/*i*/.push(React/*s*/.createElement(NavItem/*a*/, {
                     title: requireLazy/*r*/,
                     tintColor: "white"
                 }, requireDynamic/*n*/)) : console.warn("Warning: No valid navigator provided.")

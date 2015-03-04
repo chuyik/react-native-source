@@ -3,40 +3,40 @@ __d("getCharacterRemovalRange",["DocumentEntity","ComposedEntityMutability","Doc
         var requireLazy/*r*/ = global/*e*/.getText(),
             module/*i*/ = require/*t*/ - (requireDynamic/*n*/ === f ? 1 : 0),
             o = requireLazy/*r*/.charCodeAt(module/*i*/),
-            s = module/*i*/,
-            u = module/*i*/ + 1;
-        if (c.isCodeUnitInSurrogateRange(o)) {
+            ComposedEntityMutability/*s*/ = module/*i*/,
+            DocumentRemovalDirection/*u*/ = module/*i*/ + 1;
+        if (UnicodeUtils/*c*/.isCodeUnitInSurrogateRange(o)) {
             var _;
-            requireDynamic/*n*/ === f ? (s--, _ = requireLazy/*r*/.charCodeAt(s)) : (u++, _ = requireLazy/*r*/.charCodeAt(u)), c.isCodeUnitInSurrogateRange(_) || h(0, "Cursor position cannot be between two units of a surrogate pair via normal browser interaction.")
+            requireDynamic/*n*/ === f ? (ComposedEntityMutability/*s*/--, _ = requireLazy/*r*/.charCodeAt(ComposedEntityMutability/*s*/)) : (DocumentRemovalDirection/*u*/++, _ = requireLazy/*r*/.charCodeAt(DocumentRemovalDirection/*u*/)), UnicodeUtils/*c*/.isCodeUnitInSurrogateRange(_) || invariant/*h*/(0, "Cursor position cannot be between two units of DocumentEntity/*a*/ surrogate pair via normal browser interaction.")
         }
-        var y = global/*e*/.getEntities()[s];
+        var y = global/*e*/.getEntities()[ComposedEntityMutability/*s*/];
         if (!y) return {
-            start: s,
-            end: u
+            start: ComposedEntityMutability/*s*/,
+            end: DocumentRemovalDirection/*u*/
         };
-        var v = a.get(y),
+        var v = DocumentEntity/*a*/.get(y),
             S = v.getMutability();
         if (S === m) return {
-            start: s,
-            end: u
+            start: ComposedEntityMutability/*s*/,
+            end: DocumentRemovalDirection/*u*/
         };
-        var b = d(global/*e*/, y).filter(function(global/*e*/) {
-            return p(s, u, global/*e*/.start, global/*e*/.end)
+        var b = getRangesForDocumentEntity/*d*/(global/*e*/, y).filter(function(global/*e*/) {
+            return checkRangeOverlap/*p*/(ComposedEntityMutability/*s*/, DocumentRemovalDirection/*u*/, global/*e*/.start, global/*e*/.end)
         });
-        1 != b.length && h(0, "There should only be one entity range within this removal range.");
+        1 != b.length && invariant/*h*/(0, "There should only be one entity range within this removal range.");
         var R = b[0];
-        return S === g ? R : l.getRemovalRange(s, u, global/*e*/.getText().slice(R.start, R.end), R.start, requireDynamic/*n*/)
+        return S === g ? R : DocumentEntitySegments/*l*/.getRemovalRange(ComposedEntityMutability/*s*/, DocumentRemovalDirection/*u*/, global/*e*/.getText().slice(R.start, R.end), R.start, requireDynamic/*n*/)
     }
-    var a = require/*t*/("DocumentEntity"),
-        s = require/*t*/("ComposedEntityMutability"),
-        l = require/*t*/("DocumentEntitySegments"),
-        u = require/*t*/("DocumentRemovalDirection"),
-        c = require/*t*/("UnicodeUtils"),
-        p = require/*t*/("checkRangeOverlap"),
-        d = require/*t*/("getRangesForDocumentEntity"),
-        h = require/*t*/("invariant"),
-        f = u.BACKWARD,
-        m = s.MUTABLE,
-        g = s.IMMUTABLE;
+    var DocumentEntity/*a*/ = require/*t*/("DocumentEntity"),
+        ComposedEntityMutability/*s*/ = require/*t*/("ComposedEntityMutability"),
+        DocumentEntitySegments/*l*/ = require/*t*/("DocumentEntitySegments"),
+        DocumentRemovalDirection/*u*/ = require/*t*/("DocumentRemovalDirection"),
+        UnicodeUtils/*c*/ = require/*t*/("UnicodeUtils"),
+        checkRangeOverlap/*p*/ = require/*t*/("checkRangeOverlap"),
+        getRangesForDocumentEntity/*d*/ = require/*t*/("getRangesForDocumentEntity"),
+        invariant/*h*/ = require/*t*/("invariant"),
+        f = DocumentRemovalDirection/*u*/.BACKWARD,
+        m = ComposedEntityMutability/*s*/.MUTABLE,
+        g = ComposedEntityMutability/*s*/.IMMUTABLE;
     module/*i*/.exports = o
 });

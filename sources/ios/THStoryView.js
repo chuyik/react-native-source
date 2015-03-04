@@ -1,41 +1,41 @@
 __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","React","ReactGraphQL","Dimensions","StyleSheet","Text","THStoryHeaderView","THViewConstants","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBAttachmentView"),
+    var FBAttachmentView/*o*/ = require/*t*/("FBAttachmentView"),
         a = require/*t*/("FBTextWithEntities.react"),
-        s = require/*t*/("THColors"),
-        l = require/*t*/("React"),
-        u = require/*t*/("ReactGraphQL"),
-        c = require/*t*/("Dimensions"),
-        p = require/*t*/("StyleSheet"),
-        d = require/*t*/("Text"),
-        h = require/*t*/("THStoryHeaderView"),
-        f = require/*t*/("THViewConstants"),
-        m = require/*t*/("View"),
+        THColors/*s*/ = require/*t*/("THColors"),
+        React/*l*/ = require/*t*/("React"),
+        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
+        Dimensions/*c*/ = require/*t*/("Dimensions"),
+        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
+        Text/*d*/ = require/*t*/("Text"),
+        THStoryHeaderView/*h*/ = require/*t*/("THStoryHeaderView"),
+        THViewConstants/*f*/ = require/*t*/("THViewConstants"),
+        View/*m*/ = require/*t*/("View"),
         g = 16,
         _ = 500,
         y = 10,
         v = 1.5,
-        S = l.createClass({
+        S = React/*l*/.createClass({
             displayName: "THStoryView",
             propTypes: {
-                story: l.PropTypes.object.isRequired,
-                navigator: l.PropTypes.object,
-                viewContext: l.PropTypes.string
+                story: React/*l*/.PropTypes.object.isRequired,
+                navigator: React/*l*/.PropTypes.object,
+                viewContext: React/*l*/.PropTypes.string
             },
-            mixins: [u.Mixin],
+            mixins: [ReactGraphQL/*u*/.Mixin],
             statics: {
                 queries: {
                     story: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                            var o = require/*t*/.__GraphQL;
-                            return new o.QueryFragment("THStoryView_story", "Story", [new o.Field("id"), new o.Field("message", null, [require/*t*/.__frag(global/*e*/)]), new o.Field("suffix", null, [require/*t*/.__frag(requireDynamic/*n*/)]), new o.Field("attachments", [new o.Field("style_list", null, null, null, null, null, {
+                            var FBAttachmentView/*o*/ = require/*t*/.__GraphQL;
+                            return new FBAttachmentView/*o*/.QueryFragment("THStoryView_story", "Story", [new FBAttachmentView/*o*/.Field("id"), new FBAttachmentView/*o*/.Field("message", null, [require/*t*/.__frag(global/*e*/)]), new FBAttachmentView/*o*/.Field("suffix", null, [require/*t*/.__frag(requireDynamic/*n*/)]), new FBAttachmentView/*o*/.Field("attachments", [new FBAttachmentView/*o*/.Field("style_list", null, null, null, null, null, {
                                 plural: !0
                             })], [require/*t*/.__frag(requireLazy/*r*/)], null, null, null, {
                                 plural: !0
                             })], [require/*t*/.__frag(module/*i*/)], {
                                 scope: "THStoryView_story"
                             })
-                        }(a.getQuery("text"), a.getQuery("text"), o.getQuery("attachment"), h.getQuery("story"))
+                        }(a.getQuery("text"), a.getQuery("text"), FBAttachmentView/*o*/.getQuery("attachment"), THStoryHeaderView/*h*/.getQuery("story"))
                     },
                     group: function(global/*e*/, require/*t*/) {
                         return function(global/*e*/) {
@@ -46,22 +46,22 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                             })], [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THStoryView_group"
                             })
-                        }(h.getQuery("group"))
+                        }(THStoryHeaderView/*h*/.getQuery("group"))
                     }
                 }
             },
             getMessage: function() {
                 if (!this.props.story.message) return null;
                 var global/*e*/ = null;
-                return this.props.story.suffix && (global/*e*/ = [l.createElement(d, null, " ", "—", " "), l.createElement(a, {
+                return this.props.story.suffix && (global/*e*/ = [React/*l*/.createElement(Text/*d*/, null, " ", "—", " "), React/*l*/.createElement(a, {
                     text: this.props.story.suffix,
                     textStyle: b.textStyle
-                })]), l.createElement(m, {
+                })]), React/*l*/.createElement(View/*m*/, {
                     style: b.messageContainer
-                }, l.createElement(d, {
+                }, React/*l*/.createElement(Text/*d*/, {
                     style: b.textStyle
-                }, l.createElement(a, {
-                    shouldTruncate: this.props.viewContext !== f.PERMALINK,
+                }, React/*l*/.createElement(a, {
+                    shouldTruncate: this.props.viewContext !== THViewConstants/*f*/.PERMALINK,
                     text: this.props.story.message,
                     maxLength: _,
                     maxLines: y,
@@ -75,17 +75,17 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                 var require/*t*/ = 0,
                     requireDynamic/*n*/ = [];
                 return global/*e*/.forEach(function(global/*e*/) {
-                    -1 === global/*e*/.style_list.indexOf("avatar_list") && requireDynamic/*n*/.push(l.createElement(m, {
+                    -1 === global/*e*/.style_list.indexOf("avatar_list") && requireDynamic/*n*/.push(React/*l*/.createElement(View/*m*/, {
                         style: this.getAttachmentStyle(global/*e*/.style_list),
                         key: require/*t*/++
-                    }, l.createElement(o, {
+                    }, React/*l*/.createElement(FBAttachmentView/*o*/, {
                         attachment: global/*e*/,
                         navigator: this.props.navigator,
                         context: this.props.context,
                         maxPhotoWidth: this.getMaxPhotoWidth(global/*e*/.style_list),
                         maxPhotoHeight: this.getMaxPhotoHeight(global/*e*/.style_list)
                     })))
-                }.bind(this)), 0 === requireDynamic/*n*/.length ? null : l.createElement(m, {
+                }.bind(this)), 0 === requireDynamic/*n*/.length ? null : React/*l*/.createElement(View/*m*/, {
                     style: b.attachmentCollectionContainer
                 }, requireDynamic/*n*/)
             },
@@ -95,7 +95,7 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                 return b.attachmentContainer
             },
             getMaxPhotoWidth: function(global/*e*/) {
-                for (var require/*t*/ = c.get("window").width, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++)
+                for (var require/*t*/ = Dimensions/*c*/.get("window").width, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++)
                     if ("photo" === global/*e*/[requireDynamic/*n*/] || "album" === global/*e*/[requireDynamic/*n*/] || "video" === global/*e*/[requireDynamic/*n*/]) return require/*t*/;
                 return require/*t*/ - 2 * g
             },
@@ -103,14 +103,14 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                 return this.getMaxPhotoWidth(global/*e*/) * v
             },
             render: function() {
-                return l.createElement(m, null, l.createElement(h, {
+                return React/*l*/.createElement(View/*m*/, null, React/*l*/.createElement(THStoryHeaderView/*h*/, {
                     story: this.props.story,
                     context: this.props.context,
                     group: this.props.group
                 }), this.getMessage(), this.getAttachments())
             }
         }),
-        b = p.create({
+        b = StyleSheet/*p*/.create({
             attachmentCollectionContainer: {
                 marginTop: 12
             },
@@ -128,7 +128,7 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                 marginTop: 11
             },
             seeMore: {
-                color: s.feedbackFadedText
+                color: THColors/*s*/.feedbackFadedText
             },
             textStyle: {
                 lineHeight: 20,

@@ -1,7 +1,7 @@
 __d("UnicodeBidiDirection",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("keyMirror"),
-        a = o({
+    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+        a = keyMirror/*o*/({
             NEUTRAL: !0,
             LTR: !0,
             RTL: !0

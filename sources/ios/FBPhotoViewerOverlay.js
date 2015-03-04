@@ -1,40 +1,40 @@
 __d("FBPhotoViewerOverlay",["Image","React","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("Image"),
-        a = require/*t*/("React"),
-        s = require/*t*/("StyleSheet"),
-        l = require/*t*/("Text"),
-        u = require/*t*/("TouchableBounce"),
-        c = require/*t*/("View"),
-        p = require/*t*/("fbt"),
-        d = require/*t*/("ix"),
-        h = a.createClass({
+    var Image/*o*/ = require/*t*/("Image"),
+        React/*a*/ = require/*t*/("React"),
+        StyleSheet/*s*/ = require/*t*/("StyleSheet"),
+        Text/*l*/ = require/*t*/("Text"),
+        TouchableBounce/*u*/ = require/*t*/("TouchableBounce"),
+        View/*c*/ = require/*t*/("View"),
+        fbt/*p*/ = require/*t*/("fbt"),
+        ix/*d*/ = require/*t*/("ix"),
+        h = React/*a*/.createClass({
             displayName: "FBPhotoViewerOverlay",
             render: function() {
-                return a.createElement(c, {
-                    pointerEvents: c.pointerEvents.boxNone,
+                return React/*a*/.createElement(View/*c*/, {
+                    pointerEvents: View/*c*/.pointerEvents.boxNone,
                     style: f.container
-                }, a.createElement(u, {
+                }, React/*a*/.createElement(TouchableBounce/*u*/, {
                     onPress: this.props.onTapDone
-                }, a.createElement(o, {
+                }, React/*a*/.createElement(Image/*o*/, {
                     capInsets: {
                         left: 4,
                         top: 4,
                         right: 4,
                         bottom: 4
                     },
-                    source: d("doneButtonBackground"),
+                    source: ix/*d*/("doneButtonBackground"),
                     style: f.doneContainer
-                }, a.createElement(l, {
+                }, React/*a*/.createElement(Text/*l*/, {
                     style: f.doneText
-                }, p({
+                }, fbt/*p*/({
                     type: "text",
                     texts: ["Done"],
                     desc: "Done button for dismissing photo overlay"
                 })))))
             }
         }),
-        f = s.create({
+        f = StyleSheet/*s*/.create({
             container: {
                 top: 0,
                 left: 0,
@@ -46,7 +46,7 @@ __d("FBPhotoViewerOverlay",["Image","React","StyleSheet","Text","TouchableBounce
             doneContainer: {
                 paddingVertical: 8,
                 paddingHorizontal: 13,
-                resizeMode: o.resizeMode.stretch,
+                resizeMode: Image/*o*/.resizeMode.stretch,
                 marginRight: 18,
                 marginTop: 21
             },

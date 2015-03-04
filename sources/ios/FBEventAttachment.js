@@ -1,33 +1,33 @@
 __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FIGColors"),
-        a = require/*t*/("Image"),
-        s = require/*t*/("iso8601"),
-        l = require/*t*/("PixelRatio"),
-        u = require/*t*/("React"),
-        c = require/*t*/("ReactGraphQL"),
-        p = require/*t*/("Dimensions"),
-        d = require/*t*/("RouteHandler"),
-        h = require/*t*/("StyleSheet"),
-        f = require/*t*/("Text"),
-        m = require/*t*/("TouchableHighlight"),
-        g = require/*t*/("View"),
-        _ = require/*t*/("fbt"),
-        y = require/*t*/("truncate"),
-        v = p.get("window"),
+    var FIGColors/*o*/ = require/*t*/("FIGColors"),
+        Image/*a*/ = require/*t*/("Image"),
+        iso8601/*s*/ = require/*t*/("iso8601"),
+        PixelRatio/*l*/ = require/*t*/("PixelRatio"),
+        React/*u*/ = require/*t*/("React"),
+        ReactGraphQL/*c*/ = require/*t*/("ReactGraphQL"),
+        Dimensions/*p*/ = require/*t*/("Dimensions"),
+        RouteHandler/*d*/ = require/*t*/("RouteHandler"),
+        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
+        Text/*f*/ = require/*t*/("Text"),
+        TouchableHighlight/*m*/ = require/*t*/("TouchableHighlight"),
+        View/*g*/ = require/*t*/("View"),
+        fbt/*_*/ = require/*t*/("fbt"),
+        truncate/*y*/ = require/*t*/("truncate"),
+        v = Dimensions/*p*/.get("window"),
         S = 1,
         b = v.width,
         R = Math.floor(b / 4 + 50),
-        w = l.get(),
+        w = PixelRatio/*l*/.get(),
         C = b * w,
         E = R * w,
-        D = u.createClass({
+        D = React/*u*/.createClass({
             displayName: "FBEventAttachment",
             propTypes: {
-                attachment: u.PropTypes.object.isRequired,
-                navigator: u.PropTypes.object
+                attachment: React/*u*/.PropTypes.object.isRequired,
+                navigator: React/*u*/.PropTypes.object
             },
-            mixins: [c.Mixin],
+            mixins: [ReactGraphQL/*c*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -68,17 +68,17 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
             },
             getStartDate: function() {
                 var global/*e*/ = this.props.attachment.target.time_range.start,
-                    require/*t*/ = s.toDate(global/*e*/);
-                return s.isAllDay(global/*e*/) && require/*t*/.setTime(require/*t*/.getTime() + 60 * require/*t*/.getTimezoneOffset() * 1e3), require/*t*/
+                    require/*t*/ = iso8601/*s*/.toDate(global/*e*/);
+                return iso8601/*s*/.isAllDay(global/*e*/) && require/*t*/.setTime(require/*t*/.getTime() + 60 * require/*t*/.getTimezoneOffset() * 1e3), require/*t*/
             },
             getBigDate: function() {
                 var global/*e*/ = this.getStartDate(),
                     require/*t*/ = global/*e*/.toUTCString().split(" ")[2].toUpperCase();
-                return u.createElement(g, {
+                return React/*u*/.createElement(View/*g*/, {
                     style: T.bigDate
-                }, u.createElement(f, {
+                }, React/*u*/.createElement(Text/*f*/, {
                     style: T.bigDateMonth
-                }, require/*t*/), u.createElement(f, {
+                }, require/*t*/), React/*u*/.createElement(Text/*f*/, {
                     style: T.bigDateDay
                 }, global/*e*/.getDate()))
             },
@@ -86,55 +86,55 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                 var global/*e*/ = this.props.attachment.target,
                     require/*t*/ = null;
                 if (global/*e*/.event_place) {
-                    var requireDynamic/*n*/ = y(global/*e*/.event_place.name, 50);
-                    require/*t*/ = u.createElement(f, {
+                    var requireDynamic/*n*/ = truncate/*y*/(global/*e*/.event_place.name, 50);
+                    require/*t*/ = React/*u*/.createElement(Text/*f*/, {
                         style: T.subtitle
                     }, requireDynamic/*n*/)
                 }
                 var requireLazy/*r*/;
-                requireLazy/*r*/ = this.getStartDate().getTime() < Date.now() ? 1 === global/*e*/.event_members.count ? _({
+                requireLazy/*r*/ = this.getStartDate().getTime() < Date.now() ? 1 === global/*e*/.event_members.count ? fbt/*_*/({
                     type: "text",
                     texts: ["1 person went"],
                     desc: "Subtitle for event in the past with one person who went"
-                }) : _({
+                }) : fbt/*_*/({
                     type: "text",
                     texts: ["{count} people went"],
                     desc: "Subtitle for event in the past"
-                }, [_.param("count", global/*e*/.event_members.count)]) : 1 === global/*e*/.event_members.count ? _({
+                }, [fbt/*_*/.param("count", global/*e*/.event_members.count)]) : 1 === global/*e*/.event_members.count ? fbt/*_*/({
                     type: "text",
                     texts: ["1 person is going"],
                     desc: "Subtitle for event in the future where one person is going"
-                }) : _({
+                }) : fbt/*_*/({
                     type: "text",
                     texts: ["{count} people are going"],
                     desc: "Subtitle for event in the future"
-                }, [_.param("count", global/*e*/.event_members.count)]);
-                var module/*i*/ = u.createElement(f, {
+                }, [fbt/*_*/.param("count", global/*e*/.event_members.count)]);
+                var module/*i*/ = React/*u*/.createElement(Text/*f*/, {
                     style: T.subtitle
                 }, requireLazy/*r*/);
                 return [require/*t*/, module/*i*/]
             },
             getSummary: function() {
-                return u.createElement(g, {
+                return React/*u*/.createElement(View/*g*/, {
                     style: T.titleContainer
-                }, u.createElement(f, {
+                }, React/*u*/.createElement(Text/*f*/, {
                     style: T.title
                 }, this.props.attachment.title), this.getSubtitle())
             },
             getCoverPhoto: function(global/*e*/) {
-                return global/*e*/.cover_photo ? [u.createElement(a, {
+                return global/*e*/.cover_photo ? [React/*u*/.createElement(Image/*a*/, {
                     style: T.image,
                     source: global/*e*/.cover_photo.photo.event_cover
-                }), u.createElement(g, {
+                }), React/*u*/.createElement(View/*g*/, {
                     style: T.separator
                 })] : null
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ ? u.createElement(g, {
+                return global/*e*/ ? React/*u*/.createElement(View/*g*/, {
                     style: T.container
-                }, u.createElement(m, {
-                    onPress: d.getCallback({
+                }, React/*u*/.createElement(TouchableHighlight/*m*/, {
+                    onPress: RouteHandler/*d*/.getCallback({
                         typeList: [global/*e*/.__type__.name, "URL"],
                         params: {
                             id: global/*e*/.id,
@@ -143,14 +143,14 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                         }
                     }),
                     style: T.wrapper
-                }, u.createElement(g, {
+                }, React/*u*/.createElement(View/*g*/, {
                     style: T.border
-                }, this.getCoverPhoto(global/*e*/), u.createElement(g, {
+                }, this.getCoverPhoto(global/*e*/), React/*u*/.createElement(View/*g*/, {
                     style: T.row
-                }, this.getBigDate(), this.getSummary())))) : (console.error("Tried to render an FBEventAttachment without a target!"), u.createElement(g, null))
+                }, this.getBigDate(), this.getSummary())))) : (console.error("Tried to render an FBEventAttachment without Image/*a*/ target!"), React/*u*/.createElement(View/*g*/, null))
             }
         }),
-        T = h.create({
+        T = StyleSheet/*h*/.create({
             wrapper: {
                 borderRadius: S
             },
@@ -159,7 +159,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                 shadowColor: "black",
                 shadowOpacity: .1,
                 shadowOffset: {
-                    h: 1
+                    StyleSheet/*h*/: 1
                 },
                 marginBottom: 5,
                 borderRadius: S
@@ -167,7 +167,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
             border: {
                 backgroundColor: "white",
                 borderWidth: .5,
-                borderColor: o.attachmentBorder,
+                borderColor: FIGColors/*o*/.attachmentBorder,
                 borderRadius: S,
                 overflow: "hidden"
             },
@@ -196,7 +196,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                 height: E / w
             },
             separator: {
-                backgroundColor: o.attachmentBorder,
+                backgroundColor: FIGColors/*o*/.attachmentBorder,
                 height: .5
             },
             titleContainer: {
@@ -211,7 +211,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
             },
             subtitle: {
                 fontSize: 13,
-                color: o.mediumText
+                color: FIGColors/*o*/.mediumText
             }
         });
     module/*i*/.exports = D

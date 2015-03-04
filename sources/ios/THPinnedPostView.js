@@ -1,23 +1,23 @@
 __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","Text","THAnimations","THFeedUnitView","TouchableHighlight","View","fbt","isEmpty"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("LayoutAnimation"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactGraphQL"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("Text"),
-        c = require/*t*/("THAnimations"),
-        p = require/*t*/("THFeedUnitView"),
-        d = require/*t*/("TouchableHighlight"),
-        h = require/*t*/("View"),
-        f = require/*t*/("fbt"),
-        m = require/*t*/("isEmpty"),
-        g = a.createClass({
+    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
+        React/*a*/ = require/*t*/("React"),
+        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        Text/*u*/ = require/*t*/("Text"),
+        THAnimations/*c*/ = require/*t*/("THAnimations"),
+        THFeedUnitView/*p*/ = require/*t*/("THFeedUnitView"),
+        TouchableHighlight/*d*/ = require/*t*/("TouchableHighlight"),
+        View/*h*/ = require/*t*/("View"),
+        fbt/*f*/ = require/*t*/("fbt"),
+        isEmpty/*m*/ = require/*t*/("isEmpty"),
+        g = React/*a*/.createClass({
             displayName: "THPinnedPostView",
             propTypes: {
-                onDeletePinnedStory: a.PropTypes.func,
-                onPinUnpinStory: a.PropTypes.func
+                onDeletePinnedStory: React/*a*/.PropTypes.func,
+                onPinUnpinStory: React/*a*/.PropTypes.func
             },
-            mixins: [s.Mixin],
+            mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queryParams: {
                     showPinnedPost: !1
@@ -29,7 +29,7 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                             return new requireDynamic/*n*/.QueryFragment("THPinnedPostView_viewer", "Viewer", null, [require/*t*/.__frag(global/*e*/)], {
                                 scope: "THPinnedPostView_viewer"
                             })
-                        }(p.getQuery("viewer").if(requireDynamic/*n*/.showPinnedPost))
+                        }(THFeedUnitView/*p*/.getQuery("viewer").if(requireDynamic/*n*/.showPinnedPost))
                     },
                     group: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                         return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
@@ -72,7 +72,7 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                             })], [require/*t*/.__frag(requireLazy/*r*/)], {
                                 scope: "THPinnedPostView_group"
                             })
-                        }(requireDynamic/*n*/.showPinnedPost, p.getQuery("story"), p.getQuery("group").if(requireDynamic/*n*/.showPinnedPost))
+                        }(requireDynamic/*n*/.showPinnedPost, THFeedUnitView/*p*/.getQuery("story"), THFeedUnitView/*p*/.getQuery("group").if(requireDynamic/*n*/.showPinnedPost))
                     }
                 }
             },
@@ -82,12 +82,12 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                 })
             },
             render: function() {
-                if (this.props.group.admin_aware_group.pinned_story_unopened && 0 === this.props.group.admin_aware_group.pinned_story_unopened.count) return a.createElement(h, null);
+                if (this.props.group.admin_aware_group.pinned_story_unopened && 0 === this.props.group.admin_aware_group.pinned_story_unopened.count) return React/*a*/.createElement(View/*h*/, null);
                 var global/*e*/ = this.props.group.admin_aware_group.group_pinned_stories;
-                if (global/*e*/ && m(global/*e*/.edges)) return a.createElement(h, null);
+                if (global/*e*/ && isEmpty/*m*/(global/*e*/.edges)) return React/*a*/.createElement(View/*h*/, null);
                 if (global/*e*/ && global/*e*/.edges && global/*e*/.edges[0] && global/*e*/.edges[0].node) {
                     var require/*t*/ = global/*e*/.edges[0].node;
-                    return o.configureNext(c.layout.openPinnedPost), a.createElement(p, {
+                    return LayoutAnimation/*o*/.configureNext(THAnimations/*c*/.layout.openPinnedPost), React/*a*/.createElement(THFeedUnitView/*p*/, {
                         onInputRequested: this.props.onInputRequested,
                         story: require/*t*/,
                         group: this.props.group,
@@ -101,22 +101,22 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                         onPinUnpinStory: this.props.onPinUnpinStory
                     })
                 }
-                return a.createElement(d, {
+                return React/*a*/.createElement(TouchableHighlight/*d*/, {
                     style: _.wrapper,
                     onPress: this.openPinnedPost
-                }, a.createElement(h, {
+                }, React/*a*/.createElement(View/*h*/, {
                     style: _.pinnedPostCell,
                     onPress: this.viewPinnedPost
-                }, a.createElement(u, {
+                }, React/*a*/.createElement(Text/*u*/, {
                     style: _.pinnedPostText
-                }, f({
+                }, fbt/*f*/({
                     type: "text",
                     texts: ["Show Pinned Post"],
-                    desc: "Button to see the pinned post of a group"
+                    desc: "Button to see the pinned post of React/*a*/ group"
                 }))))
             }
         }),
-        _ = l.create({
+        _ = StyleSheet/*l*/.create({
             pinnedPostCell: {
                 height: 44,
                 alignItems: "center",

@@ -1,6 +1,6 @@
 __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("invariant"),
+    var invariant/*o*/ = require/*t*/("invariant"),
         a = {
             reinitializeTransaction: function() {
                 this.transactionWrappers = this.getTransactionWrappers(), this.wrapperInitData ? this.wrapperInitData.length = 0 : this.wrapperInitData = [], this._isInTransaction = !1
@@ -11,7 +11,7 @@ __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDyna
                 return !!this._isInTransaction
             },
             perform: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s, l) {
-                this.isInTransaction() && o(0, "Transaction.perform(...): Cannot initialize a transaction when there is already an outstanding transaction.");
+                this.isInTransaction() && invariant/*o*/(0, "Transaction.perform(...): Cannot initialize a transaction when there is already an outstanding transaction.");
                 var u, c;
                 try {
                     this._isInTransaction = !0, u = !0, this.initializeAll(0), c = global/*e*/.call(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s, l), u = !1
@@ -39,7 +39,7 @@ __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDyna
                 }
             },
             closeAll: function(global/*e*/) {
-                this.isInTransaction() || o(0, "Transaction.closeAll(): Cannot close transaction when none are open.");
+                this.isInTransaction() || invariant/*o*/(0, "Transaction.closeAll(): Cannot close transaction when none are open.");
                 for (var require/*t*/ = this.transactionWrappers, requireDynamic/*n*/ = global/*e*/; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) {
                     var requireLazy/*r*/, module/*i*/ = require/*t*/[requireDynamic/*n*/],
                         a = this.wrapperInitData[requireDynamic/*n*/];

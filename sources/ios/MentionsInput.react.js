@@ -1,58 +1,58 @@
 __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacters","DocumentCompositeDecorator","DocumentContent","DocumentDecorator","ComposedEntityType","DocumentSelectionState","DocumentView","MentionSpan","MentionSpan","MentionsTextEditorMixin","ReactPropTypes","React","MentionSpan","View","cx","emptyFunction","getDefaultKeyBinding","getEntityMatcher","getHashtagMatches"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
     var o = require/*t*/("AbstractMentionsTextEditor.react"),
-        a = require/*t*/("DocumentCharacters"),
-        s = require/*t*/("DocumentCompositeDecorator"),
-        l = require/*t*/("DocumentContent"),
-        u = require/*t*/("DocumentDecorator"),
-        c = require/*t*/("ComposedEntityType"),
-        p = require/*t*/("DocumentSelectionState"),
-        d = require/*t*/("DocumentView"),
-        h = require/*t*/("MentionSpan"),
-        f = require/*t*/("MentionSpan"),
-        m = require/*t*/("MentionsTextEditorMixin"),
-        g = require/*t*/("ReactPropTypes"),
-        _ = require/*t*/("React"),
-        y = require/*t*/("MentionSpan"),
-        v = require/*t*/("View"),
-        S = require/*t*/("cx"),
-        b = require/*t*/("emptyFunction"),
-        R = require/*t*/("getDefaultKeyBinding"),
-        w = require/*t*/("getEntityMatcher"),
-        C = require/*t*/("getHashtagMatches"),
-        E = b.thatReturns(""),
-        D = b.thatReturns(""),
-        T = c.MENTION,
-        x = new s([new u(w(function(global/*e*/) {
+        DocumentCharacters/*a*/ = require/*t*/("DocumentCharacters"),
+        DocumentCompositeDecorator/*s*/ = require/*t*/("DocumentCompositeDecorator"),
+        DocumentContent/*l*/ = require/*t*/("DocumentContent"),
+        DocumentDecorator/*u*/ = require/*t*/("DocumentDecorator"),
+        ComposedEntityType/*c*/ = require/*t*/("ComposedEntityType"),
+        DocumentSelectionState/*p*/ = require/*t*/("DocumentSelectionState"),
+        DocumentView/*d*/ = require/*t*/("DocumentView"),
+        MentionSpan/*h*/ = require/*t*/("MentionSpan"),
+        MentionSpan/*f*/ = require/*t*/("MentionSpan"),
+        MentionsTextEditorMixin/*m*/ = require/*t*/("MentionsTextEditorMixin"),
+        ReactPropTypes/*g*/ = require/*t*/("ReactPropTypes"),
+        React/*_*/ = require/*t*/("React"),
+        MentionSpan/*y*/ = require/*t*/("MentionSpan"),
+        View/*v*/ = require/*t*/("View"),
+        cx/*S*/ = require/*t*/("cx"),
+        emptyFunction/*b*/ = require/*t*/("emptyFunction"),
+        getDefaultKeyBinding/*R*/ = require/*t*/("getDefaultKeyBinding"),
+        getEntityMatcher/*w*/ = require/*t*/("getEntityMatcher"),
+        getHashtagMatches/*C*/ = require/*t*/("getHashtagMatches"),
+        E = emptyFunction/*b*/.thatReturns(""),
+        D = emptyFunction/*b*/.thatReturns(""),
+        T = ComposedEntityType/*c*/.MENTION,
+        x = new DocumentCompositeDecorator/*s*/([new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(global/*e*/) {
             var require/*t*/ = global/*e*/.getData();
             return global/*e*/.getType() === T && require/*t*/ && require/*t*/.isWeak
-        }), y), new u(w(function(global/*e*/) {
+        }), MentionSpan/*y*/), new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(global/*e*/) {
             return global/*e*/.getType() === T
-        }), f), new u(C, h)]),
-        P = _.createClass({
+        }), MentionSpan/*f*/), new DocumentDecorator/*u*/(getHashtagMatches/*C*/, MentionSpan/*h*/)]),
+        P = React/*_*/.createClass({
             displayName: "MentionsInput",
-            mixins: [m],
+            mixins: [MentionsTextEditorMixin/*m*/],
             propTypes: {
-                documentContent: g.instanceOf(l).isRequired,
-                selectionState: g.instanceOf(p).isRequired,
-                mentionsSource: g.object,
-                typeaheadView: g.func.isRequired,
-                typeaheadViewProps: g.object,
-                spellCheck: g.bool,
-                placeholder: g.string,
-                placeholderTextColor: g.string,
-                className: g.string,
-                autoflip: g.bool,
-                handleReturn: g.func,
-                handleDroppedFiles: g.func,
-                handlePastedFiles: g.func,
-                onAddMention: g.func,
-                onShowMentions: g.func,
-                onChange: g.func,
-                onInputFocus: g.func,
-                onInputBlur: g.func,
-                onFile: g.func,
-                inputView: g.renderable
+                documentContent: ReactPropTypes/*g*/.instanceOf(DocumentContent/*l*/).isRequired,
+                selectionState: ReactPropTypes/*g*/.instanceOf(DocumentSelectionState/*p*/).isRequired,
+                mentionsSource: ReactPropTypes/*g*/.object,
+                typeaheadView: ReactPropTypes/*g*/.func.isRequired,
+                typeaheadViewProps: ReactPropTypes/*g*/.object,
+                spellCheck: ReactPropTypes/*g*/.bool,
+                placeholder: ReactPropTypes/*g*/.string,
+                placeholderTextColor: ReactPropTypes/*g*/.string,
+                className: ReactPropTypes/*g*/.string,
+                autoflip: ReactPropTypes/*g*/.bool,
+                handleReturn: ReactPropTypes/*g*/.func,
+                handleDroppedFiles: ReactPropTypes/*g*/.func,
+                handlePastedFiles: ReactPropTypes/*g*/.func,
+                onAddMention: ReactPropTypes/*g*/.func,
+                onShowMentions: ReactPropTypes/*g*/.func,
+                onChange: ReactPropTypes/*g*/.func,
+                onInputFocus: ReactPropTypes/*g*/.func,
+                onInputBlur: ReactPropTypes/*g*/.func,
+                onFile: ReactPropTypes/*g*/.func,
+                inputView: ReactPropTypes/*g*/.renderable
             },
             focus: function() {
                 this.refs.textEditor.focus()
@@ -61,7 +61,7 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
                 this.refs.textEditor.blur()
             },
             _onReturn: function(global/*e*/) {
-                this.props.handleReturn && this.props.handleReturn(global/*e*/) || this.onCharacters(a.BLOCK_DELIMITER)
+                this.props.handleReturn && this.props.handleReturn(global/*e*/) || this.onCharacters(DocumentCharacters/*a*/.BLOCK_DELIMITER)
             },
             _onBlur: function(global/*e*/) {
                 this.onBlur(global/*e*/), this.props.onInputBlur && this.props.onInputBlur(global/*e*/)
@@ -81,7 +81,7 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
             },
             _getStateForDocument: function(global/*e*/) {
                 return {
-                    documentView: new d(global/*e*/, x)
+                    documentView: new DocumentView/*d*/(global/*e*/, x)
                 }
             },
             componentWillReceiveProps: function(global/*e*/) {
@@ -91,14 +91,14 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
                 return this._getStateForDocument(this.props.documentContent)
             },
             render: function() {
-                return _.createElement(v, {
+                return React/*_*/.createElement(View/*v*/, {
                     style: this.props.style,
-                    className: S("uiMentionsInput/root"),
+                    className: cx/*S*/("uiMentionsInput/root"),
                     onClick: this._onClick,
                     onFocus: this._onFocus
-                }, _.createElement(o, {
+                }, React/*_*/.createElement(o, {
                     ref: "textEditor",
-                    className: S("public/uiMentionsInput/input"),
+                    className: cx/*S*/("public/uiMentionsInput/input"),
                     documentView: this.state.documentView,
                     placeholder: this.props.placeholder,
                     placeholderTextColor: this.props.placeholderTextColor,
@@ -107,7 +107,7 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
                     mentionsSource: this.props.mentionsSource,
                     typeaheadView: this.props.typeaheadView,
                     typeaheadViewProps: this.props.typeaheadViewProps,
-                    keyBindingFn: R,
+                    keyBindingFn: getDefaultKeyBinding/*R*/,
                     blockStyleFn: E,
                     inlineStyleFn: D,
                     inputView: this.props.inputView,

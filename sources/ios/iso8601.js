@@ -24,9 +24,9 @@ __d("iso8601",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/
     }
 
     function c(global/*e*/) {
-        if (isNaN(a(global/*e*/[1])) && h(0, "invalid ISO8601 date string"), !global/*e*/[14]) return 0;
+        if (isNaN(a(global/*e*/[1])) && invariant/*h*/(0, "invalid ISO8601 date string"), !global/*e*/[14]) return 0;
         var require/*t*/ = (60 * a(global/*e*/[16]) + a(global/*e*/[17])) * ("-" === global/*e*/[15] ? 1 : -1);
-        return isNaN(require/*t*/) && h(0, "invalid ISO8601 timezone"), require/*t*/
+        return isNaN(require/*t*/) && invariant/*h*/(0, "invalid ISO8601 timezone"), require/*t*/
     }
 
     function p(global/*e*/) {
@@ -38,7 +38,7 @@ __d("iso8601",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/
         var require/*t*/ = global/*e*/.match(f);
         return !require/*t*/[7]
     }
-    var h = require/*t*/("invariant"),
+    var invariant/*h*/ = require/*t*/("invariant"),
         f = new RegExp("([0-9]{4})(-([0-9]{2})(-([0-9]{2})(T([0-9]{2}):([0-9]{2})(:([0-9]{2})(\\.([0-9]+))?)?(Z|(([-+])([0-9]{2}):?([0-9]{2})))?)?)?)?");
     exports/*o*/.toDate = l, exports/*o*/.fromDate = p, exports/*o*/.getTimezoneOffsetMinutes = u, exports/*o*/.isAllDay = d
 });

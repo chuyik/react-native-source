@@ -1,18 +1,18 @@
 __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSameOrigin","copyProperties","goURI"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     function o(global/*e*/) {
         "use strict";
-        return this instanceof o ? void s.call(this, global/*e*/ || "", a) : new o(global/*e*/ || window.location.href)
+        return this instanceof o ? void URIBase/*s*/.call(this, global/*e*/ || "", PHPQuerySerializer/*a*/) : new o(global/*e*/ || window.location.href)
     }
-    var a = require/*t*/("PHPQuerySerializer"),
-        s = require/*t*/("URIBase"),
-        l = require/*t*/("isFacebookURI"),
-        u = require/*t*/("unqualifyURI"),
-        c = require/*t*/("areSameOrigin"),
-        p = require/*t*/("copyProperties"),
-        d = require/*t*/("goURI");
-    for (var h in s) s.hasOwnProperty(h) && (o[h] = s[h]);
-    var f = null === s ? null : s.prototype;
-    o.prototype = Object.create(f), o.prototype.constructor = o, o.__superConstructor__ = s, o.prototype.setPath = function(global/*e*/) {
+    var PHPQuerySerializer/*a*/ = require/*t*/("PHPQuerySerializer"),
+        URIBase/*s*/ = require/*t*/("URIBase"),
+        isFacebookURI/*l*/ = require/*t*/("isFacebookURI"),
+        unqualifyURI/*u*/ = require/*t*/("unqualifyURI"),
+        areSameOrigin/*c*/ = require/*t*/("areSameOrigin"),
+        copyProperties/*p*/ = require/*t*/("copyProperties"),
+        goURI/*d*/ = require/*t*/("goURI");
+    for (var h in URIBase/*s*/) URIBase/*s*/.hasOwnProperty(h) && (o[h] = URIBase/*s*/[h]);
+    var f = null === URIBase/*s*/ ? null : URIBase/*s*/.prototype;
+    o.prototype = Object.create(f), o.prototype.constructor = o, o.__superConstructor__ = URIBase/*s*/, o.prototype.setPath = function(global/*e*/) {
         "use strict";
         return this.path = global/*e*/, f.setPath.call(this, global/*e*/)
     }, o.prototype.getPath = function() {
@@ -37,21 +37,21 @@ __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSam
     }, o.prototype.isFacebookURI = function() {
         "use strict";
         if (__DEV__) throw new Error("URI.prototype.isFacebookURI is deprecated, use isFacebookURI mirco-module instead");
-        return l(this)
+        return isFacebookURI/*l*/(this)
     }, o.prototype.isLinkshimURI = function() {
         "use strict";
-        return !l(this) || "/l.php" !== this.getPath() && 0 !== this.getPath().indexOf("/si/ajax/l/") && 0 !== this.getPath().indexOf("/l/") && 0 !== this.getPath().indexOf("l/") ? !1 : !0
+        return !isFacebookURI/*l*/(this) || "/isFacebookURI/*l*/.php" !== this.getPath() && 0 !== this.getPath().indexOf("/si/ajax/isFacebookURI/*l*//") && 0 !== this.getPath().indexOf("/isFacebookURI/*l*//") && 0 !== this.getPath().indexOf("isFacebookURI/*l*//") ? !1 : !0
     }, o.prototype.getRegisteredDomain = function() {
         "use strict";
         if (!this.getDomain()) return "";
-        if (!l(this)) return null;
+        if (!isFacebookURI/*l*/(this)) return null;
         var global/*e*/ = this.getDomain().split("."),
             require/*t*/ = global/*e*/.indexOf("facebook");
         return global/*e*/.slice(require/*t*/).join(".")
     }, o.prototype.getUnqualifiedURI = function() {
         "use strict";
         var global/*e*/ = new o(this);
-        return u(global/*e*/), global/*e*/
+        return unqualifyURI/*u*/(global/*e*/), global/*e*/
     }, o.prototype.getQualifiedURI = function() {
         "use strict";
         return new o(this).$URI_qualify()
@@ -65,10 +65,10 @@ __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSam
     }, o.prototype.isSameOrigin = function(global/*e*/) {
         "use strict";
         var require/*t*/ = global/*e*/ || window.location.href;
-        return require/*t*/ instanceof o || (require/*t*/ = new o(require/*t*/.toString())), c(this, require/*t*/)
+        return require/*t*/ instanceof o || (require/*t*/ = new o(require/*t*/.toString())), areSameOrigin/*c*/(this, require/*t*/)
     }, o.prototype.go = function(global/*e*/) {
         "use strict";
-        d(this, global/*e*/)
+        goURI/*d*/(this, global/*e*/)
     }, o.prototype.setSubdomain = function(global/*e*/) {
         "use strict";
         var require/*t*/ = this.$URI_qualify().getDomain().split(".");
@@ -80,8 +80,8 @@ __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSam
         return global/*e*/.length <= 2 ? "" : global/*e*/[0]
     }, o.isValidURI = function(global/*e*/) {
         "use strict";
-        return s.isValidURI(global/*e*/, a)
-    }, p(o, {
+        return URIBase/*s*/.isValidURI(global/*e*/, PHPQuerySerializer/*a*/)
+    }, copyProperties/*p*/(o, {
         getRequestURI: function(require/*t*/, requireDynamic/*n*/) {
             require/*t*/ = void 0 === require/*t*/ || require/*t*/;
             var requireLazy/*r*/ = global/*e*/.PageTransitions;
@@ -95,7 +95,7 @@ __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSam
             var require/*t*/ = global/*e*/.PageTransitions;
             return require/*t*/ && require/*t*/.isInitialized() ? require/*t*/._next_uri.getQualifiedURI() : new o(window.location.href)
         },
-        expression: /(((\w+):\/\/)([^\/:]*)(:(\d+))?)?([^#?]*)(\?([^#]*))?(#(.*))?/,
+        expression: /(((\w+):\/\/)([^\/:]*)(:(\goURI/*d*/+))?)?([^#?]*)(\?([^#]*))?(#(.*))?/,
         arrayQueryExpression: /^(\w+)((?:\[\w*\])+)=?(.*)/,
         encodeComponent: function(global/*e*/) {
             return encodeURIComponent(global/*e*/).replace(/%5D/g, "]").replace(/%5B/g, "[")

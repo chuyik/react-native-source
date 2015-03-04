@@ -1,30 +1,30 @@
 __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","TimerMixin","Touchable","View","cloneWithProps","ensureComponentIsNative","keyOf","merge","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeMethodsMixin"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactIOSViewAttributes"),
-        l = require/*t*/("StyleSheet"),
-        u = require/*t*/("TimerMixin"),
-        c = require/*t*/("Touchable"),
-        p = require/*t*/("View"),
-        d = require/*t*/("cloneWithProps"),
-        h = require/*t*/("ensureComponentIsNative"),
-        f = require/*t*/("keyOf"),
-        m = require/*t*/("merge"),
-        g = require/*t*/("onlyChild"),
+    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
+        React/*a*/ = require/*t*/("React"),
+        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
+        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
+        TimerMixin/*u*/ = require/*t*/("TimerMixin"),
+        Touchable/*c*/ = require/*t*/("Touchable"),
+        View/*p*/ = require/*t*/("View"),
+        cloneWithProps/*d*/ = require/*t*/("cloneWithProps"),
+        ensureComponentIsNative/*h*/ = require/*t*/("ensureComponentIsNative"),
+        keyOf/*f*/ = require/*t*/("keyOf"),
+        merge/*m*/ = require/*t*/("merge"),
+        onlyChild/*g*/ = require/*t*/("onlyChild"),
         _ = {
             activeOpacity: .8,
             underlayColor: "black"
         },
-        y = a.createClass({
+        y = React/*a*/.createClass({
             displayName: "TouchableHighlight",
             propTypes: {
-                onPress: a.PropTypes.func.isRequired,
-                activeOpacity: a.PropTypes.number,
-                underlayColor: a.PropTypes.string,
-                style: p.stylePropType
+                onPress: React/*a*/.PropTypes.func.isRequired,
+                activeOpacity: React/*a*/.PropTypes.number,
+                underlayColor: React/*a*/.PropTypes.string,
+                style: View/*p*/.stylePropType
             },
-            mixins: [o, u, c.Mixin],
+            mixins: [NativeMethodsMixin/*o*/, TimerMixin/*u*/, Touchable/*c*/.Mixin],
             getDefaultProps: function() {
                 return _
             },
@@ -44,20 +44,20 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                 }
             },
             getInitialState: function() {
-                return m(this.touchableGetInitialState(), this.computeSyntheticState(this.props))
+                return merge/*m*/(this.touchableGetInitialState(), this.computeSyntheticState(this.props))
             },
             componentDidMount: function() {
-                h(this.refs[S])
+                ensureComponentIsNative/*h*/(this.refs[S])
             },
             componentDidUpdate: function() {
-                h(this.refs[S])
+                ensureComponentIsNative/*h*/(this.refs[S])
             },
             componentWillReceiveProps: function(global/*e*/) {
                 (global/*e*/.activeOpacity !== this.props.activeOpacity || global/*e*/.underlayColor !== this.props.underlayColor || global/*e*/.style !== this.props.style) && this.setState(this.computeSyntheticState(global/*e*/))
             },
             viewConfig: {
                 uiViewClassName: "RCTView",
-                validAttributes: s.RKView
+                validAttributes: ReactIOSViewAttributes/*s*/.RKView
             },
             touchableHandleActivePressIn: function() {
                 this.clearTimeout(this._hideTimeout), this._hideTimeout = null, this._showUnderlay()
@@ -78,7 +78,7 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                 this.clearTimeout(this._hideTimeout), this._hideTimeout = null, this.refs[b] && (this.refs[S].setNativeProps(R), this.refs[b].setNativeProps(w))
             },
             render: function() {
-                return a.createElement(p, {
+                return React/*a*/.createElement(View/*p*/, {
                     ref: b,
                     style: this.state.underlayStyle,
                     onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
@@ -87,7 +87,7 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                     onResponderMove: this.touchableHandleResponderMove,
                     onResponderRelease: this.touchableHandleResponderRelease,
                     onResponderTerminate: this.touchableHandleResponderTerminate
-                }, d(g(this.props.children), {
+                }, cloneWithProps/*d*/(onlyChild/*g*/(this.props.children), {
                     ref: S,
                     accessible: !0,
                     testID: this.props.testID
@@ -100,21 +100,21 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
             right: 20,
             bottom: 30
         },
-        S = f({
+        S = keyOf/*f*/({
             childRef: null
         }),
-        b = f({
+        b = keyOf/*f*/({
             underlayRef: null
         }),
         R = {
-            style: l.create({
+            style: StyleSheet/*l*/.create({
                 x: {
                     opacity: 1
                 }
             }).x
         },
         w = {
-            style: l.create({
+            style: StyleSheet/*l*/.create({
                 x: {
                     backgroundColor: "transparent"
                 }

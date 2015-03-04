@@ -2,48 +2,48 @@ __d("CameraRoll",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker
     "use strict";
 
     function o() {}
-    var a = require/*t*/("ReactPropTypes"),
-        s = require/*t*/("NativeModules").RKCameraRollManager,
-        l = require/*t*/("createStrictShapeTypeChecker"),
-        u = require/*t*/("deepFreezeAndThrowOnMutationInDev"),
-        c = require/*t*/("invariant"),
+    var ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
+        NativeModules/*s*/ = require/*t*/("NativeModules").RKCameraRollManager,
+        createStrictShapeTypeChecker/*l*/ = require/*t*/("createStrictShapeTypeChecker"),
+        deepFreezeAndThrowOnMutationInDev/*u*/ = require/*t*/("deepFreezeAndThrowOnMutationInDev"),
+        invariant/*c*/ = require/*t*/("invariant"),
         p = ["Album", "All", "Event", "Faces", "Library", "PhotoStream", "SavedPhotos"];
-    u(p);
-    var d = l({
-            first: a.number.isRequired,
-            after: a.string,
-            groupTypes: a.oneOf(p),
-            groupName: a.string
+    deepFreezeAndThrowOnMutationInDev/*u*/(p);
+    var d = createStrictShapeTypeChecker/*l*/({
+            first: ReactPropTypes/*a*/.number.isRequired,
+            after: ReactPropTypes/*a*/.string,
+            groupTypes: ReactPropTypes/*a*/.oneOf(p),
+            groupName: ReactPropTypes/*a*/.string
         }),
-        h = l({
-            edges: a.arrayOf(l({
-                node: l({
-                    type: a.string.isRequired,
-                    group_name: a.string.isRequired,
-                    image: l({
-                        uri: a.string.isRequired,
-                        height: a.number.isRequired,
-                        width: a.number.isRequired,
-                        isStored: a.bool
+        h = createStrictShapeTypeChecker/*l*/({
+            edges: ReactPropTypes/*a*/.arrayOf(createStrictShapeTypeChecker/*l*/({
+                node: createStrictShapeTypeChecker/*l*/({
+                    type: ReactPropTypes/*a*/.string.isRequired,
+                    group_name: ReactPropTypes/*a*/.string.isRequired,
+                    image: createStrictShapeTypeChecker/*l*/({
+                        uri: ReactPropTypes/*a*/.string.isRequired,
+                        height: ReactPropTypes/*a*/.number.isRequired,
+                        width: ReactPropTypes/*a*/.number.isRequired,
+                        isStored: ReactPropTypes/*a*/.bool
                     }).isRequired,
-                    timestamp: a.number.isRequired,
-                    location: l({
-                        latitude: a.number,
-                        longitude: a.number,
-                        altitude: a.number,
-                        heading: a.number,
-                        speed: a.number
+                    timestamp: ReactPropTypes/*a*/.number.isRequired,
+                    location: createStrictShapeTypeChecker/*l*/({
+                        latitude: ReactPropTypes/*a*/.number,
+                        longitude: ReactPropTypes/*a*/.number,
+                        altitude: ReactPropTypes/*a*/.number,
+                        heading: ReactPropTypes/*a*/.number,
+                        speed: ReactPropTypes/*a*/.number
                     })
                 }).isRequired
             })).isRequired,
-            page_info: l({
-                has_next_page: a.bool.isRequired,
-                start_cursor: a.string,
-                end_cursor: a.string
+            page_info: createStrictShapeTypeChecker/*l*/({
+                has_next_page: ReactPropTypes/*a*/.bool.isRequired,
+                start_cursor: ReactPropTypes/*a*/.string,
+                end_cursor: ReactPropTypes/*a*/.string
             }).isRequired
         });
     o.saveImageWithTag = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        "string" != typeof global/*e*/ && c(0, "CameraRoll.saveImageWithTag tag must be a valid string."), s.saveImageWithTag(global/*e*/, function(global/*e*/) {
+        "string" != typeof global/*e*/ && invariant/*c*/(0, "CameraRoll.saveImageWithTag tag must be ReactPropTypes/*a*/ valid string."), NativeModules/*s*/.saveImageWithTag(global/*e*/, function(global/*e*/) {
             require/*t*/ && require/*t*/(global/*e*/)
         }, function(global/*e*/) {
             requireDynamic/*n*/ && requireDynamic/*n*/(global/*e*/)
@@ -52,10 +52,10 @@ __d("CameraRoll",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker
         var requireLazy/*r*/ = require/*t*/;
         __DEV__ && (d({
             params: global/*e*/
-        }, "params", "CameraRoll.getPhotos"), "function" != typeof require/*t*/ && c(0, "CameraRoll.getPhotos callback must be a valid function."), "function" != typeof requireDynamic/*n*/ && c(0, "CameraRoll.getPhotos errorCallback must be a valid function.")), __DEV__ && (requireLazy/*r*/ = function(global/*e*/) {
+        }, "params", "CameraRoll.getPhotos"), "function" != typeof require/*t*/ && invariant/*c*/(0, "CameraRoll.getPhotos callback must be ReactPropTypes/*a*/ valid function."), "function" != typeof requireDynamic/*n*/ && invariant/*c*/(0, "CameraRoll.getPhotos errorCallback must be ReactPropTypes/*a*/ valid function.")), __DEV__ && (requireLazy/*r*/ = function(global/*e*/) {
             h({
                 response: global/*e*/
             }, "response", "CameraRoll.getPhotos callback"), require/*t*/(global/*e*/)
-        }), s.getPhotos(global/*e*/, requireLazy/*r*/, requireDynamic/*n*/)
+        }), NativeModules/*s*/.getPhotos(global/*e*/, requireLazy/*r*/, requireDynamic/*n*/)
     }, o.GroupTypesOptions = p, module/*i*/.exports = o
 });

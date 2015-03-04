@@ -1,65 +1,65 @@
 __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","intlNumUtils"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBActorSubtitle"),
-        a = require/*t*/("FIGColors"),
-        s = require/*t*/("Image"),
-        l = require/*t*/("PixelRatio"),
-        u = require/*t*/("React"),
-        c = require/*t*/("ReactGraphQL"),
-        p = require/*t*/("Dimensions"),
-        d = require/*t*/("RouteHandler"),
-        h = require/*t*/("StyleSheet"),
-        f = require/*t*/("Text"),
-        m = require/*t*/("TouchableHighlight"),
-        g = require/*t*/("View"),
-        _ = require/*t*/("fbt"),
-        y = require/*t*/("intlNumUtils"),
-        v = p.get("window").width,
+    var FBActorSubtitle/*o*/ = require/*t*/("FBActorSubtitle"),
+        FIGColors/*a*/ = require/*t*/("FIGColors"),
+        Image/*s*/ = require/*t*/("Image"),
+        PixelRatio/*l*/ = require/*t*/("PixelRatio"),
+        React/*u*/ = require/*t*/("React"),
+        ReactGraphQL/*c*/ = require/*t*/("ReactGraphQL"),
+        Dimensions/*p*/ = require/*t*/("Dimensions"),
+        RouteHandler/*d*/ = require/*t*/("RouteHandler"),
+        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
+        Text/*f*/ = require/*t*/("Text"),
+        TouchableHighlight/*m*/ = require/*t*/("TouchableHighlight"),
+        View/*g*/ = require/*t*/("View"),
+        fbt/*_*/ = require/*t*/("fbt"),
+        intlNumUtils/*y*/ = require/*t*/("intlNumUtils"),
+        v = Dimensions/*p*/.get("window").width,
         S = 1.9,
         b = Math.floor(v / S),
-        R = l.get(),
+        R = PixelRatio/*l*/.get(),
         w = v * R,
         C = b * R,
         E = 50 * R,
         D = 2,
-        T = u.createClass({
+        T = React/*u*/.createClass({
             displayName: "FBAvatarAttachment",
             propTypes: {
-                attachment: u.PropTypes.object.isRequired,
-                navigator: u.PropTypes.object,
-                maxPhotoWidth: u.PropTypes.number
+                attachment: React/*u*/.PropTypes.object.isRequired,
+                navigator: React/*u*/.PropTypes.object,
+                maxPhotoWidth: React/*u*/.PropTypes.number
             },
-            mixins: [c.Mixin],
+            mixins: [ReactGraphQL/*c*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-                            var a = require/*t*/.__GraphQL;
-                            return new a.QueryFragment("FBAvatarAttachment_attachment", "StoryAttachment", [new a.Field("target", [new a.Field("__type__", [new a.Field("name"), new a.Field("id", null, null, null, null, null, {
+                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, FBActorSubtitle/*o*/) {
+                            var FIGColors/*a*/ = require/*t*/.__GraphQL;
+                            return new FIGColors/*a*/.QueryFragment("FBAvatarAttachment_attachment", "StoryAttachment", [new FIGColors/*a*/.Field("target", [new FIGColors/*a*/.Field("__type__", [new FIGColors/*a*/.Field("name"), new FIGColors/*a*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new a.Field("id", null, null, null, null, null, {
+                            }), new FIGColors/*a*/.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new a.Field("url", null, null, [new a.Callv("site", ["mobile"])]), new a.Field("name"), new a.Field("group_members", [new a.Field("count")], null, null, null, null, {
+                            }), new FIGColors/*a*/.Field("url", null, null, [new FIGColors/*a*/.Callv("site", ["mobile"])]), new FIGColors/*a*/.Field("name"), new FIGColors/*a*/.Field("group_members", [new FIGColors/*a*/.Field("count")], null, null, null, null, {
                                 connection: !0
-                            }), new a.Field("cover_photo", [new a.Field("photo", [new a.Field("image", [new a.Field("uri"), new a.Field("height"), new a.Field("width")], null, [new a.Callv("size", [require/*t*/.__var(requireDynamic/*n*/), require/*t*/.__var(requireLazy/*r*/)]), new a.Callv("sizing", ["cover-fill"])], "avatar_cover"), new a.Field("id", null, null, null, null, null, {
+                            }), new FIGColors/*a*/.Field("cover_photo", [new FIGColors/*a*/.Field("photo", [new FIGColors/*a*/.Field("image", [new FIGColors/*a*/.Field("uri"), new FIGColors/*a*/.Field("height"), new FIGColors/*a*/.Field("width")], null, [new FIGColors/*a*/.Callv("size", [require/*t*/.__var(requireDynamic/*n*/), require/*t*/.__var(requireLazy/*r*/)]), new FIGColors/*a*/.Callv("sizing", ["cover-fill"])], "avatar_cover"), new FIGColors/*a*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            })]), new a.Field("profile_picture", [new a.Field("uri"), new a.Field("height"), new a.Field("width")], null, [new a.Callv("size", [require/*t*/.__var(module/*i*/), require/*t*/.__var(o)])], "avatar_profile_pic"), new a.Field("page_likers", [new a.Field("count")], null, null, null, null, {
+                            })]), new FIGColors/*a*/.Field("profile_picture", [new FIGColors/*a*/.Field("uri"), new FIGColors/*a*/.Field("height"), new FIGColors/*a*/.Field("width")], null, [new FIGColors/*a*/.Callv("size", [require/*t*/.__var(module/*i*/), require/*t*/.__var(FBActorSubtitle/*o*/)])], "avatar_profile_pic"), new FIGColors/*a*/.Field("page_likers", [new FIGColors/*a*/.Field("count")], null, null, null, null, {
                                 connection: !0
                             })], [require/*t*/.__frag(global/*e*/)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new a.Field("title")], null, {
+                            }), new FIGColors/*a*/.Field("title")], null, {
                                 scope: "FBAvatarAttachment_attachment"
                             })
-                        }(o.getQuery("actor"), w, C, E, E)
+                        }(FBActorSubtitle/*o*/.getQuery("actor"), w, C, E, E)
                     }
                 }
             },
@@ -70,22 +70,22 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                     requireDynamic/*n*/ = null;
                 switch (require/*t*/) {
                     case "Group":
-                        global/*e*/.group_members && (requireDynamic/*n*/ = _({
+                        global/*e*/.group_members && (requireDynamic/*n*/ = fbt/*_*/({
                             type: "text",
                             texts: ["{members_count} Members"],
                             desc: "Subtitle for group with members count"
-                        }, [_.param("members_count", global/*e*/.group_members.count)]));
+                        }, [fbt/*_*/.param("members_count", global/*e*/.group_members.count)]));
                         break;
                     case "User":
                     case "Page":
-                        return u.createElement(o, {
+                        return React/*u*/.createElement(FBActorSubtitle/*o*/, {
                             actor: global/*e*/,
                             textStyle: x.subtitle
                         });
                     default:
                         console.warn("Unspecialized FBAvatarAttachment type: " + require/*t*/)
                 }
-                return requireDynamic/*n*/ ? u.createElement(f, {
+                return requireDynamic/*n*/ ? React/*u*/.createElement(Text/*f*/, {
                     style: x.subtitle
                 }, requireDynamic/*n*/) : null
             },
@@ -96,21 +96,21 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                     requireDynamic/*n*/ = null;
                 switch (require/*t*/) {
                     case "Page":
-                        var requireLazy/*r*/ = y.formatNumberWithThousandDelimiters(global/*e*/.page_likers.count);
-                        requireDynamic/*n*/ = _({
+                        var requireLazy/*r*/ = intlNumUtils/*y*/.formatNumberWithThousandDelimiters(global/*e*/.page_likers.count);
+                        requireDynamic/*n*/ = fbt/*_*/({
                             type: "text",
                             texts: ["{num_likes_count} likes"],
                             desc: "Text displaying number of likes the page has"
-                        }, [_.param("num_likes_count", requireLazy/*r*/)])
+                        }, [fbt/*_*/.param("num_likes_count", requireLazy/*r*/)])
                 }
-                return requireDynamic/*n*/ ? u.createElement(f, {
+                return requireDynamic/*n*/ ? React/*u*/.createElement(Text/*f*/, {
                     style: x.metadataText
                 }, requireDynamic/*n*/) : null
             },
             getSummary: function() {
-                return this.props.attachment.title ? u.createElement(g, {
+                return this.props.attachment.title ? React/*u*/.createElement(View/*g*/, {
                     style: x.titleContainer
-                }, u.createElement(f, {
+                }, React/*u*/.createElement(Text/*f*/, {
                     style: x.title,
                     numberOfLines: 2
                 }, this.props.attachment.title), this.getSubtitle(), this.getMetadata()) : null
@@ -123,21 +123,21 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                         width: require/*t*/,
                         height: requireDynamic/*n*/
                     };
-                return [u.createElement(s, {
+                return [React/*u*/.createElement(Image/*s*/, {
                     key: "image",
                     style: requireLazy/*r*/,
                     source: global/*e*/.cover_photo.photo.avatar_cover
-                }), u.createElement(g, {
+                }), React/*u*/.createElement(View/*g*/, {
                     key: "separator",
                     style: x.separator
                 })]
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ ? u.createElement(g, {
+                return global/*e*/ ? React/*u*/.createElement(View/*g*/, {
                     style: x.container
-                }, u.createElement(m, {
-                    onPress: d.getCallback({
+                }, React/*u*/.createElement(TouchableHighlight/*m*/, {
+                    onPress: RouteHandler/*d*/.getCallback({
                         typeList: [global/*e*/.__type__.name, "URL"],
                         params: {
                             id: global/*e*/.id,
@@ -146,21 +146,21 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                         }
                     }),
                     style: x.wrapper
-                }, u.createElement(g, {
+                }, React/*u*/.createElement(View/*g*/, {
                     style: x.border
-                }, this.getCoverPhoto(global/*e*/), u.createElement(g, {
+                }, this.getCoverPhoto(global/*e*/), React/*u*/.createElement(View/*g*/, {
                     style: x.row
-                }, u.createElement(s, {
+                }, React/*u*/.createElement(Image/*s*/, {
                     style: x.profilePic,
                     source: global/*e*/.avatar_profile_pic
-                }), this.getSummary())))) : (console.error("Tried to render an FBAvatarAttachment without an avatar!"), u.createElement(g, null))
+                }), this.getSummary())))) : (console.error("Tried to render an FBAvatarAttachment without an avatar!"), React/*u*/.createElement(View/*g*/, null))
             }
         }),
-        x = h.create({
+        x = StyleSheet/*h*/.create({
             border: {
                 backgroundColor: "white",
                 borderWidth: .5,
-                borderColor: a.attachmentBorder,
+                borderColor: FIGColors/*a*/.attachmentBorder,
                 borderRadius: D,
                 overflow: "hidden"
             },
@@ -168,7 +168,7 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                 shadowColor: "black",
                 shadowOpacity: .1,
                 shadowOffset: {
-                    h: 1
+                    StyleSheet/*h*/: 1
                 },
                 marginBottom: 5,
                 borderRadius: D
@@ -176,7 +176,7 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
             metadataText: {
                 fontSize: 13,
                 lineHeight: 13,
-                color: a.lightText
+                color: FIGColors/*a*/.lightText
             },
             profilePic: {
                 marginTop: 8,
@@ -190,7 +190,7 @@ __d("FBAvatarAttachment",["FBActorSubtitle","FIGColors","Image","PixelRatio","Re
                 flexDirection: "row"
             },
             separator: {
-                backgroundColor: a.attachmentBorder,
+                backgroundColor: FIGColors/*a*/.attachmentBorder,
                 height: .5
             },
             subtitle: {

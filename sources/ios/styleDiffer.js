@@ -17,11 +17,11 @@ __d("styleDiffer",["deepDiffer"],function (global/*e*/, require/*t*/, requireDyn
             return !0
         }
         for (var requireLazy/*r*/ in global/*e*/)
-            if (s(global/*e*/[requireLazy/*r*/], require/*t*/[requireLazy/*r*/])) return !1;
+            if (deepDiffer/*s*/(global/*e*/[requireLazy/*r*/], require/*t*/[requireLazy/*r*/])) return !1;
         for (var requireLazy/*r*/ in require/*t*/)
             if (!global/*e*/.hasOwnProperty(requireLazy/*r*/)) return !1;
         return !0
     }
-    var s = require/*t*/("deepDiffer");
+    var deepDiffer/*s*/ = require/*t*/("deepDiffer");
     module/*i*/.exports = o
 });

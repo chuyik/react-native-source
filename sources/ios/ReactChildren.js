@@ -13,7 +13,7 @@ __d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (gl
     function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         if (null == global/*e*/) return global/*e*/;
         var requireLazy/*r*/ = o.getPooled(require/*t*/, requireDynamic/*n*/);
-        f(global/*e*/, a, requireLazy/*r*/), o.release(requireLazy/*r*/)
+        traverseAllChildren/*f*/(global/*e*/, a, requireLazy/*r*/), o.release(requireLazy/*r*/)
     }
 
     function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
@@ -24,7 +24,7 @@ __d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (gl
         var module/*i*/ = global/*e*/,
             o = module/*i*/.mapResult,
             a = !o.hasOwnProperty(requireDynamic/*n*/);
-        if (m(a, "ReactChildren.map(...): Encountered two children with the same key, `%s`. Child keys must be unique; when two children share a key, only the first child will be used.", requireDynamic/*n*/), a) {
+        if (warning/*m*/(a, "ReactChildren.map(...): Encountered two children with the same key, `%s`. Child keys must be unique; when two children share a key, only the first child will be used.", requireDynamic/*n*/), a) {
             var s = module/*i*/.mapFunction.call(module/*i*/.mapContext, require/*t*/, requireLazy/*r*/);
             o[requireDynamic/*n*/] = s
         }
@@ -34,7 +34,7 @@ __d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (gl
         if (null == global/*e*/) return global/*e*/;
         var requireLazy/*r*/ = {},
             module/*i*/ = l.getPooled(requireLazy/*r*/, require/*t*/, requireDynamic/*n*/);
-        return f(global/*e*/, u, module/*i*/), l.release(module/*i*/), requireLazy/*r*/
+        return traverseAllChildren/*f*/(global/*e*/, u, module/*i*/), l.release(module/*i*/), requireLazy/*r*/
     }
 
     function p() {
@@ -42,14 +42,14 @@ __d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (gl
     }
 
     function d(global/*e*/) {
-        return f(global/*e*/, p, null)
+        return traverseAllChildren/*f*/(global/*e*/, p, null)
     }
-    var h = require/*t*/("PooledClass"),
-        f = require/*t*/("traverseAllChildren"),
-        m = require/*t*/("warning"),
-        g = h.twoArgumentPooler,
-        _ = h.threeArgumentPooler;
-    h.addPoolingTo(o, g), h.addPoolingTo(l, _);
+    var PooledClass/*h*/ = require/*t*/("PooledClass"),
+        traverseAllChildren/*f*/ = require/*t*/("traverseAllChildren"),
+        warning/*m*/ = require/*t*/("warning"),
+        g = PooledClass/*h*/.twoArgumentPooler,
+        _ = PooledClass/*h*/.threeArgumentPooler;
+    PooledClass/*h*/.addPoolingTo(o, g), PooledClass/*h*/.addPoolingTo(l, _);
     var y = {
         forEach: s,
         map: c,

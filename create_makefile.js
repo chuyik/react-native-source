@@ -1,44 +1,55 @@
 #!/usr/bin/node
 
 var fs = require("fs");
+var analyse = require("./utils/analyse");
 
 if (process.argv.length < 3) {
     console.log("Usage:", process.argv[0], process.argv[1], "[input_file]");
     return;
 }
 
-var inputFile = process.argv[2],
-    input = fs.readFileSync(inputFile, "utf8"),
-    start = input.indexOf("__d("),
-    end = input.indexOf("require(\"RCTMainBundle\")"),
-    code = input.substring(start, end) + "undefined;",
-    modules = [];
+var inputFile = process.argv[2];
+var input = fs.readFileSync(inputFile, "utf8");
+var codeParts = analyse(input, "__d(", ",require(\"RCTMainBundle\")", "__d");
+var modules = [];
 
-(new Function("__d", code))(__d);
+var outputVars = [];
+var outputRules = [];
 
-
-function __d(name, deps, factory) {
-    modules.push(name.replace(/[ :]/g, "."));
+if (!codeParts) {
+    throw new Error("code analyse error");
 }
 
-console.log("NODE:=node");
-console.log("#BEAUTIFY:=cat");
-console.log("BEAUTIFY:=js-beautify --type \"javascript\" -f");
-console.log("MODULES:=" + modules.join(" ").replace("$", "$$$$"));
-console.log("output:=$(addsuffix .js, $(MODULES))");
-//console.log("min_files:=$(addsuffix .min, $(MODULES))");
-console.log("");
-console.log("all:$(output)");
-console.log("");
-console.log("%.js:%.min");
-console.log("\t@$(BEAUTIFY) \'$<\' -o \'$@\'");
-console.log("\t@echo \"replace var name\" \"$@\"");
-console.log("\t@$(NODE) \"../../var.js\" \'$@\'");
-console.log("");
-//console.log("$(min_files):../../" + inputFile);
-//console.log("%.min:../../" + inputFile + " ../../unpack.js");
-console.log("%.min:");
-console.log("\t$(NODE) \"../../unpack.js\" \"../../" + inputFile + "\"");
-console.log("");
-console.log(".PHONY:all");
-//console.log(".INTERMEDIATE:$(min_files)");
+outputVars.push("NODE:=node");
+outputVars.push("#BEAUTIFY:=cat");
+outputVars.push("BEAUTIFY:=js-beautify --type \"javascript\" -q");
+
+outputRules.push("all:$(OUTPUTS)");
+
+codeParts.modules.forEach(function (mod) {
+    var modName = mod.name;
+    var jsFile = modName + ".js";
+    var minFile = modName + ".min.js";
+    modules.push(modName);
+
+    outputRules.push(jsFile + ":" + minFile + " ../../var.js");
+    outputRules.push("\t@echo beautify \"$@\"");
+    outputRules.push("\t@mkdir -p $$(dirname \"$@\")");
+    outputRules.push("\t@$(BEAUTIFY) -f \'$<\' -o \'$@\'");
+    outputRules.push("\t@$(NODE) \"../../var.js\" \'$@\'");
+
+    outputRules.push(minFile + ":../../" + inputFile + " ../../unpack.js");
+    outputRules.push("\t@echo unpack \"$@\"");
+    outputRules.push("\t@mkdir -p $$(dirname \"$@\")");
+    outputRules.push("\t@$(NODE) \"../../unpack.js\" \"../../" + inputFile + "\" \"" + modName + "\" \".min.js\"");
+});
+
+outputVars.push("MODULES:=" + modules.join(" ").replace("$", "$$$$"));
+outputVars.push("OUTPUTS:=$(addsuffix .js, $(MODULES))");
+outputVars.push("MIN_FILES:=$(addsuffix .min.js, $(MODULES))");
+
+outputRules.push(".PHONY:all");
+outputRules.push(".INTERMEDIATE:$(MIN_FILES)");
+
+console.log(outputVars.join("\n"));
+console.log(outputRules.join("\n"));

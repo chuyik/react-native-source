@@ -1,16 +1,16 @@
 __d("GroupsReportedPostsApp",["DliteLoadingComponent","GroupRoute","React","THGroupReportedPostsView","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("DliteLoadingComponent"),
-        a = require/*t*/("GroupRoute"),
-        s = require/*t*/("React"),
-        l = require/*t*/("THGroupReportedPostsView");
+    var DliteLoadingComponent/*o*/ = require/*t*/("DliteLoadingComponent"),
+        GroupRoute/*a*/ = require/*t*/("GroupRoute"),
+        React/*s*/ = require/*t*/("React"),
+        THGroupReportedPostsView/*l*/ = require/*t*/("THGroupReportedPostsView");
     require/*t*/("THRoutingConfig").initialize();
-    var u = s.createClass({
+    var u = React/*s*/.createClass({
         displayName: "GroupsReportedPostsApp",
         render: function() {
-            return s.createElement(o, {
-                component: l,
-                route: new a(null, {
+            return React/*s*/.createElement(DliteLoadingComponent/*o*/, {
+                component: THGroupReportedPostsView/*l*/,
+                route: new GroupRoute/*a*/(null, {
                     group: this.props.group
                 }),
                 passProps: {

@@ -1,19 +1,19 @@
 __d("Set",["Map","toIterator","_shouldPolyfillES6Collection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("Map"),
-        a = require/*t*/("toIterator"),
-        s = require/*t*/("_shouldPolyfillES6Collection");
+    var Map/*o*/ = require/*t*/("Map"),
+        toIterator/*a*/ = require/*t*/("toIterator"),
+        _shouldPolyfillES6Collection/*s*/ = require/*t*/("_shouldPolyfillES6Collection");
     module/*i*/.exports = function(global/*e*/) {
         function require/*t*/(global/*e*/) {
             "use strict";
             if (null == this || "object" != typeof this && "function" != typeof this) throw new TypeError("Wrong set object type.");
             if (requireDynamic/*n*/(this), null != global/*e*/)
-                for (var require/*t*/, requireLazy/*r*/ = a(global/*e*/); !(require/*t*/ = requireLazy/*r*/.next()).done;) this.add(require/*t*/.value)
+                for (var require/*t*/, requireLazy/*r*/ = toIterator/*a*/(global/*e*/); !(require/*t*/ = requireLazy/*r*/.next()).done;) this.add(require/*t*/.value)
         }
 
         function requireDynamic/*n*/(global/*e*/) {
-            global/*e*/._map = new o, global/*e*/.size = global/*e*/._map.size
+            global/*e*/._map = new Map/*o*/, global/*e*/.size = global/*e*/._map.size
         }
-        return s("Set") ? (require/*t*/.prototype.add = function(global/*e*/) {
+        return _shouldPolyfillES6Collection/*s*/("Set") ? (require/*t*/.prototype.add = function(global/*e*/) {
             "use strict";
             return this._map.set(global/*e*/, global/*e*/), this.size = this._map.size, this
         }, require/*t*/.prototype.clear = function() {
@@ -35,6 +35,6 @@ __d("Set",["Map","toIterator","_shouldPolyfillES6Collection"],function (global/*
         }, require/*t*/.prototype.values = function() {
             "use strict";
             return this._map.values()
-        }, require/*t*/.prototype[a.ITERATOR_SYMBOL] = require/*t*/.prototype.values, require/*t*/.prototype.keys = require/*t*/.prototype.values, require/*t*/) : global/*e*/.Set
+        }, require/*t*/.prototype[toIterator/*a*/.ITERATOR_SYMBOL] = require/*t*/.prototype.values, require/*t*/.prototype.keys = require/*t*/.prototype.values, require/*t*/) : global/*e*/.Set
     }(Function("return this")())
 });

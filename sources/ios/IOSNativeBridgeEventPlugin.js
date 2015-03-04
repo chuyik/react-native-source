@@ -1,28 +1,28 @@
 __d("IOSNativeBridgeEventPlugin",["EventPropagators","NativeModulesDeprecated","SyntheticEvent","merge","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("EventPropagators"),
-        a = require/*t*/("NativeModulesDeprecated"),
-        s = require/*t*/("SyntheticEvent"),
-        l = require/*t*/("merge"),
-        u = require/*t*/("warning"),
-        c = a.RKUIManager,
+    var EventPropagators/*o*/ = require/*t*/("EventPropagators"),
+        NativeModulesDeprecated/*a*/ = require/*t*/("NativeModulesDeprecated"),
+        SyntheticEvent/*s*/ = require/*t*/("SyntheticEvent"),
+        merge/*l*/ = require/*t*/("merge"),
+        warning/*u*/ = require/*t*/("warning"),
+        c = NativeModulesDeprecated/*a*/.RKUIManager,
         p = c.customBubblingEventTypes,
         d = c.customDirectEventTypes,
         h = {};
     for (var f in p) h[f] = p[f];
-    for (var m in d) u(!p[m], "Event cannot be both direct and bubbling: %s", m), h[m] = d[m];
+    for (var m in d) warning/*u*/(!p[m], "Event cannot be both direct and bubbling: %SyntheticEvent/*s*/", m), h[m] = d[m];
     var g = {
-        eventTypes: l(p, d),
+        eventTypes: merge/*l*/(p, d),
         extractEvents: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
             var module/*i*/ = p[global/*e*/],
-                a = d[global/*e*/],
-                l = s.getPooled(module/*i*/ || a, requireDynamic/*n*/, requireLazy/*r*/);
-            if (module/*i*/) o.accumulateTwoPhaseDispatches(l);
+                NativeModulesDeprecated/*a*/ = d[global/*e*/],
+                merge/*l*/ = SyntheticEvent/*s*/.getPooled(module/*i*/ || NativeModulesDeprecated/*a*/, requireDynamic/*n*/, requireLazy/*r*/);
+            if (module/*i*/) EventPropagators/*o*/.accumulateTwoPhaseDispatches(merge/*l*/);
             else {
-                if (!a) return null;
-                o.accumulateDirectDispatches(l)
+                if (!NativeModulesDeprecated/*a*/) return null;
+                EventPropagators/*o*/.accumulateDirectDispatches(merge/*l*/)
             }
-            return l
+            return merge/*l*/
         }
     };
     module/*i*/.exports = g

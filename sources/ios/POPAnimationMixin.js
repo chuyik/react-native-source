@@ -1,13 +1,13 @@
 __d("POPAnimationMixin",["NativeModulesDeprecated","POPAnimation","invariant","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeModulesDeprecated"),
-        a = require/*t*/("POPAnimation"),
-        s = require/*t*/("invariant"),
-        l = require/*t*/("warning"),
-        u = o.RKPOPAnimationManager,
+    var NativeModulesDeprecated/*o*/ = require/*t*/("NativeModulesDeprecated"),
+        POPAnimation/*a*/ = require/*t*/("POPAnimation"),
+        invariant/*s*/ = require/*t*/("invariant"),
+        warning/*l*/ = require/*t*/("warning"),
+        u = NativeModulesDeprecated/*o*/.RKPOPAnimationManager,
         c = {
-            AnimationTypes: a.Types,
-            AnimationProperties: a.Properties,
+            AnimationTypes: POPAnimation/*a*/.Types,
+            AnimationProperties: POPAnimation/*a*/.Properties,
             getInitialState: function() {
                 return {
                     _currentAnimationsByNodeHandle: {}
@@ -18,7 +18,7 @@ __d("POPAnimationMixin",["NativeModulesDeprecated","POPAnimation","invariant","w
             },
             startAnimation: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
                 var requireLazy/*r*/ = 0;
-                "number" == typeof require/*t*/ ? requireLazy/*r*/ = require/*t*/ : (require/*t*/ instanceof Object && void 0 !== require/*t*/.type && void 0 !== require/*t*/.property || s(0, "Animation definitions must specify a type of animation and a property to animate."), requireLazy/*r*/ = a.createAnimation(require/*t*/.type, require/*t*/)), this.refs[global/*e*/] || s(0, "Invalid refKey " + global/*e*/ + " for anim:\requireDynamic/*n*/" + JSON.stringify(require/*t*/) + "\nvalid refs: " + JSON.stringify(Object.keys(this.refs)));
+                "number" == typeof require/*t*/ ? requireLazy/*r*/ = require/*t*/ : (require/*t*/ instanceof Object && void 0 !== require/*t*/.type && void 0 !== require/*t*/.property || invariant/*s*/(0, "Animation definitions must specify POPAnimation/*a*/ type of animation and POPAnimation/*a*/ property to animate."), requireLazy/*r*/ = POPAnimation/*a*/.createAnimation(require/*t*/.type, require/*t*/)), this.refs[global/*e*/] || invariant/*s*/(0, "Invalid refKey " + global/*e*/ + " for anim:\requireDynamic/*n*/" + JSON.stringify(require/*t*/) + "\nvalid refs: " + JSON.stringify(Object.keys(this.refs)));
                 var module/*i*/ = this.refs[global/*e*/].getNodeHandle();
                 this.startAnimationWithNodeHandle(module/*i*/, requireLazy/*r*/, requireDynamic/*n*/)
             },
@@ -27,28 +27,28 @@ __d("POPAnimationMixin",["NativeModulesDeprecated","POPAnimation","invariant","w
                 var requireLazy/*r*/ = this.state._currentAnimationsByNodeHandle[global/*e*/],
                     module/*i*/ = requireLazy/*r*/.length;
                 requireLazy/*r*/.push(require/*t*/);
-                var o = function(require/*t*/) {
+                var NativeModulesDeprecated/*o*/ = function(require/*t*/) {
                     if (this.isMounted()) {
                         requireLazy/*r*/[module/*i*/] = 0;
-                        for (var o = !0, a = 0; a < requireLazy/*r*/.length; a++)
-                            if (requireLazy/*r*/[a]) {
-                                o = !1;
+                        for (var NativeModulesDeprecated/*o*/ = !0, POPAnimation/*a*/ = 0; POPAnimation/*a*/ < requireLazy/*r*/.length; POPAnimation/*a*/++)
+                            if (requireLazy/*r*/[POPAnimation/*a*/]) {
+                                NativeModulesDeprecated/*o*/ = !1;
                                 break
                             }
-                        o && (this.state._currentAnimationsByNodeHandle[global/*e*/] = void 0), requireDynamic/*n*/ && requireDynamic/*n*/(require/*t*/)
+                        NativeModulesDeprecated/*o*/ && (this.state._currentAnimationsByNodeHandle[global/*e*/] = void 0), requireDynamic/*n*/ && requireDynamic/*n*/(require/*t*/)
                     }
                 }.bind(this);
-                u.addAnimation(global/*e*/, require/*t*/, o)
+                u.addAnimation(global/*e*/, require/*t*/, NativeModulesDeprecated/*o*/)
             },
             startAnimations: function(global/*e*/, require/*t*/) {
                 var requireDynamic/*n*/ = 0,
                     requireLazy/*r*/ = 0,
                     module/*i*/ = global/*e*/.length,
-                    o = function(global/*e*/) {
+                    NativeModulesDeprecated/*o*/ = function(global/*e*/) {
                         global/*e*/ && ++requireLazy/*r*/, ++requireDynamic/*n*/ === module/*i*/ && require/*t*/ && require/*t*/(requireLazy/*r*/ === module/*i*/)
                     };
                 global/*e*/.forEach(function(global/*e*/) {
-                    l(null != global/*e*/.ref || null != global/*e*/.nodeHandle && !global/*e*/.ref != !global/*e*/.nodeHandle, "Animations must be specified with either ref xor nodeHandle"), global/*e*/.ref ? this.startAnimation(global/*e*/.ref, global/*e*/.anim, o) : global/*e*/.nodeHandle && this.startAnimationWithNodeHandle(global/*e*/.nodeHandle, global/*e*/.anim, o)
+                    warning/*l*/(null != global/*e*/.ref || null != global/*e*/.nodeHandle && !global/*e*/.ref != !global/*e*/.nodeHandle, "Animations must be specified with either ref xor nodeHandle"), global/*e*/.ref ? this.startAnimation(global/*e*/.ref, global/*e*/.anim, NativeModulesDeprecated/*o*/) : global/*e*/.nodeHandle && this.startAnimationWithNodeHandle(global/*e*/.nodeHandle, global/*e*/.anim, NativeModulesDeprecated/*o*/)
                 }.bind(this))
             },
             stopNodeHandleAnimations: function(global/*e*/) {
@@ -61,13 +61,13 @@ __d("POPAnimationMixin",["NativeModulesDeprecated","POPAnimation","invariant","w
                 }
             },
             stopAnimations: function(global/*e*/) {
-                this.refs[global/*e*/] || s(0, "invalid ref"), this.stopNodeHandleAnimations(this.refs[global/*e*/].getNodeHandle())
+                this.refs[global/*e*/] || invariant/*s*/(0, "invalid ref"), this.stopNodeHandleAnimations(this.refs[global/*e*/].getNodeHandle())
             },
             stopAllAnimations: function() {
                 for (var global/*e*/ in this.state._currentAnimationsByNodeHandle) this.stopNodeHandleAnimations(global/*e*/)
             },
             animateToFrame: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                var o = {
+                var NativeModulesDeprecated/*o*/ = {
                     x: require/*t*/.left + require/*t*/.width / 2,
                     y: require/*t*/.top + require/*t*/.height / 2,
                     w: require/*t*/.width,
@@ -75,16 +75,16 @@ __d("POPAnimationMixin",["NativeModulesDeprecated","POPAnimation","invariant","w
                 };
                 require/*t*/ = void 0;
                 var requireLazy/*r*/ = requireLazy/*r*/ || [0, 0],
-                    s = a.createAnimation(requireDynamic/*n*/, {
-                        property: a.Properties.position,
-                        toValue: [o.x, o.y],
+                    invariant/*s*/ = POPAnimation/*a*/.createAnimation(requireDynamic/*n*/, {
+                        property: POPAnimation/*a*/.Properties.position,
+                        toValue: [NativeModulesDeprecated/*o*/.x, NativeModulesDeprecated/*o*/.y],
                         velocity: requireLazy/*r*/
                     }),
-                    l = a.createAnimation(requireDynamic/*n*/, {
-                        property: a.Properties.size,
-                        toValue: [o.w, o.h]
+                    warning/*l*/ = POPAnimation/*a*/.createAnimation(requireDynamic/*n*/, {
+                        property: POPAnimation/*a*/.Properties.size,
+                        toValue: [NativeModulesDeprecated/*o*/.w, NativeModulesDeprecated/*o*/.h]
                     });
-                this.startAnimation(global/*e*/, s, module/*i*/), this.startAnimation(global/*e*/, l)
+                this.startAnimation(global/*e*/, invariant/*s*/, module/*i*/), this.startAnimation(global/*e*/, warning/*l*/)
             },
             componentWillUnmount: function() {
                 this.stopAllAnimations()

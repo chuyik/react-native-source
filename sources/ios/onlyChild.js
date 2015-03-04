@@ -2,9 +2,9 @@ __d("onlyChild",["ReactElement","invariant"],function (global/*e*/, require/*t*/
     "use strict";
 
     function o(global/*e*/) {
-        return a.isValidElement(global/*e*/) || s(0, "onlyChild must be passed a children with exactly one child."), global/*e*/
+        return ReactElement/*a*/.isValidElement(global/*e*/) || invariant/*s*/(0, "onlyChild must be passed ReactElement/*a*/ children with exactly one child."), global/*e*/
     }
-    var a = require/*t*/("ReactElement"),
-        s = require/*t*/("invariant");
+    var ReactElement/*a*/ = require/*t*/("ReactElement"),
+        invariant/*s*/ = require/*t*/("invariant");
     module/*i*/.exports = o
 });

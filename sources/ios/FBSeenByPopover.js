@@ -1,20 +1,20 @@
 __d("FBSeenByPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("FBAbstractEntityListPopover"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactGraphQL"),
-        l = require/*t*/("fbt"),
-        u = require/*t*/("keyOf"),
+    var FBAbstractEntityListPopover/*o*/ = require/*t*/("FBAbstractEntityListPopover"),
+        React/*a*/ = require/*t*/("React"),
+        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+        fbt/*l*/ = require/*t*/("fbt"),
+        keyOf/*u*/ = require/*t*/("keyOf"),
         c = 10,
-        p = u({
+        p = keyOf/*u*/({
             popRef: null
         }),
-        d = a.createClass({
+        d = React/*a*/.createClass({
             displayName: "FBSeenByPopover",
             propTypes: {
-                circularProfilePictures: a.PropTypes.bool,
-                closeOnRowPress: a.PropTypes.bool,
-                closeTextColor: a.PropTypes.string
+                circularProfilePictures: React/*a*/.PropTypes.bool,
+                closeOnRowPress: React/*a*/.PropTypes.bool,
+                closeTextColor: React/*a*/.PropTypes.string
             },
             getInitialState: function() {
                 return {
@@ -27,7 +27,7 @@ __d("FBSeenByPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
                     closeOnRowPress: !1
                 }
             },
-            mixins: [s.Mixin],
+            mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queryParams: {
                     count: 0,
@@ -68,7 +68,7 @@ __d("FBSeenByPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
                             })], null, {
                                 scope: "FBSeenByPopover_feedback"
                             })
-                        }(requireDynamic/*n*/.showSeenBy, requireDynamic/*n*/.count, o.getQuery("actor"))
+                        }(requireDynamic/*n*/.showSeenBy, requireDynamic/*n*/.count, FBAbstractEntityListPopover/*o*/.getQuery("actor"))
                     }
                 }
             },
@@ -110,14 +110,14 @@ __d("FBSeenByPopover",["FBAbstractEntityListPopover","React","ReactGraphQL","fbt
                 return this.props.feedback.seen_by_with_count.count
             },
             getPopoverTitle: function() {
-                return l({
+                return fbt/*l*/({
                     type: "text",
                     texts: ["People Who Saw This"],
                     desc: "Header of seen by list"
                 })
             },
             render: function() {
-                return a.createElement(o, {
+                return React/*a*/.createElement(FBAbstractEntityListPopover/*o*/, {
                     ref: p,
                     circularProfilePictures: this.props.circularProfilePictures,
                     closeTextColor: this.props.closeTextColor,

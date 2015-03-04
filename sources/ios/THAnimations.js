@@ -1,46 +1,46 @@
 __d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("LayoutAnimation"),
-        a = require/*t*/("mergeDeep"),
+    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
+        mergeDeep/*a*/ = require/*t*/("mergeDeep"),
         s = {
             duration: .3,
             create: {
-                type: o.Types.easeInEaseOut,
-                property: o.Properties.opacity
+                type: LayoutAnimation/*o*/.Types.easeInEaseOut,
+                property: LayoutAnimation/*o*/.Properties.opacity
             },
             update: {
-                type: o.Types.easeInEaseOut
+                type: LayoutAnimation/*o*/.Types.easeInEaseOut
             }
         },
         l = {
             layout: {
                 like: s,
-                likeWithComment: a(s, {
+                likeWithComment: mergeDeep/*a*/(s, {
                     create: {
-                        property: o.Properties.scaleXY
+                        property: LayoutAnimation/*o*/.Properties.scaleXY
                     }
                 }),
                 likeWithNoComments: s,
                 moreComments: s,
                 openPinnedPost: s,
-                photoCommentPreview: a(s, {
+                photoCommentPreview: mergeDeep/*a*/(s, {
                     duration: .25,
                     create: {
-                        type: o.Types.easeOut,
-                        property: o.Properties.scaleXY
+                        type: LayoutAnimation/*o*/.Types.easeOut,
+                        property: LayoutAnimation/*o*/.Properties.scaleXY
                     }
                 }),
-                inputButtons: a(s, {
+                inputButtons: mergeDeep/*a*/(s, {
                     duration: .25,
                     create: {
-                        type: o.Types.easeOut
+                        type: LayoutAnimation/*o*/.Types.easeOut
                     },
                     update: {
-                        property: o.Properties.opacity
+                        property: LayoutAnimation/*o*/.Properties.opacity
                     }
                 })
             }
         };
-    for (var u in l.layout) o.configChecker(l.layout, u, "Animation.create");
+    for (var u in l.layout) LayoutAnimation/*o*/.configChecker(l.layout, u, "Animation.create");
     module/*i*/.exports = l
 });

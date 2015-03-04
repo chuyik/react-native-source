@@ -4,14 +4,14 @@ __d("getCrossOriginTransport",["ex","invariant"],function (global/*e*/, require/
             var global/*e*/ = new XMLHttpRequest;
             return "withCredentials" in global/*e*/ || "undefined" == typeof XDomainRequest || (global/*e*/ = new XDomainRequest), global/*e*/
         } catch (require/*t*/) {
-            throw new Error(a("getCrossOriginTransport: %s", require/*t*/.message))
+            throw new Error(ex/*a*/("getCrossOriginTransport: %invariant/*s*/", require/*t*/.message))
         }
     }
-    var a = require/*t*/("ex"),
-        s = require/*t*/("invariant");
+    var ex/*a*/ = require/*t*/("ex"),
+        invariant/*s*/ = require/*t*/("invariant");
     o.withCredentials = function() {
         var global/*e*/ = o();
-        "withCredentials" in global/*e*/ || s(0, "getCrossOriginTransport: Client does not support `withCredentials`.");
+        "withCredentials" in global/*e*/ || invariant/*s*/(0, "getCrossOriginTransport: Client does not support `withCredentials`.");
         var require/*t*/ = global/*e*/.open;
         return global/*e*/.open = function() {
             require/*t*/.apply(this, arguments), this.withCredentials = !0

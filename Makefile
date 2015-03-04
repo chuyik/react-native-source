@@ -7,7 +7,7 @@ all:$(sources_makefiles)
 sources/%/Makefile:compressed/%.js create_makefile.js Makefile
 	mkdir -p "sources/$*"
 	$(NODE) create_makefile.js "$<" > "$@"
-	cd "sources/$*" && $(MAKE)
+	cd "sources/$*" && $(MAKE) -j 5
 
 clean:
 	rm -rf sources

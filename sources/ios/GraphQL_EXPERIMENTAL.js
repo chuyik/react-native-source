@@ -7,7 +7,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) {
                 var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/],
                     module/*i*/ = requireLazy/*r*/.getGeneratedAlias();
-                void 0 !== this.$GraphQLNode_fieldMap[module/*i*/] && I(0, 'Field "%s" is already in fields with the same calls.', requireLazy/*r*/.getFieldName()), this.$GraphQLNode_fieldMap[module/*i*/] = requireLazy/*r*/, (requireLazy/*r*/.hasVariables() || requireLazy/*r*/.$GraphQLNode_hasNestedVariables) && (this.$GraphQLNode_hasNestedVariables = !0), this.$GraphQLNode_numNestedFragmentsWithVariables += requireLazy/*r*/.$GraphQLNode_numNestedFragmentsWithVariables
+                void 0 !== this.$GraphQLNode_fieldMap[module/*i*/] && invariant/*I*/(0, 'Field "%s" is already in fields with the same calls.', requireLazy/*r*/.getFieldName()), this.$GraphQLNode_fieldMap[module/*i*/] = requireLazy/*r*/, (requireLazy/*r*/.hasVariables() || requireLazy/*r*/.$GraphQLNode_hasNestedVariables) && (this.$GraphQLNode_hasNestedVariables = !0), this.$GraphQLNode_numNestedFragmentsWithVariables += requireLazy/*r*/.$GraphQLNode_numNestedFragmentsWithVariables
             }
         }
         for (var o = 0; o < this.$GraphQLNode_fragments.length; o++)(this.$GraphQLNode_fragments[o].$GraphQLNode_hasNestedVariables || this.$GraphQLNode_fragments[o].$GraphQLNode_numNestedFragmentsWithVariables) && (this.$GraphQLNode_numNestedFragmentsWithVariables += 1)
@@ -35,7 +35,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
     }
 
     function p(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s) {
-        o.call(this, require/*t*/, requireDynamic/*n*/), A.test(global/*e*/) || I(0, '"%s" is not a valid field name', global/*e*/), k.test(module/*i*/) || I(0, '"%s" is not a valid alias name', module/*i*/), this.$GraphQLFieldNode_fieldName = global/*e*/, this.$GraphQLFieldNode_calls = requireLazy/*r*/ || M, this.$GraphQLFieldNode_alias = module/*i*/ || null, this.$GraphQLFieldNode_condition = a || null, this.$GraphQLFieldNode_metadata = s || L, this.$GraphQLFieldNode_generatedAlias = null, this.$GraphQLFieldNode_generatedFieldName = null, this.$GraphQLFieldNode_hasVariables = this.$GraphQLFieldNode_calls.some(w)
+        o.call(this, require/*t*/, requireDynamic/*n*/), A.test(global/*e*/) || invariant/*I*/(0, '"%s" is not a valid field name', global/*e*/), k.test(module/*i*/) || invariant/*I*/(0, '"%s" is not a valid alias name', module/*i*/), this.$GraphQLFieldNode_fieldName = global/*e*/, this.$GraphQLFieldNode_calls = requireLazy/*r*/ || M, this.$GraphQLFieldNode_alias = module/*i*/ || null, this.$GraphQLFieldNode_condition = a || null, this.$GraphQLFieldNode_metadata = s || L, this.$GraphQLFieldNode_generatedAlias = null, this.$GraphQLFieldNode_generatedFieldName = null, this.$GraphQLFieldNode_hasVariables = this.$GraphQLFieldNode_calls.some(w)
     }
 
     function d(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
@@ -75,7 +75,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
 
     function y(global/*e*/) {
         for (var require/*t*/ = null, requireDynamic/*n*/ = 0; global/*e*/.length > 0;) {
-            requireDynamic/*n*/++ < 1e4 || I(0, "Endless loop!");
+            requireDynamic/*n*/++ < 1e4 || invariant/*I*/(0, "Endless loop!");
             for (var requireLazy/*r*/ = global/*e*/.shift(), module/*i*/ = requireLazy/*r*/.getFragments(), o = 0; o < module/*i*/.length; o++) global/*e*/.push(module/*i*/[o]);
             for (var a = requireLazy/*r*/.getOwnFields(), s = 0; s < a.length; s++) {
                 var l = a[s],
@@ -144,9 +144,9 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
     function x(global/*e*/) {
         return global/*e*/.replace(/[)(}{><,.\\]/g, "\\$&")
     }
-    var P = require/*t*/("generateRQLFieldAlias"),
-        I = require/*t*/("invariant"),
-        F = require/*t*/("isEmpty"),
+    var generateRQLFieldAlias/*P*/ = require/*t*/("generateRQLFieldAlias"),
+        invariant/*I*/ = require/*t*/("invariant"),
+        isEmpty/*F*/ = require/*t*/("isEmpty"),
         L = {},
         M = [],
         Q = "skip",
@@ -216,11 +216,11 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
     }, a.prototype.getArgs = function() {
         return this.$GraphQLCallvNode_args
     }, a.prototype.hasRefParam = function() {
-        return !F(this.getRefParams())
+        return !isEmpty/*F*/(this.getRefParams())
     }, a.prototype.getRefParams = function() {
         if (!this.$GraphQLCallvNode_refParams) {
             var global/*e*/ = this.$GraphQLCallvNode_args.filter(C).map(E);
-            global/*e*/.length <= 1 || I(0, "GraphQLQuery may have at most one BatchCallVariable root argument"), this.$GraphQLCallvNode_refParams = global/*e*/.length ? global/*e*/[0] : null
+            global/*e*/.length <= 1 || invariant/*I*/(0, "GraphQLQuery may have at most one BatchCallVariable root argument"), this.$GraphQLCallvNode_refParams = global/*e*/.length ? global/*e*/[0] : null
         }
         return this.$GraphQLCallvNode_refParams
     }, a.prototype.getRefTarget = function() {
@@ -232,7 +232,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return null
     }, a.prototype.getSourceQueryID = function() {
         var global/*e*/ = this.$GraphQLCallvNode_args.filter(C).map(D);
-        return global/*e*/.length < 2 || I(0, "GraphQLCallvNode.getSourceQueryID a query can only have one source query"), global/*e*/.length ? global/*e*/[0] : null
+        return global/*e*/.length < 2 || invariant/*I*/(0, "GraphQLCallvNode.getSourceQueryID a query can only have one source query"), global/*e*/.length ? global/*e*/[0] : null
     }, a.prototype.isVarArgs = function() {
         return !!this.$GraphQLCallvNode_metadata.varargs
     }, a.prototype.toString = function(global/*e*/) {
@@ -246,7 +246,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             requireLazy/*r*/ = require/*t*/[1],
             module/*i*/ = require/*t*/[2],
             o = require/*t*/[3];
-        return requireDynamic/*n*/ !== N.CALL && I(0, "Expected call descriptor"), new a(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o)
+        return requireDynamic/*n*/ !== N.CALL && invariant/*I*/(0, "Expected call descriptor"), new a(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o)
     }, a.prototype.toJSON = function() {
         return b([N.CALL, this.getName(), this.$GraphQLCallvNode_args.length ? this.$GraphQLCallvNode_args : null, this.$GraphQLCallvNode_metadata === L ? null : this.$GraphQLCallvNode_metadata])
     }, a.prototype.equals = function(global/*e*/) {
@@ -269,7 +269,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         var require/*t*/ = global/*e*/,
             requireDynamic/*n*/ = require/*t*/[0],
             requireLazy/*r*/ = require/*t*/[1];
-        return requireDynamic/*n*/ !== N.CALL_VALUE && I(0, "Expected value descriptor"), new l(requireLazy/*r*/)
+        return requireDynamic/*n*/ !== N.CALL_VALUE && invariant/*I*/(0, "Expected value descriptor"), new l(requireLazy/*r*/)
     }, l.prototype.toJSON = function() {
         return [N.CALL_VALUE, this.$GraphQLCallValue_callValue]
     }, u.prototype.getSourceQueryID = function() {
@@ -295,7 +295,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             requireDynamic/*n*/ = require/*t*/[0],
             requireLazy/*r*/ = require/*t*/[1],
             module/*i*/ = require/*t*/[2];
-        return requireDynamic/*n*/ !== N.BATCH_VARIABLE && I(0, "Expected batch variable descriptor"), new u(requireLazy/*r*/, module/*i*/)
+        return requireDynamic/*n*/ !== N.BATCH_VARIABLE && invariant/*I*/(0, "Expected batch variable descriptor"), new u(requireLazy/*r*/, module/*i*/)
     }, u.prototype.toJSON = function() {
         return [N.BATCH_VARIABLE, this.$GraphQLBatchCallVariable_sourceQueryID, this.$GraphQLBatchCallVariable_jsonPath]
     }, c.prototype.getCallVariableName = function() {
@@ -309,7 +309,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         var require/*t*/ = global/*e*/,
             requireDynamic/*n*/ = require/*t*/[0],
             requireLazy/*r*/ = require/*t*/[1];
-        return requireDynamic/*n*/ !== N.CALL_VARIABLE && I(0, "Expected variable descriptor"), new c(requireLazy/*r*/)
+        return requireDynamic/*n*/ !== N.CALL_VARIABLE && invariant/*I*/(0, "Expected variable descriptor"), new c(requireLazy/*r*/)
     }, c.prototype.toJSON = function() {
         return [N.CALL_VARIABLE, this.$GraphQLCallVariable_callVariableName]
     };
@@ -351,7 +351,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
     }, p.prototype.shallowClone = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
         return new p(this.$GraphQLFieldNode_fieldName, global/*e*/, require/*t*/, requireDynamic/*n*/ || this.getCalls(), this.$GraphQLFieldNode_alias, this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata)
     }, p.prototype.getGeneratedAlias = function() {
-        return this.$GraphQLFieldNode_generatedAlias || (this.$GraphQLFieldNode_generatedAlias = P(this.getGeneratedFieldName())), this.$GraphQLFieldNode_generatedAlias
+        return this.$GraphQLFieldNode_generatedAlias || (this.$GraphQLFieldNode_generatedAlias = generateRQLFieldAlias/*P*/(this.getGeneratedFieldName())), this.$GraphQLFieldNode_generatedAlias
     }, p.prototype.getGeneratedFieldName = function() {
         if (!this.$GraphQLFieldNode_generatedFieldName) {
             var global/*e*/ = this.getFieldName();
@@ -377,7 +377,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             l = require/*t*/[5],
             u = require/*t*/[6],
             c = require/*t*/[7];
-        return requireDynamic/*n*/ !== N.FIELD && I(0, "Expected field descriptor"), new p(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(p.fromJSON) : null, o ? o.map(d.fromJSON) : null, s ? s.map(a.fromJSON) : null, l, u, c)
+        return requireDynamic/*n*/ !== N.FIELD && invariant/*I*/(0, "Expected field descriptor"), new p(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(p.fromJSON) : null, o ? o.map(d.fromJSON) : null, s ? s.map(a.fromJSON) : null, l, u, c)
     }, p.prototype.toJSON = function() {
         var global/*e*/ = this.getFragments();
         return b([N.FIELD, this.getFieldName(), this.hasOwnFields() ? this.getOwnFields() : null, global/*e*/.length ? global/*e*/ : null, this.$GraphQLFieldNode_calls.length ? this.$GraphQLFieldNode_calls : null, this.getAlias(), this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata === L ? null : this.$GraphQLFieldNode_metadata])
@@ -415,7 +415,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             o = require/*t*/[3],
             a = require/*t*/[4],
             s = require/*t*/[5];
-        requireDynamic/*n*/ !== N.FRAGMENT && I(0, "Expected fragment descriptor");
+        requireDynamic/*n*/ !== N.FRAGMENT && invariant/*I*/(0, "Expected fragment descriptor");
         var l = new d(requireLazy/*r*/, module/*i*/, a ? a.map(p.fromJSON) : null, s ? s.map(d.fromJSON) : null);
         return o && (l.$GraphQLQueryFragment_isDeferred = !0), l
     }, d.prototype.toJSON = function() {
@@ -472,7 +472,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             a = require/*t*/[4],
             s = require/*t*/[5],
             l = require/*t*/[6];
-        return requireDynamic/*n*/ !== N.QUERY && I(0, "Expected query descriptor"), new h(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o ? o.map(p.fromJSON) : null, a ? a.map(d.fromJSON) : null, s, l)
+        return requireDynamic/*n*/ !== N.QUERY && invariant/*I*/(0, "Expected query descriptor"), new h(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o ? o.map(p.fromJSON) : null, a ? a.map(d.fromJSON) : null, s, l)
     }, h.prototype.toJSON = function() {
         var global/*e*/ = this.rootCall(),
             require/*t*/ = global/*e*/.getArgs(),
@@ -487,7 +487,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             requireDynamic/*n*/ = require/*t*/[0],
             requireLazy/*r*/ = require/*t*/[1],
             module/*i*/ = require/*t*/[2];
-        return requireDynamic/*n*/ !== N.QUERY_WITH_VALUES && I(0, "Expected query descriptor"), new f(h.fromJSON(requireLazy/*r*/), module/*i*/)
+        return requireDynamic/*n*/ !== N.QUERY_WITH_VALUES && invariant/*I*/(0, "Expected query descriptor"), new f(h.fromJSON(requireLazy/*r*/), module/*i*/)
     }, f.prototype.toJSON = function() {
         return b([N.QUERY_WITH_VALUES, this.getQuery(), this.getValues()])
     };
@@ -510,7 +510,7 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
             o = require/*t*/[3],
             s = require/*t*/[4],
             l = require/*t*/[5];
-        return requireDynamic/*n*/ !== N.MUTATION && I(0, "Expected mutation descriptor"), new m(requireLazy/*r*/, module/*i*/, a.fromJSON(o), s ? s.map(p.fromJSON) : null, l ? l.map(d.fromJSON) : null)
+        return requireDynamic/*n*/ !== N.MUTATION && invariant/*I*/(0, "Expected mutation descriptor"), new m(requireLazy/*r*/, module/*i*/, a.fromJSON(o), s ? s.map(p.fromJSON) : null, l ? l.map(d.fromJSON) : null)
     }, m.prototype.toJSON = function() {
         var global/*e*/ = this.getFragments();
         return b([N.MUTATION, this.getName(), this.getResponseType(), this.getCall(), this.hasOwnFields() ? this.getOwnFields() : null, global/*e*/.length ? global/*e*/ : null])

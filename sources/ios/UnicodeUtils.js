@@ -45,12 +45,12 @@ __d("UnicodeUtils",["ES6StringUtils"],function (global/*e*/, require/*t*/, requi
 
     function p(global/*e*/) {
         for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/ += s(global/*e*/, requireDynamic/*n*/)) {
-            var requireLazy/*r*/ = d.codePointAt.call(global/*e*/, requireDynamic/*n*/);
+            var requireLazy/*r*/ = ES6StringUtils/*d*/.codePointAt.call(global/*e*/, requireDynamic/*n*/);
             require/*t*/.push(requireLazy/*r*/)
         }
         return require/*t*/
     }
-    var d = require/*t*/("ES6StringUtils"),
+    var ES6StringUtils/*d*/ = require/*t*/("ES6StringUtils"),
         h = 55296,
         f = 57343,
         m = /[\uD800-\uDFFF]/,

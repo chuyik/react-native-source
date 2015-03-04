@@ -8,19 +8,19 @@ __d("StoryDeleteActions",["GraphQLMutationAction","GraphQLMutatorHub","rql"],fun
             }
         }
     }
-    var a = require/*t*/("GraphQLMutationAction"),
-        s = require/*t*/("GraphQLMutatorHub"),
-        l = require/*t*/("rql");
-    s.registerForNodeDeleteMutationType("story_delete", {
+    var GraphQLMutationAction/*a*/ = require/*t*/("GraphQLMutationAction"),
+        GraphQLMutatorHub/*s*/ = require/*t*/("GraphQLMutatorHub"),
+        rql/*l*/ = require/*t*/("rql");
+    GraphQLMutatorHub/*s*/.registerForNodeDeleteMutationType("story_delete", {
         deletedIDFieldName: "deleted_story_id"
     });
     var u = {
         deleteStory: function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = new a,
+            var requireDynamic/*n*/ = new GraphQLMutationAction/*a*/,
                 requireLazy/*r*/ = o(global/*e*/);
             requireDynamic/*n*/.runOptimisticAction(requireLazy/*r*/);
             var module/*i*/ = function() {
-                var global/*e*/ = l.__GraphQL;
+                var global/*e*/ = rql/*l*/.__GraphQL;
                 return new global/*e*/.Mutation("StoryDeleteActions_m0", "StoryDeleteResponsePayload", new global/*e*/.Callv("story_delete", [new global/*e*/.CallVariable("input")]), [new global/*e*/.Field("deleted_story_id"), new global/*e*/.Field("client_mutation_id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0

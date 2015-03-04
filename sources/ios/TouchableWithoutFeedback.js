@@ -1,23 +1,23 @@
 __d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("React"),
-        a = require/*t*/("Touchable"),
+    var React/*o*/ = require/*t*/("React"),
+        Touchable/*a*/ = require/*t*/("Touchable"),
         s = (require/*t*/("View"), require/*t*/("copyProperties")),
-        l = require/*t*/("onlyChild"),
+        onlyChild/*l*/ = require/*t*/("onlyChild"),
         u = {
             top: 20,
             left: 20,
             right: 20,
             bottom: 30
         },
-        c = o.createClass({
+        c = React/*o*/.createClass({
             displayName: "TouchableWithoutFeedback",
-            mixins: [a.Mixin],
+            mixins: [Touchable/*a*/.Mixin],
             propTypes: {
-                onPress: o.PropTypes.func,
-                onPressIn: o.PropTypes.func,
-                onPressOut: o.PropTypes.func,
-                onLongPress: o.PropTypes.func
+                onPress: React/*o*/.PropTypes.func,
+                onPressIn: React/*o*/.PropTypes.func,
+                onPressOut: React/*o*/.PropTypes.func,
+                onLongPress: React/*o*/.PropTypes.func
             },
             getInitialState: function() {
                 return this.touchableGetInitialState()
@@ -41,7 +41,7 @@ __d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onl
                 return 0
             },
             render: function() {
-                var global/*e*/ = l(this.props.children);
+                var global/*e*/ = onlyChild/*l*/(this.props.children);
                 return s(global/*e*/.props, {
                     accessible: !0,
                     testID: this.props.testID,

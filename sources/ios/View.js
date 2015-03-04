@@ -1,48 +1,48 @@
 __d("View",["NativeMethodsMixin","NativeModules","ReactPropTypes","React","ReactIOSViewAttributes","StyleSheetPropType","ViewStylePropTypes","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("NativeMethodsMixin"),
-        a = require/*t*/("NativeModules"),
-        s = require/*t*/("ReactPropTypes"),
-        l = require/*t*/("React"),
-        u = require/*t*/("ReactIOSViewAttributes"),
-        c = require/*t*/("StyleSheetPropType"),
-        p = require/*t*/("ViewStylePropTypes"),
-        d = a.RKUIManager.StyleConstants,
-        h = require/*t*/("createReactIOSNativeComponentClass"),
-        f = c(p),
-        m = l.createClass({
+    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
+        NativeModules/*a*/ = require/*t*/("NativeModules"),
+        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
+        React/*l*/ = require/*t*/("React"),
+        ReactIOSViewAttributes/*u*/ = require/*t*/("ReactIOSViewAttributes"),
+        StyleSheetPropType/*c*/ = require/*t*/("StyleSheetPropType"),
+        ViewStylePropTypes/*p*/ = require/*t*/("ViewStylePropTypes"),
+        d = NativeModules/*a*/.RKUIManager.StyleConstants,
+        createReactIOSNativeComponentClass/*h*/ = require/*t*/("createReactIOSNativeComponentClass"),
+        f = StyleSheetPropType/*c*/(ViewStylePropTypes/*p*/),
+        m = React/*l*/.createClass({
             displayName: "View",
             statics: {
                 pointerEvents: d.PointerEventsValues,
                 stylePropType: f
             },
-            mixins: [o],
+            mixins: [NativeMethodsMixin/*o*/],
             viewConfig: {
                 uiViewClassName: "RCTView",
-                validAttributes: u.RKView
+                validAttributes: ReactIOSViewAttributes/*u*/.RKView
             },
             propTypes: {
-                accessible: s.bool,
-                testID: s.string,
-                onResponderGrant: s.func,
-                onResponderReject: s.func,
-                onResponderMove: s.func,
-                onResponderRelease: s.func,
-                onResponderTerminate: s.func,
-                onResponderTerminationRequest: s.func,
-                onMoveShouldSetResponder: s.func,
-                onStartShouldSetResponder: s.func,
-                onStartShouldSetResponderCapture: s.func,
-                pointerEvents: s.oneOf([d.PointerEventsValues.boxNone, d.PointerEventsValues.none, d.PointerEventsValues.boxOnly, d.PointerEventsValues.unspecified]),
+                accessible: ReactPropTypes/*s*/.bool,
+                testID: ReactPropTypes/*s*/.string,
+                onResponderGrant: ReactPropTypes/*s*/.func,
+                onResponderReject: ReactPropTypes/*s*/.func,
+                onResponderMove: ReactPropTypes/*s*/.func,
+                onResponderRelease: ReactPropTypes/*s*/.func,
+                onResponderTerminate: ReactPropTypes/*s*/.func,
+                onResponderTerminationRequest: ReactPropTypes/*s*/.func,
+                onMoveShouldSetResponder: ReactPropTypes/*s*/.func,
+                onStartShouldSetResponder: ReactPropTypes/*s*/.func,
+                onStartShouldSetResponderCapture: ReactPropTypes/*s*/.func,
+                pointerEvents: ReactPropTypes/*s*/.oneOf([d.PointerEventsValues.boxNone, d.PointerEventsValues.none, d.PointerEventsValues.boxOnly, d.PointerEventsValues.unspecified]),
                 style: f,
-                removeClippedSubviews: s.bool
+                removeClippedSubviews: ReactPropTypes/*s*/.bool
             },
             render: function() {
-                return l.createElement(g, Object.assign({}, this.props))
+                return React/*l*/.createElement(g, Object.assign({}, this.props))
             }
         }),
-        g = h({
-            validAttributes: u.RKView,
+        g = createReactIOSNativeComponentClass/*h*/({
+            validAttributes: ReactIOSViewAttributes/*u*/.RKView,
             uiViewClassName: "RCTView"
         }),
         _ = g;

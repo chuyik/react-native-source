@@ -1,17 +1,17 @@
 __d("FBStickerAttachment",["PixelRatio","React","ReactGraphQL","Sticker","StyleSheet","TouchableHighlight","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("PixelRatio"),
-        a = require/*t*/("React"),
-        s = require/*t*/("ReactGraphQL"),
-        l = require/*t*/("Sticker"),
-        u = require/*t*/("StyleSheet"),
-        c = require/*t*/("TouchableHighlight"),
-        p = require/*t*/("View"),
-        d = o.get(),
+    var PixelRatio/*o*/ = require/*t*/("PixelRatio"),
+        React/*a*/ = require/*t*/("React"),
+        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+        Sticker/*l*/ = require/*t*/("Sticker"),
+        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
+        TouchableHighlight/*c*/ = require/*t*/("TouchableHighlight"),
+        View/*p*/ = require/*t*/("View"),
+        d = PixelRatio/*o*/.get(),
         h = [60 * d, 60 * d],
-        f = a.createClass({
+        f = React/*a*/.createClass({
             displayName: "FBStickerAttachment",
-            mixins: [s.Mixin],
+            mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
                     attachment: function(global/*e*/, require/*t*/) {
@@ -26,21 +26,21 @@ __d("FBStickerAttachment",["PixelRatio","React","ReactGraphQL","Sticker","StyleS
             },
             render: function() {
                 var global/*e*/ = this.props.attachment.media && this.props.attachment.media.image;
-                if (!global/*e*/) return console.error("Tried to render an FBStickerAttachment with no image!"), a.createElement(p, null);
+                if (!global/*e*/) return console.error("Tried to render an FBStickerAttachment with no image!"), React/*a*/.createElement(View/*p*/, null);
                 var require/*t*/ = {
                     width: global/*e*/.width / d,
                     height: global/*e*/.height / d
                 };
-                return a.createElement(c, {
+                return React/*a*/.createElement(TouchableHighlight/*c*/, {
                     style: require/*t*/,
                     activeOpacity: 1
-                }, a.createElement(l, {
+                }, React/*a*/.createElement(Sticker/*l*/, {
                     fbid: this.props.attachment.media.id,
                     style: [m.stickerStyle, require/*t*/]
                 }))
             }
         }),
-        m = u.create({
+        m = StyleSheet/*u*/.create({
             stickerStyle: {
                 backgroundColor: "white"
             }

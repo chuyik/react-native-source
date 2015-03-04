@@ -1,13 +1,13 @@
 __d("EdgeInsetsPropType",["ReactPropTypes","createStrictShapeTypeChecker","insetsDiffer"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ReactPropTypes"),
-        a = require/*t*/("createStrictShapeTypeChecker"),
-        s = require/*t*/("insetsDiffer"),
-        l = a({
-            top: o.number,
-            left: o.number,
-            bottom: o.number,
-            right: o.number
+    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
+        createStrictShapeTypeChecker/*a*/ = require/*t*/("createStrictShapeTypeChecker"),
+        insetsDiffer/*s*/ = require/*t*/("insetsDiffer"),
+        l = createStrictShapeTypeChecker/*a*/({
+            top: ReactPropTypes/*o*/.number,
+            left: ReactPropTypes/*o*/.number,
+            bottom: ReactPropTypes/*o*/.number,
+            right: ReactPropTypes/*o*/.number
         });
-    l.differ = s, module/*i*/.exports = l
+    l.differ = insetsDiffer/*s*/, module/*i*/.exports = l
 });

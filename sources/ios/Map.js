@@ -1,14 +1,14 @@
 __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = require/*t*/("guid"),
-        a = require/*t*/("isNode"),
-        s = require/*t*/("toIterator"),
-        l = require/*t*/("_shouldPolyfillES6Collection");
+    var guid/*o*/ = require/*t*/("guid"),
+        isNode/*a*/ = require/*t*/("isNode"),
+        toIterator/*s*/ = require/*t*/("toIterator"),
+        _shouldPolyfillES6Collection/*l*/ = require/*t*/("_shouldPolyfillES6Collection");
     module/*i*/.exports = function(global/*e*/, require/*t*/) {
         function requireDynamic/*n*/(global/*e*/) {
             "use strict";
             if (!p(this)) throw new TypeError("Wrong map object type.");
             if (c(this), null != global/*e*/)
-                for (var require/*t*/, requireDynamic/*n*/ = s(global/*e*/); !(require/*t*/ = requireDynamic/*n*/.next()).done;) {
+                for (var require/*t*/, requireDynamic/*n*/ = toIterator/*s*/(global/*e*/); !(require/*t*/ = requireDynamic/*n*/.next()).done;) {
                     if (!p(require/*t*/.value)) throw new TypeError("Expected iterable items to be pair objects.");
                     this.set(require/*t*/.value[0], require/*t*/.value[1])
                 }
@@ -16,7 +16,7 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
 
         function requireLazy/*r*/(global/*e*/, require/*t*/) {
             "use strict";
-            if (!p(global/*e*/) || !global/*e*/._mapData) throw new TypeError("Object is not a map.");
+            if (!p(global/*e*/) || !global/*e*/._mapData) throw new TypeError("Object is not isNode/*a*/ map.");
             if (-1 === [g, y, _].indexOf(require/*t*/)) throw new Error("Invalid iteration kind.");
             this._map = global/*e*/, this._nextIndex = 0, this._kind = require/*t*/
         }
@@ -36,8 +36,8 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
                 var module/*i*/ = R(require/*t*/);
                 requireLazy/*r*/ ? delete global/*e*/._objectIndex[module/*i*/] : global/*e*/._objectIndex[module/*i*/] = requireDynamic/*n*/
             } else {
-                var o = v + require/*t*/;
-                "string" == typeof require/*t*/ ? requireLazy/*r*/ ? delete global/*e*/._stringIndex[o] : global/*e*/._stringIndex[o] = requireDynamic/*n*/ : requireLazy/*r*/ ? delete global/*e*/._otherIndex[o] : global/*e*/._otherIndex[o] = requireDynamic/*n*/
+                var guid/*o*/ = v + require/*t*/;
+                "string" == typeof require/*t*/ ? requireLazy/*r*/ ? delete global/*e*/._stringIndex[guid/*o*/] : global/*e*/._stringIndex[guid/*o*/] = requireDynamic/*n*/ : requireLazy/*r*/ ? delete global/*e*/._otherIndex[guid/*o*/] : global/*e*/._otherIndex[guid/*o*/] = requireDynamic/*n*/
             }
         }
 
@@ -84,12 +84,12 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
             }
             return require/*t*/ ? S + require/*t*/ : null
         }
-        if (!l("Map")) return global/*e*/.Map;
+        if (!_shouldPolyfillES6Collection/*l*/("Map")) return global/*e*/.Map;
         var m, g = "key",
             _ = "value",
             y = "key+value",
             v = "$map_";
-        __DEV__ && (m = "$size" + o());
+        __DEV__ && (m = "$size" + guid/*o*/());
         var S = "IE_HASH_";
         requireDynamic/*n*/.prototype.clear = function() {
             "use strict";
@@ -122,27 +122,27 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
         }, requireDynamic/*n*/.prototype.forEach = function(global/*e*/, requireDynamic/*n*/) {
             "use strict";
             if ("function" != typeof global/*e*/) throw new TypeError("Callback must be callable.");
-            for (var requireLazy/*r*/ = global/*e*/.bind(requireDynamic/*n*/ || require/*t*/), module/*i*/ = this._mapData, o = 0; o < module/*i*/.length; o++) {
-                var a = module/*i*/[o];
-                null != a && requireLazy/*r*/(a[1], a[0], this)
+            for (var requireLazy/*r*/ = global/*e*/.bind(requireDynamic/*n*/ || require/*t*/), module/*i*/ = this._mapData, guid/*o*/ = 0; guid/*o*/ < module/*i*/.length; guid/*o*/++) {
+                var isNode/*a*/ = module/*i*/[guid/*o*/];
+                null != isNode/*a*/ && requireLazy/*r*/(isNode/*a*/[1], isNode/*a*/[0], this)
             }
-        }, requireDynamic/*n*/.prototype[s.ITERATOR_SYMBOL] = requireDynamic/*n*/.prototype.entries, requireLazy/*r*/.prototype.next = function() {
+        }, requireDynamic/*n*/.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = requireDynamic/*n*/.prototype.entries, requireLazy/*r*/.prototype.next = function() {
             "use strict";
-            if (!this instanceof requireDynamic/*n*/) throw new TypeError("Expected to be called on a MapIterator.");
+            if (!this instanceof requireDynamic/*n*/) throw new TypeError("Expected to be called on isNode/*a*/ MapIterator.");
             var global/*e*/ = this._map,
                 requireLazy/*r*/ = this._nextIndex,
                 module/*i*/ = this._kind;
             if (null == global/*e*/) return d(require/*t*/, !0);
-            for (var o = global/*e*/._mapData; requireLazy/*r*/ < o.length;) {
-                var a = o[requireLazy/*r*/];
-                if (requireLazy/*r*/ += 1, this._nextIndex = requireLazy/*r*/, a) {
-                    if (module/*i*/ === g) return d(a[0], !1);
-                    if (module/*i*/ === _) return d(a[1], !1);
-                    if (module/*i*/) return d(a, !1)
+            for (var guid/*o*/ = global/*e*/._mapData; requireLazy/*r*/ < guid/*o*/.length;) {
+                var isNode/*a*/ = guid/*o*/[requireLazy/*r*/];
+                if (requireLazy/*r*/ += 1, this._nextIndex = requireLazy/*r*/, isNode/*a*/) {
+                    if (module/*i*/ === g) return d(isNode/*a*/[0], !1);
+                    if (module/*i*/ === _) return d(isNode/*a*/[1], !1);
+                    if (module/*i*/) return d(isNode/*a*/, !1)
                 }
             }
             return this._map = require/*t*/, d(require/*t*/, !0)
-        }, requireLazy/*r*/.prototype[s.ITERATOR_SYMBOL] = function() {
+        }, requireLazy/*r*/.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = function() {
             return this
         };
         var b = function() {
@@ -154,12 +154,12 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
             }(),
             R = function() {
                 var global/*e*/ = Object.prototype.propertyIsEnumerable,
-                    require/*t*/ = o(),
+                    require/*t*/ = guid/*o*/(),
                     requireDynamic/*n*/ = 0;
                 return function(requireLazy/*r*/) {
                     if (requireLazy/*r*/[require/*t*/]) return requireLazy/*r*/[require/*t*/];
                     if (!b && requireLazy/*r*/.propertyIsEnumerable && requireLazy/*r*/.propertyIsEnumerable[require/*t*/]) return requireLazy/*r*/.propertyIsEnumerable[require/*t*/];
-                    if (!b && a(requireLazy/*r*/) && f(requireLazy/*r*/)) return f(requireLazy/*r*/);
+                    if (!b && isNode/*a*/(requireLazy/*r*/) && f(requireLazy/*r*/)) return f(requireLazy/*r*/);
                     if (!b && requireLazy/*r*/[require/*t*/]) return requireLazy/*r*/[require/*t*/];
                     if (h(requireLazy/*r*/)) {
                         if (requireDynamic/*n*/ += 1, b) Object.defineProperty(requireLazy/*r*/, require/*t*/, {
@@ -172,7 +172,7 @@ __d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function
                             return global/*e*/.apply(this, arguments)
                         }, requireLazy/*r*/.propertyIsEnumerable[require/*t*/] = requireDynamic/*n*/;
                         else {
-                            if (!a(requireLazy/*r*/)) throw new Error("Unable to set a non-enumerable property on object.");
+                            if (!isNode/*a*/(requireLazy/*r*/)) throw new Error("Unable to set isNode/*a*/ non-enumerable property on object.");
                             requireLazy/*r*/[require/*t*/] = requireDynamic/*n*/
                         }
                         return requireDynamic/*n*/

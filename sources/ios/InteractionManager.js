@@ -2,7 +2,7 @@ __d("InteractionManager",["ErrorUtils","EventEmitter","Set","invariant","keyMirr
     "use strict";
 
     function o() {
-        _ || (_ = d(a))
+        _ || (_ = setImmediate/*d*/(a))
     }
 
     function a() {
@@ -14,24 +14,24 @@ __d("InteractionManager",["ErrorUtils","EventEmitter","Set","invariant","keyMirr
         });
         var require/*t*/ = f.size;
         0 !== global/*e*/ && 0 === require/*t*/ ? h.emit(S.Events.interactionComplete) : 0 === global/*e*/ && 0 !== require/*t*/ && h.emit(S.Events.interactionStart), 0 === require/*t*/ && (y.forEach(function(global/*e*/) {
-            s.applyWithGuard(global/*e*/)
+            ErrorUtils/*s*/.applyWithGuard(global/*e*/)
         }), y = []), _ = null, m.clear(), g.clear()
     }
-    var s = require/*t*/("ErrorUtils"),
-        l = require/*t*/("EventEmitter"),
-        u = require/*t*/("Set"),
-        c = require/*t*/("invariant"),
-        p = require/*t*/("keyMirror"),
-        d = require/*t*/("setImmediate"),
-        h = new l,
-        f = new u,
-        m = new u,
-        g = new u,
+    var ErrorUtils/*s*/ = require/*t*/("ErrorUtils"),
+        EventEmitter/*l*/ = require/*t*/("EventEmitter"),
+        Set/*u*/ = require/*t*/("Set"),
+        invariant/*c*/ = require/*t*/("invariant"),
+        keyMirror/*p*/ = require/*t*/("keyMirror"),
+        setImmediate/*d*/ = require/*t*/("setImmediate"),
+        h = new EventEmitter/*l*/,
+        f = new Set/*u*/,
+        m = new Set/*u*/,
+        g = new Set/*u*/,
         _ = null,
         y = [],
         v = 0,
         S = {
-            Events: p({
+            Events: keyMirror/*p*/({
                 interactionStart: !0,
                 interactionComplete: !0
             }),
@@ -41,10 +41,10 @@ __d("InteractionManager",["ErrorUtils","EventEmitter","Set","invariant","keyMirr
                 return m.add(global/*e*/), global/*e*/
             },
             clearInteractionHandle: function(global/*e*/) {
-                global/*e*/ || c(0, "Must provide a handle to clear."), o(), m.delete(global/*e*/), g.add(global/*e*/)
+                global/*e*/ || invariant/*c*/(0, "Must provide a handle to clear."), o(), m.delete(global/*e*/), g.add(global/*e*/)
             },
             runAfterInteractions: function(global/*e*/) {
-                "function" != typeof global/*e*/ && c(0, "Must specify a function to schedule."), o(), y.push(global/*e*/)
+                "function" != typeof global/*e*/ && invariant/*c*/(0, "Must specify a function to schedule."), o(), y.push(global/*e*/)
             },
             addListener: h.addListener.bind(h)
         };

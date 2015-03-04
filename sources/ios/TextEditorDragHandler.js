@@ -8,17 +8,17 @@ __d("TextEditorDragHandler",["DataTransfer"],function (global/*e*/, require/*t*/
         if (requireDynamic/*n*/) {
             var o = document.createRange();
             o.setStart(global/*e*/, 0), o.setEnd(requireDynamic/*n*/, requireLazy/*r*/);
-            var a = o.toString().length;
-            return o.detach(), a
+            var DataTransfer/*a*/ = o.toString().length;
+            return o.detach(), DataTransfer/*a*/
         }
     }
-    var a = require/*t*/("DataTransfer"),
+    var DataTransfer/*a*/ = require/*t*/("DataTransfer"),
         s = {
             onDragEnd: function() {
                 this.exitCurrentMode()
             },
             onDrop: function(global/*e*/) {
-                var require/*t*/ = new a(global/*e*/.nativeEvent.dataTransfer),
+                var require/*t*/ = new DataTransfer/*a*/(global/*e*/.nativeEvent.dataTransfer),
                     requireDynamic/*n*/ = o(this.refs.editorContainer.getDOMNode(), global/*e*/.nativeEvent);
                 if (null != requireDynamic/*n*/) {
                     var requireLazy/*r*/ = require/*t*/.getFiles();

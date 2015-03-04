@@ -4,8 +4,8 @@ __d("rql",["GraphQL_EXPERIMENTAL"],function (global/*e*/, require/*t*/, requireD
     function o() {
         throw new Error("rql transform failure!")
     }
-    var a = require/*t*/("GraphQL_EXPERIMENTAL");
-    o.__GraphQL = a, o.__var = o.__frag = function(global/*e*/) {
+    var GraphQL_EXPERIMENTAL/*a*/ = require/*t*/("GraphQL_EXPERIMENTAL");
+    o.__GraphQL = GraphQL_EXPERIMENTAL/*a*/, o.__var = o.__frag = function(global/*e*/) {
         return global/*e*/
     }, module/*i*/.exports = o
 });

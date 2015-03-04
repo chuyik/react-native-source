@@ -2,7 +2,7 @@ __d("isEventSupported",["ExecutionEnvironment"],function (global/*e*/, require/*
     "use strict";
 
     function o(global/*e*/, require/*t*/) {
-        if (!s.canUseDOM || require/*t*/ && !("addEventListener" in document)) return !1;
+        if (!ExecutionEnvironment/*s*/.canUseDOM || require/*t*/ && !("addEventListener" in document)) return !1;
         var requireDynamic/*n*/ = "on" + global/*e*/,
             requireLazy/*r*/ = requireDynamic/*n*/ in document;
         if (!requireLazy/*r*/) {
@@ -11,6 +11,6 @@ __d("isEventSupported",["ExecutionEnvironment"],function (global/*e*/, require/*
         }
         return !requireLazy/*r*/ && a && "wheel" === global/*e*/ && (requireLazy/*r*/ = document.implementation.hasFeature("Events.wheel", "3.0")), requireLazy/*r*/
     }
-    var a, s = require/*t*/("ExecutionEnvironment");
-    s.canUseDOM && (a = document.implementation && document.implementation.hasFeature && document.implementation.hasFeature("", "") !== !0), module/*i*/.exports = o
+    var a, ExecutionEnvironment/*s*/ = require/*t*/("ExecutionEnvironment");
+    ExecutionEnvironment/*s*/.canUseDOM && (a = document.implementation && document.implementation.hasFeature && document.implementation.hasFeature("", "") !== !0), module/*i*/.exports = o
 });

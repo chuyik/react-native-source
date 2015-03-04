@@ -12,11 +12,11 @@ __d("intlNumUtils",["NumberFormatConfig","escapeRegex"],function (global/*e*/, r
     }
 
     function a(global/*e*/, require/*t*/) {
-        return o(global/*e*/, require/*t*/, "", h.decimalSeparator, h.minDigitsForThousandsSeparator)
+        return o(global/*e*/, require/*t*/, "", NumberFormatConfig/*h*/.decimalSeparator, NumberFormatConfig/*h*/.minDigitsForThousandsSeparator)
     }
 
     function s(global/*e*/, require/*t*/) {
-        return o(global/*e*/, require/*t*/, h.numberDelimiter, h.decimalSeparator, h.minDigitsForThousandsSeparator)
+        return o(global/*e*/, require/*t*/, NumberFormatConfig/*h*/.numberDelimiter, NumberFormatConfig/*h*/.decimalSeparator, NumberFormatConfig/*h*/.minDigitsForThousandsSeparator)
     }
 
     function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
@@ -48,7 +48,7 @@ __d("intlNumUtils",["NumberFormatConfig","escapeRegex"],function (global/*e*/, r
         if (global/*e*/ = global/*e*/.split("").map(function(global/*e*/) {
                 return g.hasOwnProperty(global/*e*/) ? g[global/*e*/] : global/*e*/
             }).join(""), global/*e*/ = global/*e*/.trim().replace(/^[^\d]*\-/, ""), require/*t*/) {
-            var requireDynamic/*n*/ = new RegExp(f(require/*t*/) + "(\\d*).*", "module/*i*/");
+            var requireDynamic/*n*/ = new RegExp(escapeRegex/*f*/(require/*t*/) + "(\\d*).*", "module/*i*/");
             global/*e*/ = global/*e*/.replace(requireDynamic/*n*/, "$1")
         } else /^\u0002?(\d+,\d*){2,}$/.test(global/*e*/) || /^\u0002?(\d+\.\d*){2,}$/.test(global/*e*/) || (global/*e*/ = global/*e*/.replace(/[\.,](\d*\D*)$/, "$1"));
         global/*e*/ = global/*e*/.replace(/[^0-9\u0001\u0002]/g, "").replace("", ".").replace("", "-");
@@ -57,10 +57,10 @@ __d("intlNumUtils",["NumberFormatConfig","escapeRegex"],function (global/*e*/, r
     }
 
     function d(global/*e*/) {
-        return p(global/*e*/, h.decimalSeparator)
+        return p(global/*e*/, NumberFormatConfig/*h*/.decimalSeparator)
     }
-    var h = require/*t*/("NumberFormatConfig"),
-        f = require/*t*/("escapeRegex"),
+    var NumberFormatConfig/*h*/ = require/*t*/("NumberFormatConfig"),
+        escapeRegex/*f*/ = require/*t*/("escapeRegex"),
         m = /(\d)(\d\d\d)($|\D)/,
         g = {
             "،": ".",

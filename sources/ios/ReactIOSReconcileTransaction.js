@@ -2,11 +2,11 @@ __d("ReactIOSReconcileTransaction",["CallbackQueue","PooledClass","Transaction"]
     "use strict";
 
     function o() {
-        this.reinitializeTransaction(), this.reactMountReady = a.getPooled(null)
+        this.reinitializeTransaction(), this.reactMountReady = CallbackQueue/*a*/.getPooled(null)
     }
-    var a = require/*t*/("CallbackQueue"),
-        s = require/*t*/("PooledClass"),
-        l = require/*t*/("Transaction"),
+    var CallbackQueue/*a*/ = require/*t*/("CallbackQueue"),
+        PooledClass/*s*/ = require/*t*/("PooledClass"),
+        Transaction/*l*/ = require/*t*/("Transaction"),
         u = {
             initialize: function() {
                 this.reactMountReady.reset()
@@ -24,8 +24,8 @@ __d("ReactIOSReconcileTransaction",["CallbackQueue","PooledClass","Transaction"]
                 return this.reactMountReady
             },
             destructor: function() {
-                a.release(this.reactMountReady), this.reactMountReady = null
+                CallbackQueue/*a*/.release(this.reactMountReady), this.reactMountReady = null
             }
         };
-    Object.assign(o.prototype, l.Mixin, o, p), s.addPoolingTo(o), module/*i*/.exports = o
+    Object.assign(o.prototype, Transaction/*l*/.Mixin, o, p), PooledClass/*s*/.addPoolingTo(o), module/*i*/.exports = o
 });

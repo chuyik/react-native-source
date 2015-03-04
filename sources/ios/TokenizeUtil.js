@@ -49,7 +49,7 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
             };
         return Boolean(module/*i*/.length && module/*i*/.every(l))
     }
-    var p = require/*t*/("repeatString"),
+    var repeatString/*p*/ = require/*t*/("repeatString"),
         d = /[ ]+/g,
         h = /[^ ]+/g,
         f = new RegExp(o(), "g"),
@@ -70,7 +70,7 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
             m: "м",
             requireDynamic/*n*/: "н ñ ň ŉ ŋ ņ",
             o: "о ø ö õ ô ó ò",
-            p: "п",
+            repeatString/*p*/: "п",
             requireLazy/*r*/: "р ř ŕ",
             s: "с ş š ſ",
             require/*t*/: "т ť ŧ þ",
@@ -110,7 +110,7 @@ __d("TokenizeUtil",["repeatString"],function (global/*e*/, require/*t*/, require
         }
         for (var o in global/*e*/) {
             var a = o.charCodeAt(0).toString(16),
-                s = "\\u" + p("0", 4 - a.length) + a;
+                s = "\\u" + repeatString/*p*/("0", 4 - a.length) + a;
             require/*t*/ += s, requireDynamic/*n*/ += global/*e*/[o]
         }
         return {

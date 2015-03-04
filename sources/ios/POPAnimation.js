@@ -1,13 +1,13 @@
 __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","getObjectValues","invariant","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
     "use strict";
-    var o = require/*t*/("ReactPropTypes"),
-        a = require/*t*/("NativeModules").RKPOPAnimationManager,
-        s = require/*t*/("createStrictShapeTypeChecker"),
-        l = require/*t*/("getObjectValues"),
-        u = require/*t*/("invariant"),
-        c = require/*t*/("merge"),
-        p = a.Types,
-        d = a.Properties,
+    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
+        NativeModules/*a*/ = require/*t*/("NativeModules").RKPOPAnimationManager,
+        createStrictShapeTypeChecker/*s*/ = require/*t*/("createStrictShapeTypeChecker"),
+        getObjectValues/*l*/ = require/*t*/("getObjectValues"),
+        invariant/*u*/ = require/*t*/("invariant"),
+        merge/*c*/ = require/*t*/("merge"),
+        p = NativeModules/*a*/.Types,
+        d = NativeModules/*a*/.Properties,
         h = {
             bounds: d.bounds,
             opacity: d.opacity,
@@ -47,18 +47,18 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
         m = {
             Types: f,
             Properties: h,
-            attributeChecker: s({
-                type: o.oneOf(l(f)),
-                property: o.oneOf(l(h)),
-                fromValue: o.any,
-                toValue: o.any,
-                duration: o.any,
-                velocity: o.any,
-                deceleration: o.any,
-                springBounciness: o.any,
-                dynamicsFriction: o.any,
-                dynamicsMass: o.any,
-                dynamicsTension: o.any
+            attributeChecker: createStrictShapeTypeChecker/*s*/({
+                type: ReactPropTypes/*o*/.oneOf(getObjectValues/*l*/(f)),
+                property: ReactPropTypes/*o*/.oneOf(getObjectValues/*l*/(h)),
+                fromValue: ReactPropTypes/*o*/.any,
+                toValue: ReactPropTypes/*o*/.any,
+                duration: ReactPropTypes/*o*/.any,
+                velocity: ReactPropTypes/*o*/.any,
+                deceleration: ReactPropTypes/*o*/.any,
+                springBounciness: ReactPropTypes/*o*/.any,
+                dynamicsFriction: ReactPropTypes/*o*/.any,
+                dynamicsMass: ReactPropTypes/*o*/.any,
+                dynamicsTension: ReactPropTypes/*o*/.any
             }),
             lastUsedTag: 0,
             allocateTagForAnimation: function() {
@@ -72,7 +72,7 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
                     attrs: {
                         type: global/*e*/
                     }
-                }, "attrs", "POPAnimation.createAnimation")), a.createAnimationInternal(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
+                }, "attrs", "POPAnimation.createAnimation")), NativeModules/*a*/.createAnimationInternal(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
             },
             createSpringAnimation: function(global/*e*/) {
                 return this.createAnimation(this.Types.spring, global/*e*/)
@@ -94,10 +94,10 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
             }
         };
     if (__DEV__) {
-        var g = c(a.Properties, a.Properties);
-        for (var _ in g) m.Properties[_] !== a.Properties[_] && u(0, "POPAnimation doesn'require/*t*/ copy property " + _ + " correctly");
-        var y = c(a.Types, a.Types);
-        for (var _ in y) m.Types[_] !== a.Types[_] && u(0, "POPAnimation doesn'require/*t*/ copy type " + _ + " correctly")
+        var g = merge/*c*/(NativeModules/*a*/.Properties, NativeModules/*a*/.Properties);
+        for (var _ in g) m.Properties[_] !== NativeModules/*a*/.Properties[_] && invariant/*u*/(0, "POPAnimation doesn'require/*t*/ copy property " + _ + " correctly");
+        var y = merge/*c*/(NativeModules/*a*/.Types, NativeModules/*a*/.Types);
+        for (var _ in y) m.Types[_] !== NativeModules/*a*/.Types[_] && invariant/*u*/(0, "POPAnimation doesn'require/*t*/ copy type " + _ + " correctly")
     }
     module/*i*/.exports = m
 });
