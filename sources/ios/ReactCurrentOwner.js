@@ -1,7 +1,7 @@
-__d("ReactCurrentOwner",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactCurrentOwner",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         current: null
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

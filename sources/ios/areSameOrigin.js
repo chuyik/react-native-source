@@ -1,6 +1,6 @@
-__d("areSameOrigin",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        return global/*e*/.isEmpty() || require/*t*/.isEmpty() ? !1 : global/*e*/.getProtocol() && global/*e*/.getProtocol() != require/*t*/.getProtocol() ? !1 : global/*e*/.getDomain() && global/*e*/.getDomain() != require/*t*/.getDomain() ? !1 : global/*e*/.getPort() && global/*e*/.getPort() != require/*t*/.getPort() ? !1 : !0
+__d("areSameOrigin",[],function (e, t, n, r, i) {
+    function o(e, t) {
+        return e.isEmpty() || t.isEmpty() ? !1 : e.getProtocol() && e.getProtocol() != t.getProtocol() ? !1 : e.getDomain() && e.getDomain() != t.getDomain() ? !1 : e.getPort() && e.getPort() != t.getPort() ? !1 : !0
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

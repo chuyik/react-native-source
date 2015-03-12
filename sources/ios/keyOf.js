@@ -1,9 +1,9 @@
-__d("keyOf",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = function(global/*e*/) {
-        var require/*t*/;
-        for (require/*t*/ in global/*e*/)
-            if (global/*e*/.hasOwnProperty(require/*t*/)) return require/*t*/;
+__d("keyOf",[],function (e, t, n, r, i) {
+    var o = function(e) {
+        var t;
+        for (t in e)
+            if (e.hasOwnProperty(t)) return t;
         return null
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

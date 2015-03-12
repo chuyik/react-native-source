@@ -1,14 +1,14 @@
-__d("DliteAPIConfig",["DliteAPIConfigDefaults"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteAPIConfig",["DliteAPIConfigDefaults"],function (e, t, n, r, i) {
     "use strict";
-    var DliteAPIConfigDefaults/*o*/ = require/*t*/("DliteAPIConfigDefaults"),
+    var DliteAPIConfigDefaults/*o*/ = t("DliteAPIConfigDefaults"),
         a = Object.assign({}, DliteAPIConfigDefaults/*o*/, {
-            setLocale: function(global/*e*/) {
+            setLocale: function(e) {
                 a.graphBatchURI.setQueryData({
-                    locale: global/*e*/
+                    locale: e
                 }), a.graphURI.setQueryData({
-                    locale: global/*e*/
+                    locale: e
                 })
             }
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

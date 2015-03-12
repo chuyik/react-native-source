@@ -1,8 +1,8 @@
-__d("THViewConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THViewConstants",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         PERMALINK: "permalink",
         SEARCH: "search"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

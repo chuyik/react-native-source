@@ -1,4 +1,4 @@
-__d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRangeUtils","setImmediate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRangeUtils","setImmediate"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {
@@ -9,52 +9,52 @@ __d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRange
         h.forEach(s)
     }
 
-    function s(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.subscribedIDs,
-            requireLazy/*r*/ = global/*e*/.callback;
+    function s(e, t) {
+        var n = e.subscribedIDs,
+            r = e.callback;
         if (f)
-            for (var module/*i*/ in f)
-                if (f.hasOwnProperty(module/*i*/)) {
-                    var o = f[module/*i*/];
-                    if (require/*t*/ > o) break;
-                    if (requireDynamic/*n*/.indexOf(module/*i*/) >= 0) {
-                        ErrorUtils/*c*/.applyWithGuard(requireLazy/*r*/, null, null, null, "GraphQLStoreChangeEmitter");
+            for (var i in f)
+                if (f.hasOwnProperty(i)) {
+                    var o = f[i];
+                    if (t > o) break;
+                    if (n.indexOf(i) >= 0) {
+                        ErrorUtils/*c*/.applyWithGuard(r, null, null, null, "GraphQLStoreChangeEmitter");
                         break
                     }
                 }
     }
 
-    function l(global/*e*/) {
-        var require/*t*/ = GraphQLStoreRangeUtils/*p*/.parseRangeClientID(global/*e*/);
-        return require/*t*/ ? require/*t*/.dataID : global/*e*/
+    function l(e) {
+        var t = GraphQLStoreRangeUtils/*p*/.parseRangeClientID(e);
+        return t ? t.dataID : e
     }
-    var DliteProfiler/*u*/ = require/*t*/("DliteProfiler"),
-        ErrorUtils/*c*/ = require/*t*/("ErrorUtils"),
-        GraphQLStoreRangeUtils/*p*/ = require/*t*/("GraphQLStoreRangeUtils"),
-        setImmediate/*d*/ = require/*t*/("setImmediate"),
+    var DliteProfiler/*u*/ = t("DliteProfiler"),
+        ErrorUtils/*c*/ = t("ErrorUtils"),
+        GraphQLStoreRangeUtils/*p*/ = t("GraphQLStoreRangeUtils"),
+        setImmediate/*d*/ = t("setImmediate"),
         h = [],
         f = null,
-        m = function(global/*e*/) {
-            return global/*e*/()
+        m = function(e) {
+            return e()
         },
         g = {
-            addListenerForIDs: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = global/*e*/.map(l),
-                    requireLazy/*r*/ = h.length;
+            addListenerForIDs: function(e, t) {
+                var n = e.map(l),
+                    r = h.length;
                 return h.push({
-                    subscribedIDs: requireDynamic/*n*/,
-                    callback: require/*t*/
+                    subscribedIDs: n,
+                    callback: t
                 }), {
                     remove: function() {
-                        delete h[requireLazy/*r*/]
+                        delete h[r]
                     }
                 }
             },
-            broadcastChangeForID: function(global/*e*/) {
-                null === f && (setImmediate/*d*/(o), f = {}), f[l(global/*e*/)] = h.length - 1
+            broadcastChangeForID: function(e) {
+                null === f && (setImmediate/*d*/(o), f = {}), f[l(e)] = h.length - 1
             },
-            injectBatchingStrategy: function(global/*e*/) {
-                m = global/*e*/
+            injectBatchingStrategy: function(e) {
+                m = e
             },
             _processSubscribers: a
         };
@@ -62,5 +62,5 @@ __d("GraphQLStoreChangeEmitter",["DliteProfiler","ErrorUtils","GraphQLStoreRange
         addListenerForIDs: "GraphQLStoreChangeEmitter.addListenerForIDs",
         broadcastChangeForID: "GraphQLStoreChangeEmitter.broadcastChangeForID",
         _processSubscribers: "GraphQLStoreChangeEmitter.processSubscribers"
-    }), module/*i*/.exports = g
+    }), i.exports = g
 });

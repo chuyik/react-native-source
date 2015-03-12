@@ -1,185 +1,185 @@
-__d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var guid/*o*/ = require/*t*/("guid"),
-        isNode/*a*/ = require/*t*/("isNode"),
-        toIterator/*s*/ = require/*t*/("toIterator"),
-        _shouldPolyfillES6Collection/*l*/ = require/*t*/("_shouldPolyfillES6Collection");
-    module/*i*/.exports = function(global/*e*/, require/*t*/) {
-        function requireDynamic/*n*/(global/*e*/) {
+__d("Map",["guid","isNode","toIterator","_shouldPolyfillES6Collection"],function (e, t, n, r, i) {
+    var guid/*o*/ = t("guid"),
+        isNode/*a*/ = t("isNode"),
+        toIterator/*s*/ = t("toIterator"),
+        _shouldPolyfillES6Collection/*l*/ = t("_shouldPolyfillES6Collection");
+    i.exports = function(e, t) {
+        function n(e) {
             "use strict";
             if (!p(this)) throw new TypeError("Wrong map object type.");
-            if (c(this), null != global/*e*/)
-                for (var require/*t*/, requireDynamic/*n*/ = toIterator/*s*/(global/*e*/); !(require/*t*/ = requireDynamic/*n*/.next()).done;) {
-                    if (!p(require/*t*/.value)) throw new TypeError("Expected iterable items to be pair objects.");
-                    this.set(require/*t*/.value[0], require/*t*/.value[1])
+            if (c(this), null != e)
+                for (var t, n = toIterator/*s*/(e); !(t = n.next()).done;) {
+                    if (!p(t.value)) throw new TypeError("Expected iterable items to be pair objects.");
+                    this.set(t.value[0], t.value[1])
                 }
         }
 
-        function requireLazy/*r*/(global/*e*/, require/*t*/) {
+        function r(e, t) {
             "use strict";
-            if (!p(global/*e*/) || !global/*e*/._mapData) throw new TypeError("Object is not isNode/*a*/ map.");
-            if (-1 === [g, y, _].indexOf(require/*t*/)) throw new Error("Invalid iteration kind.");
-            this._map = global/*e*/, this._nextIndex = 0, this._kind = require/*t*/
+            if (!p(e) || !e._mapData) throw new TypeError("Object is not isNode/*a*/ map.");
+            if (-1 === [g, y, _].indexOf(t)) throw new Error("Invalid iteration kind.");
+            this._map = e, this._nextIndex = 0, this._kind = t
         }
 
-        function module/*i*/(global/*e*/, require/*t*/) {
-            if (p(require/*t*/)) {
-                var requireDynamic/*n*/ = R(require/*t*/);
-                return global/*e*/._objectIndex[requireDynamic/*n*/]
+        function i(e, t) {
+            if (p(t)) {
+                var n = R(t);
+                return e._objectIndex[n]
             }
-            var requireLazy/*r*/ = v + require/*t*/;
-            return "string" == typeof require/*t*/ ? global/*e*/._stringIndex[requireLazy/*r*/] : global/*e*/._otherIndex[requireLazy/*r*/]
+            var r = v + t;
+            return "string" == typeof t ? e._stringIndex[r] : e._otherIndex[r]
         }
 
-        function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = null == requireDynamic/*n*/;
-            if (p(require/*t*/)) {
-                var module/*i*/ = R(require/*t*/);
-                requireLazy/*r*/ ? delete global/*e*/._objectIndex[module/*i*/] : global/*e*/._objectIndex[module/*i*/] = requireDynamic/*n*/
+        function u(e, t, n) {
+            var r = null == n;
+            if (p(t)) {
+                var i = R(t);
+                r ? delete e._objectIndex[i] : e._objectIndex[i] = n
             } else {
-                var guid/*o*/ = v + require/*t*/;
-                "string" == typeof require/*t*/ ? requireLazy/*r*/ ? delete global/*e*/._stringIndex[guid/*o*/] : global/*e*/._stringIndex[guid/*o*/] = requireDynamic/*n*/ : requireLazy/*r*/ ? delete global/*e*/._otherIndex[guid/*o*/] : global/*e*/._otherIndex[guid/*o*/] = requireDynamic/*n*/
+                var guid/*o*/ = v + t;
+                "string" == typeof t ? r ? delete e._stringIndex[guid/*o*/] : e._stringIndex[guid/*o*/] = n : r ? delete e._otherIndex[guid/*o*/] : e._otherIndex[guid/*o*/] = n
             }
         }
 
-        function c(global/*e*/) {
-            return global/*e*/._mapData = [], global/*e*/._objectIndex = {}, global/*e*/._stringIndex = {}, global/*e*/._otherIndex = {}, __DEV__ && b ? void(global/*e*/.hasOwnProperty(m) ? global/*e*/[m] = 0 : (Object.defineProperty(global/*e*/, m, {
+        function c(e) {
+            return e._mapData = [], e._objectIndex = {}, e._stringIndex = {}, e._otherIndex = {}, __DEV__ && b ? void(e.hasOwnProperty(m) ? e[m] = 0 : (Object.defineProperty(e, m, {
                 value: 0,
                 writable: !0
-            }), Object.defineProperty(global/*e*/, "size", {
+            }), Object.defineProperty(e, "size", {
                 set: function() {
                     throw console.error("PLEASE FIX ME: You are changing the map size property which should not be writable and will break in production."), new Error("The map size property is not writable.")
                 },
                 get: function() {
-                    return global/*e*/[m]
+                    return e[m]
                 }
-            }))) : void(global/*e*/.size = 0)
+            }))) : void(e.size = 0)
         }
 
-        function p(global/*e*/) {
-            return null != global/*e*/ && ("object" == typeof global/*e*/ || "function" == typeof global/*e*/)
+        function p(e) {
+            return null != e && ("object" == typeof e || "function" == typeof e)
         }
 
-        function d(global/*e*/, require/*t*/) {
+        function d(e, t) {
             return {
-                value: global/*e*/,
-                done: require/*t*/
+                value: e,
+                done: t
             }
         }
 
-        function h(global/*e*/) {
-            return b ? Object.isExtensible(global/*e*/) : !0
+        function h(e) {
+            return b ? Object.isExtensible(e) : !0
         }
 
-        function f(global/*e*/) {
-            var require/*t*/;
-            switch (global/*e*/.nodeType) {
+        function f(e) {
+            var t;
+            switch (e.nodeType) {
                 case 1:
-                    require/*t*/ = global/*e*/.uniqueID;
+                    t = e.uniqueID;
                     break;
                 case 9:
-                    require/*t*/ = global/*e*/.documentElement.uniqueID;
+                    t = e.documentElement.uniqueID;
                     break;
                 default:
                     return null
             }
-            return require/*t*/ ? S + require/*t*/ : null
+            return t ? S + t : null
         }
-        if (!_shouldPolyfillES6Collection/*l*/("Map")) return global/*e*/.Map;
+        if (!_shouldPolyfillES6Collection/*l*/("Map")) return e.Map;
         var m, g = "key",
             _ = "value",
             y = "key+value",
             v = "$map_";
         __DEV__ && (m = "$size" + guid/*o*/());
         var S = "IE_HASH_";
-        requireDynamic/*n*/.prototype.clear = function() {
+        n.prototype.clear = function() {
             "use strict";
             c(this)
-        }, requireDynamic/*n*/.prototype.has = function(global/*e*/) {
+        }, n.prototype.has = function(e) {
             "use strict";
-            var require/*t*/ = module/*i*/(this, global/*e*/);
-            return !(null == require/*t*/ || !this._mapData[require/*t*/])
-        }, requireDynamic/*n*/.prototype.set = function(global/*e*/, require/*t*/) {
+            var t = i(this, e);
+            return !(null == t || !this._mapData[t])
+        }, n.prototype.set = function(e, t) {
             "use strict";
-            var requireDynamic/*n*/ = module/*i*/(this, global/*e*/);
-            return null != requireDynamic/*n*/ && this._mapData[requireDynamic/*n*/] ? this._mapData[requireDynamic/*n*/][1] = require/*t*/ : (requireDynamic/*n*/ = this._mapData.push([global/*e*/, require/*t*/]) - 1, u(this, global/*e*/, requireDynamic/*n*/), __DEV__ ? this[m] += 1 : this.size += 1), this
-        }, requireDynamic/*n*/.prototype.get = function(global/*e*/) {
+            var n = i(this, e);
+            return null != n && this._mapData[n] ? this._mapData[n][1] = t : (n = this._mapData.push([e, t]) - 1, u(this, e, n), __DEV__ ? this[m] += 1 : this.size += 1), this
+        }, n.prototype.get = function(e) {
             "use strict";
-            var requireDynamic/*n*/ = module/*i*/(this, global/*e*/);
-            return null == requireDynamic/*n*/ ? require/*t*/ : this._mapData[requireDynamic/*n*/][1]
-        }, requireDynamic/*n*/.prototype["delete"] = function(global/*e*/) {
+            var n = i(this, e);
+            return null == n ? t : this._mapData[n][1]
+        }, n.prototype["delete"] = function(e) {
             "use strict";
-            var requireDynamic/*n*/ = module/*i*/(this, global/*e*/);
-            return null != requireDynamic/*n*/ && this._mapData[requireDynamic/*n*/] ? (u(this, global/*e*/, require/*t*/), this._mapData[requireDynamic/*n*/] = require/*t*/, __DEV__ ? this[m] -= 1 : this.size -= 1, !0) : !1
-        }, requireDynamic/*n*/.prototype.entries = function() {
+            var n = i(this, e);
+            return null != n && this._mapData[n] ? (u(this, e, t), this._mapData[n] = t, __DEV__ ? this[m] -= 1 : this.size -= 1, !0) : !1
+        }, n.prototype.entries = function() {
             "use strict";
-            return new requireLazy/*r*/(this, y)
-        }, requireDynamic/*n*/.prototype.keys = function() {
+            return new r(this, y)
+        }, n.prototype.keys = function() {
             "use strict";
-            return new requireLazy/*r*/(this, g)
-        }, requireDynamic/*n*/.prototype.values = function() {
+            return new r(this, g)
+        }, n.prototype.values = function() {
             "use strict";
-            return new requireLazy/*r*/(this, _)
-        }, requireDynamic/*n*/.prototype.forEach = function(global/*e*/, requireDynamic/*n*/) {
+            return new r(this, _)
+        }, n.prototype.forEach = function(e, n) {
             "use strict";
-            if ("function" != typeof global/*e*/) throw new TypeError("Callback must be callable.");
-            for (var requireLazy/*r*/ = global/*e*/.bind(requireDynamic/*n*/ || require/*t*/), module/*i*/ = this._mapData, guid/*o*/ = 0; guid/*o*/ < module/*i*/.length; guid/*o*/++) {
-                var isNode/*a*/ = module/*i*/[guid/*o*/];
-                null != isNode/*a*/ && requireLazy/*r*/(isNode/*a*/[1], isNode/*a*/[0], this)
+            if ("function" != typeof e) throw new TypeError("Callback must be callable.");
+            for (var r = e.bind(n || t), i = this._mapData, guid/*o*/ = 0; guid/*o*/ < i.length; guid/*o*/++) {
+                var isNode/*a*/ = i[guid/*o*/];
+                null != isNode/*a*/ && r(isNode/*a*/[1], isNode/*a*/[0], this)
             }
-        }, requireDynamic/*n*/.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = requireDynamic/*n*/.prototype.entries, requireLazy/*r*/.prototype.next = function() {
+        }, n.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = n.prototype.entries, r.prototype.next = function() {
             "use strict";
-            if (!this instanceof requireDynamic/*n*/) throw new TypeError("Expected to be called on isNode/*a*/ MapIterator.");
-            var global/*e*/ = this._map,
-                requireLazy/*r*/ = this._nextIndex,
-                module/*i*/ = this._kind;
-            if (null == global/*e*/) return d(require/*t*/, !0);
-            for (var guid/*o*/ = global/*e*/._mapData; requireLazy/*r*/ < guid/*o*/.length;) {
-                var isNode/*a*/ = guid/*o*/[requireLazy/*r*/];
-                if (requireLazy/*r*/ += 1, this._nextIndex = requireLazy/*r*/, isNode/*a*/) {
-                    if (module/*i*/ === g) return d(isNode/*a*/[0], !1);
-                    if (module/*i*/ === _) return d(isNode/*a*/[1], !1);
-                    if (module/*i*/) return d(isNode/*a*/, !1)
+            if (!this instanceof n) throw new TypeError("Expected to be called on isNode/*a*/ MapIterator.");
+            var e = this._map,
+                r = this._nextIndex,
+                i = this._kind;
+            if (null == e) return d(t, !0);
+            for (var guid/*o*/ = e._mapData; r < guid/*o*/.length;) {
+                var isNode/*a*/ = guid/*o*/[r];
+                if (r += 1, this._nextIndex = r, isNode/*a*/) {
+                    if (i === g) return d(isNode/*a*/[0], !1);
+                    if (i === _) return d(isNode/*a*/[1], !1);
+                    if (i) return d(isNode/*a*/, !1)
                 }
             }
-            return this._map = require/*t*/, d(require/*t*/, !0)
-        }, requireLazy/*r*/.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = function() {
+            return this._map = t, d(t, !0)
+        }, r.prototype[toIterator/*s*/.ITERATOR_SYMBOL] = function() {
             return this
         };
         var b = function() {
                 try {
                     return Object.defineProperty({}, "x", {}), !0
-                } catch (global/*e*/) {
+                } catch (e) {
                     return !1
                 }
             }(),
             R = function() {
-                var global/*e*/ = Object.prototype.propertyIsEnumerable,
-                    require/*t*/ = guid/*o*/(),
-                    requireDynamic/*n*/ = 0;
-                return function(requireLazy/*r*/) {
-                    if (requireLazy/*r*/[require/*t*/]) return requireLazy/*r*/[require/*t*/];
-                    if (!b && requireLazy/*r*/.propertyIsEnumerable && requireLazy/*r*/.propertyIsEnumerable[require/*t*/]) return requireLazy/*r*/.propertyIsEnumerable[require/*t*/];
-                    if (!b && isNode/*a*/(requireLazy/*r*/) && f(requireLazy/*r*/)) return f(requireLazy/*r*/);
-                    if (!b && requireLazy/*r*/[require/*t*/]) return requireLazy/*r*/[require/*t*/];
-                    if (h(requireLazy/*r*/)) {
-                        if (requireDynamic/*n*/ += 1, b) Object.defineProperty(requireLazy/*r*/, require/*t*/, {
+                var e = Object.prototype.propertyIsEnumerable,
+                    t = guid/*o*/(),
+                    n = 0;
+                return function(r) {
+                    if (r[t]) return r[t];
+                    if (!b && r.propertyIsEnumerable && r.propertyIsEnumerable[t]) return r.propertyIsEnumerable[t];
+                    if (!b && isNode/*a*/(r) && f(r)) return f(r);
+                    if (!b && r[t]) return r[t];
+                    if (h(r)) {
+                        if (n += 1, b) Object.defineProperty(r, t, {
                             enumerable: !1,
                             writable: !1,
                             configurable: !1,
-                            value: requireDynamic/*n*/
+                            value: n
                         });
-                        else if (requireLazy/*r*/.propertyIsEnumerable) requireLazy/*r*/.propertyIsEnumerable = function() {
-                            return global/*e*/.apply(this, arguments)
-                        }, requireLazy/*r*/.propertyIsEnumerable[require/*t*/] = requireDynamic/*n*/;
+                        else if (r.propertyIsEnumerable) r.propertyIsEnumerable = function() {
+                            return e.apply(this, arguments)
+                        }, r.propertyIsEnumerable[t] = n;
                         else {
-                            if (!isNode/*a*/(requireLazy/*r*/)) throw new Error("Unable to set isNode/*a*/ non-enumerable property on object.");
-                            requireLazy/*r*/[require/*t*/] = requireDynamic/*n*/
+                            if (!isNode/*a*/(r)) throw new Error("Unable to set isNode/*a*/ non-enumerable property on object.");
+                            r[t] = n
                         }
-                        return requireDynamic/*n*/
+                        return n
                     }
                     throw new Error("Non-extensible objects are not allowed as keys.")
                 }
             }();
-        return requireDynamic/*n*/
+        return n
     }(Function("return this")())
 });

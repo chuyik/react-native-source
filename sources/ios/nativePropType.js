@@ -1,8 +1,8 @@
-__d("nativePropType",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("nativePropType",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return global/*e*/.isNative = !0, global/*e*/
+    function o(e) {
+        return e.isNative = !0, e
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,18 +1,18 @@
-__d("ReactDefaultPerf",["DOMProperty","ReactDefaultPerfAnalysis","ReactMount","ReactPerf","performanceNow"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactDefaultPerf",["DOMProperty","ReactDefaultPerfAnalysis","ReactMount","ReactPerf","performanceNow"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return Math.floor(100 * global/*e*/) / 100
+    function o(e) {
+        return Math.floor(100 * e) / 100
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        global/*e*/[require/*t*/] = (global/*e*/[require/*t*/] || 0) + requireDynamic/*n*/
+    function a(e, t, n) {
+        e[t] = (e[t] || 0) + n
     }
-    var DOMProperty/*s*/ = require/*t*/("DOMProperty"),
-        ReactDefaultPerfAnalysis/*l*/ = require/*t*/("ReactDefaultPerfAnalysis"),
-        ReactMount/*u*/ = require/*t*/("ReactMount"),
-        ReactPerf/*c*/ = require/*t*/("ReactPerf"),
-        performanceNow/*p*/ = require/*t*/("performanceNow"),
+    var DOMProperty/*s*/ = t("DOMProperty"),
+        ReactDefaultPerfAnalysis/*l*/ = t("ReactDefaultPerfAnalysis"),
+        ReactMount/*u*/ = t("ReactMount"),
+        ReactPerf/*c*/ = t("ReactPerf"),
+        performanceNow/*p*/ = t("performanceNow"),
         d = {
             _allMeasurements: [],
             _mountStack: [0],
@@ -26,66 +26,66 @@ __d("ReactDefaultPerf",["DOMProperty","ReactDefaultPerfAnalysis","ReactMount","R
             getLastMeasurements: function() {
                 return d._allMeasurements
             },
-            printExclusive: function(global/*e*/) {
-                global/*e*/ = global/*e*/ || d._allMeasurements;
-                var require/*t*/ = ReactDefaultPerfAnalysis/*l*/.getExclusiveSummary(global/*e*/);
-                console.table(require/*t*/.map(function(global/*e*/) {
+            printExclusive: function(e) {
+                e = e || d._allMeasurements;
+                var t = ReactDefaultPerfAnalysis/*l*/.getExclusiveSummary(e);
+                console.table(t.map(function(e) {
                     return {
-                        "Component class name": global/*e*/.componentName,
-                        "Total inclusive time (ms)": o(global/*e*/.inclusive),
-                        "Exclusive mount time (ms)": o(global/*e*/.exclusive),
-                        "Exclusive render time (ms)": o(global/*e*/.render),
-                        "Mount time per instance (ms)": o(global/*e*/.exclusive / global/*e*/.count),
-                        "Render time per instance (ms)": o(global/*e*/.render / global/*e*/.count),
-                        Instances: global/*e*/.count
+                        "Component class name": e.componentName,
+                        "Total inclusive time (ms)": o(e.inclusive),
+                        "Exclusive mount time (ms)": o(e.exclusive),
+                        "Exclusive render time (ms)": o(e.render),
+                        "Mount time per instance (ms)": o(e.exclusive / e.count),
+                        "Render time per instance (ms)": o(e.render / e.count),
+                        Instances: e.count
                     }
                 }))
             },
-            printInclusive: function(global/*e*/) {
-                global/*e*/ = global/*e*/ || d._allMeasurements;
-                var require/*t*/ = ReactDefaultPerfAnalysis/*l*/.getInclusiveSummary(global/*e*/);
-                console.table(require/*t*/.map(function(global/*e*/) {
+            printInclusive: function(e) {
+                e = e || d._allMeasurements;
+                var t = ReactDefaultPerfAnalysis/*l*/.getInclusiveSummary(e);
+                console.table(t.map(function(e) {
                     return {
-                        "Owner > component": global/*e*/.componentName,
-                        "Inclusive time (ms)": o(global/*e*/.time),
-                        Instances: global/*e*/.count
+                        "Owner > component": e.componentName,
+                        "Inclusive time (ms)": o(e.time),
+                        Instances: e.count
                     }
-                })), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(global/*e*/).toFixed(2) + " ms")
+                })), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(e).toFixed(2) + " ms")
             },
-            getMeasurementsSummaryMap: function(global/*e*/) {
-                var require/*t*/ = ReactDefaultPerfAnalysis/*l*/.getInclusiveSummary(global/*e*/, !0);
-                return require/*t*/.map(function(global/*e*/) {
+            getMeasurementsSummaryMap: function(e) {
+                var t = ReactDefaultPerfAnalysis/*l*/.getInclusiveSummary(e, !0);
+                return t.map(function(e) {
                     return {
-                        "Owner > component": global/*e*/.componentName,
-                        "Wasted time (ms)": global/*e*/.time,
-                        Instances: global/*e*/.count
+                        "Owner > component": e.componentName,
+                        "Wasted time (ms)": e.time,
+                        Instances: e.count
                     }
                 })
             },
-            printWasted: function(global/*e*/) {
-                global/*e*/ = global/*e*/ || d._allMeasurements, console.table(d.getMeasurementsSummaryMap(global/*e*/)), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(global/*e*/).toFixed(2) + " ms")
+            printWasted: function(e) {
+                e = e || d._allMeasurements, console.table(d.getMeasurementsSummaryMap(e)), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(e).toFixed(2) + " ms")
             },
-            printDOM: function(global/*e*/) {
-                global/*e*/ = global/*e*/ || d._allMeasurements;
-                var require/*t*/ = ReactDefaultPerfAnalysis/*l*/.getDOMSummary(global/*e*/);
-                console.table(require/*t*/.map(function(global/*e*/) {
-                    var require/*t*/ = {};
-                    return require/*t*/[DOMProperty/*s*/.ID_ATTRIBUTE_NAME] = global/*e*/.id, require/*t*/.type = global/*e*/.type, require/*t*/.args = JSON.stringify(global/*e*/.args), require/*t*/
-                })), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(global/*e*/).toFixed(2) + " ms")
+            printDOM: function(e) {
+                e = e || d._allMeasurements;
+                var t = ReactDefaultPerfAnalysis/*l*/.getDOMSummary(e);
+                console.table(t.map(function(e) {
+                    var t = {};
+                    return t[DOMProperty/*s*/.ID_ATTRIBUTE_NAME] = e.id, t.type = e.type, t.args = JSON.stringify(e.args), t
+                })), console.log("Total time:", ReactDefaultPerfAnalysis/*l*/.getTotalTime(e).toFixed(2) + " ms")
             },
-            _recordWrite: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                var module/*i*/ = d._allMeasurements[d._allMeasurements.length - 1].writes;
-                module/*i*/[global/*e*/] = module/*i*/[global/*e*/] || [], module/*i*/[global/*e*/].push({
-                    type: require/*t*/,
-                    time: requireDynamic/*n*/,
-                    args: requireLazy/*r*/
+            _recordWrite: function(e, t, n, r) {
+                var i = d._allMeasurements[d._allMeasurements.length - 1].writes;
+                i[e] = i[e] || [], i[e].push({
+                    type: t,
+                    time: n,
+                    args: r
                 })
             },
-            measure: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+            measure: function(e, t, n) {
                 return function() {
-                    for (var requireLazy/*r*/ = [], module/*i*/ = 0, o = arguments.length; o > module/*i*/; module/*i*/++) requireLazy/*r*/.push(arguments[module/*i*/]);
+                    for (var r = [], i = 0, o = arguments.length; o > i; i++) r.push(arguments[i]);
                     var DOMProperty/*s*/, ReactDefaultPerfAnalysis/*l*/, ReactPerf/*c*/;
-                    if ("_renderNewRootComponent" === require/*t*/ || "flushBatchedUpdates" === require/*t*/) return d._allMeasurements.push({
+                    if ("_renderNewRootComponent" === t || "flushBatchedUpdates" === t) return d._allMeasurements.push({
                         exclusive: {},
                         inclusive: {},
                         render: {},
@@ -93,24 +93,24 @@ __d("ReactDefaultPerf",["DOMProperty","ReactDefaultPerfAnalysis","ReactMount","R
                         writes: {},
                         displayNames: {},
                         totalTime: 0
-                    }), ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = requireDynamic/*n*/.apply(this, requireLazy/*r*/), d._allMeasurements[d._allMeasurements.length - 1].totalTime = performanceNow/*p*/() - ReactPerf/*c*/, ReactDefaultPerfAnalysis/*l*/;
-                    if ("ReactDOMIDOperations" === global/*e*/ || "ReactComponentBrowserEnvironment" === global/*e*/) {
-                        if (ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = requireDynamic/*n*/.apply(this, requireLazy/*r*/), DOMProperty/*s*/ = performanceNow/*p*/() - ReactPerf/*c*/, "mountImageIntoNode" === require/*t*/) {
-                            var h = ReactMount/*u*/.getID(requireLazy/*r*/[1]);
-                            d._recordWrite(h, require/*t*/, DOMProperty/*s*/, requireLazy/*r*/[0])
-                        } else "dangerouslyProcessChildrenUpdates" === require/*t*/ ? requireLazy/*r*/[0].forEach(function(global/*e*/) {
-                            var require/*t*/ = {};
-                            null !== global/*e*/.fromIndex && (require/*t*/.fromIndex = global/*e*/.fromIndex), null !== global/*e*/.toIndex && (require/*t*/.toIndex = global/*e*/.toIndex), null !== global/*e*/.textContent && (require/*t*/.textContent = global/*e*/.textContent), null !== global/*e*/.markupIndex && (require/*t*/.markup = requireLazy/*r*/[1][global/*e*/.markupIndex]), d._recordWrite(global/*e*/.parentID, global/*e*/.type, DOMProperty/*s*/, require/*t*/)
-                        }) : d._recordWrite(requireLazy/*r*/[0], require/*t*/, DOMProperty/*s*/, Array.prototype.slice.call(requireLazy/*r*/, 1));
+                    }), ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = n.apply(this, r), d._allMeasurements[d._allMeasurements.length - 1].totalTime = performanceNow/*p*/() - ReactPerf/*c*/, ReactDefaultPerfAnalysis/*l*/;
+                    if ("ReactDOMIDOperations" === e || "ReactComponentBrowserEnvironment" === e) {
+                        if (ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = n.apply(this, r), DOMProperty/*s*/ = performanceNow/*p*/() - ReactPerf/*c*/, "mountImageIntoNode" === t) {
+                            var h = ReactMount/*u*/.getID(r[1]);
+                            d._recordWrite(h, t, DOMProperty/*s*/, r[0])
+                        } else "dangerouslyProcessChildrenUpdates" === t ? r[0].forEach(function(e) {
+                            var t = {};
+                            null !== e.fromIndex && (t.fromIndex = e.fromIndex), null !== e.toIndex && (t.toIndex = e.toIndex), null !== e.textContent && (t.textContent = e.textContent), null !== e.markupIndex && (t.markup = r[1][e.markupIndex]), d._recordWrite(e.parentID, e.type, DOMProperty/*s*/, t)
+                        }) : d._recordWrite(r[0], t, DOMProperty/*s*/, Array.prototype.slice.call(r, 1));
                         return ReactDefaultPerfAnalysis/*l*/
                     }
-                    if ("ReactCompositeComponent" !== global/*e*/ || "mountComponent" !== require/*t*/ && "updateComponent" !== require/*t*/ && "_renderValidatedComponent" !== require/*t*/) return requireDynamic/*n*/.apply(this, requireLazy/*r*/);
-                    var f = "mountComponent" === require/*t*/ ? requireLazy/*r*/[0] : this._rootNodeID,
-                        m = "_renderValidatedComponent" === require/*t*/,
-                        g = "mountComponent" === require/*t*/,
+                    if ("ReactCompositeComponent" !== e || "mountComponent" !== t && "updateComponent" !== t && "_renderValidatedComponent" !== t) return n.apply(this, r);
+                    var f = "mountComponent" === t ? r[0] : this._rootNodeID,
+                        m = "_renderValidatedComponent" === t,
+                        g = "mountComponent" === t,
                         _ = d._mountStack,
                         y = d._allMeasurements[d._allMeasurements.length - 1];
-                    if (m ? a(y.counts, f, 1) : g && _.push(0), ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = requireDynamic/*n*/.apply(this, requireLazy/*r*/), DOMProperty/*s*/ = performanceNow/*p*/() - ReactPerf/*c*/, m) a(y.render, f, DOMProperty/*s*/);
+                    if (m ? a(y.counts, f, 1) : g && _.push(0), ReactPerf/*c*/ = performanceNow/*p*/(), ReactDefaultPerfAnalysis/*l*/ = n.apply(this, r), DOMProperty/*s*/ = performanceNow/*p*/() - ReactPerf/*c*/, m) a(y.render, f, DOMProperty/*s*/);
                     else if (g) {
                         var v = _.pop();
                         _[_.length - 1] += DOMProperty/*s*/, a(y.exclusive, f, DOMProperty/*s*/ - v), a(y.inclusive, f, DOMProperty/*s*/)
@@ -122,5 +122,5 @@ __d("ReactDefaultPerf",["DOMProperty","ReactDefaultPerfAnalysis","ReactMount","R
                 }
             }
         };
-    module/*i*/.exports = d
+    i.exports = d
 });

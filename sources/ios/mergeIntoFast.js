@@ -1,7 +1,7 @@
-__d("mergeIntoFast",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("mergeIntoFast",[],function (e, t, n, r, i) {
     "use strict";
-    var o = function(global/*e*/, require/*t*/) {
-        for (var requireDynamic/*n*/ in require/*t*/) global/*e*/[requireDynamic/*n*/] = require/*t*/[requireDynamic/*n*/]
+    var o = function(e, t) {
+        for (var n in t) e[n] = t[n]
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

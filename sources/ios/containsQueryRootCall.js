@@ -1,18 +1,18 @@
-__d("containsQueryRootCall",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("containsQueryRootCall",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        if (global/*e*/.getName() !== require/*t*/.getName() && !a(global/*e*/, require/*t*/)) return !1;
-        var requireDynamic/*n*/ = global/*e*/.getArgs();
-        return require/*t*/.getArgs().every(function(global/*e*/) {
-            for (var require/*t*/ = 0; require/*t*/ < requireDynamic/*n*/.length; require/*t*/++)
-                if (global/*e*/.equals(requireDynamic/*n*/[require/*t*/])) return !0;
+    function o(e, t) {
+        if (e.getName() !== t.getName() && !a(e, t)) return !1;
+        var n = e.getArgs();
+        return t.getArgs().every(function(e) {
+            for (var t = 0; t < n.length; t++)
+                if (e.equals(n[t])) return !0;
             return !1
         })
     }
 
-    function a(global/*e*/, require/*t*/) {
-        return "nodes" === global/*e*/.getName() && "node" === require/*t*/.getName()
+    function a(e, t) {
+        return "nodes" === e.getName() && "node" === t.getName()
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

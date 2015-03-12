@@ -1,4 +1,4 @@
-__d("Style",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Style",[],function (e, t, n, r, i) {
     "use strict";
-    module/*i*/.exports = {}
+    i.exports = {}
 });

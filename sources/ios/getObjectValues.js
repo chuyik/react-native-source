@@ -1,8 +1,8 @@
-__d("getObjectValues",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        var require/*t*/ = [];
-        for (var requireDynamic/*n*/ in global/*e*/) require/*t*/.push(global/*e*/[requireDynamic/*n*/]);
-        return require/*t*/
+__d("getObjectValues",[],function (e, t, n, r, i) {
+    function o(e) {
+        var t = [];
+        for (var n in e) t.push(e[n]);
+        return t
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

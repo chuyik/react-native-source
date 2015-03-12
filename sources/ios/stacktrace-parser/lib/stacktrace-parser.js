@@ -1,33 +1,33 @@
-__d("stacktrace-parser/lib/stacktrace-parser",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("stacktrace-parser/lib/stacktrace-parser",[],function (e, t, n, r, i) {
     var o = "<unknown>",
         a = {
-            parse: function(global/*e*/) {
-                for (var require/*t*/, requireDynamic/*n*/, requireLazy/*r*/ = /^\s*at (?:(?:(?:Anonymous function)?|((?:\[object object\])?\S+(?: \[as \S+\])?)) )?\(?((?:file|http|https):.*?):(\d+)(?::(\d+))?\)?\s*$/module/*i*/, module/*i*/ = /^(?:\s*(\S*)(?:\((.*?)\))?@)?((?:file|http|https).*?):(\d+)(?::(\d+))?\s*$/module/*i*/, a = /^\s*at (?:((?:\[object object\])?\S+(?: \[as \S+\])?) )?\(?(.*?):(\d+)(?::(\d+))?\)?\s*$/module/*i*/, s = global/*e*/.split("\requireDynamic/*n*/"), l = [], u = 0, c = s.length; c > u; ++u) {
-                    if (require/*t*/ = module/*i*/.exec(s[u])) requireDynamic/*n*/ = {
-                        file: require/*t*/[3],
-                        methodName: require/*t*/[1] || o,
-                        lineNumber: +require/*t*/[4],
-                        column: require/*t*/[5] ? +require/*t*/[5] : null
+            parse: function(e) {
+                for (var t, n, r = /^\s*at (?:(?:(?:Anonymous function)?|((?:\[object object\])?\S+(?: \[as \S+\])?)) )?\(?((?:file|http|https):.*?):(\d+)(?::(\d+))?\)?\s*$/i, i = /^(?:\s*(\S*)(?:\((.*?)\))?@)?((?:file|http|https).*?):(\d+)(?::(\d+))?\s*$/i, a = /^\s*at (?:((?:\[object object\])?\S+(?: \[as \S+\])?) )?\(?(.*?):(\d+)(?::(\d+))?\)?\s*$/i, s = e.split("\n"), l = [], u = 0, c = s.length; c > u; ++u) {
+                    if (t = i.exec(s[u])) n = {
+                        file: t[3],
+                        methodName: t[1] || o,
+                        lineNumber: +t[4],
+                        column: t[5] ? +t[5] : null
                     };
-                    else if (require/*t*/ = requireLazy/*r*/.exec(s[u])) requireDynamic/*n*/ = {
-                        file: require/*t*/[2],
-                        methodName: require/*t*/[1] || o,
-                        lineNumber: +require/*t*/[3],
-                        column: require/*t*/[4] ? +require/*t*/[4] : null
+                    else if (t = r.exec(s[u])) n = {
+                        file: t[2],
+                        methodName: t[1] || o,
+                        lineNumber: +t[3],
+                        column: t[4] ? +t[4] : null
                     };
                     else {
-                        if (!(require/*t*/ = a.exec(s[u]))) continue;
-                        requireDynamic/*n*/ = {
-                            file: require/*t*/[2],
-                            methodName: require/*t*/[1] || o,
-                            lineNumber: +require/*t*/[3],
-                            column: require/*t*/[4] ? +require/*t*/[4] : null
+                        if (!(t = a.exec(s[u]))) continue;
+                        n = {
+                            file: t[2],
+                            methodName: t[1] || o,
+                            lineNumber: +t[3],
+                            column: t[4] ? +t[4] : null
                         }
                     }
-                    l.push(requireDynamic/*n*/)
+                    l.push(n)
                 }
                 return l
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

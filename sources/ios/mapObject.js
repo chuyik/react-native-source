@@ -1,12 +1,12 @@
-__d("mapObject",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("mapObject",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (!global/*e*/) return null;
-        var requireLazy/*r*/ = {};
-        for (var module/*i*/ in global/*e*/) a.call(global/*e*/, module/*i*/) && (requireLazy/*r*/[module/*i*/] = require/*t*/.call(requireDynamic/*n*/, global/*e*/[module/*i*/], module/*i*/, global/*e*/));
-        return requireLazy/*r*/
+    function o(e, t, n) {
+        if (!e) return null;
+        var r = {};
+        for (var i in e) a.call(e, i) && (r[i] = t.call(n, e[i], i, e));
+        return r
     }
     var a = Object.prototype.hasOwnProperty;
-    module/*i*/.exports = o
+    i.exports = o
 });

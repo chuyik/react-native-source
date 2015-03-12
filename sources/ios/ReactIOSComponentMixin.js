@@ -1,6 +1,6 @@
-__d("ReactIOSComponentMixin",["ReactIOSTagHandles"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactIOSComponentMixin",["ReactIOSTagHandles"],function (e, t, n, r, i) {
     "use strict";
-    var ReactIOSTagHandles/*o*/ = require/*t*/("ReactIOSTagHandles"),
+    var ReactIOSTagHandles/*o*/ = t("ReactIOSTagHandles"),
         a = {
             getNativeNode: function() {
                 return ReactIOSTagHandles/*o*/.rootNodeIDToTag[this._rootNodeID]
@@ -9,5 +9,5 @@ __d("ReactIOSComponentMixin",["ReactIOSTagHandles"],function (global/*e*/, requi
                 return ReactIOSTagHandles/*o*/.rootNodeIDToTag[this._rootNodeID]
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

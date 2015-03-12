@@ -1,9 +1,9 @@
-__d("DocumentMentionsRegex",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DocumentMentionsRegex",[],function (e, t, n, r, i) {
     var o = "\\.,\\+\\*\\?\\$\\@\\|#{}\\(\\)\\^\\-\\[\\]\\\\/!%&'\"~=<>_:;",
         a = "\\b[A-Z][^\\s" + o + "]",
         s = {
             PUNCTUATION: o,
             NAME: a
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

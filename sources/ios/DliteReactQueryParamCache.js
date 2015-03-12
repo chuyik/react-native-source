@@ -1,28 +1,28 @@
-__d("DliteReactQueryParamCache",["createComponentCacheKey","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteReactQueryParamCache",["createComponentCacheKey","emptyFunction"],function (e, t, n, r, i) {
     "use strict";
-    var createComponentCacheKey/*o*/ = require/*t*/("createComponentCacheKey"),
-        emptyFunction/*a*/ = require/*t*/("emptyFunction"),
+    var createComponentCacheKey/*o*/ = t("createComponentCacheKey"),
+        emptyFunction/*a*/ = t("emptyFunction"),
         s = emptyFunction/*a*/,
         l = {
-            injectStorageStrategy: function(global/*e*/) {
-                s = global/*e*/
+            injectStorageStrategy: function(e) {
+                s = e
             },
-            set: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = s();
-                if (requireDynamic/*n*/) {
-                    var requireLazy/*r*/ = createComponentCacheKey/*o*/(global/*e*/);
-                    requireDynamic/*n*/.addQueryParams(require/*t*/, requireLazy/*r*/)
+            set: function(e, t) {
+                var n = s();
+                if (n) {
+                    var r = createComponentCacheKey/*o*/(e);
+                    n.addQueryParams(t, r)
                 }
             },
-            get: function(global/*e*/) {
-                var require/*t*/ = s(),
-                    requireDynamic/*n*/ = null;
-                if (require/*t*/ && require/*t*/.hasQueryParams()) {
-                    var requireLazy/*r*/ = createComponentCacheKey/*o*/(global/*e*/);
-                    requireDynamic/*n*/ = require/*t*/.copyQueryParams(requireLazy/*r*/)
+            get: function(e) {
+                var t = s(),
+                    n = null;
+                if (t && t.hasQueryParams()) {
+                    var r = createComponentCacheKey/*o*/(e);
+                    n = t.copyQueryParams(r)
                 }
-                return requireDynamic/*n*/
+                return n
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

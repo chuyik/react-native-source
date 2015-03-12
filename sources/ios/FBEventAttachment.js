@@ -1,19 +1,19 @@
-__d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (e, t, n, r, i) {
     "use strict";
-    var FIGColors/*o*/ = require/*t*/("FIGColors"),
-        Image/*a*/ = require/*t*/("Image"),
-        iso8601/*s*/ = require/*t*/("iso8601"),
-        PixelRatio/*l*/ = require/*t*/("PixelRatio"),
-        React/*u*/ = require/*t*/("React"),
-        ReactGraphQL/*c*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*p*/ = require/*t*/("Dimensions"),
-        RouteHandler/*d*/ = require/*t*/("RouteHandler"),
-        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
-        Text/*f*/ = require/*t*/("Text"),
-        TouchableHighlight/*m*/ = require/*t*/("TouchableHighlight"),
-        View/*g*/ = require/*t*/("View"),
-        fbt/*_*/ = require/*t*/("fbt"),
-        truncate/*y*/ = require/*t*/("truncate"),
+    var FIGColors/*o*/ = t("FIGColors"),
+        Image/*a*/ = t("Image"),
+        iso8601/*s*/ = t("iso8601"),
+        PixelRatio/*l*/ = t("PixelRatio"),
+        React/*u*/ = t("React"),
+        ReactGraphQL/*c*/ = t("ReactGraphQL"),
+        Dimensions/*p*/ = t("Dimensions"),
+        RouteHandler/*d*/ = t("RouteHandler"),
+        StyleSheet/*h*/ = t("StyleSheet"),
+        Text/*f*/ = t("Text"),
+        TouchableHighlight/*m*/ = t("TouchableHighlight"),
+        View/*g*/ = t("View"),
+        fbt/*_*/ = t("fbt"),
+        truncate/*y*/ = t("truncate"),
         v = Dimensions/*p*/.get("window"),
         S = 1,
         b = v.width,
@@ -30,27 +30,27 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
             mixins: [ReactGraphQL/*c*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/) {
-                            var requireLazy/*r*/ = require/*t*/.__GraphQL;
-                            return new requireLazy/*r*/.QueryFragment("FBEventAttachment_attachment", "StoryAttachment", [new requireLazy/*r*/.Field("target", [new requireLazy/*r*/.Field("__type__", [new requireLazy/*r*/.Field("name"), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                    attachment: function(e, t) {
+                        return function(e, n) {
+                            var r = t.__GraphQL;
+                            return new r.QueryFragment("FBEventAttachment_attachment", "StoryAttachment", [new r.Field("target", [new r.Field("__type__", [new r.Field("name"), new r.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                            }), new r.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new requireLazy/*r*/.Field("url", null, null, [new requireLazy/*r*/.Callv("site", ["mobile"])]), new requireLazy/*r*/.Field("time_range", [new requireLazy/*r*/.Field("start")]), new requireLazy/*r*/.Field("event_place", [new requireLazy/*r*/.Field("name"), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                            }), new r.Field("url", null, null, [new r.Callv("site", ["mobile"])]), new r.Field("time_range", [new r.Field("start")]), new r.Field("event_place", [new r.Field("name"), new r.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new requireLazy/*r*/.Field("event_members", [new requireLazy/*r*/.Field("count")], null, null, null, null, {
+                            }), new r.Field("event_members", [new r.Field("count")], null, null, null, null, {
                                 connection: !0,
                                 nonFindable: !0
-                            }), new requireLazy/*r*/.Field("cover_photo", [new requireLazy/*r*/.Field("photo", [new requireLazy/*r*/.Field("image", [new requireLazy/*r*/.Field("uri"), new requireLazy/*r*/.Field("height"), new requireLazy/*r*/.Field("width")], null, [new requireLazy/*r*/.Callv("size", [require/*t*/.__var(global/*e*/), require/*t*/.__var(requireDynamic/*n*/)]), new requireLazy/*r*/.Callv("sizing", ["cover-fill"])], "event_cover"), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                            }), new r.Field("cover_photo", [new r.Field("photo", [new r.Field("image", [new r.Field("uri"), new r.Field("height"), new r.Field("width")], null, [new r.Callv("size", [t.__var(e), t.__var(n)]), new r.Callv("sizing", ["cover-fill"])], "event_cover"), new r.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -59,7 +59,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                             })])], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new requireLazy/*r*/.Field("title")], null, {
+                            }), new r.Field("title")], null, {
                                 scope: "FBEventAttachment_attachment"
                             })
                         }(C, E)
@@ -67,32 +67,32 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                 }
             },
             getStartDate: function() {
-                var global/*e*/ = this.props.attachment.target.time_range.start,
-                    require/*t*/ = iso8601/*s*/.toDate(global/*e*/);
-                return iso8601/*s*/.isAllDay(global/*e*/) && require/*t*/.setTime(require/*t*/.getTime() + 60 * require/*t*/.getTimezoneOffset() * 1e3), require/*t*/
+                var e = this.props.attachment.target.time_range.start,
+                    t = iso8601/*s*/.toDate(e);
+                return iso8601/*s*/.isAllDay(e) && t.setTime(t.getTime() + 60 * t.getTimezoneOffset() * 1e3), t
             },
             getBigDate: function() {
-                var global/*e*/ = this.getStartDate(),
-                    require/*t*/ = global/*e*/.toUTCString().split(" ")[2].toUpperCase();
+                var e = this.getStartDate(),
+                    t = e.toUTCString().split(" ")[2].toUpperCase();
                 return React/*u*/.createElement(View/*g*/, {
                     style: T.bigDate
                 }, React/*u*/.createElement(Text/*f*/, {
                     style: T.bigDateMonth
-                }, require/*t*/), React/*u*/.createElement(Text/*f*/, {
+                }, t), React/*u*/.createElement(Text/*f*/, {
                     style: T.bigDateDay
-                }, global/*e*/.getDate()))
+                }, e.getDate()))
             },
             getSubtitle: function() {
-                var global/*e*/ = this.props.attachment.target,
-                    require/*t*/ = null;
-                if (global/*e*/.event_place) {
-                    var requireDynamic/*n*/ = truncate/*y*/(global/*e*/.event_place.name, 50);
-                    require/*t*/ = React/*u*/.createElement(Text/*f*/, {
+                var e = this.props.attachment.target,
+                    t = null;
+                if (e.event_place) {
+                    var n = truncate/*y*/(e.event_place.name, 50);
+                    t = React/*u*/.createElement(Text/*f*/, {
                         style: T.subtitle
-                    }, requireDynamic/*n*/)
+                    }, n)
                 }
-                var requireLazy/*r*/;
-                requireLazy/*r*/ = this.getStartDate().getTime() < Date.now() ? 1 === global/*e*/.event_members.count ? fbt/*_*/({
+                var r;
+                r = this.getStartDate().getTime() < Date.now() ? 1 === e.event_members.count ? fbt/*_*/({
                     type: "text",
                     texts: ["1 person went"],
                     desc: "Subtitle for event in the past with one person who went"
@@ -100,7 +100,7 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                     type: "text",
                     texts: ["{count} people went"],
                     desc: "Subtitle for event in the past"
-                }, [fbt/*_*/.param("count", global/*e*/.event_members.count)]) : 1 === global/*e*/.event_members.count ? fbt/*_*/({
+                }, [fbt/*_*/.param("count", e.event_members.count)]) : 1 === e.event_members.count ? fbt/*_*/({
                     type: "text",
                     texts: ["1 person is going"],
                     desc: "Subtitle for event in the future where one person is going"
@@ -108,11 +108,11 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                     type: "text",
                     texts: ["{count} people are going"],
                     desc: "Subtitle for event in the future"
-                }, [fbt/*_*/.param("count", global/*e*/.event_members.count)]);
-                var module/*i*/ = React/*u*/.createElement(Text/*f*/, {
+                }, [fbt/*_*/.param("count", e.event_members.count)]);
+                var i = React/*u*/.createElement(Text/*f*/, {
                     style: T.subtitle
-                }, requireLazy/*r*/);
-                return [require/*t*/, module/*i*/]
+                }, r);
+                return [t, i]
             },
             getSummary: function() {
                 return React/*u*/.createElement(View/*g*/, {
@@ -121,31 +121,31 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                     style: T.title
                 }, this.props.attachment.title), this.getSubtitle())
             },
-            getCoverPhoto: function(global/*e*/) {
-                return global/*e*/.cover_photo ? [React/*u*/.createElement(Image/*a*/, {
+            getCoverPhoto: function(e) {
+                return e.cover_photo ? [React/*u*/.createElement(Image/*a*/, {
                     style: T.image,
-                    source: global/*e*/.cover_photo.photo.event_cover
+                    source: e.cover_photo.photo.event_cover
                 }), React/*u*/.createElement(View/*g*/, {
                     style: T.separator
                 })] : null
             },
             render: function() {
-                var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ ? React/*u*/.createElement(View/*g*/, {
+                var e = this.props.attachment.target;
+                return e ? React/*u*/.createElement(View/*g*/, {
                     style: T.container
                 }, React/*u*/.createElement(TouchableHighlight/*m*/, {
                     onPress: RouteHandler/*d*/.getCallback({
-                        typeList: [global/*e*/.__type__.name, "URL"],
+                        typeList: [e.__type__.name, "URL"],
                         params: {
-                            id: global/*e*/.id,
-                            url: global/*e*/.url,
+                            id: e.id,
+                            url: e.url,
                             navigator: this.props.navigator
                         }
                     }),
                     style: T.wrapper
                 }, React/*u*/.createElement(View/*g*/, {
                     style: T.border
-                }, this.getCoverPhoto(global/*e*/), React/*u*/.createElement(View/*g*/, {
+                }, this.getCoverPhoto(e), React/*u*/.createElement(View/*g*/, {
                     style: T.row
                 }, this.getBigDate(), this.getSummary())))) : (console.error("Tried to render an FBEventAttachment without Image/*a*/ target!"), React/*u*/.createElement(View/*g*/, null))
             }
@@ -214,5 +214,5 @@ __d("FBEventAttachment",["FIGColors","Image","iso8601","PixelRatio","React","Rea
                 color: FIGColors/*o*/.mediumText
             }
         });
-    module/*i*/.exports = D
+    i.exports = D
 });

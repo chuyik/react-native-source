@@ -1,6 +1,6 @@
-__d("LegacyStoryPermalinkRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("LegacyStoryPermalinkRoute",["DliteRoute"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
         a = DliteRoute/*o*/.create({
             name: "LegacyStoryPermalinkRoute",
             path: "/{story}",
@@ -11,22 +11,22 @@ __d("LegacyStoryPermalinkRoute",["DliteRoute"],function (global/*e*/, require/*t
                 }
             },
             queries: {
-                viewer: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    return function(global/*e*/) {
-                        var require/*t*/ = requireDynamic/*n*/.__GraphQL;
-                        return new require/*t*/.Query("viewer", null, null, [requireDynamic/*n*/.__frag(global/*e*/)], null, "LegacyStoryPermalinkRoute_viewer")
-                    }(require/*t*/)
+                viewer: function(e, t, n) {
+                    return function(e) {
+                        var t = n.__GraphQL;
+                        return new t.Query("viewer", null, null, [n.__frag(e)], null, "LegacyStoryPermalinkRoute_viewer")
+                    }(t)
                 },
-                story: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    return function(global/*e*/, require/*t*/) {
-                        var requireLazy/*r*/ = requireDynamic/*n*/.__GraphQL;
-                        return new requireLazy/*r*/.Query("story", [requireDynamic/*n*/.__var(global/*e*/)], [new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                story: function(e, t, n) {
+                    return function(e, t) {
+                        var r = n.__GraphQL;
+                        return new r.Query("story", [n.__var(e)], [new r.Field("id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [requireDynamic/*n*/.__frag(require/*t*/)], null, "LegacyStoryPermalinkRoute_story")
-                    }(global/*e*/, require/*t*/)
+                        })], [n.__frag(t)], null, "LegacyStoryPermalinkRoute_story")
+                    }(e, t)
                 }
             }
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

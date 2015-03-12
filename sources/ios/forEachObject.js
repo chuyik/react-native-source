@@ -1,9 +1,9 @@
-__d("forEachObject",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("forEachObject",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        for (var requireLazy/*r*/ in global/*e*/) a.call(global/*e*/, requireLazy/*r*/) && require/*t*/.call(requireDynamic/*n*/, global/*e*/[requireLazy/*r*/], requireLazy/*r*/, global/*e*/)
+    function o(e, t, n) {
+        for (var r in e) a.call(e, r) && t.call(n, e[r], r, e)
     }
     var a = Object.prototype.hasOwnProperty;
-    module/*i*/.exports = o
+    i.exports = o
 });

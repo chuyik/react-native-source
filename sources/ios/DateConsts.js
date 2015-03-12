@@ -1,5 +1,5 @@
-__d("DateConsts",["fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var fbt/*o*/ = require/*t*/("fbt"),
+__d("DateConsts",["fbt"],function (e, t, n, r, i) {
+    var fbt/*o*/ = t("fbt"),
         a = [fbt/*o*/({
             type: "text",
             texts: ["Sun"],
@@ -282,24 +282,24 @@ __d("DateConsts",["fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*
             desc: "Suffix for day number 31 in month (31st)"
         })],
         p = {
-            getWeekdayName: function(global/*e*/) {
-                return s[global/*e*/]
+            getWeekdayName: function(e) {
+                return s[e]
             },
-            getWeekdayNameShort: function(global/*e*/) {
-                return a[global/*e*/]
+            getWeekdayNameShort: function(e) {
+                return a[e]
             },
-            getMonthName: function(global/*e*/) {
-                return u[global/*e*/ - 1]
+            getMonthName: function(e) {
+                return u[e - 1]
             },
-            getMonthNameShort: function(global/*e*/) {
-                return l[global/*e*/ - 1]
+            getMonthNameShort: function(e) {
+                return l[e - 1]
             },
-            getOrdinalSuffix: function(global/*e*/) {
-                return c[global/*e*/]
+            getOrdinalSuffix: function(e) {
+                return c[e]
             },
-            getDaysInMonth: function(global/*e*/, require/*t*/) {
-                return new Date(global/*e*/, require/*t*/, 0).getDate()
+            getDaysInMonth: function(e, t) {
+                return new Date(e, t, 0).getDate()
             }
         };
-    module/*i*/.exports = p
+    i.exports = p
 });

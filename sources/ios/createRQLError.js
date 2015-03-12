@@ -1,13 +1,13 @@
-__d("createRQLError",["XHRHttpError","RQLError","RQLOAuthError","RQLTransportError","ex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.errorCode === XHRHttpError/*a*/.HTTP_CLIENT_ERROR,
-            requireLazy/*r*/ = global/*e*/.errorCode === XHRHttpError/*a*/.HTTP_TRANSPORT_ERROR;
-        return require/*t*/ = require/*t*/ || ex/*c*/("HTTP error: %RQLError/*s*/ %RQLError/*s*/: %RQLError/*s*/", global/*e*/.errorType, global/*e*/.errorCode, global/*e*/.errorMsg), requireLazy/*r*/ ? new RQLTransportError/*u*/(require/*t*/) : requireDynamic/*n*/ && /OAuthException/.test(global/*e*/.errorMsg || "") ? new RQLOAuthError/*l*/(require/*t*/) : new RQLError/*s*/(require/*t*/)
+__d("createRQLError",["XHRHttpError","RQLError","RQLOAuthError","RQLTransportError","ex"],function (e, t, n, r, i) {
+    function o(e, t) {
+        var n = e.errorCode === XHRHttpError/*a*/.HTTP_CLIENT_ERROR,
+            r = e.errorCode === XHRHttpError/*a*/.HTTP_TRANSPORT_ERROR;
+        return t = t || ex/*c*/("HTTP error: %RQLError/*s*/ %RQLError/*s*/: %RQLError/*s*/", e.errorType, e.errorCode, e.errorMsg), r ? new RQLTransportError/*u*/(t) : n && /OAuthException/.test(e.errorMsg || "") ? new RQLOAuthError/*l*/(t) : new RQLError/*s*/(t)
     }
-    var XHRHttpError/*a*/ = require/*t*/("XHRHttpError"),
-        RQLError/*s*/ = require/*t*/("RQLError"),
-        RQLOAuthError/*l*/ = require/*t*/("RQLOAuthError"),
-        RQLTransportError/*u*/ = require/*t*/("RQLTransportError"),
-        ex/*c*/ = require/*t*/("ex");
-    module/*i*/.exports = o
+    var XHRHttpError/*a*/ = t("XHRHttpError"),
+        RQLError/*s*/ = t("RQLError"),
+        RQLOAuthError/*l*/ = t("RQLOAuthError"),
+        RQLTransportError/*u*/ = t("RQLTransportError"),
+        ex/*c*/ = t("ex");
+    i.exports = o
 });

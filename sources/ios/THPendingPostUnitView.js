@@ -1,16 +1,16 @@
-__d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMethodsMixin","React","ReactGraphQL","StyleSheet","THFeedButton","THStoryView","View","fbt","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMethodsMixin","React","ReactGraphQL","StyleSheet","THFeedButton","THStoryView","View","fbt","keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var FBAlertManager/*o*/ = require/*t*/("FBAlertManager"),
-        GroupPendingPostAction/*a*/ = require/*t*/("GroupPendingPostAction"),
-        NativeMethodsMixin/*s*/ = require/*t*/("NativeMethodsMixin"),
-        React/*l*/ = require/*t*/("React"),
-        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
-        THFeedButton/*p*/ = require/*t*/("THFeedButton"),
-        THStoryView/*d*/ = require/*t*/("THStoryView"),
-        View/*h*/ = require/*t*/("View"),
-        fbt/*f*/ = require/*t*/("fbt"),
-        keyMirror/*m*/ = require/*t*/("keyMirror"),
+    var FBAlertManager/*o*/ = t("FBAlertManager"),
+        GroupPendingPostAction/*a*/ = t("GroupPendingPostAction"),
+        NativeMethodsMixin/*s*/ = t("NativeMethodsMixin"),
+        React/*l*/ = t("React"),
+        ReactGraphQL/*u*/ = t("ReactGraphQL"),
+        StyleSheet/*c*/ = t("StyleSheet"),
+        THFeedButton/*p*/ = t("THFeedButton"),
+        THStoryView/*d*/ = t("THStoryView"),
+        View/*h*/ = t("View"),
+        fbt/*f*/ = t("fbt"),
+        keyMirror/*m*/ = t("keyMirror"),
         g = keyMirror/*m*/({
             undecided: null,
             accepted: null,
@@ -25,18 +25,18 @@ __d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMe
             mixins: [ReactGraphQL/*u*/.Mixin, NativeMethodsMixin/*s*/],
             statics: {
                 queries: {
-                    story: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THPendingPostUnitView_story", "Story", [new requireDynamic/*n*/.Field("id")], [require/*t*/.__frag(global/*e*/)], {
+                    story: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THPendingPostUnitView_story", "Story", [new n.Field("id")], [t.__frag(e)], {
                                 scope: "THPendingPostUnitView_story"
                             })
                         }(THStoryView/*d*/.getQuery("story"))
                     },
-                    group: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THPendingPostUnitView_group", "Group", [new requireDynamic/*n*/.Field("id")], [require/*t*/.__frag(global/*e*/)], {
+                    group: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THPendingPostUnitView_group", "Group", [new n.Field("id")], [t.__frag(e)], {
                                 scope: "THPendingPostUnitView_group"
                             })
                         }(THStoryView/*d*/.getQuery("group"))
@@ -55,18 +55,18 @@ __d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMe
             onIgnore: function() {
                 this.mutatePendingPost(g.ignored)
             },
-            mutatePendingPost: function(global/*e*/) {
+            mutatePendingPost: function(e) {
                 this.setState({
-                    acceptedState: global/*e*/
+                    acceptedState: e
                 }), this.props.updateChangedCount(1), GroupPendingPostAction/*a*/.mutatePendingPost({
                     groupID: this.props.group.id,
                     storyID: this.props.story.id,
-                    approved: global/*e*/ === g.accepted,
+                    approved: e === g.accepted,
                     onFailure: this.onGraphQLFailure
                 })
             },
-            onGraphQLFailure: function(global/*e*/) {
-                console.log("Pending post error: ", global/*e*/), this.setState({
+            onGraphQLFailure: function(e) {
+                console.log("Pending post error: ", e), this.setState({
                     acceptedState: g.undecided
                 }), this.props.updateChangedCount(-1), FBAlertManager/*o*/.alert(fbt/*f*/({
                     type: "text",
@@ -76,12 +76,12 @@ __d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMe
             },
             renderButtonRow: function() {
                 if (this.state.acceptedState !== g.undecided) return null;
-                var global/*e*/ = fbt/*f*/({
+                var e = fbt/*f*/({
                         type: "text",
                         texts: ["Approve"],
                         desc: "Button for an Admin to approve GroupPendingPostAction/*a*/ pending post in GroupPendingPostAction/*a*/ group"
                     }),
-                    require/*t*/ = fbt/*f*/({
+                    t = fbt/*f*/({
                         type: "text",
                         texts: ["Ignore"],
                         desc: "Button for an Admin to ignore GroupPendingPostAction/*a*/ pending post in GroupPendingPostAction/*a*/ group"
@@ -91,11 +91,11 @@ __d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMe
                 }, React/*l*/.createElement(THFeedButton/*p*/, {
                     onPress: this.onAccept,
                     isPositive: !0,
-                    text: global/*e*/
+                    text: e
                 }), React/*l*/.createElement(THFeedButton/*p*/, {
                     onPress: this.onIgnore,
                     isPositive: !1,
-                    text: require/*t*/
+                    text: t
                 }))
             },
             render: function() {
@@ -125,5 +125,5 @@ __d("THPendingPostUnitView",["FBAlertManager","GroupPendingPostAction","NativeMe
             }
         }),
         v = {};
-    v[g.undecided] = y.visible, v[g.accepted] = y.visible, v[g.ignored] = y.washedOut, module/*i*/.exports = _
+    v[g.undecided] = y.visible, v[g.accepted] = y.visible, v[g.ignored] = y.washedOut, i.exports = _
 });

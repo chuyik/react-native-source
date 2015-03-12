@@ -1,25 +1,25 @@
-__d("FilteredSearchSource",["AbstractSearchSource"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
+__d("FilteredSearchSource",["AbstractSearchSource"],function (e, t, n, r, i) {
+    function o(e, t) {
         "use strict";
-        this.$FilteredSearchSource_filterFunc = global/*e*/, this.$FilteredSearchSource_searchSource = require/*t*/
+        this.$FilteredSearchSource_filterFunc = e, this.$FilteredSearchSource_searchSource = t
     }
-    var AbstractSearchSource/*a*/ = require/*t*/("AbstractSearchSource");
+    var AbstractSearchSource/*a*/ = t("AbstractSearchSource");
     for (var s in AbstractSearchSource/*a*/) AbstractSearchSource/*a*/.hasOwnProperty(s) && (o[s] = AbstractSearchSource/*a*/[s]);
     var l = null === AbstractSearchSource/*a*/ ? null : AbstractSearchSource/*a*/.prototype;
-    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = AbstractSearchSource/*a*/, o.prototype.bootstrapImpl = function(global/*e*/) {
+    o.prototype = Object.create(l), o.prototype.constructor = o, o.__superConstructor__ = AbstractSearchSource/*a*/, o.prototype.bootstrapImpl = function(e) {
         "use strict";
-        this.$FilteredSearchSource_searchSource.bootstrap(global/*e*/)
-    }, o.prototype.searchImpl = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        this.$FilteredSearchSource_searchSource.bootstrap(e)
+    }, o.prototype.searchImpl = function(e, t, n) {
         "use strict";
-        var requireLazy/*r*/ = function(global/*e*/, requireDynamic/*n*/) {
-            global/*e*/ = this.$FilteredSearchSource_filterEntries(global/*e*/, requireDynamic/*n*/), require/*t*/(global/*e*/, requireDynamic/*n*/)
+        var r = function(e, n) {
+            e = this.$FilteredSearchSource_filterEntries(e, n), t(e, n)
         }.bind(this);
-        this.$FilteredSearchSource_searchSource.search(global/*e*/, requireLazy/*r*/, requireDynamic/*n*/)
-    }, o.prototype.$FilteredSearchSource_filterEntries = function(global/*e*/, require/*t*/) {
+        this.$FilteredSearchSource_searchSource.search(e, r, n)
+    }, o.prototype.$FilteredSearchSource_filterEntries = function(e, t) {
         "use strict";
-        var requireDynamic/*n*/ = this.$FilteredSearchSource_filterFunc;
-        return global/*e*/.filter(function(global/*e*/) {
-            return requireDynamic/*n*/(global/*e*/, require/*t*/)
+        var n = this.$FilteredSearchSource_filterFunc;
+        return e.filter(function(e) {
+            return n(e, t)
         })
-    }, module/*i*/.exports = o
+    }, i.exports = o
 });

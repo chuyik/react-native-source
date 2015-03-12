@@ -1,9 +1,9 @@
-__d("DocumentCharacters",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DocumentCharacters",[],function (e, t, n, r, i) {
     var o = {
-        BLOCK_DELIMITER: "\requireLazy/*r*/",
-        SOFT_NEWLINE: "\requireDynamic/*n*/",
+        BLOCK_DELIMITER: "\r",
+        SOFT_NEWLINE: "\n",
         PHOTO: "📷",
         VIDEO: "📹"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

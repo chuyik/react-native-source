@@ -1,14 +1,14 @@
-__d("ResponderSyntheticEvent",["SyntheticEvent"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ResponderSyntheticEvent",["SyntheticEvent"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        SyntheticEvent/*a*/.call(this, global/*e*/, require/*t*/, requireDynamic/*n*/)
+    function o(e, t, n) {
+        SyntheticEvent/*a*/.call(this, e, t, n)
     }
-    var SyntheticEvent/*a*/ = require/*t*/("SyntheticEvent"),
+    var SyntheticEvent/*a*/ = t("SyntheticEvent"),
         s = {
             touchHistory: function() {
                 return null
             }
         };
-    SyntheticEvent/*a*/.augmentClass(o, s), module/*i*/.exports = o
+    SyntheticEvent/*a*/.augmentClass(o, s), i.exports = o
 });

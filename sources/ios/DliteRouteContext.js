@@ -1,7 +1,7 @@
-__d("DliteRouteContext",["DliteRoute","React"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRouteContext",["DliteRoute","React"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
-        React/*a*/ = require/*t*/("React"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
+        React/*a*/ = t("React"),
         s = {
             Mixin: {
                 contextTypes: {
@@ -9,5 +9,5 @@ __d("DliteRouteContext",["DliteRoute","React"],function (global/*e*/, require/*t
                 }
             }
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

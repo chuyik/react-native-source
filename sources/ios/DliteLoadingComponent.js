@@ -1,16 +1,16 @@
-__d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleSheetPropType","TimerMixin","View","emptyFunction","keyMirror","merge","performanceNow"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleSheetPropType","TimerMixin","View","emptyFunction","keyMirror","merge","performanceNow"],function (e, t, n, r, i) {
     "use strict";
-    var Dlite/*o*/ = require/*t*/("Dlite"),
-        FBSpinner/*a*/ = require/*t*/("FBSpinner"),
-        React/*s*/ = require/*t*/("React"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        StyleSheetPropType/*u*/ = require/*t*/("StyleSheetPropType"),
-        TimerMixin/*c*/ = require/*t*/("TimerMixin"),
-        View/*p*/ = require/*t*/("View"),
-        emptyFunction/*d*/ = require/*t*/("emptyFunction"),
-        keyMirror/*h*/ = require/*t*/("keyMirror"),
-        merge/*f*/ = require/*t*/("merge"),
-        m = (require/*t*/("performanceNow"), keyMirror/*h*/({
+    var Dlite/*o*/ = t("Dlite"),
+        FBSpinner/*a*/ = t("FBSpinner"),
+        React/*s*/ = t("React"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        StyleSheetPropType/*u*/ = t("StyleSheetPropType"),
+        TimerMixin/*c*/ = t("TimerMixin"),
+        View/*p*/ = t("View"),
+        emptyFunction/*d*/ = t("emptyFunction"),
+        keyMirror/*h*/ = t("keyMirror"),
+        merge/*f*/ = t("merge"),
+        m = (t("performanceNow"), keyMirror/*h*/({
             LOADING: null,
             READY: null,
             ERROR: null
@@ -64,13 +64,13 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
                     onSuccess: emptyFunction/*d*/
                 }
             },
-            shouldComponentUpdate: function(global/*e*/, require/*t*/) {
-                return require/*t*/.loadingState !== this.state.loadingState || global/*e*/.style !== this.props.style || global/*e*/.passProps !== this.props.passProps
+            shouldComponentUpdate: function(e, t) {
+                return t.loadingState !== this.state.loadingState || e.style !== this.props.style || e.passProps !== this.props.passProps
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                this.props.route !== global/*e*/.route && (this.setState({
+            componentWillReceiveProps: function(e) {
+                this.props.route !== e.route && (this.setState({
                     loadingState: m.LOADING
-                }), this._runQueries(global/*e*/))
+                }), this._runQueries(e))
             },
             componentWillMount: function() {
                 this._runQueries(this.props)
@@ -78,61 +78,61 @@ __d("DliteLoadingComponent",["Dlite","FBSpinner","React","StyleSheet","StyleShee
             componentWillUnmount: function() {
                 this.pendingQuery && (this.pendingQuery.abort(), this.pendingQuery = null)
             },
-            _runQueries: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.component,
-                    requireDynamic/*n*/ = {
-                        refetch: global/*e*/.refetchRoute
+            _runQueries: function(e) {
+                var t = e.component,
+                    n = {
+                        refetch: e.refetchRoute
                     };
-                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = Dlite/*o*/.createAndExecuteQueries(require/*t*/, global/*e*/.route, requireDynamic/*n*/, {
-                    onResolvable: this._onResolvable.bind(this, global/*e*/),
-                    onSuccess: this._onSuccess.bind(this, global/*e*/),
-                    onFailure: this._onFailure.bind(this, global/*e*/),
-                    onBlockingRequest: this._onBlockingRequest.bind(this, global/*e*/)
+                this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = Dlite/*o*/.createAndExecuteQueries(t, e.route, n, {
+                    onResolvable: this._onResolvable.bind(this, e),
+                    onSuccess: this._onSuccess.bind(this, e),
+                    onFailure: this._onFailure.bind(this, e),
+                    onBlockingRequest: this._onBlockingRequest.bind(this, e)
                 })
             },
-            _onBlockingRequest: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.route;
-                this.isMounted() && require/*t*/ === this.props.route && this.props.onBlockingRequest()
+            _onBlockingRequest: function(e) {
+                var t = e.route;
+                this.isMounted() && t === this.props.route && this.props.onBlockingRequest()
             },
-            _onResolvable: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.route;
-                this.isMounted() && require/*t*/ === this.props.route && (this.props.onResolvable(), this.setState({
+            _onResolvable: function(e) {
+                var t = e.route;
+                this.isMounted() && t === this.props.route && (this.props.onResolvable(), this.setState({
                     loadingState: m.READY
                 }))
             },
-            _onSuccess: function(global/*e*/) {
+            _onSuccess: function(e) {
                 this.pendingQuery = null;
-                var require/*t*/ = global/*e*/.route;
-                this.isMounted() && require/*t*/ === this.props.route && (this.props.onSuccess(), this.setState({
+                var t = e.route;
+                this.isMounted() && t === this.props.route && (this.props.onSuccess(), this.setState({
                     loadingState: m.READY
                 }))
             },
-            _onFailure: function(global/*e*/, require/*t*/) {
+            _onFailure: function(e, t) {
                 this.pendingQuery = null;
-                var requireDynamic/*n*/ = global/*e*/.route;
-                this.isMounted() && requireDynamic/*n*/ === this.props.route && (this.props.onFailure(require/*t*/), this.setState({
+                var n = e.route;
+                this.isMounted() && n === this.props.route && (this.props.onFailure(t), this.setState({
                     loadingState: m.ERROR
                 }))
             },
-            _reloadDataForChild: function(global/*e*/) {
+            _reloadDataForChild: function(e) {
                 this.pendingQuery && this.pendingQuery.abort(), this.pendingQuery = Dlite/*o*/.createAndExecuteQueries(this.props.component, this.props.route, {
                     refetch: !0
-                }, global/*e*/ || {})
+                }, e || {})
             },
-            _onComponentRef: function(global/*e*/) {
-                this._component = global/*e*/, this.props.onComponentRef(this._component)
+            _onComponentRef: function(e) {
+                this._component = e, this.props.onComponentRef(this._component)
             },
             render: function() {
-                var global/*e*/, require/*t*/ = this.props.component,
-                    requireDynamic/*n*/ = merge/*f*/({
+                var e, t = this.props.component,
+                    n = merge/*f*/({
                         navigator: this.props.navigationOperations || this.props.navigator,
                         forceUpdate: this._reloadDataForChild
                     }, this.props.passProps),
-                    requireLazy/*r*/ = this._onComponentRef;
-                return global/*e*/ = this.state.loadingState === m.LOADING ? this.props.loadingView : this.state.loadingState === m.ERROR ? this.props.failedView : Dlite/*o*/.createComponent(require/*t*/, this.props.route, requireDynamic/*n*/, requireLazy/*r*/), React/*s*/.createElement(View/*p*/, {
+                    r = this._onComponentRef;
+                return e = this.state.loadingState === m.LOADING ? this.props.loadingView : this.state.loadingState === m.ERROR ? this.props.failedView : Dlite/*o*/.createComponent(t, this.props.route, n, r), React/*s*/.createElement(View/*p*/, {
                     style: this.props.style
-                }, global/*e*/)
+                }, e)
             }
         });
-    module/*i*/.exports = _
+    i.exports = _
 });

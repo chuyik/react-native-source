@@ -81,7 +81,6 @@ function __d(name, deps, factory) {
 
     var allDeps = defaultDeps.concat(deps);
     var allArgs = getArgs(factory);
-    //console.log(allArgs);
     for (i = 0, count = allDeps.length; i < count; i++) {
         arg = allArgs[i];
         dep = allDeps[i];
@@ -90,7 +89,7 @@ function __d(name, deps, factory) {
                 factory = replaceRequire(factory, arg);
             }
             //console.log(arg + " -> " + allDeps[i]);
-            factory = replaceVar(factory, arg, dep + "/*" + arg + "*/");
+            //factory = replaceVar(factory, arg, dep + "/*" + arg + "*/");
         } else {
             break;
         }

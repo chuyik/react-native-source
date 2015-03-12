@@ -1,4 +1,4 @@
-__d("NumberFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("NumberFormatConfig",["NativeModules"],function (e, t, n, r, i) {
     "use strict";
-    module/*i*/.exports = require/*t*/("NativeModules").RKI18n.NumberFormatConfig
+    i.exports = t("NativeModules").RKI18n.NumberFormatConfig
 });

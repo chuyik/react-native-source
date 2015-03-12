@@ -1,9 +1,9 @@
-__d("queryLayoutByID",["ReactIOSTagHandles","NativeModulesDeprecated"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("queryLayoutByID",["ReactIOSTagHandles","NativeModulesDeprecated"],function (e, t, n, r, i) {
     "use strict";
-    var ReactIOSTagHandles/*o*/ = require/*t*/("ReactIOSTagHandles"),
-        NativeModulesDeprecated/*a*/ = require/*t*/("NativeModulesDeprecated").RKUIManager,
-        s = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            NativeModulesDeprecated/*a*/.measure(ReactIOSTagHandles/*o*/.rootNodeIDToTag[global/*e*/], requireDynamic/*n*/)
+    var ReactIOSTagHandles/*o*/ = t("ReactIOSTagHandles"),
+        NativeModulesDeprecated/*a*/ = t("NativeModulesDeprecated").RKUIManager,
+        s = function(e, t, n) {
+            NativeModulesDeprecated/*a*/.measure(ReactIOSTagHandles/*o*/.rootNodeIDToTag[e], n)
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

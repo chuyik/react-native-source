@@ -1,31 +1,31 @@
-__d("GroupRemoveUserAction",["GraphQLMutationAction","GraphQLMutationQueryCreator","defaultRQLMutationCallback","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupRemoveUserAction",["GraphQLMutationAction","GraphQLMutationQueryCreator","defaultRQLMutationCallback","rql"],function (e, t, n, r, i) {
     "use strict";
-    var GraphQLMutationAction/*o*/ = require/*t*/("GraphQLMutationAction"),
-        GraphQLMutationQueryCreator/*a*/ = require/*t*/("GraphQLMutationQueryCreator"),
-        defaultRQLMutationCallback/*s*/ = require/*t*/("defaultRQLMutationCallback"),
-        rql/*l*/ = require/*t*/("rql"),
+    var GraphQLMutationAction/*o*/ = t("GraphQLMutationAction"),
+        GraphQLMutationQueryCreator/*a*/ = t("GraphQLMutationQueryCreator"),
+        defaultRQLMutationCallback/*s*/ = t("defaultRQLMutationCallback"),
+        rql/*l*/ = t("rql"),
         u = "treehouse_group_mall",
         c = {
-            removeMemberFromGroup: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = GraphQLMutationQueryCreator/*a*/.createQuery("group_remove_member", {
-                        group: require/*t*/
+            removeMemberFromGroup: function(e, t, n) {
+                var r = GraphQLMutationQueryCreator/*a*/.createQuery("group_remove_member", {
+                        group: t
                     }),
-                    module/*i*/ = function(global/*e*/) {
-                        var require/*t*/ = rql/*l*/.__GraphQL;
-                        return new require/*t*/.Mutation("GroupRemoveUserAction_m0", "GroupRemoveMemberResponsePayload", new require/*t*/.Callv("group_remove_member", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+                    i = function(e) {
+                        var t = rql/*l*/.__GraphQL;
+                        return new t.Mutation("GroupRemoveUserAction_m0", "GroupRemoveMemberResponsePayload", new t.Callv("group_remove_member", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [rql/*l*/.__frag(global/*e*/)])
-                    }(requireLazy/*r*/),
+                        })], [rql/*l*/.__frag(e)])
+                    }(r),
                     c = new GraphQLMutationAction/*o*/;
-                c.runServerAction(module/*i*/, {
-                    group_id: require/*t*/,
-                    user_id: global/*e*/,
+                c.runServerAction(i, {
+                    group_id: t,
+                    user_id: e,
                     source: u
-                }, function(global/*e*/, require/*t*/) {
-                    !global/*e*/ && requireDynamic/*n*/ && requireDynamic/*n*/(), defaultRQLMutationCallback/*s*/(global/*e*/, require/*t*/, module/*i*/)
+                }, function(e, t) {
+                    !e && n && n(), defaultRQLMutationCallback/*s*/(e, t, i)
                 })
             }
         };
-    module/*i*/.exports = c
+    i.exports = c
 });

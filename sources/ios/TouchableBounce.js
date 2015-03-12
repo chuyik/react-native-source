@@ -1,12 +1,12 @@
-__d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","View","merge","copyProperties","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","View","merge","copyProperties","onlyChild"],function (e, t, n, r, i) {
     "use strict";
-    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
-        React/*a*/ = require/*t*/("React"),
-        POPAnimation/*s*/ = require/*t*/("POPAnimation"),
-        Touchable/*l*/ = require/*t*/("Touchable"),
-        u = (require/*t*/("View"), require/*t*/("merge")),
-        copyProperties/*c*/ = require/*t*/("copyProperties"),
-        onlyChild/*p*/ = require/*t*/("onlyChild"),
+    var NativeMethodsMixin/*o*/ = t("NativeMethodsMixin"),
+        React/*a*/ = t("React"),
+        POPAnimation/*s*/ = t("POPAnimation"),
+        Touchable/*l*/ = t("Touchable"),
+        u = (t("View"), t("merge")),
+        copyProperties/*c*/ = t("copyProperties"),
+        onlyChild/*p*/ = t("onlyChild"),
         d = {
             top: 20,
             left: 20,
@@ -26,16 +26,16 @@ __d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","
                     animationID: null
                 })
             },
-            bounceTo: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+            bounceTo: function(e, t, n, r, i) {
                 this.state.animationID && this.removeAnimation(this.state.animationID);
                 var NativeMethodsMixin/*o*/ = {
                     property: POPAnimation/*s*/.Properties.scaleXY,
                     dynamicsTension: 0,
-                    toValue: [global/*e*/, global/*e*/],
-                    velocity: [require/*t*/, require/*t*/],
-                    springBounciness: requireDynamic/*n*/
+                    toValue: [e, e],
+                    velocity: [t, t],
+                    springBounciness: n
                 };
-                requireLazy/*r*/ && (NativeMethodsMixin/*o*/.fromValue = [requireLazy/*r*/, requireLazy/*r*/]), this.state.animationID = POPAnimation/*s*/.createSpringAnimation(NativeMethodsMixin/*o*/), this.addAnimation(this.state.animationID, module/*i*/)
+                r && (NativeMethodsMixin/*o*/.fromValue = [r, r]), this.state.animationID = POPAnimation/*s*/.createSpringAnimation(NativeMethodsMixin/*o*/), this.addAnimation(this.state.animationID, i)
             },
             touchableHandleActivePressIn: function() {
                 this.bounceTo(.93, .1, 0)
@@ -53,8 +53,8 @@ __d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","
                 return 0
             },
             render: function() {
-                var global/*e*/ = onlyChild/*p*/(this.props.children);
-                return copyProperties/*c*/(global/*e*/.props, {
+                var e = onlyChild/*p*/(this.props.children);
+                return copyProperties/*c*/(e.props, {
                     accessible: !0,
                     testID: this.props.testID,
                     onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
@@ -63,8 +63,8 @@ __d("TouchableBounce",["NativeMethodsMixin","React","POPAnimation","Touchable","
                     onResponderMove: this.touchableHandleResponderMove,
                     onResponderRelease: this.touchableHandleResponderRelease,
                     onResponderTerminate: this.touchableHandleResponderTerminate
-                }), global/*e*/
+                }), e
             }
         });
-    module/*i*/.exports = h
+    i.exports = h
 });

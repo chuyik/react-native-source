@@ -1,52 +1,52 @@
-__d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        this.forEachFunction = global/*e*/, this.forEachContext = require/*t*/
+    function o(e, t) {
+        this.forEachFunction = e, this.forEachContext = t
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = global/*e*/;
-        module/*i*/.forEachFunction.call(module/*i*/.forEachContext, require/*t*/, requireLazy/*r*/)
+    function a(e, t, n, r) {
+        var i = e;
+        i.forEachFunction.call(i.forEachContext, t, r)
     }
 
-    function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (null == global/*e*/) return global/*e*/;
-        var requireLazy/*r*/ = o.getPooled(require/*t*/, requireDynamic/*n*/);
-        traverseAllChildren/*f*/(global/*e*/, a, requireLazy/*r*/), o.release(requireLazy/*r*/)
+    function s(e, t, n) {
+        if (null == e) return e;
+        var r = o.getPooled(t, n);
+        traverseAllChildren/*f*/(e, a, r), o.release(r)
     }
 
-    function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        this.mapResult = global/*e*/, this.mapFunction = require/*t*/, this.mapContext = requireDynamic/*n*/
+    function l(e, t, n) {
+        this.mapResult = e, this.mapFunction = t, this.mapContext = n
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = global/*e*/,
-            o = module/*i*/.mapResult,
-            a = !o.hasOwnProperty(requireDynamic/*n*/);
-        if (warning/*m*/(a, "ReactChildren.map(...): Encountered two children with the same key, `%s`. Child keys must be unique; when two children share a key, only the first child will be used.", requireDynamic/*n*/), a) {
-            var s = module/*i*/.mapFunction.call(module/*i*/.mapContext, require/*t*/, requireLazy/*r*/);
-            o[requireDynamic/*n*/] = s
+    function u(e, t, n, r) {
+        var i = e,
+            o = i.mapResult,
+            a = !o.hasOwnProperty(n);
+        if (warning/*m*/(a, "ReactChildren.map(...): Encountered two children with the same key, `%s`. Child keys must be unique; when two children share a key, only the first child will be used.", n), a) {
+            var s = i.mapFunction.call(i.mapContext, t, r);
+            o[n] = s
         }
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (null == global/*e*/) return global/*e*/;
-        var requireLazy/*r*/ = {},
-            module/*i*/ = l.getPooled(requireLazy/*r*/, require/*t*/, requireDynamic/*n*/);
-        return traverseAllChildren/*f*/(global/*e*/, u, module/*i*/), l.release(module/*i*/), requireLazy/*r*/
+    function c(e, t, n) {
+        if (null == e) return e;
+        var r = {},
+            i = l.getPooled(r, t, n);
+        return traverseAllChildren/*f*/(e, u, i), l.release(i), r
     }
 
     function p() {
         return null
     }
 
-    function d(global/*e*/) {
-        return traverseAllChildren/*f*/(global/*e*/, p, null)
+    function d(e) {
+        return traverseAllChildren/*f*/(e, p, null)
     }
-    var PooledClass/*h*/ = require/*t*/("PooledClass"),
-        traverseAllChildren/*f*/ = require/*t*/("traverseAllChildren"),
-        warning/*m*/ = require/*t*/("warning"),
+    var PooledClass/*h*/ = t("PooledClass"),
+        traverseAllChildren/*f*/ = t("traverseAllChildren"),
+        warning/*m*/ = t("warning"),
         g = PooledClass/*h*/.twoArgumentPooler,
         _ = PooledClass/*h*/.threeArgumentPooler;
     PooledClass/*h*/.addPoolingTo(o, g), PooledClass/*h*/.addPoolingTo(l, _);
@@ -55,5 +55,5 @@ __d("ReactChildren",["PooledClass","traverseAllChildren","warning"],function (gl
         map: c,
         count: d
     };
-    module/*i*/.exports = y
+    i.exports = y
 });

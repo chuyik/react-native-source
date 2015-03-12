@@ -1,35 +1,35 @@
-__d("AbstractGraphQLSearchSource",["GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLQueryRunner","GraphQLStore","AbstractAsyncSearchSource","ErrorUtils","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        global/*e*/ && "function" == typeof global/*e*/.createQuery || invariant/*f*/(0, "bootstrapRequests and queryRequests must implement a `createQuery` function")
+__d("AbstractGraphQLSearchSource",["GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLQueryRunner","GraphQLStore","AbstractAsyncSearchSource","ErrorUtils","invariant"],function (e, t, n, r, i) {
+    function o(e) {
+        e && "function" == typeof e.createQuery || invariant/*f*/(0, "bootstrapRequests and queryRequests must implement a `createQuery` function")
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = require/*t*/.createQuery(global/*e*/, require/*t*/),
-            o = new GraphQL_EXPERIMENTAL/*l*/.QueryWithValues(module/*i*/);
+    function a(e, t, n, r) {
+        var i = t.createQuery(e, t),
+            o = new GraphQL_EXPERIMENTAL/*l*/.QueryWithValues(i);
         GraphQLQueryRunner/*c*/.run({
             query: o
         }, {
             onSuccess: ErrorUtils/*h*/.guard(function() {
-                var global/*e*/ = GraphQLStore/*p*/.resolveQueryFromStore(o),
-                    require/*t*/ = module/*i*/.rootCall().getName();
-                global/*e*/ && require/*t*/ != GraphQLConstants/*u*/.VIEWER && (global/*e*/ = global/*e*/[Object.keys(global/*e*/)[0]]), requireDynamic/*n*/(global/*e*/)
+                var e = GraphQLStore/*p*/.resolveQueryFromStore(o),
+                    t = i.rootCall().getName();
+                e && t != GraphQLConstants/*u*/.VIEWER && (e = e[Object.keys(e)[0]]), n(e)
             }, "AbstractGraphQLSearchSource:onSuccess"),
-            onFailure: requireLazy/*r*/
+            onFailure: r
         })
     }
 
-    function s(global/*e*/, require/*t*/) {
+    function s(e, t) {
         "use strict";
-        global/*e*/.bootstrapRequests && global/*e*/.bootstrapRequests.forEach(o), global/*e*/.queryRequests && global/*e*/.queryRequests.forEach(o), AbstractAsyncSearchSource/*d*/.call(this, global/*e*/, a, require/*t*/)
+        e.bootstrapRequests && e.bootstrapRequests.forEach(o), e.queryRequests && e.queryRequests.forEach(o), AbstractAsyncSearchSource/*d*/.call(this, e, a, t)
     }
-    var GraphQL_EXPERIMENTAL/*l*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        GraphQLConstants/*u*/ = require/*t*/("GraphQLConstants"),
-        GraphQLQueryRunner/*c*/ = require/*t*/("GraphQLQueryRunner"),
-        GraphQLStore/*p*/ = require/*t*/("GraphQLStore"),
-        AbstractAsyncSearchSource/*d*/ = require/*t*/("AbstractAsyncSearchSource"),
-        ErrorUtils/*h*/ = require/*t*/("ErrorUtils"),
-        invariant/*f*/ = require/*t*/("invariant");
+    var GraphQL_EXPERIMENTAL/*l*/ = t("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*u*/ = t("GraphQLConstants"),
+        GraphQLQueryRunner/*c*/ = t("GraphQLQueryRunner"),
+        GraphQLStore/*p*/ = t("GraphQLStore"),
+        AbstractAsyncSearchSource/*d*/ = t("AbstractAsyncSearchSource"),
+        ErrorUtils/*h*/ = t("ErrorUtils"),
+        invariant/*f*/ = t("invariant");
     for (var m in AbstractAsyncSearchSource/*d*/) AbstractAsyncSearchSource/*d*/.hasOwnProperty(m) && (s[m] = AbstractAsyncSearchSource/*d*/[m]);
     var g = null === AbstractAsyncSearchSource/*d*/ ? null : AbstractAsyncSearchSource/*d*/.prototype;
-    s.prototype = Object.create(g), s.prototype.constructor = s, s.__superConstructor__ = AbstractAsyncSearchSource/*d*/, module/*i*/.exports = s
+    s.prototype = Object.create(g), s.prototype.constructor = s, s.__superConstructor__ = AbstractAsyncSearchSource/*d*/, i.exports = s
 });

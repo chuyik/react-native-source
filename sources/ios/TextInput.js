@@ -1,24 +1,24 @@
-__d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes","React","ReactChildren","ReactIOSViewAttributes","StyleSheet","Subscribable","Text","TextInputState","TimerMixin","TouchableWithoutFeedback","createReactIOSNativeComponentClass","emptyFunction","getObjectValues","invariant","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","NativeModulesDeprecated","ReactPropTypes","React","ReactChildren","ReactIOSViewAttributes","StyleSheet","Subscribable","Text","TextInputState","TimerMixin","TouchableWithoutFeedback","createReactIOSNativeComponentClass","emptyFunction","getObjectValues","invariant","merge"],function (e, t, n, r, i) {
     "use strict";
-    var DocumentSelectionState/*o*/ = require/*t*/("DocumentSelectionState"),
-        EventEmitter/*a*/ = require/*t*/("EventEmitter"),
-        NativeMethodsMixin/*s*/ = require/*t*/("NativeMethodsMixin"),
-        NativeModulesDeprecated/*l*/ = require/*t*/("NativeModulesDeprecated"),
-        ReactPropTypes/*u*/ = require/*t*/("ReactPropTypes"),
-        React/*c*/ = require/*t*/("React"),
-        ReactChildren/*p*/ = require/*t*/("ReactChildren"),
-        ReactIOSViewAttributes/*d*/ = require/*t*/("ReactIOSViewAttributes"),
-        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
-        Subscribable/*f*/ = require/*t*/("Subscribable"),
-        Text/*m*/ = require/*t*/("Text"),
-        TextInputState/*g*/ = require/*t*/("TextInputState"),
-        TimerMixin/*_*/ = require/*t*/("TimerMixin"),
-        TouchableWithoutFeedback/*y*/ = require/*t*/("TouchableWithoutFeedback"),
-        createReactIOSNativeComponentClass/*v*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        emptyFunction/*S*/ = require/*t*/("emptyFunction"),
-        getObjectValues/*b*/ = require/*t*/("getObjectValues"),
-        invariant/*R*/ = require/*t*/("invariant"),
-        merge/*w*/ = require/*t*/("merge"),
+    var DocumentSelectionState/*o*/ = t("DocumentSelectionState"),
+        EventEmitter/*a*/ = t("EventEmitter"),
+        NativeMethodsMixin/*s*/ = t("NativeMethodsMixin"),
+        NativeModulesDeprecated/*l*/ = t("NativeModulesDeprecated"),
+        ReactPropTypes/*u*/ = t("ReactPropTypes"),
+        React/*c*/ = t("React"),
+        ReactChildren/*p*/ = t("ReactChildren"),
+        ReactIOSViewAttributes/*d*/ = t("ReactIOSViewAttributes"),
+        StyleSheet/*h*/ = t("StyleSheet"),
+        Subscribable/*f*/ = t("Subscribable"),
+        Text/*m*/ = t("Text"),
+        TextInputState/*g*/ = t("TextInputState"),
+        TimerMixin/*_*/ = t("TimerMixin"),
+        TouchableWithoutFeedback/*y*/ = t("TouchableWithoutFeedback"),
+        createReactIOSNativeComponentClass/*v*/ = t("createReactIOSNativeComponentClass"),
+        emptyFunction/*S*/ = t("emptyFunction"),
+        getObjectValues/*b*/ = t("getObjectValues"),
+        invariant/*R*/ = t("invariant"),
+        merge/*w*/ = t("merge"),
         C = NativeModulesDeprecated/*l*/.RKUIManager.UIText.AutocapitalizationType,
         E = {
             none: C.None,
@@ -105,32 +105,32 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                 focusEmitter: React/*c*/.PropTypes.instanceOf(EventEmitter/*a*/)
             },
             componentDidMount: function() {
-                return this.context.focusEmitter ? (this.addListenerOn(this.context.focusEmitter, "focus", function(global/*e*/) {
-                    this === global/*e*/ ? this.requestAnimationFrame(this.focus) : this.isFocused() && this.blur()
+                return this.context.focusEmitter ? (this.addListenerOn(this.context.focusEmitter, "focus", function(e) {
+                    this === e ? this.requestAnimationFrame(this.focus) : this.isFocused() && this.blur()
                 }.bind(this)), void(this.props.autoFocus && this.context.onFocusRequested(this))) : void(this.props.autoFocus && this.requestAnimationFrame(this.focus))
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                global/*e*/.value !== this.props.value && (this.isFocused() ? (this.clearTimeout(this._bufferTimeout), this._bufferTimeout = this.setTimeout(function() {
+            componentWillReceiveProps: function(e) {
+                e.value !== this.props.value && (this.isFocused() ? (this.clearTimeout(this._bufferTimeout), this._bufferTimeout = this.setTimeout(function() {
                     return this.setState({
-                        bufferedValue: global/*e*/.value
+                        bufferedValue: e.value
                     })
                 }.bind(this), this.props.bufferDelay)) : this.setState({
-                    bufferedValue: global/*e*/.value
+                    bufferedValue: e.value
                 }))
             },
             render: function() {
-                var global/*e*/;
+                var e;
                 if (this.props.multiline) {
-                    for (var require/*t*/ in I)
-                        if (this.props[require/*t*/]) throw new Error("TextInput prop `" + require/*t*/ + "` cannot be used with multiline.");
-                    var requireDynamic/*n*/ = this.props.children,
-                        requireLazy/*r*/ = 0;
-                    ReactChildren/*p*/.forEach(requireDynamic/*n*/, function() {
-                        return ++requireLazy/*r*/
-                    }), this.props.value && requireLazy/*r*/ && invariant/*R*/(0, "Cannot specify both value and children."), requireLazy/*r*/ > 1 && (requireDynamic/*n*/ = React/*c*/.createElement(Text/*m*/, null, requireDynamic/*n*/)), this.props.inputView && (requireDynamic/*n*/ = [requireDynamic/*n*/, this.props.inputView]), global/*e*/ = React/*c*/.createElement(M, {
+                    for (var t in I)
+                        if (this.props[t]) throw new Error("TextInput prop `" + t + "` cannot be used with multiline.");
+                    var n = this.props.children,
+                        r = 0;
+                    ReactChildren/*p*/.forEach(n, function() {
+                        return ++r
+                    }), this.props.value && r && invariant/*R*/(0, "Cannot specify both value and children."), r > 1 && (n = React/*c*/.createElement(Text/*m*/, null, n)), this.props.inputView && (n = [n, this.props.inputView]), e = React/*c*/.createElement(M, {
                         ref: "input",
                         style: [L.input, this.props.style],
-                        children: requireDynamic/*n*/,
+                        children: n,
                         mostRecentEventCounter: this.state.mostRecentEventCounter,
                         editable: this.props.editable,
                         onFocus: this._onFocus,
@@ -147,9 +147,9 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                         autoCorrect: this.props.autoCorrect
                     })
                 } else {
-                    for (var require/*t*/ in P)
-                        if (this.props[require/*t*/]) throw new Error("TextInput prop `" + require/*t*/ + "` is only supported with multiline.");
-                    global/*e*/ = React/*c*/.createElement(Q, {
+                    for (var t in P)
+                        if (this.props[t]) throw new Error("TextInput prop `" + t + "` is only supported with multiline.");
+                    e = React/*c*/.createElement(Q, {
                         ref: "input",
                         style: [L.input, this.props.style],
                         enabled: this.props.editable,
@@ -171,34 +171,34 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
                 return React/*c*/.createElement(TouchableWithoutFeedback/*y*/, {
                     onPress: this._onPress,
                     rejectResponderTermination: !0
-                }, global/*e*/)
+                }, e)
             },
-            _onFocus: function(global/*e*/) {
-                this.props.onFocus && this.props.onFocus(global/*e*/)
+            _onFocus: function(e) {
+                this.props.onFocus && this.props.onFocus(e)
             },
             _onPress: function() {
                 this.focus()
             },
-            _onChange: function(global/*e*/) {
-                this.props.controlled && global/*e*/.nativeEvent.text !== this.props.value && this.refs.input.setNativeProps({
+            _onChange: function(e) {
+                this.props.controlled && e.nativeEvent.text !== this.props.value && this.refs.input.setNativeProps({
                     text: this.props.value
-                }), this.props.onChange && this.props.onChange(global/*e*/), this.props.onChangeText && this.props.onChangeText(global/*e*/.nativeEvent.text)
+                }), this.props.onChange && this.props.onChange(e), this.props.onChangeText && this.props.onChangeText(e.nativeEvent.text)
             },
-            _onBlur: function(global/*e*/) {
-                this.blur(), this.props.onBlur && this.props.onBlur(global/*e*/)
+            _onBlur: function(e) {
+                this.blur(), this.props.onBlur && this.props.onBlur(e)
             },
-            _onSelectionChange: function(global/*e*/) {
+            _onSelectionChange: function(e) {
                 if (this.props.selectionState) {
-                    var require/*t*/ = global/*e*/.nativeEvent.selection;
-                    this.props.selectionState.update(require/*t*/.start, require/*t*/.end)
+                    var t = e.nativeEvent.selection;
+                    this.props.selectionState.update(t.start, t.end)
                 }
-                this.props.onSelectionChange && this.props.onSelectionChange(global/*e*/)
+                this.props.onSelectionChange && this.props.onSelectionChange(e)
             },
-            _onTextInput: function(global/*e*/) {
-                this.props.onTextInput && this.props.onTextInput(global/*e*/);
-                var require/*t*/ = global/*e*/.nativeEvent.eventCounter;
-                require/*t*/ > this.state.mostRecentEventCounter && this.setState({
-                    mostRecentEventCounter: require/*t*/
+            _onTextInput: function(e) {
+                this.props.onTextInput && this.props.onTextInput(e);
+                var t = e.nativeEvent.eventCounter;
+                t > this.state.mostRecentEventCounter && this.setState({
+                    mostRecentEventCounter: t
                 })
             }
         }),
@@ -215,5 +215,5 @@ __d("TextInput",["DocumentSelectionState","EventEmitter","NativeMethodsMixin","N
             validAttributes: x,
             uiViewClassName: "RCTTextField"
         });
-    module/*i*/.exports = F
+    i.exports = F
 });

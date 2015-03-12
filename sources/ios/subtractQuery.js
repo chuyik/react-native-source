@@ -1,109 +1,109 @@
-__d("subtractQuery",["GraphQL_EXPERIMENTAL"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("subtractQuery",["GraphQL_EXPERIMENTAL"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.getQuery(),
-            requireLazy/*r*/ = require/*t*/.getQuery();
-        if (!f(requireDynamic/*n*/, requireLazy/*r*/)) return global/*e*/;
-        var module/*i*/ = requireDynamic/*n*/.isRefQueryDependency(),
-            o = a(requireDynamic/*n*/, [requireLazy/*r*/], module/*i*/);
-        return o === requireDynamic/*n*/ ? global/*e*/ : o ? !module/*i*/ && l(o) ? null : new GraphQL_EXPERIMENTAL/*g*/.QueryWithValues(o) : null
+    function o(e, t) {
+        var n = e.getQuery(),
+            r = t.getQuery();
+        if (!f(n, r)) return e;
+        var i = n.isRefQueryDependency(),
+            o = a(n, [r], i);
+        return o === n ? e : o ? !i && l(o) ? null : new GraphQL_EXPERIMENTAL/*g*/.QueryWithValues(o) : null
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getOwnFields(),
-            module/*i*/ = m(requireLazy/*r*/, function(global/*e*/) {
-                return s(global/*e*/, require/*t*/, requireDynamic/*n*/)
+    function a(e, t, n) {
+        var r = e.getOwnFields(),
+            i = m(r, function(e) {
+                return s(e, t, n)
             }),
-            o = global/*e*/.getFragments(),
-            l = m(o, function(global/*e*/) {
-                return a(global/*e*/, require/*t*/, requireDynamic/*n*/)
+            o = e.getFragments(),
+            l = m(o, function(e) {
+                return a(e, t, n)
             });
-        return !requireDynamic/*n*/ && module/*i*/ && 1 === module/*i*/.length && "id" === module/*i*/[0].getFieldName() && (module/*i*/ = null), requireLazy/*r*/ === module/*i*/ && o === l ? global/*e*/ : module/*i*/ && 0 !== module/*i*/.length || l && 0 !== l.length ? global/*e*/.shallowClone(module/*i*/, l) : null
+        return !n && i && 1 === i.length && "id" === i[0].getFieldName() && (i = null), r === i && o === l ? e : i && 0 !== i.length || l && 0 !== l.length ? e.shallowClone(i, l) : null
     }
 
-    function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getFieldName();
-        if (global/*e*/.hasOwnFields() || global/*e*/.getFragments().length) {
-            var module/*i*/;
-            if (require/*t*/.forEach(function(require/*t*/) {
-                    u(require/*t*/, requireLazy/*r*/, function(require/*t*/) {
-                        p(global/*e*/, require/*t*/) && (module/*i*/ = module/*i*/ || [], module/*i*/.push(require/*t*/))
+    function s(e, t, n) {
+        var r = e.getFieldName();
+        if (e.hasOwnFields() || e.getFragments().length) {
+            var i;
+            if (t.forEach(function(t) {
+                    u(t, r, function(t) {
+                        p(e, t) && (i = i || [], i.push(t))
                     })
-                }), module/*i*/) return a(global/*e*/, module/*i*/, requireDynamic/*n*/)
-        } else if (!global/*e*/.isRequisite() && "id" !== requireLazy/*r*/) {
-            var o = require/*t*/.some(function(require/*t*/) {
-                return c(require/*t*/, requireLazy/*r*/, function(require/*t*/) {
-                    return p(global/*e*/, require/*t*/)
+                }), i) return a(e, i, n)
+        } else if (!e.isRequisite() && "id" !== r) {
+            var o = t.some(function(t) {
+                return c(t, r, function(t) {
+                    return p(e, t)
                 })
             });
             if (o) return null
         }
-        return global/*e*/
+        return e
     }
 
-    function l(global/*e*/) {
-        var require/*t*/ = global/*e*/.getOwnFields(),
-            requireDynamic/*n*/ = global/*e*/.getFragments();
-        return require/*t*/.length || requireDynamic/*n*/.length ? require/*t*/.every(l) && requireDynamic/*n*/.every(l) : "id" === global/*e*/.getFieldName() || global/*e*/.isRequisite()
+    function l(e) {
+        var t = e.getOwnFields(),
+            n = e.getFragments();
+        return t.length || n.length ? t.every(l) && n.every(l) : "id" === e.getFieldName() || e.isRequisite()
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        c(global/*e*/, require/*t*/, function() {
-            requireDynamic/*n*/.apply(this, arguments)
+    function u(e, t, n) {
+        c(e, t, function() {
+            n.apply(this, arguments)
         })
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        for (var requireLazy/*r*/, module/*i*/ = [global/*e*/]; requireLazy/*r*/ = module/*i*/.shift();) {
-            if (requireLazy/*r*/.getOwnUnaliasedFields(require/*t*/).some(requireDynamic/*n*/)) return !0;
-            _.apply(module/*i*/, requireLazy/*r*/.getFragments())
+    function c(e, t, n) {
+        for (var r, i = [e]; r = i.shift();) {
+            if (r.getOwnUnaliasedFields(t).some(n)) return !0;
+            _.apply(i, r.getFragments())
         }
         return !1
     }
 
-    function p(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.getCalls(),
-            requireLazy/*r*/ = require/*t*/.getCalls(),
-            module/*i*/ = requireDynamic/*n*/.length;
-        if (module/*i*/ !== requireLazy/*r*/.length) return !1;
-        if (module/*i*/)
-            for (var o = global/*e*/.isConnection() ? d : h, a = 0; module/*i*/ > a; a++) {
-                var s = requireDynamic/*n*/[a],
-                    l = requireLazy/*r*/[a];
+    function p(e, t) {
+        var n = e.getCalls(),
+            r = t.getCalls(),
+            i = n.length;
+        if (i !== r.length) return !1;
+        if (i)
+            for (var o = e.isConnection() ? d : h, a = 0; i > a; a++) {
+                var s = n[a],
+                    l = r[a];
                 if (s.getName() !== l.getName() || !o(s, l)) return !1
             }
         return !0
     }
 
-    function d(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.getName();
-        return "first" === requireDynamic/*n*/ || "last" === requireDynamic/*n*/ ? global/*e*/.getArgs()[0] <= require/*t*/.getArgs()[0] : h(global/*e*/, require/*t*/)
+    function d(e, t) {
+        var n = e.getName();
+        return "first" === n || "last" === n ? e.getArgs()[0] <= t.getArgs()[0] : h(e, t)
     }
 
-    function h(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.getArgs(),
-            requireLazy/*r*/ = require/*t*/.getArgs(),
-            module/*i*/ = requireDynamic/*n*/.length;
-        if (module/*i*/ !== requireLazy/*r*/.length) return !1;
-        for (var o = 0; module/*i*/ > o; o++)
-            if (!requireDynamic/*n*/[o].equals(requireLazy/*r*/[o])) return !1;
+    function h(e, t) {
+        var n = e.getArgs(),
+            r = t.getArgs(),
+            i = n.length;
+        if (i !== r.length) return !1;
+        for (var o = 0; i > o; o++)
+            if (!n[o].equals(r[o])) return !1;
         return !0
     }
 
-    function f(global/*e*/, require/*t*/) {
-        return global/*e*/.rootCall().equals(require/*t*/.rootCall())
+    function f(e, t) {
+        return e.rootCall().equals(t.rootCall())
     }
 
-    function m(global/*e*/, require/*t*/) {
-        if (0 === global/*e*/.length) return global/*e*/;
-        var requireDynamic/*n*/ = null;
-        return global/*e*/.forEach(function(requireLazy/*r*/, module/*i*/) {
-            var o = require/*t*/(requireLazy/*r*/);
-            o !== requireLazy/*r*/ && (requireDynamic/*n*/ = requireDynamic/*n*/ || global/*e*/.slice(0, module/*i*/)), null !== requireDynamic/*n*/ && null !== o && requireDynamic/*n*/.push(o)
-        }), requireDynamic/*n*/ ? 0 === requireDynamic/*n*/.length ? null : requireDynamic/*n*/ : global/*e*/
+    function m(e, t) {
+        if (0 === e.length) return e;
+        var n = null;
+        return e.forEach(function(r, i) {
+            var o = t(r);
+            o !== r && (n = n || e.slice(0, i)), null !== n && null !== o && n.push(o)
+        }), n ? 0 === n.length ? null : n : e
     }
-    var GraphQL_EXPERIMENTAL/*g*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
+    var GraphQL_EXPERIMENTAL/*g*/ = t("GraphQL_EXPERIMENTAL"),
         _ = Array.prototype.push;
-    module/*i*/.exports = o
+    i.exports = o
 });

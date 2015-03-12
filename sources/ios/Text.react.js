@@ -1,5 +1,5 @@
-__d("Text.react",["Text"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Text.react",["Text"],function (e, t, n, r, i) {
     "use strict";
-    var Text/*o*/ = require/*t*/("Text");
-    module/*i*/.exports = Text/*o*/
+    var Text/*o*/ = t("Text");
+    i.exports = Text/*o*/
 });

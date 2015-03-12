@@ -1,29 +1,29 @@
-__d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","ReactGraphQL","StyleSheet","ListViewDataSource","ListView","TimerMixin","View","ix","uniqueKey"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","ReactGraphQL","StyleSheet","ListViewDataSource","ListView","TimerMixin","View","ix","uniqueKey"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        if (null != global/*e*/) {
-            for (var require/*t*/ = 0; require/*t*/ < global/*e*/.length; require/*t*/++) global/*e*/[require/*t*/].node.local_id || (global/*e*/[require/*t*/].node.local_id = uniqueKey/*y*/(global/*e*/[require/*t*/].node.id));
-            return global/*e*/
+    function o(e) {
+        if (null != e) {
+            for (var t = 0; t < e.length; t++) e[t].node.local_id || (e[t].node.local_id = uniqueKey/*y*/(e[t].node.id));
+            return e
         }
     }
 
-    function a(global/*e*/) {
-        for (var require/*t*/ = global/*e*/.length - 1, requireDynamic/*n*/ = {}, requireLazy/*r*/ = 0; require/*t*/ >= requireLazy/*r*/; requireLazy/*r*/++) requireDynamic/*n*/[global/*e*/[requireLazy/*r*/].node.local_id] = global/*e*/[requireLazy/*r*/].node;
-        return requireDynamic/*n*/
+    function a(e) {
+        for (var t = e.length - 1, n = {}, r = 0; t >= r; r++) n[e[r].node.local_id] = e[r].node;
+        return n
     }
-    var EdgeInsetsPropType/*s*/ = require/*t*/("EdgeInsetsPropType"),
-        FBSpinner/*l*/ = require/*t*/("FBSpinner"),
-        Image/*u*/ = require/*t*/("Image"),
-        React/*c*/ = require/*t*/("React"),
-        ReactGraphQL/*p*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*d*/ = require/*t*/("StyleSheet"),
-        ListViewDataSource/*h*/ = require/*t*/("ListViewDataSource"),
-        ListView/*f*/ = require/*t*/("ListView"),
-        TimerMixin/*m*/ = require/*t*/("TimerMixin"),
-        View/*g*/ = require/*t*/("View"),
-        ix/*_*/ = require/*t*/("ix"),
-        uniqueKey/*y*/ = require/*t*/("uniqueKey"),
+    var EdgeInsetsPropType/*s*/ = t("EdgeInsetsPropType"),
+        FBSpinner/*l*/ = t("FBSpinner"),
+        Image/*u*/ = t("Image"),
+        React/*c*/ = t("React"),
+        ReactGraphQL/*p*/ = t("ReactGraphQL"),
+        StyleSheet/*d*/ = t("StyleSheet"),
+        ListViewDataSource/*h*/ = t("ListViewDataSource"),
+        ListView/*f*/ = t("ListView"),
+        TimerMixin/*m*/ = t("TimerMixin"),
+        View/*g*/ = t("View"),
+        ix/*_*/ = t("ix"),
+        uniqueKey/*y*/ = t("uniqueKey"),
         v = {
             top: 0
         },
@@ -63,19 +63,19 @@ __d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","R
             mixins: [ReactGraphQL/*p*/.Mixin, TimerMixin/*m*/],
             statics: {
                 queries: {
-                    connection: function(global/*e*/, require/*t*/) {
+                    connection: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("GraphQLConnectionView_connection", "NewsFeedConnection", [new global/*e*/.Field("edges", [new global/*e*/.Field("cursor", null, null, null, null, null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("GraphQLConnectionView_connection", "NewsFeedConnection", [new e.Field("edges", [new e.Field("cursor", null, null, null, null, null, {
                                 requisite: !0
-                            }), new global/*e*/.Field("node", [new global/*e*/.Field("id")], null, null, null, null, {
+                            }), new e.Field("node", [new e.Field("id")], null, null, null, null, {
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "GraphQLConnectionView_connection_1"
-                            }), new global/*e*/.Field("page_info", [new global/*e*/.Field("has_next_page", null, null, null, null, null, {
+                            }), new e.Field("page_info", [new e.Field("has_next_page", null, null, null, null, null, {
                                 requisite: !0
-                            }), new global/*e*/.Field("has_previous_page", null, null, null, null, null, {
+                            }), new e.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })])], null, {
@@ -86,22 +86,22 @@ __d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","R
                 }
             },
             getInitialState: function() {
-                var global/*e*/ = new ListViewDataSource/*h*/({
-                    getRowData: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                        return global/*e*/[requireDynamic/*n*/]
+                var e = new ListViewDataSource/*h*/({
+                    getRowData: function(e, t, n) {
+                        return e[n]
                     },
                     getSectionHeaderData: function() {
                         return null
                     },
-                    rowHasChanged: function(global/*e*/, require/*t*/) {
-                        return global/*e*/ !== require/*t*/
+                    rowHasChanged: function(e, t) {
+                        return e !== t
                     },
                     sectionHeaderHasChanged: function() {
                         return !1
                     }
                 });
                 return {
-                    dataSource: global/*e*/,
+                    dataSource: e,
                     queryCount: null,
                     hasNextPage: !0
                 }
@@ -119,37 +119,37 @@ __d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","R
                     style: w.endDot,
                     source: ix/*_*/("newsfeedEnd")
                 }));
-                var global/*e*/ = 0 === this.state.dataSource.getRowCount() ? w.fullScreenLoadingIndicator : w.tailLoadingIndicator;
+                var e = 0 === this.state.dataSource.getRowCount() ? w.fullScreenLoadingIndicator : w.tailLoadingIndicator;
                 return React/*c*/.createElement(FBSpinner/*l*/, {
-                    style: global/*e*/
+                    style: e
                 })
             },
-            renderRow: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                return this.props.nodeViewFactory(global/*e*/, this.props.navigator, requireDynamic/*n*/)
+            renderRow: function(e, t, n) {
+                return this.props.nodeViewFactory(e, this.props.navigator, n)
             },
             loadMoreIfNeeded: function() {
                 if (this.state.hasNextPage && this.state.dataSource.getRowCount() === this.state.queryCount) {
-                    var global/*e*/ = this.state.queryCount + this.props.pageSize;
-                    this.props.onUpdateQueryCount(global/*e*/), this.setState({
-                        queryCount: global/*e*/
+                    var e = this.state.queryCount + this.props.pageSize;
+                    this.props.onUpdateQueryCount(e), this.setState({
+                        queryCount: e
                     })
                 }
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                this._initializeDataSource(global/*e*/)
+            componentWillReceiveProps: function(e) {
+                this._initializeDataSource(e)
             },
-            _initializeDataSource: function(global/*e*/) {
-                if (global/*e*/.connection) {
-                    var require/*t*/ = o(global/*e*/.connection.edges),
-                        requireDynamic/*n*/ = global/*e*/.connection && global/*e*/.connection.page_info && global/*e*/.connection.page_info.has_next_page || !1;
+            _initializeDataSource: function(e) {
+                if (e.connection) {
+                    var t = o(e.connection.edges),
+                        n = e.connection && e.connection.page_info && e.connection.page_info.has_next_page || !1;
                     if (this.setState({
-                            hasNextPage: requireDynamic/*n*/
-                        }), this._haveStoriesChanged(global/*e*/)) {
-                        var requireLazy/*r*/ = a(require/*t*/),
-                            module/*i*/ = ["section"],
+                            hasNextPage: n
+                        }), this._haveStoriesChanged(e)) {
+                        var r = a(t),
+                            i = ["section"],
                             EdgeInsetsPropType/*s*/ = [];
-                        EdgeInsetsPropType/*s*/.push(Object.keys(requireLazy/*r*/));
-                        var FBSpinner/*l*/ = this.state.dataSource.cloneWithRowsAndSections(requireLazy/*r*/, module/*i*/, EdgeInsetsPropType/*s*/);
+                        EdgeInsetsPropType/*s*/.push(Object.keys(r));
+                        var FBSpinner/*l*/ = this.state.dataSource.cloneWithRowsAndSections(r, i, EdgeInsetsPropType/*s*/);
                         this.setState({
                             dataSource: FBSpinner/*l*/
                         }), null === this.state.queryCount && this.setState({
@@ -158,20 +158,20 @@ __d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","R
                     }
                 }
             },
-            _haveStoriesChanged: function(global/*e*/) {
-                if (!global/*e*/.connection.edges) return !1;
+            _haveStoriesChanged: function(e) {
+                if (!e.connection.edges) return !1;
                 if (!this.props.connection || !this.props.connection.edges) return !0;
-                var require/*t*/ = global/*e*/.connection.edges,
-                    requireDynamic/*n*/ = this.props.connection.edges;
-                if (require/*t*/.length !== requireDynamic/*n*/.length) return !0;
-                for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < require/*t*/.length; requireLazy/*r*/++)
-                    if (require/*t*/[requireLazy/*r*/].node.local_id !== requireDynamic/*n*/[requireLazy/*r*/].node.local_id) return !0;
-                var module/*i*/ = this.state.dataSource.getRowCount(),
-                    o = global/*e*/.connection.edges.length;
-                return module/*i*/ !== o ? !0 : !1
+                var t = e.connection.edges,
+                    n = this.props.connection.edges;
+                if (t.length !== n.length) return !0;
+                for (var r = 0; r < t.length; r++)
+                    if (t[r].node.local_id !== n[r].node.local_id) return !0;
+                var i = this.state.dataSource.getRowCount(),
+                    o = e.connection.edges.length;
+                return i !== o ? !0 : !1
             },
-            onScroll: function(global/*e*/) {
-                this.refs.newStoriesPill && this.refs.newStoriesPill.onScroll(global/*e*/)
+            onScroll: function(e) {
+                this.refs.newStoriesPill && this.refs.newStoriesPill.onScroll(e)
             },
             getListViewRef: function() {
                 return this.refs.listView
@@ -217,5 +217,5 @@ __d("GraphQLConnectionView",["EdgeInsetsPropType","FBSpinner","Image","React","R
                 alignItems: "center"
             }
         });
-    module/*i*/.exports = R
+    i.exports = R
 });

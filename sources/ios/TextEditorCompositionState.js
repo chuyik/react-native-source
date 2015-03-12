@@ -1,9 +1,9 @@
-__d("TextEditorCompositionState",["mixInEventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
+__d("TextEditorCompositionState",["mixInEventEmitter"],function (e, t, n, r, i) {
+    function o(e) {
         "use strict";
-        this.$TextEditorCompositionState_composing = global/*e*/
+        this.$TextEditorCompositionState_composing = e
     }
-    var mixInEventEmitter/*a*/ = require/*t*/("mixInEventEmitter");
+    var mixInEventEmitter/*a*/ = t("mixInEventEmitter");
     o.prototype.startSession = function() {
         "use strict";
         this.$TextEditorCompositionState_composing = !0, this.emit("change")
@@ -21,5 +21,5 @@ __d("TextEditorCompositionState",["mixInEventEmitter"],function (global/*e*/, re
         return this.$TextEditorCompositionState_composing
     }, mixInEventEmitter/*a*/(o, {
         change: !0
-    }), module/*i*/.exports = o
+    }), i.exports = o
 });

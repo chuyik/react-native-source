@@ -1,56 +1,56 @@
-__d("UnicodeUtils",["ES6StringUtils"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("UnicodeUtils",["ES6StringUtils"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return global/*e*/ >= h && f >= global/*e*/
+    function o(e) {
+        return e >= h && f >= e
     }
 
-    function a(global/*e*/) {
-        return m.test(global/*e*/)
+    function a(e) {
+        return m.test(e)
     }
 
-    function s(global/*e*/, require/*t*/) {
-        return 1 + o(global/*e*/.charCodeAt(require/*t*/))
+    function s(e, t) {
+        return 1 + o(e.charCodeAt(t))
     }
 
-    function l(global/*e*/) {
-        if (!a(global/*e*/)) return global/*e*/.length;
-        for (var require/*t*/ = 0, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/ += s(global/*e*/, requireDynamic/*n*/)) require/*t*/++;
-        return require/*t*/
+    function l(e) {
+        if (!a(e)) return e.length;
+        for (var t = 0, n = 0; n < e.length; n += s(e, n)) t++;
+        return t
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (require/*t*/ = require/*t*/ || 0, requireDynamic/*n*/ = void 0 === requireDynamic/*n*/ ? 1 / 0 : requireDynamic/*n*/ || 0, !a(global/*e*/)) return global/*e*/.substr(require/*t*/, requireDynamic/*n*/);
-        var requireLazy/*r*/ = global/*e*/.length;
-        if (0 >= requireLazy/*r*/ || require/*t*/ > requireLazy/*r*/ || 0 >= requireDynamic/*n*/) return "";
-        var module/*i*/ = 0;
-        if (require/*t*/ > 0) {
-            for (; require/*t*/ > 0 && requireLazy/*r*/ > module/*i*/; require/*t*/--) module/*i*/ += s(global/*e*/, module/*i*/);
-            if (module/*i*/ >= requireLazy/*r*/) return ""
-        } else if (0 > require/*t*/) {
-            for (module/*i*/ = requireLazy/*r*/; 0 > require/*t*/ && module/*i*/ > 0; require/*t*/++) module/*i*/ -= s(global/*e*/, module/*i*/ - 1);
-            0 > module/*i*/ && (module/*i*/ = 0)
+    function u(e, t, n) {
+        if (t = t || 0, n = void 0 === n ? 1 / 0 : n || 0, !a(e)) return e.substr(t, n);
+        var r = e.length;
+        if (0 >= r || t > r || 0 >= n) return "";
+        var i = 0;
+        if (t > 0) {
+            for (; t > 0 && r > i; t--) i += s(e, i);
+            if (i >= r) return ""
+        } else if (0 > t) {
+            for (i = r; 0 > t && i > 0; t++) i -= s(e, i - 1);
+            0 > i && (i = 0)
         }
-        var o = requireLazy/*r*/;
-        if (requireLazy/*r*/ > requireDynamic/*n*/)
-            for (o = module/*i*/; requireDynamic/*n*/ > 0 && requireLazy/*r*/ > o; requireDynamic/*n*/--) o += s(global/*e*/, o);
-        return global/*e*/.substring(module/*i*/, o)
+        var o = r;
+        if (r > n)
+            for (o = i; n > 0 && r > o; n--) o += s(e, o);
+        return e.substring(i, o)
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        require/*t*/ = require/*t*/ || 0, requireDynamic/*n*/ = void 0 === requireDynamic/*n*/ ? 1 / 0 : requireDynamic/*n*/ || 0, 0 > require/*t*/ && (require/*t*/ = 0), 0 > requireDynamic/*n*/ && (requireDynamic/*n*/ = 0);
-        var requireLazy/*r*/ = Math.abs(requireDynamic/*n*/ - require/*t*/);
-        return require/*t*/ = requireDynamic/*n*/ > require/*t*/ ? require/*t*/ : requireDynamic/*n*/, u(global/*e*/, require/*t*/, requireLazy/*r*/)
+    function c(e, t, n) {
+        t = t || 0, n = void 0 === n ? 1 / 0 : n || 0, 0 > t && (t = 0), 0 > n && (n = 0);
+        var r = Math.abs(n - t);
+        return t = n > t ? t : n, u(e, t, r)
     }
 
-    function p(global/*e*/) {
-        for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/ += s(global/*e*/, requireDynamic/*n*/)) {
-            var requireLazy/*r*/ = ES6StringUtils/*d*/.codePointAt.call(global/*e*/, requireDynamic/*n*/);
-            require/*t*/.push(requireLazy/*r*/)
+    function p(e) {
+        for (var t = [], n = 0; n < e.length; n += s(e, n)) {
+            var r = ES6StringUtils/*d*/.codePointAt.call(e, n);
+            t.push(r)
         }
-        return require/*t*/
+        return t
     }
-    var ES6StringUtils/*d*/ = require/*t*/("ES6StringUtils"),
+    var ES6StringUtils/*d*/ = t("ES6StringUtils"),
         h = 55296,
         f = 57343,
         m = /[\uD800-\uDFFF]/,
@@ -61,5 +61,5 @@ __d("UnicodeUtils",["ES6StringUtils"],function (global/*e*/, require/*t*/, requi
             substring: c,
             getCodePoints: p
         };
-    module/*i*/.exports = g
+    i.exports = g
 });

@@ -1,9 +1,9 @@
-__d("getReactRootElementInContainer",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("getReactRootElementInContainer",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return global/*e*/ ? global/*e*/.nodeType === a ? global/*e*/.documentElement : global/*e*/.firstChild : null
+    function o(e) {
+        return e ? e.nodeType === a ? e.documentElement : e.firstChild : null
     }
     var a = 9;
-    module/*i*/.exports = o
+    i.exports = o
 });

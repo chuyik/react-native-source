@@ -1,32 +1,32 @@
-__d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath","ModalFullscreenView","NativeMethodsMixin","NativeModules","NativeModulesDeprecated","React","POPAnimation","RCTDeviceEventEmitter","ScrollView","StylePropType","StyleSheet","Subscribable","TimerMixin","TouchableWithoutFeedback","View","invariant","isEmpty","ix","keyMirror","keyOf","merge","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath","ModalFullscreenView","NativeMethodsMixin","NativeModules","NativeModulesDeprecated","React","POPAnimation","RCTDeviceEventEmitter","ScrollView","StylePropType","StyleSheet","Subscribable","TimerMixin","TouchableWithoutFeedback","View","invariant","isEmpty","ix","keyMirror","keyOf","merge","mergeInto"],function (e, t, n, r, i) {
     "use strict";
-    var POPAnimationMixin/*o*/ = require/*t*/("POPAnimationMixin"),
-        CameraRoll/*a*/ = require/*t*/("CameraRoll"),
-        Image/*s*/ = require/*t*/("Image"),
-        MatrixMath/*l*/ = require/*t*/("MatrixMath"),
-        ModalFullscreenView/*u*/ = require/*t*/("ModalFullscreenView"),
-        NativeMethodsMixin/*c*/ = require/*t*/("NativeMethodsMixin"),
-        NativeModules/*p*/ = require/*t*/("NativeModules"),
-        NativeModulesDeprecated/*d*/ = require/*t*/("NativeModulesDeprecated"),
-        React/*h*/ = require/*t*/("React"),
-        POPAnimation/*f*/ = require/*t*/("POPAnimation"),
+    var POPAnimationMixin/*o*/ = t("POPAnimationMixin"),
+        CameraRoll/*a*/ = t("CameraRoll"),
+        Image/*s*/ = t("Image"),
+        MatrixMath/*l*/ = t("MatrixMath"),
+        ModalFullscreenView/*u*/ = t("ModalFullscreenView"),
+        NativeMethodsMixin/*c*/ = t("NativeMethodsMixin"),
+        NativeModules/*p*/ = t("NativeModules"),
+        NativeModulesDeprecated/*d*/ = t("NativeModulesDeprecated"),
+        React/*h*/ = t("React"),
+        POPAnimation/*f*/ = t("POPAnimation"),
         m = NativeModules/*p*/.RKActionSheetManager,
-        RCTDeviceEventEmitter/*g*/ = require/*t*/("RCTDeviceEventEmitter"),
+        RCTDeviceEventEmitter/*g*/ = t("RCTDeviceEventEmitter"),
         _ = NativeModulesDeprecated/*d*/.RKDeviceManager,
-        ScrollView/*y*/ = require/*t*/("ScrollView"),
-        StylePropType/*v*/ = require/*t*/("StylePropType"),
-        StyleSheet/*S*/ = require/*t*/("StyleSheet"),
-        Subscribable/*b*/ = require/*t*/("Subscribable"),
-        TimerMixin/*R*/ = require/*t*/("TimerMixin"),
-        TouchableWithoutFeedback/*w*/ = require/*t*/("TouchableWithoutFeedback"),
-        View/*C*/ = require/*t*/("View"),
-        invariant/*E*/ = require/*t*/("invariant"),
-        isEmpty/*D*/ = require/*t*/("isEmpty"),
-        ix/*T*/ = require/*t*/("ix"),
-        keyMirror/*x*/ = require/*t*/("keyMirror"),
-        keyOf/*P*/ = require/*t*/("keyOf"),
-        merge/*I*/ = require/*t*/("merge"),
-        mergeInto/*F*/ = require/*t*/("mergeInto"),
+        ScrollView/*y*/ = t("ScrollView"),
+        StylePropType/*v*/ = t("StylePropType"),
+        StyleSheet/*S*/ = t("StyleSheet"),
+        Subscribable/*b*/ = t("Subscribable"),
+        TimerMixin/*R*/ = t("TimerMixin"),
+        TouchableWithoutFeedback/*w*/ = t("TouchableWithoutFeedback"),
+        View/*C*/ = t("View"),
+        invariant/*E*/ = t("invariant"),
+        isEmpty/*D*/ = t("isEmpty"),
+        ix/*T*/ = t("ix"),
+        keyMirror/*x*/ = t("keyMirror"),
+        keyOf/*P*/ = t("keyOf"),
+        merge/*I*/ = t("merge"),
+        mergeInto/*F*/ = t("mergeInto"),
         L = keyOf/*P*/({
             contentRef: null
         }),
@@ -82,11 +82,11 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                 disableDropShadow: React/*h*/.PropTypes.bool,
                 didImgIdxChange: React/*h*/.PropTypes.func
             },
-            open: function(global/*e*/, require/*t*/) {
+            open: function(e, t) {
                 this.state.modalState !== j.closed && invariant/*E*/(0, "open should only be called when the view is closed"), this._updateModalState(j.opening), this.setState({
-                    activeImgIdx: global/*e*/,
-                    originalFrame: require/*t*/,
-                    modalFrame: require/*t*/
+                    activeImgIdx: e,
+                    originalFrame: t,
+                    modalFrame: t
                 }, this._open)
             },
             close: function() {
@@ -124,27 +124,27 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
             componentDidMount: function() {
                 this.addListenerOn(RCTDeviceEventEmitter/*g*/, "namedOrientationDidChange", this.namedOrientationDidChange)
             },
-            namedOrientationDidChange: function(global/*e*/) {
-                if (this.state.isReorienting) return void(this.state.nextOrientation = global/*e*/);
-                if (global/*e*/.rotationDegrees !== this.state.orientation.rotationDegrees) {
-                    if (this.state.modalState === j.zoomed) return void this.unZoom(this.namedOrientationDidChange.bind(this, global/*e*/));
+            namedOrientationDidChange: function(e) {
+                if (this.state.isReorienting) return void(this.state.nextOrientation = e);
+                if (e.rotationDegrees !== this.state.orientation.rotationDegrees) {
+                    if (this.state.modalState === j.zoomed) return void this.unZoom(this.namedOrientationDidChange.bind(this, e));
                     if (this.state.modalState === j.open) {
                         this.state.isReorienting = !0;
-                        var require/*t*/ = ModalFullscreenView/*u*/.width,
-                            requireDynamic/*n*/ = ModalFullscreenView/*u*/.height,
-                            requireLazy/*r*/ = global/*e*/.isLandscape,
-                            module/*i*/ = {
-                                width: requireLazy/*r*/ ? requireDynamic/*n*/ : require/*t*/,
-                                height: requireLazy/*r*/ ? require/*t*/ : requireDynamic/*n*/
+                        var t = ModalFullscreenView/*u*/.width,
+                            n = ModalFullscreenView/*u*/.height,
+                            r = e.isLandscape,
+                            i = {
+                                width: r ? n : t,
+                                height: r ? t : n
                             },
-                            POPAnimationMixin/*o*/ = this.getOpenedFrame(this.state.activeImgIdx, module/*i*/),
+                            POPAnimationMixin/*o*/ = this.getOpenedFrame(this.state.activeImgIdx, i),
                             CameraRoll/*a*/ = POPAnimationMixin/*o*/.width / this.state.modalFrame.width;
                         this.startAnimations([{
                             ref: L,
                             anim: {
                                 type: this.AnimationTypes.easeInEaseOut,
                                 property: this.AnimationProperties.rotation,
-                                toValue: global/*e*/.rotationDegrees * Math.PI / 180
+                                toValue: e.rotationDegrees * Math.PI / 180
                             }
                         }, {
                             ref: L,
@@ -153,22 +153,22 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                                 property: this.AnimationProperties.scaleXY,
                                 toValue: [CameraRoll/*a*/, CameraRoll/*a*/]
                             }
-                        }], this.updateStateAfterOrientationAnim.bind(this, global/*e*/, module/*i*/, POPAnimationMixin/*o*/))
+                        }], this.updateStateAfterOrientationAnim.bind(this, e, i, POPAnimationMixin/*o*/))
                     }
                 }
             },
-            updateStateAfterOrientationAnim: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = this.state.orientationMatrices;
-                MatrixMath/*l*/.reuseTranslate2dCommand(requireLazy/*r*/.translate, (ModalFullscreenView/*u*/.width - require/*t*/.width) / 2, (ModalFullscreenView/*u*/.height - require/*t*/.height) / 2), MatrixMath/*l*/.reuseRotateZCommand(requireLazy/*r*/.rotate, -global/*e*/.rotationDegrees * Math.PI / 180), MatrixMath/*l*/.multiplyInto(requireLazy/*r*/.transform, requireLazy/*r*/.translate, requireLazy/*r*/.rotate), this.setState({
-                    orientation: global/*e*/,
-                    screen: require/*t*/,
-                    modalFrame: requireDynamic/*n*/
+            updateStateAfterOrientationAnim: function(e, t, n) {
+                var r = this.state.orientationMatrices;
+                MatrixMath/*l*/.reuseTranslate2dCommand(r.translate, (ModalFullscreenView/*u*/.width - t.width) / 2, (ModalFullscreenView/*u*/.height - t.height) / 2), MatrixMath/*l*/.reuseRotateZCommand(r.rotate, -e.rotationDegrees * Math.PI / 180), MatrixMath/*l*/.multiplyInto(r.transform, r.translate, r.rotate), this.setState({
+                    orientation: e,
+                    screen: t,
+                    modalFrame: n
                 }, this.onDoneReorienting)
             },
             onDoneReorienting: function() {
                 this.state.isReorienting = !1;
-                var global/*e*/ = this.state.nextOrientation;
-                global/*e*/ && (this.state.nextOrientation = null, this.namedOrientationDidChange(global/*e*/)), this.requestAnimationFrame(function() {
+                var e = this.state.nextOrientation;
+                e && (this.state.nextOrientation = null, this.namedOrientationDidChange(e)), this.requestAnimationFrame(function() {
                     return this.setScrollProps({
                         contentOffset: this.getMainContentOffset()
                     })
@@ -180,133 +180,133 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     ScrollView/*y*/: 0
                 }
             },
-            getOpenedFrame: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/, requireLazy/*r*/, module/*i*/ = require/*t*/.width - U,
-                    POPAnimationMixin/*o*/ = this.props.sources[global/*e*/],
+            getOpenedFrame: function(e, t) {
+                var n, r, i = t.width - U,
+                    POPAnimationMixin/*o*/ = this.props.sources[e],
                     CameraRoll/*a*/ = POPAnimationMixin/*o*/.width / POPAnimationMixin/*o*/.height;
-                return module/*i*/ / CameraRoll/*a*/ > require/*t*/.height ? (requireLazy/*r*/ = require/*t*/.height, requireDynamic/*n*/ = require/*t*/.height * CameraRoll/*a*/) : (requireLazy/*r*/ = module/*i*/ / CameraRoll/*a*/, requireDynamic/*n*/ = module/*i*/), {
-                    left: require/*t*/.width / 2 - requireDynamic/*n*/ / 2,
-                    top: require/*t*/.height / 2 - requireLazy/*r*/ / 2,
-                    width: requireDynamic/*n*/,
-                    height: requireLazy/*r*/
+                return i / CameraRoll/*a*/ > t.height ? (r = t.height, n = t.height * CameraRoll/*a*/) : (r = i / CameraRoll/*a*/, n = i), {
+                    left: t.width / 2 - n / 2,
+                    top: t.height / 2 - r / 2,
+                    width: n,
+                    height: r
                 }
             },
-            _updateModalState: function(global/*e*/, require/*t*/) {
-                global/*e*/ === j.closed ? (this.refs[k].close(), this.setState(this.getInitialState())) : this.refs[k].open(), this.setState({
-                    modalState: global/*e*/
-                }, require/*t*/)
+            _updateModalState: function(e, t) {
+                e === j.closed ? (this.refs[k].close(), this.setState(this.getInitialState())) : this.refs[k].open(), this.setState({
+                    modalState: e
+                }, t)
             },
-            _animImagesToFrame: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                this.getKeysForIdx(global/*e*/).forEach(function(global/*e*/, POPAnimationMixin/*o*/) {
-                    return this.animateToFrame(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, function(global/*e*/) {
-                        global/*e*/ && 0 === POPAnimationMixin/*o*/ && module/*i*/ && module/*i*/()
+            _animImagesToFrame: function(e, t, n, r, i) {
+                this.getKeysForIdx(e).forEach(function(e, POPAnimationMixin/*o*/) {
+                    return this.animateToFrame(e, t, n, r, function(e) {
+                        e && 0 === POPAnimationMixin/*o*/ && i && i()
                     })
                 }.bind(this))
             },
-            _animOpacity: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                0 === require/*t*/ ? require/*t*/ = -1 : 1 === require/*t*/ && (require/*t*/ = 2);
-                for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < global/*e*/.length; ++requireLazy/*r*/)
-                    if (global/*e*/[requireLazy/*r*/]) {
-                        var module/*i*/ = POPAnimation/*f*/.createLinearAnimation({
+            _animOpacity: function(e, t, n) {
+                0 === t ? t = -1 : 1 === t && (t = 2);
+                for (var r = 0; r < e.length; ++r)
+                    if (e[r]) {
+                        var i = POPAnimation/*f*/.createLinearAnimation({
                             property: POPAnimation/*f*/.Properties.opacity,
-                            toValue: require/*t*/
+                            toValue: t
                         });
-                        this.startAnimation(global/*e*/[requireLazy/*r*/], module/*i*/, requireDynamic/*n*/)
+                        this.startAnimation(e[r], i, n)
                     }
             },
             _consumeLastTouch: function() {
-                var global/*e*/ = this.state.lastTouch,
-                    require/*t*/ = global/*e*/ ? [global/*e*/.velX, global/*e*/.velY] : [0, 0];
+                var e = this.state.lastTouch,
+                    t = e ? [e.velX, e.velY] : [0, 0];
                 return mergeInto/*F*/(this.state, {
                     lastTouch: null
-                }), require/*t*/
+                }), t
             },
             _open: function() {
                 this.state.modalState !== j.opening && this.state.modalState !== j.closing && invariant/*E*/(0, "Can only open if in CameraRoll/*a*/ modal view"), this.state.modalState = j.opening, this.stopAllAnimations();
-                var global/*e*/ = this.getOpenedFrame(this.state.activeImgIdx, this.state.screen),
-                    require/*t*/ = this.state.activeImgIdx;
+                var e = this.getOpenedFrame(this.state.activeImgIdx, this.state.screen),
+                    t = this.state.activeImgIdx;
                 this.props.onWillOpen && this.setTimeout(this.props.onWillOpen, 0);
-                var requireDynamic/*n*/ = this._consumeLastTouch();
-                this._animImagesToFrame(require/*t*/, global/*e*/, POPAnimation/*f*/.Types.spring, requireDynamic/*n*/, function() {
-                    this._resetTransform(require/*t*/), this.setState({
-                        modalFrame: global/*e*/
+                var n = this._consumeLastTouch();
+                this._animImagesToFrame(t, e, POPAnimation/*f*/.Types.spring, n, function() {
+                    this._resetTransform(t), this.setState({
+                        modalFrame: e
                     }), this._updateModalState(j.open)
                 }.bind(this));
-                var requireLazy/*r*/ = this.getKeysForIdx(require/*t*/);
-                this._animOpacity([M, O, requireLazy/*r*/[V]], 1), this._animOpacity([requireLazy/*r*/[q]], 0)
+                var r = this.getKeysForIdx(t);
+                this._animOpacity([M, O, r[V]], 1), this._animOpacity([r[q]], 0)
             },
             _close: function() {
-                this.props.onMayClose(this.state.activeImgIdx, function(global/*e*/) {
-                    var require/*t*/ = POPAnimation/*f*/.Types.spring,
-                        requireDynamic/*n*/ = this._consumeLastTouch();
-                    isEmpty/*D*/(global/*e*/) ? (global/*e*/ = merge/*I*/(this.state.modalFrame, {
+                this.props.onMayClose(this.state.activeImgIdx, function(e) {
+                    var t = POPAnimation/*f*/.Types.spring,
+                        n = this._consumeLastTouch();
+                    isEmpty/*D*/(e) ? (e = merge/*I*/(this.state.modalFrame, {
                         top: -this.state.modalFrame.height
-                    }), 0 === requireDynamic/*n*/[0] && 0 === requireDynamic/*n*/[1] && (require/*t*/ = POPAnimation/*f*/.Types.linear)) : (global/*e*/.top += this.state.orientationMatrices.translate[12], global/*e*/.left += this.state.orientationMatrices.translate[13], 0 !== this.state.orientation.rotationDegrees && this.startAnimation(L, {
+                    }), 0 === n[0] && 0 === n[1] && (t = POPAnimation/*f*/.Types.linear)) : (e.top += this.state.orientationMatrices.translate[12], e.left += this.state.orientationMatrices.translate[13], 0 !== this.state.orientation.rotationDegrees && this.startAnimation(L, {
                         type: this.AnimationTypes.easeInEaseOut,
                         property: this.AnimationProperties.rotation,
                         toValue: 0
                     }));
-                    var requireLazy/*r*/ = this.state.activeImgIdx,
-                        module/*i*/ = this.getKeysForIdx(requireLazy/*r*/);
-                    this._animOpacity([M, O, module/*i*/[V]], 0), this._animOpacity([module/*i*/[q]], 1), this._animImagesToFrame(requireLazy/*r*/, global/*e*/, require/*t*/, requireDynamic/*n*/, function() {
-                        this._resetTransform(requireLazy/*r*/), this.props.onDidClose(requireLazy/*r*/), this._updateModalState(j.closed)
+                    var r = this.state.activeImgIdx,
+                        i = this.getKeysForIdx(r);
+                    this._animOpacity([M, O, i[V]], 0), this._animOpacity([i[q]], 1), this._animImagesToFrame(r, e, t, n, function() {
+                        this._resetTransform(r), this.props.onDidClose(r), this._updateModalState(j.closed)
                     }.bind(this))
                 }.bind(this))
             },
-            setScrollProps: function(global/*e*/) {
-                this.refs[Q].setNativeProps(global/*e*/)
+            setScrollProps: function(e) {
+                this.refs[Q].setNativeProps(e)
             },
-            getZoomableRefName: function(global/*e*/) {
-                return "zoomable_scroll_" + global/*e*/
+            getZoomableRefName: function(e) {
+                return "zoomable_scroll_" + e
             },
             getZoomableRef: function() {
                 return this.refs[this.getZoomableRefName(this.state.activeImgIdx)]
             },
-            zoom: function(global/*e*/) {
-                this.state.modalState === j.zoomed && invariant/*E*/(0, "Tried to zoom while zoomed!."), this.getZoomableRef().scrollResponderZoomTo(merge/*I*/(global/*e*/, {
+            zoom: function(e) {
+                this.state.modalState === j.zoomed && invariant/*E*/(0, "Tried to zoom while zoomed!."), this.getZoomableRef().scrollResponderZoomTo(merge/*I*/(e, {
                     TouchableWithoutFeedback/*w*/: 0,
                     React/*h*/: 0
                 })), mergeInto/*F*/(this.state, {
                     modalState: j.zoomed
                 }), this._animOpacity([O], 0)
             },
-            unZoom: function(global/*e*/) {
+            unZoom: function(e) {
                 this.state.modalState === j.zoomed && (mergeInto/*F*/(this.state, {
                     modalState: j.open
                 }), this.getZoomableRef().scrollResponderZoomTo({
                     MatrixMath/*l*/: 0,
-                    require/*t*/: 0,
+                    t: 0,
                     TouchableWithoutFeedback/*w*/: ModalFullscreenView/*u*/.width,
                     React/*h*/: ModalFullscreenView/*u*/.height
-                }), this._animOpacity([O], 1, global/*e*/))
+                }), this._animOpacity([O], 1, e))
             },
-            handleLongPress: function(global/*e*/) {
-                this.showActionSheet(global/*e*/)
+            handleLongPress: function(e) {
+                this.showActionSheet(e)
             },
-            showActionSheet: function(global/*e*/) {
-                var require/*t*/ = this.props.sourcesHiRes[global/*e*/].uri,
-                    requireDynamic/*n*/ = {
+            showActionSheet: function(e) {
+                var t = this.props.sourcesHiRes[e].uri,
+                    n = {
                         options: ["Save to Camera Roll"]
                     },
-                    requireLazy/*r*/ = function(global/*e*/) {
-                        0 === global/*e*/ && CameraRoll/*a*/.saveImageWithTag(require/*t*/)
+                    r = function(e) {
+                        0 === e && CameraRoll/*a*/.saveImageWithTag(t)
                     },
-                    module/*i*/ = function() {};
-                m.showActionSheetWithOptions(requireDynamic/*n*/, module/*i*/, requireLazy/*r*/)
+                    i = function() {};
+                m.showActionSheetWithOptions(n, i, r)
             },
             isScrolling: function() {
                 return this.state.scrolling || this.state.momentumScrolling
             },
-            handleTap: function(global/*e*/, require/*t*/) {
+            handleTap: function(e, t) {
                 if (!this.isScrolling() && !this.state.dragging) {
-                    this.state.activeImgIdx = global/*e*/;
-                    var requireDynamic/*n*/ = {
-                        keyMirror/*x*/: require/*t*/.nativeEvent.locationX,
-                        ScrollView/*y*/: require/*t*/.nativeEvent.locationY
+                    this.state.activeImgIdx = e;
+                    var n = {
+                        keyMirror/*x*/: t.nativeEvent.locationX,
+                        ScrollView/*y*/: t.nativeEvent.locationY
                     };
                     switch (this.state.modalState) {
                         case j.open:
-                            this.zoom(requireDynamic/*n*/);
+                            this.zoom(n);
                             break;
                         case j.zoomed:
                             this.unZoom();
@@ -322,120 +322,120 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     }
                 }
             },
-            onTouchStart: function(global/*e*/) {
-                var require/*t*/ = {
-                    pageX: global/*e*/.nativeEvent.touches[0].pageX,
-                    pageY: global/*e*/.nativeEvent.touches[0].pageY,
+            onTouchStart: function(e) {
+                var t = {
+                    pageX: e.nativeEvent.touches[0].pageX,
+                    pageY: e.nativeEvent.touches[0].pageY,
                     velX: 0,
                     velY: 0,
                     dX: 0,
                     dY: 0,
                     dt: 0,
-                    timeStamp: global/*e*/.nativeEvent.touches[0].timeStamp
+                    timeStamp: e.nativeEvent.touches[0].timeStamp
                 };
                 mergeInto/*F*/(this.state, {
-                    firstTouch: require/*t*/,
-                    lastTouch: require/*t*/
+                    firstTouch: t,
+                    lastTouch: t
                 })
             },
-            onTouchMove: function(global/*e*/) {
-                if (global/*e*/.stopPropagation(), !this.isScrolling() && this.state.modalState !== j.zoomed && !this.state.dragging && this.state.modalState === j.open) {
-                    var require/*t*/ = this._updateLastTouch(global/*e*/),
-                        requireDynamic/*n*/ = Math.abs(require/*t*/.dY / require/*t*/.dX);
-                    this.state.orientation.isLandscape && (requireDynamic/*n*/ = 1 / requireDynamic/*n*/);
-                    var requireLazy/*r*/ = Math.abs(this.state.firstTouch.pageY - require/*t*/.pageY);
-                    requireDynamic/*n*/ > $ && requireLazy/*r*/ > 20 && this.setState({
+            onTouchMove: function(e) {
+                if (e.stopPropagation(), !this.isScrolling() && this.state.modalState !== j.zoomed && !this.state.dragging && this.state.modalState === j.open) {
+                    var t = this._updateLastTouch(e),
+                        n = Math.abs(t.dY / t.dX);
+                    this.state.orientation.isLandscape && (n = 1 / n);
+                    var r = Math.abs(this.state.firstTouch.pageY - t.pageY);
+                    n > $ && r > 20 && this.setState({
                         dragging: !0
                     })
                 }
             },
             getDisplacement: function() {
-                var global/*e*/ = this.getOpenedFrame(this.state.activeImgIdx, this.state.screen),
-                    require/*t*/ = global/*e*/.top - this.state.modalFrame.top,
-                    requireDynamic/*n*/ = global/*e*/.left - this.state.modalFrame.left;
-                return Math.sqrt(require/*t*/ * require/*t*/ + requireDynamic/*n*/ * requireDynamic/*n*/)
+                var e = this.getOpenedFrame(this.state.activeImgIdx, this.state.screen),
+                    t = e.top - this.state.modalFrame.top,
+                    n = e.left - this.state.modalFrame.left;
+                return Math.sqrt(t * t + n * n)
             },
             onResponderTerminate: function() {
                 this.onResponderRelease()
             },
-            onResponderRelease: function(global/*e*/) {
+            onResponderRelease: function(e) {
                 if (this.state.dragging) {
                     if (this.setState({
                             dragging: !1
                         }), this.state.modalState === j.open || this.state.modalState === j.closing) {
-                        var require/*t*/ = this.state.lastTouch.velX,
-                            requireDynamic/*n*/ = this.state.lastTouch.velY;
-                        if (Math.sqrt(require/*t*/ * require/*t*/ + requireDynamic/*n*/ * requireDynamic/*n*/) > A.speed || this.getDisplacement() > A.displacement) return void this.close()
+                        var t = this.state.lastTouch.velX,
+                            n = this.state.lastTouch.velY;
+                        if (Math.sqrt(t * t + n * n) > A.speed || this.getDisplacement() > A.displacement) return void this.close()
                     }
-                    this._updateModalState(j.opening), this._open(global/*e*/)
+                    this._updateModalState(j.opening), this._open(e)
                 }
             },
             _resetTransform: function() {
                 this.state.modalFrame.left -= this.state.dragTranslateMatrix[12], this.state.modalFrame.top -= this.state.dragTranslateMatrix[13], this.state.dragTranslateMatrix[12] = 0, this.state.dragTranslateMatrix[13] = 0
             },
-            _moveImage: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                this.state.modalFrame.left += require/*t*/, this.state.modalFrame.top += requireDynamic/*n*/, this.state.dragTranslateMatrix[12] += require/*t*/, this.state.dragTranslateMatrix[13] += requireDynamic/*n*/, this.getKeysForIdx(global/*e*/).forEach(function(global/*e*/) {
-                    return this.refs[global/*e*/].setNativeProps({
+            _moveImage: function(e, t, n) {
+                this.state.modalFrame.left += t, this.state.modalFrame.top += n, this.state.dragTranslateMatrix[12] += t, this.state.dragTranslateMatrix[13] += n, this.getKeysForIdx(e).forEach(function(e) {
+                    return this.refs[e].setNativeProps({
                         transformMatrix: MatrixMath/*l*/.createCopy(this.state.dragTranslateMatrix)
                     })
                 }.bind(this))
             },
-            _updateOpacity: function(global/*e*/, require/*t*/) {
-                this.refs[global/*e*/].setNativeProps({
+            _updateOpacity: function(e, t) {
+                this.refs[e].setNativeProps({
                     style: {
-                        opacity: require/*t*/
+                        opacity: t
                     }
                 })
             },
-            _updateLastTouch: function(global/*e*/) {
-                var require/*t*/ = this.state.lastTouch,
-                    requireDynamic/*n*/ = global/*e*/.nativeEvent.touches[0];
-                if (!require/*t*/) {
-                    require/*t*/ = {
-                        pageX: requireDynamic/*n*/.pageX,
-                        pageY: requireDynamic/*n*/.pageY,
-                        timeStamp: requireDynamic/*n*/.timeStamp,
+            _updateLastTouch: function(e) {
+                var t = this.state.lastTouch,
+                    n = e.nativeEvent.touches[0];
+                if (!t) {
+                    t = {
+                        pageX: n.pageX,
+                        pageY: n.pageY,
+                        timeStamp: n.timeStamp,
                         velX: 0,
                         velY: 0,
                         dX: 0,
                         dY: 0,
-                        dt: requireDynamic/*n*/.timestamp
+                        dt: n.timestamp
                     };
-                    var requireLazy/*r*/ = new Error("lastTouch was unexpectedly null.  firstTouch: " + JSON.stringify(this.state.firstTouch, null, "  ") + ", new lastTouch: " + JSON.stringify(require/*t*/, null, "  "));
-                    return console.error(requireLazy/*r*/.message + ". stack: " + requireLazy/*r*/.stack), mergeInto/*F*/(this.state, {
-                        lastTouch: require/*t*/
-                    }), require/*t*/
+                    var r = new Error("lastTouch was unexpectedly null.  firstTouch: " + JSON.stringify(this.state.firstTouch, null, "  ") + ", new lastTouch: " + JSON.stringify(t, null, "  "));
+                    return console.error(r.message + ". stack: " + r.stack), mergeInto/*F*/(this.state, {
+                        lastTouch: t
+                    }), t
                 }
-                var module/*i*/ = requireDynamic/*n*/.pageX - require/*t*/.pageX,
-                    POPAnimationMixin/*o*/ = requireDynamic/*n*/.pageY - require/*t*/.pageY,
-                    CameraRoll/*a*/ = (requireDynamic/*n*/.timeStamp - require/*t*/.timeStamp) / 1e3,
-                    Image/*s*/ = Math.min(require/*t*/.dt, CameraRoll/*a*/);
+                var i = n.pageX - t.pageX,
+                    POPAnimationMixin/*o*/ = n.pageY - t.pageY,
+                    CameraRoll/*a*/ = (n.timeStamp - t.timeStamp) / 1e3,
+                    Image/*s*/ = Math.min(t.dt, CameraRoll/*a*/);
                 return mergeInto/*F*/(this.state, {
                     lastTouch: {
-                        pageX: requireDynamic/*n*/.pageX,
-                        pageY: requireDynamic/*n*/.pageY,
-                        timeStamp: requireDynamic/*n*/.timeStamp,
-                        velX: (.8 * module/*i*/ + .2 * require/*t*/.velX * Image/*s*/) / CameraRoll/*a*/,
-                        velY: (.8 * POPAnimationMixin/*o*/ + .2 * require/*t*/.velY * Image/*s*/) / CameraRoll/*a*/,
-                        dX: module/*i*/,
+                        pageX: n.pageX,
+                        pageY: n.pageY,
+                        timeStamp: n.timeStamp,
+                        velX: (.8 * i + .2 * t.velX * Image/*s*/) / CameraRoll/*a*/,
+                        velY: (.8 * POPAnimationMixin/*o*/ + .2 * t.velY * Image/*s*/) / CameraRoll/*a*/,
+                        dX: i,
                         dY: POPAnimationMixin/*o*/,
                         dt: CameraRoll/*a*/
                     }
                 }), this.state.lastTouch
             },
-            handleDrag: function(global/*e*/) {
-                if (global/*e*/.stopPropagation(), this.state.dragging || this.state.modalState !== j.opening && this.state.modalState !== j.closing) {
-                    var require/*t*/ = this.state.activeImgIdx,
-                        requireDynamic/*n*/ = this.state.orientation.rotationDegrees * Math.PI / 180,
-                        requireLazy/*r*/ = this._updateLastTouch(global/*e*/),
-                        module/*i*/ = requireLazy/*r*/.dX * Math.cos(requireDynamic/*n*/) + requireLazy/*r*/.dY * Math.sin(requireDynamic/*n*/),
-                        POPAnimationMixin/*o*/ = -requireLazy/*r*/.dX * Math.sin(requireDynamic/*n*/) + requireLazy/*r*/.dY * Math.cos(requireDynamic/*n*/);
-                    this._moveImage(require/*t*/, module/*i*/, POPAnimationMixin/*o*/);
+            handleDrag: function(e) {
+                if (e.stopPropagation(), this.state.dragging || this.state.modalState !== j.opening && this.state.modalState !== j.closing) {
+                    var t = this.state.activeImgIdx,
+                        n = this.state.orientation.rotationDegrees * Math.PI / 180,
+                        r = this._updateLastTouch(e),
+                        i = r.dX * Math.cos(n) + r.dY * Math.sin(n),
+                        POPAnimationMixin/*o*/ = -r.dX * Math.sin(n) + r.dY * Math.cos(n);
+                    this._moveImage(t, i, POPAnimationMixin/*o*/);
                     var CameraRoll/*a*/ = this.getDisplacement() / A.displacement;
                     this._updateOpacity(M, Math.max(0, 1 - CameraRoll/*a*/ / 2)), this._updateOpacity(O, Math.max(0, 1 - CameraRoll/*a*/)), this.state.modalState === j.open && (mergeInto/*F*/(this.state, {
-                        activeImgIdx: require/*t*/,
+                        activeImgIdx: t,
                         modalState: j.closing
-                    }), this.props.onMayClose(require/*t*/), this.shouldRenderDropShadow() && this.refs[this.getKeysForIdx(require/*t*/)[V]].setNativeProps(z), this.setScrollProps(G))
+                    }), this.props.onMayClose(t), this.shouldRenderDropShadow() && this.refs[this.getKeysForIdx(t)[V]].setNativeProps(z), this.setScrollProps(G))
                 }
             },
             handleZoomScrollBegin: function() {
@@ -443,29 +443,29 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     modalState: j.zoomed
                 }), this._animOpacity([O], 0)
             },
-            handleZoomScrollEnd: function(global/*e*/) {
-                1 === global/*e*/.nativeEvent.zoomScale && this.unZoom()
+            handleZoomScrollEnd: function(e) {
+                1 === e.nativeEvent.zoomScale && this.unZoom()
             },
             handleScrollBeginDrag: function() {
                 mergeInto/*F*/(this.state, {
                     scrolling: !0
                 })
             },
-            handleMomentumScrollEnd: function(global/*e*/) {
+            handleMomentumScrollEnd: function(e) {
                 mergeInto/*F*/(this.state, {
                     momentumScrolling: !1
                 });
-                var require/*t*/ = global/*e*/.nativeEvent.contentOffset,
-                    requireDynamic/*n*/ = Math.max(0, Math.floor(require/*t*/.keyMirror/*x*/ / this.state.screen.width));
-                return requireDynamic/*n*/ !== this.state.activeImgIdx && this.props.didImgIdxChange && this.props.didImgIdxChange(requireDynamic/*n*/), requireDynamic/*n*/ !== this.state.activeImgIdx && this.state.modalState === j.zoomed ? (this.unZoom(), void this.setState({
+                var t = e.nativeEvent.contentOffset,
+                    n = Math.max(0, Math.floor(t.keyMirror/*x*/ / this.state.screen.width));
+                return n !== this.state.activeImgIdx && this.props.didImgIdxChange && this.props.didImgIdxChange(n), n !== this.state.activeImgIdx && this.state.modalState === j.zoomed ? (this.unZoom(), void this.setState({
                     modalState: j.open,
-                    modalFrame: this.getOpenedFrame(requireDynamic/*n*/, this.state.screen),
-                    activeImgIdx: requireDynamic/*n*/,
+                    modalFrame: this.getOpenedFrame(n, this.state.screen),
+                    activeImgIdx: n,
                     scrolling: !1
                 })) : (mergeInto/*F*/(this.state, {
-                    modalFrame: this.getOpenedFrame(requireDynamic/*n*/, this.state.screen),
-                    activeImgIdx: requireDynamic/*n*/
-                }), void this.handleScrollEnd(global/*e*/))
+                    modalFrame: this.getOpenedFrame(n, this.state.screen),
+                    activeImgIdx: n
+                }), void this.handleScrollEnd(e))
             },
             handleMomentumScrollBegin: function() {
                 mergeInto/*F*/(this.state, {
@@ -478,12 +478,12 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                 })
             },
             shouldRenderDropShadow: function() {
-                var global/*e*/ = _.adjustedFillRate;
-                return global/*e*/.current > global/*e*/.abysmal && !this.props.disableDropShadow
+                var e = _.adjustedFillRate;
+                return e.current > e.abysmal && !this.props.disableDropShadow
             },
-            getKeysForIdx: function(global/*e*/) {
-                var require/*t*/ = [];
-                return require/*t*/[B] = "low_res_" + global/*e*/, require/*t*/[H] = "high_res_" + global/*e*/, this.shouldRenderDropShadow() && (require/*t*/[V] = "drop_shadow_" + global/*e*/), this.props.closedShadowStyle && (require/*t*/[q] = "closed_shadow_" + global/*e*/), require/*t*/
+            getKeysForIdx: function(e) {
+                var t = [];
+                return t[B] = "low_res_" + e, t[H] = "high_res_" + e, this.shouldRenderDropShadow() && (t[V] = "drop_shadow_" + e), this.props.closedShadowStyle && (t[q] = "closed_shadow_" + e), t
             },
             renderDarkeningView: function() {
                 return React/*h*/.createElement(View/*C*/, {
@@ -492,64 +492,64 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                 })
             },
             renderOverlayView: function() {
-                var global/*e*/ = 0;
-                return (this.state.modalState === j.open || this.state.modalState === j.closing) && (global/*e*/ = 1), React/*h*/.createElement(View/*C*/, {
+                var e = 0;
+                return (this.state.modalState === j.open || this.state.modalState === j.closing) && (e = 1), React/*h*/.createElement(View/*C*/, {
                     pointerEvents: View/*C*/.pointerEvents.boxNone,
                     style: [ModalFullscreenView/*u*/.style, {
-                        opacity: global/*e*/
+                        opacity: e
                     }],
                     ref: O
                 }, this.props.openedOverlayFactory(this.state.activeImgIdx))
             },
-            renderDropShadow: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = this.getKeysForIdx(global/*e*/)[V],
-                    requireLazy/*r*/ = 109,
-                    module/*i*/ = 24,
+            renderDropShadow: function(e, t) {
+                var n = this.getKeysForIdx(e)[V],
+                    r = 109,
+                    i = 24,
                     POPAnimationMixin/*o*/ = {
-                        left: require/*t*/.left - module/*i*/,
-                        top: require/*t*/.top + module/*i*/,
-                        width: require/*t*/.width + 2 * module/*i*/,
-                        height: require/*t*/.height + 2 * module/*i*/,
+                        left: t.left - i,
+                        top: t.top + i,
+                        width: t.width + 2 * i,
+                        height: t.height + 2 * i,
                         resizeMode: Image/*s*/.resizeMode.stretch
                     };
                 return this.shouldRenderDropShadow() ? React/*h*/.createElement(Image/*s*/, {
-                    key: requireDynamic/*n*/,
-                    ref: requireDynamic/*n*/,
+                    key: n,
+                    ref: n,
                     source: ix/*T*/("ShadowProjected"),
                     style: [this.props.imgStyle, this.state.modalState === j.closing ? K.show : K.hide, POPAnimationMixin/*o*/],
                     capInsets: {
-                        left: requireLazy/*r*/,
-                        right: requireLazy/*r*/,
-                        bottom: requireLazy/*r*/,
-                        top: requireLazy/*r*/
+                        left: r,
+                        right: r,
+                        bottom: r,
+                        top: r
                     }
                 }) : null
             },
-            renderClosedShadow: function(global/*e*/, require/*t*/) {
+            renderClosedShadow: function(e, t) {
                 if (!this.props.closedShadowStyle) return null;
-                var requireDynamic/*n*/ = this.getKeysForIdx(global/*e*/)[q],
-                    requireLazy/*r*/ = [K.shadow, this.props.imgStyle, require/*t*/, this.props.closedShadowStyle, this.state.modalState === j.closed ? K.show : K.hide];
+                var n = this.getKeysForIdx(e)[q],
+                    r = [K.shadow, this.props.imgStyle, t, this.props.closedShadowStyle, this.state.modalState === j.closed ? K.show : K.hide];
                 return React/*h*/.createElement(View/*C*/, {
-                    key: requireDynamic/*n*/,
-                    ref: requireDynamic/*n*/,
-                    style: requireLazy/*r*/
+                    key: n,
+                    ref: n,
+                    style: r
                 })
             },
-            renderSingleImage: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/, module/*i*/, POPAnimationMixin/*o*/ = this.getKeysForIdx(global/*e*/);
-                return requireDynamic/*n*/ && requireDynamic/*n*/.hiRes ? (requireLazy/*r*/ = this.props.sourcesHiRes[global/*e*/], module/*i*/ = POPAnimationMixin/*o*/[H]) : (requireLazy/*r*/ = this.props.sources[global/*e*/], module/*i*/ = POPAnimationMixin/*o*/[B]), React/*h*/.createElement(TouchableWithoutFeedback/*w*/, {
-                    onLongPress: this.handleLongPress.bind(this, global/*e*/),
-                    onPress: this.handleTap.bind(this, global/*e*/),
-                    key: module/*i*/
+            renderSingleImage: function(e, t, n) {
+                var r, i, POPAnimationMixin/*o*/ = this.getKeysForIdx(e);
+                return n && n.hiRes ? (r = this.props.sourcesHiRes[e], i = POPAnimationMixin/*o*/[H]) : (r = this.props.sources[e], i = POPAnimationMixin/*o*/[B]), React/*h*/.createElement(TouchableWithoutFeedback/*w*/, {
+                    onLongPress: this.handleLongPress.bind(this, e),
+                    onPress: this.handleTap.bind(this, e),
+                    key: i
                 }, React/*h*/.createElement(Image/*s*/, {
-                    ref: module/*i*/,
-                    source: requireLazy/*r*/,
-                    style: [K.image, this.props.imgStyle, require/*t*/]
+                    ref: i,
+                    source: r,
+                    style: [K.image, this.props.imgStyle, t]
                 }))
             },
-            renderImage: function(global/*e*/, require/*t*/) {
+            renderImage: function(e, t) {
                 return React/*h*/.createElement(View/*C*/, {
-                    style: [K.image, require/*t*/, N],
+                    style: [K.image, t, N],
                     onTouchStart: this.onTouchStart,
                     onTouchMove: this.onTouchMove,
                     onMoveShouldSetResponder: function() {
@@ -558,12 +558,12 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     onResponderMove: this.handleDrag,
                     onResponderRelease: this.onResponderRelease,
                     onResponderTerminate: this.onResponderTerminate
-                }, this.renderClosedShadow(global/*e*/, require/*t*/), this.renderDropShadow(global/*e*/, require/*t*/), this.renderSingleImage(global/*e*/, require/*t*/), this.renderSingleImage(global/*e*/, require/*t*/, {
+                }, this.renderClosedShadow(e, t), this.renderDropShadow(e, t), this.renderSingleImage(e, t), this.renderSingleImage(e, t, {
                     hiRes: !0
                 }))
             },
             renderModalScrollView: function() {
-                var global/*e*/ = this.props.sources.map(this.renderZoomableImage);
+                var e = this.props.sources.map(this.renderZoomableImage);
                 return React/*h*/.createElement(ScrollView/*y*/, {
                     ref: Q,
                     automaticallyAdjustContentInsets: !1,
@@ -575,13 +575,13 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     contentOffset: this.getMainContentOffset(),
                     horizontal: !0,
                     style: ModalFullscreenView/*u*/.style
-                }, global/*e*/)
+                }, e)
             },
-            renderZoomableImage: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = require/*t*/ === this.state.activeImgIdx ? this.state.modalFrame : this.getOpenedFrame(require/*t*/, this.state.screen),
-                    requireLazy/*r*/ = merge/*I*/(requireDynamic/*n*/, N);
+            renderZoomableImage: function(e, t) {
+                var n = t === this.state.activeImgIdx ? this.state.modalFrame : this.getOpenedFrame(t, this.state.screen),
+                    r = merge/*I*/(n, N);
                 return React/*h*/.createElement(ScrollView/*y*/, {
-                    ref: this.getZoomableRefName(require/*t*/),
+                    ref: this.getZoomableRefName(t),
                     alwaysBounceHorizontal: !1,
                     alwaysBounceVertical: !1,
                     maximumZoomScale: this.state.dragging ? 1 : 3,
@@ -590,18 +590,18 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                     onScrollEndDrag: this.handleZoomScrollEnd,
                     automaticallyAdjustContentInsets: !1,
                     pagingEnabled: !1,
-                    contentContainerStyle: requireLazy/*r*/,
+                    contentContainerStyle: r,
                     scrollEnabled: !this.state.dragging,
                     style: this.state.screen
-                }, this.renderImage(require/*t*/, requireLazy/*r*/))
+                }, this.renderImage(t, r))
             },
             render: function() {
-                var global/*e*/ = this.state.activeImgIdx;
+                var e = this.state.activeImgIdx;
                 if (this.state.modalState === j.closed) return React/*h*/.createElement(ModalFullscreenView/*u*/, {
                     ref: k
                 });
-                var require/*t*/, requireDynamic/*n*/ = {};
-                return this.state.modalState !== j.closed && (requireDynamic/*n*/ = merge/*I*/(this.state.modalFrame)), require/*t*/ = this.state.modalState === j.open || this.state.modalState === j.zoomed ? this.renderModalScrollView() : this.renderImage(global/*e*/, requireDynamic/*n*/), React/*h*/.createElement(ModalFullscreenView/*u*/, {
+                var t, n = {};
+                return this.state.modalState !== j.closed && (n = merge/*I*/(this.state.modalFrame)), t = this.state.modalState === j.open || this.state.modalState === j.zoomed ? this.renderModalScrollView() : this.renderImage(e, n), React/*h*/.createElement(ModalFullscreenView/*u*/, {
                     ref: k
                 }, this.renderDarkeningView(), React/*h*/.createElement(View/*C*/, {
                     pointerEvents: View/*C*/.pointerEvents.boxNone,
@@ -609,7 +609,7 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
                         transformMatrix: MatrixMath/*l*/.createCopy(this.state.orientationMatrices.transform)
                     }],
                     ref: L
-                }, require/*t*/, this.renderOverlayView()))
+                }, t, this.renderOverlayView()))
             }
         }),
         K = StyleSheet/*S*/.create({
@@ -645,5 +645,5 @@ __d("FBPhotoModalViewer",["POPAnimationMixin","CameraRoll","Image","MatrixMath",
         z = {
             style: K.show
         };
-    module/*i*/.exports = W
+    i.exports = W
 });

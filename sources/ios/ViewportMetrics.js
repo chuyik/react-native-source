@@ -1,13 +1,13 @@
-__d("ViewportMetrics",["getUnboundedScrollPosition"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ViewportMetrics",["getUnboundedScrollPosition"],function (e, t, n, r, i) {
     "use strict";
-    var getUnboundedScrollPosition/*o*/ = require/*t*/("getUnboundedScrollPosition"),
+    var getUnboundedScrollPosition/*o*/ = t("getUnboundedScrollPosition"),
         a = {
             currentScrollLeft: 0,
             currentScrollTop: 0,
             refreshScrollValues: function() {
-                var global/*e*/ = getUnboundedScrollPosition/*o*/(window);
-                a.currentScrollLeft = global/*e*/.x, a.currentScrollTop = global/*e*/.y
+                var e = getUnboundedScrollPosition/*o*/(window);
+                a.currentScrollLeft = e.x, a.currentScrollTop = e.y
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

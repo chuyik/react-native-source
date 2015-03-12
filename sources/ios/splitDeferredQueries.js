@@ -1,96 +1,96 @@
-__d("splitDeferredQueries",["GraphQL_EXPERIMENTAL","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("splitDeferredQueries",["GraphQL_EXPERIMENTAL","invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = global/*e*/.getQuery(),
-            requireDynamic/*n*/ = require/*t*/.getID(),
-            requireLazy/*r*/ = null,
-            module/*i*/ = null,
-            o = a(require/*t*/),
+    function o(e) {
+        var t = e.getQuery(),
+            n = t.getID(),
+            r = null,
+            i = null,
+            o = a(t),
             u = o.required,
             invariant/*d*/ = o.deferred;
-        requireLazy/*r*/ = u === require/*t*/ ? [global/*e*/] : u ? invariant/*d*/.some(function(global/*e*/) {
-            return global/*e*/ instanceof c
+        r = u === t ? [e] : u ? invariant/*d*/.some(function(e) {
+            return e instanceof c
         }) ? [s(u)] : [new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(u)] : [];
         for (var h = 0; h < invariant/*d*/.length; h++) {
-            if (invariant/*d*/[h] instanceof GraphQL_EXPERIMENTAL/*p*/.Field) module/*i*/ = l(require/*t*/, invariant/*d*/[h], null);
+            if (invariant/*d*/[h] instanceof GraphQL_EXPERIMENTAL/*p*/.Field) i = l(t, invariant/*d*/[h], null);
             else if (invariant/*d*/[h] instanceof GraphQL_EXPERIMENTAL/*p*/.QueryFragment) {
                 if (!invariant/*d*/[h].hasFields()) continue;
-                module/*i*/ = l(require/*t*/, null, invariant/*d*/[h])
-            } else module/*i*/ = invariant/*d*/[h].createQuery(requireDynamic/*n*/);
-            requireLazy/*r*/.push(module/*i*/)
+                i = l(t, null, invariant/*d*/[h])
+            } else i = invariant/*d*/[h].createQuery(n);
+            r.push(i)
         }
-        return requireLazy/*r*/
+        return r
     }
 
-    function a(global/*e*/) {
-        var require/*t*/, requireDynamic/*n*/, requireLazy/*r*/ = null,
-            module/*i*/ = null,
+    function a(e) {
+        var t, n, r = null,
+            i = null,
             o = null,
             s = null,
-            l = u(global/*e*/),
-            invariant/*d*/ = global/*e*/.getOwnFields();
-        for (require/*t*/ = 0; require/*t*/ < invariant/*d*/.length; require/*t*/++) {
-            var f = invariant/*d*/[require/*t*/];
-            for (s = a(f), (requireLazy/*r*/ || s.required !== f) && (requireLazy/*r*/ = requireLazy/*r*/ || invariant/*d*/.slice(0, require/*t*/), s.required && requireLazy/*r*/.push(s.required)), requireDynamic/*n*/ = 0; requireDynamic/*n*/ < s.deferred.length; requireDynamic/*n*/++) o = o || [], o.push(s.deferred[requireDynamic/*n*/] instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? f.shallowClone([s.deferred[requireDynamic/*n*/]], null) : s.deferred[requireDynamic/*n*/] instanceof GraphQL_EXPERIMENTAL/*p*/.QueryFragment ? f.shallowClone(null, [s.deferred[requireDynamic/*n*/]]) : s.deferred[requireDynamic/*n*/])
+            l = u(e),
+            invariant/*d*/ = e.getOwnFields();
+        for (t = 0; t < invariant/*d*/.length; t++) {
+            var f = invariant/*d*/[t];
+            for (s = a(f), (r || s.required !== f) && (r = r || invariant/*d*/.slice(0, t), s.required && r.push(s.required)), n = 0; n < s.deferred.length; n++) o = o || [], o.push(s.deferred[n] instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? f.shallowClone([s.deferred[n]], null) : s.deferred[n] instanceof GraphQL_EXPERIMENTAL/*p*/.QueryFragment ? f.shallowClone(null, [s.deferred[n]]) : s.deferred[n])
         }
-        if (global/*e*/ instanceof GraphQL_EXPERIMENTAL/*p*/.Field && o)
-            for (require/*t*/ = 0; require/*t*/ < o.length; require/*t*/++) o[require/*t*/] instanceof c && o[require/*t*/].prependNodeToPath(global/*e*/);
-        var m = global/*e*/.getFragments();
-        for (require/*t*/ = 0; require/*t*/ < m.length; require/*t*/++) {
-            var g = m[require/*t*/];
+        if (e instanceof GraphQL_EXPERIMENTAL/*p*/.Field && o)
+            for (t = 0; t < o.length; t++) o[t] instanceof c && o[t].prependNodeToPath(e);
+        var m = e.getFragments();
+        for (t = 0; t < m.length; t++) {
+            var g = m[t];
             if (g.isDeferred()) {
                 if (o = o || [], l) {
-                    var _ = global/*e*/.getInferredPrimaryKey();
-                    o.push(new c(l, global/*e*/, global/*e*/.getOwnUnaliasedFields(_), [g.shallowClone(g.getOwnFields(), g.getFragments())]))
+                    var _ = e.getInferredPrimaryKey();
+                    o.push(new c(l, e, e.getOwnUnaliasedFields(_), [g.shallowClone(g.getOwnFields(), g.getFragments())]))
                 } else o.push(g);
-                module/*i*/ = module/*i*/ || m.slice(0, require/*t*/)
+                i = i || m.slice(0, t)
             } else
-                for (s = a(g), (module/*i*/ || s.required !== g) && (module/*i*/ = module/*i*/ || m.slice(0, require/*t*/), s.required && module/*i*/.push(s.required)), requireDynamic/*n*/ = 0; requireDynamic/*n*/ < s.deferred.length; requireDynamic/*n*/++) o = o || [], o.push(s.deferred[requireDynamic/*n*/] instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? g.shallowClone([s.deferred[requireDynamic/*n*/]], null) : s.deferred[requireDynamic/*n*/] instanceof GraphQL_EXPERIMENTAL/*p*/.QueryFragment ? l ? new c(l, global/*e*/, h, [g.shallowClone(null, [s.deferred[requireDynamic/*n*/]])]) : g.shallowClone(null, [s.deferred[requireDynamic/*n*/]]) : s.deferred[requireDynamic/*n*/])
+                for (s = a(g), (i || s.required !== g) && (i = i || m.slice(0, t), s.required && i.push(s.required)), n = 0; n < s.deferred.length; n++) o = o || [], o.push(s.deferred[n] instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? g.shallowClone([s.deferred[n]], null) : s.deferred[n] instanceof GraphQL_EXPERIMENTAL/*p*/.QueryFragment ? l ? new c(l, e, h, [g.shallowClone(null, [s.deferred[n]])]) : g.shallowClone(null, [s.deferred[n]]) : s.deferred[n])
         }
         var y;
-        return y = requireLazy/*r*/ || module/*i*/ ? 0 === (requireLazy/*r*/ || invariant/*d*/).length && 0 === (module/*i*/ || m).length ? null : global/*e*/ instanceof GraphQL_EXPERIMENTAL/*p*/.Query ? global/*e*/.shallowCloneWithSameID(requireLazy/*r*/ || invariant/*d*/, module/*i*/ || m) : global/*e*/.shallowClone(requireLazy/*r*/ || invariant/*d*/, module/*i*/ || m) : global/*e*/, {
+        return y = r || i ? 0 === (r || invariant/*d*/).length && 0 === (i || m).length ? null : e instanceof GraphQL_EXPERIMENTAL/*p*/.Query ? e.shallowCloneWithSameID(r || invariant/*d*/, i || m) : e.shallowClone(r || invariant/*d*/, i || m) : e, {
             required: y,
             deferred: o || h
         }
     }
 
-    function s(global/*e*/) {
-        return new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(global/*e*/.shallowCloneWithSameID(global/*e*/.getOwnFields(), global/*e*/.getFragments(), {
+    function s(e) {
+        return new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(e.shallowCloneWithSameID(e.getOwnFields(), e.getFragments(), {
             isRefQueryDependency: !0
         }))
     }
 
-    function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getOwnUnaliasedFields("id"),
-            module/*i*/ = null;
-        if (requireDynamic/*n*/) {
-            var o = Object.keys(requireDynamic/*n*/.getDeferredFragmentNames());
-            1 !== o.length && invariant/*d*/(0, "Only one fragment should be returned"), module/*i*/ = o[0]
+    function l(e, t, n) {
+        var r = e.getOwnUnaliasedFields("id"),
+            i = null;
+        if (n) {
+            var o = Object.keys(n.getDeferredFragmentNames());
+            1 !== o.length && invariant/*d*/(0, "Only one fragment should be returned"), i = o[0]
         }
-        return module/*i*/ = module/*i*/ || global/*e*/.getQueryName() + "_defer", new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(global/*e*/.shallowClone(require/*t*/ ? requireLazy/*r*/.concat(require/*t*/) : requireLazy/*r*/, requireDynamic/*n*/ ? [requireDynamic/*n*/] : null, {
+        return i = i || e.getQueryName() + "_defer", new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(e.shallowClone(t ? r.concat(t) : r, n ? [n] : null, {
             isDeferred: !0
-        }, module/*i*/))
+        }, i))
     }
 
-    function u(global/*e*/) {
-        return global/*e*/ instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? global/*e*/.getInferredRootCallName() : null
+    function u(e) {
+        return e instanceof GraphQL_EXPERIMENTAL/*p*/.Field ? e.getInferredRootCallName() : null
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        this.$RefQueryDescriptor_rootCallName = global/*e*/, this.$RefQueryDescriptor_node = require/*t*/, this.$RefQueryDescriptor_fields = requireDynamic/*n*/, this.$RefQueryDescriptor_fragments = requireLazy/*r*/, this.$RefQueryDescriptor_path = [this.$RefQueryDescriptor_getJSONPathComponent(require/*t*/), require/*t*/.getInferredPrimaryKey()]
+    function c(e, t, n, r) {
+        this.$RefQueryDescriptor_rootCallName = e, this.$RefQueryDescriptor_node = t, this.$RefQueryDescriptor_fields = n, this.$RefQueryDescriptor_fragments = r, this.$RefQueryDescriptor_path = [this.$RefQueryDescriptor_getJSONPathComponent(t), t.getInferredPrimaryKey()]
     }
-    var GraphQL_EXPERIMENTAL/*p*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        invariant/*d*/ = require/*t*/("invariant"),
+    var GraphQL_EXPERIMENTAL/*p*/ = t("GraphQL_EXPERIMENTAL"),
+        invariant/*d*/ = t("invariant"),
         h = [];
-    c.prototype.createQuery = function(global/*e*/) {
-        return new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(new GraphQL_EXPERIMENTAL/*p*/.Query(this.$RefQueryDescriptor_rootCallName, [new GraphQL_EXPERIMENTAL/*p*/.BatchCallVariable(global/*e*/, "$.*." + this.$RefQueryDescriptor_path.join("."))], this.$RefQueryDescriptor_fields, this.$RefQueryDescriptor_fragments, {
+    c.prototype.createQuery = function(e) {
+        return new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(new GraphQL_EXPERIMENTAL/*p*/.Query(this.$RefQueryDescriptor_rootCallName, [new GraphQL_EXPERIMENTAL/*p*/.BatchCallVariable(e, "$.*." + this.$RefQueryDescriptor_path.join("."))], this.$RefQueryDescriptor_fields, this.$RefQueryDescriptor_fragments, {
             isDeferred: !0
         }, null))
-    }, c.prototype.prependNodeToPath = function(global/*e*/) {
-        var require/*t*/ = this.$RefQueryDescriptor_getJSONPathComponent(global/*e*/);
-        this.$RefQueryDescriptor_path.unshift(require/*t*/)
-    }, c.prototype.$RefQueryDescriptor_getJSONPathComponent = function(global/*e*/) {
-        return (global/*e*/.getAlias() || global/*e*/.getGeneratedAlias()) + (global/*e*/.isPlural() ? ".*" : "")
-    }, module/*i*/.exports = o
+    }, c.prototype.prependNodeToPath = function(e) {
+        var t = this.$RefQueryDescriptor_getJSONPathComponent(e);
+        this.$RefQueryDescriptor_path.unshift(t)
+    }, c.prototype.$RefQueryDescriptor_getJSONPathComponent = function(e) {
+        return (e.getAlias() || e.getGeneratedAlias()) + (e.isPlural() ? ".*" : "")
+    }, i.exports = o
 });

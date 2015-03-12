@@ -1,13 +1,13 @@
-__d("ReactRootIndex",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactRootIndex",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
-            injectCreateReactRootIndex: function(global/*e*/) {
-                a.createReactRootIndex = global/*e*/
+            injectCreateReactRootIndex: function(e) {
+                a.createReactRootIndex = e
             }
         },
         a = {
             createReactRootIndex: null,
             injection: o
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

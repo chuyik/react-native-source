@@ -1,25 +1,25 @@
-__d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTagHandles","NativeModules","NativeModulesDeprecated","ScrollResponder","ScrollViewPropTypes","StyleSheetPropType","StyleSheet","View","ViewStylePropTypes","createReactIOSNativeComponentClass","flattenStyle","invariant","merge","nativePropType","validAttributesFromPropTypes","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTagHandles","NativeModules","NativeModulesDeprecated","ScrollResponder","ScrollViewPropTypes","StyleSheetPropType","StyleSheet","View","ViewStylePropTypes","createReactIOSNativeComponentClass","flattenStyle","invariant","merge","nativePropType","validAttributesFromPropTypes","warning"],function (e, t, n, r, i) {
     "use strict";
-    var ArrayOfPropType/*o*/ = require/*t*/("ArrayOfPropType"),
-        React/*a*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        ReactIOSTagHandles/*l*/ = require/*t*/("ReactIOSTagHandles"),
-        NativeModules/*u*/ = require/*t*/("NativeModules").RKUIManager.RCTScrollView,
+    var ArrayOfPropType/*o*/ = t("ArrayOfPropType"),
+        React/*a*/ = t("React"),
+        ReactIOSViewAttributes/*s*/ = t("ReactIOSViewAttributes"),
+        ReactIOSTagHandles/*l*/ = t("ReactIOSTagHandles"),
+        NativeModules/*u*/ = t("NativeModules").RKUIManager.RCTScrollView,
         c = NativeModules/*u*/.Constants,
-        NativeModulesDeprecated/*p*/ = require/*t*/("NativeModulesDeprecated").RKUIManager,
-        ScrollResponder/*d*/ = require/*t*/("ScrollResponder"),
-        ScrollViewPropTypes/*h*/ = require/*t*/("ScrollViewPropTypes"),
-        StyleSheetPropType/*f*/ = require/*t*/("StyleSheetPropType"),
-        StyleSheet/*m*/ = require/*t*/("StyleSheet"),
-        View/*g*/ = require/*t*/("View"),
-        ViewStylePropTypes/*_*/ = require/*t*/("ViewStylePropTypes"),
-        createReactIOSNativeComponentClass/*y*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        flattenStyle/*v*/ = require/*t*/("flattenStyle"),
-        invariant/*S*/ = require/*t*/("invariant"),
-        merge/*b*/ = require/*t*/("merge"),
-        nativePropType/*R*/ = require/*t*/("nativePropType"),
-        validAttributesFromPropTypes/*w*/ = require/*t*/("validAttributesFromPropTypes"),
-        warning/*C*/ = require/*t*/("warning"),
+        NativeModulesDeprecated/*p*/ = t("NativeModulesDeprecated").RKUIManager,
+        ScrollResponder/*d*/ = t("ScrollResponder"),
+        ScrollViewPropTypes/*h*/ = t("ScrollViewPropTypes"),
+        StyleSheetPropType/*f*/ = t("StyleSheetPropType"),
+        StyleSheet/*m*/ = t("StyleSheet"),
+        View/*g*/ = t("View"),
+        ViewStylePropTypes/*_*/ = t("ViewStylePropTypes"),
+        createReactIOSNativeComponentClass/*y*/ = t("createReactIOSNativeComponentClass"),
+        flattenStyle/*v*/ = t("flattenStyle"),
+        invariant/*S*/ = t("invariant"),
+        merge/*b*/ = t("merge"),
+        nativePropType/*R*/ = t("nativePropType"),
+        validAttributesFromPropTypes/*w*/ = t("validAttributesFromPropTypes"),
+        warning/*C*/ = t("warning"),
         E = React/*a*/.PropTypes,
         D = "ScrollView",
         T = "InnerScrollView",
@@ -51,34 +51,34 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
             getInitialState: function() {
                 return this.scrollResponderMixinGetInitialState()
             },
-            setNativeProps: function(global/*e*/) {
-                this.refs[D].setNativeProps(global/*e*/)
+            setNativeProps: function(e) {
+                this.refs[D].setNativeProps(e)
             },
             getInnerViewNode: function() {
                 return this.refs[T].getNodeHandle()
             },
-            scrollTo: function(global/*e*/, require/*t*/) {
-                NativeModulesDeprecated/*p*/.scrollTo(ReactIOSTagHandles/*l*/.rootNodeIDToTag[this._rootNodeID], require/*t*/, global/*e*/)
+            scrollTo: function(e, t) {
+                NativeModulesDeprecated/*p*/.scrollTo(ReactIOSTagHandles/*l*/.rootNodeIDToTag[this._rootNodeID], t, e)
             },
             render: function() {
-                var global/*e*/ = [this.props.horizontal && I.contentContainerHorizontal, this.props.contentContainerStyle];
+                var e = [this.props.horizontal && I.contentContainerHorizontal, this.props.contentContainerStyle];
                 if (__DEV__ && this.props.style) {
-                    var require/*t*/ = flattenStyle/*v*/(this.props.style),
-                        requireDynamic/*n*/ = ["alignItems", "justifyContent"].filter(function(global/*e*/) {
-                            return void 0 !== require/*t*/[global/*e*/]
+                    var t = flattenStyle/*v*/(this.props.style),
+                        n = ["alignItems", "justifyContent"].filter(function(e) {
+                            return void 0 !== t[e]
                         });
-                    0 !== requireDynamic/*n*/.length && invariant/*S*/(0, "ScrollView child layout (" + JSON.stringify(requireDynamic/*n*/) + ") must by applied through the contentContainerStyle prop.")
+                    0 !== n.length && invariant/*S*/(0, "ScrollView child layout (" + JSON.stringify(n) + ") must by applied through the contentContainerStyle prop.")
                 }
-                __DEV__ && warning/*C*/(this.props.onScroll && !this.props.throttleScrollCallbackMS, "You specified `onScroll` on React/*a*/ <ScrollView> but not `throttleScrollCallbackMS`. You will only receive one event. Using `16` you get all the events but be aware that it may cause frame drops, use React/*a*/ bigger number if you don'require/*t*/ need as much precision.");
-                var requireLazy/*r*/ = React/*a*/.createElement(View/*g*/, {
+                __DEV__ && warning/*C*/(this.props.onScroll && !this.props.throttleScrollCallbackMS, "You specified `onScroll` on React/*a*/ <ScrollView> but not `throttleScrollCallbackMS`. You will only receive one event. Using `16` you get all the events but be aware that it may cause frame drops, use React/*a*/ bigger number if you don't need as much precision.");
+                var r = React/*a*/.createElement(View/*g*/, {
                         ref: T,
-                        style: global/*e*/,
+                        style: e,
                         removeClippedSubviews: this.props.removeClippedSubviews
                     }, this.props.children),
-                    module/*i*/ = void 0 !== this.props.alwaysBounceHorizontal ? this.props.alwaysBounceHorizontal : this.props.horizontal,
+                    i = void 0 !== this.props.alwaysBounceHorizontal ? this.props.alwaysBounceHorizontal : this.props.horizontal,
                     ArrayOfPropType/*o*/ = void 0 !== this.props.alwaysBounceVertical ? this.props.alwaysBounceVertical : !this.props.horizontal,
                     ReactIOSViewAttributes/*s*/ = merge/*b*/(this.props, {
-                        alwaysBounceHorizontal: module/*i*/,
+                        alwaysBounceHorizontal: i,
                         alwaysBounceVertical: ArrayOfPropType/*o*/,
                         style: [I.base, this.props.style],
                         onTouchStart: this.scrollResponderHandleTouchStart,
@@ -100,7 +100,7 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
                     });
                 return React/*a*/.createElement(NativeModules/*u*/, Object.assign({}, ReactIOSViewAttributes/*s*/, {
                     ref: D
-                }), requireLazy/*r*/)
+                }), r)
             }
         }),
         I = StyleSheet/*m*/.create({
@@ -116,5 +116,5 @@ __d("ScrollView",["ArrayOfPropType","React","ReactIOSViewAttributes","ReactIOSTa
             validAttributes: merge/*b*/(ReactIOSViewAttributes/*s*/.UIView, validAttributesFromPropTypes/*w*/(P.propTypes)),
             uiViewClassName: "RCTScrollView"
         });
-    module/*i*/.exports = P
+    i.exports = P
 });

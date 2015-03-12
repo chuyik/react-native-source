@@ -1,18 +1,18 @@
-__d("validAttributesFromPropTypes",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("validAttributesFromPropTypes",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = {};
-        for (var requireDynamic/*n*/ in global/*e*/) {
-            var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/];
-            if (requireLazy/*r*/ && requireLazy/*r*/.isNative) {
-                var module/*i*/ = requireLazy/*r*/.differ;
-                require/*t*/[requireDynamic/*n*/] = module/*i*/ ? {
-                    diff: module/*i*/
+    function o(e) {
+        var t = {};
+        for (var n in e) {
+            var r = e[n];
+            if (r && r.isNative) {
+                var i = r.differ;
+                t[n] = i ? {
+                    diff: i
                 } : !0
             }
         }
-        return require/*t*/
+        return t
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

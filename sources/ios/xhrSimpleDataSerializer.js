@@ -1,8 +1,8 @@
-__d("xhrSimpleDataSerializer",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        var require/*t*/, requireDynamic/*n*/ = [];
-        for (require/*t*/ in global/*e*/) requireDynamic/*n*/.push(encodeURIComponent(require/*t*/) + "=" + encodeURIComponent(global/*e*/[require/*t*/]));
-        return requireDynamic/*n*/.join("&")
+__d("xhrSimpleDataSerializer",[],function (e, t, n, r, i) {
+    function o(e) {
+        var t, n = [];
+        for (t in e) n.push(encodeURIComponent(t) + "=" + encodeURIComponent(e[t]));
+        return n.join("&")
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

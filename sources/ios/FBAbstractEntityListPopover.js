@@ -1,19 +1,19 @@
-__d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image","InfiniteScrollView","Popover","React","ReactGraphQL","StyleSheet","Text","TouchableBounce","View","clamp","fbt","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image","InfiniteScrollView","Popover","React","ReactGraphQL","StyleSheet","Text","TouchableBounce","View","clamp","fbt","keyOf"],function (e, t, n, r, i) {
     "use strict";
-    var FBSpinner/*o*/ = require/*t*/("FBSpinner"),
-        FBActorRow/*a*/ = require/*t*/("FBActorRow"),
-        FIGColors/*s*/ = require/*t*/("FIGColors"),
-        l = (require/*t*/("Image"), require/*t*/("InfiniteScrollView")),
-        Popover/*u*/ = require/*t*/("Popover"),
-        React/*c*/ = require/*t*/("React"),
-        ReactGraphQL/*p*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*d*/ = require/*t*/("StyleSheet"),
-        Text/*h*/ = require/*t*/("Text"),
-        TouchableBounce/*f*/ = require/*t*/("TouchableBounce"),
-        View/*m*/ = require/*t*/("View"),
-        clamp/*g*/ = require/*t*/("clamp"),
-        fbt/*_*/ = require/*t*/("fbt"),
-        keyOf/*y*/ = require/*t*/("keyOf"),
+    var FBSpinner/*o*/ = t("FBSpinner"),
+        FBActorRow/*a*/ = t("FBActorRow"),
+        FIGColors/*s*/ = t("FIGColors"),
+        l = (t("Image"), t("InfiniteScrollView")),
+        Popover/*u*/ = t("Popover"),
+        React/*c*/ = t("React"),
+        ReactGraphQL/*p*/ = t("ReactGraphQL"),
+        StyleSheet/*d*/ = t("StyleSheet"),
+        Text/*h*/ = t("Text"),
+        TouchableBounce/*f*/ = t("TouchableBounce"),
+        View/*m*/ = t("View"),
+        clamp/*g*/ = t("clamp"),
+        fbt/*_*/ = t("fbt"),
+        keyOf/*y*/ = t("keyOf"),
         v = 40,
         S = 48,
         b = 16,
@@ -47,13 +47,13 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
             mixins: [ReactGraphQL/*p*/.Mixin],
             statics: {
                 queries: {
-                    actor: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("FBAbstractEntityListPopover_actor", "Actor", [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+                    actor: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("FBAbstractEntityListPopover_actor", "Actor", [new n.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(global/*e*/)], {
+                            })], [t.__frag(e)], {
                                 scope: "FBAbstractEntityListPopover_actor"
                             })
                         }(FBActorRow/*a*/.getQuery("actor"))
@@ -70,20 +70,20 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                 this.props.loadMore(), this.forceUpdate()
             },
             renderList: function() {
-                var global/*e*/ = this.props.getEntityConnection(),
-                    require/*t*/ = this.props.getEntityCount(),
-                    requireDynamic/*n*/ = clamp/*g*/(FBActorRow/*a*/.rowHeight, require/*t*/ * (FBActorRow/*a*/.rowHeight + w), 400);
-                if (!global/*e*/ || !global/*e*/.edges) return React/*c*/.createElement(FBSpinner/*o*/, {
+                var e = this.props.getEntityConnection(),
+                    t = this.props.getEntityCount(),
+                    n = clamp/*g*/(FBActorRow/*a*/.rowHeight, t * (FBActorRow/*a*/.rowHeight + w), 400);
+                if (!e || !e.edges) return React/*c*/.createElement(FBSpinner/*o*/, {
                     key: "spinner",
                     style: {
-                        height: requireDynamic/*n*/
+                        height: n
                     }
                 });
-                for (var requireLazy/*r*/ = [], module/*i*/ = global/*e*/.edges, FIGColors/*s*/ = 0; FIGColors/*s*/ < module/*i*/.length; ++FIGColors/*s*/) FIGColors/*s*/ > 0 && requireLazy/*r*/.push(React/*c*/.createElement(View/*m*/, {
+                for (var r = [], i = e.edges, FIGColors/*s*/ = 0; FIGColors/*s*/ < i.length; ++FIGColors/*s*/) FIGColors/*s*/ > 0 && r.push(React/*c*/.createElement(View/*m*/, {
                     style: E.rowSeparator,
                     key: "FIGColors/*s*/" + FIGColors/*s*/
-                })), requireLazy/*r*/.push(React/*c*/.createElement(FBActorRow/*a*/, {
-                    actor: module/*i*/[FIGColors/*s*/].node,
+                })), r.push(React/*c*/.createElement(FBActorRow/*a*/, {
+                    actor: i[FIGColors/*s*/].node,
                     key: "FBActorRow/*a*/" + FIGColors/*s*/,
                     circularProfilePicture: this.props.circularProfilePictures,
                     onPressWithCompletion: this.props.onRowPressWithCompletion
@@ -93,7 +93,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                 }, React/*c*/.createElement(FBSpinner/*o*/, null));
                 return React/*c*/.createElement(l, {
                     style: {
-                        height: requireDynamic/*n*/
+                        height: n
                     },
                     contentContainerStyle: E.contentContainer,
                     distanceToTriggerLoad: 2 * FBActorRow/*a*/.rowHeight,
@@ -101,7 +101,7 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                     isLoadingMore: this.props.isLoadingMore(),
                     loadMore: this.loadMore,
                     spinner: Popover/*u*/
-                }, requireLazy/*r*/)
+                }, r)
             },
             renderContent: function() {
                 return [React/*c*/.createElement(View/*m*/, {
@@ -185,5 +185,5 @@ __d("FBAbstractEntityListPopover",["FBSpinner","FBActorRow","FIGColors","Image",
                 height: S
             }
         });
-    module/*i*/.exports = C
+    i.exports = C
 });

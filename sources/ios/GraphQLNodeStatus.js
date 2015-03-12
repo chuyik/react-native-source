@@ -1,16 +1,16 @@
-__d("GraphQLNodeStatus",["GraphQLStatusConstants","GraphQLStore","GraphQLStoreDataHandler"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLNodeStatus",["GraphQLStatusConstants","GraphQLStore","GraphQLStoreDataHandler"],function (e, t, n, r, i) {
     "use strict";
-    var GraphQLStatusConstants/*o*/ = require/*t*/("GraphQLStatusConstants"),
-        GraphQLStore/*a*/ = require/*t*/("GraphQLStore"),
-        GraphQLStoreDataHandler/*s*/ = require/*t*/("GraphQLStoreDataHandler"),
+    var GraphQLStatusConstants/*o*/ = t("GraphQLStatusConstants"),
+        GraphQLStore/*a*/ = t("GraphQLStore"),
+        GraphQLStoreDataHandler/*s*/ = t("GraphQLStoreDataHandler"),
         l = {
-            isOptimistic: function(global/*e*/) {
-                return GraphQLStore/*a*/.isQueuedNodeID(GraphQLStoreDataHandler/*s*/.getID(global/*e*/))
+            isOptimistic: function(e) {
+                return GraphQLStore/*a*/.isQueuedNodeID(GraphQLStoreDataHandler/*s*/.getID(e))
             },
-            hasError: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.__status__;
-                return require/*t*/ == GraphQLStatusConstants/*o*/.ERROR
+            hasError: function(e) {
+                var t = e.__status__;
+                return t == GraphQLStatusConstants/*o*/.ERROR
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

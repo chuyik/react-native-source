@@ -1,10 +1,10 @@
-__d("Deferred",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        return global/*e*/ ? _.call(global/*e*/, require/*t*/) : g
+__d("Deferred",[],function (e, t, n, r, i) {
+    function o(e, t) {
+        return e ? _.call(e, t) : g
     }
 
-    function a(global/*e*/, require/*t*/) {
-        return require/*t*/ < global/*e*/.length ? o(global/*e*/, require/*t*/) : g
+    function a(e, t) {
+        return t < e.length ? o(e, t) : g
     }
 
     function s() {
@@ -22,40 +22,40 @@ __d("Deferred",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requ
         g = [],
         _ = g.slice,
         y = g.unshift;
-    s.prototype.addCallback = function(global/*e*/, require/*t*/) {
+    s.prototype.addCallback = function(e, t) {
         "use strict";
-        return this.$Deferred_addCallback(u, this.$Deferred_retrieveOrCreate(d), global/*e*/, require/*t*/, a(arguments, 2))
-    }, s.prototype.removeCallback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_addCallback(u, this.$Deferred_retrieveOrCreate(d), e, t, a(arguments, 2))
+    }, s.prototype.removeCallback = function(e, t) {
         "use strict";
-        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(d), global/*e*/, require/*t*/)
-    }, s.prototype.addCompleteCallback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(d), e, t)
+    }, s.prototype.addCompleteCallback = function(e, t) {
         "use strict";
-        return this.$Deferred_addCallback(null, this.$Deferred_retrieveOrCreate(m), global/*e*/, require/*t*/, a(arguments, 2))
-    }, s.prototype.removeCompleteCallback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_addCallback(null, this.$Deferred_retrieveOrCreate(m), e, t, a(arguments, 2))
+    }, s.prototype.removeCompleteCallback = function(e, t) {
         "use strict";
-        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(m), global/*e*/, require/*t*/)
-    }, s.prototype.addErrback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(m), e, t)
+    }, s.prototype.addErrback = function(e, t) {
         "use strict";
-        return this.$Deferred_addCallback(c, this.$Deferred_retrieveOrCreate(h), global/*e*/, require/*t*/, a(arguments, 2))
-    }, s.prototype.removeErrback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_addCallback(c, this.$Deferred_retrieveOrCreate(h), e, t, a(arguments, 2))
+    }, s.prototype.removeErrback = function(e, t) {
         "use strict";
-        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(h), global/*e*/, require/*t*/)
-    }, s.prototype.addCancelback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(h), e, t)
+    }, s.prototype.addCancelback = function(e, t) {
         "use strict";
-        return this.$Deferred_addCallback(p, this.$Deferred_retrieveOrCreate(f), global/*e*/, require/*t*/, a(arguments, 2))
-    }, s.prototype.removeCancelback = function(global/*e*/, require/*t*/) {
+        return this.$Deferred_addCallback(p, this.$Deferred_retrieveOrCreate(f), e, t, a(arguments, 2))
+    }, s.prototype.removeCancelback = function(e, t) {
         "use strict";
-        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(f), global/*e*/, require/*t*/)
+        return this.$Deferred_removeCallback(this.$Deferred_retrieveOrCreate(f), e, t)
     }, s.prototype.getStatus = function() {
         "use strict";
         return this.$Deferred_status
-    }, s.prototype.setStatus = function(global/*e*/) {
+    }, s.prototype.setStatus = function(e) {
         "use strict";
-        var require/*t*/;
-        return this.$Deferred_status = global/*e*/, this.callbackArgs = o(arguments, 1), global/*e*/ === c ? require/*t*/ = h : global/*e*/ === u ? require/*t*/ = d : global/*e*/ === p && (require/*t*/ = f), require/*t*/ && this.$Deferred_runCallbacks(this[require/*t*/], this.callbackArgs), this.$Deferred_runCallbacks(this[m], this.callbackArgs), this
-    }, s.prototype.setTimeout = function(global/*e*/) {
+        var t;
+        return this.$Deferred_status = e, this.callbackArgs = o(arguments, 1), e === c ? t = h : e === u ? t = d : e === p && (t = f), t && this.$Deferred_runCallbacks(this[t], this.callbackArgs), this.$Deferred_runCallbacks(this[m], this.callbackArgs), this
+    }, s.prototype.setTimeout = function(e) {
         "use strict";
-        this.timeout && this.clearTimeout(), this.$Deferred_boundFail = this.$Deferred_boundFail || this.fail.bind(this), this.timeout = window.setTimeout(this.$Deferred_boundFail, global/*e*/)
+        this.timeout && this.clearTimeout(), this.$Deferred_boundFail = this.$Deferred_boundFail || this.fail.bind(this), this.timeout = window.setTimeout(this.$Deferred_boundFail, e)
     }, s.prototype.clearTimeout = function() {
         "use strict";
         window.clearTimeout(this.timeout), delete this.timeout
@@ -68,53 +68,53 @@ __d("Deferred",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requ
     }, s.prototype.cancel = function() {
         "use strict";
         return delete this[d], delete this[h], this.$Deferred_notify(p, arguments)
-    }, s.prototype.$Deferred_notify = function(global/*e*/, require/*t*/) {
+    }, s.prototype.$Deferred_notify = function(e, t) {
         "use strict";
-        return y.call(require/*t*/, global/*e*/), this.setStatus.apply(this, require/*t*/)
-    }, s.prototype.$Deferred_retrieveOrCreate = function(global/*e*/) {
+        return y.call(t, e), this.setStatus.apply(this, t)
+    }, s.prototype.$Deferred_retrieveOrCreate = function(e) {
         "use strict";
-        return this[global/*e*/] || (this[global/*e*/] = [])
-    }, s.prototype.then = function(global/*e*/) {
+        return this[e] || (this[e] = [])
+    }, s.prototype.then = function(e) {
         "use strict";
-        var global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/ = new s,
-            module/*i*/ = o(arguments, 0);
-        "function" == typeof module/*i*/[0] && (global/*e*/ = module/*i*/.shift()), "function" == typeof module/*i*/[0] && (require/*t*/ = module/*i*/.shift()), "function" == typeof module/*i*/[0] && (requireDynamic/*n*/ = module/*i*/.shift());
-        var a = module/*i*/.shift();
-        if (global/*e*/) {
-            var l = [this.$Deferred_thenCallback, this, requireLazy/*r*/, "succeed", global/*e*/, a].concat(module/*i*/);
+        var e, t, n, r = new s,
+            i = o(arguments, 0);
+        "function" == typeof i[0] && (e = i.shift()), "function" == typeof i[0] && (t = i.shift()), "function" == typeof i[0] && (n = i.shift());
+        var a = i.shift();
+        if (e) {
+            var l = [this.$Deferred_thenCallback, this, r, "succeed", e, a].concat(i);
             this.addCallback.apply(this, l)
-        } else this.addCallback(requireLazy/*r*/.succeed, requireLazy/*r*/);
-        if (require/*t*/) {
-            var u = [this.$Deferred_thenCallback, this, requireLazy/*r*/, "fail", require/*t*/, a].concat(module/*i*/);
+        } else this.addCallback(r.succeed, r);
+        if (t) {
+            var u = [this.$Deferred_thenCallback, this, r, "fail", t, a].concat(i);
             this.addErrback.apply(this, u)
-        } else this.addErrback(requireLazy/*r*/.fail, requireLazy/*r*/);
-        if (requireDynamic/*n*/) {
-            var c = [this.$Deferred_thenCallback, this, requireLazy/*r*/, "cancel", requireDynamic/*n*/, a].concat(module/*i*/);
+        } else this.addErrback(r.fail, r);
+        if (n) {
+            var c = [this.$Deferred_thenCallback, this, r, "cancel", n, a].concat(i);
             this.addCancelback.apply(this, c)
-        } else this.addCancelback(requireLazy/*r*/.cancel, requireLazy/*r*/);
-        return requireLazy/*r*/
-    }, s.prototype.$Deferred_addCallback = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+        } else this.addCancelback(r.cancel, r);
+        return r
+    }, s.prototype.$Deferred_addCallback = function(e, t, n, r, i) {
         "use strict";
         var o = this.getStatus();
-        return !global/*e*/ && o !== l || o === global/*e*/ ? requireDynamic/*n*/.apply(requireLazy/*r*/ || this, module/*i*/.concat(this.callbackArgs)) : require/*t*/.push(requireDynamic/*n*/, requireLazy/*r*/, module/*i*/), this
-    }, s.prototype.$Deferred_removeCallback = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        return !e && o !== l || o === e ? n.apply(r || this, i.concat(this.callbackArgs)) : t.push(n, r, i), this
+    }, s.prototype.$Deferred_removeCallback = function(e, t, n) {
         "use strict";
-        for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < global/*e*/.length; requireLazy/*r*/ += 3)
-            if (global/*e*/[requireLazy/*r*/] === require/*t*/ && (!requireDynamic/*n*/ || global/*e*/[requireLazy/*r*/ + 1] === requireDynamic/*n*/)) {
-                if (global/*e*/.splice(requireLazy/*r*/, 3), requireDynamic/*n*/) break;
-                requireLazy/*r*/ -= 3
+        for (var r = 0; r < e.length; r += 3)
+            if (e[r] === t && (!n || e[r + 1] === n)) {
+                if (e.splice(r, 3), n) break;
+                r -= 3
             }
         return this
-    }, s.prototype.pipe = function(global/*e*/) {
+    }, s.prototype.pipe = function(e) {
         "use strict";
-        this.addCallback(global/*e*/.succeed, global/*e*/).addErrback(global/*e*/.fail, global/*e*/).addCancelback(global/*e*/.cancel, global/*e*/)
-    }, s.prototype.$Deferred_runCallbacks = function(global/*e*/, require/*t*/) {
+        this.addCallback(e.succeed, e).addErrback(e.fail, e).addCancelback(e.cancel, e)
+    }, s.prototype.$Deferred_runCallbacks = function(e, t) {
         "use strict";
-        for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < (global/*e*/ || g).length; requireDynamic/*n*/ += 3) global/*e*/[requireDynamic/*n*/].apply(global/*e*/[requireDynamic/*n*/ + 1] || this, (global/*e*/[requireDynamic/*n*/ + 2] || g).concat(require/*t*/))
-    }, s.prototype.$Deferred_thenCallback = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+        for (var n = 0; n < (e || g).length; n += 3) e[n].apply(e[n + 1] || this, (e[n + 2] || g).concat(t))
+    }, s.prototype.$Deferred_thenCallback = function(e, t, n, r) {
         "use strict";
-        var module/*i*/ = o(arguments, 4),
-            a = requireDynamic/*n*/.apply(requireLazy/*r*/, module/*i*/);
-        a instanceof s ? a.pipe(global/*e*/) : global/*e*/[require/*t*/](a)
-    }, s.STATUS_UNKNOWN = l, s.STATUS_SUCCEEDED = u, s.STATUS_CANCELED = p, s.STATUS_FAILED = c, module/*i*/.exports = s
+        var i = o(arguments, 4),
+            a = n.apply(r, i);
+        a instanceof s ? a.pipe(e) : e[t](a)
+    }, s.STATUS_UNKNOWN = l, s.STATUS_SUCCEEDED = u, s.STATUS_CANCELED = p, s.STATUS_FAILED = c, i.exports = s
 });

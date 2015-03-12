@@ -1,9 +1,9 @@
-__d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JSTimers","JSTimers"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JSTimers","JSTimers"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
-        keyMirror/*a*/ = require/*t*/("keyMirror"),
-        performanceNow/*s*/ = require/*t*/("performanceNow"),
-        warning/*l*/ = require/*t*/("warning"),
+    var invariant/*o*/ = t("invariant"),
+        keyMirror/*a*/ = t("keyMirror"),
+        performanceNow/*s*/ = t("performanceNow"),
+        warning/*l*/ = t("warning"),
         u = {
             GUID: 1,
             Type: keyMirror/*a*/({
@@ -16,48 +16,48 @@ __d("JSTimersExecution",["invariant","keyMirror","performanceNow","warning","JST
             types: [],
             timerIDs: [],
             immediates: [],
-            callTimer: function(global/*e*/) {
-                warning/*l*/(global/*e*/ <= u.GUID, "Tried to call timer with ID " + global/*e*/ + " but no such timer exists");
-                var require/*t*/ = u.timerIDs.indexOf(global/*e*/);
-                if (-1 !== require/*t*/) {
-                    var requireDynamic/*n*/ = u.types[require/*t*/],
-                        requireLazy/*r*/ = u.callbacks[require/*t*/];
-                    (requireDynamic/*n*/ === u.Type.setTimeout || requireDynamic/*n*/ === u.Type.setImmediate || requireDynamic/*n*/ === u.Type.requestAnimationFrame) && u._clearIndex(require/*t*/);
+            callTimer: function(e) {
+                warning/*l*/(e <= u.GUID, "Tried to call timer with ID " + e + " but no such timer exists");
+                var t = u.timerIDs.indexOf(e);
+                if (-1 !== t) {
+                    var n = u.types[t],
+                        r = u.callbacks[t];
+                    (n === u.Type.setTimeout || n === u.Type.setImmediate || n === u.Type.requestAnimationFrame) && u._clearIndex(t);
                     try {
-                        if (requireDynamic/*n*/ === u.Type.setTimeout || requireDynamic/*n*/ === u.Type.setInterval || requireDynamic/*n*/ === u.Type.setImmediate) requireLazy/*r*/();
+                        if (n === u.Type.setTimeout || n === u.Type.setInterval || n === u.Type.setImmediate) r();
                         else {
-                            if (requireDynamic/*n*/ !== u.Type.requestAnimationFrame) return void console.error("Tried to call keyMirror/*a*/ callback with invalid type: " + requireDynamic/*n*/);
-                            var module/*i*/ = performanceNow/*s*/();
-                            requireLazy/*r*/(module/*i*/)
+                            if (n !== u.Type.requestAnimationFrame) return void console.error("Tried to call keyMirror/*a*/ callback with invalid type: " + n);
+                            var i = performanceNow/*s*/();
+                            r(i)
                         }
                     } catch (invariant/*o*/) {
                         u.errors = u.errors || [], u.errors.push(invariant/*o*/)
                     }
                 }
             },
-            callTimers: function(global/*e*/) {
-                0 === global/*e*/.length && invariant/*o*/(0, 'Probably shouldn\'require/*t*/ call "callTimers" with no timerIDs'), u.errors = null, global/*e*/.forEach(u.callTimer);
-                var requireDynamic/*n*/ = u.errors;
-                if (requireDynamic/*n*/) {
-                    var requireLazy/*r*/ = requireDynamic/*n*/.length;
-                    if (requireLazy/*r*/ > 1)
-                        for (var module/*i*/ = 1; requireLazy/*r*/ > module/*i*/; module/*i*/++) require/*t*/("JSTimers").setTimeout(function(global/*e*/) {
-                            throw global/*e*/
-                        }.bind(null, requireDynamic/*n*/[module/*i*/]), 0);
-                    throw requireDynamic/*n*/[0]
+            callTimers: function(e) {
+                0 === e.length && invariant/*o*/(0, 'Probably shouldn\'t call "callTimers" with no timerIDs'), u.errors = null, e.forEach(u.callTimer);
+                var n = u.errors;
+                if (n) {
+                    var r = n.length;
+                    if (r > 1)
+                        for (var i = 1; r > i; i++) t("JSTimers").setTimeout(function(e) {
+                            throw e
+                        }.bind(null, n[i]), 0);
+                    throw n[0]
                 }
             },
             callImmediates: function() {
                 for (u.errors = null; 0 !== u.immediates.length;) u.callTimer(u.immediates.shift());
-                u.errors && u.errors.forEach(function(global/*e*/) {
-                    return require/*t*/("JSTimers").setTimeout(function() {
-                        throw global/*e*/
+                u.errors && u.errors.forEach(function(e) {
+                    return t("JSTimers").setTimeout(function() {
+                        throw e
                     }, 0)
                 })
             },
-            _clearIndex: function(global/*e*/) {
-                u.timerIDs[global/*e*/] = null, u.callbacks[global/*e*/] = null, u.types[global/*e*/] = null
+            _clearIndex: function(e) {
+                u.timerIDs[e] = null, u.callbacks[e] = null, u.types[e] = null
             }
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

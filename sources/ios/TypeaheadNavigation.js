@@ -1,14 +1,14 @@
-__d("TypeaheadNavigation",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TypeaheadNavigation",[],function (e, t, n, r, i) {
     var o = {
-        moveUp: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = global/*e*/.indexOf(require/*t*/),
-                module/*i*/ = -1 == requireLazy/*r*/ ? global/*e*/.length - 1 : requireLazy/*r*/ - 1;
-            requireDynamic/*n*/(-1 == module/*i*/ ? null : global/*e*/[module/*i*/])
+        moveUp: function(e, t, n) {
+            var r = e.indexOf(t),
+                i = -1 == r ? e.length - 1 : r - 1;
+            n(-1 == i ? null : e[i])
         },
-        moveDown: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = global/*e*/.indexOf(require/*t*/) + 1;
-            requireDynamic/*n*/(requireLazy/*r*/ == global/*e*/.length ? null : global/*e*/[requireLazy/*r*/])
+        moveDown: function(e, t, n) {
+            var r = e.indexOf(t) + 1;
+            n(r == e.length ? null : e[r])
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

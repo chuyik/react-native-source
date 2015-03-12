@@ -1,42 +1,42 @@
-__d("ActionCollisionMap",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ActionCollisionMap",["invariant"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
+    var invariant/*o*/ = t("invariant"),
         a = {},
         s = {},
         l = {
-            hasPendingActionForKey: function(global/*e*/) {
-                return !(!a[global/*e*/] || !a[global/*e*/].length)
+            hasPendingActionForKey: function(e) {
+                return !(!a[e] || !a[e].length)
             },
-            appendActionForKey: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = require/*t*/.getClientMutationID();
-                l.existsInMap(requireDynamic/*n*/) && invariant/*o*/(0, "Cannot append an action that's already in the map"), s[requireDynamic/*n*/] = global/*e*/;
-                var requireLazy/*r*/ = a[global/*e*/] || [];
-                requireLazy/*r*/.push(require/*t*/), a[global/*e*/] = requireLazy/*r*/
+            appendActionForKey: function(e, t) {
+                var n = t.getClientMutationID();
+                l.existsInMap(n) && invariant/*o*/(0, "Cannot append an action that's already in the map"), s[n] = e;
+                var r = a[e] || [];
+                r.push(t), a[e] = r
             },
-            getFirstActionForKey: function(global/*e*/) {
-                var require/*t*/ = a[global/*e*/];
-                return require/*t*/ && require/*t*/.length ? require/*t*/[0] : null
+            getFirstActionForKey: function(e) {
+                var t = a[e];
+                return t && t.length ? t[0] : null
             },
-            shiftActionForKey: function(global/*e*/) {
-                var require/*t*/ = a[global/*e*/];
-                require/*t*/ && require/*t*/.length || invariant/*o*/(0, "Cannot shift unless there are actions");
-                var requireDynamic/*n*/ = require/*t*/.shift();
-                return 0 === require/*t*/.length && delete a[global/*e*/], delete s[requireDynamic/*n*/.getClientMutationID()], requireDynamic/*n*/
+            shiftActionForKey: function(e) {
+                var t = a[e];
+                t && t.length || invariant/*o*/(0, "Cannot shift unless there are actions");
+                var n = t.shift();
+                return 0 === t.length && delete a[e], delete s[n.getClientMutationID()], n
             },
-            iterateOverActionsForKey: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = a[global/*e*/] || [];
-                requireDynamic/*n*/.forEach(require/*t*/)
+            iterateOverActionsForKey: function(e, t) {
+                var n = a[e] || [];
+                n.forEach(t)
             },
-            clearActionsForKey: function(global/*e*/) {
-                for (var require/*t*/ = a[global/*e*/] || [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) delete s[require/*t*/[requireDynamic/*n*/].getClientMutationID()];
-                delete a[global/*e*/]
+            clearActionsForKey: function(e) {
+                for (var t = a[e] || [], n = 0; n < t.length; n++) delete s[t[n].getClientMutationID()];
+                delete a[e]
             },
-            getKeyForClientMutationID: function(global/*e*/) {
-                return s[global/*e*/] || null
+            getKeyForClientMutationID: function(e) {
+                return s[e] || null
             },
-            existsInMap: function(global/*e*/) {
-                return !!l.getKeyForClientMutationID(global/*e*/)
+            existsInMap: function(e) {
+                return !!l.getKeyForClientMutationID(e)
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

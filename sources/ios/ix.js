@@ -1,11 +1,11 @@
-__d("ix",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ix",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
+    function o(e) {
         return {
-            uri: global/*e*/,
+            uri: e,
             isStatic: !0
         }
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

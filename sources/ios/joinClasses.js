@@ -1,12 +1,12 @@
-__d("joinClasses",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("joinClasses",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        global/*e*/ || (global/*e*/ = "");
-        var require/*t*/, requireDynamic/*n*/ = arguments.length;
-        if (requireDynamic/*n*/ > 1)
-            for (var requireLazy/*r*/ = 1; requireDynamic/*n*/ > requireLazy/*r*/; requireLazy/*r*/++) require/*t*/ = arguments[requireLazy/*r*/], require/*t*/ && (global/*e*/ = (global/*e*/ ? global/*e*/ + " " : "") + require/*t*/);
-        return global/*e*/
+    function o(e) {
+        e || (e = "");
+        var t, n = arguments.length;
+        if (n > 1)
+            for (var r = 1; n > r; r++) t = arguments[r], t && (e = (e ? e + " " : "") + t);
+        return e
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,11 +1,11 @@
-__d("createReactIOSNativeComponentClass",["ReactElement","ReactLegacyElement","ReactIOSNativeComponent"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("createReactIOSNativeComponentClass",["ReactElement","ReactLegacyElement","ReactIOSNativeComponent"],function (e, t, n, r, i) {
     "use strict";
-    var ReactElement/*o*/ = require/*t*/("ReactElement"),
-        ReactLegacyElement/*a*/ = require/*t*/("ReactLegacyElement"),
-        ReactIOSNativeComponent/*s*/ = require/*t*/("ReactIOSNativeComponent"),
-        l = function(global/*e*/) {
-            var require/*t*/ = function() {};
-            return require/*t*/.displayName = global/*e*/.uiViewClassName, require/*t*/.prototype = new ReactIOSNativeComponent/*s*/(global/*e*/), require/*t*/.prototype.constructor = require/*t*/, ReactLegacyElement/*a*/.wrapFactory(ReactElement/*o*/.createFactory(require/*t*/))
+    var ReactElement/*o*/ = t("ReactElement"),
+        ReactLegacyElement/*a*/ = t("ReactLegacyElement"),
+        ReactIOSNativeComponent/*s*/ = t("ReactIOSNativeComponent"),
+        l = function(e) {
+            var t = function() {};
+            return t.displayName = e.uiViewClassName, t.prototype = new ReactIOSNativeComponent/*s*/(e), t.prototype.constructor = t, ReactLegacyElement/*a*/.wrapFactory(ReactElement/*o*/.createFactory(t))
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

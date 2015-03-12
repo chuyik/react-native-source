@@ -1,17 +1,17 @@
-__d("TextInputState",["NativeModulesDeprecated"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TextInputState",["NativeModulesDeprecated"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModulesDeprecated/*o*/ = require/*t*/("NativeModulesDeprecated").RKUIManager,
+    var NativeModulesDeprecated/*o*/ = t("NativeModulesDeprecated").RKUIManager,
         a = {
             _currentlyFocusedID: null,
             currentlyFocusedField: function() {
                 return this._currentlyFocusedID
             },
-            focusTextInput: function(global/*e*/) {
-                this._currentlyFocusedID != global/*e*/ && null != global/*e*/ && (this._currentlyFocusedID = global/*e*/, NativeModulesDeprecated/*o*/.focus(global/*e*/))
+            focusTextInput: function(e) {
+                this._currentlyFocusedID != e && null != e && (this._currentlyFocusedID = e, NativeModulesDeprecated/*o*/.focus(e))
             },
-            blurTextInput: function(global/*e*/) {
-                this._currentlyFocusedID == global/*e*/ && null != global/*e*/ && (this._currentlyFocusedID = null, NativeModulesDeprecated/*o*/.blur(global/*e*/))
+            blurTextInput: function(e) {
+                this._currentlyFocusedID == e && null != e && (this._currentlyFocusedID = null, NativeModulesDeprecated/*o*/.blur(e))
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

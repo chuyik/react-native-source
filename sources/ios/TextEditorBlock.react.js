@@ -1,9 +1,9 @@
-__d("TextEditorBlock.react",["UnicodeBidiDirection","ReactPropTypes","React","Text","cx","joinClasses","mergeInto"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var UnicodeBidiDirection/*o*/ = require/*t*/("UnicodeBidiDirection"),
-        ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
-        React/*s*/ = require/*t*/("React"),
-        Text/*l*/ = require/*t*/("Text"),
-        u = (require/*t*/("cx"), require/*t*/("joinClasses"), require/*t*/("mergeInto")),
+__d("TextEditorBlock.react",["UnicodeBidiDirection","ReactPropTypes","React","Text","cx","joinClasses","mergeInto"],function (e, t, n, r, i) {
+    var UnicodeBidiDirection/*o*/ = t("UnicodeBidiDirection"),
+        ReactPropTypes/*a*/ = t("ReactPropTypes"),
+        React/*s*/ = t("React"),
+        Text/*l*/ = t("Text"),
+        u = (t("cx"), t("joinClasses"), t("mergeInto")),
         c = UnicodeBidiDirection/*o*/.LTR,
         p = UnicodeBidiDirection/*o*/.RTL,
         d = React/*s*/.createClass({
@@ -17,18 +17,18 @@ __d("TextEditorBlock.react",["UnicodeBidiDirection","ReactPropTypes","React","Te
                 direction: ReactPropTypes/*a*/.string.isRequired
             },
             render: function() {
-                var global/*e*/ = this.props.direction === p,
-                    require/*t*/ = this.props.direction === c,
-                    requireDynamic/*n*/ = global/*e*/ ? "right" : require/*t*/ ? "left" : "auto",
-                    requireLazy/*r*/ = global/*e*/ ? "rtl" : require/*t*/ ? "ltr" : "auto",
-                    module/*i*/ = {
+                var e = this.props.direction === p,
+                    t = this.props.direction === c,
+                    n = e ? "right" : t ? "left" : "auto",
+                    r = e ? "rtl" : t ? "ltr" : "auto",
+                    i = {
                         style: [this.props.style, {
-                            writingDirection: requireLazy/*r*/,
-                            textAlign: requireDynamic/*n*/
+                            writingDirection: r,
+                            textAlign: n
                         }]
                     };
-                return u(module/*i*/, this.props.blockProps), React/*s*/.createElement(Text/*l*/, Object.assign({}, module/*i*/), this.props.children)
+                return u(i, this.props.blockProps), React/*s*/.createElement(Text/*l*/, Object.assign({}, i), this.props.children)
             }
         });
-    module/*i*/.exports = d
+    i.exports = d
 });

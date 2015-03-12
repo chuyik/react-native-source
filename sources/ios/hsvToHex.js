@@ -1,28 +1,28 @@
-__d("hsvToHex",["rgbToHex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("hsvToHex",["rgbToHex"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        global/*e*/ /= 255, require/*t*/ /= 255, requireDynamic/*n*/ /= 255;
-        var requireLazy/*r*/ = Math.floor(6 * global/*e*/),
-            module/*i*/ = 6 * global/*e*/ - requireLazy/*r*/,
-            o = requireDynamic/*n*/ * (1 - require/*t*/),
-            s = requireDynamic/*n*/ * (1 - module/*i*/ * require/*t*/),
-            l = requireDynamic/*n*/ * (1 - (1 - module/*i*/) * require/*t*/);
-        switch (requireDynamic/*n*/ *= 255, l *= 255, o *= 255, s *= 255, requireLazy/*r*/ % 6) {
+    function o(e, t, n) {
+        e /= 255, t /= 255, n /= 255;
+        var r = Math.floor(6 * e),
+            i = 6 * e - r,
+            o = n * (1 - t),
+            s = n * (1 - i * t),
+            l = n * (1 - (1 - i) * t);
+        switch (n *= 255, l *= 255, o *= 255, s *= 255, r % 6) {
             case 0:
-                return rgbToHex/*a*/(requireDynamic/*n*/, l, o);
+                return rgbToHex/*a*/(n, l, o);
             case 1:
-                return rgbToHex/*a*/(s, requireDynamic/*n*/, o);
+                return rgbToHex/*a*/(s, n, o);
             case 2:
-                return rgbToHex/*a*/(o, requireDynamic/*n*/, l);
+                return rgbToHex/*a*/(o, n, l);
             case 3:
-                return rgbToHex/*a*/(o, s, requireDynamic/*n*/);
+                return rgbToHex/*a*/(o, s, n);
             case 4:
-                return rgbToHex/*a*/(l, o, requireDynamic/*n*/);
+                return rgbToHex/*a*/(l, o, n);
             case 5:
-                return rgbToHex/*a*/(requireDynamic/*n*/, o, s)
+                return rgbToHex/*a*/(n, o, s)
         }
     }
-    var rgbToHex/*a*/ = require/*t*/("rgbToHex");
-    module/*i*/.exports = o
+    var rgbToHex/*a*/ = t("rgbToHex");
+    i.exports = o
 });

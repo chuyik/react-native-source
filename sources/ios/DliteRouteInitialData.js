@@ -1,7 +1,7 @@
-__d("DliteRouteInitialData",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRouteInitialData",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         domain: "www.facebook.com"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

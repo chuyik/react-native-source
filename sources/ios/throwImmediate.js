@@ -1,13 +1,13 @@
-__d("throwImmediate",["setImmediate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("throwImmediate",["setImmediate"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        throw global/*e*/
+    function o(e) {
+        throw e
     }
 
-    function a(global/*e*/) {
-        setImmediate/*s*/(o, global/*e*/)
+    function a(e) {
+        setImmediate/*s*/(o, e)
     }
-    var setImmediate/*s*/ = require/*t*/("setImmediate");
-    module/*i*/.exports = a
+    var setImmediate/*s*/ = t("setImmediate");
+    i.exports = a
 });

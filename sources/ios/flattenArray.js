@@ -1,10 +1,10 @@
-__d("flattenArray",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        for (var require/*t*/ = global/*e*/.slice(), requireDynamic/*n*/ = []; require/*t*/.length;) {
-            var requireLazy/*r*/ = require/*t*/.pop();
-            Array.isArray(requireLazy/*r*/) ? Array.prototype.push.apply(require/*t*/, requireLazy/*r*/) : requireDynamic/*n*/.push(requireLazy/*r*/)
+__d("flattenArray",[],function (e, t, n, r, i) {
+    function o(e) {
+        for (var t = e.slice(), n = []; t.length;) {
+            var r = t.pop();
+            Array.isArray(r) ? Array.prototype.push.apply(t, r) : n.push(r)
         }
-        return requireDynamic/*n*/.reverse()
+        return n.reverse()
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

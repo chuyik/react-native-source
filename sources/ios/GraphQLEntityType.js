@@ -1,8 +1,8 @@
-__d("GraphQLEntityType",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLEntityType",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         USER: "User",
         PAGE: "Page"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

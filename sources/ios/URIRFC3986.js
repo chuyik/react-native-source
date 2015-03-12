@@ -1,12 +1,12 @@
-__d("URIRFC3986",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("URIRFC3986",[],function (e, t, n, r, i) {
     var o = new RegExp("^([^:/?#]+:)?(//([^\\\\/?#@]*@)?(\\[[A-Fa-f0-9:.]+\\]|[^\\/?#:]*)(:[0-9]*)?)?([^?#]*)(\\?[^#]*)?(#.*)?"),
         a = {
-            parse: function(global/*e*/) {
-                if ("" === global/*e*/.trim()) return null;
-                var require/*t*/ = global/*e*/.match(o),
-                    requireDynamic/*n*/ = {};
-                return requireDynamic/*n*/.uri = require/*t*/[0] ? require/*t*/[0] : null, requireDynamic/*n*/.scheme = require/*t*/[1] ? require/*t*/[1].substr(0, require/*t*/[1].length - 1) : null, requireDynamic/*n*/.authority = require/*t*/[2] ? require/*t*/[2].substr(2) : null, requireDynamic/*n*/.userinfo = require/*t*/[3] ? require/*t*/[3].substr(0, require/*t*/[3].length - 1) : null, requireDynamic/*n*/.host = require/*t*/[2] ? require/*t*/[4] : null, requireDynamic/*n*/.port = require/*t*/[5] ? require/*t*/[5].substr(1) ? parseInt(require/*t*/[5].substr(1), 10) : null : null, requireDynamic/*n*/.path = require/*t*/[6] ? require/*t*/[6] : null, requireDynamic/*n*/.query = require/*t*/[7] ? require/*t*/[7].substr(1) : null, requireDynamic/*n*/.fragment = require/*t*/[8] ? require/*t*/[8].substr(1) : null, requireDynamic/*n*/.isGenericURI = null === requireDynamic/*n*/.authority && !!requireDynamic/*n*/.scheme, requireDynamic/*n*/
+            parse: function(e) {
+                if ("" === e.trim()) return null;
+                var t = e.match(o),
+                    n = {};
+                return n.uri = t[0] ? t[0] : null, n.scheme = t[1] ? t[1].substr(0, t[1].length - 1) : null, n.authority = t[2] ? t[2].substr(2) : null, n.userinfo = t[3] ? t[3].substr(0, t[3].length - 1) : null, n.host = t[2] ? t[4] : null, n.port = t[5] ? t[5].substr(1) ? parseInt(t[5].substr(1), 10) : null : null, n.path = t[6] ? t[6] : null, n.query = t[7] ? t[7].substr(1) : null, n.fragment = t[8] ? t[8].substr(1) : null, n.isGenericURI = null === n.authority && !!n.scheme, n
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

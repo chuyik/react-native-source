@@ -1,8 +1,8 @@
-__d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],function (e, t, n, r, i) {
     "use strict";
-    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
-        ViewStylePropTypes/*a*/ = require/*t*/("ViewStylePropTypes"),
-        merge/*s*/ = require/*t*/("merge"),
+    var ReactPropTypes/*o*/ = t("ReactPropTypes"),
+        ViewStylePropTypes/*a*/ = t("ViewStylePropTypes"),
+        merge/*s*/ = t("merge"),
         l = merge/*s*/(ViewStylePropTypes/*a*/, {
             fontFamily: ReactPropTypes/*o*/.string,
             fontSize: ReactPropTypes/*o*/.number,
@@ -23,5 +23,5 @@ __d("TextStylePropTypes",["ReactPropTypes","ViewStylePropTypes","merge"],functio
             paddingHorizontal: null
         });
     for (var c in u) delete l[c];
-    module/*i*/.exports = l
+    i.exports = l
 });

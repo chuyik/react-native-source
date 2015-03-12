@@ -1,79 +1,79 @@
-__d("ReactDefaultPerfAnalysis",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        for (var require/*t*/ = 0, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) {
-            var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/];
-            require/*t*/ += requireLazy/*r*/.totalTime
+__d("ReactDefaultPerfAnalysis",[],function (e, t, n, r, i) {
+    function o(e) {
+        for (var t = 0, n = 0; n < e.length; n++) {
+            var r = e[n];
+            t += r.totalTime
         }
-        return require/*t*/
+        return t
     }
 
-    function a(global/*e*/) {
-        for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) {
-            var requireLazy/*r*/, module/*i*/ = global/*e*/[requireDynamic/*n*/];
-            for (requireLazy/*r*/ in module/*i*/.writes) module/*i*/.writes[requireLazy/*r*/].forEach(function(global/*e*/) {
-                require/*t*/.push({
-                    id: requireLazy/*r*/,
-                    type: p[global/*e*/.type] || global/*e*/.type,
-                    args: global/*e*/.args
+    function a(e) {
+        for (var t = [], n = 0; n < e.length; n++) {
+            var r, i = e[n];
+            for (r in i.writes) i.writes[r].forEach(function(e) {
+                t.push({
+                    id: r,
+                    type: p[e.type] || e.type,
+                    args: e.args
                 })
             })
         }
-        return require/*t*/
+        return t
     }
 
-    function s(global/*e*/) {
-        for (var require/*t*/, requireDynamic/*n*/ = {}, requireLazy/*r*/ = 0; requireLazy/*r*/ < global/*e*/.length; requireLazy/*r*/++) {
-            var module/*i*/ = global/*e*/[requireLazy/*r*/],
-                o = Object.assign({}, module/*i*/.exclusive, module/*i*/.inclusive);
-            for (var a in o) require/*t*/ = module/*i*/.displayNames[a].current, requireDynamic/*n*/[require/*t*/] = requireDynamic/*n*/[require/*t*/] || {
-                componentName: require/*t*/,
+    function s(e) {
+        for (var t, n = {}, r = 0; r < e.length; r++) {
+            var i = e[r],
+                o = Object.assign({}, i.exclusive, i.inclusive);
+            for (var a in o) t = i.displayNames[a].current, n[t] = n[t] || {
+                componentName: t,
                 inclusive: 0,
                 exclusive: 0,
                 render: 0,
                 count: 0
-            }, module/*i*/.render[a] && (requireDynamic/*n*/[require/*t*/].render += module/*i*/.render[a]), module/*i*/.exclusive[a] && (requireDynamic/*n*/[require/*t*/].exclusive += module/*i*/.exclusive[a]), module/*i*/.inclusive[a] && (requireDynamic/*n*/[require/*t*/].inclusive += module/*i*/.inclusive[a]), module/*i*/.counts[a] && (requireDynamic/*n*/[require/*t*/].count += module/*i*/.counts[a])
+            }, i.render[a] && (n[t].render += i.render[a]), i.exclusive[a] && (n[t].exclusive += i.exclusive[a]), i.inclusive[a] && (n[t].inclusive += i.inclusive[a]), i.counts[a] && (n[t].count += i.counts[a])
         }
         var s = [];
-        for (require/*t*/ in requireDynamic/*n*/) requireDynamic/*n*/[require/*t*/].exclusive >= c && s.push(requireDynamic/*n*/[require/*t*/]);
-        return s.sort(function(global/*e*/, require/*t*/) {
-            return require/*t*/.exclusive - global/*e*/.exclusive
+        for (t in n) n[t].exclusive >= c && s.push(n[t]);
+        return s.sort(function(e, t) {
+            return t.exclusive - e.exclusive
         }), s
     }
 
-    function l(global/*e*/, require/*t*/) {
-        for (var requireDynamic/*n*/, requireLazy/*r*/ = {}, module/*i*/ = 0; module/*i*/ < global/*e*/.length; module/*i*/++) {
-            var o, a = global/*e*/[module/*i*/],
+    function l(e, t) {
+        for (var n, r = {}, i = 0; i < e.length; i++) {
+            var o, a = e[i],
                 s = Object.assign({}, a.exclusive, a.inclusive);
-            require/*t*/ && (o = u(a));
+            t && (o = u(a));
             for (var l in s)
-                if (!require/*t*/ || o[l]) {
+                if (!t || o[l]) {
                     var p = a.displayNames[l];
-                    requireDynamic/*n*/ = p.owner + " > " + p.current, requireLazy/*r*/[requireDynamic/*n*/] = requireLazy/*r*/[requireDynamic/*n*/] || {
-                        componentName: requireDynamic/*n*/,
+                    n = p.owner + " > " + p.current, r[n] = r[n] || {
+                        componentName: n,
                         time: 0,
                         count: 0
-                    }, a.inclusive[l] && (requireLazy/*r*/[requireDynamic/*n*/].time += a.inclusive[l]), a.counts[l] && (requireLazy/*r*/[requireDynamic/*n*/].count += a.counts[l])
+                    }, a.inclusive[l] && (r[n].time += a.inclusive[l]), a.counts[l] && (r[n].count += a.counts[l])
                 }
         }
         var d = [];
-        for (requireDynamic/*n*/ in requireLazy/*r*/) requireLazy/*r*/[requireDynamic/*n*/].time >= c && d.push(requireLazy/*r*/[requireDynamic/*n*/]);
-        return d.sort(function(global/*e*/, require/*t*/) {
-            return require/*t*/.time - global/*e*/.time
+        for (n in r) r[n].time >= c && d.push(r[n]);
+        return d.sort(function(e, t) {
+            return t.time - e.time
         }), d
     }
 
-    function u(global/*e*/) {
-        var require/*t*/ = {},
-            requireDynamic/*n*/ = Object.keys(global/*e*/.writes),
-            requireLazy/*r*/ = Object.assign({}, global/*e*/.exclusive, global/*e*/.inclusive);
-        for (var module/*i*/ in requireLazy/*r*/) {
-            for (var o = !1, a = 0; a < requireDynamic/*n*/.length; a++)
-                if (0 === requireDynamic/*n*/[a].indexOf(module/*i*/)) {
+    function u(e) {
+        var t = {},
+            n = Object.keys(e.writes),
+            r = Object.assign({}, e.exclusive, e.inclusive);
+        for (var i in r) {
+            for (var o = !1, a = 0; a < n.length; a++)
+                if (0 === n[a].indexOf(i)) {
                     o = !0;
                     break
-                }!o && global/*e*/.counts[module/*i*/] > 0 && (require/*t*/[module/*i*/] = !0)
+                }!o && e.counts[i] > 0 && (t[i] = !0)
         }
-        return require/*t*/
+        return t
     }
     var c = 1.2,
         p = {
@@ -94,5 +94,5 @@ __d("ReactDefaultPerfAnalysis",[],function (global/*e*/, require/*t*/, requireDy
             getDOMSummary: a,
             getTotalTime: o
         };
-    module/*i*/.exports = d
+    i.exports = d
 });

@@ -1,8 +1,8 @@
-__d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],function (e, t, n, r, i) {
     "use strict";
-    var o = require/*t*/("FBTextWithEntities.react"),
-        React/*a*/ = require/*t*/("React"),
-        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+    var o = t("FBTextWithEntities.react"),
+        React/*a*/ = t("React"),
+        ReactGraphQL/*s*/ = t("ReactGraphQL"),
         l = 3,
         u = React/*a*/.createClass({
             displayName: "THLikeSentence",
@@ -15,10 +15,10 @@ __d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],functio
                     likers_count: l
                 },
                 queries: {
-                    feedback: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THLikeSentence_feedback", "Feedback", [new requireDynamic/*n*/.Field("like_sentence", null, [require/*t*/.__frag(global/*e*/)]), new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+                    feedback: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THLikeSentence_feedback", "Feedback", [new n.Field("like_sentence", null, [t.__frag(e)]), new n.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, {
@@ -29,11 +29,11 @@ __d("THLikeSentence",["FBTextWithEntities.react","React","ReactGraphQL"],functio
                 }
             },
             render: function() {
-                var global/*e*/ = this.props.feedback.like_sentence;
+                var e = this.props.feedback.like_sentence;
                 return React/*a*/.createElement(o, {
-                    text: global/*e*/
+                    text: e
                 })
             }
         });
-    module/*i*/.exports = u
+    i.exports = u
 });

@@ -1,6 +1,6 @@
-__d("DocumentOffsetCache",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return 0 > global/*e*/ ? 0 : global/*e*/
+__d("DocumentOffsetCache",[],function (e, t, n, r, i) {
+    function o(e) {
+        return 0 > e ? 0 : e
     }
 
     function a() {
@@ -10,36 +10,36 @@ __d("DocumentOffsetCache",[],function (global/*e*/, require/*t*/, requireDynamic
     a.prototype.reset = function() {
         "use strict";
         this.$DocumentOffsetCache_block = -1, this.$DocumentOffsetCache_decoration = -1, this.$DocumentOffsetCache_leaf = -1, this.$DocumentOffsetCache_cachedOffsets = {}
-    }, a.prototype.nextBlock = function(global/*e*/) {
+    }, a.prototype.nextBlock = function(e) {
         "use strict";
-        this.$DocumentOffsetCache_block++, this.$DocumentOffsetCache_decoration = -1, this.$DocumentOffsetCache_leaf = -1, this.$DocumentOffsetCache_recordOffset(global/*e*/)
-    }, a.prototype.nextDecoration = function(global/*e*/) {
+        this.$DocumentOffsetCache_block++, this.$DocumentOffsetCache_decoration = -1, this.$DocumentOffsetCache_leaf = -1, this.$DocumentOffsetCache_recordOffset(e)
+    }, a.prototype.nextDecoration = function(e) {
         "use strict";
-        this.$DocumentOffsetCache_decoration++, this.$DocumentOffsetCache_leaf = -1, this.$DocumentOffsetCache_recordOffset(global/*e*/)
-    }, a.prototype.nextLeaf = function(global/*e*/) {
+        this.$DocumentOffsetCache_decoration++, this.$DocumentOffsetCache_leaf = -1, this.$DocumentOffsetCache_recordOffset(e)
+    }, a.prototype.nextLeaf = function(e) {
         "use strict";
-        this.$DocumentOffsetCache_leaf++, this.$DocumentOffsetCache_recordOffset(global/*e*/)
+        this.$DocumentOffsetCache_leaf++, this.$DocumentOffsetCache_recordOffset(e)
     }, a.prototype.getCurrentKey = function() {
         "use strict";
         return o(this.$DocumentOffsetCache_block) + "." + o(this.$DocumentOffsetCache_decoration) + "." + o(this.$DocumentOffsetCache_leaf)
-    }, a.prototype.getOffset = function(global/*e*/) {
+    }, a.prototype.getOffset = function(e) {
         "use strict";
-        return this.$DocumentOffsetCache_cachedOffsets[global/*e*/]
-    }, a.prototype.getKey = function(global/*e*/) {
+        return this.$DocumentOffsetCache_cachedOffsets[e]
+    }, a.prototype.getKey = function(e) {
         "use strict";
-        var require/*t*/ = null,
-            requireDynamic/*n*/ = null;
-        for (var requireLazy/*r*/ in this.$DocumentOffsetCache_cachedOffsets) {
-            var module/*i*/ = this.$DocumentOffsetCache_cachedOffsets[requireLazy/*r*/],
-                o = global/*e*/ - module/*i*/;
+        var t = null,
+            n = null;
+        for (var r in this.$DocumentOffsetCache_cachedOffsets) {
+            var i = this.$DocumentOffsetCache_cachedOffsets[r],
+                o = e - i;
             if (!(0 > o)) {
-                if (0 === o) return requireLazy/*r*/;
-                (require/*t*/ > o || null === require/*t*/) && (require/*t*/ = o, requireDynamic/*n*/ = requireLazy/*r*/)
+                if (0 === o) return r;
+                (t > o || null === t) && (t = o, n = r)
             }
         }
-        return requireDynamic/*n*/
-    }, a.prototype.$DocumentOffsetCache_recordOffset = function(global/*e*/) {
+        return n
+    }, a.prototype.$DocumentOffsetCache_recordOffset = function(e) {
         "use strict";
-        this.$DocumentOffsetCache_cachedOffsets[this.getCurrentKey()] = global/*e*/
-    }, module/*i*/.exports = a
+        this.$DocumentOffsetCache_cachedOffsets[this.getCurrentKey()] = e
+    }, i.exports = a
 });

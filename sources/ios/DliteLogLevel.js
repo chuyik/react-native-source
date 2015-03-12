@@ -1,8 +1,8 @@
-__d("DliteLogLevel",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteLogLevel",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         MUSTFIX: "mustfix",
         WARNING: "warn"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

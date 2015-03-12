@@ -1,31 +1,31 @@
-__d("GroupBlockUserAction",["GraphQLMutationAction","GraphQLMutationQueryCreator","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupBlockUserAction",["GraphQLMutationAction","GraphQLMutationQueryCreator","rql"],function (e, t, n, r, i) {
     "use strict";
-    var GraphQLMutationAction/*o*/ = require/*t*/("GraphQLMutationAction"),
-        GraphQLMutationQueryCreator/*a*/ = require/*t*/("GraphQLMutationQueryCreator"),
-        rql/*s*/ = require/*t*/("rql"),
+    var GraphQLMutationAction/*o*/ = t("GraphQLMutationAction"),
+        GraphQLMutationQueryCreator/*a*/ = t("GraphQLMutationQueryCreator"),
+        rql/*s*/ = t("rql"),
         l = "treehouse_group_mall",
         u = {
-            blockUserFromGroup: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = GraphQLMutationQueryCreator/*a*/.createQuery("group_block", {
-                        group: require/*t*/
+            blockUserFromGroup: function(e, t, n) {
+                var r = GraphQLMutationQueryCreator/*a*/.createQuery("group_block", {
+                        group: t
                     }),
-                    module/*i*/ = function(global/*e*/) {
-                        var require/*t*/ = rql/*s*/.__GraphQL;
-                        return new require/*t*/.Mutation("GroupBlockUserAction_m0", "GroupBlockResponsePayload", new require/*t*/.Callv("group_block", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+                    i = function(e) {
+                        var t = rql/*s*/.__GraphQL;
+                        return new t.Mutation("GroupBlockUserAction_m0", "GroupBlockResponsePayload", new t.Callv("group_block", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [rql/*s*/.__frag(global/*e*/)])
-                    }(requireLazy/*r*/),
+                        })], [rql/*s*/.__frag(e)])
+                    }(r),
                     u = new GraphQLMutationAction/*o*/;
-                u.runServerAction(module/*i*/, {
-                    group_id: require/*t*/,
-                    user_id: global/*e*/,
+                u.runServerAction(i, {
+                    group_id: t,
+                    user_id: e,
                     source: l
-                }, function(global/*e*/) {
-                    if (global/*e*/) throw global/*e*/;
-                    requireDynamic/*n*/ && requireDynamic/*n*/()
+                }, function(e) {
+                    if (e) throw e;
+                    n && n()
                 })
             }
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

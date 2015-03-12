@@ -1,12 +1,12 @@
-__d("BoundingDimensions",["PooledClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("BoundingDimensions",["PooledClass"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        this.width = global/*e*/, this.height = require/*t*/
+    function o(e, t) {
+        this.width = e, this.height = t
     }
-    var PooledClass/*a*/ = require/*t*/("PooledClass"),
+    var PooledClass/*a*/ = t("PooledClass"),
         s = PooledClass/*a*/.twoArgumentPooler;
-    o.getPooledFromElement = function(global/*e*/) {
-        return o.getPooled(global/*e*/.offsetWidth, global/*e*/.offsetHeight)
-    }, PooledClass/*a*/.addPoolingTo(o, s), module/*i*/.exports = o
+    o.getPooledFromElement = function(e) {
+        return o.getPooled(e.offsetWidth, e.offsetHeight)
+    }, PooledClass/*a*/.addPoolingTo(o, s), i.exports = o
 });

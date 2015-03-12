@@ -1,146 +1,146 @@
-__d("DocumentModifier",["ComposedBlockType","ComposedEntityMutability","DocumentCharacters","DocumentEntity","DocumentModifierDiffs","DocumentRemovalDirection","emptyFunction","fillArray","getCharacterRemovalRange"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DocumentModifier",["ComposedBlockType","ComposedEntityMutability","DocumentCharacters","DocumentEntity","DocumentModifierDiffs","DocumentRemovalDirection","emptyFunction","fillArray","getCharacterRemovalRange"],function (e, t, n, r, i) {
     function o() {
-        for (var global/*e*/ = [], require/*t*/ = 0, requireDynamic/*n*/ = arguments.length; requireDynamic/*n*/ > require/*t*/; require/*t*/++) global/*e*/.push(arguments[require/*t*/]);
-        return Array.prototype.concat.apply(C, global/*e*/)
+        for (var e = [], t = 0, n = arguments.length; n > t; t++) e.push(arguments[t]);
+        return Array.prototype.concat.apply(C, e)
     }
 
-    function a(global/*e*/, require/*t*/) {
-        return null != require/*t*/ && (global/*e*/ = global/*e*/.substr(0, require/*t*/)), global/*e*/.split(S).length
+    function a(e, t) {
+        return null != t && (e = e.substr(0, t)), e.split(S).length
     }
 
-    function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        require/*t*/ = require/*t*/.filter(emptyFunction/*_*/.thatReturnsArgument), require/*t*/.length && (global/*e*/.addForwardTransaction(require/*t*/), l(global/*e*/, require/*t*/, !0, requireDynamic/*n*/))
+    function s(e, t, n) {
+        t = t.filter(emptyFunction/*_*/.thatReturnsArgument), t.length && (e.addForwardTransaction(t), l(e, t, !0, n))
     }
 
-    function l(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        if (require/*t*/.length) {
-            for (var module/*i*/, o, a, s = global/*e*/.getData(), l = 0; l < require/*t*/.length; l++) requireDynamic/*n*/ ? (module/*i*/ = require/*t*/[l], o = module/*i*/.from, a = module/*i*/.to) : (module/*i*/ = require/*t*/[require/*t*/.length - 1 - l], o = module/*i*/.to, a = module/*i*/.from), u(s, o, a);
-            global/*e*/.update(s.text, s.inlines, s.blocks, s.entities), requireLazy/*r*/(a.start, a.end)
+    function l(e, t, n, r) {
+        if (t.length) {
+            for (var i, o, a, s = e.getData(), l = 0; l < t.length; l++) n ? (i = t[l], o = i.from, a = i.to) : (i = t[t.length - 1 - l], o = i.to, a = i.from), u(s, o, a);
+            e.update(s.text, s.inlines, s.blocks, s.entities), r(a.start, a.end)
         }
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = require/*t*/.start,
-            module/*i*/ = require/*t*/.end,
-            o = global/*e*/.text.slice(0, requireLazy/*r*/),
-            s = global/*e*/.text.slice(module/*i*/);
-        if (void 0 !== require/*t*/.text && void 0 !== requireDynamic/*n*/.text && (global/*e*/.text = o + requireDynamic/*n*/.text + s), void 0 !== require/*t*/.inlines && void 0 !== requireDynamic/*n*/.inlines) {
-            var l = global/*e*/.inlines.slice(0, requireLazy/*r*/),
-                u = global/*e*/.inlines.slice(module/*i*/);
-            global/*e*/.inlines = l.concat(requireDynamic/*n*/.inlines, u)
+    function u(e, t, n) {
+        var r = t.start,
+            i = t.end,
+            o = e.text.slice(0, r),
+            s = e.text.slice(i);
+        if (void 0 !== t.text && void 0 !== n.text && (e.text = o + n.text + s), void 0 !== t.inlines && void 0 !== n.inlines) {
+            var l = e.inlines.slice(0, r),
+                u = e.inlines.slice(i);
+            e.inlines = l.concat(n.inlines, u)
         }
-        if (void 0 !== require/*t*/.blocks && void 0 !== requireDynamic/*n*/.blocks) {
+        if (void 0 !== t.blocks && void 0 !== n.blocks) {
             var c = a(o) - 1,
-                ComposedBlockType/*p*/ = global/*e*/.blocks.slice(0, c),
-                ComposedEntityMutability/*d*/ = global/*e*/.blocks.slice(c + require/*t*/.blocks.length);
-            global/*e*/.blocks = ComposedBlockType/*p*/.concat(requireDynamic/*n*/.blocks, ComposedEntityMutability/*d*/)
+                ComposedBlockType/*p*/ = e.blocks.slice(0, c),
+                ComposedEntityMutability/*d*/ = e.blocks.slice(c + t.blocks.length);
+            e.blocks = ComposedBlockType/*p*/.concat(n.blocks, ComposedEntityMutability/*d*/)
         }
-        if (void 0 !== require/*t*/.entities && void 0 !== requireDynamic/*n*/.entities) {
-            var DocumentCharacters/*h*/ = global/*e*/.entities.slice(0, requireLazy/*r*/),
-                DocumentEntity/*f*/ = global/*e*/.entities.slice(module/*i*/);
-            global/*e*/.entities = DocumentCharacters/*h*/.concat(requireDynamic/*n*/.entities, DocumentEntity/*f*/)
+        if (void 0 !== t.entities && void 0 !== n.entities) {
+            var DocumentCharacters/*h*/ = e.entities.slice(0, r),
+                DocumentEntity/*f*/ = e.entities.slice(i);
+            e.entities = DocumentCharacters/*h*/.concat(n.entities, DocumentEntity/*f*/)
         }
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = getCharacterRemovalRange/*v*/(global/*e*/, require/*t*/, requireDynamic/*n*/),
-            o = DocumentModifierDiffs/*m*/.removeText(global/*e*/, module/*i*/.start, module/*i*/.end);
-        s(global/*e*/, [o], requireLazy/*r*/)
+    function c(e, t, n, r) {
+        var i = getCharacterRemovalRange/*v*/(e, t, n),
+            o = DocumentModifierDiffs/*m*/.removeText(e, i.start, i.end);
+        s(e, [o], r)
     }
-    var ComposedBlockType/*p*/ = require/*t*/("ComposedBlockType"),
-        ComposedEntityMutability/*d*/ = require/*t*/("ComposedEntityMutability"),
-        DocumentCharacters/*h*/ = require/*t*/("DocumentCharacters"),
-        DocumentEntity/*f*/ = require/*t*/("DocumentEntity"),
-        DocumentModifierDiffs/*m*/ = require/*t*/("DocumentModifierDiffs"),
-        DocumentRemovalDirection/*g*/ = require/*t*/("DocumentRemovalDirection"),
-        emptyFunction/*_*/ = require/*t*/("emptyFunction"),
-        fillArray/*y*/ = require/*t*/("fillArray"),
-        getCharacterRemovalRange/*v*/ = require/*t*/("getCharacterRemovalRange"),
+    var ComposedBlockType/*p*/ = t("ComposedBlockType"),
+        ComposedEntityMutability/*d*/ = t("ComposedEntityMutability"),
+        DocumentCharacters/*h*/ = t("DocumentCharacters"),
+        DocumentEntity/*f*/ = t("DocumentEntity"),
+        DocumentModifierDiffs/*m*/ = t("DocumentModifierDiffs"),
+        DocumentRemovalDirection/*g*/ = t("DocumentRemovalDirection"),
+        emptyFunction/*_*/ = t("emptyFunction"),
+        fillArray/*y*/ = t("fillArray"),
+        getCharacterRemovalRange/*v*/ = t("getCharacterRemovalRange"),
         S = DocumentCharacters/*h*/.BLOCK_DELIMITER,
         b = ComposedEntityMutability/*d*/.MUTABLE,
         R = DocumentRemovalDirection/*g*/.FORWARD,
         w = DocumentRemovalDirection/*g*/.BACKWARD,
         C = [],
         E = {
-            insertFragment: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                var a = require/*t*/.entities,
+            insertFragment: function(e, t, n, r, i) {
+                var a = t.entities,
                     l = !0,
-                    u = global/*e*/.getEntities(),
-                    c = u[requireDynamic/*n*/ - 1],
-                    ComposedBlockType/*p*/ = u[requireLazy/*r*/];
+                    u = e.getEntities(),
+                    c = u[n - 1],
+                    ComposedBlockType/*p*/ = u[r];
                 if (c && c === ComposedBlockType/*p*/) {
                     var ComposedEntityMutability/*d*/ = DocumentEntity/*f*/.get(c);
-                    ComposedEntityMutability/*d*/.getMutability() === b && void 0 === a && (a = fillArray/*y*/(require/*t*/.text.length, c), l = !1)
+                    ComposedEntityMutability/*d*/.getMutability() === b && void 0 === a && (a = fillArray/*y*/(t.text.length, c), l = !1)
                 }
                 var DocumentCharacters/*h*/ = null;
-                l && (DocumentCharacters/*h*/ = DocumentModifierDiffs/*m*/.removeEntities(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/));
-                var DocumentRemovalDirection/*g*/ = DocumentModifierDiffs/*m*/.removeText(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/),
-                    emptyFunction/*_*/ = global/*e*/.getBlockStylesAroundRange(requireDynamic/*n*/, requireDynamic/*n*/)[0],
-                    getCharacterRemovalRange/*v*/ = DocumentModifierDiffs/*m*/.insertText(global/*e*/, requireDynamic/*n*/, require/*t*/.text, require/*t*/.inlines, a || fillArray/*y*/(require/*t*/.text.length, null), [emptyFunction/*_*/].concat(require/*t*/.blocks.slice(1))),
+                l && (DocumentCharacters/*h*/ = DocumentModifierDiffs/*m*/.removeEntities(e, n, r));
+                var DocumentRemovalDirection/*g*/ = DocumentModifierDiffs/*m*/.removeText(e, n, r),
+                    emptyFunction/*_*/ = e.getBlockStylesAroundRange(n, n)[0],
+                    getCharacterRemovalRange/*v*/ = DocumentModifierDiffs/*m*/.insertText(e, n, t.text, t.inlines, a || fillArray/*y*/(t.text.length, null), [emptyFunction/*_*/].concat(t.blocks.slice(1))),
                     S = o(DocumentCharacters/*h*/, DocumentRemovalDirection/*g*/, getCharacterRemovalRange/*v*/);
-                s(global/*e*/, S, module/*i*/)
+                s(e, S, i)
             },
-            applyEntity: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                var a = DocumentModifierDiffs/*m*/.removeEntities(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/),
+            applyEntity: function(e, t, n, r, i) {
+                var a = DocumentModifierDiffs/*m*/.removeEntities(e, n, r),
                     l = null;
-                null !== require/*t*/ && (l = DocumentModifierDiffs/*m*/.setEntity(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, require/*t*/));
+                null !== t && (l = DocumentModifierDiffs/*m*/.setEntity(e, n, r, t));
                 var u = o(a, l);
-                s(global/*e*/, u, module/*i*/)
+                s(e, u, i)
             },
-            removeCharacterBackward: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                require/*t*/ > 0 && c(global/*e*/, require/*t*/, w, requireDynamic/*n*/)
+            removeCharacterBackward: function(e, t, n) {
+                t > 0 && c(e, t, w, n)
             },
-            removeCharacterForward: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                require/*t*/ < global/*e*/.getText().length && c(global/*e*/, require/*t*/, R, requireDynamic/*n*/)
+            removeCharacterForward: function(e, t, n) {
+                t < e.getText().length && c(e, t, R, n)
             },
-            removeRange: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                var module/*i*/ = DocumentModifierDiffs/*m*/.removeEntities(global/*e*/, require/*t*/, requireDynamic/*n*/),
-                    a = DocumentModifierDiffs/*m*/.removeText(global/*e*/, require/*t*/, requireDynamic/*n*/);
-                s(global/*e*/, o(module/*i*/, a), requireLazy/*r*/)
+            removeRange: function(e, t, n, r) {
+                var i = DocumentModifierDiffs/*m*/.removeEntities(e, t, n),
+                    a = DocumentModifierDiffs/*m*/.removeText(e, t, n);
+                s(e, o(i, a), r)
             },
-            moveText: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                var a = DocumentModifierDiffs/*m*/.removeEntities(global/*e*/, require/*t*/, requireDynamic/*n*/),
-                    l = DocumentModifierDiffs/*m*/.removeText(global/*e*/, require/*t*/, requireDynamic/*n*/),
+            moveText: function(e, t, n, r, i) {
+                var a = DocumentModifierDiffs/*m*/.removeEntities(e, t, n),
+                    l = DocumentModifierDiffs/*m*/.removeText(e, t, n),
                     u = null;
-                l && (u = DocumentModifierDiffs/*m*/.insertText(global/*e*/, requireLazy/*r*/, l.from.text, l.from.inlines, fillArray/*y*/(l.from.text.length, null), l.from.blocks), requireLazy/*r*/ > require/*t*/ && l && DocumentModifierDiffs/*m*/.shiftDiff(u, -l.from.text.length));
+                l && (u = DocumentModifierDiffs/*m*/.insertText(e, r, l.from.text, l.from.inlines, fillArray/*y*/(l.from.text.length, null), l.from.blocks), r > t && l && DocumentModifierDiffs/*m*/.shiftDiff(u, -l.from.text.length));
                 var c = o(a, l, u);
-                s(global/*e*/, c, module/*i*/)
+                s(e, c, i)
             },
-            replaceText: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, s) {
-                var l = global/*e*/.getBlockStylesAroundRange(module/*i*/, module/*i*/)[0],
+            replaceText: function(e, t, n, r, i, o, s) {
+                var l = e.getBlockStylesAroundRange(i, i)[0],
                     u = {
-                        text: require/*t*/,
-                        inlines: fillArray/*y*/(require/*t*/.length, requireDynamic/*n*/),
-                        entities: requireLazy/*r*/ ? fillArray/*y*/(require/*t*/.length, requireLazy/*r*/) : void 0,
-                        blocks: fillArray/*y*/(a(require/*t*/), l)
+                        text: t,
+                        inlines: fillArray/*y*/(t.length, n),
+                        entities: r ? fillArray/*y*/(t.length, r) : void 0,
+                        blocks: fillArray/*y*/(a(t), l)
                     };
-                E.insertFragment(global/*e*/, u, module/*i*/, o, s)
+                E.insertFragment(e, u, i, o, s)
             },
-            resetBlock: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/, module/*i*/ = global/*e*/.getText(),
-                    a = module/*i*/.slice(0, require/*t*/).lastIndexOf(S);
-                requireLazy/*r*/ = -1 === a ? 0 : a + 1;
-                var l = module/*i*/.indexOf(S, requireLazy/*r*/); - 1 === l && (l = module/*i*/.length);
-                var u = DocumentModifierDiffs/*m*/.removeEntities(global/*e*/, requireLazy/*r*/, l),
-                    c = DocumentModifierDiffs/*m*/.removeText(global/*e*/, requireLazy/*r*/, l),
-                    ComposedEntityMutability/*d*/ = DocumentModifierDiffs/*m*/.setBlockStyle(global/*e*/, requireLazy/*r*/, requireLazy/*r*/, ComposedBlockType/*p*/.UNSTYLED);
-                s(global/*e*/, o(u, c, ComposedEntityMutability/*d*/), requireDynamic/*n*/)
+            resetBlock: function(e, t, n) {
+                var r, i = e.getText(),
+                    a = i.slice(0, t).lastIndexOf(S);
+                r = -1 === a ? 0 : a + 1;
+                var l = i.indexOf(S, r); - 1 === l && (l = i.length);
+                var u = DocumentModifierDiffs/*m*/.removeEntities(e, r, l),
+                    c = DocumentModifierDiffs/*m*/.removeText(e, r, l),
+                    ComposedEntityMutability/*d*/ = DocumentModifierDiffs/*m*/.setBlockStyle(e, r, r, ComposedBlockType/*p*/.UNSTYLED);
+                s(e, o(u, c, ComposedEntityMutability/*d*/), n)
             },
-            applyBlockStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                s(global/*e*/, [DocumentModifierDiffs/*m*/.setBlockStyle(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, require/*t*/)], module/*i*/)
+            applyBlockStyle: function(e, t, n, r, i) {
+                s(e, [DocumentModifierDiffs/*m*/.setBlockStyle(e, n, r, t)], i)
             },
-            applyInlineStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                s(global/*e*/, [DocumentModifierDiffs/*m*/.addInlineStyle(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, require/*t*/)], module/*i*/)
+            applyInlineStyle: function(e, t, n, r, i) {
+                s(e, [DocumentModifierDiffs/*m*/.addInlineStyle(e, n, r, t)], i)
             },
-            removeInlineStyle: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                s(global/*e*/, [DocumentModifierDiffs/*m*/.removeInlineStyle(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, require/*t*/)], module/*i*/)
+            removeInlineStyle: function(e, t, n, r, i) {
+                s(e, [DocumentModifierDiffs/*m*/.removeInlineStyle(e, n, r, t)], i)
             },
-            undo: function(global/*e*/, require/*t*/) {
-                l(global/*e*/, global/*e*/.getUndoDiffs(), !1, require/*t*/)
+            undo: function(e, t) {
+                l(e, e.getUndoDiffs(), !1, t)
             },
-            redo: function(global/*e*/, require/*t*/) {
-                l(global/*e*/, global/*e*/.getRedoDiffs(), !0, require/*t*/)
+            redo: function(e, t) {
+                l(e, e.getRedoDiffs(), !0, t)
             }
         };
-    module/*i*/.exports = E
+    i.exports = E
 });

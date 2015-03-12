@@ -1,10 +1,10 @@
-__d("UniversalWorkerNodeHandle",["ReactIOSTagHandles","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var ReactIOSTagHandles/*o*/ = require/*t*/("ReactIOSTagHandles"),
-        invariant/*a*/ = require/*t*/("invariant"),
+__d("UniversalWorkerNodeHandle",["ReactIOSTagHandles","invariant"],function (e, t, n, r, i) {
+    var ReactIOSTagHandles/*o*/ = t("ReactIOSTagHandles"),
+        invariant/*a*/ = t("invariant"),
         s = {
-            getRootNodeID: function(global/*e*/) {
-                return (void 0 === global/*e*/ || null === global/*e*/ || 0 === global/*e*/) && invariant/*a*/(0, "No node handle defined"), ReactIOSTagHandles/*o*/.tagToRootNodeID[global/*e*/]
+            getRootNodeID: function(e) {
+                return (void 0 === e || null === e || 0 === e) && invariant/*a*/(0, "No node handle defined"), ReactIOSTagHandles/*o*/.tagToRootNodeID[e]
             }
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

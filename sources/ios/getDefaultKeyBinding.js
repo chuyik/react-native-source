@@ -1,68 +1,68 @@
-__d("getDefaultKeyBinding",["DocumentCommands","Keys","UserAgent"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return global/*e*/.ctrlKey && !global/*e*/.altKey
+__d("getDefaultKeyBinding",["DocumentCommands","Keys","UserAgent"],function (e, t, n, r, i) {
+    function o(e) {
+        return e.ctrlKey && !e.altKey
     }
 
-    function a(global/*e*/) {
-        return m ? global/*e*/.metaKey && !global/*e*/.altKey : o(global/*e*/)
+    function a(e) {
+        return m ? e.metaKey && !e.altKey : o(e)
     }
 
-    function s(global/*e*/) {
-        return m ? global/*e*/.altKey : o(global/*e*/)
+    function s(e) {
+        return m ? e.altKey : o(e)
     }
 
-    function l(global/*e*/) {
-        return a(global/*e*/) ? global/*e*/.shiftKey ? DocumentCommands/*d*/.REDO : DocumentCommands/*d*/.UNDO : void 0
+    function l(e) {
+        return a(e) ? e.shiftKey ? DocumentCommands/*d*/.REDO : DocumentCommands/*d*/.UNDO : void 0
     }
 
-    function u(global/*e*/) {
-        return g && global/*e*/.shiftKey ? null : s(global/*e*/) ? DocumentCommands/*d*/.DELETE_WORD : DocumentCommands/*d*/.DELETE
+    function u(e) {
+        return g && e.shiftKey ? null : s(e) ? DocumentCommands/*d*/.DELETE_WORD : DocumentCommands/*d*/.DELETE
     }
 
-    function c(global/*e*/) {
-        return a(global/*e*/) && m ? DocumentCommands/*d*/.BACKSPACE_TO_END_OF_BLOCK : s(global/*e*/) ? DocumentCommands/*d*/.BACKSPACE_WORD : DocumentCommands/*d*/.BACKSPACE
+    function c(e) {
+        return a(e) && m ? DocumentCommands/*d*/.BACKSPACE_TO_END_OF_BLOCK : s(e) ? DocumentCommands/*d*/.BACKSPACE_WORD : DocumentCommands/*d*/.BACKSPACE
     }
 
-    function p(global/*e*/) {
-        switch (global/*e*/.keyCode) {
+    function p(e) {
+        switch (e.keyCode) {
             case 66:
-                return a(global/*e*/) ? DocumentCommands/*d*/.BOLD : null;
+                return a(e) ? DocumentCommands/*d*/.BOLD : null;
             case 68:
-                return o(global/*e*/) ? DocumentCommands/*d*/.DELETE : null;
+                return o(e) ? DocumentCommands/*d*/.DELETE : null;
             case 72:
-                return o(global/*e*/) ? DocumentCommands/*d*/.BACKSPACE : null;
+                return o(e) ? DocumentCommands/*d*/.BACKSPACE : null;
             case 73:
-                return a(global/*e*/) ? DocumentCommands/*d*/.ITALIC : null;
+                return a(e) ? DocumentCommands/*d*/.ITALIC : null;
             case 74:
-                return a(global/*e*/) ? DocumentCommands/*d*/.CODE : null;
+                return a(e) ? DocumentCommands/*d*/.CODE : null;
             case 75:
-                return o(global/*e*/) ? DocumentCommands/*d*/.DELETE_TO_END_OF_BLOCK : null;
+                return o(e) ? DocumentCommands/*d*/.DELETE_TO_END_OF_BLOCK : null;
             case 79:
-                return o(global/*e*/) ? DocumentCommands/*d*/.INSERT_BLOCK_DELIMITER : null;
+                return o(e) ? DocumentCommands/*d*/.INSERT_BLOCK_DELIMITER : null;
             case 84:
-                return o(global/*e*/) ? DocumentCommands/*d*/.TRANSPOSE_CHARACTERS : null;
+                return o(e) ? DocumentCommands/*d*/.TRANSPOSE_CHARACTERS : null;
             case 85:
-                return a(global/*e*/) ? DocumentCommands/*d*/.UNDERLINE : null;
+                return a(e) ? DocumentCommands/*d*/.UNDERLINE : null;
             case 90:
-                return l(global/*e*/) || null;
+                return l(e) || null;
             case Keys/*h*/.DELETE:
-                return u(global/*e*/);
+                return u(e);
             case Keys/*h*/.BACKSPACE:
-                return c(global/*e*/);
+                return c(e);
             case Keys/*h*/.LEFT:
-                return y && a(global/*e*/) ? DocumentCommands/*d*/.MOVE_SELECTION_TO_START_OF_BLOCK : null;
+                return y && a(e) ? DocumentCommands/*d*/.MOVE_SELECTION_TO_START_OF_BLOCK : null;
             case Keys/*h*/.RIGHT:
-                return y && a(global/*e*/) ? DocumentCommands/*d*/.MOVE_SELECTION_TO_END_OF_BLOCK : null;
+                return y && a(e) ? DocumentCommands/*d*/.MOVE_SELECTION_TO_END_OF_BLOCK : null;
             default:
                 return null
         }
     }
-    var DocumentCommands/*d*/ = require/*t*/("DocumentCommands"),
-        Keys/*h*/ = require/*t*/("Keys"),
-        UserAgent/*f*/ = require/*t*/("UserAgent"),
+    var DocumentCommands/*d*/ = t("DocumentCommands"),
+        Keys/*h*/ = t("Keys"),
+        UserAgent/*f*/ = t("UserAgent"),
         m = UserAgent/*f*/.osx(),
         g = UserAgent/*f*/.windows(),
         _ = UserAgent/*f*/.firefox(),
         y = m && _ && 29 > _;
-    module/*i*/.exports = p
+    i.exports = p
 });

@@ -1,12 +1,12 @@
-__d("FBSpinner",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBSpinner",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","View","createReactIOSNativeComponentClass","keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
-        React/*a*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        View/*u*/ = require/*t*/("View"),
-        createReactIOSNativeComponentClass/*c*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        keyMirror/*p*/ = require/*t*/("keyMirror"),
+    var NativeMethodsMixin/*o*/ = t("NativeMethodsMixin"),
+        React/*a*/ = t("React"),
+        ReactIOSViewAttributes/*s*/ = t("ReactIOSViewAttributes"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        View/*u*/ = t("View"),
+        createReactIOSNativeComponentClass/*c*/ = t("createReactIOSNativeComponentClass"),
+        keyMirror/*p*/ = t("keyMirror"),
         d = keyMirror/*p*/({
             large: null,
             small: null
@@ -61,5 +61,5 @@ __d("FBSpinner",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleShe
         validAttributes: ReactIOSViewAttributes/*s*/.UIView,
         uiViewClassName: "FBActivityIndicatorView"
     });
-    module/*i*/.exports = h
+    i.exports = h
 });

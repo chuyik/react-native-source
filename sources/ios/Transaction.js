@@ -1,6 +1,6 @@
-__d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Transaction",["invariant"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
+    var invariant/*o*/ = t("invariant"),
         a = {
             reinitializeTransaction: function() {
                 this.transactionWrappers = this.getTransactionWrappers(), this.wrapperInitData ? this.wrapperInitData.length = 0 : this.wrapperInitData = [], this._isInTransaction = !1
@@ -10,11 +10,11 @@ __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDyna
             isInTransaction: function() {
                 return !!this._isInTransaction
             },
-            perform: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s, l) {
+            perform: function(e, t, n, r, i, a, s, l) {
                 this.isInTransaction() && invariant/*o*/(0, "Transaction.perform(...): Cannot initialize a transaction when there is already an outstanding transaction.");
                 var u, c;
                 try {
-                    this._isInTransaction = !0, u = !0, this.initializeAll(0), c = global/*e*/.call(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s, l), u = !1
+                    this._isInTransaction = !0, u = !0, this.initializeAll(0), c = e.call(t, n, r, i, a, s, l), u = !1
                 } finally {
                     try {
                         if (u) try {
@@ -26,28 +26,28 @@ __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDyna
                 }
                 return c
             },
-            initializeAll: function(global/*e*/) {
-                for (var require/*t*/ = this.transactionWrappers, requireDynamic/*n*/ = global/*e*/; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) {
-                    var requireLazy/*r*/ = require/*t*/[requireDynamic/*n*/];
+            initializeAll: function(e) {
+                for (var t = this.transactionWrappers, n = e; n < t.length; n++) {
+                    var r = t[n];
                     try {
-                        this.wrapperInitData[requireDynamic/*n*/] = s.OBSERVED_ERROR, this.wrapperInitData[requireDynamic/*n*/] = requireLazy/*r*/.initialize ? requireLazy/*r*/.initialize.call(this) : null
+                        this.wrapperInitData[n] = s.OBSERVED_ERROR, this.wrapperInitData[n] = r.initialize ? r.initialize.call(this) : null
                     } finally {
-                        if (this.wrapperInitData[requireDynamic/*n*/] === s.OBSERVED_ERROR) try {
-                            this.initializeAll(requireDynamic/*n*/ + 1)
-                        } catch (module/*i*/) {}
+                        if (this.wrapperInitData[n] === s.OBSERVED_ERROR) try {
+                            this.initializeAll(n + 1)
+                        } catch (i) {}
                     }
                 }
             },
-            closeAll: function(global/*e*/) {
+            closeAll: function(e) {
                 this.isInTransaction() || invariant/*o*/(0, "Transaction.closeAll(): Cannot close transaction when none are open.");
-                for (var require/*t*/ = this.transactionWrappers, requireDynamic/*n*/ = global/*e*/; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) {
-                    var requireLazy/*r*/, module/*i*/ = require/*t*/[requireDynamic/*n*/],
-                        a = this.wrapperInitData[requireDynamic/*n*/];
+                for (var t = this.transactionWrappers, n = e; n < t.length; n++) {
+                    var r, i = t[n],
+                        a = this.wrapperInitData[n];
                     try {
-                        requireLazy/*r*/ = !0, a !== s.OBSERVED_ERROR && module/*i*/.close && module/*i*/.close.call(this, a), requireLazy/*r*/ = !1
+                        r = !0, a !== s.OBSERVED_ERROR && i.close && i.close.call(this, a), r = !1
                     } finally {
-                        if (requireLazy/*r*/) try {
-                            this.closeAll(requireDynamic/*n*/ + 1)
+                        if (r) try {
+                            this.closeAll(n + 1)
                         } catch (l) {}
                     }
                 }
@@ -58,5 +58,5 @@ __d("Transaction",["invariant"],function (global/*e*/, require/*t*/, requireDyna
             Mixin: a,
             OBSERVED_ERROR: {}
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

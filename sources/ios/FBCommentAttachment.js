@@ -1,10 +1,10 @@
-__d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL","StyleSheet"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL","StyleSheet"],function (e, t, n, r, i) {
     "use strict";
-    var FBAttachmentView/*o*/ = require/*t*/("FBAttachmentView"),
-        FIGColors/*a*/ = require/*t*/("FIGColors"),
-        React/*s*/ = require/*t*/("React"),
-        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
+    var FBAttachmentView/*o*/ = t("FBAttachmentView"),
+        FIGColors/*a*/ = t("FIGColors"),
+        React/*s*/ = t("React"),
+        ReactGraphQL/*l*/ = t("ReactGraphQL"),
+        StyleSheet/*u*/ = t("StyleSheet"),
         c = 200,
         p = 240,
         d = React/*s*/.createClass({
@@ -18,10 +18,10 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
             mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("FBCommentAttachment_attachment", "StoryAttachment", null, [require/*t*/.__frag(global/*e*/)], {
+                    attachment: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("FBCommentAttachment_attachment", "StoryAttachment", null, [t.__frag(e)], {
                                 scope: "FBCommentAttachment_attachment"
                             })
                         }(FBAttachmentView/*o*/.getQuery("attachment"))
@@ -87,5 +87,5 @@ __d("FBCommentAttachment",["FBAttachmentView","FIGColors","React","ReactGraphQL"
                 overflow: "hidden"
             }
         });
-    module/*i*/.exports = d
+    i.exports = d
 });

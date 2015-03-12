@@ -1,22 +1,22 @@
-__d("CallbackQueue",["PooledClass","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("CallbackQueue",["PooledClass","invariant"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {
         this._callbacks = null, this._contexts = null
     }
-    var PooledClass/*a*/ = require/*t*/("PooledClass"),
-        invariant/*s*/ = require/*t*/("invariant");
+    var PooledClass/*a*/ = t("PooledClass"),
+        invariant/*s*/ = t("invariant");
     Object.assign(o.prototype, {
-        enqueue: function(global/*e*/, require/*t*/) {
-            this._callbacks = this._callbacks || [], this._contexts = this._contexts || [], this._callbacks.push(global/*e*/), this._contexts.push(require/*t*/)
+        enqueue: function(e, t) {
+            this._callbacks = this._callbacks || [], this._contexts = this._contexts || [], this._callbacks.push(e), this._contexts.push(t)
         },
         notifyAll: function() {
-            var global/*e*/ = this._callbacks,
-                require/*t*/ = this._contexts;
-            if (global/*e*/) {
-                global/*e*/.length !== require/*t*/.length && invariant/*s*/(0, "Mismatched list of contexts in callback queue"), this._callbacks = null, this._contexts = null;
-                for (var requireDynamic/*n*/ = 0, requireLazy/*r*/ = global/*e*/.length; requireLazy/*r*/ > requireDynamic/*n*/; requireDynamic/*n*/++) global/*e*/[requireDynamic/*n*/].call(require/*t*/[requireDynamic/*n*/]);
-                global/*e*/.length = 0, require/*t*/.length = 0
+            var e = this._callbacks,
+                t = this._contexts;
+            if (e) {
+                e.length !== t.length && invariant/*s*/(0, "Mismatched list of contexts in callback queue"), this._callbacks = null, this._contexts = null;
+                for (var n = 0, r = e.length; r > n; n++) e[n].call(t[n]);
+                e.length = 0, t.length = 0
             }
         },
         reset: function() {
@@ -25,5 +25,5 @@ __d("CallbackQueue",["PooledClass","invariant"],function (global/*e*/, require/*
         destructor: function() {
             this.reset()
         }
-    }), PooledClass/*a*/.addPoolingTo(o), module/*i*/.exports = o
+    }), PooledClass/*a*/.addPoolingTo(o), i.exports = o
 });

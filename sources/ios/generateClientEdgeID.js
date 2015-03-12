@@ -1,8 +1,8 @@
-__d("generateClientEdgeID",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("generateClientEdgeID",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        return "client:" + global/*e*/ + ":" + require/*t*/
+    function o(e, t) {
+        return "client:" + e + ":" + t
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

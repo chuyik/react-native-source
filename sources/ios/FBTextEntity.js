@@ -1,10 +1,10 @@
-__d("FBTextEntity",["ReactPropTypes","React","RouteHandler","StyleSheet","Text"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBTextEntity",["ReactPropTypes","React","RouteHandler","StyleSheet","Text"],function (e, t, n, r, i) {
     "use strict";
-    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
-        React/*a*/ = require/*t*/("React"),
-        RouteHandler/*s*/ = require/*t*/("RouteHandler"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        Text/*u*/ = require/*t*/("Text"),
+    var ReactPropTypes/*o*/ = t("ReactPropTypes"),
+        React/*a*/ = t("React"),
+        RouteHandler/*s*/ = t("RouteHandler"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        Text/*u*/ = t("Text"),
         c = React/*a*/.createClass({
             displayName: "FBTextEntity",
             propTypes: {
@@ -12,12 +12,12 @@ __d("FBTextEntity",["ReactPropTypes","React","RouteHandler","StyleSheet","Text"]
                 text: ReactPropTypes/*o*/.string.isRequired
             },
             render: function() {
-                var global/*e*/ = this.props.entity,
-                    require/*t*/ = [];
-                return global/*e*/.__type__ && require/*t*/.push(global/*e*/.__type__.name), require/*t*/.push("URL"), React/*a*/.createElement(Text/*u*/, {
+                var e = this.props.entity,
+                    t = [];
+                return e.__type__ && t.push(e.__type__.name), t.push("URL"), React/*a*/.createElement(Text/*u*/, {
                     onPress: RouteHandler/*s*/.getCallback({
-                        typeList: require/*t*/,
-                        params: global/*e*/
+                        typeList: t,
+                        params: e
                     }),
                     style: [this.props.textStyle, p.entity]
                 }, this.props.text)
@@ -28,5 +28,5 @@ __d("FBTextEntity",["ReactPropTypes","React","RouteHandler","StyleSheet","Text"]
                 fontWeight: "bold"
             }
         });
-    module/*i*/.exports = c
+    i.exports = c
 });

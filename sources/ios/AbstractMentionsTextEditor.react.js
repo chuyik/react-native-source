@@ -1,16 +1,16 @@
-__d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractTextEditorProps","ModalFullscreenView","getMentionableRect","Locale","ReactPropTypes","React","TimerMixin","TypeaheadNavigation","View","copyProperties"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractTextEditorProps","ModalFullscreenView","getMentionableRect","Locale","ReactPropTypes","React","TimerMixin","TypeaheadNavigation","View","copyProperties"],function (e, t, n, r, i) {
     "use strict";
-    var o, a, s = require/*t*/("AbstractTextEditor.react"),
-        AbstractTextEditorProps/*l*/ = require/*t*/("AbstractTextEditorProps"),
-        ModalFullscreenView/*u*/ = require/*t*/("ModalFullscreenView"),
-        getMentionableRect/*c*/ = require/*t*/("getMentionableRect"),
-        Locale/*p*/ = require/*t*/("Locale"),
-        ReactPropTypes/*d*/ = require/*t*/("ReactPropTypes"),
-        React/*h*/ = require/*t*/("React"),
-        TimerMixin/*f*/ = require/*t*/("TimerMixin"),
-        TypeaheadNavigation/*m*/ = require/*t*/("TypeaheadNavigation"),
-        View/*g*/ = require/*t*/("View"),
-        copyProperties/*_*/ = require/*t*/("copyProperties"),
+    var o, a, s = t("AbstractTextEditor.react"),
+        AbstractTextEditorProps/*l*/ = t("AbstractTextEditorProps"),
+        ModalFullscreenView/*u*/ = t("ModalFullscreenView"),
+        getMentionableRect/*c*/ = t("getMentionableRect"),
+        Locale/*p*/ = t("Locale"),
+        ReactPropTypes/*d*/ = t("ReactPropTypes"),
+        React/*h*/ = t("React"),
+        TimerMixin/*f*/ = t("TimerMixin"),
+        TypeaheadNavigation/*m*/ = t("TypeaheadNavigation"),
+        View/*g*/ = t("View"),
+        copyProperties/*_*/ = t("copyProperties"),
         y = Locale/*p*/.isRTL(),
         v = 20,
         S = 5,
@@ -29,14 +29,14 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
             }),
             getDefaultProps: AbstractTextEditorProps/*l*/.getDefaultProps,
             componentWillMount: function() {
-                var global/*e*/ = function() {
+                var e = function() {
                     this.setTimeout(this._searchIfCollapsed, 0)
                 }.bind(this);
-                this._listeners = [this.props.selectionState.addListener("focus", global/*e*/), this.props.selectionState.addListener("update", global/*e*/)]
+                this._listeners = [this.props.selectionState.addListener("focus", e), this.props.selectionState.addListener("update", e)]
             },
             componentWillUnmount: function() {
-                this._listeners.forEach(function(global/*e*/) {
-                    global/*e*/.remove()
+                this._listeners.forEach(function(e) {
+                    e.remove()
                 }), this._listeners = null
             },
             getInitialState: function() {
@@ -46,53 +46,53 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                     mentionableEntries: null
                 }
             },
-            _onShowMentions: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = global/*e*/ && global/*e*/.length;
-                if (requireDynamic/*n*/ || this.state.mentionableEntries) {
-                    var requireLazy/*r*/ = requireDynamic/*n*/ ? global/*e*/.slice(0, v) : null;
-                    if (requireLazy/*r*/) {
-                        var module/*i*/ = this.props.typeaheadViewProps;
-                        module/*i*/ && module/*i*/.mentionSortFn && requireLazy/*r*/.sort(module/*i*/.mentionSortFn), this.props.onShowMentions(requireLazy/*r*/, require/*t*/)
+            _onShowMentions: function(e, t) {
+                var n = e && e.length;
+                if (n || this.state.mentionableEntries) {
+                    var r = n ? e.slice(0, v) : null;
+                    if (r) {
+                        var i = this.props.typeaheadViewProps;
+                        i && i.mentionSortFn && r.sort(i.mentionSortFn), this.props.onShowMentions(r, t)
                     }
                     this.setState({
-                        contextualBounds: requireDynamic/*n*/ ? getMentionableRect/*c*/(require/*t*/, y) : null,
-                        highlightedMentionable: requireDynamic/*n*/ ? global/*e*/[0] : null,
-                        mentionableEntries: requireLazy/*r*/
+                        contextualBounds: n ? getMentionableRect/*c*/(t, y) : null,
+                        highlightedMentionable: n ? e[0] : null,
+                        mentionableEntries: r
                     })
                 }
             },
-            _onBlur: function(global/*e*/) {
-                this.setState(this.getInitialState()), this.props.onBlur(global/*e*/)
+            _onBlur: function(e) {
+                this.setState(this.getInitialState()), this.props.onBlur(e)
             },
-            _onFocus: function(global/*e*/) {
-                this.props.mentionsSource && this.props.mentionsSource.bootstrap(), this.props.onFocus(global/*e*/)
+            _onFocus: function(e) {
+                this.props.mentionsSource && this.props.mentionsSource.bootstrap(), this.props.onFocus(e)
             },
-            _onReturn: function(global/*e*/) {
-                this.state.highlightedMentionable && !global/*e*/.nativeEvent.getModifiers().any ? this._onMentionSelect(this.state.highlightedMentionable, global/*e*/) : this.props.onReturn(global/*e*/)
+            _onReturn: function(e) {
+                this.state.highlightedMentionable && !e.nativeEvent.getModifiers().any ? this._onMentionSelect(this.state.highlightedMentionable, e) : this.props.onReturn(e)
             },
-            _onTab: function(global/*e*/) {
-                this.state.highlightedMentionable ? (global/*e*/.preventDefault(), this._onMentionSelect(this.state.highlightedMentionable, global/*e*/)) : this.props.onTab && this.props.onTab(global/*e*/)
+            _onTab: function(e) {
+                this.state.highlightedMentionable ? (e.preventDefault(), this._onMentionSelect(this.state.highlightedMentionable, e)) : this.props.onTab && this.props.onTab(e)
             },
-            _onEscape: function(global/*e*/) {
-                this.state.highlightedMentionable ? this.setState(this.getInitialState()) : this.props.onEscape && this.props.onEscape(global/*e*/)
+            _onEscape: function(e) {
+                this.state.highlightedMentionable ? this.setState(this.getInitialState()) : this.props.onEscape && this.props.onEscape(e)
             },
-            _onUpArrow: function(global/*e*/) {
-                this.state.mentionableEntries ? (global/*e*/.preventDefault(), TypeaheadNavigation/*m*/.moveUp(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onUpArrow && this.props.onUpArrow(global/*e*/)
+            _onUpArrow: function(e) {
+                this.state.mentionableEntries ? (e.preventDefault(), TypeaheadNavigation/*m*/.moveUp(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onUpArrow && this.props.onUpArrow(e)
             },
-            _onDownArrow: function(global/*e*/) {
-                this.state.mentionableEntries ? (global/*e*/.preventDefault(), TypeaheadNavigation/*m*/.moveDown(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onDownArrow && this.props.onDownArrow(global/*e*/)
+            _onDownArrow: function(e) {
+                this.state.mentionableEntries ? (e.preventDefault(), TypeaheadNavigation/*m*/.moveDown(this.state.mentionableEntries, this.state.highlightedMentionable, this._onMentionHighlight)) : this.props.onDownArrow && this.props.onDownArrow(e)
             },
-            _onMentionHighlight: function(global/*e*/) {
+            _onMentionHighlight: function(e) {
                 this.setState({
-                    highlightedMentionable: global/*e*/
+                    highlightedMentionable: e
                 })
             },
-            _onMentionSelect: function(global/*e*/, require/*t*/) {
-                this.props.onAddMention(global/*e*/, require/*t*/), this.setState(this.getInitialState())
+            _onMentionSelect: function(e, t) {
+                this.props.onAddMention(e, t), this.setState(this.getInitialState())
             },
             _searchIfCollapsed: function() {
-                var global/*e*/ = this.props.selectionState;
-                global/*e*/.hasFocus() && global/*e*/.isCollapsed() && this.props.mentionsSource && this.props.mentionsSource.search(this.props.documentView.getContent(), global/*e*/.getStartOffset(), this._onShowMentions)
+                var e = this.props.selectionState;
+                e.hasFocus() && e.isCollapsed() && this.props.mentionsSource && this.props.mentionsSource.search(this.props.documentView.getContent(), e.getStartOffset(), this._onShowMentions)
             },
             focus: function() {
                 this.refs.abstractTextEditor.focus()
@@ -101,23 +101,23 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                 this.refs.abstractTextEditor.blur()
             },
             renderLayers: function() {
-                var global/*e*/ = this.state.mentionableEntries,
-                    require/*t*/ = this.props.selectionState,
-                    requireDynamic/*n*/ = this.props.typeaheadView,
-                    requireLazy/*r*/ = require/*t*/.isCollapsed() && require/*t*/.hasFocus() && global/*e*/ && global/*e*/.length,
-                    module/*i*/ = {};
-                return this.props.autoflip && (module/*i*/.ContextualLayerAutoFlip = o, module/*i*/.ContextualLayerUpdateOnScroll = a), {
+                var e = this.state.mentionableEntries,
+                    t = this.props.selectionState,
+                    n = this.props.typeaheadView,
+                    r = t.isCollapsed() && t.hasFocus() && e && e.length,
+                    i = {};
+                return this.props.autoflip && (i.ContextualLayerAutoFlip = o, i.ContextualLayerUpdateOnScroll = a), {
                     entries: React/*h*/.createElement(ModalFullscreenView/*u*/, {
-                        shown: requireLazy/*r*/,
+                        shown: r,
                         contextRef: "container",
                         contextBounds: this.state.contextualBounds,
                         offsetY: S,
                         position: "above",
-                        behaviors: module/*i*/
-                    }, React/*h*/.createElement(requireDynamic/*n*/, {
+                        behaviors: i
+                    }, React/*h*/.createElement(n, {
                         viewProps: this.props.typeaheadViewProps,
                         highlightedEntry: this.state.highlightedMentionable,
-                        entries: global/*e*/ || [],
+                        entries: e || [],
                         onSelect: this._onMentionSelect,
                         onHighlight: this._onMentionHighlight
                     }))
@@ -144,5 +144,5 @@ __d("AbstractMentionsTextEditor.react",["AbstractTextEditor.react","AbstractText
                 })), this.renderLayers())
             }
         });
-    module/*i*/.exports = b
+    i.exports = b
 });

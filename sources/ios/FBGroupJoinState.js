@@ -1,4 +1,4 @@
-__d("FBGroupJoinState",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBGroupJoinState",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         canJoin: "CAN_JOIN",
@@ -7,5 +7,5 @@ __d("FBGroupJoinState",[],function (global/*e*/, require/*t*/, requireDynamic/*n
         member: "MEMBER",
         requested: "REQUESTED"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

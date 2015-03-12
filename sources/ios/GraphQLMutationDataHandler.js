@@ -1,10 +1,10 @@
-__d("GraphQLMutationDataHandler",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLMutationDataHandler",["invariant"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
+    var invariant/*o*/ = t("invariant"),
         a = {
-            getMutationType: function(global/*e*/) {
-                return global/*e*/ && 1 === Object.keys(global/*e*/).length || invariant/*o*/(0, "malformed mutation result payload received"), Object.keys(global/*e*/)[0]
+            getMutationType: function(e) {
+                return e && 1 === Object.keys(e).length || invariant/*o*/(0, "malformed mutation result payload received"), Object.keys(e)[0]
             }
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

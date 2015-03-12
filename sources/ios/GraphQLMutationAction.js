@@ -1,43 +1,43 @@
-__d("GraphQLMutationAction",["ActionCollisionMap","ClientIDs","DliteAPIConfig","GraphQLMutationDataHandler","GraphQLMutationQueryCreator","GraphQLStore","RQLMutation","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLMutationAction",["ActionCollisionMap","ClientIDs","DliteAPIConfig","GraphQLMutationDataHandler","GraphQLMutationQueryCreator","GraphQLStore","RQLMutation","invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        return global/*e*/.client_mutation_id = require/*t*/, "actor_id" in global/*e*/ || (global/*e*/.actor_id = DliteAPIConfig/*u*/.actorID), {
-            input: global/*e*/
+    function o(e, t) {
+        return e.client_mutation_id = t, "actor_id" in e || (e.actor_id = DliteAPIConfig/*u*/.actorID), {
+            input: e
         }
     }
 
-    function a(global/*e*/) {
-        this.$GraphQLMutationAction_clientMutationID = ClientIDs/*l*/.getNewClientID(), this.$GraphQLMutationAction_collisionKey = global/*e*/
+    function a(e) {
+        this.$GraphQLMutationAction_clientMutationID = ClientIDs/*l*/.getNewClientID(), this.$GraphQLMutationAction_collisionKey = e
     }
-    var ActionCollisionMap/*s*/ = require/*t*/("ActionCollisionMap"),
-        ClientIDs/*l*/ = require/*t*/("ClientIDs"),
-        DliteAPIConfig/*u*/ = require/*t*/("DliteAPIConfig"),
-        GraphQLMutationDataHandler/*c*/ = require/*t*/("GraphQLMutationDataHandler"),
-        GraphQLMutationQueryCreator/*p*/ = require/*t*/("GraphQLMutationQueryCreator"),
-        GraphQLStore/*d*/ = require/*t*/("GraphQLStore"),
-        RQLMutation/*h*/ = require/*t*/("RQLMutation"),
-        invariant/*f*/ = require/*t*/("invariant");
-    a.prototype.runOptimisticAction = function(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = GraphQLMutationDataHandler/*c*/.getMutationType(global/*e*/);
-        global/*e*/[requireDynamic/*n*/].client_mutation_id = this.$GraphQLMutationAction_clientMutationID, require/*t*/ || (require/*t*/ = GraphQLMutationQueryCreator/*p*/.createQueryFromOptimisticPayload(global/*e*/)), this.$GraphQLMutationAction_optimisticPayload = global/*e*/, this.$GraphQLMutationAction_optimisticPayloadQuery = require/*t*/, GraphQLStore/*d*/.handleOptimisticMutation(this)
-    }, a.prototype.runServerAction = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        this.$GraphQLMutationAction_mutation = global/*e*/, this.$GraphQLMutationAction_queryParams = o(require/*t*/, this.$GraphQLMutationAction_clientMutationID), this.$GraphQLMutationAction_callback = requireDynamic/*n*/, this.$GraphQLMutationAction_runServerAction()
-    }, a.prototype.runServerActionWithFiles = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        this.$GraphQLMutationAction_mutation = global/*e*/, this.$GraphQLMutationAction_queryParams = o(require/*t*/, this.$GraphQLMutationAction_clientMutationID), this.$GraphQLMutationAction_files = requireDynamic/*n*/, this.$GraphQLMutationAction_callback = requireLazy/*r*/, this.$GraphQLMutationAction_runServerAction()
+    var ActionCollisionMap/*s*/ = t("ActionCollisionMap"),
+        ClientIDs/*l*/ = t("ClientIDs"),
+        DliteAPIConfig/*u*/ = t("DliteAPIConfig"),
+        GraphQLMutationDataHandler/*c*/ = t("GraphQLMutationDataHandler"),
+        GraphQLMutationQueryCreator/*p*/ = t("GraphQLMutationQueryCreator"),
+        GraphQLStore/*d*/ = t("GraphQLStore"),
+        RQLMutation/*h*/ = t("RQLMutation"),
+        invariant/*f*/ = t("invariant");
+    a.prototype.runOptimisticAction = function(e, t) {
+        var n = GraphQLMutationDataHandler/*c*/.getMutationType(e);
+        e[n].client_mutation_id = this.$GraphQLMutationAction_clientMutationID, t || (t = GraphQLMutationQueryCreator/*p*/.createQueryFromOptimisticPayload(e)), this.$GraphQLMutationAction_optimisticPayload = e, this.$GraphQLMutationAction_optimisticPayloadQuery = t, GraphQLStore/*d*/.handleOptimisticMutation(this)
+    }, a.prototype.runServerAction = function(e, t, n) {
+        this.$GraphQLMutationAction_mutation = e, this.$GraphQLMutationAction_queryParams = o(t, this.$GraphQLMutationAction_clientMutationID), this.$GraphQLMutationAction_callback = n, this.$GraphQLMutationAction_runServerAction()
+    }, a.prototype.runServerActionWithFiles = function(e, t, n, r) {
+        this.$GraphQLMutationAction_mutation = e, this.$GraphQLMutationAction_queryParams = o(t, this.$GraphQLMutationAction_clientMutationID), this.$GraphQLMutationAction_files = n, this.$GraphQLMutationAction_callback = r, this.$GraphQLMutationAction_runServerAction()
     }, a.prototype.$GraphQLMutationAction_runServerAction = function() {
-        var global/*e*/ = !0;
+        var e = !0;
         if (this.$GraphQLMutationAction_collisionKey) {
-            var require/*t*/ = this.$GraphQLMutationAction_collisionKey;
-            if (ActionCollisionMap/*s*/.hasPendingActionForKey(require/*t*/)) {
-                var requireDynamic/*n*/ = ActionCollisionMap/*s*/.existsInMap(this.$GraphQLMutationAction_clientMutationID);
-                if (requireDynamic/*n*/) {
-                    var requireLazy/*r*/ = ActionCollisionMap/*s*/.getFirstActionForKey(require/*t*/);
-                    requireLazy/*r*/.getClientMutationID() !== this.$GraphQLMutationAction_clientMutationID && invariant/*f*/(0, "action should be first for its key")
-                } else ActionCollisionMap/*s*/.appendActionForKey(require/*t*/, this), global/*e*/ = !1
-            } else ActionCollisionMap/*s*/.appendActionForKey(require/*t*/, this)
+            var t = this.$GraphQLMutationAction_collisionKey;
+            if (ActionCollisionMap/*s*/.hasPendingActionForKey(t)) {
+                var n = ActionCollisionMap/*s*/.existsInMap(this.$GraphQLMutationAction_clientMutationID);
+                if (n) {
+                    var r = ActionCollisionMap/*s*/.getFirstActionForKey(t);
+                    r.getClientMutationID() !== this.$GraphQLMutationAction_clientMutationID && invariant/*f*/(0, "action should be first for its key")
+                } else ActionCollisionMap/*s*/.appendActionForKey(t, this), e = !1
+            } else ActionCollisionMap/*s*/.appendActionForKey(t, this)
         }
-        global/*e*/ && (this.$GraphQLMutationAction_files ? RQLMutation/*h*/.sendWithFiles(this.$GraphQLMutationAction_mutation, this.$GraphQLMutationAction_queryParams, this.$GraphQLMutationAction_files, this.$GraphQLMutationAction_callback) : RQLMutation/*h*/.send(this.$GraphQLMutationAction_mutation, this.$GraphQLMutationAction_queryParams, this.$GraphQLMutationAction_callback))
+        e && (this.$GraphQLMutationAction_files ? RQLMutation/*h*/.sendWithFiles(this.$GraphQLMutationAction_mutation, this.$GraphQLMutationAction_queryParams, this.$GraphQLMutationAction_files, this.$GraphQLMutationAction_callback) : RQLMutation/*h*/.send(this.$GraphQLMutationAction_mutation, this.$GraphQLMutationAction_queryParams, this.$GraphQLMutationAction_callback))
     }, a.prototype.rerunServerAction = function() {
         this.$GraphQLMutationAction_mutation && this.$GraphQLMutationAction_queryParams || invariant/*f*/(0, "cannot redo server update without doing it the first time"), this.$GraphQLMutationAction_runServerAction()
     }, a.prototype.getClientMutationID = function() {
@@ -46,5 +46,5 @@ __d("GraphQLMutationAction",["ActionCollisionMap","ClientIDs","DliteAPIConfig","
         return this.$GraphQLMutationAction_optimisticPayload
     }, a.prototype.getOptimisticPayloadQuery = function() {
         return this.$GraphQLMutationAction_optimisticPayloadQuery
-    }, module/*i*/.exports = a
+    }, i.exports = a
 });

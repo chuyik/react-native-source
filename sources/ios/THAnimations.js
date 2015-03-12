@@ -1,7 +1,7 @@
-__d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THAnimations",["LayoutAnimation","mergeDeep"],function (e, t, n, r, i) {
     "use strict";
-    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
-        mergeDeep/*a*/ = require/*t*/("mergeDeep"),
+    var LayoutAnimation/*o*/ = t("LayoutAnimation"),
+        mergeDeep/*a*/ = t("mergeDeep"),
         s = {
             duration: .3,
             create: {
@@ -42,5 +42,5 @@ __d("THAnimations",["LayoutAnimation","mergeDeep"],function (global/*e*/, requir
             }
         };
     for (var u in l.layout) LayoutAnimation/*o*/.configChecker(l.layout, u, "Animation.create");
-    module/*i*/.exports = l
+    i.exports = l
 });

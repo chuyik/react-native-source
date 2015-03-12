@@ -1,11 +1,11 @@
-__d("generateRQLFieldAlias",["crc32"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("generateRQLFieldAlias",["crc32"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = global/*e*/.indexOf(".");
-        return -1 === require/*t*/ ? global/*e*/ : s + global/*e*/.substr(0, require/*t*/) + crc32/*a*/(global/*e*/).toString(36)
+    function o(e) {
+        var t = e.indexOf(".");
+        return -1 === t ? e : s + e.substr(0, t) + crc32/*a*/(e).toString(36)
     }
-    var crc32/*a*/ = require/*t*/("crc32"),
+    var crc32/*a*/ = t("crc32"),
         s = "_";
-    module/*i*/.exports = o
+    i.exports = o
 });

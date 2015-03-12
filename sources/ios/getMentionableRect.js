@@ -1,6 +1,6 @@
-__d("getMentionableRect",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("getMentionableRect",[],function (e, t, n, r, i) {
     "use strict";
-    module/*i*/.exports = function() {
+    i.exports = function() {
         return null
     }
 });

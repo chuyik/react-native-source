@@ -1,30 +1,30 @@
-__d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlockType","ComposedInlineStyle"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        return require/*t*/.length !== l(global/*e*/) && invariant/*d*/(0, "Length of block array must match number of blocks in text."), require/*t*/
+__d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlockType","ComposedInlineStyle"],function (e, t, n, r, i) {
+    function o(e, t) {
+        return t.length !== l(e) && invariant/*d*/(0, "Length of block array must match number of blocks in text."), t
     }
 
-    function a(global/*e*/, require/*t*/) {
-        return require/*t*/.length != global/*e*/.length && invariant/*d*/(0, "Length of inline style array must match text length."), require/*t*/
+    function a(e, t) {
+        return t.length != e.length && invariant/*d*/(0, "Length of inline style array must match text length."), t
     }
 
-    function s(global/*e*/, require/*t*/) {
-        return require/*t*/.length !== global/*e*/.length && invariant/*d*/(0, "Length of entity array must match text length."), require/*t*/
+    function s(e, t) {
+        return t.length !== e.length && invariant/*d*/(0, "Length of entity array must match text length."), t
     }
 
-    function l(global/*e*/, require/*t*/) {
-        return null != require/*t*/ && (global/*e*/ = global/*e*/.substr(0, require/*t*/)), global/*e*/.split(h).length
+    function l(e, t) {
+        return null != t && (e = e.substr(0, t)), e.split(h).length
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+    function u(e, t, n, r) {
         "use strict";
-        this.$DocumentContent_version = 1, this.$DocumentContent_text = global/*e*/ || "", this.$DocumentContent_inlines = require/*t*/ ? a(this.$DocumentContent_text, require/*t*/) : fillArray/*p*/(this.$DocumentContent_text.length, ComposedInlineStyle/*m*/.NONE), this.$DocumentContent_blocks = requireDynamic/*n*/ ? o(this.$DocumentContent_text, requireDynamic/*n*/) : fillArray/*p*/(l(this.$DocumentContent_text), ComposedBlockType/*f*/.UNSTYLED), this.$DocumentContent_entities = requireLazy/*r*/ ? s(this.$DocumentContent_text, requireLazy/*r*/) : fillArray/*p*/(this.$DocumentContent_text.length, null), this.$DocumentContent_undoStack = [], this.$DocumentContent_redoStack = []
+        this.$DocumentContent_version = 1, this.$DocumentContent_text = e || "", this.$DocumentContent_inlines = t ? a(this.$DocumentContent_text, t) : fillArray/*p*/(this.$DocumentContent_text.length, ComposedInlineStyle/*m*/.NONE), this.$DocumentContent_blocks = n ? o(this.$DocumentContent_text, n) : fillArray/*p*/(l(this.$DocumentContent_text), ComposedBlockType/*f*/.UNSTYLED), this.$DocumentContent_entities = r ? s(this.$DocumentContent_text, r) : fillArray/*p*/(this.$DocumentContent_text.length, null), this.$DocumentContent_undoStack = [], this.$DocumentContent_redoStack = []
     }
-    var DocumentCharacters/*c*/ = require/*t*/("DocumentCharacters"),
-        fillArray/*p*/ = require/*t*/("fillArray"),
-        invariant/*d*/ = require/*t*/("invariant"),
+    var DocumentCharacters/*c*/ = t("DocumentCharacters"),
+        fillArray/*p*/ = t("fillArray"),
+        invariant/*d*/ = t("invariant"),
         h = DocumentCharacters/*c*/.BLOCK_DELIMITER,
-        ComposedBlockType/*f*/ = require/*t*/("ComposedBlockType"),
-        ComposedInlineStyle/*m*/ = require/*t*/("ComposedInlineStyle");
+        ComposedBlockType/*f*/ = t("ComposedBlockType"),
+        ComposedInlineStyle/*m*/ = t("ComposedInlineStyle");
     u.prototype.bumpVersion = function() {
         "use strict";
         this.$DocumentContent_version++
@@ -40,21 +40,21 @@ __d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlo
     }, u.prototype.getBlockStyles = function() {
         "use strict";
         return this.$DocumentContent_blocks
-    }, u.prototype.getBlockStylesAroundRange = function(global/*e*/, require/*t*/) {
+    }, u.prototype.getBlockStylesAroundRange = function(e, t) {
         "use strict";
-        var requireDynamic/*n*/ = l(this.$DocumentContent_text, global/*e*/) - 1,
-            requireLazy/*r*/ = l(this.$DocumentContent_text, require/*t*/);
-        return this.$DocumentContent_blocks.slice(requireDynamic/*n*/, requireLazy/*r*/)
+        var n = l(this.$DocumentContent_text, e) - 1,
+            r = l(this.$DocumentContent_text, t);
+        return this.$DocumentContent_blocks.slice(n, r)
     }, u.prototype.getEntities = function() {
         "use strict";
         return this.$DocumentContent_entities
-    }, u.prototype.getFragment = function(global/*e*/, require/*t*/) {
+    }, u.prototype.getFragment = function(e, t) {
         "use strict";
         return {
-            text: this.$DocumentContent_text.slice(global/*e*/, require/*t*/),
-            inlines: this.$DocumentContent_inlines.slice(global/*e*/, require/*t*/),
-            blocks: this.getBlockStylesAroundRange(global/*e*/, require/*t*/),
-            entities: this.$DocumentContent_entities.slice(global/*e*/, require/*t*/)
+            text: this.$DocumentContent_text.slice(e, t),
+            inlines: this.$DocumentContent_inlines.slice(e, t),
+            blocks: this.getBlockStylesAroundRange(e, t),
+            entities: this.$DocumentContent_entities.slice(e, t)
         }
     }, u.prototype.getData = function() {
         "use strict";
@@ -64,25 +64,25 @@ __d("DocumentContent",["DocumentCharacters","fillArray","invariant","ComposedBlo
             blocks: this.$DocumentContent_blocks,
             entities: this.$DocumentContent_entities
         }
-    }, u.prototype.update = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+    }, u.prototype.update = function(e, t, n, r) {
         "use strict";
-        s(global/*e*/, requireLazy/*r*/), a(global/*e*/, require/*t*/), o(global/*e*/, requireDynamic/*n*/), this.$DocumentContent_text = global/*e*/, this.$DocumentContent_inlines = require/*t*/, this.$DocumentContent_blocks = requireDynamic/*n*/, this.$DocumentContent_entities = requireLazy/*r*/, this.$DocumentContent_version++
-    }, u.prototype.addForwardTransaction = function(global/*e*/) {
+        s(e, r), a(e, t), o(e, n), this.$DocumentContent_text = e, this.$DocumentContent_inlines = t, this.$DocumentContent_blocks = n, this.$DocumentContent_entities = r, this.$DocumentContent_version++
+    }, u.prototype.addForwardTransaction = function(e) {
         "use strict";
-        this.$DocumentContent_undoStack.push(global/*e*/), this.$DocumentContent_redoStack.length = 0
+        this.$DocumentContent_undoStack.push(e), this.$DocumentContent_redoStack.length = 0
     }, u.prototype.getUndoDiffs = function() {
         "use strict";
         if (this.$DocumentContent_undoStack.length > 0) {
-            var global/*e*/ = this.$DocumentContent_undoStack.pop();
-            return this.$DocumentContent_redoStack.push(global/*e*/), global/*e*/
+            var e = this.$DocumentContent_undoStack.pop();
+            return this.$DocumentContent_redoStack.push(e), e
         }
         return []
     }, u.prototype.getRedoDiffs = function() {
         "use strict";
         if (this.$DocumentContent_redoStack.length > 0) {
-            var global/*e*/ = this.$DocumentContent_redoStack.pop();
-            return this.$DocumentContent_undoStack.push(global/*e*/), global/*e*/
+            var e = this.$DocumentContent_redoStack.pop();
+            return this.$DocumentContent_undoStack.push(e), e
         }
         return []
-    }, module/*i*/.exports = u
+    }, i.exports = u
 });

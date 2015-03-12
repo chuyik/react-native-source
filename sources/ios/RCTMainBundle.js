@@ -1,30 +1,30 @@
-__d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendingPostsApp","GroupsPostSearchApp","GroupsReportedPostsApp","DliteCatalystProfiler"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RCTMainBundle",["Bundler","GroupsFeedApp","GroupsPermalinkApp","GroupsPendingPostsApp","GroupsPostSearchApp","GroupsReportedPostsApp","DliteCatalystProfiler"],function (e, t, n, r, i) {
     "use strict";
-    var Bundler/*o*/ = require/*t*/("Bundler");
+    var Bundler/*o*/ = t("Bundler");
     Bundler/*o*/.registerConfig([{
         appKey: "GroupsFeedApp",
         component: function() {
-            return require/*t*/("GroupsFeedApp")
+            return t("GroupsFeedApp")
         }
     }, {
         appKey: "GroupsPermalinkApp",
         component: function() {
-            return require/*t*/("GroupsPermalinkApp")
+            return t("GroupsPermalinkApp")
         }
     }, {
         appKey: "GroupsPendingPostsApp",
         component: function() {
-            return require/*t*/("GroupsPendingPostsApp")
+            return t("GroupsPendingPostsApp")
         }
     }, {
         appKey: "GroupsPostSearchApp",
         component: function() {
-            return require/*t*/("GroupsPostSearchApp")
+            return t("GroupsPostSearchApp")
         }
     }, {
         appKey: "GroupsReportedPostsApp",
         component: function() {
-            return require/*t*/("GroupsReportedPostsApp")
+            return t("GroupsReportedPostsApp")
         }
-    }]), require/*t*/("DliteCatalystProfiler").install(), module/*i*/.exports = Bundler/*o*/
+    }]), t("DliteCatalystProfiler").install(), i.exports = Bundler/*o*/
 });

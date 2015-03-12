@@ -1,6 +1,6 @@
-__d("CSSVarConfig",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("CSSVarConfig",[],function (e, t, n, r, i) {
     "use strict";
-    module/*i*/.exports = {
+    i.exports = {
         "fbui-accent-blue": "#5890ff",
         "fbui-blue-90": "#4e69a2",
         "fbui-blue-80": "#627aad",

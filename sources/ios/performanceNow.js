@@ -1,6 +1,6 @@
-__d("performanceNow",["performance"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var performance/*o*/ = require/*t*/("performance");
+__d("performanceNow",["performance"],function (e, t, n, r, i) {
+    var performance/*o*/ = t("performance");
     performance/*o*/ && performance/*o*/.now || (performance/*o*/ = Date);
     var a = performance/*o*/.now.bind(performance/*o*/);
-    module/*i*/.exports = a
+    i.exports = a
 });

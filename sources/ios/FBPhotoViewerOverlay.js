@@ -1,13 +1,13 @@
-__d("FBPhotoViewerOverlay",["Image","React","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBPhotoViewerOverlay",["Image","React","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (e, t, n, r, i) {
     "use strict";
-    var Image/*o*/ = require/*t*/("Image"),
-        React/*a*/ = require/*t*/("React"),
-        StyleSheet/*s*/ = require/*t*/("StyleSheet"),
-        Text/*l*/ = require/*t*/("Text"),
-        TouchableBounce/*u*/ = require/*t*/("TouchableBounce"),
-        View/*c*/ = require/*t*/("View"),
-        fbt/*p*/ = require/*t*/("fbt"),
-        ix/*d*/ = require/*t*/("ix"),
+    var Image/*o*/ = t("Image"),
+        React/*a*/ = t("React"),
+        StyleSheet/*s*/ = t("StyleSheet"),
+        Text/*l*/ = t("Text"),
+        TouchableBounce/*u*/ = t("TouchableBounce"),
+        View/*c*/ = t("View"),
+        fbt/*p*/ = t("fbt"),
+        ix/*d*/ = t("ix"),
         h = React/*a*/.createClass({
             displayName: "FBPhotoViewerOverlay",
             render: function() {
@@ -56,5 +56,5 @@ __d("FBPhotoViewerOverlay",["Image","React","StyleSheet","Text","TouchableBounce
                 fontWeight: "bold"
             }
         });
-    module/*i*/.exports = h
+    i.exports = h
 });

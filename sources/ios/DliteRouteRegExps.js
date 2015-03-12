@@ -1,4 +1,4 @@
-__d("DliteRouteRegExps",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRouteRegExps",[],function (e, t, n, r, i) {
     var o = {
         PATH_COMPONENT: /^[^\/{}]+$/,
         COMPONENT_VALUE: {
@@ -8,5 +8,5 @@ __d("DliteRouteRegExps",[],function (global/*e*/, require/*t*/, requireDynamic/*
             String: "[^/]+"
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,13 +1,13 @@
-__d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPropType","TextStylePropTypes","Touchable","createReactIOSNativeComponentClass","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPropType","TextStylePropTypes","Touchable","createReactIOSNativeComponentClass","merge"],function (e, t, n, r, i) {
     "use strict";
-    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
-        React/*a*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        StyleSheetPropType/*l*/ = require/*t*/("StyleSheetPropType"),
-        TextStylePropTypes/*u*/ = require/*t*/("TextStylePropTypes"),
-        Touchable/*c*/ = require/*t*/("Touchable"),
-        createReactIOSNativeComponentClass/*p*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        merge/*d*/ = require/*t*/("merge"),
+    var NativeMethodsMixin/*o*/ = t("NativeMethodsMixin"),
+        React/*a*/ = t("React"),
+        ReactIOSViewAttributes/*s*/ = t("ReactIOSViewAttributes"),
+        StyleSheetPropType/*l*/ = t("StyleSheetPropType"),
+        TextStylePropTypes/*u*/ = t("TextStylePropTypes"),
+        Touchable/*c*/ = t("Touchable"),
+        createReactIOSNativeComponentClass/*p*/ = t("createReactIOSNativeComponentClass"),
+        merge/*d*/ = t("merge"),
         h = StyleSheetPropType/*l*/(TextStylePropTypes/*u*/),
         f = {
             validAttributes: merge/*d*/(ReactIOSViewAttributes/*s*/.UIView, {
@@ -35,24 +35,24 @@ __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPro
                 })
             },
             onStartShouldSetResponder: function() {
-                var global/*e*/ = this.props.onStartShouldSetResponder && this.props.onStartShouldSetResponder();
-                return global/*e*/ || !!this.props.onPress
+                var e = this.props.onStartShouldSetResponder && this.props.onStartShouldSetResponder();
+                return e || !!this.props.onPress
             },
             handleResponderTerminationRequest: function() {
-                var global/*e*/ = this.touchableHandleResponderTerminationRequest();
-                return global/*e*/ && this.props.onResponderTerminationRequest && (global/*e*/ = this.props.onResponderTerminationRequest()), global/*e*/
+                var e = this.touchableHandleResponderTerminationRequest();
+                return e && this.props.onResponderTerminationRequest && (e = this.props.onResponderTerminationRequest()), e
             },
-            handleResponderGrant: function(global/*e*/, require/*t*/) {
-                this.touchableHandleResponderGrant(global/*e*/, require/*t*/), this.props.onResponderGrant && this.props.onResponderGrant.apply(this, arguments)
+            handleResponderGrant: function(e, t) {
+                this.touchableHandleResponderGrant(e, t), this.props.onResponderGrant && this.props.onResponderGrant.apply(this, arguments)
             },
-            handleResponderMove: function(global/*e*/) {
-                this.touchableHandleResponderMove(global/*e*/), this.props.onResponderMove && this.props.onResponderMove.apply(this, arguments)
+            handleResponderMove: function(e) {
+                this.touchableHandleResponderMove(e), this.props.onResponderMove && this.props.onResponderMove.apply(this, arguments)
             },
-            handleResponderRelease: function(global/*e*/) {
-                this.touchableHandleResponderRelease(global/*e*/), this.props.onResponderRelease && this.props.onResponderRelease.apply(this, arguments)
+            handleResponderRelease: function(e) {
+                this.touchableHandleResponderRelease(e), this.props.onResponderRelease && this.props.onResponderRelease.apply(this, arguments)
             },
-            handleResponderTerminate: function(global/*e*/) {
-                this.touchableHandleResponderTerminate(global/*e*/), this.props.onResponderTerminate && this.props.onResponderTerminate.apply(this, arguments)
+            handleResponderTerminate: function(e) {
+                this.touchableHandleResponderTerminate(e), this.props.onResponderTerminate && this.props.onResponderTerminate.apply(this, arguments)
             },
             touchableHandleActivePressIn: function() {
                 !this.props.suppressHighlighting && this.props.onPress && this.setState({
@@ -71,9 +71,9 @@ __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPro
                 return g
             },
             render: function() {
-                var global/*e*/ = {};
-                for (var require/*t*/ in this.props) global/*e*/[require/*t*/] = this.props[require/*t*/];
-                return global/*e*/.ref = this.getNodeHandle(), global/*e*/.accessible !== !1 && (global/*e*/.accessible = !0), global/*e*/.isHighlighted = this.state.isHighlighted, global/*e*/.onStartShouldSetResponder = this.onStartShouldSetResponder, global/*e*/.onResponderTerminationRequest = this.handleResponderTerminationRequest, global/*e*/.onResponderGrant = this.handleResponderGrant, global/*e*/.onResponderMove = this.handleResponderMove, global/*e*/.onResponderRelease = this.handleResponderRelease, global/*e*/.onResponderTerminate = this.handleResponderTerminate, React/*a*/.createElement(_, Object.assign({}, global/*e*/))
+                var e = {};
+                for (var t in this.props) e[t] = this.props[t];
+                return e.ref = this.getNodeHandle(), e.accessible !== !1 && (e.accessible = !0), e.isHighlighted = this.state.isHighlighted, e.onStartShouldSetResponder = this.onStartShouldSetResponder, e.onResponderTerminationRequest = this.handleResponderTerminationRequest, e.onResponderGrant = this.handleResponderGrant, e.onResponderMove = this.handleResponderMove, e.onResponderRelease = this.handleResponderRelease, e.onResponderTerminate = this.handleResponderTerminate, React/*a*/.createElement(_, Object.assign({}, e))
             }
         }),
         g = {
@@ -83,5 +83,5 @@ __d("Text",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheetPro
             bottom: 30
         },
         _ = createReactIOSNativeComponentClass/*p*/(f);
-    module/*i*/.exports = m
+    i.exports = m
 });

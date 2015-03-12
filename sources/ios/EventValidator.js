@@ -1,56 +1,56 @@
-__d("EventValidator",["copyProperties"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("EventValidator",["copyProperties"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        if (-1 === require/*t*/.indexOf(global/*e*/)) throw new TypeError(a(global/*e*/, require/*t*/))
+    function o(e, t) {
+        if (-1 === t.indexOf(e)) throw new TypeError(a(e, t))
     }
 
-    function a(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = 'Unknown event type "' + global/*e*/ + '". ';
-        return __DEV__ && (requireDynamic/*n*/ += u(global/*e*/, require/*t*/)), requireDynamic/*n*/ += "Known event types: " + require/*t*/.join(", ") + "."
+    function a(e, t) {
+        var n = 'Unknown event type "' + e + '". ';
+        return __DEV__ && (n += u(e, t)), n += "Known event types: " + t.join(", ") + "."
     }
-    var copyProperties/*s*/ = require/*t*/("copyProperties"),
+    var copyProperties/*s*/ = t("copyProperties"),
         l = {
-            addValidation: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = Object.keys(require/*t*/),
-                    requireLazy/*r*/ = Object.create(global/*e*/);
-                return copyProperties/*s*/(requireLazy/*r*/, {
-                    emit: function(require/*t*/, requireLazy/*r*/, module/*i*/, a, copyProperties/*s*/, l, u) {
-                        return o(require/*t*/, requireDynamic/*n*/), global/*e*/.emit.call(this, require/*t*/, requireLazy/*r*/, module/*i*/, a, copyProperties/*s*/, l, u)
+            addValidation: function(e, t) {
+                var n = Object.keys(t),
+                    r = Object.create(e);
+                return copyProperties/*s*/(r, {
+                    emit: function(t, r, i, a, copyProperties/*s*/, l, u) {
+                        return o(t, n), e.emit.call(this, t, r, i, a, copyProperties/*s*/, l, u)
                     }
-                }), requireLazy/*r*/
+                }), r
             }
         };
-    if (__DEV__) var u = function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = c(global/*e*/, require/*t*/);
-            return h(requireDynamic/*n*/, global/*e*/) ? 'Did you mean "' + requireDynamic/*n*/.type + '"? ' : ""
+    if (__DEV__) var u = function(e, t) {
+            var n = c(e, t);
+            return h(n, e) ? 'Did you mean "' + n.type + '"? ' : ""
         },
-        c = function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = require/*t*/.map(p.bind(this, global/*e*/));
-            return requireDynamic/*n*/.sort(d)[0]
+        c = function(e, t) {
+            var n = t.map(p.bind(this, e));
+            return n.sort(d)[0]
         },
-        p = function(global/*e*/, require/*t*/) {
+        p = function(e, t) {
             return {
-                type: require/*t*/,
-                distance: f(global/*e*/, require/*t*/)
+                type: t,
+                distance: f(e, t)
             }
         },
-        d = function(global/*e*/, require/*t*/) {
-            return global/*e*/.distance < require/*t*/.distance ? -1 : global/*e*/.distance > require/*t*/.distance ? 1 : 0
+        d = function(e, t) {
+            return e.distance < t.distance ? -1 : e.distance > t.distance ? 1 : 0
         },
-        h = function(global/*e*/, require/*t*/) {
-            return global/*e*/.distance / require/*t*/.length < .334
+        h = function(e, t) {
+            return e.distance / t.length < .334
         },
-        f = function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/, requireLazy/*r*/, module/*i*/ = [];
-            for (requireDynamic/*n*/ = 0; requireDynamic/*n*/ <= global/*e*/.length; requireDynamic/*n*/++) module/*i*/[requireDynamic/*n*/] = [requireDynamic/*n*/];
-            for (requireLazy/*r*/ = 1; requireLazy/*r*/ <= require/*t*/.length; requireLazy/*r*/++) module/*i*/[0][requireLazy/*r*/] = requireLazy/*r*/;
-            for (requireDynamic/*n*/ = 1; requireDynamic/*n*/ <= global/*e*/.length; requireDynamic/*n*/++)
-                for (requireLazy/*r*/ = 1; requireLazy/*r*/ <= require/*t*/.length; requireLazy/*r*/++) {
-                    var o = global/*e*/.charAt(requireDynamic/*n*/ - 1) === require/*t*/.charAt(requireLazy/*r*/ - 1) ? 0 : 1;
-                    module/*i*/[requireDynamic/*n*/][requireLazy/*r*/] = Math.min(module/*i*/[requireDynamic/*n*/ - 1][requireLazy/*r*/] + 1, module/*i*/[requireDynamic/*n*/][requireLazy/*r*/ - 1] + 1, module/*i*/[requireDynamic/*n*/ - 1][requireLazy/*r*/ - 1] + o), requireDynamic/*n*/ > 1 && requireLazy/*r*/ > 1 && global/*e*/.charAt(requireDynamic/*n*/ - 1) == require/*t*/.charAt(requireLazy/*r*/ - 2) && global/*e*/.charAt(requireDynamic/*n*/ - 2) == require/*t*/.charAt(requireLazy/*r*/ - 1) && (module/*i*/[requireDynamic/*n*/][requireLazy/*r*/] = Math.min(module/*i*/[requireDynamic/*n*/][requireLazy/*r*/], module/*i*/[requireDynamic/*n*/ - 2][requireLazy/*r*/ - 2] + o))
+        f = function(e, t) {
+            var n, r, i = [];
+            for (n = 0; n <= e.length; n++) i[n] = [n];
+            for (r = 1; r <= t.length; r++) i[0][r] = r;
+            for (n = 1; n <= e.length; n++)
+                for (r = 1; r <= t.length; r++) {
+                    var o = e.charAt(n - 1) === t.charAt(r - 1) ? 0 : 1;
+                    i[n][r] = Math.min(i[n - 1][r] + 1, i[n][r - 1] + 1, i[n - 1][r - 1] + o), n > 1 && r > 1 && e.charAt(n - 1) == t.charAt(r - 2) && e.charAt(n - 2) == t.charAt(r - 1) && (i[n][r] = Math.min(i[n][r], i[n - 2][r - 2] + o))
                 }
-            return module/*i*/[global/*e*/.length][require/*t*/.length]
+            return i[e.length][t.length]
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

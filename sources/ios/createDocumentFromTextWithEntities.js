@@ -1,23 +1,23 @@
-__d("createDocumentFromTextWithEntities",["DocumentContent","DocumentModifier","createDocumentEntityFromGraphQLEntity","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("createDocumentFromTextWithEntities",["DocumentContent","DocumentModifier","createDocumentEntityFromGraphQLEntity","emptyFunction"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        if (!global/*e*/ || !global/*e*/.text) return new DocumentContent/*a*/;
-        var require/*t*/ = new DocumentContent/*a*/(global/*e*/.text);
-        if (!global/*e*/.ranges) return require/*t*/;
-        for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.ranges.length; requireDynamic/*n*/++) {
-            var requireLazy/*r*/ = global/*e*/.ranges[requireDynamic/*n*/];
-            if (requireLazy/*r*/.entity) {
-                var module/*i*/ = requireLazy/*r*/.offset,
-                    o = createDocumentEntityFromGraphQLEntity/*l*/(requireLazy/*r*/.entity);
-                DocumentModifier/*s*/.applyEntity(require/*t*/, o, module/*i*/, module/*i*/ + requireLazy/*r*/.length, emptyFunction/*u*/)
-            } else console.warn("Range:\requireDynamic/*n*/", requireLazy/*r*/, "Missing entity in TextWithEntities:\requireDynamic/*n*/", global/*e*/)
+    function o(e) {
+        if (!e || !e.text) return new DocumentContent/*a*/;
+        var t = new DocumentContent/*a*/(e.text);
+        if (!e.ranges) return t;
+        for (var n = 0; n < e.ranges.length; n++) {
+            var r = e.ranges[n];
+            if (r.entity) {
+                var i = r.offset,
+                    o = createDocumentEntityFromGraphQLEntity/*l*/(r.entity);
+                DocumentModifier/*s*/.applyEntity(t, o, i, i + r.length, emptyFunction/*u*/)
+            } else console.warn("Range:\n", r, "Missing entity in TextWithEntities:\n", e)
         }
-        return require/*t*/
+        return t
     }
-    var DocumentContent/*a*/ = require/*t*/("DocumentContent"),
-        DocumentModifier/*s*/ = require/*t*/("DocumentModifier"),
-        createDocumentEntityFromGraphQLEntity/*l*/ = require/*t*/("createDocumentEntityFromGraphQLEntity"),
-        emptyFunction/*u*/ = require/*t*/("emptyFunction");
-    module/*i*/.exports = o
+    var DocumentContent/*a*/ = t("DocumentContent"),
+        DocumentModifier/*s*/ = t("DocumentModifier"),
+        createDocumentEntityFromGraphQLEntity/*l*/ = t("createDocumentEntityFromGraphQLEntity"),
+        emptyFunction/*u*/ = t("emptyFunction");
+    i.exports = o
 });

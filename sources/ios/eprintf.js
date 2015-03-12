@@ -1,14 +1,14 @@
-__d("eprintf",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var o = function(global/*e*/) {
-        var require/*t*/ = Array.prototype.slice.call(arguments).map(function(global/*e*/) {
-                return String(global/*e*/)
+__d("eprintf",[],function (e, t, n, r, i) {
+    var o = function(e) {
+        var t = Array.prototype.slice.call(arguments).map(function(e) {
+                return String(e)
             }),
-            requireDynamic/*n*/ = global/*e*/.split("%s").length - 1;
-        if (requireDynamic/*n*/ !== require/*t*/.length - 1) return o("eprintf args number mismatch: %s", JSON.stringify(require/*t*/));
-        var requireLazy/*r*/ = 1;
-        return global/*e*/.replace(/%s/g, function() {
-            return String(require/*t*/[requireLazy/*r*/++])
+            n = e.split("%s").length - 1;
+        if (n !== t.length - 1) return o("eprintf args number mismatch: %s", JSON.stringify(t));
+        var r = 1;
+        return e.replace(/%s/g, function() {
+            return String(t[r++])
         })
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

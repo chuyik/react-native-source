@@ -1,7 +1,7 @@
-__d("AbstractTextEditorProps",["DocumentSelectionState","DocumentView","ReactPropTypes"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var DocumentSelectionState/*o*/ = require/*t*/("DocumentSelectionState"),
-        DocumentView/*a*/ = require/*t*/("DocumentView"),
-        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
+__d("AbstractTextEditorProps",["DocumentSelectionState","DocumentView","ReactPropTypes"],function (e, t, n, r, i) {
+    var DocumentSelectionState/*o*/ = t("DocumentSelectionState"),
+        DocumentView/*a*/ = t("DocumentView"),
+        ReactPropTypes/*s*/ = t("ReactPropTypes"),
         l = {
             propTypes: {
                 documentView: ReactPropTypes/*s*/.instanceOf(DocumentView/*a*/).isRequired,
@@ -36,5 +36,5 @@ __d("AbstractTextEditorProps",["DocumentSelectionState","DocumentView","ReactPro
                 }
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

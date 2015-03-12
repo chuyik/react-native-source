@@ -1,9 +1,9 @@
-__d("BatchedBridgeFactory",["invariant","keyMirror","mapObject","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("BatchedBridgeFactory",["invariant","keyMirror","mapObject","warning"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
-        keyMirror/*a*/ = require/*t*/("keyMirror"),
-        mapObject/*s*/ = require/*t*/("mapObject"),
-        warning/*l*/ = require/*t*/("warning"),
+    var invariant/*o*/ = t("invariant"),
+        keyMirror/*a*/ = t("keyMirror"),
+        mapObject/*s*/ = t("mapObject"),
+        warning/*l*/ = t("warning"),
         u = Array.prototype.slice,
         c = keyMirror/*a*/({
             remote: null,
@@ -11,53 +11,53 @@ __d("BatchedBridgeFactory",["invariant","keyMirror","mapObject","warning"],funct
         }),
         p = {
             MethodTypes: c,
-            _createDeprecatedBridgedModule: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = mapObject/*s*/(require/*t*/.methods, function(require/*t*/, requireLazy/*r*/) {
-                    return require/*t*/.type === c.local ? null : function() {
-                        var require/*t*/ = arguments.length ? arguments[arguments.length - 1] : null,
-                            module/*i*/ = "function" == typeof require/*t*/,
-                            invariant/*o*/ = u.call(arguments, 0, arguments.length - (module/*i*/ ? 1 : 0)),
-                            keyMirror/*a*/ = module/*i*/ ? require/*t*/ : null;
-                        return global/*e*/.callDeprecated(requireDynamic/*n*/, requireLazy/*r*/, invariant/*o*/, keyMirror/*a*/)
+            _createDeprecatedBridgedModule: function(e, t, n) {
+                var r = mapObject/*s*/(t.methods, function(t, r) {
+                    return t.type === c.local ? null : function() {
+                        var t = arguments.length ? arguments[arguments.length - 1] : null,
+                            i = "function" == typeof t,
+                            invariant/*o*/ = u.call(arguments, 0, arguments.length - (i ? 1 : 0)),
+                            keyMirror/*a*/ = i ? t : null;
+                        return e.callDeprecated(n, r, invariant/*o*/, keyMirror/*a*/)
                     }
                 });
-                for (var module/*i*/ in require/*t*/.constants) warning/*l*/(!requireLazy/*r*/[module/*i*/], "saw constant and method named %mapObject/*s*/", module/*i*/), requireLazy/*r*/[module/*i*/] = require/*t*/.constants[module/*i*/];
-                return requireLazy/*r*/
+                for (var i in t.constants) warning/*l*/(!r[i], "saw constant and method named %mapObject/*s*/", i), r[i] = t.constants[i];
+                return r
             },
-            _createBridgedModule: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = mapObject/*s*/(require/*t*/.methods, function(require/*t*/, requireLazy/*r*/) {
-                    return require/*t*/.type === c.local ? null : function() {
-                        var require/*t*/ = arguments.length > 0 ? arguments[arguments.length - 1] : null,
-                            module/*i*/ = arguments.length > 1 ? arguments[arguments.length - 2] : null,
-                            keyMirror/*a*/ = "function" == typeof require/*t*/,
-                            mapObject/*s*/ = "function" == typeof module/*i*/,
+            _createBridgedModule: function(e, t, n) {
+                var r = mapObject/*s*/(t.methods, function(t, r) {
+                    return t.type === c.local ? null : function() {
+                        var t = arguments.length > 0 ? arguments[arguments.length - 1] : null,
+                            i = arguments.length > 1 ? arguments[arguments.length - 2] : null,
+                            keyMirror/*a*/ = "function" == typeof t,
+                            mapObject/*s*/ = "function" == typeof i,
                             warning/*l*/ = keyMirror/*a*/;
                         keyMirror/*a*/ && mapObject/*s*/ || !keyMirror/*a*/ && !mapObject/*s*/ || invariant/*o*/(0, "You must supply error callbacks and success callbacks or neither");
                         var c = u.call(arguments, 0, arguments.length - (warning/*l*/ ? 2 : 0)),
-                            p = warning/*l*/ ? require/*t*/ : null,
-                            d = warning/*l*/ ? module/*i*/ : null;
-                        return global/*e*/.call(requireDynamic/*n*/, requireLazy/*r*/, c, d, p)
+                            p = warning/*l*/ ? t : null,
+                            d = warning/*l*/ ? i : null;
+                        return e.call(n, r, c, d, p)
                     }
                 });
-                for (var module/*i*/ in require/*t*/.constants) warning/*l*/(!requireLazy/*r*/[module/*i*/], "saw constant and method named %mapObject/*s*/", module/*i*/), requireLazy/*r*/[module/*i*/] = require/*t*/.constants[module/*i*/];
-                return requireLazy/*r*/
+                for (var i in t.constants) warning/*l*/(!r[i], "saw constant and method named %mapObject/*s*/", i), r[i] = t.constants[i];
+                return r
             },
-            create: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = new global/*e*/(require/*t*/, requireDynamic/*n*/);
+            create: function(e, t, n) {
+                var r = new e(t, n);
                 return {
-                    callFunction: requireLazy/*r*/.callFunction.bind(requireLazy/*r*/),
-                    callFunctionReturnFlushedQueue: requireLazy/*r*/.callFunctionReturnFlushedQueue.bind(requireLazy/*r*/),
-                    invokeCallback: requireLazy/*r*/.invokeCallback.bind(requireLazy/*r*/),
-                    invokeCallbackAndReturnFlushedQueue: requireLazy/*r*/.invokeCallbackAndReturnFlushedQueue.bind(requireLazy/*r*/),
-                    flushedQueue: requireLazy/*r*/.flushedQueue.bind(requireLazy/*r*/),
-                    RemoteModulesDeprecated: mapObject/*s*/(require/*t*/, this._createDeprecatedBridgedModule.bind(this, requireLazy/*r*/)),
-                    RemoteModules: mapObject/*s*/(require/*t*/, this._createBridgedModule.bind(this, requireLazy/*r*/)),
-                    setLoggingEnabled: requireLazy/*r*/.setLoggingEnabled.bind(requireLazy/*r*/),
-                    getLoggedOutgoingItems: requireLazy/*r*/.getLoggedOutgoingItems.bind(requireLazy/*r*/),
-                    getLoggedIncomingItems: requireLazy/*r*/.getLoggedIncomingItems.bind(requireLazy/*r*/),
-                    replayPreviousLog: requireLazy/*r*/.replayPreviousLog.bind(requireLazy/*r*/)
+                    callFunction: r.callFunction.bind(r),
+                    callFunctionReturnFlushedQueue: r.callFunctionReturnFlushedQueue.bind(r),
+                    invokeCallback: r.invokeCallback.bind(r),
+                    invokeCallbackAndReturnFlushedQueue: r.invokeCallbackAndReturnFlushedQueue.bind(r),
+                    flushedQueue: r.flushedQueue.bind(r),
+                    RemoteModulesDeprecated: mapObject/*s*/(t, this._createDeprecatedBridgedModule.bind(this, r)),
+                    RemoteModules: mapObject/*s*/(t, this._createBridgedModule.bind(this, r)),
+                    setLoggingEnabled: r.setLoggingEnabled.bind(r),
+                    getLoggedOutgoingItems: r.getLoggedOutgoingItems.bind(r),
+                    getLoggedIncomingItems: r.getLoggedIncomingItems.bind(r),
+                    replayPreviousLog: r.replayPreviousLog.bind(r)
                 }
             }
         };
-    module/*i*/.exports = p
+    i.exports = p
 });

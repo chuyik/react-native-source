@@ -1,4 +1,4 @@
-__d("ExecutionEnvironment",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ExecutionEnvironment",[],function (e, t, n, r, i) {
     "use strict";
     var o = !1,
         a = {
@@ -8,5 +8,5 @@ __d("ExecutionEnvironment",[],function (global/*e*/, require/*t*/, requireDynami
             canUseViewport: o && !!window.screen,
             isInWorker: !o
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

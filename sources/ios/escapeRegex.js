@@ -1,6 +1,6 @@
-__d("escapeRegex",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return global/*e*/.replace(/([.?*+\^$\[\]\\(){}|\-])/g, "\\$1")
+__d("escapeRegex",[],function (e, t, n, r, i) {
+    function o(e) {
+        return e.replace(/([.?*+\^$\[\]\\(){}|\-])/g, "\\$1")
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

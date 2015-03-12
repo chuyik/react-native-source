@@ -1,49 +1,49 @@
-__d("NativeMethodsMixin",["NativeModules","NativeModulesDeprecated","TextInputState","flattenStyle","invariant","mergeFast"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("NativeMethodsMixin",["NativeModules","NativeModulesDeprecated","TextInputState","flattenStyle","invariant","mergeFast"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        if (void 0 !== require/*t*/.styles) {
-            var requireDynamic/*n*/ = global/*e*/._owner || null,
-                requireLazy/*r*/ = global/*e*/.constructor.displayName,
-                module/*i*/ = "`styles` is not NativeModules/*a*/ supported property of `" + requireLazy/*r*/ + "`, did you mean `style` (singular)?";
-            throw requireDynamic/*n*/ && requireDynamic/*n*/.constructor && requireDynamic/*n*/.constructor.displayName && (module/*i*/ += "\requireDynamic/*n*/\nCheck the `" + requireDynamic/*n*/.constructor.displayName + "` parent  component."), new Error(module/*i*/)
+    function o(e, t) {
+        if (void 0 !== t.styles) {
+            var n = e._owner || null,
+                r = e.constructor.displayName,
+                i = "`styles` is not NativeModules/*a*/ supported property of `" + r + "`, did you mean `style` (singular)?";
+            throw n && n.constructor && n.constructor.displayName && (i += "\n\nCheck the `" + n.constructor.displayName + "` parent  component."), new Error(i)
         }
     }
-    var NativeModules/*a*/ = require/*t*/("NativeModules"),
-        NativeModulesDeprecated/*s*/ = require/*t*/("NativeModulesDeprecated"),
+    var NativeModules/*a*/ = t("NativeModules"),
+        NativeModulesDeprecated/*s*/ = t("NativeModulesDeprecated"),
         l = NativeModules/*a*/.RKUIManager,
         u = NativeModulesDeprecated/*s*/.RKUIManager,
         c = NativeModulesDeprecated/*s*/.RKPOPAnimationManager,
-        TextInputState/*p*/ = require/*t*/("TextInputState"),
-        flattenStyle/*d*/ = require/*t*/("flattenStyle"),
-        invariant/*h*/ = require/*t*/("invariant"),
-        mergeFast/*f*/ = require/*t*/("mergeFast"),
-        m = function(global/*e*/, require/*t*/) {
-            require/*t*/ || invariant/*h*/(0, global/*e*/ + ' must be called with NativeModules/*a*/ valid animation ID returned from POPAnimation.createAnimation, received: "' + require/*t*/ + '"')
+        TextInputState/*p*/ = t("TextInputState"),
+        flattenStyle/*d*/ = t("flattenStyle"),
+        invariant/*h*/ = t("invariant"),
+        mergeFast/*f*/ = t("mergeFast"),
+        m = function(e, t) {
+            t || invariant/*h*/(0, e + ' must be called with NativeModules/*a*/ valid animation ID returned from POPAnimation.createAnimation, received: "' + t + '"')
         },
         g = {
-            addAnimation: function(global/*e*/, require/*t*/) {
-                m("addAnimation", global/*e*/), c.addAnimation(this.getNodeHandle(), global/*e*/, require/*t*/)
+            addAnimation: function(e, t) {
+                m("addAnimation", e), c.addAnimation(this.getNodeHandle(), e, t)
             },
-            removeAnimation: function(global/*e*/) {
-                m("removeAnimation", global/*e*/), c.removeAnimation(this.getNodeHandle(), global/*e*/)
+            removeAnimation: function(e) {
+                m("removeAnimation", e), c.removeAnimation(this.getNodeHandle(), e)
             },
-            measure: function(global/*e*/) {
-                u.measure(this.getNodeHandle(), global/*e*/)
+            measure: function(e) {
+                u.measure(this.getNodeHandle(), e)
             },
-            measureLayout: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                l.measureLayout(this.getNodeHandle(), global/*e*/, requireDynamic/*n*/, require/*t*/)
+            measureLayout: function(e, t, n) {
+                l.measureLayout(this.getNodeHandle(), e, n, t)
             },
-            setNativeProps: function(global/*e*/) {
-                var require/*t*/ = !0;
-                for (var requireDynamic/*n*/ in global/*e*/)
-                    if ("style" !== requireDynamic/*n*/) {
-                        require/*t*/ = !1;
+            setNativeProps: function(e) {
+                var t = !0;
+                for (var n in e)
+                    if ("style" !== n) {
+                        t = !1;
                         break
                     }
-                var requireLazy/*r*/ = flattenStyle/*d*/(global/*e*/.style),
-                    module/*i*/ = null;
-                module/*i*/ = require/*t*/ ? requireLazy/*r*/ : requireLazy/*r*/ ? mergeFast/*f*/(global/*e*/, requireLazy/*r*/) : global/*e*/, u.updateView(this.getNodeHandle(), this.viewConfig.uiViewClassName, module/*i*/)
+                var r = flattenStyle/*d*/(e.style),
+                    i = null;
+                i = t ? r : r ? mergeFast/*f*/(e, r) : e, u.updateView(this.getNodeHandle(), this.viewConfig.uiViewClassName, i)
             },
             focus: function() {
                 TextInputState/*p*/.focusTextInput(this.getNodeHandle())
@@ -54,7 +54,7 @@ __d("NativeMethodsMixin",["NativeModules","NativeModulesDeprecated","TextInputSt
         };
     __DEV__ && ((g.componentWillMount || g.componentWillReceiveProps) && invariant/*h*/(0, "Do not override existing functions."), g.componentWillMount = function() {
         o(this, this.props)
-    }, g.componentWillReceiveProps = function(global/*e*/) {
-        o(this, global/*e*/)
-    }), module/*i*/.exports = g
+    }, g.componentWillReceiveProps = function(e) {
+        o(this, e)
+    }), i.exports = g
 });

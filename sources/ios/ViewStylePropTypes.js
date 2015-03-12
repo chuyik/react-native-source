@@ -1,8 +1,8 @@
-__d("ViewStylePropTypes",["LayoutPropTypes","ReactPropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ViewStylePropTypes",["LayoutPropTypes","ReactPropTypes","merge"],function (e, t, n, r, i) {
     "use strict";
-    var LayoutPropTypes/*o*/ = require/*t*/("LayoutPropTypes"),
-        ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
-        merge/*s*/ = require/*t*/("merge"),
+    var LayoutPropTypes/*o*/ = t("LayoutPropTypes"),
+        ReactPropTypes/*a*/ = t("ReactPropTypes"),
+        merge/*s*/ = t("merge"),
         l = merge/*s*/(LayoutPropTypes/*o*/, {
             backgroundColor: ReactPropTypes/*a*/.string,
             borderColor: ReactPropTypes/*a*/.string,
@@ -27,5 +27,5 @@ __d("ViewStylePropTypes",["LayoutPropTypes","ReactPropTypes","merge"],function (
             translateX: ReactPropTypes/*a*/.number,
             translateY: ReactPropTypes/*a*/.number
         });
-    module/*i*/.exports = l
+    i.exports = l
 });

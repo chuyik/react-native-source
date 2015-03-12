@@ -1,89 +1,89 @@
-__d("getDocumentSelection",["binarySearch","findAncestorOffsetKey","getSelectionOffsetKeyForNode","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        for (; global/*e*/.firstChild && getSelectionOffsetKeyForNode/*m*/(global/*e*/.firstChild);) global/*e*/ = global/*e*/.firstChild;
-        return global/*e*/
+__d("getDocumentSelection",["binarySearch","findAncestorOffsetKey","getSelectionOffsetKeyForNode","invariant"],function (e, t, n, r, i) {
+    function o(e) {
+        for (; e.firstChild && getSelectionOffsetKeyForNode/*m*/(e.firstChild);) e = e.firstChild;
+        return e
     }
 
-    function a(global/*e*/) {
-        for (; global/*e*/.lastChild && getSelectionOffsetKeyForNode/*m*/(global/*e*/.lastChild);) global/*e*/ = global/*e*/.lastChild;
-        return global/*e*/
+    function a(e) {
+        for (; e.lastChild && getSelectionOffsetKeyForNode/*m*/(e.lastChild);) e = e.lastChild;
+        return e
     }
 
-    function s(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = document.selection,
-            requireLazy/*r*/ = requireDynamic/*n*/.createRange(),
-            module/*i*/ = requireLazy/*r*/.text,
-            o = l(global/*e*/, requireLazy/*r*/, _),
+    function s(e, t) {
+        var n = document.selection,
+            r = n.createRange(),
+            i = r.text,
+            o = l(e, r, _),
             a = o;
-        null !== o && module/*i*/.length > 0 && (a = l(global/*e*/, requireLazy/*r*/, y)), o && a ? require/*t*/(o.key, o.offset, a.key, a.offset) : require/*t*/(null, null, null, null)
+        null !== o && i.length > 0 && (a = l(e, r, y)), o && a ? t(o.key, o.offset, a.key, a.offset) : t(null, null, null, null)
     }
 
-    function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        for (var requireLazy/*r*/ = require/*t*/.duplicate(), module/*i*/ = function(global/*e*/) {
-                return requireLazy/*r*/.moveToElementText(global/*e*/), u(requireLazy/*r*/, require/*t*/, requireDynamic/*n*/)
-            }; global/*e*/ && global/*e*/.childNodes;) {
-            var o = binarySearch/*h*/(global/*e*/.childNodes, module/*i*/);
+    function l(e, t, n) {
+        for (var r = t.duplicate(), i = function(e) {
+                return r.moveToElementText(e), u(r, t, n)
+            }; e && e.childNodes;) {
+            var o = binarySearch/*h*/(e.childNodes, i);
             if (-1 === o) break;
-            global/*e*/ = global/*e*/.childNodes[o];
-            var a = getSelectionOffsetKeyForNode/*m*/(global/*e*/);
-            if (null !== a) return requireLazy/*r*/.moveToElementText(global/*e*/), requireLazy/*r*/.setEndPoint("EndTo" + requireDynamic/*n*/, require/*t*/), {
+            e = e.childNodes[o];
+            var a = getSelectionOffsetKeyForNode/*m*/(e);
+            if (null !== a) return r.moveToElementText(e), r.setEndPoint("EndTo" + n, t), {
                 key: a,
-                offset: requireLazy/*r*/.text.length
+                offset: r.text.length
             }
         }
         return null
     }
 
-    function u(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return 1 == global/*e*/.compareEndPoints("StartTo" + requireDynamic/*n*/, require/*t*/) ? 1 : -1 == global/*e*/.compareEndPoints("EndTo" + requireDynamic/*n*/, require/*t*/) ? -1 : 0
+    function u(e, t, n) {
+        return 1 == e.compareEndPoints("StartTo" + n, t) ? 1 : -1 == e.compareEndPoints("EndTo" + n, t) ? -1 : 0
     }
 
-    function c(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = findAncestorOffsetKey/*f*/(require/*t*/);
-        if (null == requireLazy/*r*/ && global/*e*/ !== require/*t*/ && invariant/*g*/(0, "Unknown node in selection range."), 0 === requireDynamic/*n*/) return {
-            key: requireLazy/*r*/ || getSelectionOffsetKeyForNode/*m*/(o(require/*t*/)),
+    function c(e, t, n) {
+        var r = findAncestorOffsetKey/*f*/(t);
+        if (null == r && e !== t && invariant/*g*/(0, "Unknown node in selection range."), 0 === n) return {
+            key: r || getSelectionOffsetKeyForNode/*m*/(o(t)),
             offset: 0
         };
-        var module/*i*/, s, l = require/*t*/.childNodes[requireDynamic/*n*/ - 1];
+        var i, s, l = t.childNodes[n - 1];
         if (getSelectionOffsetKeyForNode/*m*/(l)) {
             var u = a(l);
-            module/*i*/ = getSelectionOffsetKeyForNode/*m*/(u), s = u.textContent.length
-        } else module/*i*/ = requireLazy/*r*/, s = l.textContent.length;
+            i = getSelectionOffsetKeyForNode/*m*/(u), s = u.textContent.length
+        } else i = r, s = l.textContent.length;
         return {
-            key: module/*i*/,
+            key: i,
             offset: s
         }
     }
 
-    function p(require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getSelection();
-        if (0 === requireLazy/*r*/.rangeCount) return void requireDynamic/*n*/(null, null, null, null);
-        var module/*i*/ = requireLazy/*r*/.anchorNode,
-            o = requireLazy/*r*/.focusNode,
-            a = requireLazy/*r*/.anchorOffset,
-            s = requireLazy/*r*/.focusOffset,
-            l = module/*i*/.nodeType === Node.TEXT_NODE,
+    function p(t, n) {
+        var r = e.getSelection();
+        if (0 === r.rangeCount) return void n(null, null, null, null);
+        var i = r.anchorNode,
+            o = r.focusNode,
+            a = r.anchorOffset,
+            s = r.focusOffset,
+            l = i.nodeType === Node.TEXT_NODE,
             u = o.nodeType === Node.TEXT_NODE;
-        if (l && u) return void requireDynamic/*n*/(findAncestorOffsetKey/*f*/(module/*i*/), a, findAncestorOffsetKey/*f*/(o), s);
+        if (l && u) return void n(findAncestorOffsetKey/*f*/(i), a, findAncestorOffsetKey/*f*/(o), s);
         var p = null,
             d = null;
         l ? (p = {
-            key: findAncestorOffsetKey/*f*/(module/*i*/),
+            key: findAncestorOffsetKey/*f*/(i),
             offset: a
-        }, d = c(require/*t*/, o, s)) : u ? (d = {
+        }, d = c(t, o, s)) : u ? (d = {
             key: findAncestorOffsetKey/*f*/(o),
             offset: s
-        }, p = c(require/*t*/, module/*i*/, a)) : (p = c(require/*t*/, module/*i*/, a), d = c(require/*t*/, o, s)), requireDynamic/*n*/(p.key, p.offset, d.key, d.offset, !0)
+        }, p = c(t, i, a)) : (p = c(t, i, a), d = c(t, o, s)), n(p.key, p.offset, d.key, d.offset, !0)
     }
 
-    function d(global/*e*/, require/*t*/) {
-        document.selection ? s(global/*e*/, require/*t*/) : p(global/*e*/, require/*t*/)
+    function d(e, t) {
+        document.selection ? s(e, t) : p(e, t)
     }
-    var binarySearch/*h*/ = require/*t*/("binarySearch"),
-        findAncestorOffsetKey/*f*/ = require/*t*/("findAncestorOffsetKey"),
-        getSelectionOffsetKeyForNode/*m*/ = require/*t*/("getSelectionOffsetKeyForNode"),
-        invariant/*g*/ = require/*t*/("invariant"),
+    var binarySearch/*h*/ = t("binarySearch"),
+        findAncestorOffsetKey/*f*/ = t("findAncestorOffsetKey"),
+        getSelectionOffsetKeyForNode/*m*/ = t("getSelectionOffsetKeyForNode"),
+        invariant/*g*/ = t("invariant"),
         _ = "Start",
         y = "End";
-    module/*i*/.exports = d
+    i.exports = d
 });

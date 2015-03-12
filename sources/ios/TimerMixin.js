@@ -1,19 +1,19 @@
-__d("TimerMixin",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TimerMixin",[],function (e, t, n, r, i) {
     "use strict";
-    var o = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            return function(requireLazy/*r*/, module/*i*/) {
-                var o = global/*e*/(function() {
-                    require/*t*/.call(this, o), requireLazy/*r*/.apply(this, arguments)
-                }.bind(this), module/*i*/);
-                return this[requireDynamic/*n*/] ? this[requireDynamic/*n*/].push(o) : this[requireDynamic/*n*/] = [o], o
+    var o = function(e, t, n) {
+            return function(r, i) {
+                var o = e(function() {
+                    t.call(this, o), r.apply(this, arguments)
+                }.bind(this), i);
+                return this[n] ? this[n].push(o) : this[n] = [o], o
             }
         },
-        a = function(global/*e*/, require/*t*/) {
-            return function(requireDynamic/*n*/) {
-                if (this[require/*t*/]) {
-                    var requireLazy/*r*/ = this[require/*t*/].indexOf(requireDynamic/*n*/); - 1 !== requireLazy/*r*/ && this[require/*t*/].splice(requireLazy/*r*/, 1)
+        a = function(e, t) {
+            return function(n) {
+                if (this[t]) {
+                    var r = this[t].indexOf(n); - 1 !== r && this[t].splice(r, 1)
                 }
-                global/*e*/(requireDynamic/*n*/)
+                e(n)
             }
         },
         s = "TimerMixin_timeouts",
@@ -41,5 +41,5 @@ __d("TimerMixin",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, re
             requestAnimationFrame: y,
             cancelAnimationFrame: _
         };
-    module/*i*/.exports = v
+    i.exports = v
 });

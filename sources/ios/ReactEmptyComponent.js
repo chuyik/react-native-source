@@ -1,27 +1,27 @@
-__d("ReactEmptyComponent",["ReactElement","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactEmptyComponent",["ReactElement","invariant"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {
         return u || invariant/*p*/(0, "Trying to return null from a render, but no null placeholder component was injected."), u()
     }
 
-    function a(global/*e*/) {
-        d[global/*e*/] = !0
+    function a(e) {
+        d[e] = !0
     }
 
-    function s(global/*e*/) {
-        delete d[global/*e*/]
+    function s(e) {
+        delete d[e]
     }
 
-    function l(global/*e*/) {
-        return d[global/*e*/]
+    function l(e) {
+        return d[e]
     }
-    var u, ReactElement/*c*/ = require/*t*/("ReactElement"),
-        invariant/*p*/ = require/*t*/("invariant"),
+    var u, ReactElement/*c*/ = t("ReactElement"),
+        invariant/*p*/ = t("invariant"),
         d = {},
         h = {
-            injectEmptyComponent: function(global/*e*/) {
-                u = ReactElement/*c*/.createFactory(global/*e*/)
+            injectEmptyComponent: function(e) {
+                u = ReactElement/*c*/.createFactory(e)
             }
         },
         f = {
@@ -31,5 +31,5 @@ __d("ReactEmptyComponent",["ReactElement","invariant"],function (global/*e*/, re
             isNullComponentID: l,
             registerNullComponentID: a
         };
-    module/*i*/.exports = f
+    i.exports = f
 });

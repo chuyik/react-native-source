@@ -1,17 +1,17 @@
-__d("ReactContext",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactContext",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         current: {},
-        withContext: function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/, requireLazy/*r*/ = o.current;
-            o.current = Object.assign({}, requireLazy/*r*/, global/*e*/);
+        withContext: function(e, t) {
+            var n, r = o.current;
+            o.current = Object.assign({}, r, e);
             try {
-                requireDynamic/*n*/ = require/*t*/()
+                n = t()
             } finally {
-                o.current = requireLazy/*r*/
+                o.current = r
             }
-            return requireDynamic/*n*/
+            return n
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

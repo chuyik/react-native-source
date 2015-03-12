@@ -1,7 +1,7 @@
-__d("getSafeBodyFromHTML",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        var require/*t*/, requireDynamic/*n*/ = null;
-        return document.implementation && document.implementation.createHTMLDocument && (require/*t*/ = document.implementation.createHTMLDocument("foo"), require/*t*/.documentElement.innerHTML = global/*e*/, requireDynamic/*n*/ = require/*t*/.getElementsByTagName("body")[0]), requireDynamic/*n*/
+__d("getSafeBodyFromHTML",[],function (e, t, n, r, i) {
+    function o(e) {
+        var t, n = null;
+        return document.implementation && document.implementation.createHTMLDocument && (t = document.implementation.createHTMLDocument("foo"), t.documentElement.innerHTML = e, n = t.getElementsByTagName("body")[0]), n
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

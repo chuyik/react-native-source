@@ -1,34 +1,34 @@
-__d("_shouldPolyfillES6Collection",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/[require/*t*/];
-        if (null == requireDynamic/*n*/) return !0;
-        var requireLazy/*r*/ = requireDynamic/*n*/.prototype;
-        return null == requireDynamic/*n*/ || "function" != typeof requireDynamic/*n*/ || "function" != typeof requireLazy/*r*/.clear || 0 !== (new requireDynamic/*n*/).size || "function" != typeof requireLazy/*r*/.keys || "function" != typeof requireLazy/*r*/.forEach || s(requireDynamic/*n*/) || !a(requireDynamic/*n*/)
+__d("_shouldPolyfillES6Collection",[],function (e, t, n, r, i) {
+    function o(t) {
+        var n = e[t];
+        if (null == n) return !0;
+        var r = n.prototype;
+        return null == n || "function" != typeof n || "function" != typeof r.clear || 0 !== (new n).size || "function" != typeof r.keys || "function" != typeof r.forEach || s(n) || !a(n)
     }
 
-    function a(global/*e*/) {
-        function require/*t*/() {
+    function a(e) {
+        function t() {
             "use strict";
-            null !== global/*e*/ && global/*e*/.apply(this, arguments)
+            null !== e && e.apply(this, arguments)
         }
-        for (var requireDynamic/*n*/ in global/*e*/) global/*e*/.hasOwnProperty(requireDynamic/*n*/) && (require/*t*/[requireDynamic/*n*/] = global/*e*/[requireDynamic/*n*/]);
-        var requireLazy/*r*/ = null === global/*e*/ ? null : global/*e*/.prototype;
-        require/*t*/.prototype = Object.create(requireLazy/*r*/), require/*t*/.prototype.constructor = require/*t*/, require/*t*/.__superConstructor__ = global/*e*/;
+        for (var n in e) e.hasOwnProperty(n) && (t[n] = e[n]);
+        var r = null === e ? null : e.prototype;
+        t.prototype = Object.create(r), t.prototype.constructor = t, t.__superConstructor__ = e;
         try {
-            var module/*i*/ = new require/*t*/([]);
-            return module/*i*/.size, module/*i*/ instanceof global/*e*/
+            var i = new t([]);
+            return i.size, i instanceof e
         } catch (o) {
             return !1
         }
     }
 
-    function s(global/*e*/) {
+    function s(e) {
         try {
-            global/*e*/()
-        } catch (require/*t*/) {
+            e()
+        } catch (t) {
             return !1
         }
         return !0
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

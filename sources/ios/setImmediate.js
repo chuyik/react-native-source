@@ -1,3 +1,3 @@
-__d("setImmediate",["ImmediateImplementation"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    module/*i*/.exports = global/*e*/.setImmediate || require/*t*/("ImmediateImplementation").setImmediate
+__d("setImmediate",["ImmediateImplementation"],function (e, t, n, r, i) {
+    i.exports = e.setImmediate || t("ImmediateImplementation").setImmediate
 });

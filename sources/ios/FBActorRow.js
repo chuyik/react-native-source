@@ -1,19 +1,19 @@
-__d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","ReactGraphQL","NativeModules","RouteHandler","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","ReactGraphQL","NativeModules","RouteHandler","StyleSheet","Text","TouchableBounce","View","fbt","ix"],function (e, t, n, r, i) {
     "use strict";
-    var FBActorSubtitle/*o*/ = require/*t*/("FBActorSubtitle"),
-        FIGColors/*a*/ = require/*t*/("FIGColors"),
-        Image/*s*/ = require/*t*/("Image"),
-        PixelRatio/*l*/ = require/*t*/("PixelRatio"),
-        React/*u*/ = require/*t*/("React"),
-        ReactGraphQL/*c*/ = require/*t*/("ReactGraphQL"),
-        NativeModules/*p*/ = require/*t*/("NativeModules").RKCurrentViewer,
-        RouteHandler/*d*/ = require/*t*/("RouteHandler"),
-        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
-        Text/*f*/ = require/*t*/("Text"),
-        TouchableBounce/*m*/ = require/*t*/("TouchableBounce"),
-        View/*g*/ = require/*t*/("View"),
-        fbt/*_*/ = require/*t*/("fbt"),
-        ix/*y*/ = require/*t*/("ix"),
+    var FBActorSubtitle/*o*/ = t("FBActorSubtitle"),
+        FIGColors/*a*/ = t("FIGColors"),
+        Image/*s*/ = t("Image"),
+        PixelRatio/*l*/ = t("PixelRatio"),
+        React/*u*/ = t("React"),
+        ReactGraphQL/*c*/ = t("ReactGraphQL"),
+        NativeModules/*p*/ = t("NativeModules").RKCurrentViewer,
+        RouteHandler/*d*/ = t("RouteHandler"),
+        StyleSheet/*h*/ = t("StyleSheet"),
+        Text/*f*/ = t("Text"),
+        TouchableBounce/*m*/ = t("TouchableBounce"),
+        View/*g*/ = t("View"),
+        fbt/*_*/ = t("fbt"),
+        ix/*y*/ = t("ix"),
         v = PixelRatio/*l*/.get(),
         S = 40 * v,
         b = React/*u*/.createClass({
@@ -31,18 +31,18 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
             statics: {
                 rowHeight: 60,
                 queries: {
-                    actor: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                            var module/*i*/ = require/*t*/.__GraphQL;
-                            return new module/*i*/.QueryFragment("FBActorRow_actor", "Actor", [new module/*i*/.Field("id"), new module/*i*/.Field("__type__", [new module/*i*/.Field("name"), new module/*i*/.Field("id", null, null, null, null, null, {
+                    actor: function(e, t) {
+                        return function(e, n, r) {
+                            var i = t.__GraphQL;
+                            return new i.QueryFragment("FBActorRow_actor", "Actor", [new i.Field("id"), new i.Field("__type__", [new i.Field("name"), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new module/*i*/.Field("name"), new module/*i*/.Field("url", null, null, [new module/*i*/.Callv("site", ["mobile"])]), new module/*i*/.Field("profile_picture", [new module/*i*/.Field("uri")], null, [new module/*i*/.Callv("size", [require/*t*/.__var(global/*e*/), require/*t*/.__var(requireDynamic/*n*/)])]), new module/*i*/.Field("mutual_friends", [new module/*i*/.Field("count")], null, null, null, null, {
+                            }), new i.Field("name"), new i.Field("url", null, null, [new i.Callv("site", ["mobile"])]), new i.Field("profile_picture", [new i.Field("uri")], null, [new i.Callv("size", [t.__var(e), t.__var(n)])]), new i.Field("mutual_friends", [new i.Field("count")], null, null, null, null, {
                                 connection: !0
-                            }), new module/*i*/.Field("is_viewer_friend")], [require/*t*/.__frag(requireLazy/*r*/)], {
+                            }), new i.Field("is_viewer_friend")], [t.__frag(r)], {
                                 scope: "FBActorRow_actor"
                             })
                         }(S, S, FBActorSubtitle/*o*/.getQuery("actor"))
@@ -50,9 +50,9 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                 }
             },
             renderSubtitle: function() {
-                var global/*e*/ = this.props.actor.mutual_friends.count;
-                if (global/*e*/ && NativeModules/*p*/.userFBID !== this.props.actor.id) {
-                    var require/*t*/ = 1 === global/*e*/ ? fbt/*_*/({
+                var e = this.props.actor.mutual_friends.count;
+                if (e && NativeModules/*p*/.userFBID !== this.props.actor.id) {
+                    var t = 1 === e ? fbt/*_*/({
                         type: "text",
                         texts: ["1 Mutual Friend"],
                         desc: "Singular mutual friend count"
@@ -60,10 +60,10 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                         type: "text",
                         texts: ["{mutual_friend_count} Mutual Friends"],
                         desc: "Mutual friend count"
-                    }, [fbt/*_*/.param("mutual_friend_count", global/*e*/)]);
+                    }, [fbt/*_*/.param("mutual_friend_count", e)]);
                     return React/*u*/.createElement(Text/*f*/, {
                         style: R.subtitle
-                    }, require/*t*/)
+                    }, t)
                 }
                 return React/*u*/.createElement(FBActorSubtitle/*o*/, {
                     actor: this.props.actor,
@@ -85,26 +85,26 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                 this.props.onPressWithCompletion ? this.props.onPressWithCompletion(this.handlePressComplete) : this.handlePressComplete()
             },
             handlePressComplete: function() {
-                var global/*e*/ = this.props.actor;
+                var e = this.props.actor;
                 RouteHandler/*d*/.getCallback({
-                    typeList: [global/*e*/.__type__.name],
+                    typeList: [e.__type__.name],
                     params: {
-                        id: global/*e*/.id
+                        id: e.id
                     }
                 })()
             },
             render: function() {
-                var global/*e*/ = this.props.actor,
-                    require/*t*/ = this.props.circularProfilePicture ? [R.profilePicture, R.circularProfilePicture] : R.profilePicture;
+                var e = this.props.actor,
+                    t = this.props.circularProfilePicture ? [R.profilePicture, R.circularProfilePicture] : R.profilePicture;
                 return React/*u*/.createElement(View/*g*/, {
                     style: [R.container, R.row]
                 }, React/*u*/.createElement(TouchableBounce/*m*/, {
-                    onPress: this.handlePress.bind(this, global/*e*/)
+                    onPress: this.handlePress.bind(this, e)
                 }, React/*u*/.createElement(View/*g*/, {
                     style: R.row
                 }, React/*u*/.createElement(Image/*s*/, {
-                    source: global/*e*/.profile_picture,
-                    style: require/*t*/
+                    source: e.profile_picture,
+                    style: t
                 }), this.renderText())), this.renderIsFriendIcon())
             }
         }),
@@ -139,5 +139,5 @@ __d("FBActorRow",["FBActorSubtitle","FIGColors","Image","PixelRatio","React","Re
                 borderRadius: S / v / 2
             }
         });
-    module/*i*/.exports = b
+    i.exports = b
 });

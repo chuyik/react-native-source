@@ -1,62 +1,62 @@
-__d("MatrixMath",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("MatrixMath",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         createIdentityMatrix: function() {
             return [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
         },
-        createCopy: function(global/*e*/) {
-            return [global/*e*/[0], global/*e*/[1], global/*e*/[2], global/*e*/[3], global/*e*/[4], global/*e*/[5], global/*e*/[6], global/*e*/[7], global/*e*/[8], global/*e*/[9], global/*e*/[10], global/*e*/[11], global/*e*/[12], global/*e*/[13], global/*e*/[14], global/*e*/[15]]
+        createCopy: function(e) {
+            return [e[0], e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8], e[9], e[10], e[11], e[12], e[13], e[14], e[15]]
         },
-        createTranslate2d: function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = o.createIdentityMatrix();
-            return o.reuseTranslate2dCommand(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
+        createTranslate2d: function(e, t) {
+            var n = o.createIdentityMatrix();
+            return o.reuseTranslate2dCommand(n, e, t), n
         },
-        reuseTranslate2dCommand: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            global/*e*/[12] = require/*t*/, global/*e*/[13] = requireDynamic/*n*/
+        reuseTranslate2dCommand: function(e, t, n) {
+            e[12] = t, e[13] = n
         },
-        reuseTranslate3dCommand: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            global/*e*/[12] = require/*t*/, global/*e*/[13] = requireDynamic/*n*/, global/*e*/[14] = requireLazy/*r*/
+        reuseTranslate3dCommand: function(e, t, n, r) {
+            e[12] = t, e[13] = n, e[14] = r
         },
-        createScale: function(global/*e*/) {
-            var require/*t*/ = o.createIdentityMatrix();
-            return o.reuseScaleCommand(require/*t*/, global/*e*/), require/*t*/
+        createScale: function(e) {
+            var t = o.createIdentityMatrix();
+            return o.reuseScaleCommand(t, e), t
         },
-        reuseScaleCommand: function(global/*e*/, require/*t*/) {
-            global/*e*/[0] = require/*t*/, global/*e*/[5] = require/*t*/, global/*e*/[10] = require/*t*/
+        reuseScaleCommand: function(e, t) {
+            e[0] = t, e[5] = t, e[10] = t
         },
-        reuseRotateYCommand: function(global/*e*/, require/*t*/) {
-            global/*e*/[0] = Math.cos(require/*t*/), global/*e*/[2] = Math.sin(require/*t*/), global/*e*/[8] = Math.sin(-require/*t*/), global/*e*/[10] = Math.cos(require/*t*/)
+        reuseRotateYCommand: function(e, t) {
+            e[0] = Math.cos(t), e[2] = Math.sin(t), e[8] = Math.sin(-t), e[10] = Math.cos(t)
         },
-        createRotateZ: function(global/*e*/) {
-            var require/*t*/ = o.createIdentityMatrix();
-            return o.reuseRotateZCommand(require/*t*/, global/*e*/), require/*t*/
+        createRotateZ: function(e) {
+            var t = o.createIdentityMatrix();
+            return o.reuseRotateZCommand(t, e), t
         },
-        reuseRotateZCommand: function(global/*e*/, require/*t*/) {
-            global/*e*/[0] = Math.cos(require/*t*/), global/*e*/[1] = -Math.sin(require/*t*/), global/*e*/[4] = Math.sin(require/*t*/), global/*e*/[5] = Math.cos(require/*t*/)
+        reuseRotateZCommand: function(e, t) {
+            e[0] = Math.cos(t), e[1] = -Math.sin(t), e[4] = Math.sin(t), e[5] = Math.cos(t)
         },
-        multiplyInto: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = require/*t*/[0],
-                module/*i*/ = require/*t*/[1],
-                o = require/*t*/[2],
-                a = require/*t*/[3],
-                s = require/*t*/[4],
-                l = require/*t*/[5],
-                u = require/*t*/[6],
-                c = require/*t*/[7],
-                p = require/*t*/[8],
-                d = require/*t*/[9],
-                h = require/*t*/[10],
-                f = require/*t*/[11],
-                m = require/*t*/[12],
-                g = require/*t*/[13],
-                _ = require/*t*/[14],
-                y = require/*t*/[15],
-                v = requireDynamic/*n*/[0],
-                S = requireDynamic/*n*/[1],
-                b = requireDynamic/*n*/[2],
-                R = requireDynamic/*n*/[3];
-            global/*e*/[0] = v * requireLazy/*r*/ + S * s + b * p + R * m, global/*e*/[1] = v * module/*i*/ + S * l + b * d + R * g, global/*e*/[2] = v * o + S * u + b * h + R * _, global/*e*/[3] = v * a + S * c + b * f + R * y, v = requireDynamic/*n*/[4], S = requireDynamic/*n*/[5], b = requireDynamic/*n*/[6], R = requireDynamic/*n*/[7], global/*e*/[4] = v * requireLazy/*r*/ + S * s + b * p + R * m, global/*e*/[5] = v * module/*i*/ + S * l + b * d + R * g, global/*e*/[6] = v * o + S * u + b * h + R * _, global/*e*/[7] = v * a + S * c + b * f + R * y, v = requireDynamic/*n*/[8], S = requireDynamic/*n*/[9], b = requireDynamic/*n*/[10], R = requireDynamic/*n*/[11], global/*e*/[8] = v * requireLazy/*r*/ + S * s + b * p + R * m, global/*e*/[9] = v * module/*i*/ + S * l + b * d + R * g, global/*e*/[10] = v * o + S * u + b * h + R * _, global/*e*/[11] = v * a + S * c + b * f + R * y, v = requireDynamic/*n*/[12], S = requireDynamic/*n*/[13], b = requireDynamic/*n*/[14], R = requireDynamic/*n*/[15], global/*e*/[12] = v * requireLazy/*r*/ + S * s + b * p + R * m, global/*e*/[13] = v * module/*i*/ + S * l + b * d + R * g, global/*e*/[14] = v * o + S * u + b * h + R * _, global/*e*/[15] = v * a + S * c + b * f + R * y
+        multiplyInto: function(e, t, n) {
+            var r = t[0],
+                i = t[1],
+                o = t[2],
+                a = t[3],
+                s = t[4],
+                l = t[5],
+                u = t[6],
+                c = t[7],
+                p = t[8],
+                d = t[9],
+                h = t[10],
+                f = t[11],
+                m = t[12],
+                g = t[13],
+                _ = t[14],
+                y = t[15],
+                v = n[0],
+                S = n[1],
+                b = n[2],
+                R = n[3];
+            e[0] = v * r + S * s + b * p + R * m, e[1] = v * i + S * l + b * d + R * g, e[2] = v * o + S * u + b * h + R * _, e[3] = v * a + S * c + b * f + R * y, v = n[4], S = n[5], b = n[6], R = n[7], e[4] = v * r + S * s + b * p + R * m, e[5] = v * i + S * l + b * d + R * g, e[6] = v * o + S * u + b * h + R * _, e[7] = v * a + S * c + b * f + R * y, v = n[8], S = n[9], b = n[10], R = n[11], e[8] = v * r + S * s + b * p + R * m, e[9] = v * i + S * l + b * d + R * g, e[10] = v * o + S * u + b * h + R * _, e[11] = v * a + S * c + b * f + R * y, v = n[12], S = n[13], b = n[14], R = n[15], e[12] = v * r + S * s + b * p + R * m, e[13] = v * i + S * l + b * d + R * g, e[14] = v * o + S * u + b * h + R * _, e[15] = v * a + S * c + b * f + R * y
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

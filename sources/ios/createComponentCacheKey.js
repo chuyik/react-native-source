@@ -1,31 +1,31 @@
-__d("createComponentCacheKey",["ReactInstanceMap","ReactInstanceHandles","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("createComponentCacheKey",["ReactInstanceMap","ReactInstanceHandles","invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = global/*e*/.getPublicInstance(),
-            requireDynamic/*n*/ = require/*t*/.tagName || require/*t*/.constructor.displayName;
-        return requireDynamic/*n*/ || invariant/*c*/(0, "Cannot create cache key for component without `displayName` or `tagName`."), requireDynamic/*n*/
+    function o(e) {
+        var t = e.getPublicInstance(),
+            n = t.tagName || t.constructor.displayName;
+        return n || invariant/*c*/(0, "Cannot create cache key for component without `displayName` or `tagName`."), n
     }
 
-    function a(global/*e*/) {
-        var require/*t*/ = global/*e*/._rootNodeID,
-            requireDynamic/*n*/ = ReactInstanceHandles/*u*/.getReactRootIDFromNodeID(require/*t*/);
-        return require/*t*/.substr(requireDynamic/*n*/.length)
+    function a(e) {
+        var t = e._rootNodeID,
+            n = ReactInstanceHandles/*u*/.getReactRootIDFromNodeID(t);
+        return t.substr(n.length)
     }
 
-    function s(global/*e*/) {
-        var require/*t*/ = global/*e*/.mountComponent ? global/*e*/ : ReactInstanceMap/*l*/.get(global/*e*/);
-        require/*t*/._rootNodeID || invariant/*c*/(0, "Cannot create cache key for component unless it is mounting or mounted.");
-        var requireDynamic/*n*/ = [];
+    function s(e) {
+        var t = e.mountComponent ? e : ReactInstanceMap/*l*/.get(e);
+        t._rootNodeID || invariant/*c*/(0, "Cannot create cache key for component unless it is mounting or mounted.");
+        var n = [];
         do {
-            var requireLazy/*r*/ = o(require/*t*/),
-                module/*i*/ = a(require/*t*/);
-            requireDynamic/*n*/.unshift("(" + requireLazy/*r*/ + ")" + module/*i*/), require/*t*/ = require/*t*/._currentElement._owner
-        } while (require/*t*/);
-        return requireDynamic/*n*/.join(":")
+            var r = o(t),
+                i = a(t);
+            n.unshift("(" + r + ")" + i), t = t._currentElement._owner
+        } while (t);
+        return n.join(":")
     }
-    var ReactInstanceMap/*l*/ = require/*t*/("ReactInstanceMap"),
-        ReactInstanceHandles/*u*/ = require/*t*/("ReactInstanceHandles"),
-        invariant/*c*/ = require/*t*/("invariant");
-    module/*i*/.exports = s
+    var ReactInstanceMap/*l*/ = t("ReactInstanceMap"),
+        ReactInstanceHandles/*u*/ = t("ReactInstanceHandles"),
+        invariant/*c*/ = t("invariant");
+    i.exports = s
 });

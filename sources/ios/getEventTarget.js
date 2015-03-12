@@ -1,9 +1,9 @@
-__d("getEventTarget",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("getEventTarget",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = global/*e*/.target || global/*e*/.srcElement || window;
-        return 3 === require/*t*/.nodeType ? require/*t*/.parentNode : require/*t*/
+    function o(e) {
+        var t = e.target || e.srcElement || window;
+        return 3 === t.nodeType ? t.parentNode : t
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

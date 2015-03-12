@@ -1,6 +1,6 @@
-__d("ReactIOSViewAttributes",["merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactIOSViewAttributes",["merge"],function (e, t, n, r, i) {
     "use strict";
-    var merge/*o*/ = require/*t*/("merge"),
+    var merge/*o*/ = t("merge"),
         a = {};
     a.UIView = {
         pointerEvents: !0,
@@ -9,5 +9,5 @@ __d("ReactIOSViewAttributes",["merge"],function (global/*e*/, require/*t*/, requ
         testID: !0
     }, a.RKView = merge/*o*/(a.UIView, {
         removeClippedSubviews: !0
-    }), module/*i*/.exports = a
+    }), i.exports = a
 });

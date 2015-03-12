@@ -1,33 +1,33 @@
-__d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacters","DocumentCompositeDecorator","DocumentContent","DocumentDecorator","ComposedEntityType","DocumentSelectionState","DocumentView","MentionSpan","MentionSpan","MentionsTextEditorMixin","ReactPropTypes","React","MentionSpan","View","cx","emptyFunction","getDefaultKeyBinding","getEntityMatcher","getHashtagMatches"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacters","DocumentCompositeDecorator","DocumentContent","DocumentDecorator","ComposedEntityType","DocumentSelectionState","DocumentView","MentionSpan","MentionSpan","MentionsTextEditorMixin","ReactPropTypes","React","MentionSpan","View","cx","emptyFunction","getDefaultKeyBinding","getEntityMatcher","getHashtagMatches"],function (e, t, n, r, i) {
     "use strict";
-    var o = require/*t*/("AbstractMentionsTextEditor.react"),
-        DocumentCharacters/*a*/ = require/*t*/("DocumentCharacters"),
-        DocumentCompositeDecorator/*s*/ = require/*t*/("DocumentCompositeDecorator"),
-        DocumentContent/*l*/ = require/*t*/("DocumentContent"),
-        DocumentDecorator/*u*/ = require/*t*/("DocumentDecorator"),
-        ComposedEntityType/*c*/ = require/*t*/("ComposedEntityType"),
-        DocumentSelectionState/*p*/ = require/*t*/("DocumentSelectionState"),
-        DocumentView/*d*/ = require/*t*/("DocumentView"),
-        MentionSpan/*h*/ = require/*t*/("MentionSpan"),
-        MentionSpan/*f*/ = require/*t*/("MentionSpan"),
-        MentionsTextEditorMixin/*m*/ = require/*t*/("MentionsTextEditorMixin"),
-        ReactPropTypes/*g*/ = require/*t*/("ReactPropTypes"),
-        React/*_*/ = require/*t*/("React"),
-        MentionSpan/*y*/ = require/*t*/("MentionSpan"),
-        View/*v*/ = require/*t*/("View"),
-        cx/*S*/ = require/*t*/("cx"),
-        emptyFunction/*b*/ = require/*t*/("emptyFunction"),
-        getDefaultKeyBinding/*R*/ = require/*t*/("getDefaultKeyBinding"),
-        getEntityMatcher/*w*/ = require/*t*/("getEntityMatcher"),
-        getHashtagMatches/*C*/ = require/*t*/("getHashtagMatches"),
+    var o = t("AbstractMentionsTextEditor.react"),
+        DocumentCharacters/*a*/ = t("DocumentCharacters"),
+        DocumentCompositeDecorator/*s*/ = t("DocumentCompositeDecorator"),
+        DocumentContent/*l*/ = t("DocumentContent"),
+        DocumentDecorator/*u*/ = t("DocumentDecorator"),
+        ComposedEntityType/*c*/ = t("ComposedEntityType"),
+        DocumentSelectionState/*p*/ = t("DocumentSelectionState"),
+        DocumentView/*d*/ = t("DocumentView"),
+        MentionSpan/*h*/ = t("MentionSpan"),
+        MentionSpan/*f*/ = t("MentionSpan"),
+        MentionsTextEditorMixin/*m*/ = t("MentionsTextEditorMixin"),
+        ReactPropTypes/*g*/ = t("ReactPropTypes"),
+        React/*_*/ = t("React"),
+        MentionSpan/*y*/ = t("MentionSpan"),
+        View/*v*/ = t("View"),
+        cx/*S*/ = t("cx"),
+        emptyFunction/*b*/ = t("emptyFunction"),
+        getDefaultKeyBinding/*R*/ = t("getDefaultKeyBinding"),
+        getEntityMatcher/*w*/ = t("getEntityMatcher"),
+        getHashtagMatches/*C*/ = t("getHashtagMatches"),
         E = emptyFunction/*b*/.thatReturns(""),
         D = emptyFunction/*b*/.thatReturns(""),
         T = ComposedEntityType/*c*/.MENTION,
-        x = new DocumentCompositeDecorator/*s*/([new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(global/*e*/) {
-            var require/*t*/ = global/*e*/.getData();
-            return global/*e*/.getType() === T && require/*t*/ && require/*t*/.isWeak
-        }), MentionSpan/*y*/), new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(global/*e*/) {
-            return global/*e*/.getType() === T
+        x = new DocumentCompositeDecorator/*s*/([new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(e) {
+            var t = e.getData();
+            return e.getType() === T && t && t.isWeak
+        }), MentionSpan/*y*/), new DocumentDecorator/*u*/(getEntityMatcher/*w*/(function(e) {
+            return e.getType() === T
         }), MentionSpan/*f*/), new DocumentDecorator/*u*/(getHashtagMatches/*C*/, MentionSpan/*h*/)]),
         P = React/*_*/.createClass({
             displayName: "MentionsInput",
@@ -60,32 +60,32 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
             blur: function() {
                 this.refs.textEditor.blur()
             },
-            _onReturn: function(global/*e*/) {
-                this.props.handleReturn && this.props.handleReturn(global/*e*/) || this.onCharacters(DocumentCharacters/*a*/.BLOCK_DELIMITER)
+            _onReturn: function(e) {
+                this.props.handleReturn && this.props.handleReturn(e) || this.onCharacters(DocumentCharacters/*a*/.BLOCK_DELIMITER)
             },
-            _onBlur: function(global/*e*/) {
-                this.onBlur(global/*e*/), this.props.onInputBlur && this.props.onInputBlur(global/*e*/)
+            _onBlur: function(e) {
+                this.onBlur(e), this.props.onInputBlur && this.props.onInputBlur(e)
             },
-            _onFocus: function(global/*e*/) {
-                this.onFocus(global/*e*/), this.props.onInputFocus && this.props.onInputFocus(global/*e*/)
+            _onFocus: function(e) {
+                this.onFocus(e), this.props.onInputFocus && this.props.onInputFocus(e)
             },
             _onClick: function() {
                 this.refs.textEditor.focus()
             },
-            _onTextInput: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.nativeEvent,
-                    requireDynamic/*n*/ = require/*t*/.range.start,
-                    requireLazy/*r*/ = require/*t*/.range.end,
-                    module/*i*/ = require/*t*/.text;
-                0 === module/*i*/.length && requireLazy/*r*/ - requireDynamic/*n*/ === 1 && this.props.selectionState.isCollapsed() && this.props.selectionState.getStartOffset() === requireDynamic/*n*/ + 1 ? this.onBackspace() : this.onAlter(requireDynamic/*n*/, require/*t*/.previousText, module/*i*/)
+            _onTextInput: function(e) {
+                var t = e.nativeEvent,
+                    n = t.range.start,
+                    r = t.range.end,
+                    i = t.text;
+                0 === i.length && r - n === 1 && this.props.selectionState.isCollapsed() && this.props.selectionState.getStartOffset() === n + 1 ? this.onBackspace() : this.onAlter(n, t.previousText, i)
             },
-            _getStateForDocument: function(global/*e*/) {
+            _getStateForDocument: function(e) {
                 return {
-                    documentView: new DocumentView/*d*/(global/*e*/, x)
+                    documentView: new DocumentView/*d*/(e, x)
                 }
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                this.props.documentContent !== global/*e*/.documentContent && this.setState(this._getStateForDocument(global/*e*/.documentContent))
+            componentWillReceiveProps: function(e) {
+                this.props.documentContent !== e.documentContent && this.setState(this._getStateForDocument(e.documentContent))
             },
             getInitialState: function() {
                 return this._getStateForDocument(this.props.documentContent)
@@ -137,5 +137,5 @@ __d("MentionsInput.react",["AbstractMentionsTextEditor.react","DocumentCharacter
                 }))
             }
         });
-    module/*i*/.exports = P
+    i.exports = P
 });

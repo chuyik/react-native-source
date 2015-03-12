@@ -1,15 +1,15 @@
-__d("warning",["emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("warning",["emptyFunction"],function (e, t, n, r, i) {
     "use strict";
-    var emptyFunction/*o*/ = require/*t*/("emptyFunction"),
+    var emptyFunction/*o*/ = t("emptyFunction"),
         a = emptyFunction/*o*/;
-    __DEV__ && (a = function(global/*e*/, require/*t*/) {
-        for (var requireDynamic/*n*/ = [], requireLazy/*r*/ = 2, module/*i*/ = arguments.length; module/*i*/ > requireLazy/*r*/; requireLazy/*r*/++) requireDynamic/*n*/.push(arguments[requireLazy/*r*/]);
-        if (void 0 === require/*t*/) throw new Error("`warning(condition, format, ...args)` requires a warning message argument");
-        if (!global/*e*/) {
+    __DEV__ && (a = function(e, t) {
+        for (var n = [], r = 2, i = arguments.length; i > r; r++) n.push(arguments[r]);
+        if (void 0 === t) throw new Error("`warning(condition, format, ...args)` requires a warning message argument");
+        if (!e) {
             var emptyFunction/*o*/ = 0;
-            console.warn("Warning: " + require/*t*/.replace(/%s/g, function() {
-                return requireDynamic/*n*/[emptyFunction/*o*/++]
+            console.warn("Warning: " + t.replace(/%s/g, function() {
+                return n[emptyFunction/*o*/++]
             }))
         }
-    }), module/*i*/.exports = a
+    }), i.exports = a
 });

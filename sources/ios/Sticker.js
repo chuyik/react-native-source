@@ -1,12 +1,12 @@
-__d("Sticker",["ImageStylePropTypes","NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","StyleSheetPropType","createReactIOSNativeComponentClass","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Sticker",["ImageStylePropTypes","NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","StyleSheetPropType","createReactIOSNativeComponentClass","merge"],function (e, t, n, r, i) {
     "use strict";
-    var ImageStylePropTypes/*o*/ = require/*t*/("ImageStylePropTypes"),
-        NativeMethodsMixin/*a*/ = require/*t*/("NativeMethodsMixin"),
-        React/*s*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*l*/ = require/*t*/("ReactIOSViewAttributes"),
-        u = (require/*t*/("StyleSheet"), require/*t*/("StyleSheetPropType")),
-        createReactIOSNativeComponentClass/*c*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        merge/*p*/ = require/*t*/("merge"),
+    var ImageStylePropTypes/*o*/ = t("ImageStylePropTypes"),
+        NativeMethodsMixin/*a*/ = t("NativeMethodsMixin"),
+        React/*s*/ = t("React"),
+        ReactIOSViewAttributes/*l*/ = t("ReactIOSViewAttributes"),
+        u = (t("StyleSheet"), t("StyleSheetPropType")),
+        createReactIOSNativeComponentClass/*c*/ = t("createReactIOSNativeComponentClass"),
+        merge/*p*/ = t("merge"),
         d = React/*s*/.createClass({
             displayName: "Sticker",
             propTypes: {
@@ -31,5 +31,5 @@ __d("Sticker",["ImageStylePropTypes","NativeMethodsMixin","React","ReactIOSViewA
             }),
             uiViewClassName: "RCTStickerView"
         });
-    module/*i*/.exports = d
+    i.exports = d
 });

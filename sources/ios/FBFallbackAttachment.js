@@ -1,17 +1,17 @@
-__d("FBFallbackAttachment",["FIGColors","Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StylePropType","StyleSheet","TouchableHighlight","Text","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBFallbackAttachment",["FIGColors","Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StylePropType","StyleSheet","TouchableHighlight","Text","View"],function (e, t, n, r, i) {
     "use strict";
-    var FIGColors/*o*/ = require/*t*/("FIGColors"),
-        Image/*a*/ = require/*t*/("Image"),
-        PixelRatio/*s*/ = require/*t*/("PixelRatio"),
-        React/*l*/ = require/*t*/("React"),
-        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*c*/ = require/*t*/("Dimensions"),
-        RouteHandler/*p*/ = require/*t*/("RouteHandler"),
-        StylePropType/*d*/ = require/*t*/("StylePropType"),
-        StyleSheet/*h*/ = require/*t*/("StyleSheet"),
-        TouchableHighlight/*f*/ = require/*t*/("TouchableHighlight"),
-        Text/*m*/ = require/*t*/("Text"),
-        View/*g*/ = require/*t*/("View"),
+    var FIGColors/*o*/ = t("FIGColors"),
+        Image/*a*/ = t("Image"),
+        PixelRatio/*s*/ = t("PixelRatio"),
+        React/*l*/ = t("React"),
+        ReactGraphQL/*u*/ = t("ReactGraphQL"),
+        Dimensions/*c*/ = t("Dimensions"),
+        RouteHandler/*p*/ = t("RouteHandler"),
+        StylePropType/*d*/ = t("StylePropType"),
+        StyleSheet/*h*/ = t("StyleSheet"),
+        TouchableHighlight/*f*/ = t("TouchableHighlight"),
+        Text/*m*/ = t("Text"),
+        View/*g*/ = t("View"),
         _ = Dimensions/*c*/.get("window").width - 10,
         y = PixelRatio/*s*/.get(),
         v = 1,
@@ -39,10 +39,10 @@ __d("FBFallbackAttachment",["FIGColors","Image","PixelRatio","React","ReactGraph
             mixins: [ReactGraphQL/*u*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, FIGColors/*o*/, Image/*a*/) {
-                            var PixelRatio/*s*/ = require/*t*/.__GraphQL;
-                            return new PixelRatio/*s*/.QueryFragment("FBFallbackAttachment_attachment", "StoryAttachment", [new PixelRatio/*s*/.Field("description", [new PixelRatio/*s*/.Field("text")]), new PixelRatio/*s*/.Field("media", [new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [require/*t*/.__var(global/*e*/), require/*t*/.__var(requireDynamic/*n*/)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill"])]), new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [require/*t*/.__var(requireLazy/*r*/), require/*t*/.__var(module/*i*/)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill-cropped"])], "image_portrait"), new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [require/*t*/.__var(FIGColors/*o*/), require/*t*/.__var(Image/*a*/)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill-cropped"])], "image_small")]), new PixelRatio/*s*/.Field("title"), new PixelRatio/*s*/.Field("url", null, null, [new PixelRatio/*s*/.Callv("site", ["mobile"])]), new PixelRatio/*s*/.Field("style_list", null, null, null, null, null, {
+                    attachment: function(e, t) {
+                        return function(e, n, r, i, FIGColors/*o*/, Image/*a*/) {
+                            var PixelRatio/*s*/ = t.__GraphQL;
+                            return new PixelRatio/*s*/.QueryFragment("FBFallbackAttachment_attachment", "StoryAttachment", [new PixelRatio/*s*/.Field("description", [new PixelRatio/*s*/.Field("text")]), new PixelRatio/*s*/.Field("media", [new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [t.__var(e), t.__var(n)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill"])]), new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [t.__var(r), t.__var(i)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill-cropped"])], "image_portrait"), new PixelRatio/*s*/.Field("image", [new PixelRatio/*s*/.Field("uri"), new PixelRatio/*s*/.Field("height"), new PixelRatio/*s*/.Field("width")], null, [new PixelRatio/*s*/.Callv("size", [t.__var(FIGColors/*o*/), t.__var(Image/*a*/)]), new PixelRatio/*s*/.Callv("sizing", ["cover-fill-cropped"])], "image_small")]), new PixelRatio/*s*/.Field("title"), new PixelRatio/*s*/.Field("url", null, null, [new PixelRatio/*s*/.Callv("site", ["mobile"])]), new PixelRatio/*s*/.Field("style_list", null, null, null, null, null, {
                                 plural: !0
                             }), new PixelRatio/*s*/.Field("source")], null, {
                                 scope: "FBFallbackAttachment_attachment"
@@ -60,73 +60,73 @@ __d("FBFallbackAttachment",["FIGColors","Image","PixelRatio","React","ReactGraph
                     useSeparator: !0
                 }
             },
-            renderSubtitle: function(global/*e*/) {
-                var require/*t*/ = this.props.attachment,
-                    requireDynamic/*n*/ = require/*t*/.source;
-                return requireDynamic/*n*/ || global/*e*/ || (requireDynamic/*n*/ = require/*t*/ && require/*t*/.description && require/*t*/.description.text), requireDynamic/*n*/ ? React/*l*/.createElement(Text/*m*/, {
+            renderSubtitle: function(e) {
+                var t = this.props.attachment,
+                    n = t.source;
+                return n || e || (n = t && t.description && t.description.text), n ? React/*l*/.createElement(Text/*m*/, {
                     style: [C.subtitle, this.props.subtitleStyle],
                     numberOfLines: this.props.subtitleMaxLines
-                }, requireDynamic/*n*/) : null
+                }, n) : null
             },
             renderDescription: function() {
-                var global/*e*/ = this.props.attachment;
-                if (this.props.descriptionMaxLength <= 0 || !global/*e*/.description) return null;
-                var require/*t*/ = global/*e*/.description.text;
-                return require/*t*/ ? React/*l*/.createElement(Text/*m*/, {
+                var e = this.props.attachment;
+                if (this.props.descriptionMaxLength <= 0 || !e.description) return null;
+                var t = e.description.text;
+                return t ? React/*l*/.createElement(Text/*m*/, {
                     style: [C.description, this.props.descriptionStyle],
                     numberOfLines: this.props.descriptionMaxLines
-                }, require/*t*/) : null
+                }, t) : null
             },
-            renderText: function(global/*e*/) {
-                var require/*t*/ = this.props.attachment.title;
-                if (!require/*t*/) return null;
-                var requireDynamic/*n*/ = global/*e*/ ? this.renderDescription() : null;
+            renderText: function(e) {
+                var t = this.props.attachment.title;
+                if (!t) return null;
+                var n = e ? this.renderDescription() : null;
                 return React/*l*/.createElement(View/*g*/, {
                     style: [C.textContainer, this.props.textContainerStyle]
                 }, React/*l*/.createElement(Text/*m*/, {
                     style: [C.title, this.props.titleStyle],
                     numberOfLines: this.props.titleMaxLines
-                }, require/*t*/), this.renderSubtitle(requireDynamic/*n*/), requireDynamic/*n*/)
+                }, t), this.renderSubtitle(n), n)
             },
             render: function() {
-                var global/*e*/, require/*t*/ = this.props.attachment;
-                require/*t*/.media && require/*t*/.media.image && require/*t*/.media.image.uri && (global/*e*/ = require/*t*/.media.image);
-                var requireDynamic/*n*/ = null,
-                    requireLazy/*r*/ = null,
-                    module/*i*/ = !1;
-                if (!global/*e*/ || global/*e*/.width < S[0] || global/*e*/.width <= global/*e*/.height || !this.props.useLargeImage) {
+                var e, t = this.props.attachment;
+                t.media && t.media.image && t.media.image.uri && (e = t.media.image);
+                var n = null,
+                    r = null,
+                    i = !1;
+                if (!e || e.width < S[0] || e.width <= e.height || !this.props.useLargeImage) {
                     var FIGColors/*o*/, PixelRatio/*s*/;
-                    module/*i*/ = !0, global/*e*/ && global/*e*/.height > b[1] && global/*e*/.width <= global/*e*/.height && this.props.useLargeImage && require/*t*/.media.image_portrait ? (PixelRatio/*s*/ = C.imageLargePortrait, FIGColors/*o*/ = React/*l*/.createElement(Image/*a*/, {
+                    i = !0, e && e.height > b[1] && e.width <= e.height && this.props.useLargeImage && t.media.image_portrait ? (PixelRatio/*s*/ = C.imageLargePortrait, FIGColors/*o*/ = React/*l*/.createElement(Image/*a*/, {
                         style: [C.imageBase, C.imageLargePortrait],
-                        source: require/*t*/.media.image_portrait
-                    })) : global/*e*/ && require/*t*/.media.image_small && (PixelRatio/*s*/ = [C.imageSmall, this.props.imageSmallStyle], FIGColors/*o*/ = React/*l*/.createElement(Image/*a*/, {
+                        source: t.media.image_portrait
+                    })) : e && t.media.image_small && (PixelRatio/*s*/ = [C.imageSmall, this.props.imageSmallStyle], FIGColors/*o*/ = React/*l*/.createElement(Image/*a*/, {
                         style: [C.imageBase, C.imageSmall, this.props.imageSmallStyle],
-                        source: require/*t*/.media.image_small
-                    })), requireDynamic/*n*/ = this.renderText(module/*i*/);
-                    var ReactGraphQL/*u*/ = requireDynamic/*n*/ && FIGColors/*o*/ && this.props.useSeparator ? React/*l*/.createElement(View/*g*/, {
+                        source: t.media.image_small
+                    })), n = this.renderText(i);
+                    var ReactGraphQL/*u*/ = n && FIGColors/*o*/ && this.props.useSeparator ? React/*l*/.createElement(View/*g*/, {
                         style: [C.separator, PixelRatio/*s*/, C.verticalSeparator]
                     }) : null;
-                    requireLazy/*r*/ = React/*l*/.createElement(View/*g*/, {
+                    r = React/*l*/.createElement(View/*g*/, {
                         style: [C.border, PixelRatio/*s*/, C.row, this.props.borderStyle]
-                    }, FIGColors/*o*/, ReactGraphQL/*u*/, requireDynamic/*n*/)
-                } else requireDynamic/*n*/ = this.renderText(module/*i*/), requireLazy/*r*/ = React/*l*/.createElement(View/*g*/, {
+                    }, FIGColors/*o*/, ReactGraphQL/*u*/, n)
+                } else n = this.renderText(i), r = React/*l*/.createElement(View/*g*/, {
                     style: [C.border, this.props.borderStyle]
                 }, React/*l*/.createElement(Image/*a*/, {
                     style: [C.imageBase, C.imageLarge, this.props.imageLargeStyle],
-                    source: global/*e*/
+                    source: e
                 }), React/*l*/.createElement(View/*g*/, {
                     style: [C.separator, C.horizontalSeparator]
-                }), requireDynamic/*n*/);
-                var Dimensions/*c*/ = requireDynamic/*n*/ ? C.wrapper : null;
+                }), n);
+                var Dimensions/*c*/ = n ? C.wrapper : null;
                 return React/*l*/.createElement(View/*g*/, {
                     style: [C.container, this.props.containerStyle]
                 }, React/*l*/.createElement(TouchableHighlight/*f*/, {
                     style: Dimensions/*c*/,
                     onPress: RouteHandler/*p*/.getCallback({
                         typeList: ["URL"],
-                        params: require/*t*/
+                        params: t
                     })
-                }, requireLazy/*r*/))
+                }, r))
             }
         }),
         C = StyleSheet/*h*/.create({
@@ -196,5 +196,5 @@ __d("FBFallbackAttachment",["FIGColors","Image","PixelRatio","React","ReactGraph
                 fontSize: 11
             }
         });
-    module/*i*/.exports = w
+    i.exports = w
 });

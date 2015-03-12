@@ -1,5 +1,5 @@
-__d("RKAlertManager",["NativeModulesDeprecated"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RKAlertManager",["NativeModulesDeprecated"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModulesDeprecated/*o*/ = require/*t*/("NativeModulesDeprecated").RKAlertManager;
-    module/*i*/.exports = NativeModulesDeprecated/*o*/
+    var NativeModulesDeprecated/*o*/ = t("NativeModulesDeprecated").RKAlertManager;
+    i.exports = NativeModulesDeprecated/*o*/
 });

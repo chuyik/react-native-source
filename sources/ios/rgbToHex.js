@@ -1,13 +1,13 @@
-__d("rgbToHex",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("rgbToHex",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = Math.round(global/*e*/).toString(16);
-        return 1 === require/*t*/.length ? "0" + require/*t*/ : require/*t*/
+    function o(e) {
+        var t = Math.round(e).toString(16);
+        return 1 === t.length ? "0" + t : t
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return "#" + o(global/*e*/) + o(require/*t*/) + o(requireDynamic/*n*/)
+    function a(e, t, n) {
+        return "#" + o(e) + o(t) + o(n)
     }
-    module/*i*/.exports = a
+    i.exports = a
 });

@@ -1,30 +1,30 @@
-__d("ReactIOSTagHandles",["invariant","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactIOSTagHandles",["invariant","warning"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
-        warning/*a*/ = require/*t*/("warning"),
+    var invariant/*o*/ = t("invariant"),
+        warning/*a*/ = t("warning"),
         s = 1,
         l = {
             tagsStartAt: s,
             tagCount: s,
             allocateTag: function() {
                 for (; this.reactTagIsNativeTopRootID(l.tagCount);) l.tagCount++;
-                var global/*e*/ = l.tagCount;
-                return l.tagCount++, global/*e*/
+                var e = l.tagCount;
+                return l.tagCount++, e
             },
-            associateRootNodeIDWithMountedNodeHandle: function(global/*e*/, require/*t*/) {
-                warning/*a*/(global/*e*/ && require/*t*/, "Root node or tag is null when associating"), l.tagToRootNodeID[require/*t*/] = global/*e*/, l.rootNodeIDToTag[global/*e*/] = require/*t*/
+            associateRootNodeIDWithMountedNodeHandle: function(e, t) {
+                warning/*a*/(e && t, "Root node or tag is null when associating"), l.tagToRootNodeID[t] = e, l.rootNodeIDToTag[e] = t
             },
-            allocateRootNodeIDForTag: function(global/*e*/) {
-                return this.reactTagIsNativeTopRootID(global/*e*/) || invariant/*o*/(0, "Expect warning/*a*/ native root tag, instead got ", global/*e*/), ".requireLazy/*r*/[" + global/*e*/ + "]{TOP_LEVEL}"
+            allocateRootNodeIDForTag: function(e) {
+                return this.reactTagIsNativeTopRootID(e) || invariant/*o*/(0, "Expect warning/*a*/ native root tag, instead got ", e), ".r[" + e + "]{TOP_LEVEL}"
             },
-            reactTagIsNativeTopRootID: function(global/*e*/) {
-                return global/*e*/ % 10 === 1
+            reactTagIsNativeTopRootID: function(e) {
+                return e % 10 === 1
             },
-            mostRecentMountedNodeHandleForRootNodeID: function(global/*e*/) {
-                return l.rootNodeIDToTag[global/*e*/]
+            mostRecentMountedNodeHandleForRootNodeID: function(e) {
+                return l.rootNodeIDToTag[e]
             },
             tagToRootNodeID: [],
             rootNodeIDToTag: {}
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

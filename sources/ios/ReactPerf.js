@@ -1,27 +1,27 @@
-__d("ReactPerf",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactPerf",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return requireDynamic/*n*/
+    function o(e, t, n) {
+        return n
     }
     var a = {
         enableMeasure: !1,
         storedMeasure: o,
-        measure: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        measure: function(e, t, n) {
             if (__DEV__) {
-                var requireLazy/*r*/ = null,
-                    module/*i*/ = function() {
-                        return a.enableMeasure ? (requireLazy/*r*/ || (requireLazy/*r*/ = a.storedMeasure(global/*e*/, require/*t*/, requireDynamic/*n*/)), requireLazy/*r*/.apply(this, arguments)) : requireDynamic/*n*/.apply(this, arguments)
+                var r = null,
+                    i = function() {
+                        return a.enableMeasure ? (r || (r = a.storedMeasure(e, t, n)), r.apply(this, arguments)) : n.apply(this, arguments)
                     };
-                return module/*i*/.displayName = global/*e*/ + "_" + require/*t*/, module/*i*/
+                return i.displayName = e + "_" + t, i
             }
-            return requireDynamic/*n*/
+            return n
         },
         injection: {
-            injectMeasure: function(global/*e*/) {
-                a.storedMeasure = global/*e*/
+            injectMeasure: function(e) {
+                a.storedMeasure = e
             }
         }
     };
-    module/*i*/.exports = a
+    i.exports = a
 });

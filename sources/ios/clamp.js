@@ -1,6 +1,6 @@
-__d("clamp",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return global/*e*/ > require/*t*/ ? global/*e*/ : require/*t*/ > requireDynamic/*n*/ ? requireDynamic/*n*/ : require/*t*/
+__d("clamp",[],function (e, t, n, r, i) {
+    function o(e, t, n) {
+        return e > t ? e : t > n ? n : t
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,152 +1,152 @@
-__d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        if (this.$GraphQLNode_fields = global/*e*/ || M, this.$GraphQLNode_fieldMap = L, this.$GraphQLNode_fragments = require/*t*/ && require/*t*/.length > 0 ? require/*t*/.filter(v) : M, this.$GraphQLNode_hasNestedVariables = !1, this.$GraphQLNode_numNestedFragmentsWithVariables = 0, global/*e*/ && global/*e*/.length > 0) {
+    function o(e, t) {
+        if (this.$GraphQLNode_fields = e || M, this.$GraphQLNode_fieldMap = L, this.$GraphQLNode_fragments = t && t.length > 0 ? t.filter(v) : M, this.$GraphQLNode_hasNestedVariables = !1, this.$GraphQLNode_numNestedFragmentsWithVariables = 0, e && e.length > 0) {
             this.$GraphQLNode_fieldMap = {};
-            for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) {
-                var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/],
-                    module/*i*/ = requireLazy/*r*/.getGeneratedAlias();
-                void 0 !== this.$GraphQLNode_fieldMap[module/*i*/] && invariant/*I*/(0, 'Field "%s" is already in fields with the same calls.', requireLazy/*r*/.getFieldName()), this.$GraphQLNode_fieldMap[module/*i*/] = requireLazy/*r*/, (requireLazy/*r*/.hasVariables() || requireLazy/*r*/.$GraphQLNode_hasNestedVariables) && (this.$GraphQLNode_hasNestedVariables = !0), this.$GraphQLNode_numNestedFragmentsWithVariables += requireLazy/*r*/.$GraphQLNode_numNestedFragmentsWithVariables
+            for (var n = 0; n < e.length; n++) {
+                var r = e[n],
+                    i = r.getGeneratedAlias();
+                void 0 !== this.$GraphQLNode_fieldMap[i] && invariant/*I*/(0, 'Field "%s" is already in fields with the same calls.', r.getFieldName()), this.$GraphQLNode_fieldMap[i] = r, (r.hasVariables() || r.$GraphQLNode_hasNestedVariables) && (this.$GraphQLNode_hasNestedVariables = !0), this.$GraphQLNode_numNestedFragmentsWithVariables += r.$GraphQLNode_numNestedFragmentsWithVariables
             }
         }
         for (var o = 0; o < this.$GraphQLNode_fragments.length; o++)(this.$GraphQLNode_fragments[o].$GraphQLNode_hasNestedVariables || this.$GraphQLNode_fragments[o].$GraphQLNode_numNestedFragmentsWithVariables) && (this.$GraphQLNode_numNestedFragmentsWithVariables += 1)
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        this.$GraphQLCallvNode_name = global/*e*/, this.$GraphQLCallvNode_metadata = requireDynamic/*n*/ || L, this.isVarArgs() && require/*t*/ && 1 === require/*t*/.length && Array.isArray(require/*t*/[0]) && (require/*t*/ = require/*t*/[0]), this.$GraphQLCallvNode_args = require/*t*/ ? require/*t*/.map(S) : M
+    function a(e, t, n) {
+        this.$GraphQLCallvNode_name = e, this.$GraphQLCallvNode_metadata = n || L, this.isVarArgs() && t && 1 === t.length && Array.isArray(t[0]) && (t = t[0]), this.$GraphQLCallvNode_args = t ? t.map(S) : M
     }
 
-    function s(global/*e*/) {
-        for (var require/*t*/ = [], requireDynamic/*n*/ = 1, requireLazy/*r*/ = arguments.length; requireLazy/*r*/ > requireDynamic/*n*/; requireDynamic/*n*/++) require/*t*/.push(arguments[requireDynamic/*n*/]);
-        a.call(this, global/*e*/, require/*t*/)
+    function s(e) {
+        for (var t = [], n = 1, r = arguments.length; r > n; n++) t.push(arguments[n]);
+        a.call(this, e, t)
     }
 
-    function l(global/*e*/) {
-        this.$GraphQLCallValue_callValue = global/*e*/ + ""
+    function l(e) {
+        this.$GraphQLCallValue_callValue = e + ""
     }
 
-    function u(global/*e*/, require/*t*/) {
-        this.$GraphQLBatchCallVariable_sourceQueryID = global/*e*/, this.$GraphQLBatchCallVariable_jsonPath = require/*t*/
+    function u(e, t) {
+        this.$GraphQLBatchCallVariable_sourceQueryID = e, this.$GraphQLBatchCallVariable_jsonPath = t
     }
 
-    function c(global/*e*/) {
-        this.$GraphQLCallVariable_callVariableName = global/*e*/
+    function c(e) {
+        this.$GraphQLCallVariable_callVariableName = e
     }
 
-    function p(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, a, s) {
-        o.call(this, require/*t*/, requireDynamic/*n*/), A.test(global/*e*/) || invariant/*I*/(0, '"%s" is not a valid field name', global/*e*/), k.test(module/*i*/) || invariant/*I*/(0, '"%s" is not a valid alias name', module/*i*/), this.$GraphQLFieldNode_fieldName = global/*e*/, this.$GraphQLFieldNode_calls = requireLazy/*r*/ || M, this.$GraphQLFieldNode_alias = module/*i*/ || null, this.$GraphQLFieldNode_condition = a || null, this.$GraphQLFieldNode_metadata = s || L, this.$GraphQLFieldNode_generatedAlias = null, this.$GraphQLFieldNode_generatedFieldName = null, this.$GraphQLFieldNode_hasVariables = this.$GraphQLFieldNode_calls.some(w)
+    function p(e, t, n, r, i, a, s) {
+        o.call(this, t, n), A.test(e) || invariant/*I*/(0, '"%s" is not a valid field name', e), k.test(i) || invariant/*I*/(0, '"%s" is not a valid alias name', i), this.$GraphQLFieldNode_fieldName = e, this.$GraphQLFieldNode_calls = r || M, this.$GraphQLFieldNode_alias = i || null, this.$GraphQLFieldNode_condition = a || null, this.$GraphQLFieldNode_metadata = s || L, this.$GraphQLFieldNode_generatedAlias = null, this.$GraphQLFieldNode_generatedFieldName = null, this.$GraphQLFieldNode_hasVariables = this.$GraphQLFieldNode_calls.some(w)
     }
 
-    function d(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-        o.call(this, requireDynamic/*n*/, requireLazy/*r*/), this.$GraphQLQueryFragment_name = global/*e*/, this.$GraphQLQueryFragment_type = require/*t*/, this.$GraphQLQueryFragment_metadata = module/*i*/ || L, this.$GraphQLQueryFragment_isDeferred = null, this.$GraphQLQueryFragment_deferredCopy = null
+    function d(e, t, n, r, i) {
+        o.call(this, n, r), this.$GraphQLQueryFragment_name = e, this.$GraphQLQueryFragment_type = t, this.$GraphQLQueryFragment_metadata = i || L, this.$GraphQLQueryFragment_isDeferred = null, this.$GraphQLQueryFragment_deferredCopy = null
     }
 
-    function h(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, s) {
-        o.call(this, requireDynamic/*n*/, requireLazy/*r*/), this.$GraphQLQuery_rootCall = global/*e*/, this.$GraphQLQuery_metadata = module/*i*/ || L;
+    function h(e, t, n, r, i, s) {
+        o.call(this, n, r), this.$GraphQLQuery_rootCall = e, this.$GraphQLQuery_metadata = i || L;
         var l = this.$GraphQLQuery_metadata.varargs ? {
             varargs: this.$GraphQLQuery_metadata.varargs
         } : null;
-        this.$GraphQLQuery_rootNode = new a(global/*e*/, require/*t*/, l), this.$GraphQLQuery_queryName = s, this.$GraphQLQuery_allFragmentNames = null, this.$GraphQLQuery_deferredFragmentNames = null, this.$GraphQLQuery_description = null
+        this.$GraphQLQuery_rootNode = new a(e, t, l), this.$GraphQLQuery_queryName = s, this.$GraphQLQuery_allFragmentNames = null, this.$GraphQLQuery_deferredFragmentNames = null, this.$GraphQLQuery_description = null
     }
 
-    function f(global/*e*/, require/*t*/) {
-        this.$GraphQLQueryWithValues_query = global/*e*/, this.$GraphQLQueryWithValues_values = require/*t*/
+    function f(e, t) {
+        this.$GraphQLQueryWithValues_query = e, this.$GraphQLQueryWithValues_values = t
     }
 
-    function m(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-        o.call(this, requireLazy/*r*/, module/*i*/), this.$GraphQLMutation_name = global/*e*/, this.$GraphQLMutation_responseType = require/*t*/, this.$GraphQLMutation_mutationCall = requireDynamic/*n*/
+    function m(e, t, n, r, i) {
+        o.call(this, r, i), this.$GraphQLMutation_name = e, this.$GraphQLMutation_responseType = t, this.$GraphQLMutation_mutationCall = n
     }
 
-    function g(global/*e*/) {
-        var require/*t*/ = "";
-        return global/*e*/.getCondition() && (require/*t*/ += global/*e*/.getCondition() + "?"), require/*t*/ += global/*e*/.getFieldName(), 0 !== global/*e*/.getCalls().length && (require/*t*/ += "." + global/*e*/.getCalls().join("."), require/*t*/ += " as " + global/*e*/.getGeneratedAlias()), require/*t*/
+    function g(e) {
+        var t = "";
+        return e.getCondition() && (t += e.getCondition() + "?"), t += e.getFieldName(), 0 !== e.getCalls().length && (t += "." + e.getCalls().join("."), t += " as " + e.getGeneratedAlias()), t
     }
 
-    function _(global/*e*/) {
-        var require/*t*/ = y(global/*e*/);
-        if (0 === require/*t*/.length) return "";
-        for (var requireDynamic/*n*/ = [], requireLazy/*r*/ = 0; requireLazy/*r*/ < require/*t*/.length; requireLazy/*r*/++) {
-            var module/*i*/ = require/*t*/[requireLazy/*r*/];
-            requireDynamic/*n*/.push(Array.isArray(module/*i*/) ? g(module/*i*/[0]) + _(module/*i*/) : module/*i*/.toString())
+    function _(e) {
+        var t = y(e);
+        if (0 === t.length) return "";
+        for (var n = [], r = 0; r < t.length; r++) {
+            var i = t[r];
+            n.push(Array.isArray(i) ? g(i[0]) + _(i) : i.toString())
         }
-        return "{" + requireDynamic/*n*/.join(",") + "}"
+        return "{" + n.join(",") + "}"
     }
 
-    function y(global/*e*/) {
-        for (var require/*t*/ = null, requireDynamic/*n*/ = 0; global/*e*/.length > 0;) {
-            requireDynamic/*n*/++ < 1e4 || invariant/*I*/(0, "Endless loop!");
-            for (var requireLazy/*r*/ = global/*e*/.shift(), module/*i*/ = requireLazy/*r*/.getFragments(), o = 0; o < module/*i*/.length; o++) global/*e*/.push(module/*i*/[o]);
-            for (var a = requireLazy/*r*/.getOwnFields(), s = 0; s < a.length; s++) {
+    function y(e) {
+        for (var t = null, n = 0; e.length > 0;) {
+            n++ < 1e4 || invariant/*I*/(0, "Endless loop!");
+            for (var r = e.shift(), i = r.getFragments(), o = 0; o < i.length; o++) e.push(i[o]);
+            for (var a = r.getOwnFields(), s = 0; s < a.length; s++) {
                 var l = a[s],
                     u = l.getGeneratedAlias();
-                require/*t*/ = require/*t*/ || {}, require/*t*/.hasOwnProperty(u) ? (Array.isArray(require/*t*/[u]) || (require/*t*/[u] = [require/*t*/[u]]), require/*t*/[u].push(l)) : require/*t*/[u] = l
+                t = t || {}, t.hasOwnProperty(u) ? (Array.isArray(t[u]) || (t[u] = [t[u]]), t[u].push(l)) : t[u] = l
             }
         }
-        if (!require/*t*/) return M;
-        for (var c = [], p = Object.keys(require/*t*/).sort(), d = 0; d < p.length; d++) c.push(require/*t*/[p[d]]);
+        if (!t) return M;
+        for (var c = [], p = Object.keys(t).sort(), d = 0; d < p.length; d++) c.push(t[p[d]]);
         return c
     }
 
-    function v(global/*e*/) {
-        return !!global/*e*/
+    function v(e) {
+        return !!e
     }
 
-    function S(global/*e*/) {
-        var require/*t*/ = typeof global/*e*/;
-        if (null === global/*e*/ ? global/*e*/ = new c("__null__") : ("string" === require/*t*/ || "number" === require/*t*/ || "boolean" === require/*t*/) && (global/*e*/ = new l(global/*e*/ + "")), !(global/*e*/ instanceof l || global/*e*/ instanceof c || global/*e*/ instanceof u)) throw new TypeError("Unable to cast argument to GraphQL.Callv, got " + Object.prototype.toString.call(global/*e*/));
-        return global/*e*/
+    function S(e) {
+        var t = typeof e;
+        if (null === e ? e = new c("__null__") : ("string" === t || "number" === t || "boolean" === t) && (e = new l(e + "")), !(e instanceof l || e instanceof c || e instanceof u)) throw new TypeError("Unable to cast argument to GraphQL.Callv, got " + Object.prototype.toString.call(e));
+        return e
     }
 
-    function b(global/*e*/) {
-        for (var require/*t*/ = -1, requireDynamic/*n*/ = global/*e*/.length - 1; requireDynamic/*n*/ >= 0; requireDynamic/*n*/--)
-            if (null !== global/*e*/[requireDynamic/*n*/]) {
-                require/*t*/ = requireDynamic/*n*/;
+    function b(e) {
+        for (var t = -1, n = e.length - 1; n >= 0; n--)
+            if (null !== e[n]) {
+                t = n;
                 break
             }
-        return global/*e*/.length = require/*t*/ + 1, global/*e*/
+        return e.length = t + 1, e
     }
 
-    function R(global/*e*/) {
-        var require/*t*/ = global/*e*/[0];
-        switch (require/*t*/) {
+    function R(e) {
+        var t = e[0];
+        switch (t) {
             case N.CALL_VALUE:
-                return l.fromJSON(global/*e*/);
+                return l.fromJSON(e);
             case N.CALL_VARIABLE:
-                return c.fromJSON(global/*e*/);
+                return c.fromJSON(e);
             case N.BATCH_VARIABLE:
-                return u.fromJSON(global/*e*/);
+                return u.fromJSON(e);
             default:
                 throw new Error("Unknown type")
         }
     }
 
-    function w(global/*e*/) {
-        return global/*e*/.getArgs().some(T)
+    function w(e) {
+        return e.getArgs().some(T)
     }
 
-    function C(global/*e*/) {
-        return global/*e*/ instanceof u
+    function C(e) {
+        return e instanceof u
     }
 
-    function E(global/*e*/) {
-        return global/*e*/.getRefParam()
+    function E(e) {
+        return e.getRefParam()
     }
 
-    function D(global/*e*/) {
-        return global/*e*/.getSourceQueryID()
+    function D(e) {
+        return e.getSourceQueryID()
     }
 
-    function T(global/*e*/) {
-        return global/*e*/ instanceof c
+    function T(e) {
+        return e instanceof c
     }
 
-    function x(global/*e*/) {
-        return global/*e*/.replace(/[)(}{><,.\\]/g, "\\$&")
+    function x(e) {
+        return e.replace(/[)(}{><,.\\]/g, "\\$&")
     }
-    var generateRQLFieldAlias/*P*/ = require/*t*/("generateRQLFieldAlias"),
-        invariant/*I*/ = require/*t*/("invariant"),
-        isEmpty/*F*/ = require/*t*/("isEmpty"),
+    var generateRQLFieldAlias/*P*/ = t("generateRQLFieldAlias"),
+        invariant/*I*/ = t("invariant"),
+        isEmpty/*F*/ = t("isEmpty"),
         L = {},
         M = [],
         Q = "skip",
@@ -168,48 +168,48 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         G = 0;
     o.prototype.getOwnFields = function() {
         return this.$GraphQLNode_fields
-    }, o.prototype.getUnaliasedFields = function(global/*e*/) {
-        return this.$GraphQLNode_collectFields(this.getOwnUnaliasedFields, global/*e*/)
-    }, o.prototype.$GraphQLNode_collectFields = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        requireDynamic/*n*/ || (requireDynamic/*n*/ = []);
-        for (var requireLazy/*r*/ = global/*e*/.call(this, require/*t*/), module/*i*/ = 0; module/*i*/ < requireLazy/*r*/.length; module/*i*/++) requireDynamic/*n*/.push(requireLazy/*r*/[module/*i*/]);
-        for (var o = this.getFragments(), a = 0; a < o.length; a++) o[a].$GraphQLNode_collectFields(global/*e*/, require/*t*/, requireDynamic/*n*/);
-        return requireDynamic/*n*/
-    }, o.prototype.getOwnField = function(global/*e*/) {
-        return this.$GraphQLNode_fieldMap[global/*e*/] || null
+    }, o.prototype.getUnaliasedFields = function(e) {
+        return this.$GraphQLNode_collectFields(this.getOwnUnaliasedFields, e)
+    }, o.prototype.$GraphQLNode_collectFields = function(e, t, n) {
+        n || (n = []);
+        for (var r = e.call(this, t), i = 0; i < r.length; i++) n.push(r[i]);
+        for (var o = this.getFragments(), a = 0; a < o.length; a++) o[a].$GraphQLNode_collectFields(e, t, n);
+        return n
+    }, o.prototype.getOwnField = function(e) {
+        return this.$GraphQLNode_fieldMap[e] || null
     }, o.prototype.hasFields = function() {
         return this.$GraphQLNode_someFields(this.hasOwnFields, this.hasFields)
     }, o.prototype.hasOwnFields = function() {
-        for (var global/*e*/ in this.$GraphQLNode_fieldMap) return !0;
+        for (var e in this.$GraphQLNode_fieldMap) return !0;
         return !1
-    }, o.prototype.hasOwnField = function(global/*e*/) {
-        return this.$GraphQLNode_fieldMap.hasOwnProperty(global/*e*/)
-    }, o.prototype.hasUnaliasedField = function(global/*e*/) {
-        return this.$GraphQLNode_someFields(this.hasOwnUnaliasedField, this.hasUnaliasedField, global/*e*/)
-    }, o.prototype.getOwnUnaliasedFields = function(global/*e*/) {
-        for (var require/*t*/ = this.$GraphQLNode_fields, requireDynamic/*n*/ = [], requireLazy/*r*/ = 0; requireLazy/*r*/ < require/*t*/.length; requireLazy/*r*/++) require/*t*/[requireLazy/*r*/].getFieldName() === global/*e*/ && requireDynamic/*n*/.push(require/*t*/[requireLazy/*r*/]);
-        return requireDynamic/*n*/
-    }, o.prototype.hasOwnUnaliasedField = function(global/*e*/) {
-        return this.getOwnUnaliasedFields(global/*e*/).length > 0
+    }, o.prototype.hasOwnField = function(e) {
+        return this.$GraphQLNode_fieldMap.hasOwnProperty(e)
+    }, o.prototype.hasUnaliasedField = function(e) {
+        return this.$GraphQLNode_someFields(this.hasOwnUnaliasedField, this.hasUnaliasedField, e)
+    }, o.prototype.getOwnUnaliasedFields = function(e) {
+        for (var t = this.$GraphQLNode_fields, n = [], r = 0; r < t.length; r++) t[r].getFieldName() === e && n.push(t[r]);
+        return n
+    }, o.prototype.hasOwnUnaliasedField = function(e) {
+        return this.getOwnUnaliasedFields(e).length > 0
     }, o.prototype.getFragments = function() {
         return this.$GraphQLNode_fragments
     }, o.prototype.hasNestedVariables = function() {
         return this.$GraphQLNode_hasNestedVariables
     }, o.prototype.getNumNestedFragmentsWithVariables = function() {
         return this.$GraphQLNode_numNestedFragmentsWithVariables
-    }, o.prototype.equals = function(global/*e*/) {
-        if (!global/*e*/ || this.$GraphQLNode_fields.length !== global/*e*/.$GraphQLNode_fields.length || this.$GraphQLNode_fragments.length !== global/*e*/.$GraphQLNode_fragments.length) return !1;
-        if (this !== global/*e*/) {
-            for (var require/*t*/ = 0; require/*t*/ < this.$GraphQLNode_fields.length; require/*t*/++)
-                if (!this.$GraphQLNode_fields[require/*t*/].equals(global/*e*/.$GraphQLNode_fields[require/*t*/])) return !1;
-            for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < this.$GraphQLNode_fragments.length; requireDynamic/*n*/++)
-                if (!this.$GraphQLNode_fragments[requireDynamic/*n*/].equals(global/*e*/.$GraphQLNode_fragments[requireDynamic/*n*/])) return !1
+    }, o.prototype.equals = function(e) {
+        if (!e || this.$GraphQLNode_fields.length !== e.$GraphQLNode_fields.length || this.$GraphQLNode_fragments.length !== e.$GraphQLNode_fragments.length) return !1;
+        if (this !== e) {
+            for (var t = 0; t < this.$GraphQLNode_fields.length; t++)
+                if (!this.$GraphQLNode_fields[t].equals(e.$GraphQLNode_fields[t])) return !1;
+            for (var n = 0; n < this.$GraphQLNode_fragments.length; n++)
+                if (!this.$GraphQLNode_fragments[n].equals(e.$GraphQLNode_fragments[n])) return !1
         }
         return !0
-    }, o.prototype.$GraphQLNode_someFields = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (global/*e*/.call(this, requireDynamic/*n*/)) return !0;
-        for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < this.$GraphQLNode_fragments.length; requireLazy/*r*/++)
-            if (require/*t*/.call(this.$GraphQLNode_fragments[requireLazy/*r*/], requireDynamic/*n*/)) return !0;
+    }, o.prototype.$GraphQLNode_someFields = function(e, t, n) {
+        if (e.call(this, n)) return !0;
+        for (var r = 0; r < this.$GraphQLNode_fragments.length; r++)
+            if (t.call(this.$GraphQLNode_fragments[r], n)) return !0;
         return !1
     }, a.prototype.getName = function() {
         return this.$GraphQLCallvNode_name
@@ -219,97 +219,97 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return !isEmpty/*F*/(this.getRefParams())
     }, a.prototype.getRefParams = function() {
         if (!this.$GraphQLCallvNode_refParams) {
-            var global/*e*/ = this.$GraphQLCallvNode_args.filter(C).map(E);
-            global/*e*/.length <= 1 || invariant/*I*/(0, "GraphQLQuery may have at most one BatchCallVariable root argument"), this.$GraphQLCallvNode_refParams = global/*e*/.length ? global/*e*/[0] : null
+            var e = this.$GraphQLCallvNode_args.filter(C).map(E);
+            e.length <= 1 || invariant/*I*/(0, "GraphQLQuery may have at most one BatchCallVariable root argument"), this.$GraphQLCallvNode_refParams = e.length ? e[0] : null
         }
         return this.$GraphQLCallvNode_refParams
     }, a.prototype.getRefTarget = function() {
-        var global/*e*/ = this.getRefParams();
-        if (global/*e*/) {
-            var require/*t*/ = Object.keys(global/*e*/);
-            if (require/*t*/.length) return global/*e*/[require/*t*/[0]].target
+        var e = this.getRefParams();
+        if (e) {
+            var t = Object.keys(e);
+            if (t.length) return e[t[0]].target
         }
         return null
     }, a.prototype.getSourceQueryID = function() {
-        var global/*e*/ = this.$GraphQLCallvNode_args.filter(C).map(D);
-        return global/*e*/.length < 2 || invariant/*I*/(0, "GraphQLCallvNode.getSourceQueryID a query can only have one source query"), global/*e*/.length ? global/*e*/[0] : null
+        var e = this.$GraphQLCallvNode_args.filter(C).map(D);
+        return e.length < 2 || invariant/*I*/(0, "GraphQLCallvNode.getSourceQueryID a query can only have one source query"), e.length ? e[0] : null
     }, a.prototype.isVarArgs = function() {
         return !!this.$GraphQLCallvNode_metadata.varargs
-    }, a.prototype.toString = function(global/*e*/) {
-        var require/*t*/ = this.$GraphQLCallvNode_args.map(function(require/*t*/) {
-            return require/*t*/.toString(global/*e*/)
+    }, a.prototype.toString = function(e) {
+        var t = this.$GraphQLCallvNode_args.map(function(t) {
+            return t.toString(e)
         });
-        return this.$GraphQLCallvNode_name + "(" + require/*t*/.join(",") + ")"
-    }, a.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2],
-            o = require/*t*/[3];
-        return requireDynamic/*n*/ !== N.CALL && invariant/*I*/(0, "Expected call descriptor"), new a(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o)
+        return this.$GraphQLCallvNode_name + "(" + t.join(",") + ")"
+    }, a.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2],
+            o = t[3];
+        return n !== N.CALL && invariant/*I*/(0, "Expected call descriptor"), new a(r, i ? i.map(R) : null, o)
     }, a.prototype.toJSON = function() {
         return b([N.CALL, this.getName(), this.$GraphQLCallvNode_args.length ? this.$GraphQLCallvNode_args : null, this.$GraphQLCallvNode_metadata === L ? null : this.$GraphQLCallvNode_metadata])
-    }, a.prototype.equals = function(global/*e*/) {
-        var require/*t*/ = this.getArgs(),
-            requireDynamic/*n*/ = global/*e*/.getArgs();
-        if (this.getName() !== global/*e*/.getName() || require/*t*/.length !== requireDynamic/*n*/.length) return !1;
-        for (var requireLazy/*r*/ = 0; requireLazy/*r*/ < require/*t*/.length; requireLazy/*r*/++)
-            if (!require/*t*/[requireLazy/*r*/].equals(requireDynamic/*n*/[requireLazy/*r*/])) return !1;
+    }, a.prototype.equals = function(e) {
+        var t = this.getArgs(),
+            n = e.getArgs();
+        if (this.getName() !== e.getName() || t.length !== n.length) return !1;
+        for (var r = 0; r < t.length; r++)
+            if (!t[r].equals(n[r])) return !1;
         return !0
     };
     for (var $ in a) a.hasOwnProperty($) && (s[$] = a[$]);
     var B = null === a ? null : a.prototype;
     s.prototype = Object.create(B), s.prototype.constructor = s, s.__superConstructor__ = a, l.prototype.getCallValue = function() {
         return this.$GraphQLCallValue_callValue
-    }, l.prototype.equals = function(global/*e*/) {
-        return global/*e*/ instanceof l && global/*e*/.getCallValue() === this.getCallValue()
+    }, l.prototype.equals = function(e) {
+        return e instanceof l && e.getCallValue() === this.getCallValue()
     }, l.prototype.toString = function() {
         return x(this.$GraphQLCallValue_callValue)
-    }, l.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1];
-        return requireDynamic/*n*/ !== N.CALL_VALUE && invariant/*I*/(0, "Expected value descriptor"), new l(requireLazy/*r*/)
+    }, l.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1];
+        return n !== N.CALL_VALUE && invariant/*I*/(0, "Expected value descriptor"), new l(r)
     }, l.prototype.toJSON = function() {
         return [N.CALL_VALUE, this.$GraphQLCallValue_callValue]
     }, u.prototype.getSourceQueryID = function() {
         return this.$GraphQLBatchCallVariable_sourceQueryID
     }, u.prototype.getRefParam = function() {
         if (!this.$GraphQLBatchCallVariable_refParam) {
-            var global/*e*/ = {};
-            global/*e*/[O + this.$GraphQLBatchCallVariable_sourceQueryID] = {
+            var e = {};
+            e[O + this.$GraphQLBatchCallVariable_sourceQueryID] = {
                 query: this.$GraphQLBatchCallVariable_sourceQueryID,
                 target: this.$GraphQLBatchCallVariable_jsonPath,
                 fallback: Q
-            }, this.$GraphQLBatchCallVariable_refParam = global/*e*/
+            }, this.$GraphQLBatchCallVariable_refParam = e
         }
         return this.$GraphQLBatchCallVariable_refParam
     }, u.prototype.getJSONPath = function() {
         return this.$GraphQLBatchCallVariable_jsonPath
-    }, u.prototype.equals = function(global/*e*/) {
-        return global/*e*/ instanceof u && global/*e*/.getSourceQueryID() == this.getSourceQueryID() && global/*e*/.getJSONPath() == this.getJSONPath()
+    }, u.prototype.equals = function(e) {
+        return e instanceof u && e.getSourceQueryID() == this.getSourceQueryID() && e.getJSONPath() == this.getJSONPath()
     }, u.prototype.toString = function() {
         return "<" + O + this.$GraphQLBatchCallVariable_sourceQueryID + ">"
-    }, u.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2];
-        return requireDynamic/*n*/ !== N.BATCH_VARIABLE && invariant/*I*/(0, "Expected batch variable descriptor"), new u(requireLazy/*r*/, module/*i*/)
+    }, u.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2];
+        return n !== N.BATCH_VARIABLE && invariant/*I*/(0, "Expected batch variable descriptor"), new u(r, i)
     }, u.prototype.toJSON = function() {
         return [N.BATCH_VARIABLE, this.$GraphQLBatchCallVariable_sourceQueryID, this.$GraphQLBatchCallVariable_jsonPath]
     }, c.prototype.getCallVariableName = function() {
         return this.$GraphQLCallVariable_callVariableName
-    }, c.prototype.equals = function(global/*e*/) {
-        return global/*e*/ instanceof c && global/*e*/.getCallVariableName() == this.getCallVariableName()
-    }, c.prototype.toString = function(global/*e*/) {
-        var require/*t*/ = this.$GraphQLCallVariable_callVariableName;
-        return global/*e*/ && require/*t*/ in global/*e*/ ? x(global/*e*/[require/*t*/]) : "<" + require/*t*/ + ">"
-    }, c.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1];
-        return requireDynamic/*n*/ !== N.CALL_VARIABLE && invariant/*I*/(0, "Expected variable descriptor"), new c(requireLazy/*r*/)
+    }, c.prototype.equals = function(e) {
+        return e instanceof c && e.getCallVariableName() == this.getCallVariableName()
+    }, c.prototype.toString = function(e) {
+        var t = this.$GraphQLCallVariable_callVariableName;
+        return e && t in e ? x(e[t]) : "<" + t + ">"
+    }, c.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1];
+        return n !== N.CALL_VARIABLE && invariant/*I*/(0, "Expected variable descriptor"), new c(r)
     }, c.prototype.toJSON = function() {
         return [N.CALL_VARIABLE, this.$GraphQLCallVariable_callVariableName]
     };
@@ -323,9 +323,9 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return this.$GraphQLFieldNode_alias || this.$GraphQLFieldNode_fieldName
     }, p.prototype.getCalls = function() {
         return this.$GraphQLFieldNode_calls
-    }, p.prototype.getCall = function(global/*e*/) {
-        for (var require/*t*/ = 0; require/*t*/ < this.$GraphQLFieldNode_calls.length; require/*t*/++)
-            if (this.$GraphQLFieldNode_calls[require/*t*/].getName() === global/*e*/) return this.$GraphQLFieldNode_calls[require/*t*/]
+    }, p.prototype.getCall = function(e) {
+        for (var t = 0; t < this.$GraphQLFieldNode_calls.length; t++)
+            if (this.$GraphQLFieldNode_calls[t].getName() === e) return this.$GraphQLFieldNode_calls[t]
     }, p.prototype.getCondition = function() {
         return this.$GraphQLFieldNode_condition
     }, p.prototype.getInferredRootCallName = function() {
@@ -348,39 +348,39 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return !!this.$GraphQLFieldNode_metadata.requisite
     }, p.prototype.hasVariables = function() {
         return this.$GraphQLFieldNode_hasVariables
-    }, p.prototype.shallowClone = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return new p(this.$GraphQLFieldNode_fieldName, global/*e*/, require/*t*/, requireDynamic/*n*/ || this.getCalls(), this.$GraphQLFieldNode_alias, this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata)
+    }, p.prototype.shallowClone = function(e, t, n) {
+        return new p(this.$GraphQLFieldNode_fieldName, e, t, n || this.getCalls(), this.$GraphQLFieldNode_alias, this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata)
     }, p.prototype.getGeneratedAlias = function() {
         return this.$GraphQLFieldNode_generatedAlias || (this.$GraphQLFieldNode_generatedAlias = generateRQLFieldAlias/*P*/(this.getGeneratedFieldName())), this.$GraphQLFieldNode_generatedAlias
     }, p.prototype.getGeneratedFieldName = function() {
         if (!this.$GraphQLFieldNode_generatedFieldName) {
-            var global/*e*/ = this.getFieldName();
-            0 !== this.$GraphQLFieldNode_calls.length && (global/*e*/ += "." + this.$GraphQLFieldNode_calls.join(".")), this.$GraphQLFieldNode_generatedFieldName = global/*e*/
+            var e = this.getFieldName();
+            0 !== this.$GraphQLFieldNode_calls.length && (e += "." + this.$GraphQLFieldNode_calls.join(".")), this.$GraphQLFieldNode_generatedFieldName = e
         }
         return this.$GraphQLFieldNode_generatedFieldName
-    }, p.prototype.equals = function(global/*e*/) {
-        if (!global/*e*/ || this.$GraphQLFieldNode_fieldName !== global/*e*/.$GraphQLFieldNode_fieldName || this.$GraphQLFieldNode_alias !== global/*e*/.$GraphQLFieldNode_alias) return !1;
-        var require/*t*/ = global/*e*/.getCalls();
-        if (this.$GraphQLFieldNode_calls.length !== require/*t*/.length) return !1;
-        for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < this.$GraphQLFieldNode_calls.length; requireDynamic/*n*/++)
-            if (!this.$GraphQLFieldNode_calls[requireDynamic/*n*/].equals(require/*t*/[requireDynamic/*n*/])) return !1;
-        return V.equals.call(this, global/*e*/)
+    }, p.prototype.equals = function(e) {
+        if (!e || this.$GraphQLFieldNode_fieldName !== e.$GraphQLFieldNode_fieldName || this.$GraphQLFieldNode_alias !== e.$GraphQLFieldNode_alias) return !1;
+        var t = e.getCalls();
+        if (this.$GraphQLFieldNode_calls.length !== t.length) return !1;
+        for (var n = 0; n < this.$GraphQLFieldNode_calls.length; n++)
+            if (!this.$GraphQLFieldNode_calls[n].equals(t[n])) return !1;
+        return V.equals.call(this, e)
     }, p.prototype.toString = function() {
         return g(this) + _([this])
-    }, p.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2],
-            o = require/*t*/[3],
-            s = require/*t*/[4],
-            l = require/*t*/[5],
-            u = require/*t*/[6],
-            c = require/*t*/[7];
-        return requireDynamic/*n*/ !== N.FIELD && invariant/*I*/(0, "Expected field descriptor"), new p(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(p.fromJSON) : null, o ? o.map(d.fromJSON) : null, s ? s.map(a.fromJSON) : null, l, u, c)
+    }, p.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2],
+            o = t[3],
+            s = t[4],
+            l = t[5],
+            u = t[6],
+            c = t[7];
+        return n !== N.FIELD && invariant/*I*/(0, "Expected field descriptor"), new p(r, i ? i.map(p.fromJSON) : null, o ? o.map(d.fromJSON) : null, s ? s.map(a.fromJSON) : null, l, u, c)
     }, p.prototype.toJSON = function() {
-        var global/*e*/ = this.getFragments();
-        return b([N.FIELD, this.getFieldName(), this.hasOwnFields() ? this.getOwnFields() : null, global/*e*/.length ? global/*e*/ : null, this.$GraphQLFieldNode_calls.length ? this.$GraphQLFieldNode_calls : null, this.getAlias(), this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata === L ? null : this.$GraphQLFieldNode_metadata])
+        var e = this.getFragments();
+        return b([N.FIELD, this.getFieldName(), this.hasOwnFields() ? this.getOwnFields() : null, e.length ? e : null, this.$GraphQLFieldNode_calls.length ? this.$GraphQLFieldNode_calls : null, this.getAlias(), this.$GraphQLFieldNode_condition, this.$GraphQLFieldNode_metadata === L ? null : this.$GraphQLFieldNode_metadata])
     };
     for (H in o) o.hasOwnProperty(H) && (d[H] = o[H]);
     d.prototype = Object.create(V), d.prototype.constructor = d, d.__superConstructor__ = o, d.prototype.getName = function() {
@@ -392,35 +392,35 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
     }, d.prototype.isDeferred = function() {
         return !!this.$GraphQLQueryFragment_isDeferred
     }, d.prototype.getDeferredFragmentNames = function() {
-        function global/*e*/(requireDynamic/*n*/) {
-            requireDynamic/*n*/.isDeferred() && (require/*t*/[requireDynamic/*n*/.getName()] = requireDynamic/*n*/.getName());
-            for (var requireLazy/*r*/ = requireDynamic/*n*/.getFragments(), module/*i*/ = 0; module/*i*/ < requireLazy/*r*/.length; module/*i*/++) global/*e*/(requireLazy/*r*/[module/*i*/])
+        function e(n) {
+            n.isDeferred() && (t[n.getName()] = n.getName());
+            for (var r = n.getFragments(), i = 0; i < r.length; i++) e(r[i])
         }
-        var require/*t*/ = {};
-        return global/*e*/(this), require/*t*/
+        var t = {};
+        return e(this), t
     }, d.prototype.isPlural = function() {
         return !!this.$GraphQLQueryFragment_metadata.isPlural
     }, d.prototype.defer = function() {
         return this.$GraphQLQueryFragment_deferredCopy || (this.$GraphQLQueryFragment_deferredCopy = this.shallowClone(this.getOwnFields(), this.getFragments()), this.$GraphQLQueryFragment_deferredCopy.$GraphQLQueryFragment_isDeferred = !0), this.$GraphQLQueryFragment_deferredCopy
-    }, d.prototype.shallowClone = function(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = new d(this.getName(), this.type(), global/*e*/, require/*t*/, this.$GraphQLQueryFragment_metadata);
-        return this.isDeferred() && (requireDynamic/*n*/.$GraphQLQueryFragment_isDeferred = !0), requireDynamic/*n*/
+    }, d.prototype.shallowClone = function(e, t) {
+        var n = new d(this.getName(), this.type(), e, t, this.$GraphQLQueryFragment_metadata);
+        return this.isDeferred() && (n.$GraphQLQueryFragment_isDeferred = !0), n
     }, d.prototype.toString = function() {
         return "QueryFragment " + this.getName() + " : " + this.type() + " " + _([this])
-    }, d.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2],
-            o = require/*t*/[3],
-            a = require/*t*/[4],
-            s = require/*t*/[5];
-        requireDynamic/*n*/ !== N.FRAGMENT && invariant/*I*/(0, "Expected fragment descriptor");
-        var l = new d(requireLazy/*r*/, module/*i*/, a ? a.map(p.fromJSON) : null, s ? s.map(d.fromJSON) : null);
+    }, d.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2],
+            o = t[3],
+            a = t[4],
+            s = t[5];
+        n !== N.FRAGMENT && invariant/*I*/(0, "Expected fragment descriptor");
+        var l = new d(r, i, a ? a.map(p.fromJSON) : null, s ? s.map(d.fromJSON) : null);
         return o && (l.$GraphQLQueryFragment_isDeferred = !0), l
     }, d.prototype.toJSON = function() {
-        var global/*e*/ = this.getFragments();
-        return b([N.FRAGMENT, this.getName(), this.type(), this.isDeferred() ? 1 : 0, this.hasOwnFields() ? this.getOwnFields() : null, global/*e*/.length ? global/*e*/ : null])
+        var e = this.getFragments();
+        return b([N.FRAGMENT, this.getName(), this.type(), this.isDeferred() ? 1 : 0, this.hasOwnFields() ? this.getOwnFields() : null, e.length ? e : null])
     };
     for (H in o) o.hasOwnProperty(H) && (h[H] = o[H]);
     h.prototype = Object.create(V), h.prototype.constructor = h, h.__superConstructor__ = o, h.prototype.getID = function() {
@@ -429,9 +429,9 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return this.$GraphQLQuery_queryName
     }, h.prototype.getDescription = function() {
         if (!this.$GraphQLQuery_description) {
-            var global/*e*/ = this.getID(),
-                require/*t*/ = this.getAllFragmentNames(!0);
-            require/*t*/ && (global/*e*/ = global/*e*/ + ":" + Object.keys(require/*t*/).join(":")), this.$GraphQLQuery_description = global/*e*/
+            var e = this.getID(),
+                t = this.getAllFragmentNames(!0);
+            t && (e = e + ":" + Object.keys(t).join(":")), this.$GraphQLQuery_description = e
         }
         return this.$GraphQLQuery_description
     }, h.prototype.rootCall = function() {
@@ -444,50 +444,50 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return !!this.$GraphQLQuery_metadata.isDeferred
     }, h.prototype.isRefQueryDependency = function() {
         return !!this.$GraphQLQuery_metadata.isRefQueryDependency
-    }, h.prototype.$GraphQLQuery_getFragmentNames = function(global/*e*/) {
-        function require/*t*/(requireLazy/*r*/) {
-            var module/*i*/;
-            requireLazy/*r*/ instanceof d && (global/*e*/ || requireLazy/*r*/.isDeferred()) && (requireDynamic/*n*/ = requireDynamic/*n*/ || {}, module/*i*/ = requireLazy/*r*/.getName(), requireDynamic/*n*/[module/*i*/] = module/*i*/);
-            for (var o = requireLazy/*r*/.getOwnFields(), a = 0; a < o.length; a++) require/*t*/(o[a]);
-            for (var s = requireLazy/*r*/.getFragments(), l = 0; l < s.length; l++) require/*t*/(s[l])
+    }, h.prototype.$GraphQLQuery_getFragmentNames = function(e) {
+        function t(r) {
+            var i;
+            r instanceof d && (e || r.isDeferred()) && (n = n || {}, i = r.getName(), n[i] = i);
+            for (var o = r.getOwnFields(), a = 0; a < o.length; a++) t(o[a]);
+            for (var s = r.getFragments(), l = 0; l < s.length; l++) t(s[l])
         }
-        var requireDynamic/*n*/ = null;
-        return require/*t*/(this), requireDynamic/*n*/
-    }, h.prototype.shallowClone = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = this.rootCall();
-        return new h(module/*i*/.getName(), module/*i*/.getArgs(), global/*e*/, require/*t*/, requireDynamic/*n*/ ? Object.assign({}, this.$GraphQLQuery_metadata, requireDynamic/*n*/) : this.$GraphQLQuery_metadata, requireLazy/*r*/ || this.$GraphQLQuery_queryName)
-    }, h.prototype.shallowCloneWithSameID = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = this.shallowClone(global/*e*/, require/*t*/, requireDynamic/*n*/);
-        return requireLazy/*r*/.$GraphQLQuery_id = this.getID(), requireLazy/*r*/
+        var n = null;
+        return t(this), n
+    }, h.prototype.shallowClone = function(e, t, n, r) {
+        var i = this.rootCall();
+        return new h(i.getName(), i.getArgs(), e, t, n ? Object.assign({}, this.$GraphQLQuery_metadata, n) : this.$GraphQLQuery_metadata, r || this.$GraphQLQuery_queryName)
+    }, h.prototype.shallowCloneWithSameID = function(e, t, n) {
+        var r = this.shallowClone(e, t, n);
+        return r.$GraphQLQuery_id = this.getID(), r
     }, h.prototype.toString = function() {
         return this.$GraphQLQuery_queryName ? "Query " + this.$GraphQLQuery_queryName + " {" + this.toStringWithoutName() + "}" : this.toStringWithoutName()
     }, h.prototype.toStringWithoutName = function() {
         return this.$GraphQLQuery_rootNode.toString() + _([this])
-    }, h.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2],
-            o = require/*t*/[3],
-            a = require/*t*/[4],
-            s = require/*t*/[5],
-            l = require/*t*/[6];
-        return requireDynamic/*n*/ !== N.QUERY && invariant/*I*/(0, "Expected query descriptor"), new h(requireLazy/*r*/, module/*i*/ ? module/*i*/.map(R) : null, o ? o.map(p.fromJSON) : null, a ? a.map(d.fromJSON) : null, s, l)
+    }, h.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2],
+            o = t[3],
+            a = t[4],
+            s = t[5],
+            l = t[6];
+        return n !== N.QUERY && invariant/*I*/(0, "Expected query descriptor"), new h(r, i ? i.map(R) : null, o ? o.map(p.fromJSON) : null, a ? a.map(d.fromJSON) : null, s, l)
     }, h.prototype.toJSON = function() {
-        var global/*e*/ = this.rootCall(),
-            require/*t*/ = global/*e*/.getArgs(),
-            requireDynamic/*n*/ = this.getFragments();
-        return b([N.QUERY, global/*e*/.getName(), require/*t*/.length ? require/*t*/ : null, this.hasOwnFields() ? this.getOwnFields() : null, requireDynamic/*n*/.length ? requireDynamic/*n*/ : null, this.$GraphQLQuery_metadata !== L ? this.$GraphQLQuery_metadata : null, this.$GraphQLQuery_queryName ? this.$GraphQLQuery_queryName : null])
+        var e = this.rootCall(),
+            t = e.getArgs(),
+            n = this.getFragments();
+        return b([N.QUERY, e.getName(), t.length ? t : null, this.hasOwnFields() ? this.getOwnFields() : null, n.length ? n : null, this.$GraphQLQuery_metadata !== L ? this.$GraphQLQuery_metadata : null, this.$GraphQLQuery_queryName ? this.$GraphQLQuery_queryName : null])
     }, f.prototype.getQuery = function() {
         return this.$GraphQLQueryWithValues_query
     }, f.prototype.getValues = function() {
         return this.$GraphQLQueryWithValues_values
-    }, f.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2];
-        return requireDynamic/*n*/ !== N.QUERY_WITH_VALUES && invariant/*I*/(0, "Expected query descriptor"), new f(h.fromJSON(requireLazy/*r*/), module/*i*/)
+    }, f.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2];
+        return n !== N.QUERY_WITH_VALUES && invariant/*I*/(0, "Expected query descriptor"), new f(h.fromJSON(r), i)
     }, f.prototype.toJSON = function() {
         return b([N.QUERY_WITH_VALUES, this.getQuery(), this.getValues()])
     };
@@ -498,22 +498,22 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         return this.$GraphQLMutation_responseType
     }, m.prototype.getCall = function() {
         return this.$GraphQLMutation_mutationCall
-    }, m.prototype.shallowClone = function(global/*e*/, require/*t*/) {
-        return new m(this.getName(), this.getResponseType(), this.getCall(), global/*e*/, require/*t*/)
+    }, m.prototype.shallowClone = function(e, t) {
+        return new m(this.getName(), this.getResponseType(), this.getCall(), e, t)
     }, m.prototype.toString = function() {
         return "Mutation " + this.getName() + " : " + this.getResponseType() + " {" + this.getCall().toString() + _([this]) + "}"
-    }, m.fromJSON = function(global/*e*/) {
-        var require/*t*/ = global/*e*/,
-            requireDynamic/*n*/ = require/*t*/[0],
-            requireLazy/*r*/ = require/*t*/[1],
-            module/*i*/ = require/*t*/[2],
-            o = require/*t*/[3],
-            s = require/*t*/[4],
-            l = require/*t*/[5];
-        return requireDynamic/*n*/ !== N.MUTATION && invariant/*I*/(0, "Expected mutation descriptor"), new m(requireLazy/*r*/, module/*i*/, a.fromJSON(o), s ? s.map(p.fromJSON) : null, l ? l.map(d.fromJSON) : null)
+    }, m.fromJSON = function(e) {
+        var t = e,
+            n = t[0],
+            r = t[1],
+            i = t[2],
+            o = t[3],
+            s = t[4],
+            l = t[5];
+        return n !== N.MUTATION && invariant/*I*/(0, "Expected mutation descriptor"), new m(r, i, a.fromJSON(o), s ? s.map(p.fromJSON) : null, l ? l.map(d.fromJSON) : null)
     }, m.prototype.toJSON = function() {
-        var global/*e*/ = this.getFragments();
-        return b([N.MUTATION, this.getName(), this.getResponseType(), this.getCall(), this.hasOwnFields() ? this.getOwnFields() : null, global/*e*/.length ? global/*e*/ : null])
+        var e = this.getFragments();
+        return b([N.MUTATION, this.getName(), this.getResponseType(), this.getCall(), this.hasOwnFields() ? this.getOwnFields() : null, e.length ? e : null])
     };
     var q = {
         BatchCallVariable: u,
@@ -527,5 +527,5 @@ __d("GraphQL_EXPERIMENTAL",["generateRQLFieldAlias","invariant","isEmpty"],funct
         QueryFragment: d,
         QueryWithValues: f
     };
-    module/*i*/.exports = q
+    i.exports = q
 });

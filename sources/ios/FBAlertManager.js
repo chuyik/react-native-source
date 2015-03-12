@@ -1,16 +1,16 @@
-__d("FBAlertManager",["RKAlertManager","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBAlertManager",["RKAlertManager","fbt"],function (e, t, n, r, i) {
     "use strict";
-    var RKAlertManager/*o*/ = require/*t*/("RKAlertManager"),
-        fbt/*a*/ = require/*t*/("fbt"),
+    var RKAlertManager/*o*/ = t("RKAlertManager"),
+        fbt/*a*/ = t("fbt"),
         s = {
-            alert: function(global/*e*/) {
+            alert: function(e) {
                 RKAlertManager/*o*/.alertWithArgs({
                     title: fbt/*a*/({
                         type: "text",
                         texts: ["Alert"],
                         desc: "A generic title for an alert window"
                     }),
-                    message: global/*e*/,
+                    message: e,
                     buttons: [{
                         cancel: fbt/*a*/({
                             type: "text",
@@ -22,5 +22,5 @@ __d("FBAlertManager",["RKAlertManager","fbt"],function (global/*e*/, require/*t*
             },
             alertWithArgs: RKAlertManager/*o*/.alertWithArgs
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

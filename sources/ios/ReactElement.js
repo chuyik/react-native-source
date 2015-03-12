@@ -1,69 +1,74 @@
-__d("ReactElement",["ReactContext","ReactCurrentOwner","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactElement", ["ReactContext", "ReactCurrentOwner", "warning"], function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        Object.defineProperty(global/*e*/, require/*t*/, {
+    function o(e, t) {
+        Object.defineProperty(e, t, {
             configurable: !1,
             enumerable: !0,
-            get: function() {
-                return this._store ? this._store[require/*t*/] : null
+            get: function () {
+                return this._store ? this._store[t] : null
             },
-            set: function(global/*e*/) {
-                warning/*u*/(!1, "Don'require/*t*/ set the " + require/*t*/ + " property of the component. Mutate the existing props object instead."), this._store[require/*t*/] = global/*e*/
+            set: function (e) {
+                warning /*u*/ (!1, "Don't set the " + t + " property of the component. Mutate the existing props object instead."), this._store[t] = e
             }
         })
     }
 
-    function a(global/*e*/) {
+    function a(e) {
         try {
-            var require/*t*/ = {
+            var t = {
                 props: !0
             };
-            for (var requireDynamic/*n*/ in require/*t*/) o(global/*e*/, requireDynamic/*n*/);
+            for (var n in t) o(e, n);
             p = !0
-        } catch (requireLazy/*r*/) {}
+        } catch (r) {}
     }
-    var ReactContext/*s*/ = require/*t*/("ReactContext"),
-        ReactCurrentOwner/*l*/ = require/*t*/("ReactCurrentOwner"),
-        warning/*u*/ = require/*t*/("warning"),
+    var ReactContext /*s*/ = t("ReactContext"),
+        ReactCurrentOwner /*l*/ = t("ReactCurrentOwner"),
+        warning /*u*/ = t("warning"),
         c = {
             key: !0,
             ref: !0
         },
         p = !1,
-        d = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-            return this.type = global/*e*/, this.key = require/*t*/, this.ref = requireDynamic/*n*/, this._owner = requireLazy/*r*/, this._context = module/*i*/, __DEV__ && (this._store = {
+        ReactElement = function (e, t, n, r, i, o) {
+            return this.type = e, this.key = t, this.ref = n, this._owner = r, this._context = i, __DEV__ && (this._store = {
                 validated: !1,
                 props: o
             }, p) ? void Object.freeze(this) : void(this.props = o)
         };
-    __DEV__ && a(d.prototype), d.prototype._isReactElement = !0, d.createElement = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/, module/*i*/ = {},
-            o = null,
-            a = null;
-        if (null != require/*t*/) {
-            a = void 0 === require/*t*/.ref ? null : require/*t*/.ref, o = void 0 === require/*t*/.key ? null : "" + require/*t*/.key;
-            for (requireLazy/*r*/ in require/*t*/) require/*t*/.hasOwnProperty(requireLazy/*r*/) && !c.hasOwnProperty(requireLazy/*r*/) && (module/*i*/[requireLazy/*r*/] = require/*t*/[requireLazy/*r*/])
-        }
-        var warning/*u*/ = arguments.length - 2;
-        if (1 === warning/*u*/) module/*i*/.children = requireDynamic/*n*/;
-        else if (warning/*u*/ > 1) {
-            for (var p = Array(warning/*u*/), h = 0; warning/*u*/ > h; h++) p[h] = arguments[h + 2];
-            module/*i*/.children = p
-        }
-        if (global/*e*/.defaultProps) {
-            var f = global/*e*/.defaultProps;
-            for (requireLazy/*r*/ in f) "undefined" == typeof module/*i*/[requireLazy/*r*/] && (module/*i*/[requireLazy/*r*/] = f[requireLazy/*r*/])
-        }
-        return new d(global/*e*/, o, a, ReactCurrentOwner/*l*/.current, ReactContext/*s*/.current, module/*i*/)
-    }, d.createFactory = function(global/*e*/) {
-        var require/*t*/ = d.createElement.bind(null, global/*e*/);
-        return require/*t*/.type = global/*e*/, require/*t*/
-    }, d.cloneAndReplaceProps = function(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = new d(global/*e*/.type, global/*e*/.key, global/*e*/.ref, global/*e*/._owner, global/*e*/._context, require/*t*/);
-        return __DEV__ && (requireDynamic/*n*/._store.validated = global/*e*/._store.validated), requireDynamic/*n*/
-    }, d.isValidElement = function(global/*e*/) {
-        var require/*t*/ = !(!global/*e*/ || !global/*e*/._isReactElement);
-        return require/*t*/
-    }, module/*i*/.exports = d
+    __DEV__ && a(ReactElement.prototype),
+        ReactElement.prototype._isReactElement = !0,
+        ReactElement.createElement = function (type, config, children) {
+            var r, i = {},
+                o = null,
+                a = null;
+            if (null != config) {
+                a = void 0 === config.ref ? null : config.ref, o = void 0 === config.key ? null : "" + config.key;
+                for (r in config) config.hasOwnProperty(r) && !c.hasOwnProperty(r) && (i[r] = config[r])
+            }
+            var warning /*u*/ = arguments.length - 2;
+            if (1 === warning /*u*/ ) i.children = children;
+            else if (warning /*u*/ > 1) {
+                for (var p = Array(warning /*u*/ ), h = 0; warning /*u*/ > h; h++) p[h] = arguments[h + 2];
+                i.children = p
+            }
+            if (type.defaultProps) {
+                var f = type.defaultProps;
+                for (r in f) "undefined" == typeof i[r] && (i[r] = f[r])
+            }
+            return new ReactElement(type, o, a, ReactCurrentOwner /*l*/ .current, ReactContext /*s*/ .current, i)
+        },
+        ReactElement.createFactory = function (e) {
+            var t = ReactElement.createElement.bind(null, e);
+            return t.type = e, t
+        },
+        ReactElement.cloneAndReplaceProps = function (e, t) {
+            var n = new ReactElement(e.type, e.key, e.ref, e._owner, e._context, t);
+            return __DEV__ && (n._store.validated = e._store.validated), n
+        },
+        ReactElement.isValidElement = function (e) {
+            var t = !(!e || !e._isReactElement);
+            return t
+        }, i.exports = ReactElement
 });

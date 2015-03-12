@@ -1,16 +1,16 @@
-__d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeEmitter","GraphQLStoreQueryResolver","GraphQLStoreReader","RCTRenderingPerf","ReactGraphQL","SubscriptionsHandler","invariant","mapObject","performanceNow"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeEmitter","GraphQLStoreQueryResolver","GraphQLStoreReader","RCTRenderingPerf","ReactGraphQL","SubscriptionsHandler","invariant","mapObject","performanceNow"],function (e, t, n, r, i) {
     "use strict";
-    var o, a, s, l, u, DliteProfiler/*c*/ = require/*t*/("DliteProfiler"),
-        GraphQLStore/*p*/ = require/*t*/("GraphQLStore"),
-        GraphQLStoreChangeEmitter/*d*/ = require/*t*/("GraphQLStoreChangeEmitter"),
-        GraphQLStoreQueryResolver/*h*/ = require/*t*/("GraphQLStoreQueryResolver"),
-        GraphQLStoreReader/*f*/ = require/*t*/("GraphQLStoreReader"),
-        RCTRenderingPerf/*m*/ = require/*t*/("RCTRenderingPerf"),
-        ReactGraphQL/*g*/ = require/*t*/("ReactGraphQL"),
-        SubscriptionsHandler/*_*/ = require/*t*/("SubscriptionsHandler"),
-        invariant/*y*/ = require/*t*/("invariant"),
-        mapObject/*v*/ = require/*t*/("mapObject"),
-        performanceNow/*S*/ = require/*t*/("performanceNow"),
+    var o, a, s, l, u, DliteProfiler/*c*/ = t("DliteProfiler"),
+        GraphQLStore/*p*/ = t("GraphQLStore"),
+        GraphQLStoreChangeEmitter/*d*/ = t("GraphQLStoreChangeEmitter"),
+        GraphQLStoreQueryResolver/*h*/ = t("GraphQLStoreQueryResolver"),
+        GraphQLStoreReader/*f*/ = t("GraphQLStoreReader"),
+        RCTRenderingPerf/*m*/ = t("RCTRenderingPerf"),
+        ReactGraphQL/*g*/ = t("ReactGraphQL"),
+        SubscriptionsHandler/*_*/ = t("SubscriptionsHandler"),
+        invariant/*y*/ = t("invariant"),
+        mapObject/*v*/ = t("mapObject"),
+        performanceNow/*S*/ = t("performanceNow"),
         b = [ReactGraphQL/*g*/.Mixin.getInitialState, ReactGraphQL/*g*/.Mixin.componentWillReceiveProps, ReactGraphQL/*g*/.Mixin._shouldComponentUpdate, ReactGraphQL/*g*/.Mixin.statics.getQueriesForRoute, GraphQLStore/*p*/.getDiffQueries, GraphQLStore/*p*/.handleUpdate, GraphQLStoreChangeEmitter/*d*/.addListenerForIDs, GraphQLStoreChangeEmitter/*d*/.broadcastChangeForID, GraphQLStoreChangeEmitter/*d*/._processSubscribers, GraphQLStoreQueryResolver/*h*/.prototype.resolve, GraphQLStoreReader/*f*/.prototype.retrieveData],
         R = ["React.setPropsInternal.onSuccess", "React.setPropsInternal.onSubscription"],
         w = {
@@ -22,15 +22,15 @@ __d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeE
         D = !1,
         T = {
             start: function() {
-                T.reset(), D = !0, __DEV__ || invariant/*y*/(0, "DliteCatalystProfiler (DliteProfiler) requires `__DEV__`."), b.forEach(function(global/*e*/) {
-                    global/*e*/ && global/*e*/.attachHandler || invariant/*y*/(0, "DliteCatalystProfiler: Attempted to measure an invalid method."), global/*e*/.attachHandler(T.measure)
-                }), R.forEach(function(global/*e*/) {
-                    DliteProfiler/*c*/.attachAsyncHandler(global/*e*/, {
-                        onStart: T.startMeasurement.bind(T, global/*e*/),
-                        onStop: T.stopMeasurement.bind(T, global/*e*/)
+                T.reset(), D = !0, __DEV__ || invariant/*y*/(0, "DliteCatalystProfiler (DliteProfiler) requires `__DEV__`."), b.forEach(function(e) {
+                    e && e.attachHandler || invariant/*y*/(0, "DliteCatalystProfiler: Attempted to measure an invalid method."), e.attachHandler(T.measure)
+                }), R.forEach(function(e) {
+                    DliteProfiler/*c*/.attachAsyncHandler(e, {
+                        onStart: T.startMeasurement.bind(T, e),
+                        onStop: T.stopMeasurement.bind(T, e)
                     })
-                }), C.engage(), C.addSubscriptions(ReactGraphQL/*g*/.addListener("beginQueryParamChange", function(global/*e*/, require/*t*/) {
-                    return E ? void console.warn("DliteCatalystProfiler: Began `setQueryParams(%o)` on `%s` while profiling. Results may be tainted.", require/*t*/, global/*e*/) : void(E = !0)
+                }), C.engage(), C.addSubscriptions(ReactGraphQL/*g*/.addListener("beginQueryParamChange", function(e, t) {
+                    return E ? void console.warn("DliteCatalystProfiler: Began `setQueryParams(%o)` on `%s` while profiling. Results may be tainted.", t, e) : void(E = !0)
                 }), ReactGraphQL/*g*/.addListener("endQueryParamChange", function() {
                     E = !1
                 })), DliteProfiler/*c*/.attachAsyncHandler("fetchRQL.processPending", {
@@ -43,25 +43,25 @@ __d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeE
                 })
             },
             stop: function() {
-                D = !1, b.forEach(function(global/*e*/) {
-                    global/*e*/.detachHandler(T.measure)
+                D = !1, b.forEach(function(e) {
+                    e.detachHandler(T.measure)
                 }), R.forEach(DliteProfiler/*c*/.detachAsyncHandler), DliteProfiler/*c*/.detachAsyncHandler("fetchRQL.processPending"), C.release()
             },
-            measure: function(global/*e*/, require/*t*/) {
-                T.startMeasurement(global/*e*/), require/*t*/(), T.stopMeasurement(global/*e*/)
+            measure: function(e, t) {
+                T.startMeasurement(e), t(), T.stopMeasurement(e)
             },
-            startMeasurement: function(global/*e*/) {
-                o[global/*e*/] = o[global/*e*/] || Object.assign({}, w), a.unshift(0), s.unshift(performanceNow/*S*/())
+            startMeasurement: function(e) {
+                o[e] = o[e] || Object.assign({}, w), a.unshift(0), s.unshift(performanceNow/*S*/())
             },
-            stopMeasurement: function(global/*e*/) {
-                var require/*t*/ = a.shift(),
-                    requireDynamic/*n*/ = s.shift(),
-                    requireLazy/*r*/ = performanceNow/*S*/() - requireDynamic/*n*/;
-                o[global/*e*/].aggregateTime += requireLazy/*r*/ - require/*t*/, o[global/*e*/].callCount++, a[0] += requireLazy/*r*/
+            stopMeasurement: function(e) {
+                var t = a.shift(),
+                    n = s.shift(),
+                    r = performanceNow/*S*/() - n;
+                o[e].aggregateTime += r - t, o[e].callCount++, a[0] += r
             },
             getAggregateTimes: function() {
-                return mapObject/*v*/(o, function(global/*e*/) {
-                    return global/*e*/.aggregateTime
+                return mapObject/*v*/(o, function(e) {
+                    return e.aggregateTime
                 })
             },
             reset: function() {
@@ -72,12 +72,12 @@ __d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeE
             },
             print: function() {
                 if (D) {
-                    var global/*e*/ = {};
-                    Object.keys(o).sort(function(global/*e*/, require/*t*/) {
-                        return o[require/*t*/].aggregateTime - o[global/*e*/].aggregateTime
-                    }).forEach(function(require/*t*/) {
-                        global/*e*/[require/*t*/] = o[require/*t*/]
-                    }), console.table ? console.table(global/*e*/) : console.log(global/*e*/), console.info("Fetch time: ", u)
+                    var e = {};
+                    Object.keys(o).sort(function(e, t) {
+                        return o[t].aggregateTime - o[e].aggregateTime
+                    }).forEach(function(t) {
+                        e[t] = o[t]
+                    }), console.table ? console.table(e) : console.log(e), console.info("Fetch time: ", u)
                 }
             },
             install: function() {
@@ -91,5 +91,5 @@ __d("DliteCatalystProfiler",["DliteProfiler","GraphQLStore","GraphQLStoreChangeE
                 })
             }
         };
-    module/*i*/.exports = T
+    i.exports = T
 });

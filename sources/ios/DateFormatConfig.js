@@ -1,6 +1,6 @@
-__d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DateFormatConfig",["NativeModules"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModules/*o*/ = require/*t*/("NativeModules").RKI18n,
+    var NativeModules/*o*/ = t("NativeModules").RKI18n,
         a = {
             numericDateOrder: ["m", "d", "y"],
             numericDateSeparator: "/",
@@ -13,8 +13,8 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "D M j, y": "D M j, y",
                 "F d, Y": "F d, Y",
                 "F j, Y": "F j, Y",
-                "F j, Y @ g:module/*i*/ A": "F j, Y @ g:module/*i*/ A",
-                "F j, Y g:module/*i*/ a": "F j, Y g:module/*i*/ a",
+                "F j, Y @ g:i A": "F j, Y @ g:i A",
+                "F j, Y g:i a": "F j, Y g:i a",
                 "F jS, g:ia": "F jS, g:ia",
                 "F jS, Y": "F jS, Y",
                 "F Y": "F Y",
@@ -38,7 +38,7 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "M d, Y g:ia": "M d, Y g:ia",
                 "M d, Y ga": "M d, Y ga",
                 "M j, Y": "M j, Y",
-                "M j, Y g:module/*i*/ A": "M j, Y g:module/*i*/ A",
+                "M j, Y g:i A": "M j, Y g:i A",
                 "M j, Y g:ia": "M j, Y g:ia",
                 "M jS, g:ia": "M jS, g:ia",
                 "M Y": "M Y",
@@ -55,13 +55,13 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "M. d": "M. d",
                 D: "D",
                 "g A": "g A",
-                "g:module/*i*/": "g:module/*i*/",
-                "g:module/*i*/ A": "g:module/*i*/ A",
-                "g:module/*i*/ a": "g:module/*i*/ a",
+                "g:i": "g:i",
+                "g:i A": "g:i A",
+                "g:i a": "g:i a",
                 "g:iA": "g:iA",
                 "g:ia": "g:ia",
                 "g:sa": "g:sa",
-                "h:module/*i*/ a": "h:module/*i*/ a",
+                "h:i a": "h:i a",
                 "h:m:s m/d/Y": "h:m:s m/d/Y",
                 j: "j",
                 "m-d-y": "m-d-y",
@@ -70,12 +70,12 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 "m/d/Y": "m/d/Y",
                 "m/d/y": "m/d/y",
                 "m/d/Y g:ia": "m/d/Y g:ia",
-                "m/d/y H:module/*i*/:s": "m/d/y H:module/*i*/:s",
+                "m/d/y H:i:s": "m/d/y H:i:s",
                 "m/d/Y h:m": "m/d/Y h:m",
-                requireDynamic/*n*/: "requireDynamic/*n*/",
-                "requireDynamic/*n*//j": "requireDynamic/*n*//j",
-                "requireDynamic/*n*//j, g:ia": "requireDynamic/*n*//j, g:ia",
-                "requireDynamic/*n*//j/y": "requireDynamic/*n*//j/y",
+                n: "n",
+                "n/j": "n/j",
+                "n/j, g:ia": "n/j, g:ia",
+                "n/j/y": "n/j/y",
                 Y: "Y",
                 "Y-m-d": "Y-m-d",
                 "Y/m/d": "Y/m/d",
@@ -115,5 +115,5 @@ __d("DateFormatConfig",["NativeModules"],function (global/*e*/, require/*t*/, re
                 31: "st"
             }
         };
-    module/*i*/.exports = NativeModules/*o*/.dateFormatConfig || a
+    i.exports = NativeModules/*o*/.dateFormatConfig || a
 });

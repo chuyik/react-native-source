@@ -1,4 +1,4 @@
-__d("GraphQLMutatorConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLMutatorConstants",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         APPEND: "append",
@@ -14,5 +14,5 @@ __d("GraphQLMutatorConstants",[],function (global/*e*/, require/*t*/, requireDyn
         UPDATE_TYPES: {},
         RANGE_OPERATIONS: {}
     };
-    o.HANDLER_TYPES[o.NODE_DELETE_HANDLER] = !0, o.HANDLER_TYPES[o.RANGE_ADD_HANDLER] = !0, o.HANDLER_TYPES[o.RANGE_DELETE_HANDLER] = !0, o.UPDATE_TYPES[o.OPTIMISTIC_UPDATE] = !0, o.UPDATE_TYPES[o.SERVER_UPDATE] = !0, o.UPDATE_TYPES[o.POLLER_UPDATE] = !0, o.RANGE_OPERATIONS[o.APPEND] = !0, o.RANGE_OPERATIONS[o.PREPEND] = !0, o.RANGE_OPERATIONS[o.REMOVE] = !0, module/*i*/.exports = o
+    o.HANDLER_TYPES[o.NODE_DELETE_HANDLER] = !0, o.HANDLER_TYPES[o.RANGE_ADD_HANDLER] = !0, o.HANDLER_TYPES[o.RANGE_DELETE_HANDLER] = !0, o.UPDATE_TYPES[o.OPTIMISTIC_UPDATE] = !0, o.UPDATE_TYPES[o.SERVER_UPDATE] = !0, o.UPDATE_TYPES[o.POLLER_UPDATE] = !0, o.RANGE_OPERATIONS[o.APPEND] = !0, o.RANGE_OPERATIONS[o.PREPEND] = !0, o.RANGE_OPERATIONS[o.REMOVE] = !0, i.exports = o
 });

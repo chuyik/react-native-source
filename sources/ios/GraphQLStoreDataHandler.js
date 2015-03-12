@@ -1,4 +1,4 @@
-__d("GraphQLStoreDataHandler",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLStoreDataHandler",[],function (e, t, n, r, i) {
     "use strict";
     var o = {},
         a = {
@@ -8,29 +8,29 @@ __d("GraphQLStoreDataHandler",[],function (global/*e*/, require/*t*/, requireDyn
             __status__: !0
         },
         s = {
-            getID: function(global/*e*/) {
-                return global/*e*/.__dataID__
+            getID: function(e) {
+                return e.__dataID__
             },
-            createPointerWithID: function(global/*e*/) {
+            createPointerWithID: function(e) {
                 return {
-                    __dataID__: global/*e*/
+                    __dataID__: e
                 }
             },
-            isClientID: function(global/*e*/) {
-                return "client:" === global/*e*/.substring(0, 7)
+            isClientID: function(e) {
+                return "client:" === e.substring(0, 7)
             },
-            isClientOnlyID: function(global/*e*/) {
-                return this.isClientID(global/*e*/) && !o[global/*e*/]
+            isClientOnlyID: function(e) {
+                return this.isClientID(e) && !o[e]
             },
-            updateClientServerIDMap: function(global/*e*/, require/*t*/) {
-                o[global/*e*/] = require/*t*/
+            updateClientServerIDMap: function(e, t) {
+                o[e] = t
             },
-            getServerIDForClientID: function(global/*e*/) {
-                return o[global/*e*/] || null
+            getServerIDForClientID: function(e) {
+                return o[e] || null
             },
-            isMetadataKey: function(global/*e*/) {
-                return a[global/*e*/] || !1
+            isMetadataKey: function(e) {
+                return a[e] || !1
             }
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

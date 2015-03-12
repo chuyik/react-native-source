@@ -1,9 +1,9 @@
-__d("ImageStylePropTypes",["ImageResizeMode","LayoutPropTypes","ReactPropTypes","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ImageStylePropTypes",["ImageResizeMode","LayoutPropTypes","ReactPropTypes","merge"],function (e, t, n, r, i) {
     "use strict";
-    var ImageResizeMode/*o*/ = require/*t*/("ImageResizeMode"),
-        LayoutPropTypes/*a*/ = require/*t*/("LayoutPropTypes"),
-        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
-        merge/*l*/ = require/*t*/("merge"),
+    var ImageResizeMode/*o*/ = t("ImageResizeMode"),
+        LayoutPropTypes/*a*/ = t("LayoutPropTypes"),
+        ReactPropTypes/*s*/ = t("ReactPropTypes"),
+        merge/*l*/ = t("merge"),
         u = merge/*l*/(LayoutPropTypes/*a*/, {
             resizeMode: ReactPropTypes/*s*/.oneOf(Object.keys(ImageResizeMode/*o*/)),
             backgroundColor: ReactPropTypes/*s*/.string,
@@ -23,5 +23,5 @@ __d("ImageStylePropTypes",["ImageResizeMode","LayoutPropTypes","ReactPropTypes",
             paddingHorizontal: null
         });
     for (var p in c) delete u[p];
-    module/*i*/.exports = u
+    i.exports = u
 });

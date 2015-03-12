@@ -1,6 +1,6 @@
-__d("RCTDeviceEventEmitter",["EventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RCTDeviceEventEmitter",["EventEmitter"],function (e, t, n, r, i) {
     "use strict";
-    var EventEmitter/*o*/ = require/*t*/("EventEmitter"),
+    var EventEmitter/*o*/ = t("EventEmitter"),
         a = new EventEmitter/*o*/;
-    module/*i*/.exports = a
+    i.exports = a
 });

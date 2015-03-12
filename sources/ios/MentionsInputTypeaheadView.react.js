@@ -1,16 +1,16 @@
-__d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimensions","ScrollView","StyleSheet","TouchableHighlight","TypeaheadViewItem","View","Text","cssVar"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimensions","ScrollView","StyleSheet","TouchableHighlight","TypeaheadViewItem","View","Text","cssVar"],function (e, t, n, r, i) {
     "use strict";
-    var Image/*o*/ = require/*t*/("Image"),
-        ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
-        React/*s*/ = require/*t*/("React"),
-        Dimensions/*l*/ = require/*t*/("Dimensions"),
-        ScrollView/*u*/ = require/*t*/("ScrollView"),
-        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
-        TouchableHighlight/*p*/ = require/*t*/("TouchableHighlight"),
-        TypeaheadViewItem/*d*/ = require/*t*/("TypeaheadViewItem"),
-        View/*h*/ = require/*t*/("View"),
-        Text/*f*/ = require/*t*/("Text"),
-        cssVar/*m*/ = require/*t*/("cssVar"),
+    var Image/*o*/ = t("Image"),
+        ReactPropTypes/*a*/ = t("ReactPropTypes"),
+        React/*s*/ = t("React"),
+        Dimensions/*l*/ = t("Dimensions"),
+        ScrollView/*u*/ = t("ScrollView"),
+        StyleSheet/*c*/ = t("StyleSheet"),
+        TouchableHighlight/*p*/ = t("TouchableHighlight"),
+        TypeaheadViewItem/*d*/ = t("TypeaheadViewItem"),
+        View/*h*/ = t("View"),
+        Text/*f*/ = t("Text"),
+        cssVar/*m*/ = t("cssVar"),
         g = Dimensions/*l*/.get("window").height - 320,
         _ = g / 55,
         y = 34,
@@ -19,21 +19,21 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
             mixins: [TypeaheadViewItem/*d*/.Mixin],
             propTypes: TypeaheadViewItem/*d*/.propTypes,
             render: function() {
-                var global/*e*/ = this.props.entry,
-                    require/*t*/ = global/*e*/.getPhoto() ? React/*s*/.createElement(Image/*o*/, {
+                var e = this.props.entry,
+                    t = e.getPhoto() ? React/*s*/.createElement(Image/*o*/, {
                         style: w.profilePicture,
                         source: {
-                            uri: global/*e*/.getPhoto()
+                            uri: e.getPhoto()
                         }
                     }) : null,
-                    requireDynamic/*n*/ = null;
-                return global/*e*/.getSubtitle() && (requireDynamic/*n*/ = React/*s*/.createElement(Text/*f*/, null, global/*e*/.getSubtitle())), React/*s*/.createElement(TouchableHighlight/*p*/, {
+                    n = null;
+                return e.getSubtitle() && (n = React/*s*/.createElement(Text/*f*/, null, e.getSubtitle())), React/*s*/.createElement(TouchableHighlight/*p*/, {
                     onPress: this._onSelect
                 }, React/*s*/.createElement(View/*h*/, {
                     style: w.row
-                }, require/*t*/, React/*s*/.createElement(View/*h*/, null, React/*s*/.createElement(Text/*f*/, {
+                }, t, React/*s*/.createElement(View/*h*/, null, React/*s*/.createElement(Text/*f*/, {
                     style: w.titleText
-                }, global/*e*/.getTitle()), requireDynamic/*n*/)))
+                }, e.getTitle()), n)))
             }
         }),
         S = React/*s*/.createClass({
@@ -45,35 +45,35 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
                 onHighlight: ReactPropTypes/*a*/.func,
                 onRenderHighlight: ReactPropTypes/*a*/.func
             },
-            _renderItem: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = global/*e*/ === this.props.highlightedEntry;
-                return [0 !== require/*t*/ && React/*s*/.createElement(View/*h*/, {
+            _renderItem: function(e, t) {
+                var n = e === this.props.highlightedEntry;
+                return [0 !== t && React/*s*/.createElement(View/*h*/, {
                     style: w.divider
                 }), React/*s*/.createElement(v, {
-                    key: global/*e*/.getUniqueID(),
-                    entry: global/*e*/,
-                    highlighted: requireDynamic/*n*/,
+                    key: e.getUniqueID(),
+                    entry: e,
+                    highlighted: n,
                     onSelect: this.props.onSelect,
                     onHighlight: this.props.onHighlight,
                     onRenderHighlight: this.props.onRenderHighlight
                 })]
             },
-            _renderSectionHeader: function(global/*e*/) {
+            _renderSectionHeader: function(e) {
                 return React/*s*/.createElement(View/*h*/, {
-                    key: global/*e*/,
+                    key: e,
                     style: w.sectionHeader
                 }, React/*s*/.createElement(Text/*f*/, {
                     style: w.sectionHeaderText
-                }, global/*e*/))
+                }, e))
             },
             render: function() {
                 if (this.props.entries.length) {
-                    var global/*e*/ = [],
-                        require/*t*/ = [];
-                    this.props.entries.forEach(function(requireDynamic/*n*/) {
-                        requireDynamic/*n*/.getAuxiliaryData().isMemberOfGroup ? (0 === global/*e*/.length && global/*e*/.push(this._renderSectionHeader("Members")), global/*e*/.push(this._renderItem(requireDynamic/*n*/, global/*e*/.length - 1))) : (0 === require/*t*/.length && require/*t*/.push(this._renderSectionHeader("Others")), require/*t*/.push(this._renderItem(requireDynamic/*n*/, require/*t*/.length - 1)))
+                    var e = [],
+                        t = [];
+                    this.props.entries.forEach(function(n) {
+                        n.getAuxiliaryData().isMemberOfGroup ? (0 === e.length && e.push(this._renderSectionHeader("Members")), e.push(this._renderItem(n, e.length - 1))) : (0 === t.length && t.push(this._renderSectionHeader("Others")), t.push(this._renderItem(n, t.length - 1)))
                     }.bind(this));
-                    var requireDynamic/*n*/ = this.props.entries.length > _ && {
+                    var n = this.props.entries.length > _ && {
                         height: g
                     };
                     return React/*s*/.createElement(View/*h*/, {
@@ -81,8 +81,8 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
                         pointerEvents: View/*h*/.pointerEvents.boxNone
                     }, React/*s*/.createElement(ScrollView/*u*/, {
                         keyboardShouldPersistTaps: !0,
-                        style: [w.content, requireDynamic/*n*/]
-                    }, global/*e*/, require/*t*/), this._renderSectionHeader())
+                        style: [w.content, n]
+                    }, e, t), this._renderSectionHeader())
                 }
                 return React/*s*/.createElement(View/*h*/, {
                     style: w.container
@@ -134,5 +134,5 @@ __d("MentionsInputTypeaheadView.react",["Image","ReactPropTypes","React","Dimens
                 borderRadius: y / 2
             }
         });
-    module/*i*/.exports = S
+    i.exports = S
 });

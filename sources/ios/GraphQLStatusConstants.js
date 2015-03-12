@@ -1,8 +1,8 @@
-__d("GraphQLStatusConstants",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLStatusConstants",["keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+    var keyMirror/*o*/ = t("keyMirror"),
         a = keyMirror/*o*/({
             ERROR: null
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

@@ -1,20 +1,20 @@
-__d("flattenStyle",["StyleSheetRegistry","mergeIntoFast"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("flattenStyle",["StyleSheetRegistry","mergeIntoFast"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return "number" == typeof global/*e*/ ? StyleSheetRegistry/*s*/.getStyleByID(global/*e*/) : global/*e*/
+    function o(e) {
+        return "number" == typeof e ? StyleSheetRegistry/*s*/.getStyleByID(e) : e
     }
 
-    function a(global/*e*/) {
-        if (!global/*e*/) return void 0;
-        if (!Array.isArray(global/*e*/)) return o(global/*e*/);
-        for (var require/*t*/ = {}, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; ++requireDynamic/*n*/) {
-            var requireLazy/*r*/ = a(global/*e*/[requireDynamic/*n*/]);
-            requireLazy/*r*/ && mergeIntoFast/*l*/(require/*t*/, requireLazy/*r*/)
+    function a(e) {
+        if (!e) return void 0;
+        if (!Array.isArray(e)) return o(e);
+        for (var t = {}, n = 0; n < e.length; ++n) {
+            var r = a(e[n]);
+            r && mergeIntoFast/*l*/(t, r)
         }
-        return require/*t*/
+        return t
     }
-    var StyleSheetRegistry/*s*/ = require/*t*/("StyleSheetRegistry"),
-        mergeIntoFast/*l*/ = require/*t*/("mergeIntoFast");
-    module/*i*/.exports = a
+    var StyleSheetRegistry/*s*/ = t("StyleSheetRegistry"),
+        mergeIntoFast/*l*/ = t("mergeIntoFast");
+    i.exports = a
 });

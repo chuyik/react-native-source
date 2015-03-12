@@ -1,11 +1,11 @@
-__d("createObjectFrom",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        if (__DEV__ && !Array.isArray(global/*e*/)) throw new TypeError("Must pass an array of keys.");
-        var requireDynamic/*n*/ = {},
-            requireLazy/*r*/ = Array.isArray(require/*t*/);
-        "undefined" == typeof require/*t*/ && (require/*t*/ = !0);
-        for (var module/*i*/ = global/*e*/.length; module/*i*/--;) requireDynamic/*n*/[global/*e*/[module/*i*/]] = requireLazy/*r*/ ? require/*t*/[module/*i*/] : require/*t*/;
-        return requireDynamic/*n*/
+__d("createObjectFrom",[],function (e, t, n, r, i) {
+    function o(e, t) {
+        if (__DEV__ && !Array.isArray(e)) throw new TypeError("Must pass an array of keys.");
+        var n = {},
+            r = Array.isArray(t);
+        "undefined" == typeof t && (t = !0);
+        for (var i = e.length; i--;) n[e[i]] = r ? t[i] : t;
+        return n
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,16 +1,16 @@
-__d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","Text","THAnimations","THFeedUnitView","TouchableHighlight","View","fbt","isEmpty"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","Text","THAnimations","THFeedUnitView","TouchableHighlight","View","fbt","isEmpty"],function (e, t, n, r, i) {
     "use strict";
-    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
-        React/*a*/ = require/*t*/("React"),
-        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        Text/*u*/ = require/*t*/("Text"),
-        THAnimations/*c*/ = require/*t*/("THAnimations"),
-        THFeedUnitView/*p*/ = require/*t*/("THFeedUnitView"),
-        TouchableHighlight/*d*/ = require/*t*/("TouchableHighlight"),
-        View/*h*/ = require/*t*/("View"),
-        fbt/*f*/ = require/*t*/("fbt"),
-        isEmpty/*m*/ = require/*t*/("isEmpty"),
+    var LayoutAnimation/*o*/ = t("LayoutAnimation"),
+        React/*a*/ = t("React"),
+        ReactGraphQL/*s*/ = t("ReactGraphQL"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        Text/*u*/ = t("Text"),
+        THAnimations/*c*/ = t("THAnimations"),
+        THFeedUnitView/*p*/ = t("THFeedUnitView"),
+        TouchableHighlight/*d*/ = t("TouchableHighlight"),
+        View/*h*/ = t("View"),
+        fbt/*f*/ = t("fbt"),
+        isEmpty/*m*/ = t("isEmpty"),
         g = React/*a*/.createClass({
             displayName: "THPinnedPostView",
             propTypes: {
@@ -23,56 +23,56 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                     showPinnedPost: !1
                 },
                 queries: {
-                    viewer: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THPinnedPostView_viewer", "Viewer", null, [require/*t*/.__frag(global/*e*/)], {
+                    viewer: function(e, t, n) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THPinnedPostView_viewer", "Viewer", null, [t.__frag(e)], {
                                 scope: "THPinnedPostView_viewer"
                             })
-                        }(THFeedUnitView/*p*/.getQuery("viewer").if(requireDynamic/*n*/.showPinnedPost))
+                        }(THFeedUnitView/*p*/.getQuery("viewer").if(n.showPinnedPost))
                     },
-                    group: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                            var module/*i*/ = require/*t*/.__GraphQL;
-                            return new module/*i*/.QueryFragment("THPinnedPostView_group", "Group", [new module/*i*/.Field("admin_aware_group", [new module/*i*/.Field("group_pinned_stories", [new module/*i*/.Field("count")], null, null, "pinned_story_unopened", null, {
+                    group: function(e, t, n) {
+                        return function(e, n, r) {
+                            var i = t.__GraphQL;
+                            return new i.QueryFragment("THPinnedPostView_group", "Group", [new i.Field("admin_aware_group", [new i.Field("group_pinned_stories", [new i.Field("count")], null, null, "pinned_story_unopened", null, {
                                 connection: !0
-                            }), new module/*i*/.Field("group_pinned_stories", [new module/*i*/.Field("count"), new module/*i*/.Field("edges", [new module/*i*/.Field("node", [new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("group_pinned_stories", [new i.Field("count"), new i.Field("edges", [new i.Field("node", [new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(requireDynamic/*n*/)], null, null, null, {
+                            })], [t.__frag(n)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id",
                                 requisite: !0
-                            }), new module/*i*/.Field("cursor", null, null, null, null, null, {
+                            }), new i.Field("cursor", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "THPinnedPostView_group_1"
-                            }), new module/*i*/.Field("page_info", [new module/*i*/.Field("has_next_page", null, null, null, null, null, {
+                            }), new i.Field("page_info", [new i.Field("has_next_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            }), new module/*i*/.Field("has_previous_page", null, null, null, null, null, {
+                            }), new i.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], null, [new module/*i*/.Callv("if", [require/*t*/.__var(global/*e*/)]), new module/*i*/.Callv("first", ["1"])], null, null, {
+                            })], null, [new i.Callv("if", [t.__var(e)]), new i.Callv("first", ["1"])], null, null, {
                                 connection: !0
-                            }), new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(requireLazy/*r*/)], {
+                            })], [t.__frag(r)], {
                                 scope: "THPinnedPostView_group"
                             })
-                        }(requireDynamic/*n*/.showPinnedPost, THFeedUnitView/*p*/.getQuery("story"), THFeedUnitView/*p*/.getQuery("group").if(requireDynamic/*n*/.showPinnedPost))
+                        }(n.showPinnedPost, THFeedUnitView/*p*/.getQuery("story"), THFeedUnitView/*p*/.getQuery("group").if(n.showPinnedPost))
                     }
                 }
             },
@@ -83,13 +83,13 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
             },
             render: function() {
                 if (this.props.group.admin_aware_group.pinned_story_unopened && 0 === this.props.group.admin_aware_group.pinned_story_unopened.count) return React/*a*/.createElement(View/*h*/, null);
-                var global/*e*/ = this.props.group.admin_aware_group.group_pinned_stories;
-                if (global/*e*/ && isEmpty/*m*/(global/*e*/.edges)) return React/*a*/.createElement(View/*h*/, null);
-                if (global/*e*/ && global/*e*/.edges && global/*e*/.edges[0] && global/*e*/.edges[0].node) {
-                    var require/*t*/ = global/*e*/.edges[0].node;
+                var e = this.props.group.admin_aware_group.group_pinned_stories;
+                if (e && isEmpty/*m*/(e.edges)) return React/*a*/.createElement(View/*h*/, null);
+                if (e && e.edges && e.edges[0] && e.edges[0].node) {
+                    var t = e.edges[0].node;
                     return LayoutAnimation/*o*/.configureNext(THAnimations/*c*/.layout.openPinnedPost), React/*a*/.createElement(THFeedUnitView/*p*/, {
                         onInputRequested: this.props.onInputRequested,
-                        story: require/*t*/,
+                        story: t,
                         group: this.props.group,
                         viewer: this.props.viewer,
                         navigator: this.props.navigator,
@@ -129,5 +129,5 @@ __d("THPinnedPostView",["LayoutAnimation","React","ReactGraphQL","StyleSheet","T
                 marginLeft: 16
             }
         });
-    module/*i*/.exports = g
+    i.exports = g
 });

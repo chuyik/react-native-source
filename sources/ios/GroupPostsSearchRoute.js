@@ -1,6 +1,6 @@
-__d("GroupPostsSearchRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupPostsSearchRoute",["DliteRoute"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
         a = DliteRoute/*o*/.create({
             name: "GroupPostsSearchRoute",
             path: "/{postsQuery}",
@@ -11,16 +11,16 @@ __d("GroupPostsSearchRoute",["DliteRoute"],function (global/*e*/, require/*t*/, 
                 }
             },
             queries: {
-                postsQuery: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    return function(global/*e*/, require/*t*/) {
-                        var requireLazy/*r*/ = requireDynamic/*n*/.__GraphQL;
-                        return new requireLazy/*r*/.Query("graph_search_query", [requireDynamic/*n*/.__var(global/*e*/)], [new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                postsQuery: function(e, t, n) {
+                    return function(e, t) {
+                        var r = n.__GraphQL;
+                        return new r.Query("graph_search_query", [n.__var(e)], [new r.Field("id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [requireDynamic/*n*/.__frag(require/*t*/)], null, "GroupPostsSearchRoute_postsQuery")
-                    }(global/*e*/, require/*t*/)
+                        })], [n.__frag(t)], null, "GroupPostsSearchRoute_postsQuery")
+                    }(e, t)
                 }
             }
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

@@ -1,11 +1,11 @@
-__d("diffRawProperties",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("diffRawProperties",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/, o, a, s, l;
-        for (var u in requireDynamic/*n*/) module/*i*/ = requireLazy/*r*/[u], module/*i*/ && (a = require/*t*/ && require/*t*/[u], o = requireDynamic/*n*/[u], a !== o && (s = "object" != typeof o || null === o, l = s || !a || module/*i*/.diff && module/*i*/.diff(a, o), l && (global/*e*/ = global/*e*/ || {}, global/*e*/[u] = o)));
-        for (var u in require/*t*/) module/*i*/ = requireLazy/*r*/[u], module/*i*/ && (global/*e*/ && void 0 !== global/*e*/[u] || (a = require/*t*/[u], o = requireDynamic/*n*/ && requireDynamic/*n*/[u], a !== o && (void 0 === o && (o = null), s = "object" != typeof o || null === o, l = s && a !== o || module/*i*/.diff && module/*i*/.diff(a, o), l && (global/*e*/ = global/*e*/ || {}, global/*e*/[u] = o))));
-        return global/*e*/
+    function o(e, t, n, r) {
+        var i, o, a, s, l;
+        for (var u in n) i = r[u], i && (a = t && t[u], o = n[u], a !== o && (s = "object" != typeof o || null === o, l = s || !a || i.diff && i.diff(a, o), l && (e = e || {}, e[u] = o)));
+        for (var u in t) i = r[u], i && (e && void 0 !== e[u] || (a = t[u], o = n && n[u], a !== o && (void 0 === o && (o = null), s = "object" != typeof o || null === o, l = s && a !== o || i.diff && i.diff(a, o), l && (e = e || {}, e[u] = o))));
+        return e
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,46 +1,46 @@
-__d("ReactGraphQLComparators",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactGraphQLComparators",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/;
-        for (module/*i*/ in require/*t*/)
-            if (!(requireLazy/*r*/ && !requireLazy/*r*/.hasOwnProperty(module/*i*/) || !require/*t*/.hasOwnProperty(module/*i*/) || requireDynamic/*n*/.hasOwnProperty(module/*i*/) && global/*e*/(require/*t*/[module/*i*/], requireDynamic/*n*/[module/*i*/], module/*i*/))) return !1;
-        for (module/*i*/ in requireDynamic/*n*/)
-            if ((!requireLazy/*r*/ || requireLazy/*r*/.hasOwnProperty(module/*i*/)) && requireDynamic/*n*/.hasOwnProperty(module/*i*/) && !require/*t*/.hasOwnProperty(module/*i*/)) return !1;
+    function o(e, t, n, r) {
+        var i;
+        for (i in t)
+            if (!(r && !r.hasOwnProperty(i) || !t.hasOwnProperty(i) || n.hasOwnProperty(i) && e(t[i], n[i], i))) return !1;
+        for (i in n)
+            if ((!r || r.hasOwnProperty(i)) && n.hasOwnProperty(i) && !t.hasOwnProperty(i)) return !1;
         return !0
     }
 
-    function a(global/*e*/, require/*t*/) {
-        return global/*e*/ === require/*t*/ && (null === global/*e*/ || "object" != typeof global/*e*/)
+    function a(e, t) {
+        return e === t && (null === e || "object" != typeof e)
     }
 
-    function s(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return requireDynamic/*n*/ in l ? global/*e*/ === require/*t*/ : a(global/*e*/, require/*t*/)
+    function s(e, t, n) {
+        return n in l ? e === t : a(e, t)
     }
     var l = {
             route: !0
         },
         u = {
             Mixin: {
-                isStateEqualTo: function(global/*e*/) {
-                    return o(a, this.state, global/*e*/)
+                isStateEqualTo: function(e) {
+                    return o(a, this.state, e)
                 },
-                isContextEqualTo: function(global/*e*/) {
-                    return o(s, this.context, global/*e*/)
+                isContextEqualTo: function(e) {
+                    return o(s, this.context, e)
                 },
-                isDliteContextEqualTo: function(global/*e*/) {
-                    return o(s, this.context, global/*e*/, l)
+                isDliteContextEqualTo: function(e) {
+                    return o(s, this.context, e, l)
                 },
-                arePropsEqualTo: function(global/*e*/) {
-                    return o(this._isPropEqual, this.props, global/*e*/)
+                arePropsEqualTo: function(e) {
+                    return o(this._isPropEqual, this.props, e)
                 },
-                areDlitePropsEqualTo: function(global/*e*/) {
-                    return o(this._isPropEqual, this.props, global/*e*/, this.constructor.queries)
+                areDlitePropsEqualTo: function(e) {
+                    return o(this._isPropEqual, this.props, e, this.constructor.queries)
                 },
-                _isPropEqual: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    return this.constructor.queries.hasOwnProperty(requireDynamic/*n*/) ? global/*e*/ === require/*t*/ : a(global/*e*/, require/*t*/)
+                _isPropEqual: function(e, t, n) {
+                    return this.constructor.queries.hasOwnProperty(n) ? e === t : a(e, t)
                 }
             }
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

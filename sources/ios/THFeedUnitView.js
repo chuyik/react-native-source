@@ -1,21 +1,21 @@
-__d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHandler","FBStoryMenu","NativeModules","StyleSheet","Text","THColors","THFeedbackView","THStoryView","TouchableWithoutFeedback","View","fbt","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHandler","FBStoryMenu","NativeModules","StyleSheet","Text","THColors","THFeedbackView","THStoryView","TouchableWithoutFeedback","View","fbt","merge"],function (e, t, n, r, i) {
     "use strict";
-    var FBSpinner/*o*/ = require/*t*/("FBSpinner"),
-        React/*a*/ = require/*t*/("React"),
-        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*l*/ = require/*t*/("Dimensions"),
-        RouteHandler/*u*/ = require/*t*/("RouteHandler"),
-        FBStoryMenu/*c*/ = require/*t*/("FBStoryMenu"),
-        NativeModules/*p*/ = require/*t*/("NativeModules").RKTreehouseManager,
-        StyleSheet/*d*/ = require/*t*/("StyleSheet"),
-        Text/*h*/ = require/*t*/("Text"),
-        THColors/*f*/ = require/*t*/("THColors"),
-        THFeedbackView/*m*/ = require/*t*/("THFeedbackView"),
-        THStoryView/*g*/ = require/*t*/("THStoryView"),
-        TouchableWithoutFeedback/*_*/ = require/*t*/("TouchableWithoutFeedback"),
-        View/*y*/ = require/*t*/("View"),
-        fbt/*v*/ = require/*t*/("fbt"),
-        merge/*S*/ = require/*t*/("merge"),
+    var FBSpinner/*o*/ = t("FBSpinner"),
+        React/*a*/ = t("React"),
+        ReactGraphQL/*s*/ = t("ReactGraphQL"),
+        Dimensions/*l*/ = t("Dimensions"),
+        RouteHandler/*u*/ = t("RouteHandler"),
+        FBStoryMenu/*c*/ = t("FBStoryMenu"),
+        NativeModules/*p*/ = t("NativeModules").RKTreehouseManager,
+        StyleSheet/*d*/ = t("StyleSheet"),
+        Text/*h*/ = t("Text"),
+        THColors/*f*/ = t("THColors"),
+        THFeedbackView/*m*/ = t("THFeedbackView"),
+        THStoryView/*g*/ = t("THStoryView"),
+        TouchableWithoutFeedback/*_*/ = t("TouchableWithoutFeedback"),
+        View/*y*/ = t("View"),
+        fbt/*v*/ = t("fbt"),
+        merge/*S*/ = t("merge"),
         b = "story_container",
         R = "treehouse_group_mall",
         w = React/*a*/.createClass({
@@ -31,9 +31,9 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
             mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
-                    story: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, FBSpinner/*o*/, React/*a*/) {
-                            var ReactGraphQL/*s*/ = require/*t*/.__GraphQL;
+                    story: function(e, t) {
+                        return function(e, n, r, i, FBSpinner/*o*/, React/*a*/) {
+                            var ReactGraphQL/*s*/ = t.__GraphQL;
                             return new ReactGraphQL/*s*/.QueryFragment("THFeedUnitView_story", "Story", [new ReactGraphQL/*s*/.Field("id"), new ReactGraphQL/*s*/.Field("attached_story", [new ReactGraphQL/*s*/.Field("__type__", [new ReactGraphQL/*s*/.Field("name"), new ReactGraphQL/*s*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
@@ -45,38 +45,38 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                             }), new ReactGraphQL/*s*/.Field("feedback", [new ReactGraphQL/*s*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(requireLazy/*r*/)], null, null, null, {
+                            })], [t.__frag(r)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            })], [require/*t*/.__frag(requireDynamic/*n*/)], null, null, null, {
+                            })], [t.__frag(n)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
                             }), new ReactGraphQL/*s*/.Field("feedback", [new ReactGraphQL/*s*/.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(module/*i*/)], null, null, null, {
+                            })], [t.__frag(i)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(FBSpinner/*o*/), require/*t*/.__frag(React/*a*/)], {
+                            })], [t.__frag(e), t.__frag(FBSpinner/*o*/), t.__frag(React/*a*/)], {
                                 scope: "THFeedUnitView_story"
                             })
                         }(THStoryView/*g*/.getQuery("story"), THStoryView/*g*/.getQuery("story"), THFeedbackView/*m*/.getQuery("feedback"), THFeedbackView/*m*/.getQuery("feedback"), FBStoryMenu/*c*/.getQuery("story"), THFeedbackView/*m*/.getQuery("story"))
                     },
-                    group: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                            var module/*i*/ = require/*t*/.__GraphQL;
-                            return new module/*i*/.QueryFragment("THFeedUnitView_group", "Group", [new module/*i*/.Field("id", null, null, null, null, null, {
+                    group: function(e, t) {
+                        return function(e, n, r) {
+                            var i = t.__GraphQL;
+                            return new i.QueryFragment("THFeedUnitView_group", "Group", [new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(requireDynamic/*n*/), require/*t*/.__frag(requireLazy/*r*/)], {
+                            })], [t.__frag(e), t.__frag(n), t.__frag(r)], {
                                 scope: "THFeedUnitView_group"
                             })
                         }(FBStoryMenu/*c*/.getQuery("group"), THFeedbackView/*m*/.getQuery("group"), THStoryView/*g*/.getQuery("group"))
                     },
-                    viewer: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THFeedUnitView_viewer", "Viewer", null, [require/*t*/.__frag(global/*e*/)], {
+                    viewer: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THFeedUnitView_viewer", "Viewer", null, [t.__frag(e)], {
                                 scope: "THFeedUnitView_viewer"
                             })
                         }(FBStoryMenu/*c*/.getQuery("viewer"))
@@ -91,11 +91,11 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
             getFeedUnitHandle: function() {
                 return this.refs[b].getNodeHandle()
             },
-            getFeedback: function(global/*e*/) {
-                return global/*e*/.feedback ? React/*a*/.createElement(THFeedbackView/*m*/, {
+            getFeedback: function(e) {
+                return e.feedback ? React/*a*/.createElement(THFeedbackView/*m*/, {
                     canCommentInline: this.props.canCommentInline,
-                    story: global/*e*/,
-                    feedback: global/*e*/.feedback,
+                    story: e,
+                    feedback: e.feedback,
                     onInputRequested: this.props.onInputRequested,
                     getFeedUnitHandle: this.getFeedUnitHandle,
                     group: this.props.group,
@@ -105,18 +105,18 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                     style: C.feedback
                 })
             },
-            getAttachedStory: function(global/*e*/) {
-                return global/*e*/.attached_story ? React/*a*/.createElement(TouchableWithoutFeedback/*_*/, {
+            getAttachedStory: function(e) {
+                return e.attached_story ? React/*a*/.createElement(TouchableWithoutFeedback/*_*/, {
                     onPress: RouteHandler/*u*/.getCallback({
-                        typeList: [global/*e*/.attached_story.__type__.name],
+                        typeList: [e.attached_story.__type__.name],
                         params: {
-                            id: global/*e*/.attached_story.id
+                            id: e.attached_story.id
                         }
                     })
                 }, React/*a*/.createElement(View/*y*/, {
                     style: C.attachedStory
                 }, React/*a*/.createElement(THStoryView/*g*/, {
-                    story: global/*e*/.attached_story,
+                    story: e.attached_story,
                     navigator: this.props.navigator,
                     context: merge/*S*/(this.props.context, {
                         isSubStory: !0
@@ -128,8 +128,8 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                 NativeModules/*p*/.editPost(this.props.story.id)
             },
             getStoryMenu: function() {
-                var global/*e*/ = this.props.mock_story || this.props.story;
-                return global/*e*/ ? React/*a*/.createElement(View/*y*/, {
+                var e = this.props.mock_story || this.props.story;
+                return e ? React/*a*/.createElement(View/*y*/, {
                     pointerEvents: View/*y*/.pointerEvents.boxNone,
                     style: C.menuContainer
                 }, React/*a*/.createElement(FBStoryMenu/*c*/, {
@@ -140,7 +140,7 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                             isStoryReported: !0
                         })
                     }.bind(this),
-                    story: global/*e*/,
+                    story: e,
                     viewer: this.props.viewer,
                     editPostCallback: this.editStory,
                     pinPostSource: R,
@@ -148,8 +148,8 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                 })) : null
             },
             render: function() {
-                var global/*e*/ = this.props.mock_story || this.props.story;
-                return global/*e*/ ? this.state.isStoryReported ? React/*a*/.createElement(View/*y*/, {
+                var e = this.props.mock_story || this.props.story;
+                return e ? this.state.isStoryReported ? React/*a*/.createElement(View/*y*/, {
                     ref: b
                 }, React/*a*/.createElement(View/*y*/, {
                     style: C.reportedWrapper
@@ -165,14 +165,14 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                 }, React/*a*/.createElement(View/*y*/, {
                     style: [C.storyWrapper, C.contentWrapper]
                 }, React/*a*/.createElement(THStoryView/*g*/, {
-                    story: global/*e*/,
+                    story: e,
                     navigator: this.props.navigator,
                     context: merge/*S*/(this.props.context, {
-                        isEdgeStory: !!global/*e*/.attached_story
+                        isEdgeStory: !!e.attached_story
                     }),
                     group: this.props.group,
                     viewContext: this.props.viewContext
-                }), this.getAttachedStory(global/*e*/)), React/*a*/.createElement(View/*y*/, null, this.getFeedback(global/*e*/)), this.getStoryMenu()) : React/*a*/.createElement(View/*y*/, {
+                }), this.getAttachedStory(e)), React/*a*/.createElement(View/*y*/, null, this.getFeedback(e)), this.getStoryMenu()) : React/*a*/.createElement(View/*y*/, {
                     ref: b
                 }, React/*a*/.createElement(View/*y*/, {
                     style: [C.storyWrapper, C.contentWrapper]
@@ -229,5 +229,5 @@ __d("THFeedUnitView",["FBSpinner","React","ReactGraphQL","Dimensions","RouteHand
                 backgroundColor: THColors/*f*/.backgroundColor
             }
         });
-    module/*i*/.exports = w
+    i.exports = w
 });

@@ -1,37 +1,37 @@
-__d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-        var o = m[require/*t*/] = m[require/*t*/] || 0,
+    function o(e, t, n, r, i) {
+        var o = m[t] = m[t] || 0,
             s = {
-                type: global/*e*/,
-                name: o ? require/*t*/ + " " + o : require/*t*/,
+                type: e,
+                name: o ? t + " " + o : t,
                 depth: d,
-                startTime: requireDynamic/*n*/,
-                endTime: requireLazy/*r*/,
+                startTime: n,
+                endTime: r,
                 insertOrder: h.length,
-                data: module/*i*/ || {}
+                data: i || {}
             };
-        return d++, h.push(s), m[require/*t*/] ++, isNaN(s.endTime) || a(s), s
+        return d++, h.push(s), m[t] ++, isNaN(s.endTime) || a(s), s
     }
 
-    function a(global/*e*/) {
-        f.push(global/*e*/), _.emitAndHold(_.Events.completedEvent, global/*e*/)
+    function a(e) {
+        f.push(e), _.emitAndHold(_.Events.completedEvent, e)
     }
 
-    function s(global/*e*/, require/*t*/) {
+    function s(e, t) {
         if (__DEV__)
-            for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < g.length; requireDynamic/*n*/++) {
-                var requireLazy/*r*/ = g[requireDynamic/*n*/];
-                if (-1 !== global/*e*/.indexOf(requireLazy/*r*/)) {
-                    var module/*i*/ = (require/*t*/ ? "Starting event " : "Ending event ") + '"' + global/*e*/ + '" matches breakpoint "' + requireLazy/*r*/ + '"';
-                    return void console.log(module/*i*/)
+            for (var n = 0; n < g.length; n++) {
+                var r = g[n];
+                if (-1 !== e.indexOf(r)) {
+                    var i = (t ? "Starting event " : "Ending event ") + '"' + e + '" matches breakpoint "' + r + '"';
+                    return void console.log(i)
                 }
             }
     }
-    var invariant/*l*/ = require/*t*/("invariant"),
-        keyMirror/*u*/ = require/*t*/("keyMirror"),
-        mixInEventEmitter/*c*/ = require/*t*/("mixInEventEmitter"),
+    var invariant/*l*/ = t("invariant"),
+        keyMirror/*u*/ = t("keyMirror"),
+        mixInEventEmitter/*c*/ = t("mixInEventEmitter"),
         p = keyMirror/*u*/({
             CLIENT: null,
             SERVER: null
@@ -45,29 +45,29 @@ __d("DliteLogger",["invariant","keyMirror","mixInEventEmitter"],function (global
             Events: keyMirror/*u*/({
                 completedEvent: null
             }),
-            logClientEventRetroactive: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                s(global/*e*/, !0), console.timeStamp && console.timeStamp(global/*e*/);
-                var module/*i*/ = o(p.CLIENT, global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/);
+            logClientEventRetroactive: function(e, t, n, r) {
+                s(e, !0), console.timeStamp && console.timeStamp(e);
+                var i = o(p.CLIENT, e, t, n, r);
                 return {
                     stop: function() {
-                        isNaN(module/*i*/.endTime) || invariant/*l*/(0, "Cannot end `%s` more than once.", global/*e*/), -1 !== h.indexOf(module/*i*/) && d--, module/*i*/.endTime = Date.now(), a(module/*i*/), s(global/*e*/, !1)
+                        isNaN(i.endTime) || invariant/*l*/(0, "Cannot end `%s` more than once.", e), -1 !== h.indexOf(i) && d--, i.endTime = Date.now(), a(i), s(e, !1)
                     }
                 }
             },
-            logClientEvent: function(global/*e*/, require/*t*/) {
-                return _.logClientEventRetroactive(global/*e*/, Date.now(), 0 / 0, require/*t*/)
+            logClientEvent: function(e, t) {
+                return _.logClientEventRetroactive(e, Date.now(), 0 / 0, t)
             },
-            breakOnClientEvent: function(global/*e*/) {
-                g.push(global/*e*/)
+            breakOnClientEvent: function(e) {
+                g.push(e)
             },
             flushCompletedEvents: function() {
-                var global/*e*/ = f;
-                return d = 0, f = [], global/*e*/
+                var e = f;
+                return d = 0, f = [], e
             },
             flush: function() {
-                var global/*e*/ = h.concat(f);
-                return d = 0, h = [], f = [], m = {}, global/*e*/
+                var e = h.concat(f);
+                return d = 0, h = [], f = [], m = {}, e
             }
         };
-    mixInEventEmitter/*c*/(_, _.Events), module/*i*/.exports = _
+    mixInEventEmitter/*c*/(_, _.Events), i.exports = _
 });

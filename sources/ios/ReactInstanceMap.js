@@ -1,9 +1,9 @@
-__d("ReactInstanceMap",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactInstanceMap",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
-        get: function(global/*e*/) {
-            return global/*e*/
+        get: function(e) {
+            return e
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

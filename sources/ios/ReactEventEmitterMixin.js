@@ -1,15 +1,15 @@
-__d("ReactEventEmitterMixin",["EventPluginHub"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactEventEmitterMixin",["EventPluginHub"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        EventPluginHub/*a*/.enqueueEvents(global/*e*/), EventPluginHub/*a*/.processEventQueue()
+    function o(e) {
+        EventPluginHub/*a*/.enqueueEvents(e), EventPluginHub/*a*/.processEventQueue()
     }
-    var EventPluginHub/*a*/ = require/*t*/("EventPluginHub"),
+    var EventPluginHub/*a*/ = t("EventPluginHub"),
         s = {
-            handleTopLevel: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                var module/*i*/ = EventPluginHub/*a*/.extractEvents(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/);
-                o(module/*i*/)
+            handleTopLevel: function(e, t, n, r) {
+                var i = EventPluginHub/*a*/.extractEvents(e, t, n, r);
+                o(i)
             }
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

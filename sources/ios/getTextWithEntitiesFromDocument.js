@@ -1,43 +1,43 @@
-__d("getTextWithEntitiesFromDocument",["ComposedEntityType","DocumentCharacters","DocumentEntity","UnicodeUtils"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (global/*e*/) {
-            var requireLazy/*r*/ = DocumentEntity/*u*/.get(global/*e*/);
-            if (requireLazy/*r*/.getType() === ComposedEntityType/*s*/.MENTION) {
-                var module/*i*/ = requireLazy/*r*/.getData().id;
+__d("getTextWithEntitiesFromDocument",["ComposedEntityType","DocumentCharacters","DocumentEntity","UnicodeUtils"],function (e, t, n, r, i) {
+    function o(e, t, n) {
+        if (e) {
+            var r = DocumentEntity/*u*/.get(e);
+            if (r.getType() === ComposedEntityType/*s*/.MENTION) {
+                var i = r.getData().id;
                 return {
                     entity: {
-                        id: module/*i*/
+                        id: i
                     },
-                    length: require/*t*/,
-                    offset: requireDynamic/*n*/
+                    length: t,
+                    offset: n
                 }
             }
         }
     }
 
-    function a(global/*e*/) {
-        for (var require/*t*/ = global/*e*/.getText().replace(d, function() {
+    function a(e) {
+        for (var t = e.getText().replace(d, function() {
                 return h
-            }), requireDynamic/*n*/ = global/*e*/.getEntities(), requireLazy/*r*/ = null, module/*i*/ = 0, a = [], ComposedEntityType/*s*/ = 0; ComposedEntityType/*s*/ < requireDynamic/*n*/.length; ComposedEntityType/*s*/++)
-            if (requireDynamic/*n*/[ComposedEntityType/*s*/] != requireLazy/*r*/) {
-                var DocumentCharacters/*l*/ = UnicodeUtils/*c*/.substr(require/*t*/, module/*i*/, ComposedEntityType/*s*/ - module/*i*/),
+            }), n = e.getEntities(), r = null, i = 0, a = [], ComposedEntityType/*s*/ = 0; ComposedEntityType/*s*/ < n.length; ComposedEntityType/*s*/++)
+            if (n[ComposedEntityType/*s*/] != r) {
+                var DocumentCharacters/*l*/ = UnicodeUtils/*c*/.substr(t, i, ComposedEntityType/*s*/ - i),
                     DocumentEntity/*u*/ = UnicodeUtils/*c*/.strlen(DocumentCharacters/*l*/);
-                a.push(o(requireLazy/*r*/, DocumentEntity/*u*/, module/*i*/)), requireLazy/*r*/ = requireDynamic/*n*/[ComposedEntityType/*s*/], module/*i*/ += DocumentEntity/*u*/
+                a.push(o(r, DocumentEntity/*u*/, i)), r = n[ComposedEntityType/*s*/], i += DocumentEntity/*u*/
             }
-        var DocumentCharacters/*l*/ = UnicodeUtils/*c*/.substr(require/*t*/, module/*i*/);
-        return a.push(o(requireLazy/*r*/, UnicodeUtils/*c*/.strlen(DocumentCharacters/*l*/), module/*i*/)), a = a.filter(function(global/*e*/) {
-            return global/*e*/
+        var DocumentCharacters/*l*/ = UnicodeUtils/*c*/.substr(t, i);
+        return a.push(o(r, UnicodeUtils/*c*/.strlen(DocumentCharacters/*l*/), i)), a = a.filter(function(e) {
+            return e
         }), {
-            text: require/*t*/,
+            text: t,
             ranges: a
         }
     }
-    var ComposedEntityType/*s*/ = require/*t*/("ComposedEntityType"),
-        DocumentCharacters/*l*/ = require/*t*/("DocumentCharacters"),
-        DocumentEntity/*u*/ = require/*t*/("DocumentEntity"),
-        UnicodeUtils/*c*/ = require/*t*/("UnicodeUtils"),
+    var ComposedEntityType/*s*/ = t("ComposedEntityType"),
+        DocumentCharacters/*l*/ = t("DocumentCharacters"),
+        DocumentEntity/*u*/ = t("DocumentEntity"),
+        UnicodeUtils/*c*/ = t("UnicodeUtils"),
         p = DocumentCharacters/*l*/.BLOCK_DELIMITER,
         d = new RegExp(p, "ig"),
         h = DocumentCharacters/*l*/.SOFT_NEWLINE;
-    module/*i*/.exports = a
+    i.exports = a
 });

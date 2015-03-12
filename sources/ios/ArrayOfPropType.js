@@ -1,10 +1,10 @@
-__d("ArrayOfPropType",["ReactPropTypes","deepDiffer"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ArrayOfPropType",["ReactPropTypes","deepDiffer"],function (e, t, n, r, i) {
     "use strict";
-    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
-        deepDiffer/*a*/ = require/*t*/("deepDiffer"),
-        s = function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = ReactPropTypes/*o*/.arrayOf(global/*e*/);
-            return requireDynamic/*n*/.differ = require/*t*/ ? require/*t*/ : deepDiffer/*a*/, requireDynamic/*n*/
+    var ReactPropTypes/*o*/ = t("ReactPropTypes"),
+        deepDiffer/*a*/ = t("deepDiffer"),
+        s = function(e, t) {
+            var n = ReactPropTypes/*o*/.arrayOf(e);
+            return n.differ = t ? t : deepDiffer/*a*/, n
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

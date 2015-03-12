@@ -1,5 +1,5 @@
-__d("RCTEventEmitter",["ReactIOSEventEmitter"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RCTEventEmitter",["ReactIOSEventEmitter"],function (e, t, n, r, i) {
     "use strict";
-    var ReactIOSEventEmitter/*o*/ = require/*t*/("ReactIOSEventEmitter");
-    module/*i*/.exports = ReactIOSEventEmitter/*o*/
+    var ReactIOSEventEmitter/*o*/ = t("ReactIOSEventEmitter");
+    i.exports = ReactIOSEventEmitter/*o*/
 });

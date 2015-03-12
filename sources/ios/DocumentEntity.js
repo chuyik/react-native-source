@@ -1,19 +1,19 @@
-__d("DocumentEntity",["DocumentEntityInstance","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var DocumentEntityInstance/*o*/ = require/*t*/("DocumentEntityInstance"),
-        invariant/*a*/ = require/*t*/("invariant"),
+__d("DocumentEntity",["DocumentEntityInstance","invariant"],function (e, t, n, r, i) {
+    var DocumentEntityInstance/*o*/ = t("DocumentEntityInstance"),
+        invariant/*a*/ = t("invariant"),
         s = {},
         l = 0,
         u = {
-            create: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                return u.add(new DocumentEntityInstance/*o*/(global/*e*/, require/*t*/, requireDynamic/*n*/))
+            create: function(e, t, n) {
+                return u.add(new DocumentEntityInstance/*o*/(e, t, n))
             },
-            add: function(global/*e*/) {
-                return s[++l] = global/*e*/, l.toString()
+            add: function(e) {
+                return s[++l] = e, l.toString()
             },
-            get: function(global/*e*/) {
-                var require/*t*/ = s[global/*e*/];
-                return require/*t*/ || invariant/*a*/(0, "Unknown DocumentEntity key."), require/*t*/
+            get: function(e) {
+                var t = s[e];
+                return t || invariant/*a*/(0, "Unknown DocumentEntity key."), t
             }
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

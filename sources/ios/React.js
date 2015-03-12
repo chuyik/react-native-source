@@ -1,4 +1,4 @@
-__d("React",["ReactIOS"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("React",["ReactIOS"],function (e, t, n, r, i) {
     "use strict";
-    module/*i*/.exports = require/*t*/("ReactIOS")
+    i.exports = t("ReactIOS")
 });

@@ -1,7 +1,7 @@
-__d("emptyFunction",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
+__d("emptyFunction",[],function (e, t, n, r, i) {
+    function o(e) {
         return function() {
-            return global/*e*/
+            return e
         }
     }
 
@@ -14,8 +14,8 @@ __d("emptyFunction",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/,
         thatReturnsThis: function() {
             return this
         },
-        thatReturnsArgument: function(global/*e*/) {
-            return global/*e*/
+        thatReturnsArgument: function(e) {
+            return e
         }
-    }), module/*i*/.exports = a
+    }), i.exports = a
 });

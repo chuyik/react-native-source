@@ -1,70 +1,70 @@
-__d("FeedbackLikeAction",["GraphQL_EXPERIMENTAL","GraphQLMutationAction","GraphQLMutationQueryCreator","GraphQLMutatorHub","GraphQLStore","GraphQLStoreDataHandler","defaultRQLMutationCallback","invariant","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FeedbackLikeAction",["GraphQL_EXPERIMENTAL","GraphQLMutationAction","GraphQLMutationQueryCreator","GraphQLMutatorHub","GraphQLStore","GraphQLStoreDataHandler","defaultRQLMutationCallback","invariant","rql"],function (e, t, n, r, i) {
     "use strict";
-    var GraphQL_EXPERIMENTAL/*o*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        GraphQLMutationAction/*a*/ = require/*t*/("GraphQLMutationAction"),
-        GraphQLMutationQueryCreator/*s*/ = require/*t*/("GraphQLMutationQueryCreator"),
-        l = (require/*t*/("GraphQLMutatorHub"), require/*t*/("GraphQLStore")),
-        u = (require/*t*/("GraphQLStoreDataHandler"), require/*t*/("defaultRQLMutationCallback")),
-        invariant/*c*/ = require/*t*/("invariant"),
-        rql/*p*/ = require/*t*/("rql"),
+    var GraphQL_EXPERIMENTAL/*o*/ = t("GraphQL_EXPERIMENTAL"),
+        GraphQLMutationAction/*a*/ = t("GraphQLMutationAction"),
+        GraphQLMutationQueryCreator/*s*/ = t("GraphQLMutationQueryCreator"),
+        l = (t("GraphQLMutatorHub"), t("GraphQLStore")),
+        u = (t("GraphQLStoreDataHandler"), t("defaultRQLMutationCallback")),
+        invariant/*c*/ = t("invariant"),
+        rql/*p*/ = t("rql"),
         d = {
-            handleLikeChange: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = l.resolveQueryFromStore(new GraphQL_EXPERIMENTAL/*o*/.QueryWithValues(function(global/*e*/) {
-                    var require/*t*/ = rql/*p*/.__GraphQL;
-                    return new require/*t*/.Query("node", [rql/*p*/.__var(global/*e*/)], [new require/*t*/.Field("does_viewer_like"), new require/*t*/.Field("likers", [new require/*t*/.Field("count")], null, null, null, null, {
+            handleLikeChange: function(e, t) {
+                var n = l.resolveQueryFromStore(new GraphQL_EXPERIMENTAL/*o*/.QueryWithValues(function(e) {
+                    var t = rql/*p*/.__GraphQL;
+                    return new t.Query("node", [rql/*p*/.__var(e)], [new t.Field("does_viewer_like"), new t.Field("likers", [new t.Field("count")], null, null, null, null, {
                         connection: !0,
                         nonFindable: !0
-                    }), new require/*t*/.Field("id", null, null, null, null, null, {
+                    }), new t.Field("id", null, null, null, null, null, {
                         generated: !0,
                         requisite: !0
                     })], null, null, "FeedbackLikeAction_q0")
-                }(global/*e*/), {}))[global/*e*/];
-                if (requireDynamic/*n*/ || invariant/*c*/(0, "Like/unlike action taken on unknown feedback target"), requireDynamic/*n*/.does_viewer_like !== require/*t*/) {
-                    var requireLazy/*r*/ = {
-                        id: global/*e*/,
-                        does_viewer_like: require/*t*/
+                }(e), {}))[e];
+                if (n || invariant/*c*/(0, "Like/unlike action taken on unknown feedback target"), n.does_viewer_like !== t) {
+                    var r = {
+                        id: e,
+                        does_viewer_like: t
                     };
-                    if (requireDynamic/*n*/.likers && void 0 !== requireDynamic/*n*/.likers.count) {
-                        var module/*i*/ = require/*t*/ ? 1 : -1;
-                        requireLazy/*r*/.likers = {
-                            count: requireDynamic/*n*/.likers.count + module/*i*/
+                    if (n.likers && void 0 !== n.likers.count) {
+                        var i = t ? 1 : -1;
+                        r.likers = {
+                            count: n.likers.count + i
                         }
                     }
                     var d = {},
-                        h = require/*t*/ ? "feedback_like" : "feedback_unlike";
+                        h = t ? "feedback_like" : "feedback_unlike";
                     d[h] = {
-                        feedback: requireLazy/*r*/
+                        feedback: r
                     };
                     var f, m;
-                    require/*t*/ ? (f = GraphQLMutationQueryCreator/*s*/.createQuery("feedback_like", {
-                        feedback: global/*e*/
-                    }), m = function(global/*e*/) {
-                        var require/*t*/ = rql/*p*/.__GraphQL;
-                        return new require/*t*/.Mutation("FeedbackLikeAction_m0", "FeedbackLikeResponsePayload", new require/*t*/.Callv("feedback_like", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+                    t ? (f = GraphQLMutationQueryCreator/*s*/.createQuery("feedback_like", {
+                        feedback: e
+                    }), m = function(e) {
+                        var t = rql/*p*/.__GraphQL;
+                        return new t.Mutation("FeedbackLikeAction_m0", "FeedbackLikeResponsePayload", new t.Callv("feedback_like", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [rql/*p*/.__frag(global/*e*/)])
+                        })], [rql/*p*/.__frag(e)])
                     }(f)) : (f = GraphQLMutationQueryCreator/*s*/.createQuery("feedback_unlike", {
-                        feedback: global/*e*/
-                    }), m = function(global/*e*/) {
-                        var require/*t*/ = rql/*p*/.__GraphQL;
-                        return new require/*t*/.Mutation("FeedbackLikeAction_m1", "FeedbackUnlikeResponsePayload", new require/*t*/.Callv("feedback_unlike", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+                        feedback: e
+                    }), m = function(e) {
+                        var t = rql/*p*/.__GraphQL;
+                        return new t.Mutation("FeedbackLikeAction_m1", "FeedbackUnlikeResponsePayload", new t.Callv("feedback_unlike", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [rql/*p*/.__frag(global/*e*/)])
+                        })], [rql/*p*/.__frag(e)])
                     }(f));
                     var g = new GraphQLMutationAction/*a*/;
                     g.runOptimisticAction(d), g.runServerAction(m, {
-                        feedback_id: global/*e*/
-                    }, function(global/*e*/, requireDynamic/*n*/) {
-                        if (global/*e*/) throw global/*e*/;
-                        if (requireDynamic/*n*/) {
-                            var requireLazy/*r*/ = require/*t*/ ? requireDynamic/*n*/.feedback_like : requireDynamic/*n*/.feedback_unlike;
-                            require/*t*/ !== requireLazy/*r*/.feedback.does_viewer_like && u(null, requireDynamic/*n*/, m)
+                        feedback_id: e
+                    }, function(e, n) {
+                        if (e) throw e;
+                        if (n) {
+                            var r = t ? n.feedback_like : n.feedback_unlike;
+                            t !== r.feedback.does_viewer_like && u(null, n, m)
                         }
                     })
                 }
             }
         };
-    module/*i*/.exports = d
+    i.exports = d
 });

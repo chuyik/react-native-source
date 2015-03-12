@@ -1,20 +1,20 @@
-__d("PublicPromise",["Promise"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("PublicPromise",["Promise"],function (e, t, n, r, i) {
     function o() {
         "use strict";
-        this.$PublicPromise_aborted = !1, this.$PublicPromise_settled = !1, this.$PublicPromise_promise = new Promise/*a*/(function(global/*e*/, require/*t*/) {
-            this.$PublicPromise_resolve = global/*e*/, this.$PublicPromise_reject = require/*t*/
+        this.$PublicPromise_aborted = !1, this.$PublicPromise_settled = !1, this.$PublicPromise_promise = new Promise/*a*/(function(e, t) {
+            this.$PublicPromise_resolve = e, this.$PublicPromise_reject = t
         }.bind(this))
     }
-    var Promise/*a*/ = require/*t*/("Promise");
+    var Promise/*a*/ = t("Promise");
     o.prototype.getPromise = function() {
         "use strict";
         return this.$PublicPromise_promise
-    }, o.prototype.resolve = function(global/*e*/) {
+    }, o.prototype.resolve = function(e) {
         "use strict";
-        this.$PublicPromise_aborted || (this.$PublicPromise_settled = !0, this.$PublicPromise_resolve(global/*e*/))
-    }, o.prototype.reject = function(global/*e*/) {
+        this.$PublicPromise_aborted || (this.$PublicPromise_settled = !0, this.$PublicPromise_resolve(e))
+    }, o.prototype.reject = function(e) {
         "use strict";
-        this.$PublicPromise_aborted || (this.$PublicPromise_settled = !0, this.$PublicPromise_reject(global/*e*/))
+        this.$PublicPromise_aborted || (this.$PublicPromise_settled = !0, this.$PublicPromise_reject(e))
     }, o.prototype.then = function() {
         "use strict";
         return Promise/*a*/.prototype.then.apply(this.$PublicPromise_promise, arguments)
@@ -30,5 +30,5 @@ __d("PublicPromise",["Promise"],function (global/*e*/, require/*t*/, requireDyna
     }, o.prototype.isAborted = function() {
         "use strict";
         return this.$PublicPromise_aborted
-    }, module/*i*/.exports = o
+    }, i.exports = o
 });

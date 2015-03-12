@@ -1,173 +1,173 @@
-__d("ReactPropTypes",["ReactElement","ReactPropTypeLocationNames","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactPropTypes",["ReactElement","ReactPropTypeLocationNames","emptyFunction"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o) {
-            if (module/*i*/ = module/*i*/ || R, null != requireDynamic/*n*/[requireLazy/*r*/]) return global/*e*/(requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o);
+    function o(e) {
+        function t(t, n, r, i, o) {
+            if (i = i || R, null != n[r]) return e(n, r, i, o);
             var a = ReactPropTypeLocationNames/*S*/[o];
-            return require/*t*/ ? new Error("Required " + a + " `" + requireLazy/*r*/ + "` was not specified in " + ("`" + module/*i*/ + "`.")) : void 0
+            return t ? new Error("Required " + a + " `" + r + "` was not specified in " + ("`" + i + "`.")) : void 0
         }
-        var requireDynamic/*n*/ = require/*t*/.bind(null, !1);
-        return requireDynamic/*n*/.isRequired = require/*t*/.bind(null, !0), requireDynamic/*n*/
+        var n = t.bind(null, !1);
+        return n.isRequired = t.bind(null, !0), n
     }
 
-    function a(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            var o = require/*t*/[requireDynamic/*n*/],
+    function a(e) {
+        function t(t, n, r, i) {
+            var o = t[n],
                 a = _(o);
-            if (a !== global/*e*/) {
-                var s = ReactPropTypeLocationNames/*S*/[module/*i*/],
+            if (a !== e) {
+                var s = ReactPropTypeLocationNames/*S*/[i],
                     l = y(o);
-                return new Error("Invalid " + s + " `" + requireDynamic/*n*/ + "` of type `" + l + "` " + ("supplied to `" + requireLazy/*r*/ + "`, expected `" + global/*e*/ + "`."))
+                return new Error("Invalid " + s + " `" + n + "` of type `" + l + "` " + ("supplied to `" + r + "`, expected `" + e + "`."))
             }
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
     function s() {
         return o(emptyFunction/*b*/.thatReturns())
     }
 
-    function l(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            var o = require/*t*/[requireDynamic/*n*/];
+    function l(e) {
+        function t(t, n, r, i) {
+            var o = t[n];
             if (!Array.isArray(o)) {
-                var a = ReactPropTypeLocationNames/*S*/[module/*i*/],
+                var a = ReactPropTypeLocationNames/*S*/[i],
                     s = _(o);
-                return new Error("Invalid " + a + " `" + requireDynamic/*n*/ + "` of type " + ("`" + s + "` supplied to `" + requireLazy/*r*/ + "`, expected an array."))
+                return new Error("Invalid " + a + " `" + n + "` of type " + ("`" + s + "` supplied to `" + r + "`, expected an array."))
             }
             for (var l = 0; l < o.length; l++) {
-                var u = global/*e*/(o, l, requireLazy/*r*/, module/*i*/);
+                var u = e(o, l, r, i);
                 if (u instanceof Error) return u
             }
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
     function u() {
-        function global/*e*/(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            if (!ReactElement/*v*/.isValidElement(global/*e*/[require/*t*/])) {
-                var module/*i*/ = ReactPropTypeLocationNames/*S*/[requireLazy/*r*/];
-                return new Error("Invalid " + module/*i*/ + " `" + require/*t*/ + "` supplied to " + ("`" + requireDynamic/*n*/ + "`, expected a React component."))
+        function e(e, t, n, r) {
+            if (!ReactElement/*v*/.isValidElement(e[t])) {
+                var i = ReactPropTypeLocationNames/*S*/[r];
+                return new Error("Invalid " + i + " `" + t + "` supplied to " + ("`" + n + "`, expected a React component."))
             }
         }
-        return o(global/*e*/)
+        return o(e)
     }
 
-    function c(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            if (!(require/*t*/[requireDynamic/*n*/] instanceof global/*e*/)) {
-                var o = ReactPropTypeLocationNames/*S*/[module/*i*/],
-                    a = global/*e*/.name || R;
-                return new Error("Invalid " + o + " `" + requireDynamic/*n*/ + "` supplied to " + ("`" + requireLazy/*r*/ + "`, expected instance of `" + a + "`."))
+    function c(e) {
+        function t(t, n, r, i) {
+            if (!(t[n] instanceof e)) {
+                var o = ReactPropTypeLocationNames/*S*/[i],
+                    a = e.name || R;
+                return new Error("Invalid " + o + " `" + n + "` supplied to " + ("`" + r + "`, expected instance of `" + a + "`."))
             }
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
-    function p(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            for (var o = require/*t*/[requireDynamic/*n*/], a = 0; a < global/*e*/.length; a++)
-                if (o === global/*e*/[a]) return;
-            var s = ReactPropTypeLocationNames/*S*/[module/*i*/],
-                l = JSON.stringify(global/*e*/);
-            return new Error("Invalid " + s + " `" + requireDynamic/*n*/ + "` of value `" + o + "` " + ("supplied to `" + requireLazy/*r*/ + "`, expected one of " + l + "."))
+    function p(e) {
+        function t(t, n, r, i) {
+            for (var o = t[n], a = 0; a < e.length; a++)
+                if (o === e[a]) return;
+            var s = ReactPropTypeLocationNames/*S*/[i],
+                l = JSON.stringify(e);
+            return new Error("Invalid " + s + " `" + n + "` of value `" + o + "` " + ("supplied to `" + r + "`, expected one of " + l + "."))
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
-    function d(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            var o = require/*t*/[requireDynamic/*n*/],
+    function d(e) {
+        function t(t, n, r, i) {
+            var o = t[n],
                 a = _(o);
             if ("object" !== a) {
-                var s = ReactPropTypeLocationNames/*S*/[module/*i*/];
-                return new Error("Invalid " + s + " `" + requireDynamic/*n*/ + "` of type " + ("`" + a + "` supplied to `" + requireLazy/*r*/ + "`, expected an object."))
+                var s = ReactPropTypeLocationNames/*S*/[i];
+                return new Error("Invalid " + s + " `" + n + "` of type " + ("`" + a + "` supplied to `" + r + "`, expected an object."))
             }
             for (var l in o)
                 if (o.hasOwnProperty(l)) {
-                    var u = global/*e*/(o, l, requireLazy/*r*/, module/*i*/);
+                    var u = e(o, l, r, i);
                     if (u instanceof Error) return u
                 }
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
-    function h(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            for (var o = 0; o < global/*e*/.length; o++) {
-                var a = global/*e*/[o];
-                if (null == a(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/)) return
+    function h(e) {
+        function t(t, n, r, i) {
+            for (var o = 0; o < e.length; o++) {
+                var a = e[o];
+                if (null == a(t, n, r, i)) return
             }
-            var s = ReactPropTypeLocationNames/*S*/[module/*i*/];
-            return new Error("Invalid " + s + " `" + requireDynamic/*n*/ + "` supplied to " + ("`" + requireLazy/*r*/ + "`."))
+            var s = ReactPropTypeLocationNames/*S*/[i];
+            return new Error("Invalid " + s + " `" + n + "` supplied to " + ("`" + r + "`."))
         }
-        return o(require/*t*/)
+        return o(t)
     }
 
     function f() {
-        function global/*e*/(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            if (!g(global/*e*/[require/*t*/])) {
-                var module/*i*/ = ReactPropTypeLocationNames/*S*/[requireLazy/*r*/];
-                return new Error("Invalid " + module/*i*/ + " `" + require/*t*/ + "` supplied to " + ("`" + requireDynamic/*n*/ + "`, expected a renderable prop."))
+        function e(e, t, n, r) {
+            if (!g(e[t])) {
+                var i = ReactPropTypeLocationNames/*S*/[r];
+                return new Error("Invalid " + i + " `" + t + "` supplied to " + ("`" + n + "`, expected a renderable prop."))
             }
         }
-        return o(global/*e*/)
+        return o(e)
     }
 
-    function m(global/*e*/) {
-        function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-            var o = require/*t*/[requireDynamic/*n*/],
+    function m(e) {
+        function t(t, n, r, i) {
+            var o = t[n],
                 a = _(o);
             if ("object" !== a) {
-                var s = ReactPropTypeLocationNames/*S*/[module/*i*/];
-                return new Error("Invalid " + s + " `" + requireDynamic/*n*/ + "` of type `" + a + "` " + ("supplied to `" + requireLazy/*r*/ + "`, expected `object`."))
+                var s = ReactPropTypeLocationNames/*S*/[i];
+                return new Error("Invalid " + s + " `" + n + "` of type `" + a + "` " + ("supplied to `" + r + "`, expected `object`."))
             }
-            for (var l in global/*e*/) {
-                var u = global/*e*/[l];
+            for (var l in e) {
+                var u = e[l];
                 if (u) {
-                    var c = u(o, l, requireLazy/*r*/, module/*i*/);
+                    var c = u(o, l, r, i);
                     if (c) return c
                 }
             }
         }
-        return o(require/*t*/, "expected `object`")
+        return o(t, "expected `object`")
     }
 
-    function g(global/*e*/) {
-        switch (typeof global/*e*/) {
+    function g(e) {
+        switch (typeof e) {
             case "number":
             case "string":
                 return !0;
             case "boolean":
-                return !global/*e*/;
+                return !e;
             case "object":
-                if (Array.isArray(global/*e*/)) return global/*e*/.every(g);
-                if (ReactElement/*v*/.isValidElement(global/*e*/)) return !0;
-                for (var require/*t*/ in global/*e*/)
-                    if (!g(global/*e*/[require/*t*/])) return !1;
+                if (Array.isArray(e)) return e.every(g);
+                if (ReactElement/*v*/.isValidElement(e)) return !0;
+                for (var t in e)
+                    if (!g(e[t])) return !1;
                 return !0;
             default:
                 return !1
         }
     }
 
-    function _(global/*e*/) {
-        var require/*t*/ = typeof global/*e*/;
-        return Array.isArray(global/*e*/) ? "array" : global/*e*/ instanceof RegExp ? "object" : require/*t*/
+    function _(e) {
+        var t = typeof e;
+        return Array.isArray(e) ? "array" : e instanceof RegExp ? "object" : t
     }
 
-    function y(global/*e*/) {
-        var require/*t*/ = _(global/*e*/);
-        if ("object" === require/*t*/) {
-            if (global/*e*/ instanceof Date) return "date";
-            if (global/*e*/ instanceof RegExp) return "regexp"
+    function y(e) {
+        var t = _(e);
+        if ("object" === t) {
+            if (e instanceof Date) return "date";
+            if (e instanceof RegExp) return "regexp"
         }
-        return require/*t*/
+        return t
     }
-    var ReactElement/*v*/ = require/*t*/("ReactElement"),
-        ReactPropTypeLocationNames/*S*/ = require/*t*/("ReactPropTypeLocationNames"),
-        emptyFunction/*b*/ = require/*t*/("emptyFunction"),
+    var ReactElement/*v*/ = t("ReactElement"),
+        ReactPropTypeLocationNames/*S*/ = t("ReactPropTypeLocationNames"),
+        emptyFunction/*b*/ = t("emptyFunction"),
         R = "<<anonymous>>",
         w = {
             array: a("array"),
@@ -186,5 +186,5 @@ __d("ReactPropTypes",["ReactElement","ReactPropTypeLocationNames","emptyFunction
             renderable: f(),
             shape: m
         };
-    module/*i*/.exports = w
+    i.exports = w
 });

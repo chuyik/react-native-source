@@ -1,12 +1,12 @@
-__d("UnicodeBidiDirection",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("UnicodeBidiDirection",["keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+    var keyMirror/*o*/ = t("keyMirror"),
         a = keyMirror/*o*/({
             NEUTRAL: !0,
             LTR: !0,
             RTL: !0
         });
-    a.isStrong = function(global/*e*/) {
-        return global/*e*/ === a.LTR || global/*e*/ === a.RTL
-    }, module/*i*/.exports = a
+    a.isStrong = function(e) {
+        return e === a.LTR || e === a.RTL
+    }, i.exports = a
 });

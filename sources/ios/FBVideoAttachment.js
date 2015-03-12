@@ -1,15 +1,15 @@
-__d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","TouchableHighlight","View","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions","RouteHandler","StyleSheet","TouchableHighlight","View","ix"],function (e, t, n, r, i) {
     "use strict";
-    var Image/*o*/ = require/*t*/("Image"),
-        PixelRatio/*a*/ = require/*t*/("PixelRatio"),
-        React/*s*/ = require/*t*/("React"),
-        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*u*/ = require/*t*/("Dimensions"),
-        RouteHandler/*c*/ = require/*t*/("RouteHandler"),
-        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
-        TouchableHighlight/*d*/ = require/*t*/("TouchableHighlight"),
-        View/*h*/ = require/*t*/("View"),
-        ix/*f*/ = require/*t*/("ix"),
+    var Image/*o*/ = t("Image"),
+        PixelRatio/*a*/ = t("PixelRatio"),
+        React/*s*/ = t("React"),
+        ReactGraphQL/*l*/ = t("ReactGraphQL"),
+        Dimensions/*u*/ = t("Dimensions"),
+        RouteHandler/*c*/ = t("RouteHandler"),
+        StyleSheet/*p*/ = t("StyleSheet"),
+        TouchableHighlight/*d*/ = t("TouchableHighlight"),
+        View/*h*/ = t("View"),
+        ix/*f*/ = t("ix"),
         m = Dimensions/*u*/.get("window").width * PixelRatio/*a*/.get(),
         g = 130 * PixelRatio/*a*/.get(),
         _ = 48,
@@ -22,10 +22,10 @@ __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions
             mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/) {
-                            var requireLazy/*r*/ = require/*t*/.__GraphQL;
-                            return new requireLazy/*r*/.QueryFragment("FBVideoAttachment_attachment", "StoryAttachment", [new requireLazy/*r*/.Field("media", [new requireLazy/*r*/.Field("id"), new requireLazy/*r*/.Field("url", null, null, [new requireLazy/*r*/.Callv("site", ["mobile"])]), new requireLazy/*r*/.Field("image", [new requireLazy/*r*/.Field("uri"), new requireLazy/*r*/.Field("height"), new requireLazy/*r*/.Field("width")], null, [new requireLazy/*r*/.Callv("size", [require/*t*/.__var(global/*e*/), require/*t*/.__var(requireDynamic/*n*/)]), new requireLazy/*r*/.Callv("sizing", ["cover-fill"])], "video_still"), new requireLazy/*r*/.Field("__type__", [new requireLazy/*r*/.Field("name"), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                    attachment: function(e, t) {
+                        return function(e, n) {
+                            var r = t.__GraphQL;
+                            return new r.QueryFragment("FBVideoAttachment_attachment", "StoryAttachment", [new r.Field("media", [new r.Field("id"), new r.Field("url", null, null, [new r.Callv("site", ["mobile"])]), new r.Field("image", [new r.Field("uri"), new r.Field("height"), new r.Field("width")], null, [new r.Callv("size", [t.__var(e), t.__var(n)]), new r.Callv("sizing", ["cover-fill"])], "video_still"), new r.Field("__type__", [new r.Field("name"), new r.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -39,31 +39,31 @@ __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions
                 }
             },
             render: function() {
-                var global/*e*/ = this.props.attachment.media;
-                if (!global/*e*/) return console.error("Tried to render an FBVideoAttachment without media!"), React/*s*/.createElement(View/*h*/, null);
-                var require/*t*/ = global/*e*/.video_still,
-                    requireDynamic/*n*/ = PixelRatio/*a*/.get(),
-                    requireLazy/*r*/ = require/*t*/.height / requireDynamic/*n*/,
-                    module/*i*/ = (requireLazy/*r*/ - _) / 2;
+                var e = this.props.attachment.media;
+                if (!e) return console.error("Tried to render an FBVideoAttachment without media!"), React/*s*/.createElement(View/*h*/, null);
+                var t = e.video_still,
+                    n = PixelRatio/*a*/.get(),
+                    r = t.height / n,
+                    i = (r - _) / 2;
                 return React/*s*/.createElement(TouchableHighlight/*d*/, {
                     onPress: RouteHandler/*c*/.getCallback({
-                        typeList: [global/*e*/.__type__.name, "URL"],
+                        typeList: [e.__type__.name, "URL"],
                         params: {
-                            url: global/*e*/.url,
+                            url: e.url,
                             navigator: this.props.navigator,
-                            id: global/*e*/.id
+                            id: e.id
                         }
                     })
                 }, React/*s*/.createElement(View/*h*/, null, React/*s*/.createElement(Image/*o*/, {
                     style: [v.image, {
-                        height: requireLazy/*r*/
+                        height: r
                     }],
-                    source: require/*t*/
+                    source: t
                 }), React/*s*/.createElement(View/*h*/, {
                     style: v.playIconContainer
                 }, React/*s*/.createElement(Image/*o*/, {
                     style: [v.playIcon, {
-                        top: module/*i*/
+                        top: i
                     }],
                     source: ix/*f*/("newsfeedVideoPlayIcon")
                 }))))
@@ -88,5 +88,5 @@ __d("FBVideoAttachment",["Image","PixelRatio","React","ReactGraphQL","Dimensions
                 backgroundColor: "transparent"
             }
         });
-    module/*i*/.exports = y
+    i.exports = y
 });

@@ -1,7 +1,7 @@
-__d("defaultRQLMutationCallback",["GraphQLStore"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        global/*e*/ ? GraphQLStore/*a*/.handleMutationRollback(requireLazy/*r*/) : require/*t*/ && GraphQLStore/*a*/.handleServerMutation(require/*t*/, requireDynamic/*n*/)
+__d("defaultRQLMutationCallback",["GraphQLStore"],function (e, t, n, r, i) {
+    function o(e, t, n, r) {
+        e ? GraphQLStore/*a*/.handleMutationRollback(r) : t && GraphQLStore/*a*/.handleServerMutation(t, n)
     }
-    var GraphQLStore/*a*/ = require/*t*/("GraphQLStore");
-    module/*i*/.exports = o
+    var GraphQLStore/*a*/ = t("GraphQLStore");
+    i.exports = o
 });

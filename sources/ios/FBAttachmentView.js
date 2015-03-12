@@ -1,22 +1,22 @@
-__d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAttachment","FBPhotoAttachment","FBPhotoCollage","FBPhotoModalViewer","FBPhotoViewerOverlay","FBQuestionAttachment","FBStickerAttachment","FBVideoAttachment","PixelRatio","React","ReactGraphQL","Dimensions","StylePropType","isEmpty","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAttachment","FBPhotoAttachment","FBPhotoCollage","FBPhotoModalViewer","FBPhotoViewerOverlay","FBQuestionAttachment","FBStickerAttachment","FBVideoAttachment","PixelRatio","React","ReactGraphQL","Dimensions","StylePropType","isEmpty","keyOf"],function (e, t, n, r, i) {
     "use strict";
-    var FBAvatarAttachment/*o*/ = require/*t*/("FBAvatarAttachment"),
-        FBEventAttachment/*a*/ = require/*t*/("FBEventAttachment"),
-        FBFallbackAttachment/*s*/ = require/*t*/("FBFallbackAttachment"),
-        FBPhotoAttachment/*l*/ = require/*t*/("FBPhotoAttachment"),
-        FBPhotoCollage/*u*/ = require/*t*/("FBPhotoCollage"),
-        FBPhotoModalViewer/*c*/ = require/*t*/("FBPhotoModalViewer"),
-        FBPhotoViewerOverlay/*p*/ = require/*t*/("FBPhotoViewerOverlay"),
-        FBQuestionAttachment/*d*/ = require/*t*/("FBQuestionAttachment"),
-        FBStickerAttachment/*h*/ = require/*t*/("FBStickerAttachment"),
-        FBVideoAttachment/*f*/ = require/*t*/("FBVideoAttachment"),
-        PixelRatio/*m*/ = require/*t*/("PixelRatio"),
-        React/*g*/ = require/*t*/("React"),
-        ReactGraphQL/*_*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*y*/ = require/*t*/("Dimensions"),
-        StylePropType/*v*/ = require/*t*/("StylePropType"),
-        isEmpty/*S*/ = require/*t*/("isEmpty"),
-        keyOf/*b*/ = require/*t*/("keyOf"),
+    var FBAvatarAttachment/*o*/ = t("FBAvatarAttachment"),
+        FBEventAttachment/*a*/ = t("FBEventAttachment"),
+        FBFallbackAttachment/*s*/ = t("FBFallbackAttachment"),
+        FBPhotoAttachment/*l*/ = t("FBPhotoAttachment"),
+        FBPhotoCollage/*u*/ = t("FBPhotoCollage"),
+        FBPhotoModalViewer/*c*/ = t("FBPhotoModalViewer"),
+        FBPhotoViewerOverlay/*p*/ = t("FBPhotoViewerOverlay"),
+        FBQuestionAttachment/*d*/ = t("FBQuestionAttachment"),
+        FBStickerAttachment/*h*/ = t("FBStickerAttachment"),
+        FBVideoAttachment/*f*/ = t("FBVideoAttachment"),
+        PixelRatio/*m*/ = t("PixelRatio"),
+        React/*g*/ = t("React"),
+        ReactGraphQL/*_*/ = t("ReactGraphQL"),
+        Dimensions/*y*/ = t("Dimensions"),
+        StylePropType/*v*/ = t("StylePropType"),
+        isEmpty/*S*/ = t("isEmpty"),
+        keyOf/*b*/ = t("keyOf"),
         R = Dimensions/*y*/.get("window").width - 10,
         w = PixelRatio/*m*/.get(),
         C = keyOf/*b*/({
@@ -52,9 +52,9 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                     imageLarge: [R * w, R * w]
                 },
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, FBAvatarAttachment/*o*/, FBEventAttachment/*a*/, FBFallbackAttachment/*s*/, FBPhotoAttachment/*l*/) {
-                            var FBPhotoCollage/*u*/ = require/*t*/.__GraphQL;
+                    attachment: function(e, t) {
+                        return function(e, n, r, i, FBAvatarAttachment/*o*/, FBEventAttachment/*a*/, FBFallbackAttachment/*s*/, FBPhotoAttachment/*l*/) {
+                            var FBPhotoCollage/*u*/ = t.__GraphQL;
                             return new FBPhotoCollage/*u*/.QueryFragment("FBAttachmentView_attachment", "StoryAttachment", [new FBPhotoCollage/*u*/.Field("style_list", null, null, null, null, null, {
                                 plural: !0
                             }), new FBPhotoCollage/*u*/.Field("target", [new FBPhotoCollage/*u*/.Field("id", null, null, null, null, null, {
@@ -64,7 +64,7 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                                 pk: "id"
                             }), new FBPhotoCollage/*u*/.Field("media", [new FBPhotoCollage/*u*/.Field("id")]), new FBPhotoCollage/*u*/.Field("subattachments", [new FBPhotoCollage/*u*/.Field("media", [new FBPhotoCollage/*u*/.Field("id")])], null, null, null, null, {
                                 plural: !0
-                            })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(requireDynamic/*n*/), require/*t*/.__frag(requireLazy/*r*/), require/*t*/.__frag(module/*i*/), require/*t*/.__frag(FBAvatarAttachment/*o*/), require/*t*/.__frag(FBEventAttachment/*a*/), require/*t*/.__frag(FBFallbackAttachment/*s*/), require/*t*/.__frag(FBPhotoAttachment/*l*/)], {
+                            })], [t.__frag(e), t.__frag(n), t.__frag(r), t.__frag(i), t.__frag(FBAvatarAttachment/*o*/), t.__frag(FBEventAttachment/*a*/), t.__frag(FBFallbackAttachment/*s*/), t.__frag(FBPhotoAttachment/*l*/)], {
                                 scope: "FBAttachmentView_attachment"
                             })
                         }(FBAvatarAttachment/*o*/.getQuery("attachment"), FBEventAttachment/*a*/.getQuery("attachment"), FBQuestionAttachment/*d*/.getQuery("attachment"), FBPhotoAttachment/*l*/.getQuery("attachment"), FBPhotoCollage/*u*/.getQuery("attachment"), FBStickerAttachment/*h*/.getQuery("attachment"), FBVideoAttachment/*f*/.getQuery("attachment"), FBFallbackAttachment/*s*/.getQuery("attachment"))
@@ -75,13 +75,13 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                 this.refs[C].close()
             },
             render: function() {
-                var global/*e*/ = this.props.attachment;
-                if (global/*e*/.style_list)
-                    for (var require/*t*/ = 0; require/*t*/ < global/*e*/.style_list.length; ++require/*t*/) {
-                        var requireDynamic/*n*/ = global/*e*/.style_list[require/*t*/];
-                        if ("album" === requireDynamic/*n*/ && !isEmpty/*S*/(global/*e*/.subattachments)) return React/*g*/.createElement(FBPhotoCollage/*u*/, {
+                var e = this.props.attachment;
+                if (e.style_list)
+                    for (var t = 0; t < e.style_list.length; ++t) {
+                        var n = e.style_list[t];
+                        if ("album" === n && !isEmpty/*S*/(e.subattachments)) return React/*g*/.createElement(FBPhotoCollage/*u*/, {
                             ref: C,
-                            attachment: global/*e*/,
+                            attachment: e,
                             maxPhotoWidth: this.props.maxPhotoWidth,
                             modalViewer: FBPhotoModalViewer/*c*/,
                             openedOverlayFactory: function() {
@@ -90,9 +90,9 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                                 })
                             }.bind(this)
                         });
-                        if ("photo" === requireDynamic/*n*/ && global/*e*/.media) return React/*g*/.createElement(FBPhotoAttachment/*l*/, {
+                        if ("photo" === n && e.media) return React/*g*/.createElement(FBPhotoAttachment/*l*/, {
                             ref: C,
-                            attachment: global/*e*/,
+                            attachment: e,
                             maxPhotoHeight: this.props.maxPhotoHeight,
                             maxPhotoWidth: this.props.maxPhotoWidth,
                             modalViewer: FBPhotoModalViewer/*c*/,
@@ -102,30 +102,30 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                                 })
                             }.bind(this)
                         });
-                        if ("avatar" === requireDynamic/*n*/ && global/*e*/.target) return React/*g*/.createElement(FBAvatarAttachment/*o*/, {
-                            attachment: global/*e*/,
+                        if ("avatar" === n && e.target) return React/*g*/.createElement(FBAvatarAttachment/*o*/, {
+                            attachment: e,
                             navigator: this.props.navigator,
                             maxPhotoWidth: this.props.maxPhotoWidth
                         });
-                        if ("event" === requireDynamic/*n*/ && global/*e*/.target) return React/*g*/.createElement(FBEventAttachment/*a*/, {
-                            attachment: global/*e*/,
+                        if ("event" === n && e.target) return React/*g*/.createElement(FBEventAttachment/*a*/, {
+                            attachment: e,
                             navigator: this.props.navigator
                         });
-                        if ("question" === requireDynamic/*n*/ && global/*e*/.target) return React/*g*/.createElement(FBQuestionAttachment/*d*/, {
-                            attachment: global/*e*/,
+                        if ("question" === n && e.target) return React/*g*/.createElement(FBQuestionAttachment/*d*/, {
+                            attachment: e,
                             navigator: this.props.navigator
                         });
-                        if ("video" === requireDynamic/*n*/ && global/*e*/.media) return React/*g*/.createElement(FBVideoAttachment/*f*/, {
-                            attachment: global/*e*/,
+                        if ("video" === n && e.media) return React/*g*/.createElement(FBVideoAttachment/*f*/, {
+                            attachment: e,
                             navigator: this.props.navigator
                         });
-                        if ("sticker" === requireDynamic/*n*/ && global/*e*/.media) return React/*g*/.createElement(FBStickerAttachment/*h*/, {
-                            attachment: global/*e*/,
+                        if ("sticker" === n && e.media) return React/*g*/.createElement(FBStickerAttachment/*h*/, {
+                            attachment: e,
                             navigator: this.props.navigator
                         })
                     }
                 return React/*g*/.createElement(FBFallbackAttachment/*s*/, {
-                    attachment: global/*e*/,
+                    attachment: e,
                     navigator: this.props.navigator,
                     titleMaxLines: this.props.titleMaxLines,
                     useLargeImage: this.props.useLargeImage,
@@ -140,5 +140,5 @@ __d("FBAttachmentView",["FBAvatarAttachment","FBEventAttachment","FBFallbackAtta
                 })
             }
         });
-    module/*i*/.exports = E
+    i.exports = E
 });

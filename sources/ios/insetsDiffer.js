@@ -1,4 +1,4 @@
-__d("insetsDiffer",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("insetsDiffer",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
             top: void 0,
@@ -6,8 +6,8 @@ __d("insetsDiffer",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, 
             right: void 0,
             bottom: void 0
         },
-        a = function(global/*e*/, require/*t*/) {
-            return global/*e*/ = global/*e*/ || o, require/*t*/ = require/*t*/ || o, global/*e*/ !== require/*t*/ && (global/*e*/.top !== require/*t*/.top || global/*e*/.left !== require/*t*/.left || global/*e*/.right !== require/*t*/.right || global/*e*/.bottom !== require/*t*/.bottom)
+        a = function(e, t) {
+            return e = e || o, t = t || o, e !== t && (e.top !== t.top || e.left !== t.left || e.right !== t.right || e.bottom !== t.bottom)
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

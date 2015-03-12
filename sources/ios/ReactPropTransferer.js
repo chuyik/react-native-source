@@ -1,27 +1,27 @@
-__d("ReactPropTransferer",["emptyFunction","invariant","joinClasses","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactPropTransferer",["emptyFunction","invariant","joinClasses","warning"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return function(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            require/*t*/[requireDynamic/*n*/] = require/*t*/.hasOwnProperty(requireDynamic/*n*/) ? global/*e*/(require/*t*/[requireDynamic/*n*/], requireLazy/*r*/) : requireLazy/*r*/
+    function o(e) {
+        return function(t, n, r) {
+            t[n] = t.hasOwnProperty(n) ? e(t[n], r) : r
         }
     }
 
-    function a(global/*e*/, require/*t*/) {
-        for (var requireDynamic/*n*/ in require/*t*/)
-            if (require/*t*/.hasOwnProperty(requireDynamic/*n*/)) {
-                var requireLazy/*r*/ = h[requireDynamic/*n*/];
-                requireLazy/*r*/ && h.hasOwnProperty(requireDynamic/*n*/) ? requireLazy/*r*/(global/*e*/, requireDynamic/*n*/, require/*t*/[requireDynamic/*n*/]) : global/*e*/.hasOwnProperty(requireDynamic/*n*/) || (global/*e*/[requireDynamic/*n*/] = require/*t*/[requireDynamic/*n*/])
+    function a(e, t) {
+        for (var n in t)
+            if (t.hasOwnProperty(n)) {
+                var r = h[n];
+                r && h.hasOwnProperty(n) ? r(e, n, t[n]) : e.hasOwnProperty(n) || (e[n] = t[n])
             }
-        return global/*e*/
+        return e
     }
-    var emptyFunction/*s*/ = require/*t*/("emptyFunction"),
-        invariant/*l*/ = require/*t*/("invariant"),
-        joinClasses/*u*/ = require/*t*/("joinClasses"),
-        warning/*c*/ = require/*t*/("warning"),
+    var emptyFunction/*s*/ = t("emptyFunction"),
+        invariant/*l*/ = t("invariant"),
+        joinClasses/*u*/ = t("joinClasses"),
+        warning/*c*/ = t("warning"),
         p = !1,
-        d = o(function(global/*e*/, require/*t*/) {
-            return Object.assign({}, require/*t*/, global/*e*/)
+        d = o(function(e, t) {
+            return Object.assign({}, t, e)
         }),
         h = {
             children: emptyFunction/*s*/,
@@ -30,14 +30,14 @@ __d("ReactPropTransferer",["emptyFunction","invariant","joinClasses","warning"],
         },
         f = {
             TransferStrategies: h,
-            mergeProps: function(global/*e*/, require/*t*/) {
-                return a(Object.assign({}, global/*e*/), require/*t*/)
+            mergeProps: function(e, t) {
+                return a(Object.assign({}, e), t)
             },
             Mixin: {
-                transferPropsTo: function(global/*e*/) {
-                    return global/*e*/._owner !== this && invariant/*l*/(0, "%emptyFunction/*s*/: You can'require/*t*/ call transferPropsTo() on a component that you don'require/*t*/ own, %emptyFunction/*s*/. This usually means you are calling transferPropsTo() on a component passed in as props or children.", this.constructor.displayName, "string" == typeof global/*e*/.type ? global/*e*/.type : global/*e*/.type.displayName), __DEV__ && (p || (p = !0, warning/*c*/(!1, "transferPropsTo is deprecated. See http://fb.me/react-transferpropsto for more information."))), a(global/*e*/.props, this.props), global/*e*/
+                transferPropsTo: function(e) {
+                    return e._owner !== this && invariant/*l*/(0, "%emptyFunction/*s*/: You can't call transferPropsTo() on a component that you don't own, %emptyFunction/*s*/. This usually means you are calling transferPropsTo() on a component passed in as props or children.", this.constructor.displayName, "string" == typeof e.type ? e.type : e.type.displayName), __DEV__ && (p || (p = !0, warning/*c*/(!1, "transferPropsTo is deprecated. See http://fb.me/react-transferpropsto for more information."))), a(e.props, this.props), e
                 }
             }
         };
-    module/*i*/.exports = f
+    i.exports = f
 });

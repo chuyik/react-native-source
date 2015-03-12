@@ -1,17 +1,17 @@
-__d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","TimerMixin","Touchable","View","cloneWithProps","ensureComponentIsNative","keyOf","merge","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes","StyleSheet","TimerMixin","Touchable","View","cloneWithProps","ensureComponentIsNative","keyOf","merge","onlyChild"],function (e, t, n, r, i) {
     "use strict";
-    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
-        React/*a*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        TimerMixin/*u*/ = require/*t*/("TimerMixin"),
-        Touchable/*c*/ = require/*t*/("Touchable"),
-        View/*p*/ = require/*t*/("View"),
-        cloneWithProps/*d*/ = require/*t*/("cloneWithProps"),
-        ensureComponentIsNative/*h*/ = require/*t*/("ensureComponentIsNative"),
-        keyOf/*f*/ = require/*t*/("keyOf"),
-        merge/*m*/ = require/*t*/("merge"),
-        onlyChild/*g*/ = require/*t*/("onlyChild"),
+    var NativeMethodsMixin/*o*/ = t("NativeMethodsMixin"),
+        React/*a*/ = t("React"),
+        ReactIOSViewAttributes/*s*/ = t("ReactIOSViewAttributes"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        TimerMixin/*u*/ = t("TimerMixin"),
+        Touchable/*c*/ = t("Touchable"),
+        View/*p*/ = t("View"),
+        cloneWithProps/*d*/ = t("cloneWithProps"),
+        ensureComponentIsNative/*h*/ = t("ensureComponentIsNative"),
+        keyOf/*f*/ = t("keyOf"),
+        merge/*m*/ = t("merge"),
+        onlyChild/*g*/ = t("onlyChild"),
         _ = {
             activeOpacity: .8,
             underlayColor: "black"
@@ -28,19 +28,19 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
             getDefaultProps: function() {
                 return _
             },
-            computeSyntheticState: function(global/*e*/) {
+            computeSyntheticState: function(e) {
                 return {
                     activeProps: {
                         style: {
-                            opacity: global/*e*/.activeOpacity
+                            opacity: e.activeOpacity
                         }
                     },
                     activeUnderlayProps: {
                         style: {
-                            backgroundColor: global/*e*/.underlayColor
+                            backgroundColor: e.underlayColor
                         }
                     },
-                    underlayStyle: [w.style, global/*e*/.style]
+                    underlayStyle: [w.style, e.style]
                 }
             },
             getInitialState: function() {
@@ -52,8 +52,8 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
             componentDidUpdate: function() {
                 ensureComponentIsNative/*h*/(this.refs[S])
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                (global/*e*/.activeOpacity !== this.props.activeOpacity || global/*e*/.underlayColor !== this.props.underlayColor || global/*e*/.style !== this.props.style) && this.setState(this.computeSyntheticState(global/*e*/))
+            componentWillReceiveProps: function(e) {
+                (e.activeOpacity !== this.props.activeOpacity || e.underlayColor !== this.props.underlayColor || e.style !== this.props.style) && this.setState(this.computeSyntheticState(e))
             },
             viewConfig: {
                 uiViewClassName: "RCTView",
@@ -120,5 +120,5 @@ __d("TouchableHighlight",["NativeMethodsMixin","React","ReactIOSViewAttributes",
                 }
             }).x
         };
-    module/*i*/.exports = y
+    i.exports = y
 });

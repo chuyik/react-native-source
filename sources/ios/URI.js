@@ -1,36 +1,36 @@
-__d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSameOrigin","copyProperties","goURI"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
+__d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSameOrigin","copyProperties","goURI"],function (e, t, n, r, i) {
+    function o(e) {
         "use strict";
-        return this instanceof o ? void URIBase/*s*/.call(this, global/*e*/ || "", PHPQuerySerializer/*a*/) : new o(global/*e*/ || window.location.href)
+        return this instanceof o ? void URIBase/*s*/.call(this, e || "", PHPQuerySerializer/*a*/) : new o(e || window.location.href)
     }
-    var PHPQuerySerializer/*a*/ = require/*t*/("PHPQuerySerializer"),
-        URIBase/*s*/ = require/*t*/("URIBase"),
-        isFacebookURI/*l*/ = require/*t*/("isFacebookURI"),
-        unqualifyURI/*u*/ = require/*t*/("unqualifyURI"),
-        areSameOrigin/*c*/ = require/*t*/("areSameOrigin"),
-        copyProperties/*p*/ = require/*t*/("copyProperties"),
-        goURI/*d*/ = require/*t*/("goURI");
+    var PHPQuerySerializer/*a*/ = t("PHPQuerySerializer"),
+        URIBase/*s*/ = t("URIBase"),
+        isFacebookURI/*l*/ = t("isFacebookURI"),
+        unqualifyURI/*u*/ = t("unqualifyURI"),
+        areSameOrigin/*c*/ = t("areSameOrigin"),
+        copyProperties/*p*/ = t("copyProperties"),
+        goURI/*d*/ = t("goURI");
     for (var h in URIBase/*s*/) URIBase/*s*/.hasOwnProperty(h) && (o[h] = URIBase/*s*/[h]);
     var f = null === URIBase/*s*/ ? null : URIBase/*s*/.prototype;
-    o.prototype = Object.create(f), o.prototype.constructor = o, o.__superConstructor__ = URIBase/*s*/, o.prototype.setPath = function(global/*e*/) {
+    o.prototype = Object.create(f), o.prototype.constructor = o, o.__superConstructor__ = URIBase/*s*/, o.prototype.setPath = function(e) {
         "use strict";
-        return this.path = global/*e*/, f.setPath.call(this, global/*e*/)
+        return this.path = e, f.setPath.call(this, e)
     }, o.prototype.getPath = function() {
         "use strict";
-        var global/*e*/ = f.getPath.call(this);
-        return global/*e*/ ? global/*e*/.replace(/^\/+/, "/") : global/*e*/
-    }, o.prototype.setProtocol = function(global/*e*/) {
+        var e = f.getPath.call(this);
+        return e ? e.replace(/^\/+/, "/") : e
+    }, o.prototype.setProtocol = function(e) {
         "use strict";
-        return this.protocol = global/*e*/, f.setProtocol.call(this, global/*e*/)
-    }, o.prototype.setDomain = function(global/*e*/) {
+        return this.protocol = e, f.setProtocol.call(this, e)
+    }, o.prototype.setDomain = function(e) {
         "use strict";
-        return this.domain = global/*e*/, f.setDomain.call(this, global/*e*/)
-    }, o.prototype.setPort = function(global/*e*/) {
+        return this.domain = e, f.setDomain.call(this, e)
+    }, o.prototype.setPort = function(e) {
         "use strict";
-        return this.port = global/*e*/, f.setPort.call(this, global/*e*/)
-    }, o.prototype.setFragment = function(global/*e*/) {
+        return this.port = e, f.setPort.call(this, e)
+    }, o.prototype.setFragment = function(e) {
         "use strict";
-        return this.fragment = global/*e*/, f.setFragment.call(this, global/*e*/)
+        return this.fragment = e, f.setFragment.call(this, e)
     }, o.prototype.valueOf = function() {
         "use strict";
         return this.toString()
@@ -45,83 +45,83 @@ __d("URI",["PHPQuerySerializer","URIBase","isFacebookURI","unqualifyURI","areSam
         "use strict";
         if (!this.getDomain()) return "";
         if (!isFacebookURI/*l*/(this)) return null;
-        var global/*e*/ = this.getDomain().split("."),
-            require/*t*/ = global/*e*/.indexOf("facebook");
-        return global/*e*/.slice(require/*t*/).join(".")
+        var e = this.getDomain().split("."),
+            t = e.indexOf("facebook");
+        return e.slice(t).join(".")
     }, o.prototype.getUnqualifiedURI = function() {
         "use strict";
-        var global/*e*/ = new o(this);
-        return unqualifyURI/*u*/(global/*e*/), global/*e*/
+        var e = new o(this);
+        return unqualifyURI/*u*/(e), e
     }, o.prototype.getQualifiedURI = function() {
         "use strict";
         return new o(this).$URI_qualify()
     }, o.prototype.$URI_qualify = function() {
         "use strict";
         if (!this.getDomain()) {
-            var global/*e*/ = o();
-            this.setProtocol(global/*e*/.getProtocol()).setDomain(global/*e*/.getDomain()).setPort(global/*e*/.getPort())
+            var e = o();
+            this.setProtocol(e.getProtocol()).setDomain(e.getDomain()).setPort(e.getPort())
         }
         return this
-    }, o.prototype.isSameOrigin = function(global/*e*/) {
+    }, o.prototype.isSameOrigin = function(e) {
         "use strict";
-        var require/*t*/ = global/*e*/ || window.location.href;
-        return require/*t*/ instanceof o || (require/*t*/ = new o(require/*t*/.toString())), areSameOrigin/*c*/(this, require/*t*/)
-    }, o.prototype.go = function(global/*e*/) {
+        var t = e || window.location.href;
+        return t instanceof o || (t = new o(t.toString())), areSameOrigin/*c*/(this, t)
+    }, o.prototype.go = function(e) {
         "use strict";
-        goURI/*d*/(this, global/*e*/)
-    }, o.prototype.setSubdomain = function(global/*e*/) {
+        goURI/*d*/(this, e)
+    }, o.prototype.setSubdomain = function(e) {
         "use strict";
-        var require/*t*/ = this.$URI_qualify().getDomain().split(".");
-        return require/*t*/.length <= 2 ? require/*t*/.unshift(global/*e*/) : require/*t*/[0] = global/*e*/, this.setDomain(require/*t*/.join("."))
+        var t = this.$URI_qualify().getDomain().split(".");
+        return t.length <= 2 ? t.unshift(e) : t[0] = e, this.setDomain(t.join("."))
     }, o.prototype.getSubdomain = function() {
         "use strict";
         if (!this.getDomain()) return "";
-        var global/*e*/ = this.getDomain().split(".");
-        return global/*e*/.length <= 2 ? "" : global/*e*/[0]
-    }, o.isValidURI = function(global/*e*/) {
+        var e = this.getDomain().split(".");
+        return e.length <= 2 ? "" : e[0]
+    }, o.isValidURI = function(e) {
         "use strict";
-        return URIBase/*s*/.isValidURI(global/*e*/, PHPQuerySerializer/*a*/)
+        return URIBase/*s*/.isValidURI(e, PHPQuerySerializer/*a*/)
     }, copyProperties/*p*/(o, {
-        getRequestURI: function(require/*t*/, requireDynamic/*n*/) {
-            require/*t*/ = void 0 === require/*t*/ || require/*t*/;
-            var requireLazy/*r*/ = global/*e*/.PageTransitions;
-            return require/*t*/ && requireLazy/*r*/ && requireLazy/*r*/.isInitialized() ? requireLazy/*r*/.getCurrentURI(!!requireDynamic/*n*/).getQualifiedURI() : new o(window.location.href)
+        getRequestURI: function(t, n) {
+            t = void 0 === t || t;
+            var r = e.PageTransitions;
+            return t && r && r.isInitialized() ? r.getCurrentURI(!!n).getQualifiedURI() : new o(window.location.href)
         },
         getMostRecentURI: function() {
-            var require/*t*/ = global/*e*/.PageTransitions;
-            return require/*t*/ && require/*t*/.isInitialized() ? require/*t*/.getMostRecentURI().getQualifiedURI() : new o(window.location.href)
+            var t = e.PageTransitions;
+            return t && t.isInitialized() ? t.getMostRecentURI().getQualifiedURI() : new o(window.location.href)
         },
         getNextURI: function() {
-            var require/*t*/ = global/*e*/.PageTransitions;
-            return require/*t*/ && require/*t*/.isInitialized() ? require/*t*/._next_uri.getQualifiedURI() : new o(window.location.href)
+            var t = e.PageTransitions;
+            return t && t.isInitialized() ? t._next_uri.getQualifiedURI() : new o(window.location.href)
         },
         expression: /(((\w+):\/\/)([^\/:]*)(:(\goURI/*d*/+))?)?([^#?]*)(\?([^#]*))?(#(.*))?/,
         arrayQueryExpression: /^(\w+)((?:\[\w*\])+)=?(.*)/,
-        encodeComponent: function(global/*e*/) {
-            return encodeURIComponent(global/*e*/).replace(/%5D/g, "]").replace(/%5B/g, "[")
+        encodeComponent: function(e) {
+            return encodeURIComponent(e).replace(/%5D/g, "]").replace(/%5B/g, "[")
         },
-        decodeComponent: function(global/*e*/) {
-            return decodeURIComponent(global/*e*/.replace(/\+/g, " "))
+        decodeComponent: function(e) {
+            return decodeURIComponent(e.replace(/\+/g, " "))
         }
     }), __DEV__ && o.prototype.__defineGetter__ && o.prototype._defineSetter__ && (o.prototype.__defineGetter__("path", function() {
         return console.warn("URI: Do not access the path property directly use getPath(). Fix URI.prototype."), this.path
-    }), o.prototype.__defineSetter__("path", function(global/*e*/) {
-        this.path = global/*e*/
+    }), o.prototype.__defineSetter__("path", function(e) {
+        this.path = e
     }), o.prototype.__defineGetter__("protocol", function() {
         return console.warn("URI: Do not access the protocol property directly use getProtocol(). Fix URI.prototype."), this.protocol
-    }), o.prototype.__defineSetter__("protocol", function(global/*e*/) {
-        this.protocol = global/*e*/
+    }), o.prototype.__defineSetter__("protocol", function(e) {
+        this.protocol = e
     }), o.prototype.__defineGetter__("domain", function() {
         return console.warn("URI: Do not access the domain property directly use getDomain(). Fix URI.prototype."), this.domain
-    }), o.prototype.__defineSetter__("domain", function(global/*e*/) {
-        this.domain = global/*e*/
+    }), o.prototype.__defineSetter__("domain", function(e) {
+        this.domain = e
     }), o.prototype.__defineGetter__("port", function() {
         return console.warn("URI: Do not access the port property directly use getPort(). Fix URI.prototype."), this.port
-    }), o.prototype.__defineSetter__("port", function(global/*e*/) {
-        this.port = global/*e*/
+    }), o.prototype.__defineSetter__("port", function(e) {
+        this.port = e
     }), o.prototype.__defineGetter__("fragment", function() {
         return console.warn("URI: Do not access the fragment property directly use getFragment(). Fix URI.prototype."), this.fragment
-    }), o.prototype.__defineSetter__("fragment", function(global/*e*/) {
-        this.fragment = global/*e*/
-    })), module/*i*/.exports = o
+    }), o.prototype.__defineSetter__("fragment", function(e) {
+        this.fragment = e
+    })), i.exports = o
 });

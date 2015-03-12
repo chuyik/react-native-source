@@ -1,8 +1,8 @@
-__d("FIGColors",["cssVar","rgbToHex","hsvToHex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FIGColors",["cssVar","rgbToHex","hsvToHex"],function (e, t, n, r, i) {
     "use strict";
-    var cssVar/*o*/ = require/*t*/("cssVar"),
-        rgbToHex/*a*/ = require/*t*/("rgbToHex"),
-        hsvToHex/*s*/ = require/*t*/("hsvToHex"),
+    var cssVar/*o*/ = t("cssVar"),
+        rgbToHex/*a*/ = t("rgbToHex"),
+        hsvToHex/*s*/ = t("hsvToHex"),
         l = {
             accentBlue: rgbToHex/*a*/(88, 144, 255),
             attachmentBorder: "#cccccc",
@@ -26,5 +26,5 @@ __d("FIGColors",["cssVar","rgbToHex","hsvToHex"],function (global/*e*/, require/
             tabBar: rgbToHex/*a*/(71, 124, 230),
             washColor: cssVar/*o*/("fbui-bluegray-5")
         };
-    l.opaqueNavigationBarTint = l.facebookBlue, module/*i*/.exports = l
+    l.opaqueNavigationBarTint = l.facebookBlue, i.exports = l
 });

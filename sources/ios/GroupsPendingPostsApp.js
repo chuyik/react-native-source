@@ -1,10 +1,10 @@
-__d("GroupsPendingPostsApp",["DliteLoadingComponent","GroupRoute","React","THGroupPendingPostsView","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupsPendingPostsApp",["DliteLoadingComponent","GroupRoute","React","THGroupPendingPostsView","THRoutingConfig"],function (e, t, n, r, i) {
     "use strict";
-    var DliteLoadingComponent/*o*/ = require/*t*/("DliteLoadingComponent"),
-        GroupRoute/*a*/ = require/*t*/("GroupRoute"),
-        React/*s*/ = require/*t*/("React"),
-        THGroupPendingPostsView/*l*/ = require/*t*/("THGroupPendingPostsView");
-    require/*t*/("THRoutingConfig").initialize();
+    var DliteLoadingComponent/*o*/ = t("DliteLoadingComponent"),
+        GroupRoute/*a*/ = t("GroupRoute"),
+        React/*s*/ = t("React"),
+        THGroupPendingPostsView/*l*/ = t("THGroupPendingPostsView");
+    t("THRoutingConfig").initialize();
     var u = React/*s*/.createClass({
         displayName: "GroupsPendingPostsApp",
         render: function() {
@@ -21,5 +21,5 @@ __d("GroupsPendingPostsApp",["DliteLoadingComponent","GroupRoute","React","THGro
             })
         }
     });
-    module/*i*/.exports = u
+    i.exports = u
 });

@@ -1,15 +1,15 @@
-__d("ClientIDs",["randomInt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var randomInt/*o*/ = require/*t*/("randomInt"),
+__d("ClientIDs",["randomInt"],function (e, t, n, r, i) {
+    var randomInt/*o*/ = t("randomInt"),
         a = {},
         s = {
             getNewClientID: function() {
-                var global/*e*/ = Date.now(),
-                    require/*t*/ = global/*e*/ + ":" + (randomInt/*o*/(0, 4294967295) + 1);
-                return a[require/*t*/] = !0, require/*t*/
+                var e = Date.now(),
+                    t = e + ":" + (randomInt/*o*/(0, 4294967295) + 1);
+                return a[t] = !0, t
             },
-            isExistingClientID: function(global/*e*/) {
-                return !!a[global/*e*/]
+            isExistingClientID: function(e) {
+                return !!a[e]
             }
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

@@ -1,4 +1,4 @@
-__d("ComposedBlockType",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ComposedBlockType",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         UNSTYLED: 0,
@@ -11,5 +11,5 @@ __d("ComposedBlockType",[],function (global/*e*/, require/*t*/, requireDynamic/*
         CODE: 7,
         MEDIA: 8
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

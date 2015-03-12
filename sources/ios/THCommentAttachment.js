@@ -1,8 +1,8 @@
-__d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],function (e, t, n, r, i) {
     "use strict";
-    var FBCommentAttachment/*o*/ = require/*t*/("FBCommentAttachment"),
-        React/*a*/ = require/*t*/("React"),
-        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
+    var FBCommentAttachment/*o*/ = t("FBCommentAttachment"),
+        React/*a*/ = t("React"),
+        ReactGraphQL/*s*/ = t("ReactGraphQL"),
         l = 160,
         u = React/*a*/.createClass({
             displayName: "THCommentAttachment",
@@ -12,10 +12,10 @@ __d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],functio
             mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THCommentAttachment_attachment", "StoryAttachment", null, [require/*t*/.__frag(global/*e*/)], {
+                    attachment: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THCommentAttachment_attachment", "StoryAttachment", null, [t.__frag(e)], {
                                 scope: "THCommentAttachment_attachment"
                             })
                         }(FBCommentAttachment/*o*/.getQuery("attachment"))
@@ -30,5 +30,5 @@ __d("THCommentAttachment",["FBCommentAttachment","React","ReactGraphQL"],functio
                 })
             }
         });
-    module/*i*/.exports = u
+    i.exports = u
 });

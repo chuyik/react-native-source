@@ -1,10 +1,10 @@
-__d("DliteFetchModeConstants",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteFetchModeConstants",["keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+    var keyMirror/*o*/ = t("keyMirror"),
         a = keyMirror/*o*/({
             FETCH_MODE_CLIENT: null,
             FETCH_MODE_PRELOAD: null,
             FETCH_MODE_REFETCH: null
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

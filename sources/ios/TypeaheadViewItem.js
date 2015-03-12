@@ -1,6 +1,6 @@
-__d("TypeaheadViewItem",["React","SearchableEntry"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var React/*o*/ = require/*t*/("React"),
-        SearchableEntry/*a*/ = require/*t*/("SearchableEntry"),
+__d("TypeaheadViewItem",["React","SearchableEntry"],function (e, t, n, r, i) {
+    var React/*o*/ = t("React"),
+        SearchableEntry/*a*/ = t("SearchableEntry"),
         s = {
             entry: React/*o*/.PropTypes.instanceOf(SearchableEntry/*a*/).isRequired,
             highlighted: React/*o*/.PropTypes.bool,
@@ -10,14 +10,14 @@ __d("TypeaheadViewItem",["React","SearchableEntry"],function (global/*e*/, requi
             onRenderHighlight: React/*o*/.PropTypes.func
         },
         l = {
-            _onSelect: function(global/*e*/) {
-                this.props.onSelect(this.props.entry, global/*e*/)
+            _onSelect: function(e) {
+                this.props.onSelect(this.props.entry, e)
             },
-            _onHighlight: function(global/*e*/) {
-                this.props.onHighlight && this.props.onHighlight(this.props.entry, global/*e*/)
+            _onHighlight: function(e) {
+                this.props.onHighlight && this.props.onHighlight(this.props.entry, e)
             },
-            shouldComponentUpdate: function(global/*e*/) {
-                return this.props.entry.getUniqueID() !== global/*e*/.entry.getUniqueID() || this.props.highlighted !== global/*e*/.highlighted || this.props.selected !== global/*e*/.selected
+            shouldComponentUpdate: function(e) {
+                return this.props.entry.getUniqueID() !== e.entry.getUniqueID() || this.props.highlighted !== e.highlighted || this.props.selected !== e.selected
             },
             componentDidMount: function() {
                 this.props.highlighted && this.props.onRenderHighlight && this.props.onRenderHighlight(this.getDOMNode())
@@ -26,7 +26,7 @@ __d("TypeaheadViewItem",["React","SearchableEntry"],function (global/*e*/, requi
                 this.props.highlighted && this.props.onRenderHighlight && this.props.onRenderHighlight(this.getDOMNode())
             }
         };
-    module/*i*/.exports = {
+    i.exports = {
         propTypes: s,
         Mixin: l
     }

@@ -1,12 +1,12 @@
-__d("ReactDefaultBatchingStrategy",["ReactUpdates","Transaction","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactDefaultBatchingStrategy",["ReactUpdates","Transaction","emptyFunction"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {
         this.reinitializeTransaction()
     }
-    var ReactUpdates/*a*/ = require/*t*/("ReactUpdates"),
-        Transaction/*s*/ = require/*t*/("Transaction"),
-        emptyFunction/*l*/ = require/*t*/("emptyFunction"),
+    var ReactUpdates/*a*/ = t("ReactUpdates"),
+        Transaction/*s*/ = t("Transaction"),
+        emptyFunction/*l*/ = t("emptyFunction"),
         u = {
             initialize: emptyFunction/*l*/,
             close: function() {
@@ -26,10 +26,10 @@ __d("ReactDefaultBatchingStrategy",["ReactUpdates","Transaction","emptyFunction"
     var d = new o,
         h = {
             isBatchingUpdates: !1,
-            batchedUpdates: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = h.isBatchingUpdates;
-                h.isBatchingUpdates = !0, requireLazy/*r*/ ? global/*e*/(require/*t*/, requireDynamic/*n*/) : d.perform(global/*e*/, null, require/*t*/, requireDynamic/*n*/)
+            batchedUpdates: function(e, t, n) {
+                var r = h.isBatchingUpdates;
+                h.isBatchingUpdates = !0, r ? e(t, n) : d.perform(e, null, t, n)
             }
         };
-    module/*i*/.exports = h
+    i.exports = h
 });

@@ -1,64 +1,64 @@
-__d("DliteRouter",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRouter",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getSortKey(),
-            module/*i*/ = requireDynamic/*n*/ - require/*t*/;
-        if (0 === module/*i*/) return require/*t*/;
-        var a = require/*t*/ + module/*i*/ / 2 | 0;
-        return s(requireLazy/*r*/, u[a].getSortKey()) <= 0 ? o(global/*e*/, require/*t*/, a) : o(global/*e*/, a + 1, requireDynamic/*n*/)
+    function o(e, t, n) {
+        var r = e.getSortKey(),
+            i = n - t;
+        if (0 === i) return t;
+        var a = t + i / 2 | 0;
+        return s(r, u[a].getSortKey()) <= 0 ? o(e, t, a) : o(e, a + 1, n)
     }
 
-    function a(global/*e*/) {
-        for (var require/*t*/ = [], requireDynamic/*n*/ = 0, requireLazy/*r*/ = 0, module/*i*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) switch (global/*e*/.charAt(requireDynamic/*n*/)) {
+    function a(e) {
+        for (var t = [], n = 0, r = 0, i = 0; n < e.length; n++) switch (e.charAt(n)) {
             case "/":
-                module/*i*/ || (requireDynamic/*n*/ - requireLazy/*r*/ > 0 && require/*t*/.push(global/*e*/.slice(requireLazy/*r*/, requireDynamic/*n*/)), "?" === global/*e*/.charAt(requireDynamic/*n*/ + 1) && requireDynamic/*n*/++, requireLazy/*r*/ = requireDynamic/*n*/ + 1);
+                i || (n - r > 0 && t.push(e.slice(r, n)), "?" === e.charAt(n + 1) && n++, r = n + 1);
                 break;
             case "(":
-                module/*i*/++ || (requireDynamic/*n*/ - requireLazy/*r*/ > 0 && require/*t*/.push(global/*e*/.slice(requireLazy/*r*/, requireDynamic/*n*/)), requireLazy/*r*/ = requireDynamic/*n*/);
+                i++ || (n - r > 0 && t.push(e.slice(r, n)), r = n);
                 break;
             case ")":
-                --module/*i*/ || ("?" === global/*e*/.charAt(requireDynamic/*n*/ + 1) && requireDynamic/*n*/++, require/*t*/.push(global/*e*/.slice(requireLazy/*r*/, requireDynamic/*n*/ + 1)), requireLazy/*r*/ = requireDynamic/*n*/ + 1)
+                --i || ("?" === e.charAt(n + 1) && n++, t.push(e.slice(r, n + 1)), r = n + 1)
         }
-        return require/*t*/
+        return t
     }
 
-    function s(global/*e*/, require/*t*/) {
-        global/*e*/ = a(global/*e*/), require/*t*/ = a(require/*t*/);
-        for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < Math.min(global/*e*/.length, require/*t*/.length); requireDynamic/*n*/++) {
-            var requireLazy/*r*/ = global/*e*/[requireDynamic/*n*/],
-                module/*i*/ = require/*t*/[requireDynamic/*n*/],
-                o = l(requireLazy/*r*/) - l(module/*i*/);
+    function s(e, t) {
+        e = a(e), t = a(t);
+        for (var n = 0; n < Math.min(e.length, t.length); n++) {
+            var r = e[n],
+                i = t[n],
+                o = l(r) - l(i);
             if (o) return o;
-            var s = requireLazy/*r*/.toLowerCase(),
-                u = module/*i*/.toLowerCase();
+            var s = r.toLowerCase(),
+                u = i.toLowerCase();
             if (s !== u) return u > s ? -1 : 1;
-            if (requireLazy/*r*/ !== module/*i*/) return module/*i*/ > requireLazy/*r*/ ? -1 : 1
+            if (r !== i) return i > r ? -1 : 1
         }
-        return global/*e*/.length - require/*t*/.length
+        return e.length - t.length
     }
 
-    function l(global/*e*/) {
-        return "<<vanity>>" == global/*e*/ ? 3 : (global/*e*/ = global/*e*/.replace(/\\\./, "x"), /[.+*?\[\](){}=!|:]/.test(global/*e*/) ? -1 !== global/*e*/.indexOf("\\d") ? 1 : 2 : 0)
+    function l(e) {
+        return "<<vanity>>" == e ? 3 : (e = e.replace(/\\\./, "x"), /[.+*?\[\](){}=!|:]/.test(e) ? -1 !== e.indexOf("\\d") ? 1 : 2 : 0)
     }
     var u = [],
         c = {
-            addRoute: function(global/*e*/) {
-                var require/*t*/ = o(global/*e*/, 0, u.length);
-                u[require/*t*/] !== global/*e*/ && u.splice(require/*t*/, 0, global/*e*/)
+            addRoute: function(e) {
+                var t = o(e, 0, u.length);
+                u[t] !== e && u.splice(t, 0, e)
             },
             __getRoutes: function() {
                 return u
             },
-            getRoute: function(global/*e*/) {
-                for (var require/*t*/ = 0; require/*t*/ < u.length; require/*t*/++) {
-                    var requireDynamic/*n*/ = u[require/*t*/],
-                        requireLazy/*r*/ = requireDynamic/*n*/.parse(global/*e*/);
-                    if (null !== requireLazy/*r*/) return new requireDynamic/*n*/(global/*e*/, requireLazy/*r*/)
+            getRoute: function(e) {
+                for (var t = 0; t < u.length; t++) {
+                    var n = u[t],
+                        r = n.parse(e);
+                    if (null !== r) return new n(e, r)
                 }
                 return null
             },
             orderExpressions: s
         };
-    module/*i*/.exports = c
+    i.exports = c
 });

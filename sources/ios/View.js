@@ -1,14 +1,14 @@
-__d("View",["NativeMethodsMixin","NativeModules","ReactPropTypes","React","ReactIOSViewAttributes","StyleSheetPropType","ViewStylePropTypes","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("View",["NativeMethodsMixin","NativeModules","ReactPropTypes","React","ReactIOSViewAttributes","StyleSheetPropType","ViewStylePropTypes","createReactIOSNativeComponentClass"],function (e, t, n, r, i) {
     "use strict";
-    var NativeMethodsMixin/*o*/ = require/*t*/("NativeMethodsMixin"),
-        NativeModules/*a*/ = require/*t*/("NativeModules"),
-        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
-        React/*l*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*u*/ = require/*t*/("ReactIOSViewAttributes"),
-        StyleSheetPropType/*c*/ = require/*t*/("StyleSheetPropType"),
-        ViewStylePropTypes/*p*/ = require/*t*/("ViewStylePropTypes"),
+    var NativeMethodsMixin/*o*/ = t("NativeMethodsMixin"),
+        NativeModules/*a*/ = t("NativeModules"),
+        ReactPropTypes/*s*/ = t("ReactPropTypes"),
+        React/*l*/ = t("React"),
+        ReactIOSViewAttributes/*u*/ = t("ReactIOSViewAttributes"),
+        StyleSheetPropType/*c*/ = t("StyleSheetPropType"),
+        ViewStylePropTypes/*p*/ = t("ViewStylePropTypes"),
         d = NativeModules/*a*/.RKUIManager.StyleConstants,
-        createReactIOSNativeComponentClass/*h*/ = require/*t*/("createReactIOSNativeComponentClass"),
+        createReactIOSNativeComponentClass/*h*/ = t("createReactIOSNativeComponentClass"),
         f = StyleSheetPropType/*c*/(ViewStylePropTypes/*p*/),
         m = React/*l*/.createClass({
             displayName: "View",
@@ -46,5 +46,5 @@ __d("View",["NativeMethodsMixin","NativeModules","ReactPropTypes","React","React
             uiViewClassName: "RCTView"
         }),
         _ = g;
-    __DEV__ && (_ = m), _.pointerEvents = m.pointerEvents, _.stylePropType = f, module/*i*/.exports = _
+    __DEV__ && (_ = m), _.pointerEvents = m.pointerEvents, _.stylePropType = f, i.exports = _
 });

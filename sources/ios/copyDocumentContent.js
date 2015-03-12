@@ -1,9 +1,9 @@
-__d("copyDocumentContent",["DocumentContent"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("copyDocumentContent",["DocumentContent"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return global/*e*/ ? new DocumentContent/*a*/(global/*e*/.getText(), global/*e*/.getInlineStyles().slice(0), global/*e*/.getBlockStyles().slice(0), global/*e*/.getEntities().slice(0)) : new DocumentContent/*a*/
+    function o(e) {
+        return e ? new DocumentContent/*a*/(e.getText(), e.getInlineStyles().slice(0), e.getBlockStyles().slice(0), e.getEntities().slice(0)) : new DocumentContent/*a*/
     }
-    var DocumentContent/*a*/ = require/*t*/("DocumentContent");
-    module/*i*/.exports = o
+    var DocumentContent/*a*/ = t("DocumentContent");
+    i.exports = o
 });

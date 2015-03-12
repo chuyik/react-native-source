@@ -1,12 +1,12 @@
-__d("copyProperties",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a) {
-        if (global/*e*/ = global/*e*/ || {}, __DEV__ && a) throw new Error("Too many arguments passed to copyProperties");
-        for (var s, l = [require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o], u = 0; l[u];) {
+__d("copyProperties",[],function (e, t, n, r, i) {
+    function o(e, t, n, r, i, o, a) {
+        if (e = e || {}, __DEV__ && a) throw new Error("Too many arguments passed to copyProperties");
+        for (var s, l = [t, n, r, i, o], u = 0; l[u];) {
             s = l[u++];
-            for (var c in s) global/*e*/[c] = s[c];
-            s.hasOwnProperty && s.hasOwnProperty("toString") && "undefined" != typeof s.toString && global/*e*/.toString !== s.toString && (global/*e*/.toString = s.toString)
+            for (var c in s) e[c] = s[c];
+            s.hasOwnProperty && s.hasOwnProperty("toString") && "undefined" != typeof s.toString && e.toString !== s.toString && (e.toString = s.toString)
         }
-        return global/*e*/
+        return e
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

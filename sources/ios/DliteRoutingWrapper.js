@@ -1,9 +1,9 @@
-__d("DliteRoutingWrapper",["DliteRoute","DliteRouteProvider","React","cloneWithProps"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRoutingWrapper",["DliteRoute","DliteRouteProvider","React","cloneWithProps"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
-        DliteRouteProvider/*a*/ = require/*t*/("DliteRouteProvider"),
-        React/*s*/ = require/*t*/("React"),
-        cloneWithProps/*l*/ = require/*t*/("cloneWithProps"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
+        DliteRouteProvider/*a*/ = t("DliteRouteProvider"),
+        React/*s*/ = t("React"),
+        cloneWithProps/*l*/ = t("cloneWithProps"),
         u = React/*s*/.createClass({
             displayName: "DliteRoutingWrapper",
             mixins: [DliteRouteProvider/*a*/.Mixin],
@@ -27,5 +27,5 @@ __d("DliteRoutingWrapper",["DliteRoute","DliteRouteProvider","React","cloneWithP
                 })
             }
         });
-    module/*i*/.exports = u
+    i.exports = u
 });

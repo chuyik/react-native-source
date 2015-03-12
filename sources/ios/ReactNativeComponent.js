@@ -1,24 +1,28 @@
-__d("ReactNativeComponent",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactNativeComponent",["invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = l[global/*e*/];
-        return null == requireLazy/*r*/ ? (s || invariant/*a*/(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : requireDynamic/*n*/ === global/*e*/ ? (s || invariant/*a*/(0, "There is no registered component for the tag %s", global/*e*/), new s(global/*e*/, require/*t*/)) : new requireLazy/*r*/.type(require/*t*/)
+    function createInstanceForTag(e, t, n) {
+        var r = l[e];
+        return null == r ? 
+            (s || invariant/*a*/(0, "There is no registered component for the tag %s", e), new s(e, t)) : 
+            n === e ? (s || invariant/*a*/(0, "There is no registered component for the tag %s", e), new s(e, t)) : 
+            new r.type(t)
     }
-    var invariant/*a*/ = require/*t*/("invariant"),
+
+    var invariant/*a*/ = t("invariant"),
         s = null,
         l = {},
         u = {
-            injectGenericComponentClass: function(global/*e*/) {
-                s = global/*e*/
+            injectGenericComponentClass: function(e) {
+                s = e
             },
-            injectComponentClasses: function(global/*e*/) {
-                Object.assign(l, global/*e*/)
+            injectComponentClasses: function(e) {
+                Object.assign(l, e)
             }
         },
         c = {
-            createInstanceForTag: o,
+            createInstanceForTag: createInstanceForTag,
             injection: u
         };
-    module/*i*/.exports = c
+    i.exports = c
 });

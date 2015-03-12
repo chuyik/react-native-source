@@ -1,39 +1,39 @@
-__d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPERIMENTAL","GraphQLStore","Image","ListView","ListViewDataSource","NativeModules","React","ReactGraphQL","RCTDeviceEventEmitter","Dimensions","RCTNativeAppEventEmitter","StyleSheet","Subscribable","Text","THColors","THDockedInputContainer","THFeedbackView","THFeedUnitView","THPinnedPostView","TimerMixin","TouchableHighlight","View","deepDiffer","fbt","fetchRQL","invariant","isEmpty","ix","keyOf","merge","rql","uniqueKey"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPERIMENTAL","GraphQLStore","Image","ListView","ListViewDataSource","NativeModules","React","ReactGraphQL","RCTDeviceEventEmitter","Dimensions","RCTNativeAppEventEmitter","StyleSheet","Subscribable","Text","THColors","THDockedInputContainer","THFeedbackView","THFeedUnitView","THPinnedPostView","TimerMixin","TouchableHighlight","View","deepDiffer","fbt","fetchRQL","invariant","isEmpty","ix","keyOf","merge","rql","uniqueKey"],function (e, t, n, r, i) {
     "use strict"; {
-        var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
-            FBSpinner/*a*/ = require/*t*/("FBSpinner"),
-            FeedbackPoller/*s*/ = require/*t*/("FeedbackPoller"),
-            GraphQL_EXPERIMENTAL/*l*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-            GraphQLStore/*u*/ = require/*t*/("GraphQLStore"),
-            Image/*c*/ = require/*t*/("Image"),
-            ListView/*p*/ = require/*t*/("ListView"),
-            ListViewDataSource/*d*/ = require/*t*/("ListViewDataSource"),
-            NativeModules/*h*/ = require/*t*/("NativeModules"),
-            React/*f*/ = require/*t*/("React"),
-            ReactGraphQL/*m*/ = require/*t*/("ReactGraphQL"),
-            RCTDeviceEventEmitter/*g*/ = require/*t*/("RCTDeviceEventEmitter"),
-            Dimensions/*_*/ = require/*t*/("Dimensions"),
-            RCTNativeAppEventEmitter/*y*/ = require/*t*/("RCTNativeAppEventEmitter"),
-            StyleSheet/*v*/ = require/*t*/("StyleSheet"),
-            Subscribable/*S*/ = require/*t*/("Subscribable"),
-            Text/*b*/ = require/*t*/("Text"),
-            THColors/*R*/ = require/*t*/("THColors"),
-            THDockedInputContainer/*w*/ = require/*t*/("THDockedInputContainer"),
-            THFeedbackView/*C*/ = require/*t*/("THFeedbackView"),
-            THFeedUnitView/*E*/ = require/*t*/("THFeedUnitView"),
-            THPinnedPostView/*D*/ = require/*t*/("THPinnedPostView"),
-            TimerMixin/*T*/ = require/*t*/("TimerMixin"),
-            x = (require/*t*/("TouchableHighlight"), require/*t*/("View")),
-            deepDiffer/*P*/ = require/*t*/("deepDiffer"),
-            fbt/*I*/ = require/*t*/("fbt"),
-            fetchRQL/*F*/ = require/*t*/("fetchRQL"),
-            invariant/*L*/ = require/*t*/("invariant"),
-            isEmpty/*M*/ = require/*t*/("isEmpty"),
-            ix/*Q*/ = require/*t*/("ix"),
-            keyOf/*A*/ = require/*t*/("keyOf"),
-            merge/*k*/ = require/*t*/("merge"),
-            rql/*O*/ = require/*t*/("rql"),
-            uniqueKey/*N*/ = require/*t*/("uniqueKey"),
+        var LayoutAnimation/*o*/ = t("LayoutAnimation"),
+            FBSpinner/*a*/ = t("FBSpinner"),
+            FeedbackPoller/*s*/ = t("FeedbackPoller"),
+            GraphQL_EXPERIMENTAL/*l*/ = t("GraphQL_EXPERIMENTAL"),
+            GraphQLStore/*u*/ = t("GraphQLStore"),
+            Image/*c*/ = t("Image"),
+            ListView/*p*/ = t("ListView"),
+            ListViewDataSource/*d*/ = t("ListViewDataSource"),
+            NativeModules/*h*/ = t("NativeModules"),
+            React/*f*/ = t("React"),
+            ReactGraphQL/*m*/ = t("ReactGraphQL"),
+            RCTDeviceEventEmitter/*g*/ = t("RCTDeviceEventEmitter"),
+            Dimensions/*_*/ = t("Dimensions"),
+            RCTNativeAppEventEmitter/*y*/ = t("RCTNativeAppEventEmitter"),
+            StyleSheet/*v*/ = t("StyleSheet"),
+            Subscribable/*S*/ = t("Subscribable"),
+            Text/*b*/ = t("Text"),
+            THColors/*R*/ = t("THColors"),
+            THDockedInputContainer/*w*/ = t("THDockedInputContainer"),
+            THFeedbackView/*C*/ = t("THFeedbackView"),
+            THFeedUnitView/*E*/ = t("THFeedUnitView"),
+            THPinnedPostView/*D*/ = t("THPinnedPostView"),
+            TimerMixin/*T*/ = t("TimerMixin"),
+            x = (t("TouchableHighlight"), t("View")),
+            deepDiffer/*P*/ = t("deepDiffer"),
+            fbt/*I*/ = t("fbt"),
+            fetchRQL/*F*/ = t("fetchRQL"),
+            invariant/*L*/ = t("invariant"),
+            isEmpty/*M*/ = t("isEmpty"),
+            ix/*Q*/ = t("ix"),
+            keyOf/*A*/ = t("keyOf"),
+            merge/*k*/ = t("merge"),
+            rql/*O*/ = t("rql"),
+            uniqueKey/*N*/ = t("uniqueKey"),
             G = keyOf/*A*/({
                 dockedReplyContainerRef: null
             }),
@@ -63,26 +63,26 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         count: H
                     },
                     queries: {
-                        viewer: function(global/*e*/, require/*t*/) {
-                            return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                                var LayoutAnimation/*o*/ = require/*t*/.__GraphQL;
+                        viewer: function(e, t) {
+                            return function(e, n, r, i) {
+                                var LayoutAnimation/*o*/ = t.__GraphQL;
                                 return new LayoutAnimation/*o*/.QueryFragment("THGroupView_viewer", "Viewer", [new LayoutAnimation/*o*/.Field("__configs__", [new LayoutAnimation/*o*/.Field("edges", [new LayoutAnimation/*o*/.Field("node", [new LayoutAnimation/*o*/.Field("name"), new LayoutAnimation/*o*/.Field("enabled")])], null, null, null, null, {
                                     plural: !0,
                                     edgesID: "THGroupView_viewer_1"
-                                })], null, [new LayoutAnimation/*o*/.Callv("named", [require/*t*/.__var(requireDynamic/*n*/)], {
+                                })], null, [new LayoutAnimation/*o*/.Callv("named", [t.__var(n)], {
                                     varargs: 1
                                 })], null, null, {
                                     connection: !0,
                                     nonLimitable: !0,
                                     nonFindable: !0
-                                })], [require/*t*/.__frag(global/*e*/), require/*t*/.__frag(requireLazy/*r*/), require/*t*/.__frag(module/*i*/)], {
+                                })], [t.__frag(e), t.__frag(r), t.__frag(i)], {
                                     scope: "THGroupView_viewer"
                                 })
                             }(THFeedUnitView/*E*/.getQuery("viewer"), U, THFeedbackView/*C*/.getQuery("viewer"), THPinnedPostView/*D*/.getQuery("viewer"))
                         },
-                        group: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                            return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                                var LayoutAnimation/*o*/ = require/*t*/.__GraphQL;
+                        group: function(e, t, n) {
+                            return function(e, n, r, i) {
+                                var LayoutAnimation/*o*/ = t.__GraphQL;
                                 return new LayoutAnimation/*o*/.QueryFragment("THGroupView_group", "Group", [new LayoutAnimation/*o*/.Field("id"), new LayoutAnimation/*o*/.Field("admin_aware_group", [new LayoutAnimation/*o*/.Field("group_stories", [new LayoutAnimation/*o*/.Field("edges", [new LayoutAnimation/*o*/.Field("cursor", null, null, null, null, null, {
                                     requisite: !0
                                 }), new LayoutAnimation/*o*/.Field("node", [new LayoutAnimation/*o*/.Field("id", null, null, null, null, null, {
@@ -94,7 +94,7 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                                 })], null, null, null, null, {
                                     rootCall: "node",
                                     pk: "id"
-                                }), new LayoutAnimation/*o*/.Field("creation_time")], [require/*t*/.__frag(requireDynamic/*n*/)], null, null, null, {
+                                }), new LayoutAnimation/*o*/.Field("creation_time")], [t.__frag(n)], null, null, null, {
                                     rootCall: "node",
                                     pk: "id",
                                     requisite: !0
@@ -108,7 +108,7 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                                     requisite: !0
                                 })], null, null, null, null, {
                                     requisite: !0
-                                })], null, [new LayoutAnimation/*o*/.Callv("first", [require/*t*/.__var(global/*e*/)])], null, null, {
+                                })], null, [new LayoutAnimation/*o*/.Callv("first", [t.__var(e)])], null, null, {
                                     connection: !0
                                 }), new LayoutAnimation/*o*/.Field("group_pinned_stories", [new LayoutAnimation/*o*/.Field("count")], null, null, null, null, {
                                     connection: !0
@@ -118,17 +118,17 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                                 })], null, null, null, null, {
                                     rootCall: "node",
                                     pk: "id"
-                                })], [require/*t*/.__frag(requireLazy/*r*/), require/*t*/.__frag(module/*i*/)], {
+                                })], [t.__frag(r), t.__frag(i)], {
                                     scope: "THGroupView_group"
                                 })
-                            }(requireDynamic/*n*/.count, THFeedUnitView/*E*/.getQuery("story"), THPinnedPostView/*D*/.getQuery("group"), THFeedUnitView/*E*/.getQuery("group"))
+                            }(n.count, THFeedUnitView/*E*/.getQuery("story"), THPinnedPostView/*D*/.getQuery("group"), THFeedUnitView/*E*/.getQuery("group"))
                         }
                     },
                     navItemTitle: function() {
                         return "Group"
                     },
                     getFakeStoryView: function() {
-                        var global/*e*/ = Dimensions/*_*/.get("window").width;
+                        var e = Dimensions/*_*/.get("window").width;
                         return React/*f*/.createElement(x, {
                             style: K.backdrop
                         }, React/*f*/.createElement(x, {
@@ -154,41 +154,41 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                             }]
                         }))), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 60,
+                                width: e - 60,
                                 marginTop: 8
                             }]
                         }), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 70
+                                width: e - 70
                             }]
                         }), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 90
+                                width: e - 90
                             }]
                         }), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 70
+                                width: e - 70
                             }]
                         }), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 90
+                                width: e - 90
                             }]
                         }), React/*f*/.createElement(x, {
                             style: [K.fakeStoryTextBlock, {
-                                width: global/*e*/ - 60
+                                width: e - 60
                             }]
                         })))
                     },
                     getNewDataSource: function() {
                         return new ListViewDataSource/*d*/({
-                            getRowData: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                                return global/*e*/[require/*t*/][requireDynamic/*n*/]
+                            getRowData: function(e, t, n) {
+                                return e[t][n]
                             },
-                            getSectionHeaderData: function(global/*e*/, require/*t*/) {
-                                return global/*e*/[require/*t*/]
+                            getSectionHeaderData: function(e, t) {
+                                return e[t]
                             },
-                            rowHasChanged: function(global/*e*/, require/*t*/) {
-                                return global/*e*/.node !== require/*t*/.node || deepDiffer/*P*/(global/*e*/, require/*t*/)
+                            rowHasChanged: function(e, t) {
+                                return e.node !== t.node || deepDiffer/*P*/(e, t)
                             },
                             sectionHeaderHasChanged: deepDiffer/*P*/
                         })
@@ -212,34 +212,34 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         olderPostsDividerKey: null
                     }
                 },
-                getUpdatedDataSource: function(global/*e*/) {
-                    var require/*t*/ = [],
-                        requireDynamic/*n*/ = [];
-                    for (var requireLazy/*r*/ in global/*e*/) require/*t*/.push(requireLazy/*r*/), requireDynamic/*n*/.push(Object.keys(global/*e*/[requireLazy/*r*/]));
-                    return this.state.dataSource.cloneWithRowsAndSections(global/*e*/)
+                getUpdatedDataSource: function(e) {
+                    var t = [],
+                        n = [];
+                    for (var r in e) t.push(r), n.push(Object.keys(e[r]));
+                    return this.state.dataSource.cloneWithRowsAndSections(e)
                 },
-                getAdjacentKeys: function(global/*e*/, require/*t*/) {
-                    var requireDynamic/*n*/, requireLazy/*r*/, module/*i*/ = {};
-                    for (var LayoutAnimation/*o*/ in require/*t*/) {
-                        if (requireLazy/*r*/) return module/*i*/[LayoutAnimation/*o*/] = LayoutAnimation/*o*/, module/*i*/;
-                        LayoutAnimation/*o*/ === global/*e*/ && (requireDynamic/*n*/ && (module/*i*/[requireDynamic/*n*/] = requireDynamic/*n*/), requireLazy/*r*/ = !0), requireDynamic/*n*/ = LayoutAnimation/*o*/
+                getAdjacentKeys: function(e, t) {
+                    var n, r, i = {};
+                    for (var LayoutAnimation/*o*/ in t) {
+                        if (r) return i[LayoutAnimation/*o*/] = LayoutAnimation/*o*/, i;
+                        LayoutAnimation/*o*/ === e && (n && (i[n] = n), r = !0), n = LayoutAnimation/*o*/
                     }
-                    return module/*i*/
+                    return i
                 },
                 clearPermalinkMode: function() {
                     if (this.refs[G].enableScrollResponderAutoInsets(!0), this.state.tappedUnitKey in this.state.listData.storiesSection) {
-                        var global/*e*/ = this.state.listData.storiesSection,
-                            require/*t*/ = this.getAdjacentKeys(this.state.tappedUnitKey, global/*e*/);
-                        require/*t*/[this.state.tappedUnitKey] = this.state.tappedUnitKey;
-                        var requireDynamic/*n*/ = {};
-                        for (var requireLazy/*r*/ in global/*e*/) requireDynamic/*n*/[requireLazy/*r*/] = requireLazy/*r*/ in require/*t*/ ? merge/*k*/(global/*e*/[requireLazy/*r*/], {
+                        var e = this.state.listData.storiesSection,
+                            t = this.getAdjacentKeys(this.state.tappedUnitKey, e);
+                        t[this.state.tappedUnitKey] = this.state.tappedUnitKey;
+                        var n = {};
+                        for (var r in e) n[r] = r in t ? merge/*k*/(e[r], {
                             hideSeparator: !1,
                             hideAll: !1
-                        }) : global/*e*/[requireLazy/*r*/];
-                        var module/*i*/ = {};
-                        this.state.listData.pinnedPostSection && (module/*i*/.pinnedPostSection = this.state.listData.pinnedPostSection), module/*i*/.storiesSection = requireDynamic/*n*/, this.setState({
-                            listData: module/*i*/,
-                            dataSource: this.getUpdatedDataSource(module/*i*/)
+                        }) : e[r];
+                        var i = {};
+                        this.state.listData.pinnedPostSection && (i.pinnedPostSection = this.state.listData.pinnedPostSection), i.storiesSection = n, this.setState({
+                            listData: i,
+                            dataSource: this.getUpdatedDataSource(i)
                         })
                     }
                     this.setState({
@@ -248,8 +248,8 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         tappedUnitKey: null
                     })
                 },
-                permalinkInsetsError: function(global/*e*/) {
-                    console.error("Error calculating insets for the permalink mode: ", global/*e*/)
+                permalinkInsetsError: function(e) {
+                    console.error("Error calculating insets for the permalink mode: ", e)
                 },
                 onSetInsetFailure: function() {
                     console.error("Unable to set contentInsets when focusing story")
@@ -277,17 +277,17 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         style: K.tailLoadingIndicator
                     }, React/*f*/.createElement(FBSpinner/*a*/, null)) : W.getFakeStoryView()
                 },
-                renderRow: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    var requireLazy/*r*/, module/*i*/, LayoutAnimation/*o*/, FBSpinner/*a*/, FeedbackPoller/*s*/ = global/*e*/;
-                    return "pinnedPostSection" === require/*t*/ ? requireLazy/*r*/ = React/*f*/.createElement(THPinnedPostView/*D*/, {
-                        key: requireDynamic/*n*/,
+                renderRow: function(e, t, n) {
+                    var r, i, LayoutAnimation/*o*/, FBSpinner/*a*/, FeedbackPoller/*s*/ = e;
+                    return "pinnedPostSection" === t ? r = React/*f*/.createElement(THPinnedPostView/*D*/, {
+                        key: n,
                         group: this.props.group,
                         navigator: this.props.navigator,
                         onInputRequested: this.handleInputRequested,
                         onPinUnpinStory: this.onPinUnpinStory,
                         onDeletePinnedStory: this.onDeletePinnedStory,
                         viewer: this.props.viewer
-                    }) : "storiesSection" === require/*t*/ ? (FeedbackPoller/*s*/.hideAll ? FBSpinner/*a*/ = K.hide : FeedbackPoller/*s*/.hideSeparator && (LayoutAnimation/*o*/ = K.hide), FeedbackPoller/*s*/.node.id === this.state.olderPostsDividerKey && (module/*i*/ = React/*f*/.createElement(x, {
+                    }) : "storiesSection" === t ? (FeedbackPoller/*s*/.hideAll ? FBSpinner/*a*/ = K.hide : FeedbackPoller/*s*/.hideSeparator && (LayoutAnimation/*o*/ = K.hide), FeedbackPoller/*s*/.node.id === this.state.olderPostsDividerKey && (i = React/*f*/.createElement(x, {
                         style: [K.olderPostsHeader, LayoutAnimation/*o*/]
                     }, React/*f*/.createElement(Text/*b*/, {
                         style: K.olderPostsText
@@ -295,43 +295,43 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         type: "text",
                         texts: ["OLDER POSTS"],
                         desc: "Header for older group posts"
-                    })))), requireLazy/*r*/ = React/*f*/.createElement(THFeedUnitView/*E*/, {
+                    })))), r = React/*f*/.createElement(THFeedUnitView/*E*/, {
                         onInputRequested: this.handleInputRequested,
                         story: FeedbackPoller/*s*/.node,
                         group: this.props.group,
                         viewer: this.props.viewer,
                         navigator: this.props.navigator,
-                        key: requireDynamic/*n*/,
+                        key: n,
                         context: {
                             isGroupStream: !0
                         },
                         canCommentInline: !1,
                         onPinUnpinStory: this.onPinUnpinStory
-                    })) : console.warn("Unrecognized sectionID: ", require/*t*/), this.state.initialInsertionComplete, React/*f*/.createElement(x, {
+                    })) : console.warn("Unrecognized sectionID: ", t), this.state.initialInsertionComplete, React/*f*/.createElement(x, {
                         style: [K.backdrop, FBSpinner/*a*/]
                     }, React/*f*/.createElement(x, {
                         style: [K.divider, LayoutAnimation/*o*/]
                     }), React/*f*/.createElement(x, {
                         style: [K.grayPadding, LayoutAnimation/*o*/]
-                    }), module/*i*/, React/*f*/.createElement(x, {
+                    }), i, React/*f*/.createElement(x, {
                         style: [K.divider, LayoutAnimation/*o*/]
-                    }), requireLazy/*r*/)
+                    }), r)
                 },
-                isStoryUnread: function(global/*e*/) {
-                    var require/*t*/ = global/*e*/.node.feedback.top_level_comment_counts;
-                    if (!require/*t*/) return !1;
-                    var requireDynamic/*n*/ = require/*t*/.last_view_time ? global/*e*/.node.creation_time > require/*t*/.last_view_time : !1;
-                    return requireDynamic/*n*/ || require/*t*/.unread_count > 0
+                isStoryUnread: function(e) {
+                    var t = e.node.feedback.top_level_comment_counts;
+                    if (!t) return !1;
+                    var n = t.last_view_time ? e.node.creation_time > t.last_view_time : !1;
+                    return n || t.unread_count > 0
                 },
-                handleInputRequested: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+                handleInputRequested: function(e, t, n) {
                     this.setState({
-                        submitCallback: require/*t*/,
-                        abortCallback: requireDynamic/*n*/,
-                        tappedFeedUnitHandle: global/*e*/.tappedFeedUnitHandle,
-                        tappedUnitKey: uniqueKey/*N*/(global/*e*/.tappedFeedUnitID)
-                    }), this.refs[G].initiateDockedInput(global/*e*/), B && B.logEventWithDuration && this.requestAnimationFrame(function() {
-                        var require/*t*/ = ((new Date).getTime() - global/*e*/.tappedTime) / 1e3;
-                        B.logEventWithDuration(j, require/*t*/)
+                        submitCallback: t,
+                        abortCallback: n,
+                        tappedFeedUnitHandle: e.tappedFeedUnitHandle,
+                        tappedUnitKey: uniqueKey/*N*/(e.tappedFeedUnitID)
+                    }), this.refs[G].initiateDockedInput(e), B && B.logEventWithDuration && this.requestAnimationFrame(function() {
+                        var t = ((new Date).getTime() - e.tappedTime) / 1e3;
+                        B.logEventWithDuration(j, t)
                     })
                 },
                 handleDidDock: function() {
@@ -340,14 +340,14 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                 enablePermalinkMode: function() {
                     this.state.tappedFeedUnitHandle && (this.refs[G].enableScrollResponderAutoInsets(!1), $.measureLayout(this.state.tappedFeedUnitHandle, this.refs[G].getScrollResponder().getNativeNode(), this.permalinkInsetsError, this.handleMeasureLayoutForPermalink))
                 },
-                handleMeasureLayoutForPermalink: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                    var module/*i*/ = this.refs[G];
-                    $.getScrollViewContentSize(module/*i*/.getScrollResponder().getNativeNode(), function(global/*e*/) {
-                        var requireDynamic/*n*/ = module/*i*/.getBarHeight() - module/*i*/.getInitialBarHeight(),
-                            LayoutAnimation/*o*/ = this.state.keyboardHeight + requireDynamic/*n*/ + requireLazy/*r*/,
-                            FBSpinner/*a*/ = LayoutAnimation/*o*/ + require/*t*/ - global/*e*/.height,
+                handleMeasureLayoutForPermalink: function(e, t, n, r) {
+                    var i = this.refs[G];
+                    $.getScrollViewContentSize(i.getScrollResponder().getNativeNode(), function(e) {
+                        var n = i.getBarHeight() - i.getInitialBarHeight(),
+                            LayoutAnimation/*o*/ = this.state.keyboardHeight + n + r,
+                            FBSpinner/*a*/ = LayoutAnimation/*o*/ + t - e.height,
                             FeedbackPoller/*s*/ = Dimensions/*_*/.get("modalFullscreenView").height,
-                            GraphQL_EXPERIMENTAL/*l*/ = q - require/*t*/,
+                            GraphQL_EXPERIMENTAL/*l*/ = q - t,
                             GraphQLStore/*u*/ = FeedbackPoller/*s*/ - LayoutAnimation/*o*/ - q;
                         if (GraphQLStore/*u*/ > 0 && (GraphQL_EXPERIMENTAL/*l*/ += GraphQLStore/*u*/), this.state.tappedFeedUnitHandle && !this.state.permalinkContentInsets) this.requestAnimationFrame(this.enablePermalinkMode);
                         else if (this.state.tappedUnitKey in this.state.listData.storiesSection) {
@@ -376,8 +376,8 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         })
                     }.bind(this), this.onSetInsetFailure)
                 },
-                reloadFeedViewForGroup: function(global/*e*/) {
-                    this.props.group.id === global/*e*/ && this.props.forceUpdate({})
+                reloadFeedViewForGroup: function(e) {
+                    this.props.group.id === e && this.props.forceUpdate({})
                 },
                 onPinUnpinStory: function() {
                     this.setState({
@@ -396,33 +396,33 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                     this.enablePermalinkMode()
                 },
                 handleConfirmedNewPost: function() {
-                    var global/*e*/ = this.props.group.admin_aware_group.group_stories.edges[0].cursor,
-                        require/*t*/ = W.getQueriesForRoute(this.context.route),
-                        requireDynamic/*n*/ = require/*t*/.group.getQuery().getUnaliasedFields("admin_aware_group")[0].getUnaliasedFields("group_stories")[0],
-                        requireLazy/*r*/ = new GraphQL_EXPERIMENTAL/*l*/.QueryFragment("GroupStoriesFragment", "GroupStoriesConnection", requireDynamic/*n*/.getOwnFields(), requireDynamic/*n*/.getFragments()),
-                        module/*i*/ = new GraphQL_EXPERIMENTAL/*l*/.QueryWithValues(function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                            var module/*i*/ = rql/*O*/.__GraphQL;
-                            return new module/*i*/.Query("node", [rql/*O*/.__var(global/*e*/)], [new module/*i*/.Field("admin_aware_group", [new module/*i*/.Field("group_stories", null, [rql/*O*/.__frag(requireLazy/*r*/)], [new module/*i*/.Callv("before", [rql/*O*/.__var(require/*t*/)]), new module/*i*/.Callv("first", [rql/*O*/.__var(requireDynamic/*n*/)])], null, null, {
+                    var e = this.props.group.admin_aware_group.group_stories.edges[0].cursor,
+                        t = W.getQueriesForRoute(this.context.route),
+                        n = t.group.getQuery().getUnaliasedFields("admin_aware_group")[0].getUnaliasedFields("group_stories")[0],
+                        r = new GraphQL_EXPERIMENTAL/*l*/.QueryFragment("GroupStoriesFragment", "GroupStoriesConnection", n.getOwnFields(), n.getFragments()),
+                        i = new GraphQL_EXPERIMENTAL/*l*/.QueryWithValues(function(e, t, n, r) {
+                            var i = rql/*O*/.__GraphQL;
+                            return new i.Query("node", [rql/*O*/.__var(e)], [new i.Field("admin_aware_group", [new i.Field("group_stories", null, [rql/*O*/.__frag(r)], [new i.Callv("before", [rql/*O*/.__var(t)]), new i.Callv("first", [rql/*O*/.__var(n)])], null, null, {
                                 connection: !0
-                            }), new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, "THGroupView_q0")
-                        }(this.props.group.id, global/*e*/, this.queryParams.count, requireLazy/*r*/), {});
-                    fetchRQL/*F*/(module/*i*/).then(function(global/*e*/) {
-                        if (global/*e*/.errors && global/*e*/.errors.length) console.error("Error from fetching new story: ", global/*e*/.errors[0]);
+                        }(this.props.group.id, e, this.queryParams.count, r), {});
+                    fetchRQL/*F*/(i).then(function(e) {
+                        if (e.errors && e.errors.length) console.error("Error from fetching new story: ", e.errors[0]);
                         else {
-                            var require/*t*/ = global/*e*/.response;
-                            GraphQLStore/*u*/.handleUpdate(require/*t*/, module/*i*/);
-                            var requireDynamic/*n*/ = require/*t*/[this.props.group.id],
-                                requireLazy/*r*/ = Object.keys(requireDynamic/*n*/),
-                                LayoutAnimation/*o*/ = requireDynamic/*n*/[requireLazy/*r*/[0]].edges.length;
+                            var t = e.response;
+                            GraphQLStore/*u*/.handleUpdate(t, i);
+                            var n = t[this.props.group.id],
+                                r = Object.keys(n),
+                                LayoutAnimation/*o*/ = n[r[0]].edges.length;
                             this.setQueryParams({
                                 count: this.queryParams.count + LayoutAnimation/*o*/
                             })
@@ -430,25 +430,25 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                     }.bind(this))
                 },
                 updateFeedbackPollerForRange: function() {},
-                handleKeyboardWillShow: function(global/*e*/) {
-                    var require/*t*/ = Dimensions/*_*/.get("modalFullscreenView").height - global/*e*/.endCoordinates.screenY;
-                    require/*t*/ !== this.state.keyboardHeight && this.setState({
-                        keyboardHeight: require/*t*/
+                handleKeyboardWillShow: function(e) {
+                    var t = Dimensions/*_*/.get("modalFullscreenView").height - e.endCoordinates.screenY;
+                    t !== this.state.keyboardHeight && this.setState({
+                        keyboardHeight: t
                     })
                 },
                 componentWillMount: function() {
                     this.addListenerOn(RCTNativeAppEventEmitter/*y*/, "handleConfirmedNewPost", this.handleConfirmedNewPost), this.addListenerOn(RCTNativeAppEventEmitter/*y*/, "reloadFeedViewForGroup", this.reloadFeedViewForGroup), this.addListenerOn(RCTNativeAppEventEmitter/*y*/, "cancelComment", this.cancelComment), this.addListenerOn(RCTDeviceEventEmitter/*g*/, "keyboardWillShow", this.handleKeyboardWillShow), this._setupGroupStories(this.props)
                 },
-                componentWillReceiveProps: function(global/*e*/) {
-                    this._setupGroupStories(global/*e*/)
+                componentWillReceiveProps: function(e) {
+                    this._setupGroupStories(e)
                 },
                 componentDidUpdate: function() {
                     this.props.group && B && B.groupViewComponentDidUpdate && B.groupViewComponentDidUpdate(this.props.group.id)
                 },
                 componentDidMount: function() {
                     if (this.props.group) {
-                        var global/*e*/ = this.refs[G].getScrollResponder();
-                        global/*e*/.setNativeProps({
+                        var e = this.refs[G].getScrollResponder();
+                        e.setNativeProps({
                             contentOffset: {
                                 RCTNativeAppEventEmitter/*y*/: -this.props.topInset
                             }
@@ -458,59 +458,59 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                     }
                 },
                 componentWillUnmount: function() {
-                    for (var global/*e*/ in this._pollingStories) FeedbackPoller/*s*/.unregister(global/*e*/)
+                    for (var e in this._pollingStories) FeedbackPoller/*s*/.unregister(e)
                 },
-                enablePollerIfNeeded: function(global/*e*/) {
-                    var require/*t*/ = global/*e*/.viewer && global/*e*/.viewer.__configs__ && global/*e*/.viewer.__configs__.edges;
-                    if (require/*t*/) {
-                        var requireDynamic/*n*/ = require/*t*/.filter(function(global/*e*/) {
-                            return global/*e*/.node.name === U
+                enablePollerIfNeeded: function(e) {
+                    var t = e.viewer && e.viewer.__configs__ && e.viewer.__configs__.edges;
+                    if (t) {
+                        var n = t.filter(function(e) {
+                            return e.node.name === U
                         });
-                        isEmpty/*M*/(requireDynamic/*n*/) || FeedbackPoller/*s*/.enablePoller(requireDynamic/*n*/[0].node.enabled)
+                        isEmpty/*M*/(n) || FeedbackPoller/*s*/.enablePoller(n[0].node.enabled)
                     }
                 },
-                _onChangeVisibleRows: function(global/*e*/, require/*t*/) {
-                    for (var requireDynamic/*n*/ in require/*t*/) {
-                        var requireLazy/*r*/ = require/*t*/[requireDynamic/*n*/],
-                            module/*i*/ = this.state.listData[requireDynamic/*n*/];
-                        for (var LayoutAnimation/*o*/ in requireLazy/*r*/) {
-                            var FBSpinner/*a*/ = module/*i*/[LayoutAnimation/*o*/];
+                _onChangeVisibleRows: function(e, t) {
+                    for (var n in t) {
+                        var r = t[n],
+                            i = this.state.listData[n];
+                        for (var LayoutAnimation/*o*/ in r) {
+                            var FBSpinner/*a*/ = i[LayoutAnimation/*o*/];
                             if (FBSpinner/*a*/ && FBSpinner/*a*/.node && FBSpinner/*a*/.node.feedback) {
                                 var GraphQL_EXPERIMENTAL/*l*/ = FBSpinner/*a*/.node.feedback.id;
-                                requireLazy/*r*/[LayoutAnimation/*o*/] && !this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] ? (FeedbackPoller/*s*/.register(GraphQL_EXPERIMENTAL/*l*/), this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] = !0) : !requireLazy/*r*/[LayoutAnimation/*o*/] && this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] && (FeedbackPoller/*s*/.unregister(GraphQL_EXPERIMENTAL/*l*/), delete this._pollingStories[GraphQL_EXPERIMENTAL/*l*/])
+                                r[LayoutAnimation/*o*/] && !this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] ? (FeedbackPoller/*s*/.register(GraphQL_EXPERIMENTAL/*l*/), this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] = !0) : !r[LayoutAnimation/*o*/] && this._pollingStories[GraphQL_EXPERIMENTAL/*l*/] && (FeedbackPoller/*s*/.unregister(GraphQL_EXPERIMENTAL/*l*/), delete this._pollingStories[GraphQL_EXPERIMENTAL/*l*/])
                             }
                         }
                     }
                 },
-                _setupGroupStories: function(global/*e*/) {
-                    if (this.enablePollerIfNeeded(global/*e*/), global/*e*/.group && global/*e*/.group.admin_aware_group.group_stories) {
-                        for (var require/*t*/, requireDynamic/*n*/ = global/*e*/.group.admin_aware_group.group_stories.edges, requireLazy/*r*/ = {}, module/*i*/ = this.state.olderPostsDividerKey, LayoutAnimation/*o*/ = 0; LayoutAnimation/*o*/ < requireDynamic/*n*/.length; LayoutAnimation/*o*/++) {
+                _setupGroupStories: function(e) {
+                    if (this.enablePollerIfNeeded(e), e.group && e.group.admin_aware_group.group_stories) {
+                        for (var t, n = e.group.admin_aware_group.group_stories.edges, r = {}, i = this.state.olderPostsDividerKey, LayoutAnimation/*o*/ = 0; LayoutAnimation/*o*/ < n.length; LayoutAnimation/*o*/++) {
                             var FBSpinner/*a*/ = {
-                                    node: requireDynamic/*n*/[LayoutAnimation/*o*/].node
+                                    node: n[LayoutAnimation/*o*/].node
                                 },
                                 FeedbackPoller/*s*/ = uniqueKey/*N*/(FBSpinner/*a*/.node.id);
-                            this.state.tappedUnitKey ? FeedbackPoller/*s*/ === this.state.tappedUnitKey ? (require/*t*/ && (requireLazy/*r*/[require/*t*/].hideAll = !0), FBSpinner/*a*/.hideSeparator = !0) : require/*t*/ === this.state.tappedUnitKey && (FBSpinner/*a*/.hideAll = !0) : (FBSpinner/*a*/.hideAll = !1, FBSpinner/*a*/.hideSeparator = !1), null === module/*i*/ && require/*t*/ && this.isStoryUnread(requireLazy/*r*/[require/*t*/]) && !this.isStoryUnread(FBSpinner/*a*/) && (module/*i*/ = FBSpinner/*a*/.node.id), FBSpinner/*a*/.local_id = FeedbackPoller/*s*/, requireLazy/*r*/[FeedbackPoller/*s*/] = FBSpinner/*a*/, require/*t*/ = FeedbackPoller/*s*/
+                            this.state.tappedUnitKey ? FeedbackPoller/*s*/ === this.state.tappedUnitKey ? (t && (r[t].hideAll = !0), FBSpinner/*a*/.hideSeparator = !0) : t === this.state.tappedUnitKey && (FBSpinner/*a*/.hideAll = !0) : (FBSpinner/*a*/.hideAll = !1, FBSpinner/*a*/.hideSeparator = !1), null === i && t && this.isStoryUnread(r[t]) && !this.isStoryUnread(FBSpinner/*a*/) && (i = FBSpinner/*a*/.node.id), FBSpinner/*a*/.local_id = FeedbackPoller/*s*/, r[FeedbackPoller/*s*/] = FBSpinner/*a*/, t = FeedbackPoller/*s*/
                         }
                         this.setState({
-                            olderPostsDividerKey: module/*i*/
+                            olderPostsDividerKey: i
                         });
                         var GraphQL_EXPERIMENTAL/*l*/ = {};
-                        if (global/*e*/.group.admin_aware_group.group_pinned_stories.count > 0 && !this.state.hidePinnedPostSection && ("MEMBER" === global/*e*/.group.admin_aware_group.viewer_join_state || "OPEN" === global/*e*/.group.admin_aware_group.visibility)) {
+                        if (e.group.admin_aware_group.group_pinned_stories.count > 0 && !this.state.hidePinnedPostSection && ("MEMBER" === e.group.admin_aware_group.viewer_join_state || "OPEN" === e.group.admin_aware_group.visibility)) {
                             var GraphQLStore/*u*/ = uniqueKey/*N*/("PINNED_POST_KEY");
                             GraphQL_EXPERIMENTAL/*l*/[GraphQLStore/*u*/] = {}
                         }
                         var Image/*c*/ = {};
-                        isEmpty/*M*/(GraphQL_EXPERIMENTAL/*l*/) || (Image/*c*/.pinnedPostSection = GraphQL_EXPERIMENTAL/*l*/), Image/*c*/.storiesSection = requireLazy/*r*/, this.setState({
+                        isEmpty/*M*/(GraphQL_EXPERIMENTAL/*l*/) || (Image/*c*/.pinnedPostSection = GraphQL_EXPERIMENTAL/*l*/), Image/*c*/.storiesSection = r, this.setState({
                             listData: Image/*c*/,
                             dataSource: this.getUpdatedDataSource(Image/*c*/)
                         })
                     }
                 },
-                handleDockedCommentSubmit: function(global/*e*/, require/*t*/) {
-                    this.clearPermalinkMode(), this.state.submitCallback(global/*e*/, require/*t*/)
+                handleDockedCommentSubmit: function(e, t) {
+                    this.clearPermalinkMode(), this.state.submitCallback(e, t)
                 },
-                handleDockedCommentAbort: function(global/*e*/) {
-                    this.clearPermalinkMode(), this.state.abortCallback && this.state.abortCallback(global/*e*/)
+                handleDockedCommentAbort: function(e) {
+                    this.clearPermalinkMode(), this.state.abortCallback && this.state.abortCallback(e)
                 },
                 hasMoreToLoad: function() {
                     return this.props.group && this.props.group.admin_aware_group.group_stories && this.props.group.admin_aware_group.group_stories.page_info.has_next_page
@@ -522,9 +522,9 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                 },
                 render: function() {
                     if (!this.props.group) return React/*f*/.createElement(x, null);
-                    var global/*e*/ = this.state.contentInsets;
-                    null !== this.state.permalinkContentInsets && (global/*e*/ = this.state.permalinkContentInsets);
-                    var require/*t*/ = React/*f*/.createElement(ListView/*p*/, {
+                    var e = this.state.contentInsets;
+                    null !== this.state.permalinkContentInsets && (e = this.state.permalinkContentInsets);
+                    var t = React/*f*/.createElement(ListView/*p*/, {
                         dataSource: this.state.dataSource,
                         renderRow: this.renderRow,
                         renderFooter: this.renderFooter,
@@ -532,14 +532,14 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
                         onEndReached: this.loadMoreIfNeeded,
                         onEndReachedDistance: 100,
                         showsVerticalScrollIndicator: !1,
-                        contentInset: global/*e*/,
-                        scrollIndicatorInsets: global/*e*/,
+                        contentInset: e,
+                        scrollIndicatorInsets: e,
                         removeClippedSubviews: !0
                     });
                     return React/*f*/.createElement(THDockedInputContainer/*w*/, {
                         ref: G,
                         groupID: this.props.group.id,
-                        scrollResponder: require/*t*/,
+                        scrollResponder: t,
                         onDockedCommentSubmit: this.handleDockedCommentSubmit,
                         onDockedCommentAbort: this.handleDockedCommentAbort,
                         onDidDock: this.handleDidDock,
@@ -641,5 +641,5 @@ __d("THGroupView",["LayoutAnimation","FBSpinner","FeedbackPoller","GraphQL_EXPER
             }
         })
     }
-    module/*i*/.exports = W
+    i.exports = W
 });

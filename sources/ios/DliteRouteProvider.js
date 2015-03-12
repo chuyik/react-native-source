@@ -1,8 +1,8 @@
-__d("DliteRouteProvider",["DliteRoute","React","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("DliteRouteProvider",["DliteRoute","React","invariant"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
-        React/*a*/ = require/*t*/("React"),
-        invariant/*s*/ = require/*t*/("invariant"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
+        React/*a*/ = t("React"),
+        invariant/*s*/ = t("invariant"),
         l = React/*a*/.PropTypes,
         u = {
             Mixin: {
@@ -16,5 +16,5 @@ __d("DliteRouteProvider",["DliteRoute","React","invariant"],function (global/*e*
                 }
             }
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

@@ -1,21 +1,21 @@
-__d("ReactIOSComponentEnvironment",["NativeModulesDeprecated","ReactIOSDOMIDOperations","ReactIOSReconcileTransaction","ReactIOSTagHandles","ReactPerf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactIOSComponentEnvironment",["NativeModulesDeprecated","ReactIOSDOMIDOperations","ReactIOSReconcileTransaction","ReactIOSTagHandles","ReactPerf"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModulesDeprecated/*o*/ = require/*t*/("NativeModulesDeprecated").RKUIManager,
-        ReactIOSDOMIDOperations/*a*/ = require/*t*/("ReactIOSDOMIDOperations"),
-        ReactIOSReconcileTransaction/*s*/ = require/*t*/("ReactIOSReconcileTransaction"),
-        ReactIOSTagHandles/*l*/ = require/*t*/("ReactIOSTagHandles"),
-        ReactPerf/*u*/ = require/*t*/("ReactPerf"),
+    var NativeModulesDeprecated/*o*/ = t("NativeModulesDeprecated").RKUIManager,
+        ReactIOSDOMIDOperations/*a*/ = t("ReactIOSDOMIDOperations"),
+        ReactIOSReconcileTransaction/*s*/ = t("ReactIOSReconcileTransaction"),
+        ReactIOSTagHandles/*l*/ = t("ReactIOSTagHandles"),
+        ReactPerf/*u*/ = t("ReactPerf"),
         c = {
             BackendIDOperations: ReactIOSDOMIDOperations/*a*/,
             unmountIDFromEnvironment: function() {},
             clearNode: function() {},
-            mountImageIntoNode: ReactPerf/*u*/.measure("ReactComponentBrowserEnvironment", "mountImageIntoNode", function(global/*e*/, require/*t*/) {
-                ReactIOSTagHandles/*l*/.associateRootNodeIDWithMountedNodeHandle(global/*e*/.rootNodeID, global/*e*/.tag);
-                var requireDynamic/*n*/ = [global/*e*/.tag],
-                    requireLazy/*r*/ = [0];
-                NativeModulesDeprecated/*o*/.manageChildren(ReactIOSTagHandles/*l*/.mostRecentMountedNodeHandleForRootNodeID(require/*t*/), null, null, requireDynamic/*n*/, requireLazy/*r*/, null)
+            mountImageIntoNode: ReactPerf/*u*/.measure("ReactComponentBrowserEnvironment", "mountImageIntoNode", function(e, t) {
+                ReactIOSTagHandles/*l*/.associateRootNodeIDWithMountedNodeHandle(e.rootNodeID, e.tag);
+                var n = [e.tag],
+                    r = [0];
+                NativeModulesDeprecated/*o*/.manageChildren(ReactIOSTagHandles/*l*/.mostRecentMountedNodeHandleForRootNodeID(t), null, null, n, r, null)
             }),
             ReactReconcileTransaction: ReactIOSReconcileTransaction/*s*/
         };
-    module/*i*/.exports = c
+    i.exports = c
 });

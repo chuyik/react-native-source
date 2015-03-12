@@ -1,6 +1,6 @@
-__d("isNode",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return !(!global/*e*/ || !("function" == typeof Node ? global/*e*/ instanceof Node : "object" == typeof global/*e*/ && "number" == typeof global/*e*/.nodeType && "string" == typeof global/*e*/.nodeName))
+__d("isNode",[],function (e, t, n, r, i) {
+    function o(e) {
+        return !(!e || !("function" == typeof Node ? e instanceof Node : "object" == typeof e && "number" == typeof e.nodeType && "string" == typeof e.nodeName))
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

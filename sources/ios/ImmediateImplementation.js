@@ -1,80 +1,80 @@
-__d("ImmediateImplementation",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, exports/*o*/) {
-    ! function(global/*e*/, require/*t*/) {
+__d("ImmediateImplementation",[],function (e, t, n, r, i, o) {
+    ! function(e, t) {
         "use strict";
 
-        function requireDynamic/*n*/(global/*e*/) {
-            var requireDynamic/*n*/ = global/*e*/[0];
-            return global/*e*/ = Array.prototype.slice.call(global/*e*/, 1), h[d] = function() {
-                requireDynamic/*n*/.apply(require/*t*/, global/*e*/)
+        function n(e) {
+            var n = e[0];
+            return e = Array.prototype.slice.call(e, 1), h[d] = function() {
+                n.apply(t, e)
             }, m = m.next = {
                 handle: d++
             }, m.handle
         }
 
-        function requireLazy/*r*/() {
-            for (var global/*e*/, require/*t*/; !g && (global/*e*/ = f.next);)
-                if (f = global/*e*/, require/*t*/ = h[global/*e*/.handle]) {
+        function r() {
+            for (var e, t; !g && (e = f.next);)
+                if (f = e, t = h[e.handle]) {
                     g = !0;
                     try {
-                        require/*t*/(), g = !1
+                        t(), g = !1
                     } finally {
-                        module/*i*/(global/*e*/.handle), g && (g = !1, f.next && p(requireLazy/*r*/))
+                        i(e.handle), g && (g = !1, f.next && p(r))
                     }
                 }
         }
 
-        function module/*i*/(global/*e*/) {
-            delete h[global/*e*/]
+        function i(e) {
+            delete h[e]
         }
 
         function a() {
-            if (global/*e*/.postMessage && !global/*e*/.importScripts) {
-                var require/*t*/ = !0,
-                    requireDynamic/*n*/ = function() {
-                        require/*t*/ = !1, global/*e*/.removeEventListener ? global/*e*/.removeEventListener("message", requireDynamic/*n*/, !1) : global/*e*/.detachEvent("onmessage", requireDynamic/*n*/)
+            if (e.postMessage && !e.importScripts) {
+                var t = !0,
+                    n = function() {
+                        t = !1, e.removeEventListener ? e.removeEventListener("message", n, !1) : e.detachEvent("onmessage", n)
                     };
-                if (global/*e*/.addEventListener) global/*e*/.addEventListener("message", requireDynamic/*n*/, !1);
+                if (e.addEventListener) e.addEventListener("message", n, !1);
                 else {
-                    if (!global/*e*/.attachEvent) return !1;
-                    global/*e*/.attachEvent("onmessage", requireDynamic/*n*/)
+                    if (!e.attachEvent) return !1;
+                    e.attachEvent("onmessage", n)
                 }
-                return global/*e*/.postMessage("", "*"), require/*t*/
+                return e.postMessage("", "*"), t
             }
         }
 
         function s() {
-            var require/*t*/ = "setImmediate$" + Math.random() + "$",
-                module/*i*/ = function(requireDynamic/*n*/) {
-                    requireDynamic/*n*/.source === global/*e*/ && "string" == typeof requireDynamic/*n*/.data && 0 === requireDynamic/*n*/.data.indexOf(require/*t*/) && requireLazy/*r*/()
+            var t = "setImmediate$" + Math.random() + "$",
+                i = function(n) {
+                    n.source === e && "string" == typeof n.data && 0 === n.data.indexOf(t) && r()
                 };
-            global/*e*/.addEventListener ? global/*e*/.addEventListener("message", module/*i*/, !1) : global/*e*/.attachEvent("onmessage", module/*i*/), p = function() {
-                var requireLazy/*r*/ = requireDynamic/*n*/(arguments);
-                return global/*e*/.postMessage(require/*t*/ + requireLazy/*r*/, "*"), requireLazy/*r*/
+            e.addEventListener ? e.addEventListener("message", i, !1) : e.attachEvent("onmessage", i), p = function() {
+                var r = n(arguments);
+                return e.postMessage(t + r, "*"), r
             }
         }
 
         function l() {
-            var global/*e*/ = new MessageChannel;
-            global/*e*/.port1.onmessage = requireLazy/*r*/, p = function() {
-                var require/*t*/ = requireDynamic/*n*/(arguments);
-                return global/*e*/.port2.postMessage(require/*t*/), require/*t*/
+            var e = new MessageChannel;
+            e.port1.onmessage = r, p = function() {
+                var t = n(arguments);
+                return e.port2.postMessage(t), t
             }
         }
 
         function u() {
-            var global/*e*/ = _.documentElement;
+            var e = _.documentElement;
             p = function() {
-                var require/*t*/ = requireDynamic/*n*/(arguments),
-                    module/*i*/ = _.createElement("script");
-                return module/*i*/.onreadystatechange = function() {
-                    module/*i*/.onreadystatechange = null, global/*e*/.removeChild(module/*i*/), module/*i*/ = null, requireLazy/*r*/()
-                }, global/*e*/.appendChild(module/*i*/), require/*t*/
+                var t = n(arguments),
+                    i = _.createElement("script");
+                return i.onreadystatechange = function() {
+                    i.onreadystatechange = null, e.removeChild(i), i = null, r()
+                }, e.appendChild(i), t
             }
         }
 
         function c() {
             p = function() {
-                return setTimeout(requireLazy/*r*/, 0), requireDynamic/*n*/(arguments)
+                return setTimeout(r, 0), n(arguments)
             }
         }
         var p, d = 1,
@@ -82,7 +82,7 @@ __d("ImmediateImplementation",[],function (global/*e*/, require/*t*/, requireDyn
             f = {},
             m = f,
             g = !1,
-            _ = global/*e*/.document;
-        a() ? s() : global/*e*/.MessageChannel ? l() : _ && "onreadystatechange" in _.createElement("script") ? u() : c(), exports/*o*/.setImmediate = p, exports/*o*/.clearImmediate = module/*i*/
+            _ = e.document;
+        a() ? s() : e.MessageChannel ? l() : _ && "onreadystatechange" in _.createElement("script") ? u() : c(), o.setImmediate = p, o.clearImmediate = i
     }(Function("return this")())
 });

@@ -1,16 +1,16 @@
-__d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","React","ReactGraphQL","Dimensions","StyleSheet","Text","THStoryHeaderView","THViewConstants","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","React","ReactGraphQL","Dimensions","StyleSheet","Text","THStoryHeaderView","THViewConstants","View"],function (e, t, n, r, i) {
     "use strict";
-    var FBAttachmentView/*o*/ = require/*t*/("FBAttachmentView"),
-        a = require/*t*/("FBTextWithEntities.react"),
-        THColors/*s*/ = require/*t*/("THColors"),
-        React/*l*/ = require/*t*/("React"),
-        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
-        Dimensions/*c*/ = require/*t*/("Dimensions"),
-        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
-        Text/*d*/ = require/*t*/("Text"),
-        THStoryHeaderView/*h*/ = require/*t*/("THStoryHeaderView"),
-        THViewConstants/*f*/ = require/*t*/("THViewConstants"),
-        View/*m*/ = require/*t*/("View"),
+    var FBAttachmentView/*o*/ = t("FBAttachmentView"),
+        a = t("FBTextWithEntities.react"),
+        THColors/*s*/ = t("THColors"),
+        React/*l*/ = t("React"),
+        ReactGraphQL/*u*/ = t("ReactGraphQL"),
+        Dimensions/*c*/ = t("Dimensions"),
+        StyleSheet/*p*/ = t("StyleSheet"),
+        Text/*d*/ = t("Text"),
+        THStoryHeaderView/*h*/ = t("THStoryHeaderView"),
+        THViewConstants/*f*/ = t("THViewConstants"),
+        View/*m*/ = t("View"),
         g = 16,
         _ = 500,
         y = 10,
@@ -25,25 +25,25 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
             mixins: [ReactGraphQL/*u*/.Mixin],
             statics: {
                 queries: {
-                    story: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-                            var FBAttachmentView/*o*/ = require/*t*/.__GraphQL;
-                            return new FBAttachmentView/*o*/.QueryFragment("THStoryView_story", "Story", [new FBAttachmentView/*o*/.Field("id"), new FBAttachmentView/*o*/.Field("message", null, [require/*t*/.__frag(global/*e*/)]), new FBAttachmentView/*o*/.Field("suffix", null, [require/*t*/.__frag(requireDynamic/*n*/)]), new FBAttachmentView/*o*/.Field("attachments", [new FBAttachmentView/*o*/.Field("style_list", null, null, null, null, null, {
+                    story: function(e, t) {
+                        return function(e, n, r, i) {
+                            var FBAttachmentView/*o*/ = t.__GraphQL;
+                            return new FBAttachmentView/*o*/.QueryFragment("THStoryView_story", "Story", [new FBAttachmentView/*o*/.Field("id"), new FBAttachmentView/*o*/.Field("message", null, [t.__frag(e)]), new FBAttachmentView/*o*/.Field("suffix", null, [t.__frag(n)]), new FBAttachmentView/*o*/.Field("attachments", [new FBAttachmentView/*o*/.Field("style_list", null, null, null, null, null, {
                                 plural: !0
-                            })], [require/*t*/.__frag(requireLazy/*r*/)], null, null, null, {
+                            })], [t.__frag(r)], null, null, null, {
                                 plural: !0
-                            })], [require/*t*/.__frag(module/*i*/)], {
+                            })], [t.__frag(i)], {
                                 scope: "THStoryView_story"
                             })
                         }(a.getQuery("text"), a.getQuery("text"), FBAttachmentView/*o*/.getQuery("attachment"), THStoryHeaderView/*h*/.getQuery("story"))
                     },
-                    group: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THStoryView_group", "Group", [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+                    group: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THStoryView_group", "Group", [new n.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(global/*e*/)], {
+                            })], [t.__frag(e)], {
                                 scope: "THStoryView_group"
                             })
                         }(THStoryHeaderView/*h*/.getQuery("group"))
@@ -52,8 +52,8 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
             },
             getMessage: function() {
                 if (!this.props.story.message) return null;
-                var global/*e*/ = null;
-                return this.props.story.suffix && (global/*e*/ = [React/*l*/.createElement(Text/*d*/, null, " ", "—", " "), React/*l*/.createElement(a, {
+                var e = null;
+                return this.props.story.suffix && (e = [React/*l*/.createElement(Text/*d*/, null, " ", "—", " "), React/*l*/.createElement(a, {
                     text: this.props.story.suffix,
                     textStyle: b.textStyle
                 })]), React/*l*/.createElement(View/*m*/, {
@@ -67,40 +67,40 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                     maxLines: y,
                     textStyle: b.textStyle,
                     seeMoreStyle: b.seeMore
-                }), global/*e*/))
+                }), e))
             },
             getAttachments: function() {
-                var global/*e*/ = this.props.story.attachments;
-                if (!global/*e*/ || 0 === global/*e*/.length) return null;
-                var require/*t*/ = 0,
-                    requireDynamic/*n*/ = [];
-                return global/*e*/.forEach(function(global/*e*/) {
-                    -1 === global/*e*/.style_list.indexOf("avatar_list") && requireDynamic/*n*/.push(React/*l*/.createElement(View/*m*/, {
-                        style: this.getAttachmentStyle(global/*e*/.style_list),
-                        key: require/*t*/++
+                var e = this.props.story.attachments;
+                if (!e || 0 === e.length) return null;
+                var t = 0,
+                    n = [];
+                return e.forEach(function(e) {
+                    -1 === e.style_list.indexOf("avatar_list") && n.push(React/*l*/.createElement(View/*m*/, {
+                        style: this.getAttachmentStyle(e.style_list),
+                        key: t++
                     }, React/*l*/.createElement(FBAttachmentView/*o*/, {
-                        attachment: global/*e*/,
+                        attachment: e,
                         navigator: this.props.navigator,
                         context: this.props.context,
-                        maxPhotoWidth: this.getMaxPhotoWidth(global/*e*/.style_list),
-                        maxPhotoHeight: this.getMaxPhotoHeight(global/*e*/.style_list)
+                        maxPhotoWidth: this.getMaxPhotoWidth(e.style_list),
+                        maxPhotoHeight: this.getMaxPhotoHeight(e.style_list)
                     })))
-                }.bind(this)), 0 === requireDynamic/*n*/.length ? null : React/*l*/.createElement(View/*m*/, {
+                }.bind(this)), 0 === n.length ? null : React/*l*/.createElement(View/*m*/, {
                     style: b.attachmentCollectionContainer
-                }, requireDynamic/*n*/)
+                }, n)
             },
-            getAttachmentStyle: function(global/*e*/) {
-                for (var require/*t*/ = 0; require/*t*/ < global/*e*/.length; require/*t*/++)
-                    if ("photo" === global/*e*/[require/*t*/] || "album" === global/*e*/[require/*t*/] || "video" === global/*e*/[require/*t*/]) return b.fullWidthAttachmentContainer;
+            getAttachmentStyle: function(e) {
+                for (var t = 0; t < e.length; t++)
+                    if ("photo" === e[t] || "album" === e[t] || "video" === e[t]) return b.fullWidthAttachmentContainer;
                 return b.attachmentContainer
             },
-            getMaxPhotoWidth: function(global/*e*/) {
-                for (var require/*t*/ = Dimensions/*c*/.get("window").width, requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++)
-                    if ("photo" === global/*e*/[requireDynamic/*n*/] || "album" === global/*e*/[requireDynamic/*n*/] || "video" === global/*e*/[requireDynamic/*n*/]) return require/*t*/;
-                return require/*t*/ - 2 * g
+            getMaxPhotoWidth: function(e) {
+                for (var t = Dimensions/*c*/.get("window").width, n = 0; n < e.length; n++)
+                    if ("photo" === e[n] || "album" === e[n] || "video" === e[n]) return t;
+                return t - 2 * g
             },
-            getMaxPhotoHeight: function(global/*e*/) {
-                return this.getMaxPhotoWidth(global/*e*/) * v
+            getMaxPhotoHeight: function(e) {
+                return this.getMaxPhotoWidth(e) * v
             },
             render: function() {
                 return React/*l*/.createElement(View/*m*/, null, React/*l*/.createElement(THStoryHeaderView/*h*/, {
@@ -135,5 +135,5 @@ __d("THStoryView",["FBAttachmentView","FBTextWithEntities.react","THColors","Rea
                 fontSize: 15
             }
         });
-    module/*i*/.exports = S
+    i.exports = S
 });

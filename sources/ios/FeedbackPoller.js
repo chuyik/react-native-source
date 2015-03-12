@@ -1,19 +1,19 @@
-__d("FeedbackPoller",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutatorConstants","GraphQLStore","RQLRequest","isEmpty","fetchBatchedRQL","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FeedbackPoller",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLConstants","GraphQLMutatorConstants","GraphQLStore","RQLRequest","isEmpty","fetchBatchedRQL","rql"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {
         if (isEmpty/*g*/(R) || !C) return s(), void(w = null);
-        var global/*e*/ = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                require/*t*/ ? console.error("Error from feedback poller: ", require/*t*/) : GraphQLStore/*f*/.handleUpdate(requireDynamic/*n*/, global/*e*/, GraphQLMutatorConstants/*h*/.POLLER_UPDATE)
+        var e = function(e, t, n) {
+                t ? console.error("Error from feedback poller: ", t) : GraphQLStore/*f*/.handleUpdate(n, e, GraphQLMutatorConstants/*h*/.POLLER_UPDATE)
             },
-            require/*t*/ = [];
-        for (var requireDynamic/*n*/ in R) {
-            var requireLazy/*r*/ = u(requireDynamic/*n*/),
-                module/*i*/ = l(requireDynamic/*n*/, requireLazy/*r*/),
-                o = new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(module/*i*/, {});
-            require/*t*/.push(new RQLRequest/*m*/(requireDynamic/*n*/, o, ErrorUtils/*c*/.guard(global/*e*/.bind(null, o), "FeedbackPoller:handleResponse")))
+            t = [];
+        for (var n in R) {
+            var r = u(n),
+                i = l(n, r),
+                o = new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(i, {});
+            t.push(new RQLRequest/*m*/(n, o, ErrorUtils/*c*/.guard(e.bind(null, o), "FeedbackPoller:handleResponse")))
         }
-        require/*t*/.length > 0 && fetchBatchedRQL/*_*/(require/*t*/), a()
+        t.length > 0 && fetchBatchedRQL/*_*/(t), a()
     }
 
     function a() {
@@ -24,36 +24,36 @@ __d("FeedbackPoller",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLConstants","Gr
         w = null, R = {}, clearTimeout(w)
     }
 
-    function l(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = R[global/*e*/],
-            requireLazy/*r*/ = null;
-        return require/*t*/ && require/*t*/ !== S && (requireLazy/*r*/ = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = rql/*y*/.__GraphQL;
-                return new requireLazy/*r*/.QueryFragment("FeedbackPoller_f0", "Node", [new requireLazy/*r*/.Field("top_level_comments", null, [rql/*y*/.__frag(requireDynamic/*n*/)], [new requireLazy/*r*/.Callv("before", [rql/*y*/.__var(global/*e*/)]), new requireLazy/*r*/.Callv("first", [rql/*y*/.__var(require/*t*/)])], null, null, {
+    function l(e, t) {
+        var n = R[e],
+            r = null;
+        return t && t !== S && (r = function(e, t, n) {
+                var r = rql/*y*/.__GraphQL;
+                return new r.QueryFragment("FeedbackPoller_f0", "Node", [new r.Field("top_level_comments", null, [rql/*y*/.__frag(n)], [new r.Callv("before", [rql/*y*/.__var(e)]), new r.Callv("first", [rql/*y*/.__var(t)])], null, null, {
                     connection: !0
-                }), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                }), new r.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })])
-            }(require/*t*/, v, requireDynamic/*n*/)),
-            function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = rql/*y*/.__GraphQL;
-                return new requireDynamic/*n*/.Query("node", [rql/*y*/.__var(global/*e*/)], [new requireDynamic/*n*/.Field("likers", [new requireDynamic/*n*/.Field("count")], null, null, null, null, {
+            }(t, v, n)),
+            function(e, t) {
+                var n = rql/*y*/.__GraphQL;
+                return new n.Query("node", [rql/*y*/.__var(e)], [new n.Field("likers", [new n.Field("count")], null, null, null, null, {
                     connection: !0,
                     nonFindable: !0
-                }), new requireDynamic/*n*/.Field("does_viewer_like"), new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+                }), new n.Field("does_viewer_like"), new n.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                })], [rql/*y*/.__frag(require/*t*/)], null, "FeedbackPoller_q0")
-            }(global/*e*/, requireLazy/*r*/)
+                })], [rql/*y*/.__frag(t)], null, "FeedbackPoller_q0")
+            }(e, r)
     }
 
-    function u(global/*e*/) {
-        var require/*t*/ = function(global/*e*/) {
-                var require/*t*/ = rql/*y*/.__GraphQL;
-                return new require/*t*/.Query("node", [rql/*y*/.__var(global/*e*/)], [new require/*t*/.Field("top_level_comments", [new require/*t*/.Field("edges", [new require/*t*/.Field("cursor", null, null, null, null, null, {
+    function u(e) {
+        var t = function(e) {
+                var t = rql/*y*/.__GraphQL;
+                return new t.Query("node", [rql/*y*/.__var(e)], [new t.Field("top_level_comments", [new t.Field("edges", [new t.Field("cursor", null, null, null, null, null, {
                     requisite: !0
-                }), new require/*t*/.Field("node", [new require/*t*/.Field("id", null, null, null, null, null, {
+                }), new t.Field("node", [new t.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
@@ -63,34 +63,34 @@ __d("FeedbackPoller",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLConstants","Gr
                     requisite: !0
                 })], null, null, null, null, {
                     plural: !0
-                }), new require/*t*/.Field("page_info", [new require/*t*/.Field("has_next_page", null, null, null, null, null, {
+                }), new t.Field("page_info", [new t.Field("has_next_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                }), new require/*t*/.Field("has_previous_page", null, null, null, null, null, {
+                }), new t.Field("has_previous_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                })], null, [new require/*t*/.Callv("first", ["1"])], null, null, {
+                })], null, [new t.Callv("first", ["1"])], null, null, {
                     connection: !0
-                }), new require/*t*/.Field("id", null, null, null, null, null, {
+                }), new t.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, "FeedbackPoller_q0")
-            }(global/*e*/),
-            requireDynamic/*n*/ = GraphQLStore/*f*/.resolveQueryFromStore(new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(require/*t*/, {}));
-        return requireDynamic/*n*/ && requireDynamic/*n*/[global/*e*/] && requireDynamic/*n*/[global/*e*/].top_level_comments && requireDynamic/*n*/[global/*e*/].top_level_comments.edges[0] && requireDynamic/*n*/[global/*e*/].top_level_comments.edges[0].cursor
+            }(e),
+            n = GraphQLStore/*f*/.resolveQueryFromStore(new GraphQL_EXPERIMENTAL/*p*/.QueryWithValues(t, {}));
+        return n && n[e] && n[e].top_level_comments && n[e].top_level_comments.edges[0] && n[e].top_level_comments.edges[0].cursor
     }
-    var ErrorUtils/*c*/ = require/*t*/("ErrorUtils"),
-        GraphQL_EXPERIMENTAL/*p*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        GraphQLConstants/*d*/ = require/*t*/("GraphQLConstants"),
-        GraphQLMutatorConstants/*h*/ = require/*t*/("GraphQLMutatorConstants"),
-        GraphQLStore/*f*/ = require/*t*/("GraphQLStore"),
-        RQLRequest/*m*/ = require/*t*/("RQLRequest"),
-        isEmpty/*g*/ = require/*t*/("isEmpty"),
-        fetchBatchedRQL/*_*/ = require/*t*/("fetchBatchedRQL"),
-        rql/*y*/ = require/*t*/("rql"),
+    var ErrorUtils/*c*/ = t("ErrorUtils"),
+        GraphQL_EXPERIMENTAL/*p*/ = t("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*d*/ = t("GraphQLConstants"),
+        GraphQLMutatorConstants/*h*/ = t("GraphQLMutatorConstants"),
+        GraphQLStore/*f*/ = t("GraphQLStore"),
+        RQLRequest/*m*/ = t("RQLRequest"),
+        isEmpty/*g*/ = t("isEmpty"),
+        fetchBatchedRQL/*_*/ = t("fetchBatchedRQL"),
+        rql/*y*/ = t("rql"),
         v = 10,
         S = GraphQLConstants/*d*/.DUMMY_CURSOR_ID,
         b = 15e3,
@@ -98,28 +98,28 @@ __d("FeedbackPoller",["ErrorUtils","GraphQL_EXPERIMENTAL","GraphQLConstants","Gr
         w = null,
         C = !1,
         E = {
-            enablePoller: function(global/*e*/) {
-                C !== global/*e*/ && (C = global/*e*/, C || s())
+            enablePoller: function(e) {
+                C !== e && (C = e, C || s())
             },
-            register: function(global/*e*/) {
-                if (C && global/*e*/) {
-                    if (!R[global/*e*/]) {
-                        var require/*t*/ = GraphQLStore/*f*/.getTrackedQueryByID(global/*e*/),
-                            requireDynamic/*n*/ = require/*t*/.getUnaliasedFields("top_level_comments");
-                        requireDynamic/*n*/ = requireDynamic/*n*/.filter(function(global/*e*/) {
-                            return "top_level_comment_counts" !== global/*e*/.getAlias()
-                        }, requireDynamic/*n*/);
-                        var requireLazy/*r*/ = requireDynamic/*n*/.map(function(global/*e*/) {
-                            return new GraphQL_EXPERIMENTAL/*p*/.QueryFragment("FeedbackPollerFragment", "CommentsConnection", global/*e*/.getOwnFields(), global/*e*/.getFragments())
+            register: function(e) {
+                if (C && e) {
+                    if (!R[e]) {
+                        var t = GraphQLStore/*f*/.getTrackedQueryByID(e),
+                            n = t.getUnaliasedFields("top_level_comments");
+                        n = n.filter(function(e) {
+                            return "top_level_comment_counts" !== e.getAlias()
+                        }, n);
+                        var r = n.map(function(e) {
+                            return new GraphQL_EXPERIMENTAL/*p*/.QueryFragment("FeedbackPollerFragment", "CommentsConnection", e.getOwnFields(), e.getFragments())
                         });
-                        R[global/*e*/] = new GraphQL_EXPERIMENTAL/*p*/.QueryFragment("FeedbackPoller", "CommentsConnection", null, requireLazy/*r*/)
+                        R[e] = new GraphQL_EXPERIMENTAL/*p*/.QueryFragment("FeedbackPoller", "CommentsConnection", null, r)
                     }
                     w || a()
                 }
             },
-            unregister: function(global/*e*/) {
-                global/*e*/ && delete R[global/*e*/]
+            unregister: function(e) {
+                e && delete R[e]
             }
         };
-    module/*i*/.exports = E
+    i.exports = E
 });

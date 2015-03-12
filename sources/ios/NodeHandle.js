@@ -1,14 +1,14 @@
-__d("NodeHandle",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("NodeHandle",[],function (e, t, n, r, i) {
     var o = {
         injection: {
-            injectImplementation: function(global/*e*/) {
-                o._Implementation = global/*e*/
+            injectImplementation: function(e) {
+                o._Implementation = e
             }
         },
         _Implementation: null,
-        getRootNodeID: function(global/*e*/) {
-            return o._Implementation.getRootNodeID(global/*e*/)
+        getRootNodeID: function(e) {
+            return o._Implementation.getRootNodeID(e)
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

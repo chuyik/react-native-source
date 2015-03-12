@@ -1,10 +1,10 @@
-__d("getActiveElement",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("getActiveElement",[],function (e, t, n, r, i) {
     function o() {
         try {
             return document.activeElement || document.body
-        } catch (global/*e*/) {
+        } catch (e) {
             return document.body
         }
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

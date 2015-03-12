@@ -1,4 +1,4 @@
-__d("GraphQLConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLConstants",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         CHECKIN_SEARCH_QUERY: "checkin_search_query",
@@ -30,5 +30,5 @@ __d("GraphQLConstants",[],function (global/*e*/, require/*t*/, requireDynamic/*n
         VIEWER_CLIENT_ID: "client:viewer",
         DUMMY_CURSOR_ID: "client:cursor"
     };
-    o.CUSTOM_ROOTCALLS[o.ENTITY_SEARCH] = !0, o.CUSTOM_ROOTCALLS[o.GROUP] = !0, o.CUSTOM_ROOTCALLS[o.STORY] = !0, o.CUSTOM_ROOTCALLS[o.USERNAME] = !0, o.CUSTOM_ROOTCALLS[o.CHECKIN_SEARCH_QUERY] = !0, o.CUSTOM_ROOTCALLS[o.GRAPH_SEARCH_QUERY] = !0, o.IDLESS_ROOTCALLS[o.CHECKIN_SEARCH_QUERY] = !0, module/*i*/.exports = o
+    o.CUSTOM_ROOTCALLS[o.ENTITY_SEARCH] = !0, o.CUSTOM_ROOTCALLS[o.GROUP] = !0, o.CUSTOM_ROOTCALLS[o.STORY] = !0, o.CUSTOM_ROOTCALLS[o.USERNAME] = !0, o.CUSTOM_ROOTCALLS[o.CHECKIN_SEARCH_QUERY] = !0, o.CUSTOM_ROOTCALLS[o.GRAPH_SEARCH_QUERY] = !0, o.IDLESS_ROOTCALLS[o.CHECKIN_SEARCH_QUERY] = !0, i.exports = o
 });

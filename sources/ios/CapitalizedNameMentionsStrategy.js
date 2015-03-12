@@ -1,15 +1,15 @@
-__d("CapitalizedNameMentionsStrategy",["DocumentMentionsRegex"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var DocumentMentionsRegex/*o*/ = require/*t*/("DocumentMentionsRegex"),
+__d("CapitalizedNameMentionsStrategy",["DocumentMentionsRegex"],function (e, t, n, r, i) {
+    var DocumentMentionsRegex/*o*/ = t("DocumentMentionsRegex"),
         a = 2,
         s = new RegExp("(?:" + DocumentMentionsRegex/*o*/.NAME + "{" + a + ",})$"),
         l = {
-            findMentionableString: function(global/*e*/) {
-                var require/*t*/ = s.exec(global/*e*/);
-                return null !== require/*t*/ ? {
-                    matchingString: require/*t*/[0],
-                    leadOffset: require/*t*/[0].length
+            findMentionableString: function(e) {
+                var t = s.exec(e);
+                return null !== t ? {
+                    matchingString: t[0],
+                    leadOffset: t[0].length
                 } : null
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

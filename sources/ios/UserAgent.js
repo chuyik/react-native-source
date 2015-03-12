@@ -1,20 +1,20 @@
-__d("UserAgent",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("UserAgent",[],function (e, t, n, r, i) {
     function o() {
         if (!b && (b = !0, "undefined" != typeof navigator)) {
-            var global/*e*/ = navigator.userAgent,
-                require/*t*/ = /(?:MSIE.(\d+\.\d+))|(?:(?:Firefox|GranParadiso|Iceweasel).(\d+\.\d+))|(?:Opera(?:.+Version.|.)(\d+\.\d+))|(?:AppleWebKit.(\d+(?:\.\d+)?))|(?:Trident\/\d+\.\d+.*rv:(\d+\.\d+))/.exec(global/*e*/),
-                requireDynamic/*n*/ = /(Mac OS X)|(Windows)|(Linux)/.exec(global/*e*/);
-            if (_ = /\b(iPhone|iP[ao]d)/.exec(global/*e*/), y = /\b(iP[ao]d)/.exec(global/*e*/), m = /Android/module/*i*/.exec(global/*e*/), v = /FBAN\/\w+;/module/*i*/.exec(global/*e*/), S = /Mobile/module/*i*/.exec(global/*e*/), g = !!/Win64/.exec(global/*e*/), require/*t*/) {
-                a = require/*t*/[1] ? parseFloat(require/*t*/[1]) : require/*t*/[5] ? parseFloat(require/*t*/[5]) : 0 / 0, a && document && document.documentMode && (a = document.documentMode);
-                var requireLazy/*r*/ = /(?:Trident\/(\d+.\d+))/.exec(global/*e*/);
-                p = requireLazy/*r*/ ? parseFloat(requireLazy/*r*/[1]) + 4 : a, s = require/*t*/[2] ? parseFloat(require/*t*/[2]) : 0 / 0, l = require/*t*/[3] ? parseFloat(require/*t*/[3]) : 0 / 0, u = require/*t*/[4] ? parseFloat(require/*t*/[4]) : 0 / 0, u ? (require/*t*/ = /(?:Chrome\/(\d+\.\d+))/.exec(global/*e*/), c = require/*t*/ && require/*t*/[1] ? parseFloat(require/*t*/[1]) : 0 / 0) : c = 0 / 0
+            var e = navigator.userAgent,
+                t = /(?:MSIE.(\d+\.\d+))|(?:(?:Firefox|GranParadiso|Iceweasel).(\d+\.\d+))|(?:Opera(?:.+Version.|.)(\d+\.\d+))|(?:AppleWebKit.(\d+(?:\.\d+)?))|(?:Trident\/\d+\.\d+.*rv:(\d+\.\d+))/.exec(e),
+                n = /(Mac OS X)|(Windows)|(Linux)/.exec(e);
+            if (_ = /\b(iPhone|iP[ao]d)/.exec(e), y = /\b(iP[ao]d)/.exec(e), m = /Android/i.exec(e), v = /FBAN\/\w+;/i.exec(e), S = /Mobile/i.exec(e), g = !!/Win64/.exec(e), t) {
+                a = t[1] ? parseFloat(t[1]) : t[5] ? parseFloat(t[5]) : 0 / 0, a && document && document.documentMode && (a = document.documentMode);
+                var r = /(?:Trident\/(\d+.\d+))/.exec(e);
+                p = r ? parseFloat(r[1]) + 4 : a, s = t[2] ? parseFloat(t[2]) : 0 / 0, l = t[3] ? parseFloat(t[3]) : 0 / 0, u = t[4] ? parseFloat(t[4]) : 0 / 0, u ? (t = /(?:Chrome\/(\d+\.\d+))/.exec(e), c = t && t[1] ? parseFloat(t[1]) : 0 / 0) : c = 0 / 0
             } else a = s = l = c = u = 0 / 0;
-            if (requireDynamic/*n*/) {
-                if (requireDynamic/*n*/[1]) {
-                    var module/*i*/ = /(?:Mac OS X (\d+(?:[._]\d+)?))/.exec(global/*e*/);
-                    d = module/*i*/ ? parseFloat(module/*i*/[1].replace("_", ".")) : !0
+            if (n) {
+                if (n[1]) {
+                    var i = /(?:Mac OS X (\d+(?:[._]\d+)?))/.exec(e);
+                    d = i ? parseFloat(i[1].replace("_", ".")) : !0
                 } else d = !1;
-                h = !!requireDynamic/*n*/[2], f = !!requireDynamic/*n*/[3]
+                h = !!n[2], f = !!n[3]
             } else d = h = f = !1
         }
     }
@@ -69,5 +69,5 @@ __d("UserAgent",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, req
                 return o() || y
             }
         };
-    module/*i*/.exports = R
+    i.exports = R
 });

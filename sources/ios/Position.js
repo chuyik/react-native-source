@@ -1,10 +1,10 @@
-__d("Position",["PooledClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Position",["PooledClass"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        this.left = global/*e*/, this.top = require/*t*/
+    function o(e, t) {
+        this.left = e, this.top = t
     }
-    var PooledClass/*a*/ = require/*t*/("PooledClass"),
+    var PooledClass/*a*/ = t("PooledClass"),
         s = PooledClass/*a*/.twoArgumentPooler;
-    PooledClass/*a*/.addPoolingTo(o, s), module/*i*/.exports = o
+    PooledClass/*a*/.addPoolingTo(o, s), i.exports = o
 });

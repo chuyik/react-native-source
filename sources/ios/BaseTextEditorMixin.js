@@ -1,18 +1,18 @@
-__d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModifier","DocumentRemovableWord","emptyFunction","getActiveElement","getCurrentInlineStyle","getCurrentInlineStyleForOffset","getTextContentFromFiles"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var DocumentCharacters/*o*/ = require/*t*/("DocumentCharacters"),
-        DocumentCommands/*a*/ = require/*t*/("DocumentCommands"),
-        DocumentModifier/*s*/ = require/*t*/("DocumentModifier"),
-        DocumentRemovableWord/*l*/ = require/*t*/("DocumentRemovableWord"),
-        emptyFunction/*u*/ = require/*t*/("emptyFunction"),
-        getActiveElement/*c*/ = require/*t*/("getActiveElement"),
-        getCurrentInlineStyle/*p*/ = require/*t*/("getCurrentInlineStyle"),
-        getCurrentInlineStyleForOffset/*d*/ = require/*t*/("getCurrentInlineStyleForOffset"),
-        getTextContentFromFiles/*h*/ = require/*t*/("getTextContentFromFiles"),
+__d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModifier","DocumentRemovableWord","emptyFunction","getActiveElement","getCurrentInlineStyle","getCurrentInlineStyleForOffset","getTextContentFromFiles"],function (e, t, n, r, i) {
+    var DocumentCharacters/*o*/ = t("DocumentCharacters"),
+        DocumentCommands/*a*/ = t("DocumentCommands"),
+        DocumentModifier/*s*/ = t("DocumentModifier"),
+        DocumentRemovableWord/*l*/ = t("DocumentRemovableWord"),
+        emptyFunction/*u*/ = t("emptyFunction"),
+        getActiveElement/*c*/ = t("getActiveElement"),
+        getCurrentInlineStyle/*p*/ = t("getCurrentInlineStyle"),
+        getCurrentInlineStyleForOffset/*d*/ = t("getCurrentInlineStyleForOffset"),
+        getTextContentFromFiles/*h*/ = t("getTextContentFromFiles"),
         f = DocumentCharacters/*o*/.BLOCK_DELIMITER,
         m = DocumentCharacters/*o*/.SOFT_NEWLINE,
         g = {
-            getHandlerForCommand: function(global/*e*/) {
-                switch (global/*e*/) {
+            getHandlerForCommand: function(e) {
+                switch (e) {
                     case DocumentCommands/*a*/.UNDO:
                         return this.undo;
                     case DocumentCommands/*a*/.REDO:
@@ -41,34 +41,34 @@ __d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModi
                         return emptyFunction/*u*/
                 }
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.documentContent,
-                    requireDynamic/*n*/ = this.props.documentContent;
-                if (require/*t*/ && requireDynamic/*n*/ != require/*t*/) this.props.selectionState.update(0, 0);
+            componentWillReceiveProps: function(e) {
+                var t = e.documentContent,
+                    n = this.props.documentContent;
+                if (t && n != t) this.props.selectionState.update(0, 0);
                 else {
-                    var requireLazy/*r*/ = requireDynamic/*n*/.getText().length;
-                    this.props.selectionState.constrainLength(requireLazy/*r*/)
+                    var r = n.getText().length;
+                    this.props.selectionState.constrainLength(r)
                 }
             },
             onFocus: function() {
                 this.props.selectionState.focus()
             },
             onBlur: function() {
-                global/*e*/.getSelection && getActiveElement/*c*/() === document.body && global/*e*/.getSelection().removeAllRanges(), this.props.selectionState.blur()
+                e.getSelection && getActiveElement/*c*/() === document.body && e.getSelection().removeAllRanges(), this.props.selectionState.blur()
             },
-            onSelect: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+            onSelect: function(e, t, n) {
                 if (!this._blockSelectEvents) {
-                    var requireLazy/*r*/ = this.props.selectionState;
-                    null === global/*e*/ ? (requireLazy/*r*/.update(0, 0), requireLazy/*r*/.blur()) : requireDynamic/*n*/ ? this.updateDocument(global/*e*/, require/*t*/) : requireLazy/*r*/.update(global/*e*/, require/*t*/)
+                    var r = this.props.selectionState;
+                    null === e ? (r.update(0, 0), r.blur()) : n ? this.updateDocument(e, t) : r.update(e, t)
                 }
             },
-            updateDocument: function(global/*e*/, require/*t*/) {
-                this.props.selectionState.update(global/*e*/, require/*t*/), this._blockSelectEvents = !0, this.forceUpdate(function() {
+            updateDocument: function(e, t) {
+                this.props.selectionState.update(e, t), this._blockSelectEvents = !0, this.forceUpdate(function() {
                     this.props.onChange && this.props.onChange(), this._blockSelectEvents = !1
                 }.bind(this))
             },
-            updateDocumentAndCollapseSelection: function(global/*e*/, require/*t*/) {
-                this.updateDocument(require/*t*/, require/*t*/)
+            updateDocumentAndCollapseSelection: function(e, t) {
+                this.updateDocument(t, t)
             },
             undo: function() {
                 DocumentModifier/*s*/.undo(this.props.documentContent, this.updateDocument)
@@ -76,67 +76,67 @@ __d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModi
             redo: function() {
                 DocumentModifier/*s*/.redo(this.props.documentContent, this.updateDocument)
             },
-            onKeyCommand: function(global/*e*/) {
-                var require/*t*/ = this.getHandlerForCommand(global/*e*/);
-                require/*t*/()
+            onKeyCommand: function(e) {
+                var t = this.getHandlerForCommand(e);
+                t()
             },
-            onCut: function(global/*e*/, require/*t*/) {
-                DocumentModifier/*s*/.removeRange(this.props.documentContent, global/*e*/, require/*t*/, this.updateDocument)
+            onCut: function(e, t) {
+                DocumentModifier/*s*/.removeRange(this.props.documentContent, e, t, this.updateDocument)
             },
-            onPasteFragment: function(global/*e*/) {
-                var require/*t*/ = this.props.selectionState;
-                DocumentModifier/*s*/.insertFragment(this.props.documentContent, global/*e*/, require/*t*/.getStartOffset(), require/*t*/.getEndOffset(), this.updateDocumentAndCollapseSelection)
+            onPasteFragment: function(e) {
+                var t = this.props.selectionState;
+                DocumentModifier/*s*/.insertFragment(this.props.documentContent, e, t.getStartOffset(), t.getEndOffset(), this.updateDocumentAndCollapseSelection)
             },
-            _removeTextWithStrategy: function(global/*e*/) {
-                var require/*t*/ = this.props.selectionState,
-                    requireDynamic/*n*/ = require/*t*/.getEndOffset();
-                if (require/*t*/.isCollapsed()) {
-                    var requireLazy/*r*/ = global/*e*/(requireDynamic/*n*/);
-                    if (requireLazy/*r*/) {
-                        var module/*i*/ = 0 > requireLazy/*r*/;
-                        return void DocumentModifier/*s*/.removeRange(this.props.documentContent, module/*i*/ ? requireDynamic/*n*/ + requireLazy/*r*/ : requireDynamic/*n*/, module/*i*/ ? requireDynamic/*n*/ : requireDynamic/*n*/ + requireLazy/*r*/, this.updateDocumentAndCollapseSelection)
+            _removeTextWithStrategy: function(e) {
+                var t = this.props.selectionState,
+                    n = t.getEndOffset();
+                if (t.isCollapsed()) {
+                    var r = e(n);
+                    if (r) {
+                        var i = 0 > r;
+                        return void DocumentModifier/*s*/.removeRange(this.props.documentContent, i ? n + r : n, i ? n : n + r, this.updateDocumentAndCollapseSelection)
                     }
                 }
                 this._removeRange()
             },
             onDelete: function() {
-                var global/*e*/ = this.props.selectionState;
-                global/*e*/.isCollapsed() ? DocumentModifier/*s*/.removeCharacterForward(this.props.documentContent, global/*e*/.getAnchorOffset(), this.updateDocumentAndCollapseSelection) : this._removeRange()
+                var e = this.props.selectionState;
+                e.isCollapsed() ? DocumentModifier/*s*/.removeCharacterForward(this.props.documentContent, e.getAnchorOffset(), this.updateDocumentAndCollapseSelection) : this._removeRange()
             },
             onDeleteWord: function() {
-                var global/*e*/ = this.props.selectionState.getStartOffset(),
-                    require/*t*/ = this.props.documentContent;
-                return global/*e*/ < require/*t*/.getText().length && require/*t*/.getEntities()[global/*e*/] ? void this.onDelete() : void this._removeTextWithStrategy(function(global/*e*/) {
-                    var require/*t*/ = this.props.documentContent.getText(),
-                        requireDynamic/*n*/ = DocumentRemovableWord/*l*/.getForward(require/*t*/.slice(global/*e*/));
-                    return requireDynamic/*n*/ ? requireDynamic/*n*/.length : null
+                var e = this.props.selectionState.getStartOffset(),
+                    t = this.props.documentContent;
+                return e < t.getText().length && t.getEntities()[e] ? void this.onDelete() : void this._removeTextWithStrategy(function(e) {
+                    var t = this.props.documentContent.getText(),
+                        n = DocumentRemovableWord/*l*/.getForward(t.slice(e));
+                    return n ? n.length : null
                 }.bind(this))
             },
             onDeleteToEndOfBlock: function() {
-                this._removeTextWithStrategy(function(global/*e*/) {
-                    var require/*t*/ = this.props.documentContent.getText(),
-                        requireDynamic/*n*/ = require/*t*/.indexOf(f, global/*e*/);
-                    return -1 === requireDynamic/*n*/ ? requireDynamic/*n*/ = require/*t*/.length : requireDynamic/*n*/ === global/*e*/ && requireDynamic/*n*/++, requireDynamic/*n*/ - global/*e*/
+                this._removeTextWithStrategy(function(e) {
+                    var t = this.props.documentContent.getText(),
+                        n = t.indexOf(f, e);
+                    return -1 === n ? n = t.length : n === e && n++, n - e
                 }.bind(this))
             },
             onBackspace: function() {
-                var global/*e*/ = this.props.selectionState;
-                global/*e*/.isCollapsed() ? DocumentModifier/*s*/.removeCharacterBackward(this.props.documentContent, global/*e*/.getAnchorOffset(), this.updateDocumentAndCollapseSelection) : this._removeRange()
+                var e = this.props.selectionState;
+                e.isCollapsed() ? DocumentModifier/*s*/.removeCharacterBackward(this.props.documentContent, e.getAnchorOffset(), this.updateDocumentAndCollapseSelection) : this._removeRange()
             },
             onBackspaceWord: function() {
-                var global/*e*/ = this.props.selectionState.getStartOffset(),
-                    require/*t*/ = this.props.documentContent;
-                return global/*e*/ > 0 && require/*t*/.getEntities()[global/*e*/ - 1] ? void this.onBackspace() : void this._removeTextWithStrategy(function(global/*e*/) {
-                    var require/*t*/ = this.props.documentContent.getText(),
-                        requireDynamic/*n*/ = DocumentRemovableWord/*l*/.getBackward(require/*t*/.slice(0, global/*e*/));
-                    return requireDynamic/*n*/ ? -requireDynamic/*n*/.length : null
+                var e = this.props.selectionState.getStartOffset(),
+                    t = this.props.documentContent;
+                return e > 0 && t.getEntities()[e - 1] ? void this.onBackspace() : void this._removeTextWithStrategy(function(e) {
+                    var t = this.props.documentContent.getText(),
+                        n = DocumentRemovableWord/*l*/.getBackward(t.slice(0, e));
+                    return n ? -n.length : null
                 }.bind(this))
             },
             onBackspaceToEndOfBlock: function() {
-                this._removeTextWithStrategy(function(global/*e*/) {
-                    var require/*t*/ = this.props.documentContent.getText(),
-                        requireDynamic/*n*/ = require/*t*/.slice(0, global/*e*/).lastIndexOf(f);
-                    return -1 === requireDynamic/*n*/ ? requireDynamic/*n*/ = 0 : global/*e*/ - 1 > requireDynamic/*n*/ && requireDynamic/*n*/++, requireDynamic/*n*/ - global/*e*/
+                this._removeTextWithStrategy(function(e) {
+                    var t = this.props.documentContent.getText(),
+                        n = t.slice(0, e).lastIndexOf(f);
+                    return -1 === n ? n = 0 : e - 1 > n && n++, n - e
                 }.bind(this))
             },
             moveSelectionToStartOfBlock: function() {
@@ -145,23 +145,23 @@ __d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModi
             moveSelectionToEndOfBlock: function() {
                 this._moveSelectionToBlockEndpoint(!1)
             },
-            _moveSelectionToBlockEndpoint: function(global/*e*/) {
-                for (var require/*t*/ = this.props.documentContent, requireDynamic/*n*/ = this.props.selectionState.getStartOffset(), requireLazy/*r*/ = require/*t*/.getText(), module/*i*/ = global/*e*/ ? requireLazy/*r*/.substr(0, requireDynamic/*n*/).split("").reverse().join("") : requireLazy/*r*/.substr(requireDynamic/*n*/), DocumentCharacters/*o*/ = module/*i*/.length, DocumentCommands/*a*/ = 0; DocumentCommands/*a*/ < module/*i*/.length; DocumentCommands/*a*/++)
-                    if (module/*i*/[DocumentCommands/*a*/] === f || module/*i*/[DocumentCommands/*a*/] === m) {
+            _moveSelectionToBlockEndpoint: function(e) {
+                for (var t = this.props.documentContent, n = this.props.selectionState.getStartOffset(), r = t.getText(), i = e ? r.substr(0, n).split("").reverse().join("") : r.substr(n), DocumentCharacters/*o*/ = i.length, DocumentCommands/*a*/ = 0; DocumentCommands/*a*/ < i.length; DocumentCommands/*a*/++)
+                    if (i[DocumentCommands/*a*/] === f || i[DocumentCommands/*a*/] === m) {
                         DocumentCharacters/*o*/ = DocumentCommands/*a*/;
                         break
                     }
                 if (DocumentCharacters/*o*/ > 0) {
-                    var DocumentModifier/*s*/ = global/*e*/ ? requireDynamic/*n*/ - DocumentCharacters/*o*/ : requireDynamic/*n*/ + DocumentCharacters/*o*/;
-                    require/*t*/.bumpVersion(), this.updateDocument(DocumentModifier/*s*/, DocumentModifier/*s*/)
+                    var DocumentModifier/*s*/ = e ? n - DocumentCharacters/*o*/ : n + DocumentCharacters/*o*/;
+                    t.bumpVersion(), this.updateDocument(DocumentModifier/*s*/, DocumentModifier/*s*/)
                 }
             },
             _removeRange: function() {
-                var global/*e*/ = this.props.selectionState;
-                DocumentModifier/*s*/.removeRange(this.props.documentContent, global/*e*/.getStartOffset(), global/*e*/.getEndOffset(), this.updateDocumentAndCollapseSelection)
+                var e = this.props.selectionState;
+                DocumentModifier/*s*/.removeRange(this.props.documentContent, e.getStartOffset(), e.getEndOffset(), this.updateDocumentAndCollapseSelection)
             },
-            onReturn: function(global/*e*/) {
-                global/*e*/.shiftKey ? this.onInsertSoftNewline() : this.onInsertNewline()
+            onReturn: function(e) {
+                e.shiftKey ? this.onInsertSoftNewline() : this.onInsertNewline()
             },
             onInsertSoftNewline: function() {
                 this.onCharacters(m)
@@ -170,47 +170,47 @@ __d("BaseTextEditorMixin",["DocumentCharacters","DocumentCommands","DocumentModi
                 this.onCharacters(f)
             },
             onTransposeCharacters: function() {
-                var global/*e*/ = this.props.selectionState,
-                    require/*t*/ = global/*e*/.getStartOffset(),
-                    requireDynamic/*n*/ = this.props.documentContent.getText();
-                global/*e*/.isCollapsed() && 0 !== require/*t*/ && require/*t*/ !== requireDynamic/*n*/.length && DocumentModifier/*s*/.moveText(this.props.documentContent, require/*t*/ - 1, require/*t*/, require/*t*/ + 1, this.updateDocumentAndCollapseSelection)
+                var e = this.props.selectionState,
+                    t = e.getStartOffset(),
+                    n = this.props.documentContent.getText();
+                e.isCollapsed() && 0 !== t && t !== n.length && DocumentModifier/*s*/.moveText(this.props.documentContent, t - 1, t, t + 1, this.updateDocumentAndCollapseSelection)
             },
-            onCharacters: function(global/*e*/) {
-                var require/*t*/, requireDynamic/*n*/ = this.props.selectionState;
-                require/*t*/ = null != this.state.inlineStyleOverride ? this.state.inlineStyleOverride : getCurrentInlineStyle/*p*/(this.props.documentContent, requireDynamic/*n*/), DocumentModifier/*s*/.replaceText(this.props.documentContent, global/*e*/, require/*t*/, null, requireDynamic/*n*/.getStartOffset(), requireDynamic/*n*/.getEndOffset(), this.updateDocumentAndCollapseSelection)
+            onCharacters: function(e) {
+                var t, n = this.props.selectionState;
+                t = null != this.state.inlineStyleOverride ? this.state.inlineStyleOverride : getCurrentInlineStyle/*p*/(this.props.documentContent, n), DocumentModifier/*s*/.replaceText(this.props.documentContent, e, t, null, n.getStartOffset(), n.getEndOffset(), this.updateDocumentAndCollapseSelection)
             },
-            onAlter: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = this.props.selectionState.getEndOffset(),
-                    module/*i*/ = global/*e*/,
-                    DocumentCharacters/*o*/ = global/*e*/ + require/*t*/.length;
-                DocumentModifier/*s*/.replaceText(this.props.documentContent, requireDynamic/*n*/, getCurrentInlineStyleForOffset/*d*/(this.props.documentContent, module/*i*/), null, module/*i*/, DocumentCharacters/*o*/, function() {
-                    requireLazy/*r*/ !== module/*i*/ + requireDynamic/*n*/.length && (requireLazy/*r*/ += requireDynamic/*n*/.length - require/*t*/.length), this.updateDocument(requireLazy/*r*/, requireLazy/*r*/)
+            onAlter: function(e, t, n) {
+                var r = this.props.selectionState.getEndOffset(),
+                    i = e,
+                    DocumentCharacters/*o*/ = e + t.length;
+                DocumentModifier/*s*/.replaceText(this.props.documentContent, n, getCurrentInlineStyleForOffset/*d*/(this.props.documentContent, i), null, i, DocumentCharacters/*o*/, function() {
+                    r !== i + n.length && (r += n.length - t.length), this.updateDocument(r, r)
                 }.bind(this))
             },
-            onDropSelection: function(global/*e*/) {
-                var require/*t*/ = this.props.selectionState;
-                DocumentModifier/*s*/.moveText(this.props.documentContent, require/*t*/.getStartOffset(), require/*t*/.getEndOffset(), global/*e*/, this.updateDocument)
+            onDropSelection: function(e) {
+                var t = this.props.selectionState;
+                DocumentModifier/*s*/.moveText(this.props.documentContent, t.getStartOffset(), t.getEndOffset(), e, this.updateDocument)
             },
-            onDropText: function(global/*e*/, require/*t*/) {
-                this._insertTextAtOffset(global/*e*/, require/*t*/)
+            onDropText: function(e, t) {
+                this._insertTextAtOffset(e, t)
             },
-            onDropFiles: function(global/*e*/, require/*t*/) {
-                this.props.handleDroppedFiles && this.props.handleDroppedFiles(global/*e*/, require/*t*/) || getTextContentFromFiles/*h*/(require/*t*/, function(require/*t*/) {
-                    require/*t*/ && this._insertTextAtOffset(global/*e*/, require/*t*/)
+            onDropFiles: function(e, t) {
+                this.props.handleDroppedFiles && this.props.handleDroppedFiles(e, t) || getTextContentFromFiles/*h*/(t, function(t) {
+                    t && this._insertTextAtOffset(e, t)
                 }.bind(this))
             },
-            onPasteFiles: function(global/*e*/) {
-                if (!this.props.handlePastedFiles || !this.props.handlePastedFiles(global/*e*/)) {
-                    var require/*t*/ = this.props.selectionState.getStartOffset();
-                    getTextContentFromFiles/*h*/(global/*e*/, function(global/*e*/) {
-                        global/*e*/ && this._insertTextAtOffset(require/*t*/, global/*e*/)
+            onPasteFiles: function(e) {
+                if (!this.props.handlePastedFiles || !this.props.handlePastedFiles(e)) {
+                    var t = this.props.selectionState.getStartOffset();
+                    getTextContentFromFiles/*h*/(e, function(e) {
+                        e && this._insertTextAtOffset(t, e)
                     }.bind(this))
                 }
             },
-            _insertTextAtOffset: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = this.props.documentContent;
-                DocumentModifier/*s*/.replaceText(requireDynamic/*n*/, require/*t*/, getCurrentInlineStyleForOffset/*d*/(requireDynamic/*n*/, global/*e*/), null, global/*e*/, global/*e*/, this.updateDocument)
+            _insertTextAtOffset: function(e, t) {
+                var n = this.props.documentContent;
+                DocumentModifier/*s*/.replaceText(n, t, getCurrentInlineStyleForOffset/*d*/(n, e), null, e, e, this.updateDocument)
             }
         };
-    module/*i*/.exports = g
+    i.exports = g
 });

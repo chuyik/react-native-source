@@ -1,4 +1,4 @@
-__d("ComposedInlineStyle",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ComposedInlineStyle",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         NONE: 0,
@@ -7,5 +7,5 @@ __d("ComposedInlineStyle",[],function (global/*e*/, require/*t*/, requireDynamic
         UNDERLINE: 4,
         CODE: 8
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,11 +1,11 @@
-__d("RKRawText",["ReactIOSViewAttributes","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RKRawText",["ReactIOSViewAttributes","createReactIOSNativeComponentClass"],function (e, t, n, r, i) {
     "use strict";
-    var o = (require/*t*/("ReactIOSViewAttributes"), require/*t*/("createReactIOSNativeComponentClass")),
+    var o = (t("ReactIOSViewAttributes"), t("createReactIOSNativeComponentClass")),
         a = o({
             validAttributes: {
                 text: !0
             },
             uiViewClassName: "RCTRawText"
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

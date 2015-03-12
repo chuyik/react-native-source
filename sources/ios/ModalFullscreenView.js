@@ -1,11 +1,11 @@
-__d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttributes","Dimensions","StyleSheet","createReactIOSNativeComponentClass"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttributes","Dimensions","StyleSheet","createReactIOSNativeComponentClass"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModulesDeprecated/*o*/ = require/*t*/("NativeModulesDeprecated"),
-        React/*a*/ = require/*t*/("React"),
-        ReactIOSViewAttributes/*s*/ = require/*t*/("ReactIOSViewAttributes"),
-        Dimensions/*l*/ = require/*t*/("Dimensions"),
-        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
-        createReactIOSNativeComponentClass/*c*/ = require/*t*/("createReactIOSNativeComponentClass"),
+    var NativeModulesDeprecated/*o*/ = t("NativeModulesDeprecated"),
+        React/*a*/ = t("React"),
+        ReactIOSViewAttributes/*s*/ = t("ReactIOSViewAttributes"),
+        Dimensions/*l*/ = t("Dimensions"),
+        StyleSheet/*u*/ = t("StyleSheet"),
+        createReactIOSNativeComponentClass/*c*/ = t("createReactIOSNativeComponentClass"),
         p = createReactIOSNativeComponentClass/*c*/({
             validAttributes: ReactIOSViewAttributes/*s*/.UIView,
             uiViewClassName: "RCTModalFullscreenView"
@@ -43,7 +43,7 @@ __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttrib
                 }), NativeModulesDeprecated/*o*/.RKModalFullscreenViewManager.close())
             },
             render: function() {
-                var global/*e*/ = {
+                var e = {
                     position: "absolute",
                     left: 0,
                     top: 0,
@@ -51,7 +51,7 @@ __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttrib
                     height: Dimensions/*l*/.get("modalFullscreenView").height
                 };
                 return React/*a*/.createElement(p, {
-                    style: global/*e*/,
+                    style: e,
                     onStartShouldSetResponder: this._shouldSetResponder
                 }, this.props.children)
             },
@@ -59,5 +59,5 @@ __d("ModalFullscreenView",["NativeModulesDeprecated","React","ReactIOSViewAttrib
                 return !0
             }
         });
-    module/*i*/.exports = h
+    i.exports = h
 });

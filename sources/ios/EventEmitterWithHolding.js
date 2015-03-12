@@ -1,29 +1,29 @@
-__d("EventEmitterWithHolding",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("EventEmitterWithHolding",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        this.$EventEmitterWithHolding_emitter = global/*e*/, this.$EventEmitterWithHolding_eventHolder = require/*t*/, this.$EventEmitterWithHolding_currentEventToken = null, this.$EventEmitterWithHolding_emittingHeldEvents = !1
+    function o(e, t) {
+        this.$EventEmitterWithHolding_emitter = e, this.$EventEmitterWithHolding_eventHolder = t, this.$EventEmitterWithHolding_currentEventToken = null, this.$EventEmitterWithHolding_emittingHeldEvents = !1
     }
-    o.prototype.addListener = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return this.$EventEmitterWithHolding_emitter.addListener(global/*e*/, require/*t*/, requireDynamic/*n*/)
-    }, o.prototype.once = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        return this.$EventEmitterWithHolding_emitter.once(global/*e*/, require/*t*/, requireDynamic/*n*/)
-    }, o.prototype.addRetroactiveListener = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = this.$EventEmitterWithHolding_emitter.addListener(global/*e*/, require/*t*/, requireDynamic/*n*/);
-        return this.$EventEmitterWithHolding_emittingHeldEvents = !0, this.$EventEmitterWithHolding_eventHolder.emitToListener(global/*e*/, require/*t*/, requireDynamic/*n*/), this.$EventEmitterWithHolding_emittingHeldEvents = !1, requireLazy/*r*/
-    }, o.prototype.removeAllListeners = function(global/*e*/) {
-        this.$EventEmitterWithHolding_emitter.removeAllListeners(global/*e*/)
+    o.prototype.addListener = function(e, t, n) {
+        return this.$EventEmitterWithHolding_emitter.addListener(e, t, n)
+    }, o.prototype.once = function(e, t, n) {
+        return this.$EventEmitterWithHolding_emitter.once(e, t, n)
+    }, o.prototype.addRetroactiveListener = function(e, t, n) {
+        var r = this.$EventEmitterWithHolding_emitter.addListener(e, t, n);
+        return this.$EventEmitterWithHolding_emittingHeldEvents = !0, this.$EventEmitterWithHolding_eventHolder.emitToListener(e, t, n), this.$EventEmitterWithHolding_emittingHeldEvents = !1, r
+    }, o.prototype.removeAllListeners = function(e) {
+        this.$EventEmitterWithHolding_emitter.removeAllListeners(e)
     }, o.prototype.removeCurrentListener = function() {
         this.$EventEmitterWithHolding_emitter.removeCurrentListener()
-    }, o.prototype.listeners = function(global/*e*/) {
-        return this.$EventEmitterWithHolding_emitter.listeners(global/*e*/)
-    }, o.prototype.emit = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a) {
-        this.$EventEmitterWithHolding_emitter.emit(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a)
-    }, o.prototype.emitAndHold = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a) {
-        this.$EventEmitterWithHolding_currentEventToken = this.$EventEmitterWithHolding_eventHolder.holdEvent(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a), this.$EventEmitterWithHolding_emitter.emit(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, o, a), this.$EventEmitterWithHolding_currentEventToken = null
+    }, o.prototype.listeners = function(e) {
+        return this.$EventEmitterWithHolding_emitter.listeners(e)
+    }, o.prototype.emit = function(e, t, n, r, i, o, a) {
+        this.$EventEmitterWithHolding_emitter.emit(e, t, n, r, i, o, a)
+    }, o.prototype.emitAndHold = function(e, t, n, r, i, o, a) {
+        this.$EventEmitterWithHolding_currentEventToken = this.$EventEmitterWithHolding_eventHolder.holdEvent(e, t, n, r, i, o, a), this.$EventEmitterWithHolding_emitter.emit(e, t, n, r, i, o, a), this.$EventEmitterWithHolding_currentEventToken = null
     }, o.prototype.releaseCurrentEvent = function() {
         null !== this.$EventEmitterWithHolding_currentEventToken ? this.$EventEmitterWithHolding_eventHolder.releaseEvent(this.$EventEmitterWithHolding_currentEventToken) : this.$EventEmitterWithHolding_emittingHeldEvents && this.$EventEmitterWithHolding_eventHolder.releaseCurrentEvent()
-    }, o.prototype.releaseHeldEventType = function(global/*e*/) {
-        this.$EventEmitterWithHolding_eventHolder.releaseEventType(global/*e*/)
-    }, module/*i*/.exports = o
+    }, o.prototype.releaseHeldEventType = function(e) {
+        this.$EventEmitterWithHolding_eventHolder.releaseEventType(e)
+    }, i.exports = o
 });

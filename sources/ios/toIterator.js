@@ -1,63 +1,63 @@
-__d("toIterator",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("toIterator",[],function (e, t, n, r, i) {
     var o = "key",
         a = "value",
         s = "key+value",
         l = "function" == typeof Symbol ? Symbol.iterator : "@@iterator",
         u = function() {
-            return Array.prototype[l] && String.prototype[l] ? function(global/*e*/) {
-                return global/*e*/[l]()
+            return Array.prototype[l] && String.prototype[l] ? function(e) {
+                return e[l]()
             } : function() {
-                function global/*e*/(global/*e*/, require/*t*/) {
+                function e(e, t) {
                     "use strict";
-                    if (!Array.isArray(global/*e*/)) throw new TypeError("Object is not an Array");
-                    this.$ArrayIterator_iteratedObject = global/*e*/, this.$ArrayIterator_kind = require/*t*/, this.$ArrayIterator_nextIndex = 0
+                    if (!Array.isArray(e)) throw new TypeError("Object is not an Array");
+                    this.$ArrayIterator_iteratedObject = e, this.$ArrayIterator_kind = t, this.$ArrayIterator_nextIndex = 0
                 }
 
-                function require/*t*/(global/*e*/) {
+                function t(e) {
                     "use strict";
-                    if ("string" != typeof global/*e*/) throw new TypeError("Object is not a string");
-                    this.$StringIterator_iteratedString = global/*e*/, this.$StringIterator_nextIndex = 0
+                    if ("string" != typeof e) throw new TypeError("Object is not a string");
+                    this.$StringIterator_iteratedString = e, this.$StringIterator_nextIndex = 0
                 }
 
-                function requireDynamic/*n*/(global/*e*/, require/*t*/) {
+                function n(e, t) {
                     return {
-                        value: global/*e*/,
-                        done: require/*t*/
+                        value: e,
+                        done: t
                     }
                 }
-                return global/*e*/.prototype.next = function() {
+                return e.prototype.next = function() {
                         "use strict";
-                        if (!this instanceof global/*e*/) throw new TypeError("Object is not an ArrayIterator");
-                        if (null == this.$ArrayIterator_iteratedObject) return requireDynamic/*n*/(void 0, !0);
-                        var require/*t*/ = this.$ArrayIterator_iteratedObject,
-                            requireLazy/*r*/ = this.$ArrayIterator_iteratedObject.length,
-                            module/*i*/ = this.$ArrayIterator_nextIndex,
+                        if (!this instanceof e) throw new TypeError("Object is not an ArrayIterator");
+                        if (null == this.$ArrayIterator_iteratedObject) return n(void 0, !0);
+                        var t = this.$ArrayIterator_iteratedObject,
+                            r = this.$ArrayIterator_iteratedObject.length,
+                            i = this.$ArrayIterator_nextIndex,
                             l = this.$ArrayIterator_kind;
-                        return module/*i*/ >= requireLazy/*r*/ ? (this.$ArrayIterator_iteratedObject = void 0, requireDynamic/*n*/(void 0, !0)) : (this.$ArrayIterator_nextIndex = module/*i*/ + 1, l === o ? requireDynamic/*n*/(module/*i*/, !1) : l === a ? requireDynamic/*n*/(require/*t*/[module/*i*/], !1) : l === s ? requireDynamic/*n*/([module/*i*/, require/*t*/[module/*i*/]], !1) : void 0)
-                    }, global/*e*/.prototype["@@iterator"] = function() {
+                        return i >= r ? (this.$ArrayIterator_iteratedObject = void 0, n(void 0, !0)) : (this.$ArrayIterator_nextIndex = i + 1, l === o ? n(i, !1) : l === a ? n(t[i], !1) : l === s ? n([i, t[i]], !1) : void 0)
+                    }, e.prototype["@@iterator"] = function() {
                         "use strict";
                         return this
-                    }, require/*t*/.prototype.next = function() {
+                    }, t.prototype.next = function() {
                         "use strict";
-                        if (!this instanceof require/*t*/) throw new TypeError("Object is not a StringIterator");
-                        if (null == this.$StringIterator_iteratedString) return requireDynamic/*n*/(void 0, !0);
-                        var global/*e*/ = this.$StringIterator_nextIndex,
-                            requireLazy/*r*/ = this.$StringIterator_iteratedString,
-                            module/*i*/ = requireLazy/*r*/.length;
-                        if (global/*e*/ >= module/*i*/) return this.$StringIterator_iteratedString = void 0, requireDynamic/*n*/(void 0, !0);
-                        var o, a = requireLazy/*r*/.charCodeAt(global/*e*/);
-                        if (55296 > a || a > 56319 || global/*e*/ + 1 === module/*i*/) o = requireLazy/*r*/[global/*e*/];
+                        if (!this instanceof t) throw new TypeError("Object is not a StringIterator");
+                        if (null == this.$StringIterator_iteratedString) return n(void 0, !0);
+                        var e = this.$StringIterator_nextIndex,
+                            r = this.$StringIterator_iteratedString,
+                            i = r.length;
+                        if (e >= i) return this.$StringIterator_iteratedString = void 0, n(void 0, !0);
+                        var o, a = r.charCodeAt(e);
+                        if (55296 > a || a > 56319 || e + 1 === i) o = r[e];
                         else {
-                            var s = requireLazy/*r*/.charCodeAt(global/*e*/ + 1);
-                            o = 56320 > s || s > 57343 ? requireLazy/*r*/[global/*e*/] : requireLazy/*r*/[global/*e*/] + requireLazy/*r*/[global/*e*/ + 1]
+                            var s = r.charCodeAt(e + 1);
+                            o = 56320 > s || s > 57343 ? r[e] : r[e] + r[e + 1]
                         }
-                        return this.$StringIterator_nextIndex = global/*e*/ + o.length, requireDynamic/*n*/(o, !1)
-                    }, require/*t*/.prototype["@@iterator"] = function() {
+                        return this.$StringIterator_nextIndex = e + o.length, n(o, !1)
+                    }, t.prototype["@@iterator"] = function() {
                         "use strict";
                         return this
                     },
-                    function(requireDynamic/*n*/, requireLazy/*r*/) {
-                        return "string" == typeof requireDynamic/*n*/ ? new require/*t*/(requireDynamic/*n*/) : Array.isArray(requireDynamic/*n*/) ? new global/*e*/(requireDynamic/*n*/, requireLazy/*r*/ || a) : requireDynamic/*n*/[l]()
+                    function(n, r) {
+                        return "string" == typeof n ? new t(n) : Array.isArray(n) ? new e(n, r || a) : n[l]()
                     }
             }()
         }();
@@ -66,5 +66,5 @@ __d("toIterator",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, re
         KIND_VALUE: a,
         KIND_KEY_VAL: s,
         ITERATOR_SYMBOL: l
-    }), module/*i*/.exports = u
+    }), i.exports = u
 });

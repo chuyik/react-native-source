@@ -1,208 +1,208 @@
-__d("EntitySearchSource",["AbstractGraphQLSearchSource","PixelRatio","SearchableEntry","getURIForEntity","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return global/*e*/ ? function(global/*e*/) {
-            var require/*t*/ = rql/*g*/.__GraphQL;
-            return new require/*t*/.QueryFragment("EntitySearchSource_f0", "Actor", [new require/*t*/.Field("groups", [new require/*t*/.Field("edges", [new require/*t*/.Field("node", [new require/*t*/.Field("id", null, null, null, null, null, {
+__d("EntitySearchSource",["AbstractGraphQLSearchSource","PixelRatio","SearchableEntry","getURIForEntity","rql"],function (e, t, n, r, i) {
+    function o(e) {
+        return e ? function(e) {
+            var t = rql/*g*/.__GraphQL;
+            return new t.QueryFragment("EntitySearchSource_f0", "Actor", [new t.Field("groups", [new t.Field("edges", [new t.Field("node", [new t.Field("id", null, null, null, null, null, {
                 requisite: !0
             })], null, null, null, null, {
                 rootCall: "node",
                 pk: "id",
                 requisite: !0
-            }), new require/*t*/.Field("cursor", null, null, null, null, null, {
+            }), new t.Field("cursor", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 plural: !0
-            }), new require/*t*/.Field("page_info", [new require/*t*/.Field("has_next_page", null, null, null, null, null, {
+            }), new t.Field("page_info", [new t.Field("has_next_page", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            }), new require/*t*/.Field("has_previous_page", null, null, null, null, null, {
+            }), new t.Field("has_previous_page", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            })], null, [new require/*t*/.Callv("find", [rql/*g*/.__var(global/*e*/)])], null, null, {
+            })], null, [new t.Callv("find", [rql/*g*/.__var(e)])], null, null, {
                 connection: !0
-            }), new require/*t*/.Field("id", null, null, null, null, null, {
+            }), new t.Field("id", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })])
-        }(global/*e*/) : null
+        }(e) : null
     }
 
-    function a(global/*e*/) {
-        return function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = rql/*g*/.__GraphQL;
-            return new requireLazy/*r*/.QueryFragment("EntitySearchSource_f0", "Actor", [new requireLazy/*r*/.Field("__type__", [new requireLazy/*r*/.Field("name"), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+    function a(e) {
+        return function(e, t, n) {
+            var r = rql/*g*/.__GraphQL;
+            return new r.QueryFragment("EntitySearchSource_f0", "Actor", [new r.Field("__type__", [new r.Field("name"), new r.Field("id", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 rootCall: "node",
                 pk: "id"
-            }), new requireLazy/*r*/.Field("id"), new requireLazy/*r*/.Field("is_viewer_friend"), new requireLazy/*r*/.Field("name"), new requireLazy/*r*/.Field("url", null, null, [new requireLazy/*r*/.Callv("site", ["mobile"])]), new requireLazy/*r*/.Field("username"), new requireLazy/*r*/.Field("profile_picture", [new requireLazy/*r*/.Field("uri")], null, [new requireLazy/*r*/.Callv("scale", [rql/*g*/.__var(global/*e*/)]), new requireLazy/*r*/.Callv("size", [rql/*g*/.__var(require/*t*/)])])], [rql/*g*/.__frag(requireDynamic/*n*/)])
-        }(PixelRatio/*h*/.get(), v, o(global/*e*/))
+            }), new r.Field("id"), new r.Field("is_viewer_friend"), new r.Field("name"), new r.Field("url", null, null, [new r.Callv("site", ["mobile"])]), new r.Field("username"), new r.Field("profile_picture", [new r.Field("uri")], null, [new r.Callv("scale", [rql/*g*/.__var(e)]), new r.Callv("size", [rql/*g*/.__var(t)])])], [rql/*g*/.__frag(n)])
+        }(PixelRatio/*h*/.get(), v, o(e))
     }
 
-    function s(global/*e*/) {
-        var require/*t*/ = global/*e*/.groupID;
-        return function(global/*e*/, require/*t*/) {
-            var requireDynamic/*n*/ = rql/*g*/.__GraphQL;
-            return new requireDynamic/*n*/.Query("viewer", null, [new requireDynamic/*n*/.Field("actor", [new requireDynamic/*n*/.Field("friends", [new requireDynamic/*n*/.Field("edges", [new requireDynamic/*n*/.Field("node", [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+    function s(e) {
+        var t = e.groupID;
+        return function(e, t) {
+            var n = rql/*g*/.__GraphQL;
+            return new n.Query("viewer", null, [new n.Field("actor", [new n.Field("friends", [new n.Field("edges", [new n.Field("node", [new n.Field("id", null, null, null, null, null, {
                 requisite: !0
-            })], [rql/*g*/.__frag(require/*t*/)], null, null, null, {
+            })], [rql/*g*/.__frag(t)], null, null, null, {
                 rootCall: "node",
                 pk: "id",
                 requisite: !0
-            }), new requireDynamic/*n*/.Field("cursor", null, null, null, null, null, {
+            }), new n.Field("cursor", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 plural: !0
-            }), new requireDynamic/*n*/.Field("page_info", [new requireDynamic/*n*/.Field("has_next_page", null, null, null, null, null, {
+            }), new n.Field("page_info", [new n.Field("has_next_page", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            }), new requireDynamic/*n*/.Field("has_previous_page", null, null, null, null, null, {
+            }), new n.Field("has_previous_page", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            })], null, [new requireDynamic/*n*/.Callv("orderby", ["importance"], {
+            })], null, [new n.Callv("orderby", ["importance"], {
                 varargs: 1
-            }), new requireDynamic/*n*/.Callv("first", [rql/*g*/.__var(global/*e*/)])], null, null, {
+            }), new n.Callv("first", [rql/*g*/.__var(e)])], null, null, {
                 connection: !0
-            }), new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+            }), new n.Field("id", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
             })], null, null, null, null, {
                 rootCall: "node",
                 pk: "id"
             })], null, null, "EntitySearchSource_q0")
-        }(y, a(require/*t*/))
+        }(y, a(t))
     }
 
-    function l(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/, requireLazy/*r*/ = require/*t*/.entityTypes,
-            module/*i*/ = require/*t*/.groupID;
-        return requireDynamic/*n*/ = requireLazy/*r*/ ? function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = rql/*g*/.__GraphQL;
-                return new requireLazy/*r*/.QueryFragment("EntitySearchSource_f0", "SearchableEntitiesQuery", [new requireLazy/*r*/.Field("search_results", [new requireLazy/*r*/.Field("edges", [new requireLazy/*r*/.Field("node", [new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+    function l(e, t) {
+        var n, r = t.entityTypes,
+            i = t.groupID;
+        return n = r ? function(e, t, n) {
+                var r = rql/*g*/.__GraphQL;
+                return new r.QueryFragment("EntitySearchSource_f0", "SearchableEntitiesQuery", [new r.Field("search_results", [new r.Field("edges", [new r.Field("node", [new r.Field("id", null, null, null, null, null, {
                     requisite: !0
-                })], [rql/*g*/.__frag(requireDynamic/*n*/)], null, null, null, {
+                })], [rql/*g*/.__frag(n)], null, null, null, {
                     rootCall: "node",
                     pk: "id",
                     requisite: !0
-                }), new requireLazy/*r*/.Field("cursor", null, null, null, null, null, {
+                }), new r.Field("cursor", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
                     plural: !0
-                }), new requireLazy/*r*/.Field("page_info", [new requireLazy/*r*/.Field("has_next_page", null, null, null, null, null, {
+                }), new r.Field("page_info", [new r.Field("has_next_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                }), new requireLazy/*r*/.Field("has_previous_page", null, null, null, null, null, {
+                }), new r.Field("has_previous_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                })], null, [new requireLazy/*r*/.Callv("context", ["mentions"]), new requireLazy/*r*/.Callv("of_type", [rql/*g*/.__var(global/*e*/)], {
+                })], null, [new r.Callv("context", ["mentions"]), new r.Callv("of_type", [rql/*g*/.__var(e)], {
                     varargs: 1
-                }), new requireLazy/*r*/.Callv("first", [rql/*g*/.__var(require/*t*/)])], null, null, {
+                }), new r.Callv("first", [rql/*g*/.__var(t)])], null, null, {
                     connection: !0,
                     nonFindable: !0
-                }), new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                }), new r.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })])
-            }(requireLazy/*r*/, _, a(module/*i*/)) : function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = rql/*g*/.__GraphQL;
-                return new requireDynamic/*n*/.QueryFragment("EntitySearchSource_f1", "SearchableEntitiesQuery", [new requireDynamic/*n*/.Field("search_results", [new requireDynamic/*n*/.Field("edges", [new requireDynamic/*n*/.Field("node", [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+            }(r, _, a(i)) : function(e, t) {
+                var n = rql/*g*/.__GraphQL;
+                return new n.QueryFragment("EntitySearchSource_f1", "SearchableEntitiesQuery", [new n.Field("search_results", [new n.Field("edges", [new n.Field("node", [new n.Field("id", null, null, null, null, null, {
                     requisite: !0
-                })], [rql/*g*/.__frag(require/*t*/)], null, null, null, {
+                })], [rql/*g*/.__frag(t)], null, null, null, {
                     rootCall: "node",
                     pk: "id",
                     requisite: !0
-                }), new requireDynamic/*n*/.Field("cursor", null, null, null, null, null, {
+                }), new n.Field("cursor", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
                     plural: !0
-                }), new requireDynamic/*n*/.Field("page_info", [new requireDynamic/*n*/.Field("has_next_page", null, null, null, null, null, {
+                }), new n.Field("page_info", [new n.Field("has_next_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                }), new requireDynamic/*n*/.Field("has_previous_page", null, null, null, null, null, {
+                }), new n.Field("has_previous_page", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })], null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                })], null, [new requireDynamic/*n*/.Callv("context", ["mentions"]), new requireDynamic/*n*/.Callv("first", [rql/*g*/.__var(global/*e*/)])], null, null, {
+                })], null, [new n.Callv("context", ["mentions"]), new n.Callv("first", [rql/*g*/.__var(e)])], null, null, {
                     connection: !0,
                     nonFindable: !0
-                }), new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+                }), new n.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
                 })])
-            }(_, a(module/*i*/)),
-            function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = rql/*g*/.__GraphQL;
-                return new requireDynamic/*n*/.Query("entities_named", [rql/*g*/.__var(global/*e*/)], [new requireDynamic/*n*/.Field("id", null, null, null, null, null, {
+            }(_, a(i)),
+            function(e, t) {
+                var n = rql/*g*/.__GraphQL;
+                return new n.Query("entities_named", [rql/*g*/.__var(e)], [new n.Field("id", null, null, null, null, null, {
                     generated: !0,
                     requisite: !0
-                })], [rql/*g*/.__frag(require/*t*/)], null, "EntitySearchSource_q0")
-            }(global/*e*/.value, requireDynamic/*n*/)
+                })], [rql/*g*/.__frag(t)], null, "EntitySearchSource_q0")
+            }(e.value, n)
     }
 
-    function u(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.node,
-            requireLazy/*r*/ = requireDynamic/*n*/.groups && requireDynamic/*n*/.groups.edges.length > 0,
-            module/*i*/ = (requireDynamic/*n*/.is_viewer_friend ? 0 : requireLazy/*r*/ ? 10 : 20) + require/*t*/ / _;
+    function u(e, t) {
+        var n = e.node,
+            r = n.groups && n.groups.edges.length > 0,
+            i = (n.is_viewer_friend ? 0 : r ? 10 : 20) + t / _;
         return new SearchableEntry/*f*/({
-            uniqueID: requireDynamic/*n*/.id,
-            title: requireDynamic/*n*/.name,
-            photo: requireDynamic/*n*/.profile_picture && requireDynamic/*n*/.profile_picture.uri,
-            order: module/*i*/,
-            type: requireDynamic/*n*/.__type__.name,
-            uri: String(getURIForEntity/*m*/(requireDynamic/*n*/) || requireDynamic/*n*/.url),
+            uniqueID: n.id,
+            title: n.name,
+            photo: n.profile_picture && n.profile_picture.uri,
+            order: i,
+            type: n.__type__.name,
+            uri: String(getURIForEntity/*m*/(n) || n.url),
             auxiliaryData: {
-                isMemberOfGroup: requireLazy/*r*/
+                isMemberOfGroup: r
             }
         })
     }
 
-    function c(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = [];
-        return global/*e*/ && (global/*e*/.viewer && global/*e*/.viewer.actor ? requireDynamic/*n*/ = global/*e*/.viewer.actor.friends && global/*e*/.viewer.actor.friends.edges : global/*e*/.search_results && (requireDynamic/*n*/ = global/*e*/.search_results.edges)), requireDynamic/*n*/.map(require/*t*/)
+    function c(e, t) {
+        var n = [];
+        return e && (e.viewer && e.viewer.actor ? n = e.viewer.actor.friends && e.viewer.actor.friends.edges : e.search_results && (n = e.search_results.edges)), n.map(t)
     }
 
-    function p(global/*e*/) {
+    function p(e) {
         "use strict";
-        this.config = global/*e*/ || {};
-        var require/*t*/ = this.config.bootstrapFriends ? [{
+        this.config = e || {};
+        var t = this.config.bootstrapFriends ? [{
             createQuery: s.bind(null, this.config)
         }] : null;
         AbstractGraphQLSearchSource/*d*/.call(this, {
-            bootstrapRequests: require/*t*/,
+            bootstrapRequests: t,
             getAllForEmptyQuery: !0,
             queryRequests: [{
-                createQuery: function(global/*e*/) {
-                    return l(global/*e*/, this.config)
+                createQuery: function(e) {
+                    return l(e, this.config)
                 }.bind(this)
             }],
             packageFn: u
         }, c)
     }
-    var AbstractGraphQLSearchSource/*d*/ = require/*t*/("AbstractGraphQLSearchSource"),
-        PixelRatio/*h*/ = require/*t*/("PixelRatio"),
-        SearchableEntry/*f*/ = require/*t*/("SearchableEntry"),
-        getURIForEntity/*m*/ = require/*t*/("getURIForEntity"),
-        rql/*g*/ = require/*t*/("rql"),
+    var AbstractGraphQLSearchSource/*d*/ = t("AbstractGraphQLSearchSource"),
+        PixelRatio/*h*/ = t("PixelRatio"),
+        SearchableEntry/*f*/ = t("SearchableEntry"),
+        getURIForEntity/*m*/ = t("getURIForEntity"),
+        rql/*g*/ = t("rql"),
         _ = 20,
         y = 50,
         v = 34;
     for (var S in AbstractGraphQLSearchSource/*d*/) AbstractGraphQLSearchSource/*d*/.hasOwnProperty(S) && (p[S] = AbstractGraphQLSearchSource/*d*/[S]);
     var b = null === AbstractGraphQLSearchSource/*d*/ ? null : AbstractGraphQLSearchSource/*d*/.prototype;
-    p.prototype = Object.create(b), p.prototype.constructor = p, p.__superConstructor__ = AbstractGraphQLSearchSource/*d*/, module/*i*/.exports = p
+    p.prototype = Object.create(b), p.prototype.constructor = p, p.__superConstructor__ = AbstractGraphQLSearchSource/*d*/, i.exports = p
 });

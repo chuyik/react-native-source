@@ -1,7 +1,7 @@
-__d("Platform",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Platform",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         OS: "ios"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

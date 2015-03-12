@@ -1,8 +1,8 @@
-__d("SearchableEntry",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        switch (typeof global/*e*/) {
+__d("SearchableEntry",["invariant"],function (e, t, n, r, i) {
+    function o(e) {
+        switch (typeof e) {
             case "string":
-                return global/*e*/;
+                return e;
             case "object":
                 return "";
             default:
@@ -10,11 +10,11 @@ __d("SearchableEntry",["invariant"],function (global/*e*/, require/*t*/, require
         }
     }
 
-    function a(global/*e*/) {
+    function a(e) {
         "use strict";
-        (!global/*e*/.uniqueID || "string" != typeof global/*e*/.uniqueID && "number" != typeof global/*e*/.uniqueID) && invariant/*s*/(0, "SearchableEntry must include a valid unique ID value, %invariant/*s*/ provided.", global/*e*/.uniqueID), global/*e*/.title && "string" == typeof global/*e*/.title || invariant/*s*/(0, "SearchableEntry must include a valid title string, %invariant/*s*/ provided.", global/*e*/.title), this.$SearchableEntry_uniqueID = global/*e*/.uniqueID + "", this.$SearchableEntry_title = global/*e*/.title, this.$SearchableEntry_order = global/*e*/.order || 0, this.$SearchableEntry_subtitle = o(global/*e*/.subtitle), this.$SearchableEntry_keywordString = global/*e*/.keywordString || "", this.$SearchableEntry_photo = global/*e*/.photo || "", this.$SearchableEntry_uri = global/*e*/.uri || "", this.$SearchableEntry_type = global/*e*/.type || "", this.$SearchableEntry_auxiliaryData = global/*e*/.auxiliaryData || null
+        (!e.uniqueID || "string" != typeof e.uniqueID && "number" != typeof e.uniqueID) && invariant/*s*/(0, "SearchableEntry must include a valid unique ID value, %invariant/*s*/ provided.", e.uniqueID), e.title && "string" == typeof e.title || invariant/*s*/(0, "SearchableEntry must include a valid title string, %invariant/*s*/ provided.", e.title), this.$SearchableEntry_uniqueID = e.uniqueID + "", this.$SearchableEntry_title = e.title, this.$SearchableEntry_order = e.order || 0, this.$SearchableEntry_subtitle = o(e.subtitle), this.$SearchableEntry_keywordString = e.keywordString || "", this.$SearchableEntry_photo = e.photo || "", this.$SearchableEntry_uri = e.uri || "", this.$SearchableEntry_type = e.type || "", this.$SearchableEntry_auxiliaryData = e.auxiliaryData || null
     }
-    var invariant/*s*/ = require/*t*/("invariant");
+    var invariant/*s*/ = t("invariant");
     a.prototype.getUniqueID = function() {
         "use strict";
         return this.$SearchableEntry_uniqueID
@@ -42,5 +42,5 @@ __d("SearchableEntry",["invariant"],function (global/*e*/, require/*t*/, require
     }, a.prototype.getAuxiliaryData = function() {
         "use strict";
         return this.$SearchableEntry_auxiliaryData
-    }, module/*i*/.exports = a
+    }, i.exports = a
 });

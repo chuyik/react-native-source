@@ -1,50 +1,50 @@
-__d("GroupPendingPostAction",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupPendingPostAction",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (e, t, n, r, i) {
     "use strict";
-    var GraphQLMutationAction/*o*/ = require/*t*/("GraphQLMutationAction"),
-        a = (require/*t*/("GraphQLMutatorHub"), require/*t*/("GraphQLStore")),
-        defaultRQLMutationCallback/*s*/ = require/*t*/("defaultRQLMutationCallback"),
-        invariant/*l*/ = require/*t*/("invariant"),
-        rql/*u*/ = require/*t*/("rql"),
+    var GraphQLMutationAction/*o*/ = t("GraphQLMutationAction"),
+        a = (t("GraphQLMutatorHub"), t("GraphQLStore")),
+        defaultRQLMutationCallback/*s*/ = t("defaultRQLMutationCallback"),
+        invariant/*l*/ = t("invariant"),
+        rql/*u*/ = t("rql"),
         c = {
-            mutatePendingPost: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.groupID,
-                    requireDynamic/*n*/ = global/*e*/.storyID,
-                    requireLazy/*r*/ = global/*e*/.approved,
-                    module/*i*/ = global/*e*/.onSuccess,
-                    c = global/*e*/.onFailure;
-                require/*t*/ && requireDynamic/*n*/ && null != requireLazy/*r*/ || invariant/*l*/(0, "Invalid parameters for editPendingPost"), c || invariant/*l*/(0, "mutatePendingPost requres onFailure callback."), a.isValidNodeID(requireDynamic/*n*/) || invariant/*l*/(0, "Action taken on unknown story " + requireDynamic/*n*/);
+            mutatePendingPost: function(e) {
+                var t = e.groupID,
+                    n = e.storyID,
+                    r = e.approved,
+                    i = e.onSuccess,
+                    c = e.onFailure;
+                t && n && null != r || invariant/*l*/(0, "Invalid parameters for editPendingPost"), c || invariant/*l*/(0, "mutatePendingPost requres onFailure callback."), a.isValidNodeID(n) || invariant/*l*/(0, "Action taken on unknown story " + n);
                 var p;
-                p = requireLazy/*r*/ ? function() {
-                    var global/*e*/ = rql/*u*/.__GraphQL;
-                    return new global/*e*/.Mutation("UnknownFile_m0", "GroupApprovePendingStoryResponsePayload", new global/*e*/.Callv("group_approve_pending_story", [new global/*e*/.CallVariable("input")]), [new global/*e*/.Field("story", [new global/*e*/.Field("id", null, null, null, null, null, {
+                p = r ? function() {
+                    var e = rql/*u*/.__GraphQL;
+                    return new e.Mutation("UnknownFile_m0", "GroupApprovePendingStoryResponsePayload", new e.Callv("group_approve_pending_story", [new e.CallVariable("input")]), [new e.Field("story", [new e.Field("id", null, null, null, null, null, {
                         requisite: !0
                     })], null, null, null, null, {
                         rootCall: "node",
                         pk: "id"
-                    }), new global/*e*/.Field("client_mutation_id", null, null, null, null, null, {
+                    }), new e.Field("client_mutation_id", null, null, null, null, null, {
                         generated: !0,
                         requisite: !0
                     })])
                 }() : function() {
-                    var global/*e*/ = rql/*u*/.__GraphQL;
-                    return new global/*e*/.Mutation("UnknownFile_m1", "GroupDeletePendingStoryResponsePayload", new global/*e*/.Callv("group_delete_pending_story", [new global/*e*/.CallVariable("input")]), [new global/*e*/.Field("story", [new global/*e*/.Field("id", null, null, null, null, null, {
+                    var e = rql/*u*/.__GraphQL;
+                    return new e.Mutation("UnknownFile_m1", "GroupDeletePendingStoryResponsePayload", new e.Callv("group_delete_pending_story", [new e.CallVariable("input")]), [new e.Field("story", [new e.Field("id", null, null, null, null, null, {
                         requisite: !0
                     })], null, null, null, null, {
                         rootCall: "node",
                         pk: "id"
-                    }), new global/*e*/.Field("client_mutation_id", null, null, null, null, null, {
+                    }), new e.Field("client_mutation_id", null, null, null, null, null, {
                         generated: !0,
                         requisite: !0
                     })])
                 }();
                 var d = new GraphQLMutationAction/*o*/;
                 d.runServerAction(p, {
-                    group_id: require/*t*/,
-                    story_id: requireDynamic/*n*/
-                }, function(global/*e*/, require/*t*/) {
-                    global/*e*/ ? c(global/*e*/) : module/*i*/ && module/*i*/(), defaultRQLMutationCallback/*s*/(global/*e*/, require/*t*/, p)
+                    group_id: t,
+                    story_id: n
+                }, function(e, t) {
+                    e ? c(e) : i && i(), defaultRQLMutationCallback/*s*/(e, t, p)
                 })
             }
         };
-    module/*i*/.exports = c
+    i.exports = c
 });

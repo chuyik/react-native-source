@@ -1,9 +1,9 @@
-__d("matchRoute",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("matchRoute",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = global/*e*/.getName();
-        return require/*t*/[requireDynamic/*n*/] ? require/*t*/[requireDynamic/*n*/]() : null
+    function o(e, t) {
+        var n = e.getName();
+        return t[n] ? t[n]() : null
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,6 +1,6 @@
-__d("arrayContains",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        return -1 != global/*e*/.indexOf(require/*t*/)
+__d("arrayContains",[],function (e, t, n, r, i) {
+    function o(e, t) {
+        return -1 != e.indexOf(t)
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

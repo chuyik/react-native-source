@@ -1,46 +1,46 @@
-__d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var GraphQL_EXPERIMENTAL/*o*/ = require/*t*/("GraphQL_EXPERIMENTAL"),
-        GraphQLConstants/*a*/ = require/*t*/("GraphQLConstants"),
+__d("GraphQLStoreRangeUtils",["GraphQL_EXPERIMENTAL","GraphQLConstants"],function (e, t, n, r, i) {
+    var GraphQL_EXPERIMENTAL/*o*/ = t("GraphQL_EXPERIMENTAL"),
+        GraphQLConstants/*a*/ = t("GraphQLConstants"),
         s = {},
         l = {
-            isRangeClientID: function(global/*e*/) {
-                return !!s[global/*e*/]
+            isRangeClientID: function(e) {
+                return !!s[e]
             },
-            getClientIDForRangeWithID: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = global/*e*/.getCalls().map(function(global/*e*/) {
-                        return global/*e*/.toString(require/*t*/)
+            getClientIDForRangeWithID: function(e, t, n) {
+                var r = e.getCalls().map(function(e) {
+                        return e.toString(t)
                     }).join(","),
-                    module/*i*/ = requireDynamic/*n*/ + "_" + requireLazy/*r*/,
-                    GraphQL_EXPERIMENTAL/*o*/ = s[module/*i*/];
-                return GraphQL_EXPERIMENTAL/*o*/ || (s[module/*i*/] = {
-                    dataID: requireDynamic/*n*/,
-                    calls: global/*e*/.getCalls(),
-                    callValues: require/*t*/
-                }), module/*i*/
+                    i = n + "_" + r,
+                    GraphQL_EXPERIMENTAL/*o*/ = s[i];
+                return GraphQL_EXPERIMENTAL/*o*/ || (s[i] = {
+                    dataID: n,
+                    calls: e.getCalls(),
+                    callValues: t
+                }), i
             },
-            parseRangeClientID: function(global/*e*/) {
-                return s[global/*e*/] || null
+            parseRangeClientID: function(e) {
+                return s[e] || null
             },
-            isRangeNode: function(global/*e*/) {
-                if (!(global/*e*/ instanceof GraphQL_EXPERIMENTAL/*o*/.Field && global/*e*/.isLimitable())) return !1;
-                if (global/*e*/.hasUnaliasedField(GraphQLConstants/*a*/.EDGES) || global/*e*/.hasUnaliasedField(GraphQLConstants/*a*/.PAGE_INFO)) return !0;
-                var require/*t*/ = global/*e*/.getCalls();
-                if (require/*t*/.length)
-                    for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++)
-                        if (require/*t*/[requireDynamic/*n*/].getName() in GraphQLConstants/*a*/.RANGE_CALLS) return !0;
+            isRangeNode: function(e) {
+                if (!(e instanceof GraphQL_EXPERIMENTAL/*o*/.Field && e.isLimitable())) return !1;
+                if (e.hasUnaliasedField(GraphQLConstants/*a*/.EDGES) || e.hasUnaliasedField(GraphQLConstants/*a*/.PAGE_INFO)) return !0;
+                var t = e.getCalls();
+                if (t.length)
+                    for (var n = 0; n < t.length; n++)
+                        if (t[n].getName() in GraphQLConstants/*a*/.RANGE_CALLS) return !0;
                 return !1
             },
-            getStorageKeyForField: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = global/*e*/.getFieldName(),
-                    requireLazy/*r*/ = global/*e*/.getCalls();
-                return requireLazy/*r*/.length && (l.isRangeNode(global/*e*/) && (requireLazy/*r*/ = l.getFilterCalls(requireLazy/*r*/)), requireLazy/*r*/.length && (requireDynamic/*n*/ += "." + requireLazy/*r*/.map(function(global/*e*/) {
-                    return global/*e*/.toString(require/*t*/)
-                }).join("."))), requireDynamic/*n*/
+            getStorageKeyForField: function(e, t) {
+                var n = e.getFieldName(),
+                    r = e.getCalls();
+                return r.length && (l.isRangeNode(e) && (r = l.getFilterCalls(r)), r.length && (n += "." + r.map(function(e) {
+                    return e.toString(t)
+                }).join("."))), n
             },
-            getFilterCalls: function(global/*e*/) {
-                for (var require/*t*/ = [], requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; requireDynamic/*n*/++) GraphQLConstants/*a*/.RANGE_CALLS[global/*e*/[requireDynamic/*n*/].getName()] || require/*t*/.push(global/*e*/[requireDynamic/*n*/]);
-                return require/*t*/
+            getFilterCalls: function(e) {
+                for (var t = [], n = 0; n < e.length; n++) GraphQLConstants/*a*/.RANGE_CALLS[e[n].getName()] || t.push(e[n]);
+                return t
             }
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

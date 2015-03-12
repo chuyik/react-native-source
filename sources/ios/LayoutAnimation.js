@@ -1,9 +1,9 @@
-__d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
-        NativeModules/*a*/ = require/*t*/("NativeModules").RKUIManager,
-        createStrictShapeTypeChecker/*s*/ = require/*t*/("createStrictShapeTypeChecker"),
-        keyMirror/*l*/ = require/*t*/("keyMirror"),
+    var ReactPropTypes/*o*/ = t("ReactPropTypes"),
+        NativeModules/*a*/ = t("NativeModules").RKUIManager,
+        createStrictShapeTypeChecker/*s*/ = t("createStrictShapeTypeChecker"),
+        keyMirror/*l*/ = t("keyMirror"),
         u = keyMirror/*l*/({
             spring: !0,
             linear: !0,
@@ -30,20 +30,20 @@ __d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCh
             "delete": p
         }),
         h = {
-            configureNext: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+            configureNext: function(e, t, n) {
                 d({
-                    config: global/*e*/
-                }, "config", "LayoutAnimation.configureNext"), NativeModules/*a*/.configureNextLayoutAnimation(global/*e*/, require/*t*/, requireDynamic/*n*/)
+                    config: e
+                }, "config", "LayoutAnimation.configureNext"), NativeModules/*a*/.configureNextLayoutAnimation(e, t, n)
             },
-            create: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+            create: function(e, t, n) {
                 return {
-                    duration: global/*e*/,
+                    duration: e,
                     create: {
-                        type: require/*t*/,
-                        property: requireDynamic/*n*/
+                        type: t,
+                        property: n
                     },
                     update: {
-                        type: require/*t*/
+                        type: t
                     }
                 }
             },
@@ -65,5 +65,5 @@ __d("LayoutAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCh
                 springDamping: .4
             }
         }
-    }, module/*i*/.exports = h
+    }, i.exports = h
 });

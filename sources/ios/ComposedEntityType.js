@@ -1,4 +1,4 @@
-__d("ComposedEntityType",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ComposedEntityType",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         MENTION: 0,
@@ -6,5 +6,5 @@ __d("ComposedEntityType",[],function (global/*e*/, require/*t*/, requireDynamic/
         IMAGE: 2,
         VIDEO: 3
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

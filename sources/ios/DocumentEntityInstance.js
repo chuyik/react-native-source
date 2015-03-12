@@ -1,13 +1,13 @@
-__d("DocumentEntityInstance",["ComposedEntityMutability","ComposedEntityType","arrayContains","getObjectValues","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+__d("DocumentEntityInstance",["ComposedEntityMutability","ComposedEntityType","arrayContains","getObjectValues","invariant"],function (e, t, n, r, i) {
+    function o(e, t, n) {
         "use strict";
-        arrayContains/*l*/(p, global/*e*/) || invariant/*c*/(0, "Invalid DocumentEntityType."), arrayContains/*l*/(d, require/*t*/) || invariant/*c*/(0, "Invalid ComposedEntityMutability type."), this.$DocumentEntityInstance_type = global/*e*/, this.$DocumentEntityInstance_mutability = require/*t*/, this.$DocumentEntityInstance_data = requireDynamic/*n*/
+        arrayContains/*l*/(p, e) || invariant/*c*/(0, "Invalid DocumentEntityType."), arrayContains/*l*/(d, t) || invariant/*c*/(0, "Invalid ComposedEntityMutability type."), this.$DocumentEntityInstance_type = e, this.$DocumentEntityInstance_mutability = t, this.$DocumentEntityInstance_data = n
     }
-    var ComposedEntityMutability/*a*/ = require/*t*/("ComposedEntityMutability"),
-        ComposedEntityType/*s*/ = require/*t*/("ComposedEntityType"),
-        arrayContains/*l*/ = require/*t*/("arrayContains"),
-        getObjectValues/*u*/ = require/*t*/("getObjectValues"),
-        invariant/*c*/ = require/*t*/("invariant"),
+    var ComposedEntityMutability/*a*/ = t("ComposedEntityMutability"),
+        ComposedEntityType/*s*/ = t("ComposedEntityType"),
+        arrayContains/*l*/ = t("arrayContains"),
+        getObjectValues/*u*/ = t("getObjectValues"),
+        invariant/*c*/ = t("invariant"),
         p = getObjectValues/*u*/(ComposedEntityType/*s*/),
         d = getObjectValues/*u*/(ComposedEntityMutability/*a*/);
     o.prototype.getType = function() {
@@ -19,8 +19,8 @@ __d("DocumentEntityInstance",["ComposedEntityMutability","ComposedEntityType","a
     }, o.prototype.getData = function() {
         "use strict";
         return this.$DocumentEntityInstance_data
-    }, o.prototype.replaceData = function(global/*e*/) {
+    }, o.prototype.replaceData = function(e) {
         "use strict";
-        this.$DocumentEntityInstance_data = global/*e*/
-    }, module/*i*/.exports = o
+        this.$DocumentEntityInstance_data = e
+    }, i.exports = o
 });

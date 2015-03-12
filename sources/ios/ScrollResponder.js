@@ -1,14 +1,14 @@
-__d("ScrollResponder",["NativeModules","NativeModulesDeprecated","RCTDeviceEventEmitter","Subscribable","TextInputState","warning"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ScrollResponder",["NativeModules","NativeModulesDeprecated","RCTDeviceEventEmitter","Subscribable","TextInputState","warning"],function (e, t, n, r, i) {
     "use strict";
-    var NativeModules/*o*/ = require/*t*/("NativeModules"),
-        NativeModulesDeprecated/*a*/ = require/*t*/("NativeModulesDeprecated"),
-        RCTDeviceEventEmitter/*s*/ = require/*t*/("RCTDeviceEventEmitter"),
-        Subscribable/*l*/ = require/*t*/("Subscribable"),
-        TextInputState/*u*/ = require/*t*/("TextInputState"),
+    var NativeModules/*o*/ = t("NativeModules"),
+        NativeModulesDeprecated/*a*/ = t("NativeModulesDeprecated"),
+        RCTDeviceEventEmitter/*s*/ = t("RCTDeviceEventEmitter"),
+        Subscribable/*l*/ = t("Subscribable"),
+        TextInputState/*u*/ = t("TextInputState"),
         c = NativeModules/*o*/.RKUIManager,
         p = NativeModulesDeprecated/*a*/.RKUIManager,
         d = c.RCTScrollView.Constants,
-        warning/*h*/ = require/*t*/("warning"),
+        warning/*h*/ = t("warning"),
         f = 16,
         m = {
             mixins: [Subscribable/*l*/.Mixin],
@@ -28,82 +28,82 @@ __d("ScrollResponder",["NativeModules","NativeModulesDeprecated","RCTDeviceEvent
             scrollResponderHandleStartShouldSetResponder: function() {
                 return !1
             },
-            scrollResponderHandleStartShouldSetResponderCapture: function(global/*e*/) {
-                var require/*t*/ = TextInputState/*u*/.currentlyFocusedField();
-                return this.props.keyboardShouldPersistTaps || null == require/*t*/ || global/*e*/.target == require/*t*/ ? this.scrollResponderIsAnimating() : !0
+            scrollResponderHandleStartShouldSetResponderCapture: function(e) {
+                var t = TextInputState/*u*/.currentlyFocusedField();
+                return this.props.keyboardShouldPersistTaps || null == t || e.target == t ? this.scrollResponderIsAnimating() : !0
             },
             scrollResponderHandleResponderReject: function() {
-                warning/*h*/(!1, "ScrollView doesn'require/*t*/ take rejection well - scrolls anyway")
+                warning/*h*/(!1, "ScrollView doesn't take rejection well - scrolls anyway")
             },
             scrollResponderHandleTerminationRequest: function() {
                 return !this.state.observedScrollSinceBecomingResponder
             },
-            scrollResponderHandleTouchEnd: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.nativeEvent;
-                this.state.isTouching = 0 !== require/*t*/.touches.length, this.props.onTouchEnd && this.props.onTouchEnd(global/*e*/)
+            scrollResponderHandleTouchEnd: function(e) {
+                var t = e.nativeEvent;
+                this.state.isTouching = 0 !== t.touches.length, this.props.onTouchEnd && this.props.onTouchEnd(e)
             },
-            scrollResponderHandleResponderRelease: function(global/*e*/) {
-                this.props.onResponderRelease && this.props.onResponderRelease(global/*e*/);
-                var require/*t*/ = TextInputState/*u*/.currentlyFocusedField();
-                this.props.keyboardShouldPersistTaps || null == require/*t*/ || global/*e*/.target == require/*t*/ || this.state.observedScrollSinceBecomingResponder || this.state.becameResponderWhileAnimating || (this.props.onScrollResponderKeyboardDismissed && this.props.onScrollResponderKeyboardDismissed(global/*e*/), TextInputState/*u*/.blurTextInput(require/*t*/))
+            scrollResponderHandleResponderRelease: function(e) {
+                this.props.onResponderRelease && this.props.onResponderRelease(e);
+                var t = TextInputState/*u*/.currentlyFocusedField();
+                this.props.keyboardShouldPersistTaps || null == t || e.target == t || this.state.observedScrollSinceBecomingResponder || this.state.becameResponderWhileAnimating || (this.props.onScrollResponderKeyboardDismissed && this.props.onScrollResponderKeyboardDismissed(e), TextInputState/*u*/.blurTextInput(t))
             },
-            scrollResponderHandleScroll: function(global/*e*/) {
-                this.state.observedScrollSinceBecomingResponder = !0, this.props.onScroll && this.props.onScroll(global/*e*/)
+            scrollResponderHandleScroll: function(e) {
+                this.state.observedScrollSinceBecomingResponder = !0, this.props.onScroll && this.props.onScroll(e)
             },
-            scrollResponderHandleResponderGrant: function(global/*e*/) {
-                this.state.observedScrollSinceBecomingResponder = !1, this.props.onResponderGrant && this.props.onResponderGrant(global/*e*/), this.state.becameResponderWhileAnimating = this.scrollResponderIsAnimating()
+            scrollResponderHandleResponderGrant: function(e) {
+                this.state.observedScrollSinceBecomingResponder = !1, this.props.onResponderGrant && this.props.onResponderGrant(e), this.state.becameResponderWhileAnimating = this.scrollResponderIsAnimating()
             },
-            scrollResponderHandleScrollBeginDrag: function(global/*e*/) {
-                this.props.onScrollBeginDrag && this.props.onScrollBeginDrag(global/*e*/)
+            scrollResponderHandleScrollBeginDrag: function(e) {
+                this.props.onScrollBeginDrag && this.props.onScrollBeginDrag(e)
             },
-            scrollResponderHandleScrollEndDrag: function(global/*e*/) {
-                this.props.onScrollEndDrag && this.props.onScrollEndDrag(global/*e*/)
+            scrollResponderHandleScrollEndDrag: function(e) {
+                this.props.onScrollEndDrag && this.props.onScrollEndDrag(e)
             },
-            scrollResponderHandleMomentumScrollBegin: function(global/*e*/) {
-                this.state.lastMomentumScrollBeginTime = Date.now(), this.props.onMomentumScrollBegin && this.props.onMomentumScrollBegin(global/*e*/)
+            scrollResponderHandleMomentumScrollBegin: function(e) {
+                this.state.lastMomentumScrollBeginTime = Date.now(), this.props.onMomentumScrollBegin && this.props.onMomentumScrollBegin(e)
             },
-            scrollResponderHandleMomentumScrollEnd: function(global/*e*/) {
-                this.state.lastMomentumScrollEndTime = Date.now(), this.props.onMomentumScrollEnd && this.props.onMomentumScrollEnd(global/*e*/)
+            scrollResponderHandleMomentumScrollEnd: function(e) {
+                this.state.lastMomentumScrollEndTime = Date.now(), this.props.onMomentumScrollEnd && this.props.onMomentumScrollEnd(e)
             },
-            scrollResponderHandleTouchStart: function(global/*e*/) {
-                this.state.isTouching = !0, this.props.onTouchStart && this.props.onTouchStart(global/*e*/)
+            scrollResponderHandleTouchStart: function(e) {
+                this.state.isTouching = !0, this.props.onTouchStart && this.props.onTouchStart(e)
             },
-            scrollResponderHandleTouchMove: function(global/*e*/) {
-                this.props.onTouchMove && this.props.onTouchMove(global/*e*/)
+            scrollResponderHandleTouchMove: function(e) {
+                this.props.onTouchMove && this.props.onTouchMove(e)
             },
             scrollResponderIsAnimating: function() {
-                var global/*e*/ = Date.now(),
-                    require/*t*/ = global/*e*/ - this.state.lastMomentumScrollEndTime,
-                    requireDynamic/*n*/ = f > require/*t*/ || this.state.lastMomentumScrollEndTime < this.state.lastMomentumScrollBeginTime;
-                return requireDynamic/*n*/
+                var e = Date.now(),
+                    t = e - this.state.lastMomentumScrollEndTime,
+                    n = f > t || this.state.lastMomentumScrollEndTime < this.state.lastMomentumScrollBeginTime;
+                return n
             },
-            scrollResponderScrollTo: function(global/*e*/, require/*t*/) {
-                p.scrollTo(this.getNodeHandle(), global/*e*/, require/*t*/)
+            scrollResponderScrollTo: function(e, t) {
+                p.scrollTo(this.getNodeHandle(), e, t)
             },
-            scrollResponderZoomTo: function(global/*e*/) {
-                p.zoomToRect(this.getNodeHandle(), global/*e*/)
+            scrollResponderZoomTo: function(e) {
+                p.zoomToRect(this.getNodeHandle(), e)
             },
-            scrollResponderScrollNativeHandleToKeyboard: function(global/*e*/, require/*t*/) {
-                this.additionalScrollOffset = require/*t*/ || 0, c.measureLayout(global/*e*/, this.getNodeHandle(), this.scrollResponderTextInputFocusError, this.scrollResponderInputMeasureAndScrollToKeyboard)
+            scrollResponderScrollNativeHandleToKeyboard: function(e, t) {
+                this.additionalScrollOffset = t || 0, c.measureLayout(e, this.getNodeHandle(), this.scrollResponderTextInputFocusError, this.scrollResponderInputMeasureAndScrollToKeyboard)
             },
-            scrollResponderInputMeasureAndScrollToKeyboard: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
+            scrollResponderInputMeasureAndScrollToKeyboard: function(e, t, n, r) {
                 if (this.keyboardWillOpenTo) {
-                    var module/*i*/ = require/*t*/ - this.keyboardWillOpenTo.endCoordinates.screenY + requireLazy/*r*/ + this.additionalScrollOffset;
-                    this.scrollResponderScrollTo(0, module/*i*/)
+                    var i = t - this.keyboardWillOpenTo.endCoordinates.screenY + r + this.additionalScrollOffset;
+                    this.scrollResponderScrollTo(0, i)
                 }
                 this.additionalOffset = 0
             },
-            scrollResponderTextInputFocusError: function(global/*e*/) {
-                console.error("Error measuring text field: ", global/*e*/)
+            scrollResponderTextInputFocusError: function(e) {
+                console.error("Error measuring text field: ", e)
             },
             componentWillMount: function() {
                 this.keyboardWillOpenTo = null, this.additionalScrollOffset = 0, this.addListenerOn(RCTDeviceEventEmitter/*s*/, "keyboardWillShow", this.scrollResponderKeyboardWillShow), this.addListenerOn(RCTDeviceEventEmitter/*s*/, "keyboardWillHide", this.scrollResponderKeyboardWillHide), this.addListenerOn(RCTDeviceEventEmitter/*s*/, "keyboardDidShow", this.scrollResponderKeyboardDidShow), this.addListenerOn(RCTDeviceEventEmitter/*s*/, "keyboardDidHide", this.scrollResponderKeyboardDidHide)
             },
-            scrollResponderKeyboardWillShow: function(global/*e*/) {
-                this.keyboardWillOpenTo = global/*e*/, this.props.onKeyboardWillShow && this.props.onKeyboardWillShow(global/*e*/)
+            scrollResponderKeyboardWillShow: function(e) {
+                this.keyboardWillOpenTo = e, this.props.onKeyboardWillShow && this.props.onKeyboardWillShow(e)
             },
-            scrollResponderKeyboardWillHide: function(global/*e*/) {
-                this.keyboardWillOpenTo = null, this.props.onKeyboardWillHide && this.props.onKeyboardWillHide(global/*e*/)
+            scrollResponderKeyboardWillHide: function(e) {
+                this.keyboardWillOpenTo = null, this.props.onKeyboardWillHide && this.props.onKeyboardWillHide(e)
             },
             scrollResponderKeyboardDidShow: function() {
                 this.keyboardWillOpenTo = null, this.props.onKeyboardDidShow && this.props.onKeyboardDidShow()
@@ -115,5 +115,5 @@ __d("ScrollResponder",["NativeModules","NativeModulesDeprecated","RCTDeviceEvent
         g = {
             Mixin: m
         };
-    module/*i*/.exports = g
+    i.exports = g
 });

@@ -1,4 +1,4 @@
-__d("THColors",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THColors",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         backgroundColor: "#ffffff",
@@ -19,5 +19,5 @@ __d("THColors",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requ
         timestamp: "#b9b9b9",
         unlikedGray: "#b9b9b9"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

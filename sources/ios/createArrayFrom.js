@@ -1,11 +1,11 @@
-__d("createArrayFrom",["toArray"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return !!global/*e*/ && ("object" == typeof global/*e*/ || "function" == typeof global/*e*/) && "length" in global/*e*/ && !("setInterval" in global/*e*/) && "number" != typeof global/*e*/.nodeType && (Array.isArray(global/*e*/) || "callee" in global/*e*/ || "item" in global/*e*/)
+__d("createArrayFrom",["toArray"],function (e, t, n, r, i) {
+    function o(e) {
+        return !!e && ("object" == typeof e || "function" == typeof e) && "length" in e && !("setInterval" in e) && "number" != typeof e.nodeType && (Array.isArray(e) || "callee" in e || "item" in e)
     }
 
-    function a(global/*e*/) {
-        return o(global/*e*/) ? Array.isArray(global/*e*/) ? global/*e*/.slice() : toArray/*s*/(global/*e*/) : [global/*e*/]
+    function a(e) {
+        return o(e) ? Array.isArray(e) ? e.slice() : toArray/*s*/(e) : [e]
     }
-    var toArray/*s*/ = require/*t*/("toArray");
-    module/*i*/.exports = a
+    var toArray/*s*/ = t("toArray");
+    i.exports = a
 });

@@ -1,15 +1,15 @@
-__d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIGColors","React","ReactGraphQL","StyleSheet","Text.react","fbt","findSplitPointForText","partitionTextAndRanges"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIGColors","React","ReactGraphQL","StyleSheet","Text.react","fbt","findSplitPointForText","partitionTextAndRanges"],function (e, t, n, r, i) {
     "use strict";
-    var o = require/*t*/("BaseTextWithEntities.react"),
-        FBTextEntity/*a*/ = require/*t*/("FBTextEntity"),
-        FIGColors/*s*/ = require/*t*/("FIGColors"),
-        React/*l*/ = require/*t*/("React"),
-        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
-        p = require/*t*/("Text.react"),
-        fbt/*d*/ = require/*t*/("fbt"),
-        findSplitPointForText/*h*/ = require/*t*/("findSplitPointForText"),
-        partitionTextAndRanges/*f*/ = require/*t*/("partitionTextAndRanges"),
+    var o = t("BaseTextWithEntities.react"),
+        FBTextEntity/*a*/ = t("FBTextEntity"),
+        FIGColors/*s*/ = t("FIGColors"),
+        React/*l*/ = t("React"),
+        ReactGraphQL/*u*/ = t("ReactGraphQL"),
+        StyleSheet/*c*/ = t("StyleSheet"),
+        p = t("Text.react"),
+        fbt/*d*/ = t("fbt"),
+        findSplitPointForText/*h*/ = t("findSplitPointForText"),
+        partitionTextAndRanges/*f*/ = t("partitionTextAndRanges"),
         m = .8,
         g = React/*l*/.createClass({
             displayName: "FBTextWithEntities",
@@ -23,18 +23,18 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
             },
             statics: {
                 queries: {
-                    text: function(global/*e*/, require/*t*/) {
+                    text: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("FBTextWithEntities_text", "TextWithEntities", [new global/*e*/.Field("text"), new global/*e*/.Field("ranges", [new global/*e*/.Field("__type__", [new global/*e*/.Field("name"), new global/*e*/.Field("id", null, null, null, null, null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("FBTextWithEntities_text", "TextWithEntities", [new e.Field("text"), new e.Field("ranges", [new e.Field("__type__", [new e.Field("name"), new e.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new global/*e*/.Field("entity", [new global/*e*/.Field("id", null, null, null, null, null, {
+                            }), new e.Field("entity", [new e.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new global/*e*/.Field("name"), new global/*e*/.Field("url", null, null, [new global/*e*/.Callv("site", ["mobile"])]), new global/*e*/.Field("__type__", [new global/*e*/.Field("name"), new global/*e*/.Field("id", null, null, null, null, null, {
+                            }), new e.Field("name"), new e.Field("url", null, null, [new e.Callv("site", ["mobile"])]), new e.Field("__type__", [new e.Field("name"), new e.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
@@ -43,7 +43,7 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id"
-                            }), new global/*e*/.Field("offset"), new global/*e*/.Field("length")], null, null, null, null, {
+                            }), new e.Field("offset"), new e.Field("length")], null, null, null, null, {
                                 plural: !0
                             })], null, {
                                 scope: "FBTextWithEntities_text"
@@ -64,23 +64,23 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
                     maxLines: 10
                 }
             },
-            _renderText: function(global/*e*/) {
+            _renderText: function(e) {
                 return React/*l*/.createElement(p, {
                     style: this.props.textStyle
-                }, global/*e*/)
+                }, e)
             },
-            _renderRange: function(global/*e*/, require/*t*/) {
-                if (global/*e*/ && require/*t*/.entity) {
-                    var requireDynamic/*n*/ = this.props.TextEntityComponent || FBTextEntity/*a*/;
-                    return React/*l*/.createElement(requireDynamic/*n*/, {
-                        entity: require/*t*/.entity,
-                        text: global/*e*/,
+            _renderRange: function(e, t) {
+                if (e && t.entity) {
+                    var n = this.props.TextEntityComponent || FBTextEntity/*a*/;
+                    return React/*l*/.createElement(n, {
+                        entity: t.entity,
+                        text: e,
                         textStyle: this.props.textStyle
                     })
                 }
                 return React/*l*/.createElement(p, {
                     style: this.props.textStyle
-                }, global/*e*/)
+                }, e)
             },
             onPressSeeMore: function() {
                 this.setState({
@@ -88,23 +88,23 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
                 })
             },
             _renderTruncated: function() {
-                var global/*e*/ = this.props.text,
-                    require/*t*/ = null;
+                var e = this.props.text,
+                    t = null;
                 if (this.state.isCollapsed) {
-                    var requireDynamic/*n*/ = this.props.maxLength,
-                        requireLazy/*r*/ = this.props.maxLines;
-                    if (requireDynamic/*n*/ && global/*e*/.text.length > requireDynamic/*n*/ && (requireDynamic/*n*/ = Math.floor(requireDynamic/*n*/ * m)), require/*t*/ = findSplitPointForText/*h*/(global/*e*/.text, requireDynamic/*n*/, requireLazy/*r*/), null !== require/*t*/) {
-                        var module/*i*/ = partitionTextAndRanges/*f*/(global/*e*/.text, global/*e*/.ranges, require/*t*/);
-                        global/*e*/ = module/*i*/.before
+                    var n = this.props.maxLength,
+                        r = this.props.maxLines;
+                    if (n && e.text.length > n && (n = Math.floor(n * m)), t = findSplitPointForText/*h*/(e.text, n, r), null !== t) {
+                        var i = partitionTextAndRanges/*f*/(e.text, e.ranges, t);
+                        e = i.before
                     }
                 }
                 var FBTextEntity/*a*/ = React/*l*/.createElement(o, {
                     textRenderer: this._renderText,
                     rangeRenderer: this._renderRange,
-                    text: global/*e*/.text,
-                    ranges: global/*e*/.ranges
+                    text: e.text,
+                    ranges: e.ranges
                 });
-                if (require/*t*/) {
+                if (t) {
                     var FIGColors/*s*/ = ["... ", React/*l*/.createElement(p, {
                         key: "continue",
                         style: [_.seeMore, this.props.seeMoreStyle]
@@ -125,12 +125,12 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
             },
             render: function() {
                 if (this.props.shouldTruncate) return this._renderTruncated();
-                var global/*e*/ = this.props.text;
+                var e = this.props.text;
                 return React/*l*/.createElement(o, {
                     textRenderer: this._renderText,
                     rangeRenderer: this._renderRange,
-                    text: global/*e*/.text,
-                    ranges: global/*e*/.ranges
+                    text: e.text,
+                    ranges: e.ranges
                 })
             }
         }),
@@ -139,5 +139,5 @@ __d("FBTextWithEntities.react",["BaseTextWithEntities.react","FBTextEntity","FIG
                 color: FIGColors/*s*/.mediumText
             }
         });
-    module/*i*/.exports = g
+    i.exports = g
 });

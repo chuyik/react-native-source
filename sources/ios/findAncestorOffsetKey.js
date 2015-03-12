@@ -1,12 +1,12 @@
-__d("findAncestorOffsetKey",["getSelectionOffsetKeyForNode"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        for (; global/*e*/ && global/*e*/ !== document.documentElement;) {
-            var require/*t*/ = getSelectionOffsetKeyForNode/*a*/(global/*e*/);
-            if (null != require/*t*/) return require/*t*/;
-            global/*e*/ = global/*e*/.parentNode
+__d("findAncestorOffsetKey",["getSelectionOffsetKeyForNode"],function (e, t, n, r, i) {
+    function o(e) {
+        for (; e && e !== document.documentElement;) {
+            var t = getSelectionOffsetKeyForNode/*a*/(e);
+            if (null != t) return t;
+            e = e.parentNode
         }
         return null
     }
-    var getSelectionOffsetKeyForNode/*a*/ = require/*t*/("getSelectionOffsetKeyForNode");
-    module/*i*/.exports = o
+    var getSelectionOffsetKeyForNode/*a*/ = t("getSelectionOffsetKeyForNode");
+    i.exports = o
 });

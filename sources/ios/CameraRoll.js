@@ -1,12 +1,12 @@
-__d("CameraRoll",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","deepFreezeAndThrowOnMutationInDev","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("CameraRoll",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","deepFreezeAndThrowOnMutationInDev","invariant"],function (e, t, n, r, i) {
     "use strict";
 
     function o() {}
-    var ReactPropTypes/*a*/ = require/*t*/("ReactPropTypes"),
-        NativeModules/*s*/ = require/*t*/("NativeModules").RKCameraRollManager,
-        createStrictShapeTypeChecker/*l*/ = require/*t*/("createStrictShapeTypeChecker"),
-        deepFreezeAndThrowOnMutationInDev/*u*/ = require/*t*/("deepFreezeAndThrowOnMutationInDev"),
-        invariant/*c*/ = require/*t*/("invariant"),
+    var ReactPropTypes/*a*/ = t("ReactPropTypes"),
+        NativeModules/*s*/ = t("NativeModules").RKCameraRollManager,
+        createStrictShapeTypeChecker/*l*/ = t("createStrictShapeTypeChecker"),
+        deepFreezeAndThrowOnMutationInDev/*u*/ = t("deepFreezeAndThrowOnMutationInDev"),
+        invariant/*c*/ = t("invariant"),
         p = ["Album", "All", "Event", "Faces", "Library", "PhotoStream", "SavedPhotos"];
     deepFreezeAndThrowOnMutationInDev/*u*/(p);
     var d = createStrictShapeTypeChecker/*l*/({
@@ -42,20 +42,20 @@ __d("CameraRoll",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker
                 end_cursor: ReactPropTypes/*a*/.string
             }).isRequired
         });
-    o.saveImageWithTag = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        "string" != typeof global/*e*/ && invariant/*c*/(0, "CameraRoll.saveImageWithTag tag must be ReactPropTypes/*a*/ valid string."), NativeModules/*s*/.saveImageWithTag(global/*e*/, function(global/*e*/) {
-            require/*t*/ && require/*t*/(global/*e*/)
-        }, function(global/*e*/) {
-            requireDynamic/*n*/ && requireDynamic/*n*/(global/*e*/)
+    o.saveImageWithTag = function(e, t, n) {
+        "string" != typeof e && invariant/*c*/(0, "CameraRoll.saveImageWithTag tag must be ReactPropTypes/*a*/ valid string."), NativeModules/*s*/.saveImageWithTag(e, function(e) {
+            t && t(e)
+        }, function(e) {
+            n && n(e)
         })
-    }, o.getPhotos = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = require/*t*/;
+    }, o.getPhotos = function(e, t, n) {
+        var r = t;
         __DEV__ && (d({
-            params: global/*e*/
-        }, "params", "CameraRoll.getPhotos"), "function" != typeof require/*t*/ && invariant/*c*/(0, "CameraRoll.getPhotos callback must be ReactPropTypes/*a*/ valid function."), "function" != typeof requireDynamic/*n*/ && invariant/*c*/(0, "CameraRoll.getPhotos errorCallback must be ReactPropTypes/*a*/ valid function.")), __DEV__ && (requireLazy/*r*/ = function(global/*e*/) {
+            params: e
+        }, "params", "CameraRoll.getPhotos"), "function" != typeof t && invariant/*c*/(0, "CameraRoll.getPhotos callback must be ReactPropTypes/*a*/ valid function."), "function" != typeof n && invariant/*c*/(0, "CameraRoll.getPhotos errorCallback must be ReactPropTypes/*a*/ valid function.")), __DEV__ && (r = function(e) {
             h({
-                response: global/*e*/
-            }, "response", "CameraRoll.getPhotos callback"), require/*t*/(global/*e*/)
-        }), NativeModules/*s*/.getPhotos(global/*e*/, requireLazy/*r*/, requireDynamic/*n*/)
-    }, o.GroupTypesOptions = p, module/*i*/.exports = o
+                response: e
+            }, "response", "CameraRoll.getPhotos callback"), t(e)
+        }), NativeModules/*s*/.getPhotos(e, r, n)
+    }, o.GroupTypesOptions = p, i.exports = o
 });

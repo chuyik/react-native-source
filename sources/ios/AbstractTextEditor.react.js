@@ -1,13 +1,13 @@
-__d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment","React","StyleSheet","Text","TextEditorBlock.react","TextEditorCompositionHandler","TextEditorCompositionState","TextEditorEditHandler","TextEditorDragHandler","TextEditorModes","TextInput","View","cx","extendArray","requestAnimationFrame","ComposedInlineStyle"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return function(require/*t*/) {
-            var requireDynamic/*n*/ = this._handler && this._handler[global/*e*/];
-            requireDynamic/*n*/ && requireDynamic/*n*/.call(this, require/*t*/)
+__d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment","React","StyleSheet","Text","TextEditorBlock.react","TextEditorCompositionHandler","TextEditorCompositionState","TextEditorEditHandler","TextEditorDragHandler","TextEditorModes","TextInput","View","cx","extendArray","requestAnimationFrame","ComposedInlineStyle"],function (e, t, n, r, i) {
+    function o(e) {
+        return function(t) {
+            var n = this._handler && this._handler[e];
+            n && n.call(this, t)
         }
     }
 
-    function a(global/*e*/) {
-        switch (global/*e*/) {
+    function a(e) {
+        switch (e) {
             case TextEditorModes/*_*/.EDIT:
                 return TextEditorEditHandler/*m*/;
             case TextEditorModes/*_*/.COMPOSITE:
@@ -19,26 +19,26 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
                 return null
         }
     }
-    var AbstractTextEditorProps/*s*/ = require/*t*/("AbstractTextEditorProps"),
-        ExecutionEnvironment/*l*/ = require/*t*/("ExecutionEnvironment"),
-        React/*u*/ = require/*t*/("React"),
-        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
-        Text/*p*/ = require/*t*/("Text"),
-        d = require/*t*/("TextEditorBlock.react"),
-        TextEditorCompositionHandler/*h*/ = require/*t*/("TextEditorCompositionHandler"),
-        TextEditorCompositionState/*f*/ = require/*t*/("TextEditorCompositionState"),
-        TextEditorEditHandler/*m*/ = require/*t*/("TextEditorEditHandler"),
-        TextEditorDragHandler/*g*/ = require/*t*/("TextEditorDragHandler"),
-        TextEditorModes/*_*/ = require/*t*/("TextEditorModes"),
-        TextInput/*y*/ = require/*t*/("TextInput"),
-        View/*v*/ = require/*t*/("View"),
-        cx/*S*/ = require/*t*/("cx"),
-        extendArray/*b*/ = require/*t*/("extendArray"),
-        requestAnimationFrame/*R*/ = require/*t*/("requestAnimationFrame"),
-        w = (require/*t*/("ComposedInlineStyle"), "extendArray/*b*/"),
+    var AbstractTextEditorProps/*s*/ = t("AbstractTextEditorProps"),
+        ExecutionEnvironment/*l*/ = t("ExecutionEnvironment"),
+        React/*u*/ = t("React"),
+        StyleSheet/*c*/ = t("StyleSheet"),
+        Text/*p*/ = t("Text"),
+        d = t("TextEditorBlock.react"),
+        TextEditorCompositionHandler/*h*/ = t("TextEditorCompositionHandler"),
+        TextEditorCompositionState/*f*/ = t("TextEditorCompositionState"),
+        TextEditorEditHandler/*m*/ = t("TextEditorEditHandler"),
+        TextEditorDragHandler/*g*/ = t("TextEditorDragHandler"),
+        TextEditorModes/*_*/ = t("TextEditorModes"),
+        TextInput/*y*/ = t("TextInput"),
+        View/*v*/ = t("View"),
+        cx/*S*/ = t("cx"),
+        extendArray/*b*/ = t("extendArray"),
+        requestAnimationFrame/*R*/ = t("requestAnimationFrame"),
+        w = (t("ComposedInlineStyle"), "extendArray/*b*/"),
         C = "d",
         E = "ExecutionEnvironment/*l*/",
-        D = global/*e*/.MutationObserver || global/*e*/.WebKitMutationObserver,
+        D = e.MutationObserver || e.WebKitMutationObserver,
         T = React/*u*/.createClass({
             displayName: "AbstractTextEditor",
             propTypes: AbstractTextEditorProps/*s*/.propTypes,
@@ -62,73 +62,73 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
             _onCopy: o("onCopy"),
             _onPaste: o("onPaste"),
             _onBeforeInput: o("onBeforeInput"),
-            _onTextInput: function(global/*e*/) {
-                this.props.onTextInput && this.props.onTextInput(global/*e*/)
+            _onTextInput: function(e) {
+                this.props.onTextInput && this.props.onTextInput(e)
             },
             _renderContents: function() {
-                function global/*e*/(global/*e*/, require/*t*/) {
-                    var requireDynamic/*n*/ = global/*e*/ + (require/*t*/ ? require/*t*/.charCodeAt(0) : 0),
-                        requireLazy/*r*/ = requireDynamic/*n*/;
-                    return TextEditorCompositionState/*f*/.hasOwnProperty(requireLazy/*r*/) ? requireLazy/*r*/ += "-" + TextEditorCompositionState/*f*/[requireLazy/*r*/] ++ : TextEditorCompositionState/*f*/[requireLazy/*r*/] = 0, TextEditorCompositionHandler/*h*/[requireLazy/*r*/] = !0, requireLazy/*r*/
+                function e(e, t) {
+                    var n = e + (t ? t.charCodeAt(0) : 0),
+                        r = n;
+                    return TextEditorCompositionState/*f*/.hasOwnProperty(r) ? r += "-" + TextEditorCompositionState/*f*/[r] ++ : TextEditorCompositionState/*f*/[r] = 0, TextEditorCompositionHandler/*h*/[r] = !0, r
                 }
 
-                function require/*t*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, o) {
-                    module/*i*/ = [];
+                function t(t, n, r, o) {
+                    i = [];
                     var a = this.props.BlockComponent || d,
-                        Text/*p*/ = AbstractTextEditorProps/*s*/.substr(requireDynamic/*n*/, requireLazy/*r*/ - requireDynamic/*n*/),
-                        TextEditorCompositionHandler/*h*/ = global/*e*/(w, Text/*p*/);
+                        Text/*p*/ = AbstractTextEditorProps/*s*/.substr(n, r - n),
+                        TextEditorCompositionHandler/*h*/ = e(w, Text/*p*/);
                     StyleSheet/*c*/.push(React/*u*/.createElement(a, {
                         key: TextEditorCompositionHandler/*h*/,
-                        offsetKey: require/*t*/,
+                        offsetKey: t,
                         text: Text/*p*/,
                         blockProps: this.props.blockProps,
                         blockStyleFn: this.props.blockStyleFn,
                         style: o,
                         direction: ExecutionEnvironment/*l*/[StyleSheet/*c*/.length]
-                    }, module/*i*/))
+                    }, i))
                 }
 
-                function requireDynamic/*n*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, ExecutionEnvironment/*l*/) {
+                function n(t, n, r, ExecutionEnvironment/*l*/) {
                     if (ExecutionEnvironment/*l*/) {
                         o = [];
-                        var StyleSheet/*c*/ = this.props.documentView.getEntities()[requireDynamic/*n*/],
-                            Text/*p*/ = AbstractTextEditorProps/*s*/.substr(requireDynamic/*n*/, requireLazy/*r*/ - requireDynamic/*n*/),
-                            d = global/*e*/(C, Text/*p*/);
-                        module/*i*/.push(React/*u*/.createElement(ExecutionEnvironment/*l*/, {
+                        var StyleSheet/*c*/ = this.props.documentView.getEntities()[n],
+                            Text/*p*/ = AbstractTextEditorProps/*s*/.substr(n, r - n),
+                            d = e(C, Text/*p*/);
+                        i.push(React/*u*/.createElement(ExecutionEnvironment/*l*/, {
                             key: d,
-                            offsetKey: require/*t*/,
+                            offsetKey: t,
                             decoratorProps: this.props.decoratorProps,
                             documentView: a,
                             selectionState: this.props.selectionState,
                             entityKey: StyleSheet/*c*/,
                             text: Text/*p*/
                         }, o))
-                    } else o = module/*i*/
+                    } else o = i
                 }
 
-                function requireLazy/*r*/(require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                    var module/*i*/ = AbstractTextEditorProps/*s*/.substr(requireDynamic/*n*/, requireLazy/*r*/ - requireDynamic/*n*/),
-                        a = global/*e*/(E, module/*i*/);
+                function r(t, n, r) {
+                    var i = AbstractTextEditorProps/*s*/.substr(n, r - n),
+                        a = e(E, i);
                     o.push(React/*u*/.createElement(Text/*p*/, {
                         key: a
-                    }, module/*i*/))
+                    }, i))
                 }
-                var module/*i*/, o, a = this.props.documentView,
+                var i, o, a = this.props.documentView,
                     AbstractTextEditorProps/*s*/ = a.getText(),
                     ExecutionEnvironment/*l*/ = a.getBlockDirections(),
                     StyleSheet/*c*/ = [],
                     TextEditorCompositionHandler/*h*/ = {},
                     TextEditorCompositionState/*f*/ = {};
-                return this.props.documentView.iterate(require/*t*/.bind(this), requireDynamic/*n*/.bind(this), requireLazy/*r*/.bind(this)), StyleSheet/*c*/
+                return this.props.documentView.iterate(t.bind(this), n.bind(this), r.bind(this)), StyleSheet/*c*/
             },
             _attachMutationObserver: function() {
                 if (D) {
-                    var global/*e*/ = [],
-                        require/*t*/ = function() {
-                            global/*e*/.length && (this._onCharacterData(global/*e*/), global/*e*/.length = 0)
+                    var e = [],
+                        t = function() {
+                            e.length && (this._onCharacterData(e), e.length = 0)
                         }.bind(this);
-                    this._mutationObserver = new D(function(requireDynamic/*n*/) {
-                        this._guardAgainstRender || (0 === global/*e*/.length && requestAnimationFrame/*R*/(require/*t*/), extendArray/*b*/(global/*e*/, requireDynamic/*n*/))
+                    this._mutationObserver = new D(function(n) {
+                        this._guardAgainstRender || (0 === e.length && requestAnimationFrame/*R*/(t), extendArray/*b*/(e, n))
                     }.bind(this)), this._mutationObserver && this._mutationObserver.observe(this.refs.editorContainer.getDOMNode(), {
                         characterDataOldValue: !0,
                         characterData: !0,
@@ -140,8 +140,8 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
                 this._mutationObserver && (this._mutationObserver.disconnect(), this._mutationObserver = null)
             },
             _renderPlaceholder: function() {
-                var global/*e*/ = this.props.placeholder && !this.props.documentView.getText();
-                return global/*e*/ ? React/*u*/.createElement(AbstractTextEditorPlaceholder, {
+                var e = this.props.placeholder && !this.props.documentView.getText();
+                return e ? React/*u*/.createElement(AbstractTextEditorPlaceholder, {
                     text: this.props.placeholder,
                     selectionState: this.props.selectionState,
                     compositionState: this._compositionState
@@ -189,11 +189,11 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
                 }, this._renderContents())))
             },
             focus: function() {
-                var global/*e*/ = this.props.selectionState.hasFocus();
-                if (!global/*e*/) {
+                var e = this.props.selectionState.hasFocus();
+                if (!e) {
                     if (!this.refs.editor.getDOMNode) return void this.refs.editor.focus();
-                    var require/*t*/ = this.props.documentView.getText().length;
-                    this.props.selectionState.update(require/*t*/, require/*t*/), this.forceUpdate()
+                    var t = this.props.documentView.getText().length;
+                    this.props.selectionState.update(t, t), this.forceUpdate()
                 }
             },
             blur: function() {
@@ -201,20 +201,20 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
             },
             componentDidMount: function() {
                 this._renderedVersion = null, this._clonedEditor = null, this._guardAgainstRender = !1, this._handler = TextEditorEditHandler/*m*/;
-                var global/*e*/ = this.props.documentView.getBlockDirections();
-                this._renderedDirections = global/*e*/.join(""), ExecutionEnvironment/*l*/.canUseDOM && this._attachMutationObserver()
+                var e = this.props.documentView.getBlockDirections();
+                this._renderedDirections = e.join(""), ExecutionEnvironment/*l*/.canUseDOM && this._attachMutationObserver()
             },
-            shouldComponentUpdate: function(global/*e*/) {
-                var require/*t*/ = global/*e*/.documentView.getBlockDirections();
-                return !this._guardAgainstRender && (global/*e*/.documentView.getVersion() !== this._renderedVersion || require/*t*/.join("") !== this._renderedDirections || this.props.disabled !== global/*e*/.disabled || this.props.inputView !== global/*e*/.inputView)
+            shouldComponentUpdate: function(e) {
+                var t = e.documentView.getBlockDirections();
+                return !this._guardAgainstRender && (e.documentView.getVersion() !== this._renderedVersion || t.join("") !== this._renderedDirections || this.props.disabled !== e.disabled || this.props.inputView !== e.inputView)
             },
             componentWillUpdate: function() {
                 this.setMode(TextEditorModes/*_*/.RENDER)
             },
             componentDidUpdate: function() {
                 this.exitCurrentMode(), this._renderedVersion = this.props.documentView.getVersion();
-                var global/*e*/ = this.props.documentView.getBlockDirections();
-                this._renderedDirections = global/*e*/.join("")
+                var e = this.props.documentView.getBlockDirections();
+                this._renderedDirections = e.join("")
             },
             componentWillMount: function() {
                 this._compositionState = new TextEditorCompositionState/*f*/(!1), this._selectionListener = this.props.selectionState.addListener("focus", this.focus)
@@ -228,8 +228,8 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
             resetRenderedVersion: function() {
                 this._renderedVersion = null, this._renderedDirections = null
             },
-            setMode: function(global/*e*/) {
-                this._handler = a(global/*e*/)
+            setMode: function(e) {
+                this._handler = a(e)
             },
             exitCurrentMode: function() {
                 this.setMode(TextEditorModes/*_*/.EDIT)
@@ -238,8 +238,8 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
                 this._clonedEditor = this.refs.editor.getDOMNode().cloneNode(!0)
             },
             restoreEditorDOM: function() {
-                var global/*e*/ = this.refs.editorContainer.getDOMNode();
-                global/*e*/.innerHTML = "", global/*e*/.appendChild(this._clonedEditor), this.focus(), this._clonedEditor = null
+                var e = this.refs.editorContainer.getDOMNode();
+                e.innerHTML = "", e.appendChild(this._clonedEditor), this.focus(), this._clonedEditor = null
             },
             setRenderGuard: function() {
                 this._guardAgainstRender = !0
@@ -255,5 +255,5 @@ __d("AbstractTextEditor.react",["AbstractTextEditorProps","ExecutionEnvironment"
                 height: 30
             }
         });
-    module/*i*/.exports = T
+    i.exports = T
 });

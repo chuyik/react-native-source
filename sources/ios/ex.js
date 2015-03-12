@@ -1,10 +1,10 @@
-__d("ex",["eprintf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var eprintf/*o*/ = require/*t*/("eprintf"),
+__d("ex",["eprintf"],function (e, t, n, r, i) {
+    var eprintf/*o*/ = t("eprintf"),
         a = function() {
-            for (var global/*e*/ = [], require/*t*/ = 0, requireDynamic/*n*/ = arguments.length; requireDynamic/*n*/ > require/*t*/; require/*t*/++) global/*e*/.push(arguments[require/*t*/]);
-            return global/*e*/ = global/*e*/.map(function(global/*e*/) {
-                return String(global/*e*/)
-            }), global/*e*/[0].split("%s").length !== global/*e*/.length ? a("ex args number mismatch: %s", JSON.stringify(global/*e*/)) : __DEV__ ? eprintf/*o*/.apply(null, global/*e*/) : a._prefix + JSON.stringify(global/*e*/) + a._suffix
+            for (var e = [], t = 0, n = arguments.length; n > t; t++) e.push(arguments[t]);
+            return e = e.map(function(e) {
+                return String(e)
+            }), e[0].split("%s").length !== e.length ? a("ex args number mismatch: %s", JSON.stringify(e)) : __DEV__ ? eprintf/*o*/.apply(null, e) : a._prefix + JSON.stringify(e) + a._suffix
         };
-    a._prefix = "<![EX[", a._suffix = "]]>", module/*i*/.exports = a
+    a._prefix = "<![EX[", a._suffix = "]]>", i.exports = a
 });

@@ -1,11 +1,11 @@
-__d("ScrollViewPropTypes",["EdgeInsetsPropType","PointPropType","ReactPropTypes","StyleSheetPropType","ViewStylePropTypes","nativePropType"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ScrollViewPropTypes",["EdgeInsetsPropType","PointPropType","ReactPropTypes","StyleSheetPropType","ViewStylePropTypes","nativePropType"],function (e, t, n, r, i) {
     "use strict";
-    var EdgeInsetsPropType/*o*/ = require/*t*/("EdgeInsetsPropType"),
-        PointPropType/*a*/ = require/*t*/("PointPropType"),
-        ReactPropTypes/*s*/ = require/*t*/("ReactPropTypes"),
-        StyleSheetPropType/*l*/ = require/*t*/("StyleSheetPropType"),
-        ViewStylePropTypes/*u*/ = require/*t*/("ViewStylePropTypes"),
-        nativePropType/*c*/ = require/*t*/("nativePropType"),
+    var EdgeInsetsPropType/*o*/ = t("EdgeInsetsPropType"),
+        PointPropType/*a*/ = t("PointPropType"),
+        ReactPropTypes/*s*/ = t("ReactPropTypes"),
+        StyleSheetPropType/*l*/ = t("StyleSheetPropType"),
+        ViewStylePropTypes/*u*/ = t("ViewStylePropTypes"),
+        nativePropType/*c*/ = t("nativePropType"),
         p = {
             automaticallyAdjustContentInsets: nativePropType/*c*/(ReactPropTypes/*s*/.bool),
             contentInset: nativePropType/*c*/(EdgeInsetsPropType/*o*/),
@@ -19,5 +19,5 @@ __d("ScrollViewPropTypes",["EdgeInsetsPropType","PointPropType","ReactPropTypes"
             style: StyleSheetPropType/*l*/(ViewStylePropTypes/*u*/),
             throttleScrollCallbackMS: nativePropType/*c*/(ReactPropTypes/*s*/.number)
         };
-    module/*i*/.exports = p
+    i.exports = p
 });

@@ -1,11 +1,11 @@
-__d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","View"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        StyleSheet/*a*/ = require/*t*/("StyleSheet"),
-        Text/*s*/ = require/*t*/("Text"),
-        THColors/*l*/ = require/*t*/("THColors"),
-        TouchableBounce/*u*/ = require/*t*/("TouchableBounce"),
-        View/*c*/ = require/*t*/("View"),
+    var React/*o*/ = t("React"),
+        StyleSheet/*a*/ = t("StyleSheet"),
+        Text/*s*/ = t("Text"),
+        THColors/*l*/ = t("THColors"),
+        TouchableBounce/*u*/ = t("TouchableBounce"),
+        View/*c*/ = t("View"),
         p = React/*o*/.createClass({
             displayName: "THFeedButton",
             propTypes: {
@@ -14,16 +14,16 @@ __d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","Vi
                 text: React/*o*/.PropTypes.string
             },
             render: function() {
-                var global/*e*/ = this.props.isPositive ? d.positiveText : d.negativeText,
-                    require/*t*/ = this.props.isPositive ? THColors/*l*/.lightBlue : THColors/*l*/.buttonColor;
+                var e = this.props.isPositive ? d.positiveText : d.negativeText,
+                    t = this.props.isPositive ? THColors/*l*/.lightBlue : THColors/*l*/.buttonColor;
                 return React/*o*/.createElement(TouchableBounce/*u*/, {
                     onPress: this.props.onPress
                 }, React/*o*/.createElement(View/*c*/, {
                     style: [d.button, {
-                        backgroundColor: require/*t*/
+                        backgroundColor: t
                     }]
                 }, React/*o*/.createElement(Text/*s*/, {
-                    style: global/*e*/
+                    style: e
                 }, this.props.text)))
             }
         }),
@@ -45,5 +45,5 @@ __d("THFeedButton",["React","StyleSheet","Text","THColors","TouchableBounce","Vi
                 marginRight: 10
             }
         });
-    module/*i*/.exports = p
+    i.exports = p
 });

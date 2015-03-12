@@ -1,12 +1,12 @@
-__d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","StyleSheet","createReactIOSNativeComponentClass","invariant","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","StyleSheet","createReactIOSNativeComponentClass","invariant","fbt"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        a = (require/*t*/("ReactIOSViewAttributes"), require/*t*/("ReactChildren")),
-        Dimensions/*s*/ = require/*t*/("Dimensions"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        createReactIOSNativeComponentClass/*u*/ = require/*t*/("createReactIOSNativeComponentClass"),
-        invariant/*c*/ = require/*t*/("invariant"),
-        fbt/*p*/ = require/*t*/("fbt"),
+    var React/*o*/ = t("React"),
+        a = (t("ReactIOSViewAttributes"), t("ReactChildren")),
+        Dimensions/*s*/ = t("Dimensions"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        createReactIOSNativeComponentClass/*u*/ = t("createReactIOSNativeComponentClass"),
+        invariant/*c*/ = t("invariant"),
+        fbt/*p*/ = t("fbt"),
         d = fbt/*p*/({
             type: "text",
             texts: ["Back"],
@@ -15,10 +15,10 @@ __d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","St
         h = React/*o*/.createClass({
             displayName: "NavItem",
             render: function() {
-                var global/*e*/ = [];
-                return a.map(this.props.children, function(require/*t*/) {
-                    global/*e*/.push(require/*t*/), require/*t*/.props.navigator = this.props.navigator
-                }, this), 1 !== global/*e*/.length && invariant/*c*/(0, "Nav Item expects only one child"), React/*o*/.createElement(m, {
+                var e = [];
+                return a.map(this.props.children, function(t) {
+                    e.push(t), t.props.navigator = this.props.navigator
+                }, this), 1 !== e.length && invariant/*c*/(0, "Nav Item expects only one child"), React/*o*/.createElement(m, {
                     rightButtonTitle: this.props.rightButtonTitle,
                     backButtonTitle: d,
                     tintColor: this.props.tintColor,
@@ -26,7 +26,7 @@ __d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","St
                     titleTextColor: this.props.titleTextColor,
                     title: this.props.title,
                     style: [f.navItem, this.props.style]
-                }, global/*e*/)
+                }, e)
             }
         }),
         f = StyleSheet/*l*/.create({
@@ -49,5 +49,5 @@ __d("NavItem",["React","ReactIOSViewAttributes","ReactChildren","Dimensions","St
             },
             uiViewClassName: "RCTNavItem"
         });
-    module/*i*/.exports = h
+    i.exports = h
 });

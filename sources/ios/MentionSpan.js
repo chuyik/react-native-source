@@ -1,8 +1,8 @@
-__d("MentionSpan",["React","StyleSheet","Text"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("MentionSpan",["React","StyleSheet","Text"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        StyleSheet/*a*/ = require/*t*/("StyleSheet"),
-        Text/*s*/ = require/*t*/("Text"),
+    var React/*o*/ = t("React"),
+        StyleSheet/*a*/ = t("StyleSheet"),
+        Text/*s*/ = t("Text"),
         l = React/*o*/.createClass({
             displayName: "MentionSpan",
             render: function() {
@@ -16,5 +16,5 @@ __d("MentionSpan",["React","StyleSheet","Text"],function (global/*e*/, require/*
                 backgroundColor: "#ccddff"
             }
         });
-    module/*i*/.exports = l
+    i.exports = l
 });

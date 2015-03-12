@@ -1,13 +1,13 @@
-__d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDeprecated","fbt","ix","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDeprecated","fbt","ix","keyOf"],function (e, t, n, r, i) {
     "use strict";
-    var ActionRow/*o*/ = require/*t*/("ActionRow"),
-        Popover/*a*/ = require/*t*/("Popover"),
-        React/*s*/ = require/*t*/("React"),
-        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
-        NativeModulesDeprecated/*u*/ = require/*t*/("NativeModulesDeprecated").RKPasteboard,
-        fbt/*c*/ = require/*t*/("fbt"),
-        ix/*p*/ = require/*t*/("ix"),
-        keyOf/*d*/ = require/*t*/("keyOf"),
+    var ActionRow/*o*/ = t("ActionRow"),
+        Popover/*a*/ = t("Popover"),
+        React/*s*/ = t("React"),
+        ReactGraphQL/*l*/ = t("ReactGraphQL"),
+        NativeModulesDeprecated/*u*/ = t("NativeModulesDeprecated").RKPasteboard,
+        fbt/*c*/ = t("fbt"),
+        ix/*p*/ = t("ix"),
+        keyOf/*d*/ = t("keyOf"),
         h = keyOf/*d*/({
             popRef: null
         }),
@@ -21,14 +21,14 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
             mixins: [ReactGraphQL/*l*/.Mixin],
             statics: {
                 queries: {
-                    comment: function(global/*e*/, require/*t*/) {
+                    comment: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("CommentMenu_comment", "Comment", [new global/*e*/.Field("can_viewer_delete"), new global/*e*/.Field("can_viewer_edit"), new global/*e*/.Field("body", [new global/*e*/.Field("text")]), new global/*e*/.Field("attachments", [new global/*e*/.Field("url", null, null, [new global/*e*/.Callv("site", ["mobile"])]), new global/*e*/.Field("media", [new global/*e*/.Field("image", [new global/*e*/.Field("uri")], null, null, "image_menu")]), new global/*e*/.Field("style_list", null, null, null, null, null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("CommentMenu_comment", "Comment", [new e.Field("can_viewer_delete"), new e.Field("can_viewer_edit"), new e.Field("body", [new e.Field("text")]), new e.Field("attachments", [new e.Field("url", null, null, [new e.Callv("site", ["mobile"])]), new e.Field("media", [new e.Field("image", [new e.Field("uri")], null, null, "image_menu")]), new e.Field("style_list", null, null, null, null, null, {
                                 plural: !0
                             })], null, null, null, null, {
                                 plural: !0
-                            }), new global/*e*/.Field("id", null, null, null, null, null, {
+                            }), new e.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, {
@@ -42,8 +42,8 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                 this.refs[h].open()
             },
             copyLink: function() {
-                var global/*e*/ = this.props.comment;
-                NativeModulesDeprecated/*u*/.setPasteboardString(global/*e*/.url), this.refs[h].close()
+                var e = this.props.comment;
+                NativeModulesDeprecated/*u*/.setPasteboardString(e.url), this.refs[h].close()
             },
             openLink: function() {
                 this.state.openLink()
@@ -55,18 +55,18 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                 this.refs[h].close(this.props.onEdit)
             },
             copyComment: function() {
-                var global/*e*/ = this.props.comment,
-                    require/*t*/ = global/*e*/ && global/*e*/.attachments && global/*e*/.attachments[0],
-                    requireDynamic/*n*/ = require/*t*/ && require/*t*/.media && require/*t*/.media.image_menu && require/*t*/.media.image_menu.uri;
-                NativeModulesDeprecated/*u*/.setPasteboardString(global/*e*/.body && global/*e*/.body.text || require/*t*/ && require/*t*/.url || requireDynamic/*n*/), this.refs[h].close()
+                var e = this.props.comment,
+                    t = e && e.attachments && e.attachments[0],
+                    n = t && t.media && t.media.image_menu && t.media.image_menu.uri;
+                NativeModulesDeprecated/*u*/.setPasteboardString(e.body && e.body.text || t && t.url || n), this.refs[h].close()
             },
             renderContent: function() {
-                var global/*e*/ = [],
-                    require/*t*/ = this.props.comment,
-                    requireDynamic/*n*/ = require/*t*/ && require/*t*/.attachments && require/*t*/.attachments[0];
-                if (require/*t*/.can_viewer_edit && this.props.onEdit) {
-                    var requireLazy/*r*/ = requireDynamic/*n*/ && requireDynamic/*n*/.style_list && requireDynamic/*n*/.style_list[0];
-                    "sticker" !== requireLazy/*r*/ && (global/*e*/.push(React/*s*/.createElement(ActionRow/*o*/, {
+                var e = [],
+                    t = this.props.comment,
+                    n = t && t.attachments && t.attachments[0];
+                if (t.can_viewer_edit && this.props.onEdit) {
+                    var r = n && n.style_list && n.style_list[0];
+                    "sticker" !== r && (e.push(React/*s*/.createElement(ActionRow/*o*/, {
                         onPress: this.editComment,
                         iconSource: ix/*p*/("ActionSheetIconCompose"),
                         title: fbt/*c*/({
@@ -74,9 +74,9 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                             texts: ["Edit Comment"],
                             desc: "Button to edit comment"
                         })
-                    })), global/*e*/.push(Popover/*a*/.renderSeparator()))
+                    })), e.push(Popover/*a*/.renderSeparator()))
                 }
-                return require/*t*/.can_viewer_delete && this.props.onDelete && (global/*e*/.push(React/*s*/.createElement(ActionRow/*o*/, {
+                return t.can_viewer_delete && this.props.onDelete && (e.push(React/*s*/.createElement(ActionRow/*o*/, {
                     onPress: this.deleteComment,
                     iconSource: ix/*p*/("ActionSheetIconDelete"),
                     title: fbt/*c*/({
@@ -84,7 +84,7 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                         texts: ["Delete Comment"],
                         desc: "Button to delete comment"
                     })
-                })), global/*e*/.push(Popover/*a*/.renderSeparator())), global/*e*/.push(React/*s*/.createElement(ActionRow/*o*/, {
+                })), e.push(Popover/*a*/.renderSeparator())), e.push(React/*s*/.createElement(ActionRow/*o*/, {
                     key: "copyComment",
                     onPress: this.copyComment,
                     iconSource: ix/*p*/("ActionSheetIconCopy"),
@@ -93,7 +93,7 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                         texts: ["Copy Comment"],
                         desc: "Button to copy comment text to pasteboard"
                     })
-                })), global/*e*/
+                })), e
             },
             render: function() {
                 return React/*s*/.createElement(Popover/*a*/, {
@@ -102,5 +102,5 @@ __d("CommentMenu",["ActionRow","Popover","React","ReactGraphQL","NativeModulesDe
                 })
             }
         });
-    module/*i*/.exports = f
+    i.exports = f
 });

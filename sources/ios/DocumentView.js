@@ -1,13 +1,13 @@
-__d("DocumentView",["DocumentIterator","DocumentOffsetCache","UnicodeBidi","createArrayFrom","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
+__d("DocumentView",["DocumentIterator","DocumentOffsetCache","UnicodeBidi","createArrayFrom","emptyFunction"],function (e, t, n, r, i) {
+    function o(e, t) {
         "use strict";
-        this.$DocumentView_content = global/*e*/, this.$DocumentView_decorator = require/*t*/, this.$DocumentView_currentFingerprint = [], this.$DocumentView_iteratedVersion = null, this.$DocumentView_blockDirections = [], this.$DocumentView_iterator = new DocumentIterator/*a*/(this.$DocumentView_content, this.$DocumentView_decorator), this.$DocumentView_offsets = new DocumentOffsetCache/*s*/(this.$DocumentView_iterator)
+        this.$DocumentView_content = e, this.$DocumentView_decorator = t, this.$DocumentView_currentFingerprint = [], this.$DocumentView_iteratedVersion = null, this.$DocumentView_blockDirections = [], this.$DocumentView_iterator = new DocumentIterator/*a*/(this.$DocumentView_content, this.$DocumentView_decorator), this.$DocumentView_offsets = new DocumentOffsetCache/*s*/(this.$DocumentView_iterator)
     }
-    var DocumentIterator/*a*/ = require/*t*/("DocumentIterator"),
-        DocumentOffsetCache/*s*/ = require/*t*/("DocumentOffsetCache"),
-        UnicodeBidi/*l*/ = require/*t*/("UnicodeBidi"),
-        createArrayFrom/*u*/ = require/*t*/("createArrayFrom"),
-        emptyFunction/*c*/ = require/*t*/("emptyFunction");
+    var DocumentIterator/*a*/ = t("DocumentIterator"),
+        DocumentOffsetCache/*s*/ = t("DocumentOffsetCache"),
+        UnicodeBidi/*l*/ = t("UnicodeBidi"),
+        createArrayFrom/*u*/ = t("createArrayFrom"),
+        emptyFunction/*c*/ = t("emptyFunction");
     o.prototype.getContent = function() {
         "use strict";
         return this.$DocumentView_content
@@ -17,9 +17,9 @@ __d("DocumentView",["DocumentIterator","DocumentOffsetCache","UnicodeBidi","crea
     }, o.prototype.getEntities = function() {
         "use strict";
         return this.$DocumentView_content.getEntities()
-    }, o.prototype.getFragment = function(global/*e*/, require/*t*/) {
+    }, o.prototype.getFragment = function(e, t) {
         "use strict";
-        return this.$DocumentView_content.getFragment(global/*e*/, require/*t*/)
+        return this.$DocumentView_content.getFragment(e, t)
     }, o.prototype.getVersion = function() {
         "use strict";
         return this.$DocumentView_content.getVersion()
@@ -29,26 +29,26 @@ __d("DocumentView",["DocumentIterator","DocumentOffsetCache","UnicodeBidi","crea
     }, o.prototype.getFingerprint = function() {
         "use strict";
         return this.$DocumentView_fillCaches(), this.$DocumentView_currentFingerprint.join(":")
-    }, o.prototype.getOffset = function(global/*e*/) {
+    }, o.prototype.getOffset = function(e) {
         "use strict";
-        return this.$DocumentView_fillCaches(), this.$DocumentView_offsets.getOffset(global/*e*/)
-    }, o.prototype.getKey = function(global/*e*/) {
+        return this.$DocumentView_fillCaches(), this.$DocumentView_offsets.getOffset(e)
+    }, o.prototype.getKey = function(e) {
         "use strict";
-        return this.$DocumentView_fillCaches(), this.$DocumentView_offsets.getKey(global/*e*/)
-    }, o.prototype.iterate = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
+        return this.$DocumentView_fillCaches(), this.$DocumentView_offsets.getKey(e)
+    }, o.prototype.iterate = function(e, t, n) {
         "use strict";
 
-        function requireLazy/*r*/(require/*t*/, requireDynamic/*n*/) {
-            DocumentIterator/*a*/.nextBlock(require/*t*/), p(require/*t*/, requireDynamic/*n*/), global/*e*/(DocumentIterator/*a*/.getCurrentKey(), require/*t*/, requireDynamic/*n*/, createArrayFrom/*u*/[UnicodeBidi/*l*/++])
+        function r(t, n) {
+            DocumentIterator/*a*/.nextBlock(t), p(t, n), e(DocumentIterator/*a*/.getCurrentKey(), t, n, createArrayFrom/*u*/[UnicodeBidi/*l*/++])
         }
 
-        function module/*i*/(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            var module/*i*/ = null;
-            DocumentIterator/*a*/.nextDecoration(global/*e*/), null !== requireLazy/*r*/ && (emptyFunction/*c*/("D", requireLazy/*r*/, requireDynamic/*n*/ - global/*e*/), module/*i*/ = DocumentOffsetCache/*s*/.getComponentForKey(requireLazy/*r*/)), require/*t*/(DocumentIterator/*a*/.getCurrentKey(), global/*e*/, requireDynamic/*n*/, module/*i*/)
+        function i(e, n, r) {
+            var i = null;
+            DocumentIterator/*a*/.nextDecoration(e), null !== r && (emptyFunction/*c*/("D", r, n - e), i = DocumentOffsetCache/*s*/.getComponentForKey(r)), t(DocumentIterator/*a*/.getCurrentKey(), e, n, i)
         }
 
-        function o(global/*e*/, require/*t*/, requireLazy/*r*/) {
-            DocumentIterator/*a*/.nextLeaf(global/*e*/), emptyFunction/*c*/("L", requireLazy/*r*/), requireDynamic/*n*/(DocumentIterator/*a*/.getCurrentKey(), global/*e*/, require/*t*/, requireLazy/*r*/)
+        function o(e, t, r) {
+            DocumentIterator/*a*/.nextLeaf(e), emptyFunction/*c*/("L", r), n(DocumentIterator/*a*/.getCurrentKey(), e, t, r)
         }
         this.$DocumentView_iteratedVersion = this.getVersion(), this.$DocumentView_currentFingerprint.length = 0, this.$DocumentView_blockDirections.length = 0, this.$DocumentView_offsets.reset();
         var DocumentIterator/*a*/ = this.$DocumentView_offsets,
@@ -57,18 +57,18 @@ __d("DocumentView",["DocumentIterator","DocumentOffsetCache","UnicodeBidi","crea
             createArrayFrom/*u*/ = this.$DocumentView_content.getBlockStyles(),
             emptyFunction/*c*/ = this.$DocumentView_recordFingerprint.bind(this),
             p = this.$DocumentView_recordBlockDirection.bind(this);
-        this.$DocumentView_iterator.process(requireLazy/*r*/, module/*i*/, o)
+        this.$DocumentView_iterator.process(r, i, o)
     }, o.prototype.$DocumentView_fillCaches = function() {
         "use strict";
         this.$DocumentView_iteratedVersion !== this.getVersion() && this.iterate(emptyFunction/*c*/, emptyFunction/*c*/, emptyFunction/*c*/)
     }, o.prototype.$DocumentView_recordFingerprint = function() {
         "use strict";
         this.$DocumentView_currentFingerprint.push(createArrayFrom/*u*/(arguments).join("-"))
-    }, o.prototype.$DocumentView_recordBlockDirection = function(global/*e*/, require/*t*/) {
+    }, o.prototype.$DocumentView_recordBlockDirection = function(e, t) {
         "use strict";
-        var requireDynamic/*n*/ = this.$DocumentView_content.getText().slice(global/*e*/, require/*t*/),
-            requireLazy/*r*/ = this.$DocumentView_blockDirections,
-            module/*i*/ = UnicodeBidi/*l*/.getDirection(requireDynamic/*n*/, requireLazy/*r*/[requireLazy/*r*/.length - 1]);
-        this.$DocumentView_blockDirections.push(module/*i*/)
-    }, module/*i*/.exports = o
+        var n = this.$DocumentView_content.getText().slice(e, t),
+            r = this.$DocumentView_blockDirections,
+            i = UnicodeBidi/*l*/.getDirection(n, r[r.length - 1]);
+        this.$DocumentView_blockDirections.push(i)
+    }, i.exports = o
 });

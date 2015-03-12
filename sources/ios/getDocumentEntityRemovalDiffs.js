@@ -1,37 +1,37 @@
-__d("getDocumentEntityRemovalDiffs",["DocumentEntity","ComposedEntityMutability","checkRangeOverlap","fillArray","getRangesForDocumentEntity"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-        var module/*i*/ = DocumentEntity/*s*/.get(require/*t*/),
-            o = getRangesForDocumentEntity/*p*/(global/*e*/, require/*t*/),
-            ComposedEntityMutability/*l*/ = module/*i*/.getMutability();
-        return o = o.filter(function(global/*e*/) {
-            return checkRangeOverlap/*u*/(requireDynamic/*n*/, requireLazy/*r*/, global/*e*/.start, global/*e*/.end)
-        }), o.map(ComposedEntityMutability/*l*/ === d ? function(require/*t*/) {
-            return a(global/*e*/, Math.max(require/*t*/.start, requireDynamic/*n*/), Math.min(require/*t*/.end, requireLazy/*r*/))
-        } : function(require/*t*/) {
-            return a(global/*e*/, require/*t*/.start, require/*t*/.end)
+__d("getDocumentEntityRemovalDiffs",["DocumentEntity","ComposedEntityMutability","checkRangeOverlap","fillArray","getRangesForDocumentEntity"],function (e, t, n, r, i) {
+    function o(e, t, n, r) {
+        var i = DocumentEntity/*s*/.get(t),
+            o = getRangesForDocumentEntity/*p*/(e, t),
+            ComposedEntityMutability/*l*/ = i.getMutability();
+        return o = o.filter(function(e) {
+            return checkRangeOverlap/*u*/(n, r, e.start, e.end)
+        }), o.map(ComposedEntityMutability/*l*/ === d ? function(t) {
+            return a(e, Math.max(t.start, n), Math.min(t.end, r))
+        } : function(t) {
+            return a(e, t.start, t.end)
         })
     }
 
-    function a(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = global/*e*/.getEntities().slice(require/*t*/, requireDynamic/*n*/);
+    function a(e, t, n) {
+        var r = e.getEntities().slice(t, n);
         return {
             from: {
-                entities: requireLazy/*r*/,
-                start: require/*t*/,
-                end: requireDynamic/*n*/
+                entities: r,
+                start: t,
+                end: n
             },
             to: {
-                entities: fillArray/*c*/(requireLazy/*r*/.length, null),
-                start: require/*t*/,
-                end: requireDynamic/*n*/
+                entities: fillArray/*c*/(r.length, null),
+                start: t,
+                end: n
             }
         }
     }
-    var DocumentEntity/*s*/ = require/*t*/("DocumentEntity"),
-        ComposedEntityMutability/*l*/ = require/*t*/("ComposedEntityMutability"),
-        checkRangeOverlap/*u*/ = require/*t*/("checkRangeOverlap"),
-        fillArray/*c*/ = require/*t*/("fillArray"),
-        getRangesForDocumentEntity/*p*/ = require/*t*/("getRangesForDocumentEntity"),
+    var DocumentEntity/*s*/ = t("DocumentEntity"),
+        ComposedEntityMutability/*l*/ = t("ComposedEntityMutability"),
+        checkRangeOverlap/*u*/ = t("checkRangeOverlap"),
+        fillArray/*c*/ = t("fillArray"),
+        getRangesForDocumentEntity/*p*/ = t("getRangesForDocumentEntity"),
         d = ComposedEntityMutability/*l*/.MUTABLE;
-    module/*i*/.exports = o
+    i.exports = o
 });

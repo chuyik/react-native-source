@@ -1,15 +1,15 @@
-__d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRegistry","ReactEventEmitterMixin","ViewportMetrics","isEventSupported"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRegistry","ReactEventEmitterMixin","ViewportMetrics","isEventSupported"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return Object.prototype.hasOwnProperty.call(global/*e*/, g) || (global/*e*/[g] = f++, d[global/*e*/[g]] = {}), d[global/*e*/[g]]
+    function o(e) {
+        return Object.prototype.hasOwnProperty.call(e, g) || (e[g] = f++, d[e[g]] = {}), d[e[g]]
     }
-    var EventConstants/*a*/ = require/*t*/("EventConstants"),
-        EventPluginHub/*s*/ = require/*t*/("EventPluginHub"),
-        EventPluginRegistry/*l*/ = require/*t*/("EventPluginRegistry"),
-        ReactEventEmitterMixin/*u*/ = require/*t*/("ReactEventEmitterMixin"),
-        ViewportMetrics/*c*/ = require/*t*/("ViewportMetrics"),
-        isEventSupported/*p*/ = require/*t*/("isEventSupported"),
+    var EventConstants/*a*/ = t("EventConstants"),
+        EventPluginHub/*s*/ = t("EventPluginHub"),
+        EventPluginRegistry/*l*/ = t("EventPluginRegistry"),
+        ReactEventEmitterMixin/*u*/ = t("ReactEventEmitterMixin"),
+        ViewportMetrics/*c*/ = t("ViewportMetrics"),
+        isEventSupported/*p*/ = t("isEventSupported"),
         d = {},
         h = !1,
         f = 0,
@@ -56,32 +56,32 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
         _ = Object.assign({}, ReactEventEmitterMixin/*u*/, {
             ReactEventListener: null,
             injection: {
-                injectReactEventListener: function(global/*e*/) {
-                    global/*e*/.setHandleTopLevel(_.handleTopLevel), _.ReactEventListener = global/*e*/
+                injectReactEventListener: function(e) {
+                    e.setHandleTopLevel(_.handleTopLevel), _.ReactEventListener = e
                 }
             },
-            setEnabled: function(global/*e*/) {
-                _.ReactEventListener && _.ReactEventListener.setEnabled(global/*e*/)
+            setEnabled: function(e) {
+                _.ReactEventListener && _.ReactEventListener.setEnabled(e)
             },
             isEnabled: function() {
                 return !(!_.ReactEventListener || !_.ReactEventListener.isEnabled())
             },
-            listenTo: function(global/*e*/, require/*t*/) {
-                for (var requireDynamic/*n*/ = require/*t*/, requireLazy/*r*/ = o(requireDynamic/*n*/), module/*i*/ = EventPluginRegistry/*l*/.registrationNameDependencies[global/*e*/], EventPluginHub/*s*/ = EventConstants/*a*/.topLevelTypes, ReactEventEmitterMixin/*u*/ = 0, ViewportMetrics/*c*/ = module/*i*/.length; ViewportMetrics/*c*/ > ReactEventEmitterMixin/*u*/; ReactEventEmitterMixin/*u*/++) {
-                    var d = module/*i*/[ReactEventEmitterMixin/*u*/];
-                    requireLazy/*r*/.hasOwnProperty(d) && requireLazy/*r*/[d] || (d === EventPluginHub/*s*/.topWheel ? isEventSupported/*p*/("wheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "wheel", requireDynamic/*n*/) : isEventSupported/*p*/("mousewheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "mousewheel", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "DOMMouseScroll", requireDynamic/*n*/) : d === EventPluginHub/*s*/.topScroll ? isEventSupported/*p*/("scroll", !0) ? _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topScroll, "scroll", requireDynamic/*n*/) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topScroll, "scroll", _.ReactEventListener.WINDOW_HANDLE) : d === EventPluginHub/*s*/.topFocus || d === EventPluginHub/*s*/.topBlur ? (isEventSupported/*p*/("focus", !0) ? (_.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topFocus, "focus", requireDynamic/*n*/), _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topBlur, "blur", requireDynamic/*n*/)) : isEventSupported/*p*/("focusin") && (_.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topFocus, "focusin", requireDynamic/*n*/), _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topBlur, "focusout", requireDynamic/*n*/)), requireLazy/*r*/[EventPluginHub/*s*/.topBlur] = !0, requireLazy/*r*/[EventPluginHub/*s*/.topFocus] = !0) : m.hasOwnProperty(d) && _.ReactEventListener.trapBubbledEvent(d, m[d], requireDynamic/*n*/), requireLazy/*r*/[d] = !0)
+            listenTo: function(e, t) {
+                for (var n = t, r = o(n), i = EventPluginRegistry/*l*/.registrationNameDependencies[e], EventPluginHub/*s*/ = EventConstants/*a*/.topLevelTypes, ReactEventEmitterMixin/*u*/ = 0, ViewportMetrics/*c*/ = i.length; ViewportMetrics/*c*/ > ReactEventEmitterMixin/*u*/; ReactEventEmitterMixin/*u*/++) {
+                    var d = i[ReactEventEmitterMixin/*u*/];
+                    r.hasOwnProperty(d) && r[d] || (d === EventPluginHub/*s*/.topWheel ? isEventSupported/*p*/("wheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "wheel", n) : isEventSupported/*p*/("mousewheel") ? _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "mousewheel", n) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topWheel, "DOMMouseScroll", n) : d === EventPluginHub/*s*/.topScroll ? isEventSupported/*p*/("scroll", !0) ? _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topScroll, "scroll", n) : _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topScroll, "scroll", _.ReactEventListener.WINDOW_HANDLE) : d === EventPluginHub/*s*/.topFocus || d === EventPluginHub/*s*/.topBlur ? (isEventSupported/*p*/("focus", !0) ? (_.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topFocus, "focus", n), _.ReactEventListener.trapCapturedEvent(EventPluginHub/*s*/.topBlur, "blur", n)) : isEventSupported/*p*/("focusin") && (_.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topFocus, "focusin", n), _.ReactEventListener.trapBubbledEvent(EventPluginHub/*s*/.topBlur, "focusout", n)), r[EventPluginHub/*s*/.topBlur] = !0, r[EventPluginHub/*s*/.topFocus] = !0) : m.hasOwnProperty(d) && _.ReactEventListener.trapBubbledEvent(d, m[d], n), r[d] = !0)
                 }
             },
-            trapBubbledEvent: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                return _.ReactEventListener.trapBubbledEvent(global/*e*/, require/*t*/, requireDynamic/*n*/)
+            trapBubbledEvent: function(e, t, n) {
+                return _.ReactEventListener.trapBubbledEvent(e, t, n)
             },
-            trapCapturedEvent: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                return _.ReactEventListener.trapCapturedEvent(global/*e*/, require/*t*/, requireDynamic/*n*/)
+            trapCapturedEvent: function(e, t, n) {
+                return _.ReactEventListener.trapCapturedEvent(e, t, n)
             },
             ensureScrollValueMonitoring: function() {
                 if (!h) {
-                    var global/*e*/ = ViewportMetrics/*c*/.refreshScrollValues;
-                    _.ReactEventListener.monitorScrollValue(global/*e*/), h = !0
+                    var e = ViewportMetrics/*c*/.refreshScrollValues;
+                    _.ReactEventListener.monitorScrollValue(e), h = !0
                 }
             },
             eventNameDispatchConfigs: EventPluginHub/*s*/.eventNameDispatchConfigs,
@@ -91,5 +91,5 @@ __d("ReactBrowserEventEmitter",["EventConstants","EventPluginHub","EventPluginRe
             deleteListener: EventPluginHub/*s*/.deleteListener,
             deleteAllListeners: EventPluginHub/*s*/.deleteAllListeners
         });
-    module/*i*/.exports = _
+    i.exports = _
 });

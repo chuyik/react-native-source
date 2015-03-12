@@ -1,20 +1,20 @@
-__d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView","LayoutAnimation","React","NativeModules","StyleSheet","THAnimations","THColors","THDockedInputContainer","THInputBarView","View","cloneWithProps","logError","keyOf"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView","LayoutAnimation","React","NativeModules","StyleSheet","THAnimations","THColors","THDockedInputContainer","THInputBarView","View","cloneWithProps","logError","keyOf"],function (e, t, n, r, i) {
     "use strict";
-    var Dimensions/*o*/ = require/*t*/("Dimensions"),
-        DocumentContent/*a*/ = require/*t*/("DocumentContent"),
-        DockedInputView/*s*/ = require/*t*/("DockedInputView"),
-        LayoutAnimation/*l*/ = require/*t*/("LayoutAnimation"),
-        React/*u*/ = require/*t*/("React"),
-        NativeModules/*c*/ = require/*t*/("NativeModules").RKUIManager,
-        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
-        THAnimations/*d*/ = require/*t*/("THAnimations"),
-        THColors/*h*/ = require/*t*/("THColors"),
-        THDockedInputContainer/*f*/ = require/*t*/("THDockedInputContainer"),
-        THInputBarView/*m*/ = require/*t*/("THInputBarView"),
-        View/*g*/ = require/*t*/("View"),
-        cloneWithProps/*_*/ = require/*t*/("cloneWithProps"),
-        logError/*y*/ = require/*t*/("logError"),
-        keyOf/*v*/ = require/*t*/("keyOf"),
+    var Dimensions/*o*/ = t("Dimensions"),
+        DocumentContent/*a*/ = t("DocumentContent"),
+        DockedInputView/*s*/ = t("DockedInputView"),
+        LayoutAnimation/*l*/ = t("LayoutAnimation"),
+        React/*u*/ = t("React"),
+        NativeModules/*c*/ = t("NativeModules").RKUIManager,
+        StyleSheet/*p*/ = t("StyleSheet"),
+        THAnimations/*d*/ = t("THAnimations"),
+        THColors/*h*/ = t("THColors"),
+        THDockedInputContainer/*f*/ = t("THDockedInputContainer"),
+        THInputBarView/*m*/ = t("THInputBarView"),
+        View/*g*/ = t("View"),
+        cloneWithProps/*_*/ = t("cloneWithProps"),
+        logError/*y*/ = t("logError"),
+        keyOf/*v*/ = t("keyOf"),
         S = keyOf/*v*/({
             inputBar: null
         }),
@@ -41,24 +41,24 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                 }
             },
             getInitialState: function() {
-                var global/*e*/ = this.props.dockParams;
+                var e = this.props.dockParams;
                 return {
-                    getCommentHandle: global/*e*/ && global/*e*/.getTappedNodeHandle,
+                    getCommentHandle: e && e.getTappedNodeHandle,
                     keyboardHeight: 0,
                     permalinkHeight: Dimensions/*o*/.get("window").height,
-                    photoSource: global/*e*/ && global/*e*/.photoSource,
-                    text: global/*e*/ && global/*e*/.initialText
+                    photoSource: e && e.photoSource,
+                    text: e && e.initialText
                 }
             },
             focusInput: function() {
                 this.refs[S].focusInput()
             },
-            componentWillReceiveProps: function(global/*e*/) {
+            componentWillReceiveProps: function(e) {
                 this.setState({
-                    getCommentHandle: global/*e*/.dockParams && global/*e*/.dockParams.getTappedNodeHandle,
-                    photoSource: global/*e*/.dockParams && global/*e*/.dockParams.photoSource,
-                    text: global/*e*/.dockParams && global/*e*/.dockParams.initialText
-                }), global/*e*/.isEditing && this.focusInput()
+                    getCommentHandle: e.dockParams && e.dockParams.getTappedNodeHandle,
+                    photoSource: e.dockParams && e.dockParams.photoSource,
+                    text: e.dockParams && e.dockParams.initialText
+                }), e.isEditing && this.focusInput()
             },
             resetInputBar: function() {
                 this.setState({
@@ -67,17 +67,17 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                     text: null
                 })
             },
-            scrollDockedInputBarToOffset: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                var module/*i*/ = requireLazy/*r*/,
+            scrollDockedInputBarToOffset: function(e, t, n, r) {
+                var i = r,
                     Dimensions/*o*/ = this.state.getCommentHandle && this.state.getCommentHandle();
-                Dimensions/*o*/ ? NativeModules/*c*/.measureLayout(Dimensions/*o*/, this.refs[b].getNodeHandle(), logError/*y*/, function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                    var Dimensions/*o*/ = module/*i*/ - require/*t*/ - requireLazy/*r*/,
-                        DocumentContent/*a*/ = module/*i*/ - Dimensions/*o*/ - this.state.permalinkHeight;
+                Dimensions/*o*/ ? NativeModules/*c*/.measureLayout(Dimensions/*o*/, this.refs[b].getNodeHandle(), logError/*y*/, function(e, t, n, r) {
+                    var Dimensions/*o*/ = i - t - r,
+                        DocumentContent/*a*/ = i - Dimensions/*o*/ - this.state.permalinkHeight;
                     this.refs[b].scrollResponderScrollTo(0, DocumentContent/*a*/ + this.refs[S].getBarHeight())
-                }.bind(this)) : this.refs[b].scrollResponderScrollTo(0, module/*i*/ - this.state.permalinkHeight + this.refs[S].getBarHeight())
+                }.bind(this)) : this.refs[b].scrollResponderScrollTo(0, i - this.state.permalinkHeight + this.refs[S].getBarHeight())
             },
-            handleKeyboardWillShow: function(global/*e*/) {
-                this.state.keyboardHeight = global/*e*/.endCoordinates.height
+            handleKeyboardWillShow: function(e) {
+                this.state.keyboardHeight = e.endCoordinates.height
             },
             handleKeyboardDidShow: function() {
                 this.setState({
@@ -91,8 +91,8 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                     permalinkHeight: Dimensions/*o*/.get("window").height
                 })
             },
-            handleCommentSubmit: function(global/*e*/, require/*t*/) {
-                this.props.isEditing ? this.props.onCommentEditSubmit && this.props.onCommentEditSubmit(global/*e*/) : this.props.onCommentSubmit && this.props.onCommentSubmit(global/*e*/, require/*t*/), this.resetInputBar()
+            handleCommentSubmit: function(e, t) {
+                this.props.isEditing ? this.props.onCommentEditSubmit && this.props.onCommentEditSubmit(e) : this.props.onCommentSubmit && this.props.onCommentSubmit(e, t), this.resetInputBar()
             },
             handleCommentAbort: function() {
                 this.props.isEditing && (this.props.onCommentEditAbort && this.props.onCommentEditAbort({
@@ -101,18 +101,18 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                     text: this.state.text
                 }), this.resetInputBar()), this.refs[S].blurInput()
             },
-            handlePhotoChange: function(global/*e*/) {
+            handlePhotoChange: function(e) {
                 this.setState({
-                    photoSource: global/*e*/
+                    photoSource: e
                 })
             },
-            handleTextChange: function(global/*e*/) {
+            handleTextChange: function(e) {
                 LayoutAnimation/*l*/.configureNext(THAnimations/*d*/.layout.inputButtons), this.setState({
-                    text: global/*e*/
+                    text: e
                 })
             },
             render: function() {
-                var global/*e*/ = cloneWithProps/*_*/(this.props.scrollResponder, {
+                var e = cloneWithProps/*_*/(this.props.scrollResponder, {
                         ref: b,
                         onKeyboardWillShow: this.handleKeyboardWillShow,
                         onKeyboardDidShow: this.handleKeyboardDidShow,
@@ -120,12 +120,12 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                         onKeyboardDidHide: this.handleKeyboardDidHide,
                         onScrollResponderKeyboardDismissed: this.handleCommentAbort
                     }),
-                    require/*t*/ = [w.container, {
+                    t = [w.container, {
                         height: this.state.permalinkHeight
                     }];
                 return React/*u*/.createElement(View/*g*/, {
-                    style: require/*t*/
-                }, global/*e*/, React/*u*/.createElement(DockedInputView/*s*/, null, React/*u*/.createElement(THInputBarView/*m*/, {
+                    style: t
+                }, e, React/*u*/.createElement(DockedInputView/*s*/, null, React/*u*/.createElement(THInputBarView/*m*/, {
                     ref: S,
                     canCommentTrue: !0,
                     canCommentInline: !0,
@@ -147,5 +147,5 @@ __d("THPermalinkInputBarView",["Dimensions","DocumentContent","DockedInputView",
                 backgroundColor: THColors/*h*/.backgroundColor
             }
         });
-    module/*i*/.exports = R
+    i.exports = R
 });

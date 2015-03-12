@@ -1,15 +1,15 @@
-__d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","ReactGraphQL","StyleSheet","THColors","THFeedUnitView","THGroupView","THViewConstants","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","ReactGraphQL","StyleSheet","THColors","THFeedUnitView","THGroupView","THViewConstants","View"],function (e, t, n, r, i) {
     "use strict";
-    var Dimensions/*o*/ = require/*t*/("Dimensions"),
-        GraphQLConnectionView/*a*/ = require/*t*/("GraphQLConnectionView"),
-        React/*s*/ = require/*t*/("React"),
-        ReactGraphQL/*l*/ = require/*t*/("ReactGraphQL"),
-        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
-        THColors/*c*/ = require/*t*/("THColors"),
-        THFeedUnitView/*p*/ = require/*t*/("THFeedUnitView"),
-        THGroupView/*d*/ = require/*t*/("THGroupView"),
-        THViewConstants/*h*/ = require/*t*/("THViewConstants"),
-        View/*f*/ = require/*t*/("View"),
+    var Dimensions/*o*/ = t("Dimensions"),
+        GraphQLConnectionView/*a*/ = t("GraphQLConnectionView"),
+        React/*s*/ = t("React"),
+        ReactGraphQL/*l*/ = t("ReactGraphQL"),
+        StyleSheet/*u*/ = t("StyleSheet"),
+        THColors/*c*/ = t("THColors"),
+        THFeedUnitView/*p*/ = t("THFeedUnitView"),
+        THGroupView/*d*/ = t("THGroupView"),
+        THViewConstants/*h*/ = t("THViewConstants"),
+        View/*f*/ = t("View"),
         m = -65,
         g = React/*s*/.createClass({
             displayName: "THGroupPostSearchView",
@@ -19,46 +19,46 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                     count: 5
                 },
                 queries: {
-                    postsQuery: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                        return function(global/*e*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                            var module/*i*/ = require/*t*/.__GraphQL;
-                            return new module/*i*/.QueryFragment("THGroupPostSearchView_postsQuery", "GraphSearchQuery", [new module/*i*/.Field("results", [new module/*i*/.Field("edges", [new module/*i*/.Field("node", [new module/*i*/.Field("id", null, null, null, null, null, {
+                    postsQuery: function(e, t, n) {
+                        return function(e, n, r) {
+                            var i = t.__GraphQL;
+                            return new i.QueryFragment("THGroupPostSearchView_postsQuery", "GraphSearchQuery", [new i.Field("results", [new i.Field("edges", [new i.Field("node", [new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(requireDynamic/*n*/)], null, null, null, {
+                            })], [t.__frag(n)], null, null, null, {
                                 rootCall: "node",
                                 pk: "id",
                                 requisite: !0
-                            }), new module/*i*/.Field("cursor", null, null, null, null, null, {
+                            }), new i.Field("cursor", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "THGroupPostSearchView_postsQuery_1"
-                            }), new module/*i*/.Field("page_info", [new module/*i*/.Field("has_next_page", null, null, null, null, null, {
+                            }), new i.Field("page_info", [new i.Field("has_next_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            }), new module/*i*/.Field("has_previous_page", null, null, null, null, null, {
+                            }), new i.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], [require/*t*/.__frag(requireLazy/*r*/)], [new module/*i*/.Callv("first", [require/*t*/.__var(global/*e*/)])], null, null, {
+                            })], [t.__frag(r)], [new i.Callv("first", [t.__var(e)])], null, null, {
                                 connection: !0,
                                 nonFindable: !0
-                            }), new module/*i*/.Field("id", null, null, null, null, null, {
+                            }), new i.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, {
                                 scope: "THGroupPostSearchView_postsQuery"
                             })
-                        }(requireDynamic/*n*/.count, THFeedUnitView/*p*/.getQuery("story"), GraphQLConnectionView/*a*/.getQuery("connection"))
+                        }(n.count, THFeedUnitView/*p*/.getQuery("story"), GraphQLConnectionView/*a*/.getQuery("connection"))
                     },
-                    viewer: function(global/*e*/, require/*t*/) {
+                    viewer: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("THGroupPostSearchView_viewer", "Viewer", [new global/*e*/.Field("actor", [new global/*e*/.Field("id", null, null, null, null, null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("THGroupPostSearchView_viewer", "Viewer", [new e.Field("actor", [new e.Field("id", null, null, null, null, null, {
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
@@ -70,18 +70,18 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                     }
                 }
             },
-            nodeViewFactory: function(global/*e*/, require/*t*/) {
+            nodeViewFactory: function(e, t) {
                 return React/*s*/.createElement(View/*f*/, {
                     style: _.feedStory
                 }, React/*s*/.createElement(THFeedUnitView/*p*/, {
-                    story: global/*e*/,
-                    navigator: require/*t*/,
+                    story: e,
+                    navigator: t,
                     viewContext: THViewConstants/*h*/.SEARCH
                 }))
             },
-            updateQueryCount: function(global/*e*/) {
+            updateQueryCount: function(e) {
                 this.setQueryParams({
-                    count: global/*e*/
+                    count: e
                 })
             },
             getLoadingView: function() {
@@ -90,10 +90,10 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                 }, THGroupView/*d*/.getFakeStoryView())
             },
             render: function() {
-                var global/*e*/ = this.props.postsQuery && this.props.postsQuery.results ? this.props.postsQuery.results : {};
+                var e = this.props.postsQuery && this.props.postsQuery.results ? this.props.postsQuery.results : {};
                 return React/*s*/.createElement(GraphQLConnectionView/*a*/, {
                     nodeViewFactory: this.nodeViewFactory,
-                    connection: global/*e*/,
+                    connection: e,
                     navigator: {},
                     onUpdateQueryCount: this.updateQueryCount,
                     style: _.stream,
@@ -118,5 +118,5 @@ __d("THGroupPostSearchView",["Dimensions","GraphQLConnectionView","React","React
                 width: Dimensions/*o*/.get("window").width
             }
         });
-    module/*i*/.exports = g
+    i.exports = g
 });

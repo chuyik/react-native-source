@@ -1,5 +1,5 @@
-__d("emptyObject",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("emptyObject",[],function (e, t, n, r, i) {
     "use strict";
     var o = {};
-    __DEV__ && Object.freeze(o), module/*i*/.exports = o
+    __DEV__ && Object.freeze(o), i.exports = o
 });

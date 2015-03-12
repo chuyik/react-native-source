@@ -1,9 +1,9 @@
-__d("ReactErrorUtils",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ReactErrorUtils",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
-        guard: function(global/*e*/) {
-            return global/*e*/
+        guard: function(e) {
+            return e
         }
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

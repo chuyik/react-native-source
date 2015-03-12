@@ -1,11 +1,11 @@
-__d("filterObject",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("filterObject",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        if (!global/*e*/) return null;
-        var requireLazy/*r*/ = {};
-        for (var module/*i*/ in global/*e*/) global/*e*/.hasOwnProperty(module/*i*/) && require/*t*/.call(requireDynamic/*n*/, global/*e*/[module/*i*/], module/*i*/) && (requireLazy/*r*/[module/*i*/] = global/*e*/[module/*i*/]);
-        return requireLazy/*r*/
+    function o(e, t, n) {
+        if (!e) return null;
+        var r = {};
+        for (var i in e) e.hasOwnProperty(i) && t.call(n, e[i], i) && (r[i] = e[i]);
+        return r
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

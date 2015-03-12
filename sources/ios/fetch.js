@@ -1,54 +1,54 @@
-__d("fetch",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("fetch",[],function (e, t, n, r, i) {
     "use strict";
     var o = {};
     ! function() {
-        function global/*e*/(require/*t*/) {
+        function e(t) {
             this.map = {};
-            var requireDynamic/*n*/ = this;
-            require/*t*/ instanceof global/*e*/ ? require/*t*/.forEach(function(global/*e*/, require/*t*/) {
-                require/*t*/.forEach(function(require/*t*/) {
-                    requireDynamic/*n*/.append(global/*e*/, require/*t*/)
+            var n = this;
+            t instanceof e ? t.forEach(function(e, t) {
+                t.forEach(function(t) {
+                    n.append(e, t)
                 })
-            }) : require/*t*/ && Object.getOwnPropertyNames(require/*t*/).forEach(function(global/*e*/) {
-                requireDynamic/*n*/.append(global/*e*/, require/*t*/[global/*e*/])
+            }) : t && Object.getOwnPropertyNames(t).forEach(function(e) {
+                n.append(e, t[e])
             })
         }
 
-        function require/*t*/(global/*e*/) {
-            return global/*e*/.bodyUsed ? Promise.reject(new TypeError("Already read")) : void(global/*e*/.bodyUsed = !0)
+        function t(e) {
+            return e.bodyUsed ? Promise.reject(new TypeError("Already read")) : void(e.bodyUsed = !0)
         }
 
-        function requireDynamic/*n*/(global/*e*/) {
-            return new Promise(function(require/*t*/, requireDynamic/*n*/) {
-                global/*e*/.onload = function() {
-                    require/*t*/(global/*e*/.result)
-                }, global/*e*/.onerror = function() {
-                    requireDynamic/*n*/(global/*e*/.error)
+        function n(e) {
+            return new Promise(function(t, n) {
+                e.onload = function() {
+                    t(e.result)
+                }, e.onerror = function() {
+                    n(e.error)
                 }
             })
         }
 
-        function requireLazy/*r*/(global/*e*/) {
-            var require/*t*/ = new FileReader;
-            return require/*t*/.readAsArrayBuffer(global/*e*/), requireDynamic/*n*/(require/*t*/)
+        function r(e) {
+            var t = new FileReader;
+            return t.readAsArrayBuffer(e), n(t)
         }
 
-        function module/*i*/(global/*e*/) {
-            var require/*t*/ = new FileReader;
-            return require/*t*/.readAsText(global/*e*/), requireDynamic/*n*/(require/*t*/)
+        function i(e) {
+            var t = new FileReader;
+            return t.readAsText(e), n(t)
         }
 
         function a() {
             return this.bodyUsed = !1, d ? (this.blob = function() {
-                var global/*e*/ = require/*t*/(this);
-                return global/*e*/ ? global/*e*/ : Promise.resolve(this._bodyBlob)
+                var e = t(this);
+                return e ? e : Promise.resolve(this._bodyBlob)
             }, this.arrayBuffer = function() {
-                return this.blob().then(requireLazy/*r*/)
+                return this.blob().then(r)
             }, this.text = function() {
-                return this.blob().then(module/*i*/)
+                return this.blob().then(i)
             }) : this.text = function() {
-                var global/*e*/ = require/*t*/(this);
-                return global/*e*/ ? global/*e*/ : Promise.resolve(this._bodyText)
+                var e = t(this);
+                return e ? e : Promise.resolve(this._bodyText)
             }, "FormData" in o && (this.formData = function() {
                 return this.text().then(u)
             }), this.json = function() {
@@ -56,100 +56,100 @@ __d("fetch",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, require
             }, this
         }
 
-        function s(global/*e*/) {
-            var require/*t*/ = global/*e*/.toUpperCase();
-            return h.indexOf(require/*t*/) > -1 ? require/*t*/ : global/*e*/
+        function s(e) {
+            var t = e.toUpperCase();
+            return h.indexOf(t) > -1 ? t : e
         }
 
-        function l(require/*t*/, requireDynamic/*n*/) {
-            requireDynamic/*n*/ = requireDynamic/*n*/ || {}, this.url = require/*t*/, this._body = requireDynamic/*n*/.body, this.credentials = requireDynamic/*n*/.credentials || "omit", this.headers = new global/*e*/(requireDynamic/*n*/.headers), this.method = s(requireDynamic/*n*/.method || "GET"), this.mode = requireDynamic/*n*/.mode || null, this.referrer = null
+        function l(t, n) {
+            n = n || {}, this.url = t, this._body = n.body, this.credentials = n.credentials || "omit", this.headers = new e(n.headers), this.method = s(n.method || "GET"), this.mode = n.mode || null, this.referrer = null
         }
 
-        function u(global/*e*/) {
-            var require/*t*/ = new FormData;
-            return global/*e*/.trim().split("&").forEach(function(global/*e*/) {
-                if (global/*e*/) {
-                    var requireDynamic/*n*/ = global/*e*/.split("="),
-                        requireLazy/*r*/ = requireDynamic/*n*/.shift().replace(/\+/g, " "),
-                        module/*i*/ = requireDynamic/*n*/.join("=").replace(/\+/g, " ");
-                    require/*t*/.append(decodeURIComponent(requireLazy/*r*/), decodeURIComponent(module/*i*/))
+        function u(e) {
+            var t = new FormData;
+            return e.trim().split("&").forEach(function(e) {
+                if (e) {
+                    var n = e.split("="),
+                        r = n.shift().replace(/\+/g, " "),
+                        i = n.join("=").replace(/\+/g, " ");
+                    t.append(decodeURIComponent(r), decodeURIComponent(i))
                 }
-            }), require/*t*/
+            }), t
         }
 
-        function c(require/*t*/) {
-            var requireDynamic/*n*/ = new global/*e*/,
-                requireLazy/*r*/ = require/*t*/.getAllResponseHeaders().trim().split("\requireDynamic/*n*/");
-            return requireLazy/*r*/.forEach(function(global/*e*/) {
-                var require/*t*/ = global/*e*/.trim().split(":"),
-                    requireLazy/*r*/ = require/*t*/.shift().trim(),
-                    module/*i*/ = require/*t*/.join(":").trim();
-                requireDynamic/*n*/.append(requireLazy/*r*/, module/*i*/)
-            }), requireDynamic/*n*/
+        function c(t) {
+            var n = new e,
+                r = t.getAllResponseHeaders().trim().split("\n");
+            return r.forEach(function(e) {
+                var t = e.trim().split(":"),
+                    r = t.shift().trim(),
+                    i = t.join(":").trim();
+                n.append(r, i)
+            }), n
         }
 
-        function p(global/*e*/, require/*t*/) {
-            require/*t*/ || (require/*t*/ = {}), d ? this._bodyBlob = "string" == typeof global/*e*/ ? new Blob([global/*e*/]) : global/*e*/ : this._bodyText = global/*e*/, this.type = "default", this.url = null, this.status = require/*t*/.status, this.statusText = require/*t*/.statusText, this.headers = require/*t*/.headers, this.url = require/*t*/.url || ""
+        function p(e, t) {
+            t || (t = {}), d ? this._bodyBlob = "string" == typeof e ? new Blob([e]) : e : this._bodyText = e, this.type = "default", this.url = null, this.status = t.status, this.statusText = t.statusText, this.headers = t.headers, this.url = t.url || ""
         }
         if (!o.fetch) {
-            global/*e*/.prototype.append = function(global/*e*/, require/*t*/) {
-                global/*e*/ = global/*e*/.toLowerCase();
-                var requireDynamic/*n*/ = this.map[global/*e*/];
-                requireDynamic/*n*/ || (requireDynamic/*n*/ = [], this.map[global/*e*/] = requireDynamic/*n*/), requireDynamic/*n*/.push(require/*t*/)
-            }, global/*e*/.prototype["delete"] = function(global/*e*/) {
-                delete this.map[global/*e*/.toLowerCase()]
-            }, global/*e*/.prototype.get = function(global/*e*/) {
-                var require/*t*/ = this.map[global/*e*/.toLowerCase()];
-                return require/*t*/ ? require/*t*/[0] : null
-            }, global/*e*/.prototype.getAll = function(global/*e*/) {
-                return this.map[global/*e*/.toLowerCase()] || []
-            }, global/*e*/.prototype.has = function(global/*e*/) {
-                return this.map.hasOwnProperty(global/*e*/.toLowerCase())
-            }, global/*e*/.prototype.set = function(global/*e*/, require/*t*/) {
-                this.map[global/*e*/.toLowerCase()] = [require/*t*/]
-            }, global/*e*/.prototype.forEach = function(global/*e*/) {
-                var require/*t*/ = this;
-                Object.getOwnPropertyNames(this.map).forEach(function(requireDynamic/*n*/) {
-                    global/*e*/(requireDynamic/*n*/, require/*t*/.map[requireDynamic/*n*/])
+            e.prototype.append = function(e, t) {
+                e = e.toLowerCase();
+                var n = this.map[e];
+                n || (n = [], this.map[e] = n), n.push(t)
+            }, e.prototype["delete"] = function(e) {
+                delete this.map[e.toLowerCase()]
+            }, e.prototype.get = function(e) {
+                var t = this.map[e.toLowerCase()];
+                return t ? t[0] : null
+            }, e.prototype.getAll = function(e) {
+                return this.map[e.toLowerCase()] || []
+            }, e.prototype.has = function(e) {
+                return this.map.hasOwnProperty(e.toLowerCase())
+            }, e.prototype.set = function(e, t) {
+                this.map[e.toLowerCase()] = [t]
+            }, e.prototype.forEach = function(e) {
+                var t = this;
+                Object.getOwnPropertyNames(this.map).forEach(function(n) {
+                    e(n, t.map[n])
                 })
             };
             var d = "FileReader" in o && "Blob" in o && function() {
                     try {
                         return new Blob, !0
-                    } catch (global/*e*/) {
+                    } catch (e) {
                         return !1
                     }
                 }(),
                 h = ["DELETE", "GET", "HEAD", "OPTIONS", "POST", "PUT"];
             l.prototype.fetch = function() {
-                var global/*e*/ = this;
-                return new Promise(function(require/*t*/, requireDynamic/*n*/) {
-                    function requireLazy/*r*/() {
-                        return "responseURL" in module/*i*/ ? module/*i*/.responseURL : /^X-Request-URL:/m.test(module/*i*/.getAllResponseHeaders()) ? module/*i*/.getResponseHeader("X-Request-URL") : void 0
+                var e = this;
+                return new Promise(function(t, n) {
+                    function r() {
+                        return "responseURL" in i ? i.responseURL : /^X-Request-URL:/m.test(i.getAllResponseHeaders()) ? i.getResponseHeader("X-Request-URL") : void 0
                     }
-                    var module/*i*/ = new XMLHttpRequest;
-                    module/*i*/.onload = function() {
-                        var global/*e*/ = 1223 === module/*i*/.status ? 204 : module/*i*/.status;
-                        if (100 > global/*e*/ || global/*e*/ > 599) return void requireDynamic/*n*/(new TypeError("Network request failed"));
+                    var i = new XMLHttpRequest;
+                    i.onload = function() {
+                        var e = 1223 === i.status ? 204 : i.status;
+                        if (100 > e || e > 599) return void n(new TypeError("Network request failed"));
                         var o = {
-                                status: global/*e*/,
-                                statusText: module/*i*/.statusText,
-                                headers: c(module/*i*/),
-                                url: requireLazy/*r*/()
+                                status: e,
+                                statusText: i.statusText,
+                                headers: c(i),
+                                url: r()
                             },
-                            a = "response" in module/*i*/ ? module/*i*/.response : module/*i*/.responseText;
-                        require/*t*/(new p(a, o))
-                    }, module/*i*/.onerror = function() {
-                        requireDynamic/*n*/(new TypeError("Network request failed"))
-                    }, module/*i*/.open(global/*e*/.method, global/*e*/.url), "responseType" in module/*i*/ && d && (module/*i*/.responseType = "blob"), global/*e*/.headers.forEach(function(global/*e*/, require/*t*/) {
-                        require/*t*/.forEach(function(require/*t*/) {
-                            module/*i*/.setRequestHeader(global/*e*/, require/*t*/)
+                            a = "response" in i ? i.response : i.responseText;
+                        t(new p(a, o))
+                    }, i.onerror = function() {
+                        n(new TypeError("Network request failed"))
+                    }, i.open(e.method, e.url), "responseType" in i && d && (i.responseType = "blob"), e.headers.forEach(function(e, t) {
+                        t.forEach(function(t) {
+                            i.setRequestHeader(e, t)
                         })
-                    }), module/*i*/.send(void 0 === global/*e*/._body ? null : global/*e*/._body)
+                    }), i.send(void 0 === e._body ? null : e._body)
                 })
-            }, a.call(l.prototype), a.call(p.prototype), o.Headers = global/*e*/, o.Request = l, o.Response = p, o.fetch = function(global/*e*/, require/*t*/) {
-                return new l(global/*e*/, require/*t*/).fetch()
+            }, a.call(l.prototype), a.call(p.prototype), o.Headers = e, o.Request = l, o.Response = p, o.fetch = function(e, t) {
+                return new l(e, t).fetch()
             }, o.fetch.polyfill = !0
         }
-    }(), module/*i*/.exports = o.fetch
+    }(), i.exports = o.fetch
 });

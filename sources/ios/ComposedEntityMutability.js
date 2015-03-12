@@ -1,9 +1,9 @@
-__d("ComposedEntityMutability",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ComposedEntityMutability",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         MUTABLE: 0,
         IMMUTABLE: 1,
         SEGMENTED: 2
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

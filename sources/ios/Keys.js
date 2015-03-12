@@ -1,5 +1,5 @@
-__d("Keys",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    module/*i*/.exports = {
+__d("Keys",[],function (e, t, n, r, i) {
+    i.exports = {
         BACKSPACE: 8,
         TAB: 9,
         RETURN: 13,

@@ -1,15 +1,15 @@
-__d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","StyleSheet","Text","TouchableHighlight","View","fbt","truncate"],function (e, t, n, r, i) {
     "use strict";
-    var FIGColors/*o*/ = require/*t*/("FIGColors"),
-        React/*a*/ = require/*t*/("React"),
-        ReactGraphQL/*s*/ = require/*t*/("ReactGraphQL"),
-        RouteHandler/*l*/ = require/*t*/("RouteHandler"),
-        StyleSheet/*u*/ = require/*t*/("StyleSheet"),
-        Text/*c*/ = require/*t*/("Text"),
-        TouchableHighlight/*p*/ = require/*t*/("TouchableHighlight"),
-        View/*d*/ = require/*t*/("View"),
-        fbt/*h*/ = require/*t*/("fbt"),
-        truncate/*f*/ = require/*t*/("truncate"),
+    var FIGColors/*o*/ = t("FIGColors"),
+        React/*a*/ = t("React"),
+        ReactGraphQL/*s*/ = t("ReactGraphQL"),
+        RouteHandler/*l*/ = t("RouteHandler"),
+        StyleSheet/*u*/ = t("StyleSheet"),
+        Text/*c*/ = t("Text"),
+        TouchableHighlight/*p*/ = t("TouchableHighlight"),
+        View/*d*/ = t("View"),
+        fbt/*h*/ = t("fbt"),
+        truncate/*f*/ = t("truncate"),
         m = 24,
         g = React/*a*/.createClass({
             displayName: "FBQuestionAttachment",
@@ -20,36 +20,36 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
             mixins: [ReactGraphQL/*s*/.Mixin],
             statics: {
                 queries: {
-                    attachment: function(global/*e*/, require/*t*/) {
+                    attachment: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("FBQuestionAttachment_attachment", "StoryAttachment", [new global/*e*/.Field("target", [new global/*e*/.Field("id", null, null, null, null, null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("FBQuestionAttachment_attachment", "StoryAttachment", [new e.Field("target", [new e.Field("id", null, null, null, null, null, {
                                 requisite: !0
-                            }), new global/*e*/.Field("url", null, null, [new global/*e*/.Callv("site", ["mobile"])]), new global/*e*/.Field("options", [new global/*e*/.Field("edges", [new global/*e*/.Field("node", [new global/*e*/.Field("text"), new global/*e*/.Field("voters", [new global/*e*/.Field("count")], null, null, null, null, {
+                            }), new e.Field("url", null, null, [new e.Callv("site", ["mobile"])]), new e.Field("options", [new e.Field("edges", [new e.Field("node", [new e.Field("text"), new e.Field("voters", [new e.Field("count")], null, null, null, null, {
                                 connection: !0
-                            }), new global/*e*/.Field("id", null, null, null, null, null, {
+                            }), new e.Field("id", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
                                 pk: "id",
                                 requisite: !0
-                            }), new global/*e*/.Field("cursor", null, null, null, null, null, {
+                            }), new e.Field("cursor", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 plural: !0,
                                 edgesID: "FBQuestionAttachment_attachment_1"
-                            }), new global/*e*/.Field("count"), new global/*e*/.Field("page_info", [new global/*e*/.Field("has_next_page", null, null, null, null, null, {
+                            }), new e.Field("count"), new e.Field("page_info", [new e.Field("has_next_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            }), new global/*e*/.Field("has_previous_page", null, null, null, null, null, {
+                            }), new e.Field("has_previous_page", null, null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
                             })], null, null, null, null, {
                                 generated: !0,
                                 requisite: !0
-                            })], null, [new global/*e*/.Callv("first", ["5"])], null, null, {
+                            })], null, [new e.Callv("first", ["5"])], null, null, {
                                 connection: !0
                             })], null, null, null, null, {
                                 rootCall: "node",
@@ -61,23 +61,23 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
                     }
                 }
             },
-            renderOption: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                var requireLazy/*r*/ = 200,
-                    module/*i*/ = global/*e*/.voters.count,
-                    FIGColors/*o*/ = truncate/*f*/(global/*e*/.text, m, {
+            renderOption: function(e, t, n) {
+                var r = 200,
+                    i = e.voters.count,
+                    FIGColors/*o*/ = truncate/*f*/(e.text, m, {
                         breakOnWords: !1,
                         minDelta: 0
                     });
                 return React/*a*/.createElement(View/*d*/, {
                     style: _.option,
-                    key: "option" + requireDynamic/*n*/
+                    key: "option" + n
                 }, React/*a*/.createElement(View/*d*/, {
                     style: [_.barContainer, {
-                        width: requireLazy/*r*/
+                        width: r
                     }]
                 }, React/*a*/.createElement(View/*d*/, {
                     style: [_.bar, {
-                        width: .7 * requireLazy/*r*/ * module/*i*/ / require/*t*/
+                        width: .7 * r * i / t
                     }]
                 }), React/*a*/.createElement(Text/*c*/, {
                     style: _.text
@@ -85,15 +85,15 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
                     style: [_.barContainer, _.countBox]
                 }, React/*a*/.createElement(Text/*c*/, {
                     style: _.countText
-                }, "+" + module/*i*/)))
+                }, "+" + i)))
             },
             renderOptions: function() {
-                var global/*e*/ = this.props.attachment.target.options.edges,
-                    require/*t*/ = 0;
-                return global/*e*/.map(function(global/*e*/) {
-                    global/*e*/.node.voters.count > require/*t*/ && (require/*t*/ = global/*e*/.node.voters.count)
-                }), global/*e*/.map(function(global/*e*/, requireDynamic/*n*/) {
-                    return this.renderOption(global/*e*/.node, require/*t*/, requireDynamic/*n*/)
+                var e = this.props.attachment.target.options.edges,
+                    t = 0;
+                return e.map(function(e) {
+                    e.node.voters.count > t && (t = e.node.voters.count)
+                }), e.map(function(e, n) {
+                    return this.renderOption(e.node, t, n)
                 }.bind(this))
             },
             renderViewMoreButton: function() {
@@ -106,12 +106,12 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
                 }))) : null
             },
             render: function() {
-                var global/*e*/ = this.props.attachment.target;
-                return global/*e*/ && global/*e*/.options ? React/*a*/.createElement(TouchableHighlight/*p*/, {
+                var e = this.props.attachment.target;
+                return e && e.options ? React/*a*/.createElement(TouchableHighlight/*p*/, {
                     onPress: RouteHandler/*l*/.getCallback({
                         typeList: ["URL"],
                         params: {
-                            url: global/*e*/.url,
+                            url: e.url,
                             navigator: this.props.navigator
                         }
                     })
@@ -165,5 +165,5 @@ __d("FBQuestionAttachment",["FIGColors","React","ReactGraphQL","RouteHandler","S
                 marginTop: 6
             }
         });
-    module/*i*/.exports = g
+    i.exports = g
 });

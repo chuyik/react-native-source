@@ -1,7 +1,7 @@
-__d("InfiniteScrollView",["React","ScrollView"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("InfiniteScrollView",["React","ScrollView"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        ScrollView/*a*/ = require/*t*/("ScrollView"),
+    var React/*o*/ = t("React"),
+        ScrollView/*a*/ = t("ScrollView"),
         s = 100,
         l = "scroll_view",
         u = {
@@ -23,26 +23,26 @@ __d("InfiniteScrollView",["React","ScrollView"],function (global/*e*/, require/*
             getScrollRef: function() {
                 return this.props.ScrollViewComponent ? this.refs[l].getScrollRef() : this.refs[l]
             },
-            _onScroll: function(global/*e*/) {
-                if (this.props.onScroll && this.props.onScroll(global/*e*/), this.props.hasMoreToLoad && !this.props.isLoadingMore) {
-                    var require/*t*/ = global/*e*/.nativeEvent.contentSize.height,
-                        requireDynamic/*n*/ = global/*e*/.nativeEvent.layoutMeasurement.height,
-                        requireLazy/*r*/ = global/*e*/.nativeEvent.contentOffset.y,
-                        module/*i*/ = require/*t*/ - requireDynamic/*n*/ - requireLazy/*r*/;
-                    module/*i*/ < this.props.distanceToTriggerLoad && this.props.loadMore()
+            _onScroll: function(e) {
+                if (this.props.onScroll && this.props.onScroll(e), this.props.hasMoreToLoad && !this.props.isLoadingMore) {
+                    var t = e.nativeEvent.contentSize.height,
+                        n = e.nativeEvent.layoutMeasurement.height,
+                        r = e.nativeEvent.contentOffset.y,
+                        i = t - n - r;
+                    i < this.props.distanceToTriggerLoad && this.props.loadMore()
                 }
             },
             render: function() {
-                var global/*e*/ = {
+                var e = {
                     onScroll: this._onScroll,
                     throttleScrollCallbackMS: s
                 };
-                for (var require/*t*/ in this.props) u[require/*t*/] || global/*e*/[require/*t*/] || (global/*e*/[require/*t*/] = this.props[require/*t*/]);
-                var requireDynamic/*n*/ = this.props.ScrollViewComponent || ScrollView/*a*/;
-                return React/*o*/.createElement(requireDynamic/*n*/, Object.assign({
+                for (var t in this.props) u[t] || e[t] || (e[t] = this.props[t]);
+                var n = this.props.ScrollViewComponent || ScrollView/*a*/;
+                return React/*o*/.createElement(n, Object.assign({
                     ref: l
-                }, global/*e*/), this.props.children, this.props.hasMoreToLoad && this.props.spinner)
+                }, e), this.props.children, this.props.hasMoreToLoad && this.props.spinner)
             }
         });
-    module/*i*/.exports = c
+    i.exports = c
 });

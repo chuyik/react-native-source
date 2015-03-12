@@ -1,36 +1,36 @@
-__d("Intl",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return "string" != typeof global/*e*/ ? !1 : global/*e*/.match(new RegExp(o.punct_char_class + "[)\"'»༻༽’”›〉》」』】〕〗〙〛〞〟﴿＇）］\\s]*$"))
+__d("Intl",[],function (e, t, n, r, i) {
+    function o(e) {
+        return "string" != typeof e ? !1 : e.match(new RegExp(o.punct_char_class + "[)\"'»༻༽’”›〉》」』】〕〗〙〛〞〟﴿＇）］\\s]*$"))
     }
 
-    function a(global/*e*/) {
+    function a(e) {
         if (s) {
-            var require/*t*/ = [],
-                requireDynamic/*n*/ = [];
-            for (var requireLazy/*r*/ in s.patterns) {
-                var module/*i*/ = s.patterns[requireLazy/*r*/];
+            var t = [],
+                n = [];
+            for (var r in s.patterns) {
+                var i = s.patterns[r];
                 for (var o in s.meta) {
                     var a = new RegExp(o.slice(1, -1), "g"),
                         l = s.meta[o];
-                    requireLazy/*r*/ = requireLazy/*r*/.replace(a, l), module/*i*/ = module/*i*/.replace(a, l)
+                    r = r.replace(a, l), i = i.replace(a, l)
                 }
-                require/*t*/.push(requireLazy/*r*/), requireDynamic/*n*/.push(module/*i*/)
+                t.push(r), n.push(i)
             }
-            for (var u = 0; u < require/*t*/.length; u++) {
-                var c = new RegExp(require/*t*/[u].slice(1, -1), "g");
-                "javascript" == requireDynamic/*n*/[u] ? global/*e*/.replace(c, function(global/*e*/) {
-                    return global/*e*/.slice(1).toLowerCase()
-                }) : global/*e*/ = global/*e*/.replace(c, requireDynamic/*n*/[u])
+            for (var u = 0; u < t.length; u++) {
+                var c = new RegExp(t[u].slice(1, -1), "g");
+                "javascript" == n[u] ? e.replace(c, function(e) {
+                    return e.slice(1).toLowerCase()
+                }) : e = e.replace(c, n[u])
             }
         }
-        return global/*e*/.replace(/\x01/g, "")
+        return e.replace(/\x01/g, "")
     }
     var s;
-    o.punct_char_class = "[.!?。！？।…ຯ᠁ฯ．]", module/*i*/.exports = {
+    o.punct_char_class = "[.!?。！？।…ຯ᠁ฯ．]", i.exports = {
         endsInPunct: o,
         applyPhonologicalRules: a,
-        setPhonologicalRules: function(global/*e*/) {
-            s = global/*e*/
+        setPhonologicalRules: function(e) {
+            s = e
         }
     }
 });

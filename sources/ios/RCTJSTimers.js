@@ -1,6 +1,6 @@
-__d("RCTJSTimers",["JSTimersExecution"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RCTJSTimers",["JSTimersExecution"],function (e, t, n, r, i) {
     "use strict";
-    var JSTimersExecution/*o*/ = require/*t*/("JSTimersExecution"),
+    var JSTimersExecution/*o*/ = t("JSTimersExecution"),
         a = JSTimersExecution/*o*/;
-    module/*i*/.exports = a
+    i.exports = a
 });

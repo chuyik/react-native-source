@@ -1,27 +1,27 @@
-__d("styleDiffer",["deepDiffer"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("styleDiffer",["deepDiffer"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        return !a(global/*e*/, require/*t*/)
+    function o(e, t) {
+        return !a(e, t)
     }
 
-    function a(global/*e*/, require/*t*/) {
-        if (!global/*e*/) return !require/*t*/;
-        if (!require/*t*/) return !global/*e*/;
-        if (typeof global/*e*/ != typeof require/*t*/) return !1;
-        if ("number" == typeof global/*e*/) return global/*e*/ === require/*t*/;
-        if (Array.isArray(global/*e*/)) {
-            if (!Array.isArray(require/*t*/) || global/*e*/.length !== require/*t*/.length) return !1;
-            for (var requireDynamic/*n*/ = 0; requireDynamic/*n*/ < global/*e*/.length; ++requireDynamic/*n*/)
-                if (!a(global/*e*/[requireDynamic/*n*/], require/*t*/[requireDynamic/*n*/])) return !1;
+    function a(e, t) {
+        if (!e) return !t;
+        if (!t) return !e;
+        if (typeof e != typeof t) return !1;
+        if ("number" == typeof e) return e === t;
+        if (Array.isArray(e)) {
+            if (!Array.isArray(t) || e.length !== t.length) return !1;
+            for (var n = 0; n < e.length; ++n)
+                if (!a(e[n], t[n])) return !1;
             return !0
         }
-        for (var requireLazy/*r*/ in global/*e*/)
-            if (deepDiffer/*s*/(global/*e*/[requireLazy/*r*/], require/*t*/[requireLazy/*r*/])) return !1;
-        for (var requireLazy/*r*/ in require/*t*/)
-            if (!global/*e*/.hasOwnProperty(requireLazy/*r*/)) return !1;
+        for (var r in e)
+            if (deepDiffer/*s*/(e[r], t[r])) return !1;
+        for (var r in t)
+            if (!e.hasOwnProperty(r)) return !1;
         return !0
     }
-    var deepDiffer/*s*/ = require/*t*/("deepDiffer");
-    module/*i*/.exports = o
+    var deepDiffer/*s*/ = t("deepDiffer");
+    i.exports = o
 });

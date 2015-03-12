@@ -1,32 +1,32 @@
-__d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = m.exec(global/*e*/);
-        if (!require/*t*/) return UnicodeBidiDirection/*p*/.NEUTRAL;
-        var requireDynamic/*n*/ = g.exec(require/*t*/[0]);
-        return requireDynamic/*n*/ ? UnicodeBidiDirection/*p*/.RTL : UnicodeBidiDirection/*p*/.LTR
+    function o(e) {
+        var t = m.exec(e);
+        if (!t) return UnicodeBidiDirection/*p*/.NEUTRAL;
+        var n = g.exec(t[0]);
+        return n ? UnicodeBidiDirection/*p*/.RTL : UnicodeBidiDirection/*p*/.LTR
     }
 
-    function a(global/*e*/, require/*t*/) {
-        if (require/*t*/ = require/*t*/ || UnicodeBidiDirection/*p*/.NEUTRAL, !global/*e*/.length) return require/*t*/;
-        var requireDynamic/*n*/ = o(global/*e*/);
-        return requireDynamic/*n*/ === UnicodeBidiDirection/*p*/.NEUTRAL ? require/*t*/ : requireDynamic/*n*/
+    function a(e, t) {
+        if (t = t || UnicodeBidiDirection/*p*/.NEUTRAL, !e.length) return t;
+        var n = o(e);
+        return n === UnicodeBidiDirection/*p*/.NEUTRAL ? t : n
     }
 
-    function s(global/*e*/, require/*t*/) {
-        return require/*t*/ && UnicodeBidiDirection/*p*/.isStrong(require/*t*/) || (require/*t*/ = Locale/*c*/.getDirection()), a(global/*e*/, require/*t*/)
+    function s(e, t) {
+        return t && UnicodeBidiDirection/*p*/.isStrong(t) || (t = Locale/*c*/.getDirection()), a(e, t)
     }
 
-    function l(global/*e*/, require/*t*/) {
-        return s(global/*e*/, require/*t*/) === UnicodeBidiDirection/*p*/.LTR
+    function l(e, t) {
+        return s(e, t) === UnicodeBidiDirection/*p*/.LTR
     }
 
-    function u(global/*e*/, require/*t*/) {
-        return s(global/*e*/, require/*t*/) === UnicodeBidiDirection/*p*/.RTL
+    function u(e, t) {
+        return s(e, t) === UnicodeBidiDirection/*p*/.RTL
     }
-    var Locale/*c*/ = require/*t*/("Locale"),
-        UnicodeBidiDirection/*p*/ = require/*t*/("UnicodeBidiDirection"),
+    var Locale/*c*/ = t("Locale"),
+        UnicodeBidiDirection/*p*/ = t("UnicodeBidiDirection"),
         d = {
             L: "A-Za-zÀ-ÖØ-öø-ʸ̀-֐ࠀ-῿‎Ⰰ-퟿-﬜︀-﹯﻽-￿",
             R: "־׀׃׆א-תװ-ײ׳-״߀-߉ߊ-ߪߴ-ߵߺࠀ-ࠕࠚࠤࠨ࠰-࠾ࡀ-ࡘ࡞‏יִײַ-ﬨשׁ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﭏ",
@@ -43,5 +43,5 @@ __d("UnicodeBidi",["Locale","UnicodeBidiDirection"],function (global/*e*/, requi
             isDirectionLTR: l,
             isDirectionRTL: u
         };
-    module/*i*/.exports = _
+    i.exports = _
 });

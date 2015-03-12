@@ -1,30 +1,30 @@
-__d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return "file" == global/*e*/.kind ? global/*e*/.getAsFile() : void 0
+__d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function (e, t, n, r, i) {
+    function o(e) {
+        return "file" == e.kind ? e.getAsFile() : void 0
     }
 
-    function a(global/*e*/) {
+    function a(e) {
         "use strict";
-        this.data = global/*e*/, this.types = global/*e*/.types ? createArrayFrom/*l*/(global/*e*/.types) : []
+        this.data = e, this.types = e.types ? createArrayFrom/*l*/(e.types) : []
     }
-    var PhotosMimeType/*s*/ = require/*t*/("PhotosMimeType"),
-        createArrayFrom/*l*/ = require/*t*/("createArrayFrom"),
-        emptyFunction/*u*/ = require/*t*/("emptyFunction"),
-        c = new RegExp("\requireLazy/*r*/\requireDynamic/*n*/", "g"),
-        p = "\requireDynamic/*n*/",
+    var PhotosMimeType/*s*/ = t("PhotosMimeType"),
+        createArrayFrom/*l*/ = t("createArrayFrom"),
+        emptyFunction/*u*/ = t("emptyFunction"),
+        c = new RegExp("\r\n", "g"),
+        p = "\n",
         d = {
             "text/rtf": 1,
             "text/html": 1
         };
     a.prototype.isRichText = function() {
         "use strict";
-        return this.types.some(function(global/*e*/) {
-            return d[global/*e*/]
+        return this.types.some(function(e) {
+            return d[e]
         })
     }, a.prototype.getText = function() {
         "use strict";
-        var global/*e*/;
-        return this.data.getData && (this.types.length ? -1 != this.types.indexOf("text/plain") && (global/*e*/ = this.data.getData("text/plain")) : global/*e*/ = this.data.getData("Text")), global/*e*/ ? global/*e*/.replace(c, p) : null
+        var e;
+        return this.data.getData && (this.types.length ? -1 != this.types.indexOf("text/plain") && (e = this.data.getData("text/plain")) : e = this.data.getData("Text")), e ? e.replace(c, p) : null
     }, a.prototype.getHTML = function() {
         "use strict";
         if (this.data.getData) {
@@ -33,13 +33,13 @@ __d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function
         }
     }, a.prototype.isImage = function() {
         "use strict";
-        var global/*e*/ = this.types.some(function(global/*e*/) {
-            return -1 != global/*e*/.indexOf("application/x-moz-file")
+        var e = this.types.some(function(e) {
+            return -1 != e.indexOf("application/x-moz-file")
         });
-        if (global/*e*/) return !0;
-        for (var require/*t*/ = this.getFiles(), requireDynamic/*n*/ = 0; requireDynamic/*n*/ < require/*t*/.length; requireDynamic/*n*/++) {
-            var requireLazy/*r*/ = require/*t*/[requireDynamic/*n*/].type;
-            if (!PhotosMimeType/*s*/(requireLazy/*r*/).isImage()) return !1
+        if (e) return !0;
+        for (var t = this.getFiles(), n = 0; n < t.length; n++) {
+            var r = t[n].type;
+            if (!PhotosMimeType/*s*/(r).isImage()) return !1
         }
         return !0
     }, a.prototype.getCount = function() {
@@ -51,5 +51,5 @@ __d("DataTransfer",["PhotosMimeType","createArrayFrom","emptyFunction"],function
     }, a.prototype.hasFiles = function() {
         "use strict";
         return this.getFiles().length > 0
-    }, module/*i*/.exports = a
+    }, i.exports = a
 });

@@ -1,40 +1,40 @@
-__d("GraphQLMutatorHub",["GraphQLMutatorConstants","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GraphQLMutatorHub",["GraphQLMutatorConstants","invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        "string" != typeof global/*e*/.deletedIDFieldName && invariant/*c*/(0, "Node delete mutation config must have valid types on register")
+    function o(e) {
+        "string" != typeof e.deletedIDFieldName && invariant/*c*/(0, "Node delete mutation config must have valid types on register")
     }
 
-    function a(global/*e*/) {
-        (global/*e*/.sourceID && "string" != typeof global/*e*/.sourceID || "string" != typeof global/*e*/.connectionName || "string" != typeof global/*e*/.edgeName) && invariant/*c*/(0, "Range add mutation config must have valid types on register")
+    function a(e) {
+        (e.sourceID && "string" != typeof e.sourceID || "string" != typeof e.connectionName || "string" != typeof e.edgeName) && invariant/*c*/(0, "Range add mutation config must have valid types on register")
     }
 
-    function s(global/*e*/) {
-        Array.isArray(global/*e*/.pathToConnection) && global/*e*/.pathToConnection.length >= 2 && "string" == typeof global/*e*/.deletedIDFieldName || invariant/*c*/(0, "Range delete mutation config must have valid types on register")
+    function s(e) {
+        Array.isArray(e.pathToConnection) && e.pathToConnection.length >= 2 && "string" == typeof e.deletedIDFieldName || invariant/*c*/(0, "Range delete mutation config must have valid types on register")
     }
 
-    function l(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        require/*t*/ in GraphQLMutatorConstants/*u*/.HANDLER_TYPES || invariant/*c*/(0, "Cannot register invalid handler type"), void 0 === p[global/*e*/] && (p[global/*e*/] = []), p[global/*e*/].push({
-            handlerType: require/*t*/,
-            config: requireDynamic/*n*/
+    function l(e, t, n) {
+        t in GraphQLMutatorConstants/*u*/.HANDLER_TYPES || invariant/*c*/(0, "Cannot register invalid handler type"), void 0 === p[e] && (p[e] = []), p[e].push({
+            handlerType: t,
+            config: n
         })
     }
-    var GraphQLMutatorConstants/*u*/ = require/*t*/("GraphQLMutatorConstants"),
-        invariant/*c*/ = require/*t*/("invariant"),
+    var GraphQLMutatorConstants/*u*/ = t("GraphQLMutatorConstants"),
+        invariant/*c*/ = t("invariant"),
         p = {},
         d = {
-            registerForRangeAddMutationType: function(global/*e*/, require/*t*/) {
-                a(require/*t*/), l(global/*e*/, GraphQLMutatorConstants/*u*/.RANGE_ADD_HANDLER, require/*t*/)
+            registerForRangeAddMutationType: function(e, t) {
+                a(t), l(e, GraphQLMutatorConstants/*u*/.RANGE_ADD_HANDLER, t)
             },
-            registerForRangeDeleteMutationType: function(global/*e*/, require/*t*/) {
-                s(require/*t*/), l(global/*e*/, GraphQLMutatorConstants/*u*/.RANGE_DELETE_HANDLER, require/*t*/)
+            registerForRangeDeleteMutationType: function(e, t) {
+                s(t), l(e, GraphQLMutatorConstants/*u*/.RANGE_DELETE_HANDLER, t)
             },
-            registerForNodeDeleteMutationType: function(global/*e*/, require/*t*/) {
-                o(require/*t*/), l(global/*e*/, GraphQLMutatorConstants/*u*/.NODE_DELETE_HANDLER, require/*t*/)
+            registerForNodeDeleteMutationType: function(e, t) {
+                o(t), l(e, GraphQLMutatorConstants/*u*/.NODE_DELETE_HANDLER, t)
             },
-            getConfigs: function(global/*e*/) {
-                return p[global/*e*/] ? p[global/*e*/] : []
+            getConfigs: function(e) {
+                return p[e] ? p[e] : []
             }
         };
-    module/*i*/.exports = d
+    i.exports = d
 });

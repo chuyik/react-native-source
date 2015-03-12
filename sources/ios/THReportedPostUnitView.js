@@ -1,16 +1,16 @@
-__d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","NativeModules","React","ReactGraphQL","FBAlertManager","StyleSheet","THFeedButton","THStoryView","View","fbt"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","NativeModules","React","ReactGraphQL","FBAlertManager","StyleSheet","THFeedButton","THStoryView","View","fbt"],function (e, t, n, r, i) {
     "use strict";
-    var GroupReportedPostAction/*o*/ = require/*t*/("GroupReportedPostAction"),
-        NativeMethodsMixin/*a*/ = require/*t*/("NativeMethodsMixin"),
-        NativeModules/*s*/ = require/*t*/("NativeModules"),
-        React/*l*/ = require/*t*/("React"),
-        ReactGraphQL/*u*/ = require/*t*/("ReactGraphQL"),
-        FBAlertManager/*c*/ = require/*t*/("FBAlertManager"),
-        StyleSheet/*p*/ = require/*t*/("StyleSheet"),
-        THFeedButton/*d*/ = require/*t*/("THFeedButton"),
-        THStoryView/*h*/ = require/*t*/("THStoryView"),
-        View/*f*/ = require/*t*/("View"),
-        fbt/*m*/ = require/*t*/("fbt"),
+    var GroupReportedPostAction/*o*/ = t("GroupReportedPostAction"),
+        NativeMethodsMixin/*a*/ = t("NativeMethodsMixin"),
+        NativeModules/*s*/ = t("NativeModules"),
+        React/*l*/ = t("React"),
+        ReactGraphQL/*u*/ = t("ReactGraphQL"),
+        FBAlertManager/*c*/ = t("FBAlertManager"),
+        StyleSheet/*p*/ = t("StyleSheet"),
+        THFeedButton/*d*/ = t("THFeedButton"),
+        THStoryView/*h*/ = t("THStoryView"),
+        View/*f*/ = t("View"),
+        fbt/*m*/ = t("fbt"),
         g = NativeModules/*s*/.RKTreehouseManager,
         _ = GroupReportedPostAction/*o*/.Actions,
         y = React/*l*/.createClass({
@@ -22,18 +22,18 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
             mixins: [ReactGraphQL/*u*/.Mixin, NativeMethodsMixin/*a*/],
             statics: {
                 queries: {
-                    story: function(global/*e*/, require/*t*/) {
-                        return function(global/*e*/) {
-                            var requireDynamic/*n*/ = require/*t*/.__GraphQL;
-                            return new requireDynamic/*n*/.QueryFragment("THReportedPostUnitView_story", "Story", [new requireDynamic/*n*/.Field("id")], [require/*t*/.__frag(global/*e*/)], {
+                    story: function(e, t) {
+                        return function(e) {
+                            var n = t.__GraphQL;
+                            return new n.QueryFragment("THReportedPostUnitView_story", "Story", [new n.Field("id")], [t.__frag(e)], {
                                 scope: "THReportedPostUnitView_story"
                             })
                         }(THStoryView/*h*/.getQuery("story"))
                     },
-                    group: function(global/*e*/, require/*t*/) {
+                    group: function(e, t) {
                         return function() {
-                            var global/*e*/ = require/*t*/.__GraphQL;
-                            return new global/*e*/.QueryFragment("THReportedPostUnitView_group", "Group", [new global/*e*/.Field("id"), new global/*e*/.Field("group_reported_stories", [new global/*e*/.Field("count")], null, null, "reported_stories", null, {
+                            var e = t.__GraphQL;
+                            return new e.QueryFragment("THReportedPostUnitView_group", "Group", [new e.Field("id"), new e.Field("group_reported_stories", [new e.Field("count")], null, null, "reported_stories", null, {
                                 connection: !0
                             })], null, {
                                 scope: "THReportedPostUnitView_group"
@@ -57,8 +57,8 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
             onIgnore: function() {
                 this.mutateReportedPost(_.Ignore)
             },
-            onFailure: function(global/*e*/) {
-                console.error("error: ", global/*e*/), this.setState({
+            onFailure: function(e) {
+                console.error("error: ", e), this.setState({
                     reviewState: _.Undecided
                 }), this.props.updateChangedCount(-1), FBAlertManager/*c*/.alert(fbt/*m*/({
                     type: "text",
@@ -66,13 +66,13 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
                     desc: "Error message for pending posts."
                 }))
             },
-            mutateReportedPost: function(global/*e*/) {
+            mutateReportedPost: function(e) {
                 this.setState({
-                    reviewState: global/*e*/
+                    reviewState: e
                 }), this.props.updateChangedCount(1), GroupReportedPostAction/*o*/.mutateReportedPost({
                     groupID: this.props.group.id,
                     storyID: this.props.story.id,
-                    action: global/*e*/,
+                    action: e,
                     onFailure: this.onFailure
                 })
             },
@@ -84,17 +84,17 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
             },
             renderButtonRow: function() {
                 if (this.state.reviewState !== _.Undecided) return null;
-                var global/*e*/ = fbt/*m*/({
+                var e = fbt/*m*/({
                         type: "text",
                         texts: ["Remove"],
                         desc: "Button for an Admin to remove NativeMethodsMixin/*a*/ reported post in NativeMethodsMixin/*a*/ group"
                     }),
-                    require/*t*/ = fbt/*m*/({
+                    t = fbt/*m*/({
                         type: "text",
                         texts: ["Remove & Block"],
                         desc: "Button for an Admin to remove NativeMethodsMixin/*a*/ reported post in NativeMethodsMixin/*a*/ group and ban the user"
                     }),
-                    requireDynamic/*n*/ = fbt/*m*/({
+                    n = fbt/*m*/({
                         type: "text",
                         texts: ["Ignore"],
                         desc: "Button for an Admin to ignore NativeMethodsMixin/*a*/ reported post in NativeMethodsMixin/*a*/ group"
@@ -104,15 +104,15 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
                 }, React/*l*/.createElement(THFeedButton/*d*/, {
                     onPress: this.onRemove,
                     isPositive: !0,
-                    text: global/*e*/
+                    text: e
                 }), React/*l*/.createElement(THFeedButton/*d*/, {
                     onPress: this.onRemoveAndBan,
                     isPositive: !0,
-                    text: require/*t*/
+                    text: t
                 }), React/*l*/.createElement(THFeedButton/*d*/, {
                     onPress: this.onIgnore,
                     isPositive: !1,
-                    text: requireDynamic/*n*/
+                    text: n
                 }))
             },
             render: function() {
@@ -141,5 +141,5 @@ __d("THReportedPostUnitView",["GroupReportedPostAction","NativeMethodsMixin","Na
             }
         }),
         S = {};
-    S[_.Undecided] = v.visible, S[_.Remove] = v.washedOut, S[_.RemoveAndBan] = v.washedOut, S[_.Ignore] = v.visible, module/*i*/.exports = y
+    S[_.Undecided] = v.visible, S[_.Remove] = v.washedOut, S[_.RemoveAndBan] = v.washedOut, S[_.Ignore] = v.visible, i.exports = y
 });

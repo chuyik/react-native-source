@@ -1,8 +1,8 @@
-__d("NativeModules",["BatchedBridge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("NativeModules",["BatchedBridge"],function (e, t, n, r, i) {
     "use strict";
-    var BatchedBridge/*o*/ = require/*t*/("BatchedBridge").RemoteModules;
-    Object.keys(BatchedBridge/*o*/).forEach(function(global/*e*/) {
-        var require/*t*/ = global/*e*/.replace(/^RCT/, "RK");
-        BatchedBridge/*o*/[require/*t*/] = BatchedBridge/*o*/[global/*e*/]
-    }), module/*i*/.exports = BatchedBridge/*o*/
+    var BatchedBridge/*o*/ = t("BatchedBridge").RemoteModules;
+    Object.keys(BatchedBridge/*o*/).forEach(function(e) {
+        var t = e.replace(/^RCT/, "RK");
+        BatchedBridge/*o*/[t] = BatchedBridge/*o*/[e]
+    }), i.exports = BatchedBridge/*o*/
 });

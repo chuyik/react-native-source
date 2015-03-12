@@ -1,9 +1,9 @@
-__d("cssVar",["invariant","CSSVarConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("cssVar",["invariant","CSSVarConfig"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
-        CSSVarConfig/*a*/ = require/*t*/("CSSVarConfig"),
-        s = function(global/*e*/) {
-            return CSSVarConfig/*a*/[global/*e*/] || invariant/*o*/(0, "invalid css variable " + global/*e*/), CSSVarConfig/*a*/[global/*e*/]
+    var invariant/*o*/ = t("invariant"),
+        CSSVarConfig/*a*/ = t("CSSVarConfig"),
+        s = function(e) {
+            return CSSVarConfig/*a*/[e] || invariant/*o*/(0, "invalid css variable " + e), CSSVarConfig/*a*/[e]
         };
-    module/*i*/.exports = s
+    i.exports = s
 });

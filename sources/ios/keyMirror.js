@@ -1,11 +1,11 @@
-__d("keyMirror",["invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("keyMirror",["invariant"],function (e, t, n, r, i) {
     "use strict";
-    var invariant/*o*/ = require/*t*/("invariant"),
-        a = function(global/*e*/) {
-            var require/*t*/, requireDynamic/*n*/ = {};
-            global/*e*/ instanceof Object && !Array.isArray(global/*e*/) || invariant/*o*/(0, "keyMirror(...): Argument must be an object.");
-            for (require/*t*/ in global/*e*/) global/*e*/.hasOwnProperty(require/*t*/) && (requireDynamic/*n*/[require/*t*/] = require/*t*/);
-            return requireDynamic/*n*/
+    var invariant/*o*/ = t("invariant"),
+        a = function(e) {
+            var t, n = {};
+            e instanceof Object && !Array.isArray(e) || invariant/*o*/(0, "keyMirror(...): Argument must be an object.");
+            for (t in e) e.hasOwnProperty(t) && (n[t] = t);
+            return n
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

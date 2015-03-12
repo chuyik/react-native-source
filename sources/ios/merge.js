@@ -1,7 +1,7 @@
-__d("merge",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("merge",[],function (e, t, n, r, i) {
     "use strict";
-    var o = function(global/*e*/, require/*t*/) {
-        return Object.assign({}, global/*e*/, require/*t*/)
+    var o = function(e, t) {
+        return Object.assign({}, e, t)
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

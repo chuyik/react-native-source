@@ -1,27 +1,27 @@
-__d("errorToString",["Platform","stacktrace-parser/index"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("errorToString",["Platform","stacktrace-parser/index"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        var require/*t*/ = global/*e*/.file.split("/"),
-            requireDynamic/*n*/ = require/*t*/[require/*t*/.length - 1];
-        return global/*e*/.methodName + "\requireDynamic/*n*/  in " + requireDynamic/*n*/ + ":" + global/*e*/.lineNumber + "\requireDynamic/*n*/"
+    function o(e) {
+        var t = e.file.split("/"),
+            n = t[t.length - 1];
+        return e.methodName + "\n  in " + n + ":" + e.lineNumber + "\n"
     }
 
-    function a(global/*e*/, require/*t*/) {
+    function a(e, t) {
         try {
-            var requireDynamic/*n*/ = global/*e*/.originalPositionFor({
-                line: require/*t*/.lineNumber,
-                column: require/*t*/.column
+            var n = e.originalPositionFor({
+                line: t.lineNumber,
+                column: t.column
             });
-            requireDynamic/*n*/ && (require/*t*/.file = requireDynamic/*n*/.source, require/*t*/.lineNumber = requireDynamic/*n*/.line, require/*t*/.column = requireDynamic/*n*/.column)
-        } catch (requireLazy/*r*/) {}
+            n && (t.file = n.source, t.lineNumber = n.line, t.column = n.column)
+        } catch (r) {}
     }
 
-    function s(global/*e*/, require/*t*/) {
-        for (var requireDynamic/*n*/ = u.parse(global/*e*/.stack), requireLazy/*r*/ = global/*e*/.framesToPop || 0; requireLazy/*r*/--;) requireDynamic/*n*/.shift();
-        return require/*t*/ && requireDynamic/*n*/.forEach(a.bind(null, require/*t*/)), "android" === Platform/*l*/.OS ? requireDynamic/*n*/.map(o).join("\requireDynamic/*n*/") : requireDynamic/*n*/
+    function s(e, t) {
+        for (var n = u.parse(e.stack), r = e.framesToPop || 0; r--;) n.shift();
+        return t && n.forEach(a.bind(null, t)), "android" === Platform/*l*/.OS ? n.map(o).join("\n") : n
     }
-    var Platform/*l*/ = require/*t*/("Platform"),
-        u = require/*t*/("stacktrace-parser/index");
-    module/*i*/.exports = s
+    var Platform/*l*/ = t("Platform"),
+        u = t("stacktrace-parser/index");
+    i.exports = s
 });

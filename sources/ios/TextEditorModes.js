@@ -1,4 +1,4 @@
-__d("TextEditorModes",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TextEditorModes",[],function (e, t, n, r, i) {
     var o = {
         EDIT: 0,
         COMPOSITE: 1,
@@ -6,5 +6,5 @@ __d("TextEditorModes",[],function (global/*e*/, require/*t*/, requireDynamic/*n*
         RENDER: 3,
         CUT: 4
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

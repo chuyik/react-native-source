@@ -1,53 +1,53 @@
-__d("FeedbackSubscriptionActions",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLMutationQueryCreator","GraphQLStore","invariant","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FeedbackSubscriptionActions",["GraphQLMutationAction","GraphQLMutatorHub","GraphQLMutationQueryCreator","GraphQLStore","invariant","rql"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = {},
-            requireLazy/*r*/ = "feedback_subscribe" === global/*e*/;
-        return requireDynamic/*n*/[global/*e*/] = {
+    function o(e, t) {
+        var n = {},
+            r = "feedback_subscribe" === e;
+        return n[e] = {
             feedback: {
-                can_viewer_subscribe: !requireLazy/*r*/,
-                id: require/*t*/,
-                is_viewer_subscribed: requireLazy/*r*/
+                can_viewer_subscribe: !r,
+                id: t,
+                is_viewer_subscribed: r
             }
-        }, requireDynamic/*n*/
+        }, n
     }
 
-    function a(global/*e*/, require/*t*/) {
-        GraphQLStore/*u*/.isValidNodeID(require/*t*/) || invariant/*c*/(0, "cannot update subscription for unknown feedback node");
-        var requireDynamic/*n*/ = new GraphQLMutationAction/*s*/;
-        requireDynamic/*n*/.runOptimisticAction(o(global/*e*/, require/*t*/));
-        var requireLazy/*r*/, module/*i*/ = l.createQuery(global/*e*/, {
-            feedback: require/*t*/
+    function a(e, t) {
+        GraphQLStore/*u*/.isValidNodeID(t) || invariant/*c*/(0, "cannot update subscription for unknown feedback node");
+        var n = new GraphQLMutationAction/*s*/;
+        n.runOptimisticAction(o(e, t));
+        var r, i = l.createQuery(e, {
+            feedback: t
         });
-        requireLazy/*r*/ = "feedback_subscribe" === global/*e*/ ? function(global/*e*/) {
-            var require/*t*/ = rql/*p*/.__GraphQL;
-            return new require/*t*/.Mutation("FeedbackSubscriptionActions_m0", "FeedbackSubscribeResponsePayload", new require/*t*/.Callv("feedback_subscribe", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+        r = "feedback_subscribe" === e ? function(e) {
+            var t = rql/*p*/.__GraphQL;
+            return new t.Mutation("FeedbackSubscriptionActions_m0", "FeedbackSubscribeResponsePayload", new t.Callv("feedback_subscribe", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            })], [rql/*p*/.__frag(global/*e*/)])
-        }(module/*i*/) : function(global/*e*/) {
-            var require/*t*/ = rql/*p*/.__GraphQL;
-            return new require/*t*/.Mutation("FeedbackSubscriptionActions_m1", "FeedbackUnsubscribeResponsePayload", new require/*t*/.Callv("feedback_unsubscribe", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+            })], [rql/*p*/.__frag(e)])
+        }(i) : function(e) {
+            var t = rql/*p*/.__GraphQL;
+            return new t.Mutation("FeedbackSubscriptionActions_m1", "FeedbackUnsubscribeResponsePayload", new t.Callv("feedback_unsubscribe", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                 generated: !0,
                 requisite: !0
-            })], [rql/*p*/.__frag(global/*e*/)])
-        }(module/*i*/), requireDynamic/*n*/.runServerAction(requireLazy/*r*/, {
-            feedback_id: require/*t*/
+            })], [rql/*p*/.__frag(e)])
+        }(i), n.runServerAction(r, {
+            feedback_id: t
         })
     }
-    var GraphQLMutationAction/*s*/ = require/*t*/("GraphQLMutationAction"),
-        l = (require/*t*/("GraphQLMutatorHub"), require/*t*/("GraphQLMutationQueryCreator")),
-        GraphQLStore/*u*/ = require/*t*/("GraphQLStore"),
-        invariant/*c*/ = require/*t*/("invariant"),
-        rql/*p*/ = require/*t*/("rql"),
+    var GraphQLMutationAction/*s*/ = t("GraphQLMutationAction"),
+        l = (t("GraphQLMutatorHub"), t("GraphQLMutationQueryCreator")),
+        GraphQLStore/*u*/ = t("GraphQLStore"),
+        invariant/*c*/ = t("invariant"),
+        rql/*p*/ = t("rql"),
         d = {
-            handleFeedbackSubscribe: function(global/*e*/) {
-                a("feedback_subscribe", global/*e*/)
+            handleFeedbackSubscribe: function(e) {
+                a("feedback_subscribe", e)
             },
-            handleFeedbackUnsubscribe: function(global/*e*/) {
-                a("feedback_unsubscribe", global/*e*/)
+            handleFeedbackUnsubscribe: function(e) {
+                a("feedback_unsubscribe", e)
             }
         };
-    module/*i*/.exports = d
+    i.exports = d
 });

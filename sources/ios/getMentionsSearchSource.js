@@ -1,28 +1,28 @@
-__d("getMentionsSearchSource",["AtSignMentionsStrategy","CapitalizedNameMentionsStrategy","DocumentCompositeMentionsSource","DocumentMentionsSource","EntitySearchSource","FilteredSearchSource"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        var require/*t*/ = new EntitySearchSource/*p*/({
+__d("getMentionsSearchSource",["AtSignMentionsStrategy","CapitalizedNameMentionsStrategy","DocumentCompositeMentionsSource","DocumentMentionsSource","EntitySearchSource","FilteredSearchSource"],function (e, t, n, r, i) {
+    function o(e) {
+        var t = new EntitySearchSource/*p*/({
                 bootstrapFriends: !0,
-                groupID: global/*e*/
+                groupID: e
             }),
-            requireDynamic/*n*/ = new EntitySearchSource/*p*/({
+            n = new EntitySearchSource/*p*/({
                 entityTypes: [h],
                 bootstrapFriends: !0,
-                groupID: global/*e*/
+                groupID: e
             }),
-            requireLazy/*r*/ = new FilteredSearchSource/*d*/(a, requireDynamic/*n*/);
-        return new DocumentCompositeMentionsSource/*u*/([new DocumentMentionsSource/*c*/(AtSignMentionsStrategy/*s*/, require/*t*/), new DocumentMentionsSource/*c*/(CapitalizedNameMentionsStrategy/*l*/, requireLazy/*r*/)])
+            r = new FilteredSearchSource/*d*/(a, n);
+        return new DocumentCompositeMentionsSource/*u*/([new DocumentMentionsSource/*c*/(AtSignMentionsStrategy/*s*/, t), new DocumentMentionsSource/*c*/(CapitalizedNameMentionsStrategy/*l*/, r)])
     }
 
-    function a(global/*e*/) {
-        var require/*t*/ = Math.floor(global/*e*/.getOrder() / 10);
-        return 0 === require/*t*/ || 1 === require/*t*/
+    function a(e) {
+        var t = Math.floor(e.getOrder() / 10);
+        return 0 === t || 1 === t
     }
-    var AtSignMentionsStrategy/*s*/ = require/*t*/("AtSignMentionsStrategy"),
-        CapitalizedNameMentionsStrategy/*l*/ = require/*t*/("CapitalizedNameMentionsStrategy"),
-        DocumentCompositeMentionsSource/*u*/ = require/*t*/("DocumentCompositeMentionsSource"),
-        DocumentMentionsSource/*c*/ = require/*t*/("DocumentMentionsSource"),
-        EntitySearchSource/*p*/ = require/*t*/("EntitySearchSource"),
-        FilteredSearchSource/*d*/ = require/*t*/("FilteredSearchSource"),
+    var AtSignMentionsStrategy/*s*/ = t("AtSignMentionsStrategy"),
+        CapitalizedNameMentionsStrategy/*l*/ = t("CapitalizedNameMentionsStrategy"),
+        DocumentCompositeMentionsSource/*u*/ = t("DocumentCompositeMentionsSource"),
+        DocumentMentionsSource/*c*/ = t("DocumentMentionsSource"),
+        EntitySearchSource/*p*/ = t("EntitySearchSource"),
+        FilteredSearchSource/*d*/ = t("FilteredSearchSource"),
         h = "User";
-    module/*i*/.exports = o
+    i.exports = o
 });

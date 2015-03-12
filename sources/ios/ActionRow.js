@@ -1,12 +1,12 @@
-__d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounce","View"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounce","View"],function (e, t, n, r, i) {
     "use strict";
-    var FIGColors/*o*/ = require/*t*/("FIGColors"),
-        Image/*a*/ = require/*t*/("Image"),
-        React/*s*/ = require/*t*/("React"),
-        StyleSheet/*l*/ = require/*t*/("StyleSheet"),
-        Text/*u*/ = require/*t*/("Text"),
-        TouchableBounce/*c*/ = require/*t*/("TouchableBounce"),
-        View/*p*/ = require/*t*/("View"),
+    var FIGColors/*o*/ = t("FIGColors"),
+        Image/*a*/ = t("Image"),
+        React/*s*/ = t("React"),
+        StyleSheet/*l*/ = t("StyleSheet"),
+        Text/*u*/ = t("Text"),
+        TouchableBounce/*c*/ = t("TouchableBounce"),
+        View/*p*/ = t("View"),
         d = React/*s*/.createClass({
             displayName: "ActionRow",
             propTypes: {
@@ -57,5 +57,5 @@ __d("ActionRow",["FIGColors","Image","React","StyleSheet","Text","TouchableBounc
                 color: FIGColors/*o*/.mediumText
             }
         });
-    module/*i*/.exports = d
+    i.exports = d
 });

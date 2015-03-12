@@ -1,12 +1,12 @@
-__d("findSplitPointForText",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        var requireLazy/*r*/ = null,
-            module/*i*/ = global/*e*/.split("\requireDynamic/*n*/");
-        if (require/*t*/ && global/*e*/.length > require/*t*/ && (requireLazy/*r*/ = require/*t*/), requireDynamic/*n*/ && module/*i*/.length > requireDynamic/*n*/) {
-            var o = module/*i*/.slice(0, requireDynamic/*n*/).join("\requireDynamic/*n*/").length;
-            requireLazy/*r*/ = null !== requireLazy/*r*/ ? Math.min(o, requireLazy/*r*/) : o
+__d("findSplitPointForText",[],function (e, t, n, r, i) {
+    function o(e, t, n) {
+        var r = null,
+            i = e.split("\n");
+        if (t && e.length > t && (r = t), n && i.length > n) {
+            var o = i.slice(0, n).join("\n").length;
+            r = null !== r ? Math.min(o, r) : o
         }
-        return requireLazy/*r*/
+        return r
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

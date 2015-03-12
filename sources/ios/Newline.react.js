@@ -1,12 +1,12 @@
-__d("Newline.react",["React","Text.react"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("Newline.react",["React","Text.react"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        a = require/*t*/("Text.react"),
+    var React/*o*/ = t("React"),
+        a = t("Text.react"),
         s = React/*o*/.createClass({
             displayName: "Newline",
             render: function() {
-                return React/*o*/.createElement(a, null, "\requireDynamic/*n*/")
+                return React/*o*/.createElement(a, null, "\n")
             }
         });
-    module/*i*/.exports = s
+    i.exports = s
 });

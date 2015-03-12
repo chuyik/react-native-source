@@ -1,6 +1,6 @@
-__d("GroupRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupRoute",["DliteRoute"],function (e, t, n, r, i) {
     "use strict";
-    var DliteRoute/*o*/ = require/*t*/("DliteRoute"),
+    var DliteRoute/*o*/ = t("DliteRoute"),
         a = DliteRoute/*o*/.create({
             name: "GroupRoute",
             path: "/{group}",
@@ -11,16 +11,16 @@ __d("GroupRoute",["DliteRoute"],function (global/*e*/, require/*t*/, requireDyna
                 }
             },
             queries: {
-                group: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                    return function(global/*e*/, require/*t*/) {
-                        var requireLazy/*r*/ = requireDynamic/*n*/.__GraphQL;
-                        return new requireLazy/*r*/.Query("node", [requireDynamic/*n*/.__var(global/*e*/)], [new requireLazy/*r*/.Field("id", null, null, null, null, null, {
+                group: function(e, t, n) {
+                    return function(e, t) {
+                        var r = n.__GraphQL;
+                        return new r.Query("node", [n.__var(e)], [new r.Field("id", null, null, null, null, null, {
                             generated: !0,
                             requisite: !0
-                        })], [requireDynamic/*n*/.__frag(require/*t*/)], null, "GroupRoute_group")
-                    }(global/*e*/, require/*t*/)
+                        })], [n.__frag(t)], null, "GroupRoute_group")
+                    }(e, t)
                 }
             }
         });
-    module/*i*/.exports = a
+    i.exports = a
 });

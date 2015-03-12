@@ -1,10 +1,11 @@
-__d("renderApplication",["React","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("renderApplication",["React","invariant"],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        requireDynamic/*n*/ || invariant/*s*/(0, "Expect to have React/*a*/ valid rootTag, instead got ", requireDynamic/*n*/), React/*a*/.render(React/*a*/.createElement(global/*e*/, Object.assign({}, require/*t*/)), requireDynamic/*n*/)
+    function o(component, initialProps, rootTag) {
+        rootTag || invariant/*s*/(0, "Expect to have React/*a*/ valid rootTag, instead got ", rootTag),
+        React/*a*/.render(React/*a*/.createElement(component, Object.assign({}, initialProps)), rootTag)
     }
-    var React/*a*/ = require/*t*/("React"),
-        invariant/*s*/ = require/*t*/("invariant");
-    module/*i*/.exports = o
+    var React/*a*/ = t("React"),
+        invariant/*s*/ = t("invariant");
+    i.exports = o
 });

@@ -1,6 +1,6 @@
-__d("getSelectionOffsetKeyForNode",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        return global/*e*/.getAttribute && global/*e*/.getAttribute("data-offset-key")
+__d("getSelectionOffsetKeyForNode",[],function (e, t, n, r, i) {
+    function o(e) {
+        return e.getAttribute && e.getAttribute("data-offset-key")
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

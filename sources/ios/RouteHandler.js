@@ -1,42 +1,42 @@
-__d("RouteHandler",["NavItem","React","invariant"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("RouteHandler",["NavItem","React","invariant"],function (e, t, n, r, i) {
     "use strict";
-    var o, NavItem/*a*/ = require/*t*/("NavItem"),
-        React/*s*/ = require/*t*/("React"),
-        invariant/*l*/ = require/*t*/("invariant"),
+    var o, NavItem/*a*/ = t("NavItem"),
+        React/*s*/ = t("React"),
+        invariant/*l*/ = t("invariant"),
         u = {
-            setNavigator: function(global/*e*/) {
-                o = global/*e*/
+            setNavigator: function(e) {
+                o = e
             },
-            getCallback: function(global/*e*/) {
-                for (var require/*t*/ = 0; require/*t*/ < global/*e*/.typeList.length; ++require/*t*/) {
-                    var requireDynamic/*n*/ = this._callbacks[global/*e*/.typeList[require/*t*/]];
-                    if (requireDynamic/*n*/) return function() {
-                        return requireDynamic/*n*/(global/*e*/.params)
+            getCallback: function(e) {
+                for (var t = 0; t < e.typeList.length; ++t) {
+                    var n = this._callbacks[e.typeList[t]];
+                    if (n) return function() {
+                        return n(e.params)
                     }
                 }
-                return console.warn.bind(console, "Warning: No route for any of types " + JSON.stringify(global/*e*/.typeList))
+                return console.warn.bind(console, "Warning: No route for any of types " + JSON.stringify(e.typeList))
             },
-            registerViewCallbackForTypes: function(global/*e*/, require/*t*/) {
-                global/*e*/.forEach(function(global/*e*/) {
-                    void 0 !== this._callbacks[global/*e*/] ? console.warn("Type '" + global/*e*/ + "' already registered with RouteHandler, ignoring new mapping.") : this._callbacks[global/*e*/] = this._pushView.bind(this, require/*t*/)
+            registerViewCallbackForTypes: function(e, t) {
+                e.forEach(function(e) {
+                    void 0 !== this._callbacks[e] ? console.warn("Type '" + e + "' already registered with RouteHandler, ignoring new mapping.") : this._callbacks[e] = this._pushView.bind(this, t)
                 }.bind(this))
             },
-            registerCallbackForTypes: function(global/*e*/, require/*t*/) {
-                global/*e*/.forEach(function(global/*e*/) {
-                    void 0 !== this._callbacks[global/*e*/] ? console.warn("Type '" + global/*e*/ + "' already registered with RouteHandler, ignoring new mapping.") : this._callbacks[global/*e*/] = require/*t*/.bind(this)
+            registerCallbackForTypes: function(e, t) {
+                e.forEach(function(e) {
+                    void 0 !== this._callbacks[e] ? console.warn("Type '" + e + "' already registered with RouteHandler, ignoring new mapping.") : this._callbacks[e] = t.bind(this)
                 }.bind(this))
             },
-            _pushView: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = global/*e*/(require/*t*/);
-                requireDynamic/*n*/.type || invariant/*l*/(0, "viewCallback must generate NavItem/*a*/ component instance."), requireDynamic/*n*/.type.navItemTitle || invariant/*l*/(0, "View '" + (requireDynamic/*n*/.type.displayName || "<Unknown>") + "' must ' implement function navItemTitle.");
-                var requireLazy/*r*/ = requireDynamic/*n*/.type.navItemTitle(),
-                    module/*i*/ = require/*t*/.navigator || o;
-                module/*i*/ && module/*i*/.push ? module/*i*/.push(React/*s*/.createElement(NavItem/*a*/, {
-                    title: requireLazy/*r*/,
+            _pushView: function(e, t) {
+                var n = e(t);
+                n.type || invariant/*l*/(0, "viewCallback must generate NavItem/*a*/ component instance."), n.type.navItemTitle || invariant/*l*/(0, "View '" + (n.type.displayName || "<Unknown>") + "' must ' implement function navItemTitle.");
+                var r = n.type.navItemTitle(),
+                    i = t.navigator || o;
+                i && i.push ? i.push(React/*s*/.createElement(NavItem/*a*/, {
+                    title: r,
                     tintColor: "white"
-                }, requireDynamic/*n*/)) : console.warn("Warning: No valid navigator provided.")
+                }, n)) : console.warn("Warning: No valid navigator provided.")
             },
             _callbacks: {}
         };
-    module/*i*/.exports = u
+    i.exports = u
 });

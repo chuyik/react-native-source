@@ -1,9 +1,9 @@
-__d("FBStoryRenderLocations",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("FBStoryRenderLocations",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
         feedMobile: "feed_mobile",
         group: "group",
         permalink: "permalink"
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

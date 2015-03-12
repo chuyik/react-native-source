@@ -1,11 +1,11 @@
-__d("pointsDiffer",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("pointsDiffer",[],function (e, t, n, r, i) {
     "use strict";
     var o = {
             x: void 0,
             y: void 0
         },
-        a = function(global/*e*/, require/*t*/) {
-            return global/*e*/ = global/*e*/ || o, require/*t*/ = require/*t*/ || o, global/*e*/ !== require/*t*/ && (global/*e*/.x !== require/*t*/.x || global/*e*/.y !== require/*t*/.y)
+        a = function(e, t) {
+            return e = e || o, t = t || o, e !== t && (e.x !== t.x || e.y !== t.y)
         };
-    module/*i*/.exports = a
+    i.exports = a
 });

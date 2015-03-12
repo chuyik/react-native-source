@@ -1,15 +1,15 @@
-__d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermalinkRoute","React","StoryPermalinkRoute","StyleSheet","THColors","THPermalinkView","View","THRoutingConfig"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermalinkRoute","React","StoryPermalinkRoute","StyleSheet","THColors","THPermalinkView","View","THRoutingConfig"],function (e, t, n, r, i) {
     "use strict";
-    var DliteLoadingComponent/*o*/ = require/*t*/("DliteLoadingComponent"),
-        FBSpinner/*a*/ = require/*t*/("FBSpinner"),
-        LegacyStoryPermalinkRoute/*s*/ = require/*t*/("LegacyStoryPermalinkRoute"),
-        React/*l*/ = require/*t*/("React"),
-        StoryPermalinkRoute/*u*/ = require/*t*/("StoryPermalinkRoute"),
-        StyleSheet/*c*/ = require/*t*/("StyleSheet"),
-        THColors/*p*/ = require/*t*/("THColors"),
-        THPermalinkView/*d*/ = require/*t*/("THPermalinkView"),
-        View/*h*/ = require/*t*/("View");
-    require/*t*/("THRoutingConfig").initialize();
+    var DliteLoadingComponent/*o*/ = t("DliteLoadingComponent"),
+        FBSpinner/*a*/ = t("FBSpinner"),
+        LegacyStoryPermalinkRoute/*s*/ = t("LegacyStoryPermalinkRoute"),
+        React/*l*/ = t("React"),
+        StoryPermalinkRoute/*u*/ = t("StoryPermalinkRoute"),
+        StyleSheet/*c*/ = t("StyleSheet"),
+        THColors/*p*/ = t("THColors"),
+        THPermalinkView/*d*/ = t("THPermalinkView"),
+        View/*h*/ = t("View");
+    t("THRoutingConfig").initialize();
     var f = 10,
         m = React/*l*/.createClass({
             displayName: "GroupsPermalinkApp",
@@ -27,7 +27,7 @@ __d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermal
                 } : void console.error("GroupsPermalinkApp must have either FBSpinner/*a*/ story or legacystory prop")
             },
             render: function() {
-                var global/*e*/ = React/*l*/.createElement(View/*h*/, {
+                var e = React/*l*/.createElement(View/*h*/, {
                     style: g.fullScreenLoadingIndicator
                 }, React/*l*/.createElement(FBSpinner/*a*/, null));
                 return React/*l*/.createElement(View/*h*/, {
@@ -35,7 +35,7 @@ __d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermal
                 }, React/*l*/.createElement(DliteLoadingComponent/*o*/, {
                     component: THPermalinkView/*d*/,
                     route: this.getContext().route,
-                    loadingView: global/*e*/,
+                    loadingView: e,
                     refetchRoute: !0,
                     passProps: {
                         groupPostNotifTTI: this.props,
@@ -55,5 +55,5 @@ __d("GroupsPermalinkApp",["DliteLoadingComponent","FBSpinner","LegacyStoryPermal
                 paddingTop: 200
             }
         });
-    module/*i*/.exports = m
+    i.exports = m
 });

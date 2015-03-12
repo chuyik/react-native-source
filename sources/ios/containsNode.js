@@ -1,7 +1,7 @@
-__d("containsNode",["isTextNode"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/, require/*t*/) {
-        return global/*e*/ && require/*t*/ ? global/*e*/ === require/*t*/ ? !0 : isTextNode/*a*/(global/*e*/) ? !1 : isTextNode/*a*/(require/*t*/) ? o(global/*e*/, require/*t*/.parentNode) : global/*e*/.contains ? global/*e*/.contains(require/*t*/) : global/*e*/.compareDocumentPosition ? !!(16 & global/*e*/.compareDocumentPosition(require/*t*/)) : !1 : !1
+__d("containsNode",["isTextNode"],function (e, t, n, r, i) {
+    function o(e, t) {
+        return e && t ? e === t ? !0 : isTextNode/*a*/(e) ? !1 : isTextNode/*a*/(t) ? o(e, t.parentNode) : e.contains ? e.contains(t) : e.compareDocumentPosition ? !!(16 & e.compareDocumentPosition(t)) : !1 : !1
     }
-    var isTextNode/*a*/ = require/*t*/("isTextNode");
-    module/*i*/.exports = o
+    var isTextNode/*a*/ = t("isTextNode");
+    i.exports = o
 });

@@ -1,14 +1,14 @@
-__d("getUnboundedScrollPosition",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("getUnboundedScrollPosition",[],function (e, t, n, r, i) {
     "use strict";
 
-    function o(global/*e*/) {
-        return global/*e*/ === window ? {
+    function o(e) {
+        return e === window ? {
             x: window.pageXOffset || document.documentElement.scrollLeft,
             y: window.pageYOffset || document.documentElement.scrollTop
         } : {
-            x: global/*e*/.scrollLeft,
-            y: global/*e*/.scrollTop
+            x: e.scrollLeft,
+            y: e.scrollTop
         }
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

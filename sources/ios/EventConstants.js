@@ -1,6 +1,6 @@
-__d("EventConstants",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("EventConstants",["keyMirror"],function (e, t, n, r, i) {
     "use strict";
-    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+    var keyMirror/*o*/ = t("keyMirror"),
         a = keyMirror/*o*/({
             bubbled: null,
             captured: null
@@ -52,5 +52,5 @@ __d("EventConstants",["keyMirror"],function (global/*e*/, require/*t*/, requireD
             topLevelTypes: s,
             PropagationPhases: a
         };
-    module/*i*/.exports = l
+    i.exports = l
 });

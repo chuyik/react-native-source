@@ -1,22 +1,22 @@
-__d("AbstractSearchSource",["Deferred","emptyFunction"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("AbstractSearchSource",["Deferred","emptyFunction"],function (e, t, n, r, i) {
     function o() {}
-    var Deferred/*a*/ = require/*t*/("Deferred"),
-        emptyFunction/*s*/ = require/*t*/("emptyFunction"),
+    var Deferred/*a*/ = t("Deferred"),
+        emptyFunction/*s*/ = t("emptyFunction"),
         l = {
-            bootstrap: function(global/*e*/) {
-                return global/*e*/ = global/*e*/ || emptyFunction/*s*/, this._bootstrapped ? void global/*e*/() : this._bootstrapDeferred ? this._bootstrapDeferred.addCallback(global/*e*/) : (this._bootstrapDeferred = new Deferred/*a*/, this._bootstrapDeferred.addCallback(global/*e*/), this.bootstrapImpl(function() {
+            bootstrap: function(e) {
+                return e = e || emptyFunction/*s*/, this._bootstrapped ? void e() : this._bootstrapDeferred ? this._bootstrapDeferred.addCallback(e) : (this._bootstrapDeferred = new Deferred/*a*/, this._bootstrapDeferred.addCallback(e), this.bootstrapImpl(function() {
                     this._bootstrapped = !0, this._bootstrapDeferred.succeed(), this._bootstrapDeferred = null
                 }.bind(this)), this._bootstrapDeferred)
             },
-            search: function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-                this.searchImpl(global/*e*/, require/*t*/, requireDynamic/*n*/)
+            search: function(e, t, n) {
+                this.searchImpl(e, t, n)
             },
-            bootstrapImpl: function(global/*e*/) {
-                global/*e*/()
+            bootstrapImpl: function(e) {
+                e()
             },
             searchImpl: function() {
                 throw new Error("Abstract method #searchImpl is not implemented.")
             }
         };
-    Object.assign(o.prototype, l), o.Mixin = l, module/*i*/.exports = o
+    Object.assign(o.prototype, l), o.Mixin = l, i.exports = o
 });

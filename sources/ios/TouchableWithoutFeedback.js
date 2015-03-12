@@ -1,9 +1,9 @@
-__d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onlyChild"],function (e, t, n, r, i) {
     "use strict";
-    var React/*o*/ = require/*t*/("React"),
-        Touchable/*a*/ = require/*t*/("Touchable"),
-        s = (require/*t*/("View"), require/*t*/("copyProperties")),
-        onlyChild/*l*/ = require/*t*/("onlyChild"),
+    var React/*o*/ = t("React"),
+        Touchable/*a*/ = t("Touchable"),
+        s = (t("View"), t("copyProperties")),
+        onlyChild/*l*/ = t("onlyChild"),
         u = {
             top: 20,
             left: 20,
@@ -22,8 +22,8 @@ __d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onl
             getInitialState: function() {
                 return this.touchableGetInitialState()
             },
-            touchableHandlePress: function(global/*e*/) {
-                this.props.onPress && this.props.onPress(global/*e*/)
+            touchableHandlePress: function(e) {
+                this.props.onPress && this.props.onPress(e)
             },
             touchableHandleActivePressIn: function() {
                 this.props.onPressIn && this.props.onPressIn()
@@ -41,8 +41,8 @@ __d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onl
                 return 0
             },
             render: function() {
-                var global/*e*/ = onlyChild/*l*/(this.props.children);
-                return s(global/*e*/.props, {
+                var e = onlyChild/*l*/(this.props.children);
+                return s(e.props, {
                     accessible: !0,
                     testID: this.props.testID,
                     onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
@@ -51,8 +51,8 @@ __d("TouchableWithoutFeedback",["React","Touchable","View","copyProperties","onl
                     onResponderMove: this.touchableHandleResponderMove,
                     onResponderRelease: this.touchableHandleResponderRelease,
                     onResponderTerminate: this.touchableHandleResponderTerminate
-                }), global/*e*/
+                }), e
             }
         });
-    module/*i*/.exports = c
+    i.exports = c
 });

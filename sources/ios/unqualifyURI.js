@@ -1,6 +1,6 @@
-__d("unqualifyURI",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    function o(global/*e*/) {
-        global/*e*/.setProtocol(null).setDomain(null).setPort(null)
+__d("unqualifyURI",[],function (e, t, n, r, i) {
+    function o(e) {
+        e.setProtocol(null).setDomain(null).setPort(null)
     }
-    module/*i*/.exports = o
+    i.exports = o
 });

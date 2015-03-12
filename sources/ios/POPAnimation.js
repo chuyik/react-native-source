@@ -1,11 +1,11 @@
-__d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","getObjectValues","invariant","merge"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeChecker","getObjectValues","invariant","merge"],function (e, t, n, r, i) {
     "use strict";
-    var ReactPropTypes/*o*/ = require/*t*/("ReactPropTypes"),
-        NativeModules/*a*/ = require/*t*/("NativeModules").RKPOPAnimationManager,
-        createStrictShapeTypeChecker/*s*/ = require/*t*/("createStrictShapeTypeChecker"),
-        getObjectValues/*l*/ = require/*t*/("getObjectValues"),
-        invariant/*u*/ = require/*t*/("invariant"),
-        merge/*c*/ = require/*t*/("merge"),
+    var ReactPropTypes/*o*/ = t("ReactPropTypes"),
+        NativeModules/*a*/ = t("NativeModules").RKPOPAnimationManager,
+        createStrictShapeTypeChecker/*s*/ = t("createStrictShapeTypeChecker"),
+        getObjectValues/*l*/ = t("getObjectValues"),
+        invariant/*u*/ = t("invariant"),
+        merge/*c*/ = t("merge"),
         p = NativeModules/*a*/.Types,
         d = NativeModules/*a*/.Properties,
         h = {
@@ -64,40 +64,40 @@ __d("POPAnimation",["ReactPropTypes","NativeModules","createStrictShapeTypeCheck
             allocateTagForAnimation: function() {
                 return ++this.lastUsedTag
             },
-            createAnimation: function(global/*e*/, require/*t*/) {
-                var requireDynamic/*n*/ = this.allocateTagForAnimation();
+            createAnimation: function(e, t) {
+                var n = this.allocateTagForAnimation();
                 return __DEV__ && (m.attributeChecker({
-                    attrs: require/*t*/
+                    attrs: t
                 }, "attrs", "POPAnimation.createAnimation"), m.attributeChecker({
                     attrs: {
-                        type: global/*e*/
+                        type: e
                     }
-                }, "attrs", "POPAnimation.createAnimation")), NativeModules/*a*/.createAnimationInternal(requireDynamic/*n*/, global/*e*/, require/*t*/), requireDynamic/*n*/
+                }, "attrs", "POPAnimation.createAnimation")), NativeModules/*a*/.createAnimationInternal(n, e, t), n
             },
-            createSpringAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.spring, global/*e*/)
+            createSpringAnimation: function(e) {
+                return this.createAnimation(this.Types.spring, e)
             },
-            createDecayAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.decay, global/*e*/)
+            createDecayAnimation: function(e) {
+                return this.createAnimation(this.Types.decay, e)
             },
-            createLinearAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.linear, global/*e*/)
+            createLinearAnimation: function(e) {
+                return this.createAnimation(this.Types.linear, e)
             },
-            createEaseInAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.easeIn, global/*e*/)
+            createEaseInAnimation: function(e) {
+                return this.createAnimation(this.Types.easeIn, e)
             },
-            createEaseOutAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.easeOut, global/*e*/)
+            createEaseOutAnimation: function(e) {
+                return this.createAnimation(this.Types.easeOut, e)
             },
-            createEaseInEaseOutAnimation: function(global/*e*/) {
-                return this.createAnimation(this.Types.easeInEaseOut, global/*e*/)
+            createEaseInEaseOutAnimation: function(e) {
+                return this.createAnimation(this.Types.easeInEaseOut, e)
             }
         };
     if (__DEV__) {
         var g = merge/*c*/(NativeModules/*a*/.Properties, NativeModules/*a*/.Properties);
-        for (var _ in g) m.Properties[_] !== NativeModules/*a*/.Properties[_] && invariant/*u*/(0, "POPAnimation doesn'require/*t*/ copy property " + _ + " correctly");
+        for (var _ in g) m.Properties[_] !== NativeModules/*a*/.Properties[_] && invariant/*u*/(0, "POPAnimation doesn't copy property " + _ + " correctly");
         var y = merge/*c*/(NativeModules/*a*/.Types, NativeModules/*a*/.Types);
-        for (var _ in y) m.Types[_] !== NativeModules/*a*/.Types[_] && invariant/*u*/(0, "POPAnimation doesn'require/*t*/ copy type " + _ + " correctly")
+        for (var _ in y) m.Types[_] !== NativeModules/*a*/.Types[_] && invariant/*u*/(0, "POPAnimation doesn't copy type " + _ + " correctly")
     }
-    module/*i*/.exports = m
+    i.exports = m
 });

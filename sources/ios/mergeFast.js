@@ -1,10 +1,10 @@
-__d("mergeFast",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("mergeFast",[],function (e, t, n, r, i) {
     "use strict";
-    var o = function(global/*e*/, require/*t*/) {
-        var requireDynamic/*n*/ = {};
-        for (var requireLazy/*r*/ in global/*e*/) requireDynamic/*n*/[requireLazy/*r*/] = global/*e*/[requireLazy/*r*/];
-        for (var module/*i*/ in require/*t*/) requireDynamic/*n*/[module/*i*/] = require/*t*/[module/*i*/];
-        return requireDynamic/*n*/
+    var o = function(e, t) {
+        var n = {};
+        for (var r in e) n[r] = e[r];
+        for (var i in t) n[i] = t[i];
+        return n
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

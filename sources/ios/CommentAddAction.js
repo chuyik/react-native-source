@@ -1,63 +1,63 @@
-__d("CommentAddAction",["GraphPhotoUpload","GraphQL_EXPERIMENTAL","GraphQLMutationAction","GraphQLMutationQueryCreator","GraphQLMutatorConstants","GraphQLMutatorHub","GraphQLQueryRunner","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("CommentAddAction",["GraphPhotoUpload","GraphQL_EXPERIMENTAL","GraphQLMutationAction","GraphQLMutationQueryCreator","GraphQLMutatorConstants","GraphQLMutatorHub","GraphQLQueryRunner","GraphQLStore","defaultRQLMutationCallback","invariant","rql"],function (e, t, n, r, i) {
     "use strict";
-    var GraphPhotoUpload/*o*/ = require/*t*/("GraphPhotoUpload"),
-        a = (require/*t*/("GraphQL_EXPERIMENTAL"), require/*t*/("GraphQLMutationAction")),
-        GraphQLMutationQueryCreator/*s*/ = require/*t*/("GraphQLMutationQueryCreator"),
-        l = (require/*t*/("GraphQLMutatorConstants"), require/*t*/("GraphQLMutatorHub")),
-        u = (require/*t*/("GraphQLQueryRunner"), require/*t*/("GraphQLStore")),
-        defaultRQLMutationCallback/*c*/ = require/*t*/("defaultRQLMutationCallback"),
-        invariant/*p*/ = require/*t*/("invariant"),
-        rql/*d*/ = require/*t*/("rql"),
+    var GraphPhotoUpload/*o*/ = t("GraphPhotoUpload"),
+        a = (t("GraphQL_EXPERIMENTAL"), t("GraphQLMutationAction")),
+        GraphQLMutationQueryCreator/*s*/ = t("GraphQLMutationQueryCreator"),
+        l = (t("GraphQLMutatorConstants"), t("GraphQLMutatorHub")),
+        u = (t("GraphQLQueryRunner"), t("GraphQLStore")),
+        defaultRQLMutationCallback/*c*/ = t("defaultRQLMutationCallback"),
+        invariant/*p*/ = t("invariant"),
+        rql/*d*/ = t("rql"),
         h = "me/photos?published=false";
     l.registerForRangeAddMutationType("comment_create", {
         connectionName: "top_level_comments",
         edgeName: "feedback_comment_edge"
     });
     var f = {
-            handleAddComment: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                m(require/*t*/, requireDynamic/*n*/);
-                var module/*i*/ = g(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/),
+            handleAddComment: function(e, t, n, r) {
+                m(t, n);
+                var i = g(e, t, n, r),
                     GraphPhotoUpload/*o*/ = new a;
-                GraphPhotoUpload/*o*/.runOptimisticAction(module/*i*/);
-                var GraphQLMutationQueryCreator/*s*/ = _(require/*t*/),
-                    l = requireLazy/*r*/ && requireLazy/*r*/.media && requireLazy/*r*/.media.id,
-                    u = y(require/*t*/, requireDynamic/*n*/, l);
-                GraphPhotoUpload/*o*/.runServerAction(GraphQLMutationQueryCreator/*s*/, u, function(global/*e*/, require/*t*/) {
-                    defaultRQLMutationCallback/*c*/(global/*e*/, require/*t*/, GraphQLMutationQueryCreator/*s*/)
+                GraphPhotoUpload/*o*/.runOptimisticAction(i);
+                var GraphQLMutationQueryCreator/*s*/ = _(t),
+                    l = r && r.media && r.media.id,
+                    u = y(t, n, l);
+                GraphPhotoUpload/*o*/.runServerAction(GraphQLMutationQueryCreator/*s*/, u, function(e, t) {
+                    defaultRQLMutationCallback/*c*/(e, t, GraphQLMutationQueryCreator/*s*/)
                 })
             },
-            handleAddPhotoComment: function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-                m(require/*t*/, requireDynamic/*n*/), requireLazy/*r*/.media.image.uri || console.warn("Expected attachment uri is empty, need one that points to photo on device");
-                var module/*i*/ = g(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/),
+            handleAddPhotoComment: function(e, t, n, r) {
+                m(t, n), r.media.image.uri || console.warn("Expected attachment uri is empty, need one that points to photo on device");
+                var i = g(e, t, n, r),
                     GraphQLMutationQueryCreator/*s*/ = new a;
-                GraphQLMutationQueryCreator/*s*/.runOptimisticAction(module/*i*/), GraphPhotoUpload/*o*/.upload(requireLazy/*r*/.media.image.uri, h, {
-                    onFailure: function(global/*e*/) {
-                        console.error("Upload failed " + global/*e*/)
+                GraphQLMutationQueryCreator/*s*/.runOptimisticAction(i), GraphPhotoUpload/*o*/.upload(r.media.image.uri, h, {
+                    onFailure: function(e) {
+                        console.error("Upload failed " + e)
                     },
-                    onSuccess: function(global/*e*/) {
-                        global/*e*/ || invariant/*p*/(0, "Response object should not be null or undefined");
-                        var requireLazy/*r*/ = _(require/*t*/),
-                            module/*i*/ = y(require/*t*/, requireDynamic/*n*/, global/*e*/.id);
-                        GraphQLMutationQueryCreator/*s*/.runServerAction(requireLazy/*r*/, module/*i*/, function(global/*e*/, require/*t*/) {
-                            defaultRQLMutationCallback/*c*/(global/*e*/, require/*t*/, requireLazy/*r*/)
+                    onSuccess: function(e) {
+                        e || invariant/*p*/(0, "Response object should not be null or undefined");
+                        var r = _(t),
+                            i = y(t, n, e.id);
+                        GraphQLMutationQueryCreator/*s*/.runServerAction(r, i, function(e, t) {
+                            defaultRQLMutationCallback/*c*/(e, t, r)
                         })
                     }
                 })
             }
         },
-        m = function(global/*e*/, require/*t*/) {
-            u.isValidNodeID(global/*e*/) || invariant/*p*/(0, "Comment added on unknown feedback target"), void 0 === require/*t*/.text && invariant/*p*/(0, "comment message must have a text field, even if empty.")
+        m = function(e, t) {
+            u.isValidNodeID(e) || invariant/*p*/(0, "Comment added on unknown feedback target"), void 0 === t.text && invariant/*p*/(0, "comment message must have a text field, even if empty.")
         },
-        g = function(global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/) {
-            var module/*i*/ = {
+        g = function(e, t, n, r) {
+            var i = {
                 comment_create: {
                     feedback_comment_edge: {
                         node: {
                             author: {
-                                id: global/*e*/
+                                id: e
                             },
                             created_time: Math.floor(Date.now() / 1e3),
-                            body: requireDynamic/*n*/,
+                            body: n,
                             feedback: {
                                 can_viewer_like: !1,
                                 does_viewer_like: !1,
@@ -70,34 +70,34 @@ __d("CommentAddAction",["GraphPhotoUpload","GraphQL_EXPERIMENTAL","GraphQLMutati
                             }
                         },
                         source: {
-                            id: require/*t*/
+                            id: t
                         }
                     }
                 }
             };
-            return requireLazy/*r*/ && (module/*i*/.comment_create.feedback_comment_edge.node.attachments = [requireLazy/*r*/]), module/*i*/
+            return r && (i.comment_create.feedback_comment_edge.node.attachments = [r]), i
         },
-        _ = function(global/*e*/) {
-            var require/*t*/ = GraphQLMutationQueryCreator/*s*/.createRangeAddQuery("comment_create", "top_level_comments", "feedback_comment_edge", global/*e*/, "feedback"),
-                requireDynamic/*n*/ = function(global/*e*/) {
-                    var require/*t*/ = rql/*d*/.__GraphQL;
-                    return new require/*t*/.Mutation("CommentAddAction_m0", "CommentCreateResponsePayload", new require/*t*/.Callv("comment_create", [new require/*t*/.CallVariable("input")]), [new require/*t*/.Field("client_mutation_id", null, null, null, null, null, {
+        _ = function(e) {
+            var t = GraphQLMutationQueryCreator/*s*/.createRangeAddQuery("comment_create", "top_level_comments", "feedback_comment_edge", e, "feedback"),
+                n = function(e) {
+                    var t = rql/*d*/.__GraphQL;
+                    return new t.Mutation("CommentAddAction_m0", "CommentCreateResponsePayload", new t.Callv("comment_create", [new t.CallVariable("input")]), [new t.Field("client_mutation_id", null, null, null, null, null, {
                         generated: !0,
                         requisite: !0
-                    })], [rql/*d*/.__frag(global/*e*/)])
-                }(require/*t*/);
-            return requireDynamic/*n*/
+                    })], [rql/*d*/.__frag(e)])
+                }(t);
+            return n
         },
-        y = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-            var requireLazy/*r*/ = {
-                feedback_id: global/*e*/,
-                message: require/*t*/
+        y = function(e, t, n) {
+            var r = {
+                feedback_id: e,
+                message: t
             };
-            return requireDynamic/*n*/ && (requireLazy/*r*/.attachments = [{
+            return n && (r.attachments = [{
                 media: {
-                    id: requireDynamic/*n*/
+                    id: n
                 }
-            }]), requireLazy/*r*/
+            }]), r
         };
-    module/*i*/.exports = f
+    i.exports = f
 });

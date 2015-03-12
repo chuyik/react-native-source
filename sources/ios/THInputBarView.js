@@ -1,35 +1,35 @@
-__d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","DocumentSelectionState","FIGColors","FBStickerInputView","Image","MentionsInput.react","MentionsInputTypeaheadView.react","NativeModulesDeprecated","React","StyleSheet","TimerMixin","Text","THAnimations","THColors","THCommentPhotoAttachmentPreview","THSounds","TouchableBounce","TouchableOpacity","TouchableHighlight","TouchableWithoutFeedback","View","clamp","copyDocumentContent","documentContentsAreEqual","fbt","getMentionsSearchSource","getTextWithEntitiesFromDocument","ix"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","DocumentSelectionState","FIGColors","FBStickerInputView","Image","MentionsInput.react","MentionsInputTypeaheadView.react","NativeModulesDeprecated","React","StyleSheet","TimerMixin","Text","THAnimations","THColors","THCommentPhotoAttachmentPreview","THSounds","TouchableBounce","TouchableOpacity","TouchableHighlight","TouchableWithoutFeedback","View","clamp","copyDocumentContent","documentContentsAreEqual","fbt","getMentionsSearchSource","getTextWithEntitiesFromDocument","ix"],function (e, t, n, r, i) {
     "use strict";
-    var LayoutAnimation/*o*/ = require/*t*/("LayoutAnimation"),
-        Dimensions/*a*/ = require/*t*/("Dimensions"),
-        DocumentContent/*s*/ = require/*t*/("DocumentContent"),
-        DocumentSelectionState/*l*/ = require/*t*/("DocumentSelectionState"),
-        FIGColors/*u*/ = require/*t*/("FIGColors"),
-        FBStickerInputView/*c*/ = require/*t*/("FBStickerInputView"),
-        Image/*p*/ = require/*t*/("Image"),
-        d = require/*t*/("MentionsInput.react"),
-        h = require/*t*/("MentionsInputTypeaheadView.react"),
-        NativeModulesDeprecated/*f*/ = require/*t*/("NativeModulesDeprecated"),
-        React/*m*/ = require/*t*/("React"),
-        StyleSheet/*g*/ = require/*t*/("StyleSheet"),
-        TimerMixin/*_*/ = require/*t*/("TimerMixin"),
-        Text/*y*/ = require/*t*/("Text"),
-        THAnimations/*v*/ = require/*t*/("THAnimations"),
-        THColors/*S*/ = require/*t*/("THColors"),
-        THCommentPhotoAttachmentPreview/*b*/ = require/*t*/("THCommentPhotoAttachmentPreview"),
-        THSounds/*R*/ = require/*t*/("THSounds"),
-        TouchableBounce/*w*/ = require/*t*/("TouchableBounce"),
-        TouchableOpacity/*C*/ = require/*t*/("TouchableOpacity"),
-        TouchableHighlight/*E*/ = require/*t*/("TouchableHighlight"),
-        TouchableWithoutFeedback/*D*/ = require/*t*/("TouchableWithoutFeedback"),
-        View/*T*/ = require/*t*/("View"),
-        clamp/*x*/ = require/*t*/("clamp"),
-        copyDocumentContent/*P*/ = require/*t*/("copyDocumentContent"),
-        documentContentsAreEqual/*I*/ = require/*t*/("documentContentsAreEqual"),
-        fbt/*F*/ = require/*t*/("fbt"),
-        getMentionsSearchSource/*L*/ = require/*t*/("getMentionsSearchSource"),
-        getTextWithEntitiesFromDocument/*M*/ = require/*t*/("getTextWithEntitiesFromDocument"),
-        ix/*Q*/ = require/*t*/("ix"),
+    var LayoutAnimation/*o*/ = t("LayoutAnimation"),
+        Dimensions/*a*/ = t("Dimensions"),
+        DocumentContent/*s*/ = t("DocumentContent"),
+        DocumentSelectionState/*l*/ = t("DocumentSelectionState"),
+        FIGColors/*u*/ = t("FIGColors"),
+        FBStickerInputView/*c*/ = t("FBStickerInputView"),
+        Image/*p*/ = t("Image"),
+        d = t("MentionsInput.react"),
+        h = t("MentionsInputTypeaheadView.react"),
+        NativeModulesDeprecated/*f*/ = t("NativeModulesDeprecated"),
+        React/*m*/ = t("React"),
+        StyleSheet/*g*/ = t("StyleSheet"),
+        TimerMixin/*_*/ = t("TimerMixin"),
+        Text/*y*/ = t("Text"),
+        THAnimations/*v*/ = t("THAnimations"),
+        THColors/*S*/ = t("THColors"),
+        THCommentPhotoAttachmentPreview/*b*/ = t("THCommentPhotoAttachmentPreview"),
+        THSounds/*R*/ = t("THSounds"),
+        TouchableBounce/*w*/ = t("TouchableBounce"),
+        TouchableOpacity/*C*/ = t("TouchableOpacity"),
+        TouchableHighlight/*E*/ = t("TouchableHighlight"),
+        TouchableWithoutFeedback/*D*/ = t("TouchableWithoutFeedback"),
+        View/*T*/ = t("View"),
+        clamp/*x*/ = t("clamp"),
+        copyDocumentContent/*P*/ = t("copyDocumentContent"),
+        documentContentsAreEqual/*I*/ = t("documentContentsAreEqual"),
+        fbt/*F*/ = t("fbt"),
+        getMentionsSearchSource/*L*/ = t("getMentionsSearchSource"),
+        getTextWithEntitiesFromDocument/*M*/ = t("getTextWithEntitiesFromDocument"),
+        ix/*Q*/ = t("ix"),
         A = NativeModulesDeprecated/*f*/.RKTreehouseManager,
         k = "stickerInputView",
         O = "keyboardInputView",
@@ -43,8 +43,8 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
         U = 12,
         j = 13,
         W = 14,
-        K = function(global/*e*/) {
-            return global/*e*/ + 2 * V + q
+        K = function(e) {
+            return e + 2 * V + q
         },
         z = fbt/*F*/({
             type: "text",
@@ -114,13 +114,13 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
             getPhotoSource: function() {
                 return this.state.photoSource ? this.state.photoSource : null
             },
-            handleChange: function(global/*e*/) {
-                if (global/*e*/) {
-                    var require/*t*/ = global/*e*/.nativeEvent.contentSize,
-                        requireDynamic/*n*/ = clamp/*x*/(B, require/*t*/.height, H);
-                    this.state.inputFieldHeight !== requireDynamic/*n*/ && (this.state.documentContent.bumpVersion(), this.setState({
-                        inputFieldHeight: requireDynamic/*n*/
-                    }), this.props.onHeightChange && this.props.onHeightChange(K(requireDynamic/*n*/)))
+            handleChange: function(e) {
+                if (e) {
+                    var t = e.nativeEvent.contentSize,
+                        n = clamp/*x*/(B, t.height, H);
+                    this.state.inputFieldHeight !== n && (this.state.documentContent.bumpVersion(), this.setState({
+                        inputFieldHeight: n
+                    }), this.props.onHeightChange && this.props.onHeightChange(K(n)))
                 }
                 this.props.onTextChange && this.props.onTextChange(this.state.documentContent)
             },
@@ -135,8 +135,8 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                 }.bind(this))
             },
             handleCommentSubmit: function() {
-                var global/*e*/ = null;
-                this.state.photoSource && (global/*e*/ = {
+                var e = null;
+                this.state.photoSource && (e = {
                     style_list: ["photo"],
                     media: {
                         image: this.state.photoSource
@@ -145,14 +145,14 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                     submittingComment: !0,
                     photoSource: null
                 }), this.refs[G] && this.blurInput(), this.props.onCommentSubmit && this.requestAnimationFrame(function() {
-                    var require/*t*/ = getTextWithEntitiesFromDocument/*M*/(this.state.documentContent);
-                    require/*t*/ ? this.props.onCommentSubmit(require/*t*/, global/*e*/) : console.error("Should not be submitting empty comment.")
+                    var t = getTextWithEntitiesFromDocument/*M*/(this.state.documentContent);
+                    t ? this.props.onCommentSubmit(t, e) : console.error("Should not be submitting empty comment.")
                 }.bind(this))
             },
-            handlePhotoPickerSelect: function(global/*e*/) {
+            handlePhotoPickerSelect: function(e) {
                 LayoutAnimation/*o*/.configureNext(THAnimations/*v*/.layout.photoCommentPreview), this.setState({
-                    photoSource: global/*e*/
-                }), this.props.onPhotoChange && this.props.onPhotoChange(global/*e*/)
+                    photoSource: e
+                }), this.props.onPhotoChange && this.props.onPhotoChange(e)
             },
             handleCameraButtonPress: function() {
                 A ? (A.openPhotoPicker(this.handlePhotoPickerSelect), this.setState({
@@ -166,31 +166,31 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                     inputView: O
                 }), this.focusInput()
             },
-            handleStickerCommentSubmit: function(global/*e*/) {
+            handleStickerCommentSubmit: function(e) {
                 A && A.playSound(THSounds/*R*/.commentCompleted), this.setState({
                     submittingComment: !0
                 }), this.refs[G] && this.blurInput();
-                var require/*t*/ = global/*e*/.nativeEvent.stickerFBID,
-                    requireDynamic/*n*/ = getTextWithEntitiesFromDocument/*M*/(this.state.documentContent);
-                if (requireDynamic/*n*/ && require/*t*/) {
-                    var requireLazy/*r*/ = {
+                var t = e.nativeEvent.stickerFBID,
+                    n = getTextWithEntitiesFromDocument/*M*/(this.state.documentContent);
+                if (n && t) {
+                    var r = {
                         style_list: ["sticker"],
                         media: {
-                            id: require/*t*/.toString()
+                            id: t.toString()
                         }
                     };
-                    this.props.onCommentSubmit(requireDynamic/*n*/, requireLazy/*r*/)
+                    this.props.onCommentSubmit(n, r)
                 } else console.error("Should not be submitting invalid sticker.")
             },
-            componentWillReceiveProps: function(global/*e*/) {
-                var require/*t*/ = this.props.initialText;
-                this.props = global/*e*/, global/*e*/.initialText !== require/*t*/ && this.resetCommentField(), this.setState({
+            componentWillReceiveProps: function(e) {
+                var t = this.props.initialText;
+                this.props = e, e.initialText !== t && this.resetCommentField(), this.setState({
                     photoSource: this.props.photoSource
                 })
             },
             resetCommentField: function() {
-                var global/*e*/ = this.props.initialText || new DocumentContent/*s*/;
-                this.state.documentContent.update(global/*e*/.getText(), global/*e*/.getInlineStyles().slice(0), global/*e*/.getBlockStyles().slice(0), global/*e*/.getEntities().slice(0)), this.setState({
+                var e = this.props.initialText || new DocumentContent/*s*/;
+                this.state.documentContent.update(e.getText(), e.getInlineStyles().slice(0), e.getBlockStyles().slice(0), e.getEntities().slice(0)), this.setState({
                     submittingComment: !1
                 })
             },
@@ -200,32 +200,32 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                 }), this.props.onPhotoChange && this.props.onPhotoChange(null)
             },
             renderPhotoAttachment: function() {
-                var global/*e*/ = this.removePhotoAttachment;
-                return this.state.photoSource && !this.props.canCommentInline && (global/*e*/ = null), this.state.photoSource && !this.props.isEditing ? React/*m*/.createElement(THCommentPhotoAttachmentPreview/*b*/, {
+                var e = this.removePhotoAttachment;
+                return this.state.photoSource && !this.props.canCommentInline && (e = null), this.state.photoSource && !this.props.isEditing ? React/*m*/.createElement(THCommentPhotoAttachmentPreview/*b*/, {
                     photoSource: this.state.photoSource,
-                    onRemoveAttachment: global/*e*/,
+                    onRemoveAttachment: e,
                     style: Z.thumbnailPhoto,
                     wrapperStyle: Z.previewContainer
                 }) : null
             },
             renderStickerButton: function() {
                 if (this.props.isEditing) return null;
-                var global/*e*/;
-                global/*e*/ = ix/*Q*/(this.state.inputView === k ? "thSmileGlyphSelected" : "thSmileGlyphNormal");
-                var require/*t*/ = React/*m*/.createElement(Image/*p*/, {
-                        source: global/*e*/,
+                var e;
+                e = ix/*Q*/(this.state.inputView === k ? "thSmileGlyphSelected" : "thSmileGlyphNormal");
+                var t = React/*m*/.createElement(Image/*p*/, {
+                        source: e,
                         style: Z.icon
                     }),
-                    requireDynamic/*n*/ = [Z.stickerButton];
-                return (this.isPostButtonActive() || this.props.hideInputButtons) && requireDynamic/*n*/.push(Z.offscreenButton), React/*m*/.createElement(TouchableWithoutFeedback/*D*/, {
+                    n = [Z.stickerButton];
+                return (this.isPostButtonActive() || this.props.hideInputButtons) && n.push(Z.offscreenButton), React/*m*/.createElement(TouchableWithoutFeedback/*D*/, {
                     onPress: this.handleStickerKeyboardSwitch
                 }, React/*m*/.createElement(View/*T*/, {
-                    style: requireDynamic/*n*/
-                }, require/*t*/))
+                    style: n
+                }, t))
             },
             renderCameraButton: function() {
                 if (!this.props.canCommentInline || this.props.hideInputButtons || this.state.photoSource || this.props.isEditing) return null;
-                var global/*e*/ = React/*m*/.createElement(Image/*p*/, {
+                var e = React/*m*/.createElement(Image/*p*/, {
                     source: ix/*Q*/("thCameraGlyph"),
                     style: Z.icon
                 });
@@ -233,49 +233,49 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                     onPress: this.handleCameraButtonPress
                 }, React/*m*/.createElement(View/*T*/, {
                     style: Z.cameraButton
-                }, global/*e*/))
+                }, e))
             },
             renderPostButton: function() {
-                var global/*e*/ = [Z.postButton],
-                    require/*t*/ = Z.postButtonText,
-                    requireDynamic/*n*/ = X,
-                    requireLazy/*r*/ = this.handleCommentSubmit;
-                return this.props.isEditing ? (requireDynamic/*n*/ = Y, this.isPostButtonActive() || (require/*t*/ = Z.inactivePostButtonText, requireLazy/*r*/ = null)) : (!this.isPostButtonActive() || this.props.hideInputButtons && !this.state.photoSource) && (global/*e*/.push(Z.offscreenButton), requireLazy/*r*/ = null), React/*m*/.createElement(TouchableBounce/*w*/, {
-                    onPress: requireLazy/*r*/
+                var e = [Z.postButton],
+                    t = Z.postButtonText,
+                    n = X,
+                    r = this.handleCommentSubmit;
+                return this.props.isEditing ? (n = Y, this.isPostButtonActive() || (t = Z.inactivePostButtonText, r = null)) : (!this.isPostButtonActive() || this.props.hideInputButtons && !this.state.photoSource) && (e.push(Z.offscreenButton), r = null), React/*m*/.createElement(TouchableBounce/*w*/, {
+                    onPress: r
                 }, React/*m*/.createElement(View/*T*/, {
-                    style: global/*e*/
+                    style: e
                 }, React/*m*/.createElement(Text/*y*/, {
-                    style: require/*t*/
-                }, requireDynamic/*n*/)))
+                    style: t
+                }, n)))
             },
             isPostButtonActive: function() {
-                var global/*e*/ = !this.state.documentContent.getText().trim();
-                return this.props.isEditing ? !(this.state.submittingComment || global/*e*/ && !this.state.photoSource || documentContentsAreEqual/*I*/(this.props.comparisonTextForCanPost, this.state.documentContent)) : !this.state.submittingComment && (!global/*e*/ || this.state.photoSource)
+                var e = !this.state.documentContent.getText().trim();
+                return this.props.isEditing ? !(this.state.submittingComment || e && !this.state.photoSource || documentContentsAreEqual/*I*/(this.props.comparisonTextForCanPost, this.state.documentContent)) : !this.state.submittingComment && (!e || this.state.photoSource)
             },
             render: function() {
-                var global/*e*/ = null,
-                    require/*t*/ = null;
+                var e = null,
+                    t = null;
                 switch (this.state.inputView) {
                     case O:
-                        global/*e*/ = null;
+                        e = null;
                         break;
                     case k:
-                        global/*e*/ = React/*m*/.createElement(FBStickerInputView/*c*/, {
+                        e = React/*m*/.createElement(FBStickerInputView/*c*/, {
                             onStickerSelect: this.handleStickerCommentSubmit
-                        }), require/*t*/ = React/*m*/.createElement(TouchableWithoutFeedback/*D*/, {
+                        }), t = React/*m*/.createElement(TouchableWithoutFeedback/*D*/, {
                             onPress: this.handleActiveInputPress
                         }, React/*m*/.createElement(View/*T*/, {
                             style: Z.inputFieldOverlay
                         }));
                         break;
                     default:
-                        global/*e*/ = null
+                        e = null
                 }
-                var requireDynamic/*n*/, requireLazy/*r*/, module/*i*/, LayoutAnimation/*o*/;
-                this.props.canCommentInline ? (requireDynamic/*n*/ = THColors/*S*/.darkerDivider, requireLazy/*r*/ = W, module/*i*/ = this.state.inputFieldHeight, LayoutAnimation/*o*/ = View/*T*/.pointerEvents.unspecified) : (requireDynamic/*n*/ = THColors/*S*/.divider, requireLazy/*r*/ = j, module/*i*/ = B, LayoutAnimation/*o*/ = View/*T*/.pointerEvents.boxOnly);
+                var n, r, i, LayoutAnimation/*o*/;
+                this.props.canCommentInline ? (n = THColors/*S*/.darkerDivider, r = W, i = this.state.inputFieldHeight, LayoutAnimation/*o*/ = View/*T*/.pointerEvents.unspecified) : (n = THColors/*S*/.divider, r = j, i = B, LayoutAnimation/*o*/ = View/*T*/.pointerEvents.boxOnly);
                 var Dimensions/*a*/ = [Z.commentBox, {
-                        height: module/*i*/,
-                        fontSize: requireLazy/*r*/
+                        height: i,
+                        fontSize: r
                     }],
                     DocumentContent/*s*/ = this.state.documentContent.getText() || this.props.canCommentInline && !this.props.showPlaceholder ? null : z,
                     DocumentSelectionState/*l*/ = React/*m*/.createElement(d, {
@@ -290,14 +290,14 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                         onInputFocus: this.resetCommentField,
                         multiline: !0,
                         onChange: this.handleChange,
-                        inputView: global/*e*/
+                        inputView: e
                     });
                 return React/*m*/.createElement(View/*T*/, {
                     ref: N
                 }, React/*m*/.createElement(View/*T*/, {
                     key: "divReply",
                     style: [Z.divider, {
-                        backgroundColor: requireDynamic/*n*/
+                        backgroundColor: n
                     }]
                 }), React/*m*/.createElement(View/*T*/, {
                     style: [Z.buttonsContainer, {
@@ -309,7 +309,7 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                     onPress: this.handleInactiveInputPress
                 }, React/*m*/.createElement(View/*T*/, {
                     pointerEvents: LayoutAnimation/*o*/
-                }, DocumentSelectionState/*l*/)), require/*t*/, this.renderCameraButton(), this.renderPostButton(), this.renderStickerButton()))
+                }, DocumentSelectionState/*l*/)), t, this.renderCameraButton(), this.renderPostButton(), this.renderStickerButton()))
             }
         }),
         Z = StyleSheet/*g*/.create({
@@ -388,5 +388,5 @@ __d("THInputBarView",["LayoutAnimation","Dimensions","DocumentContent","Document
                 width: B - 4
             }
         });
-    module/*i*/.exports = J
+    i.exports = J
 });

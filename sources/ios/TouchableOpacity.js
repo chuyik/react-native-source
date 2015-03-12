@@ -1,13 +1,13 @@
-__d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Touchable","cloneWithProps","ensureComponentIsNative","keyOf","onlyChild"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Touchable","cloneWithProps","ensureComponentIsNative","keyOf","onlyChild"],function (e, t, n, r, i) {
     "use strict";
-    var POPAnimationMixin/*o*/ = require/*t*/("POPAnimationMixin"),
-        NativeMethodsMixin/*a*/ = require/*t*/("NativeMethodsMixin"),
-        React/*s*/ = require/*t*/("React"),
-        Touchable/*l*/ = require/*t*/("Touchable"),
-        cloneWithProps/*u*/ = require/*t*/("cloneWithProps"),
-        ensureComponentIsNative/*c*/ = require/*t*/("ensureComponentIsNative"),
-        keyOf/*p*/ = require/*t*/("keyOf"),
-        onlyChild/*d*/ = require/*t*/("onlyChild"),
+    var POPAnimationMixin/*o*/ = t("POPAnimationMixin"),
+        NativeMethodsMixin/*a*/ = t("NativeMethodsMixin"),
+        React/*s*/ = t("React"),
+        Touchable/*l*/ = t("Touchable"),
+        cloneWithProps/*u*/ = t("cloneWithProps"),
+        ensureComponentIsNative/*c*/ = t("ensureComponentIsNative"),
+        keyOf/*p*/ = t("keyOf"),
+        onlyChild/*d*/ = t("onlyChild"),
         h = React/*s*/.createClass({
             displayName: "TouchableOpacity",
             mixins: [Touchable/*l*/.Mixin, NativeMethodsMixin/*a*/, POPAnimationMixin/*o*/],
@@ -29,14 +29,14 @@ __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Toucha
             componentDidUpdate: function() {
                 ensureComponentIsNative/*c*/(this.refs[m])
             },
-            animateOpacityTo: function(global/*e*/) {
+            animateOpacityTo: function(e) {
                 this.stopAllAnimations();
-                var require/*t*/ = {
+                var t = {
                     type: this.AnimationTypes.linear,
                     property: this.AnimationProperties.opacity,
-                    toValue: global/*e*/
+                    toValue: e
                 };
-                this.startAnimation(m, require/*t*/)
+                this.startAnimation(m, t)
             },
             touchableHandleActivePressIn: function() {
                 this.refs[m].setNativeProps({
@@ -78,5 +78,5 @@ __d("TouchableOpacity",["POPAnimationMixin","NativeMethodsMixin","React","Toucha
         m = keyOf/*p*/({
             childRef: null
         });
-    module/*i*/.exports = h
+    i.exports = h
 });

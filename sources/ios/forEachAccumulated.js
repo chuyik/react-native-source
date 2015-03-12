@@ -1,7 +1,7 @@
-__d("forEachAccumulated",[],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
+__d("forEachAccumulated",[],function (e, t, n, r, i) {
     "use strict";
-    var o = function(global/*e*/, require/*t*/, requireDynamic/*n*/) {
-        Array.isArray(global/*e*/) ? global/*e*/.forEach(require/*t*/, requireDynamic/*n*/) : global/*e*/ && require/*t*/.call(requireDynamic/*n*/, global/*e*/)
+    var o = function(e, t, n) {
+        Array.isArray(e) ? e.forEach(t, n) : e && t.call(n, e)
     };
-    module/*i*/.exports = o
+    i.exports = o
 });

@@ -1,5 +1,5 @@
-__d("DocumentCommands",["keyMirror"],function (global/*e*/, require/*t*/, requireDynamic/*n*/, requireLazy/*r*/, module/*i*/) {
-    var keyMirror/*o*/ = require/*t*/("keyMirror"),
+__d("DocumentCommands",["keyMirror"],function (e, t, n, r, i) {
+    var keyMirror/*o*/ = t("keyMirror"),
         a = keyMirror/*o*/({
             UNDO: !0,
             REDO: !0,
@@ -18,5 +18,5 @@ __d("DocumentCommands",["keyMirror"],function (global/*e*/, require/*t*/, requir
             MOVE_SELECTION_TO_START_OF_BLOCK: !0,
             MOVE_SELECTION_TO_END_OF_BLOCK: !0
         });
-    module/*i*/.exports = a
+    i.exports = a
 });
